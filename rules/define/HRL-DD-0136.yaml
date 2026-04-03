@@ -1,0 +1,24 @@
+id: HRL-DD-0136
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: The value provided in Assigned Value must match the Data Type of the
+  variable.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Data Type/Assigned Value mismatch
+  severity: Error
+provenance:
+  p21_id: DD0145
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

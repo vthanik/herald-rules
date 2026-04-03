@@ -1,0 +1,24 @@
+id: HRL-DD-0166
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: Variable Data Type must match the Data Type of the referenced Codelist.
+  Define-XML specification represents Variable as ItemDef.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Codelist/Variable Data Type mismatch
+  severity: Error
+provenance:
+  p21_id: OD0080
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

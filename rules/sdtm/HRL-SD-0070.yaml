@@ -1,0 +1,29 @@
+id: HRL-SD-0070
+version: 1
+status: Published
+standard: SDTM
+category: Metadata
+sensitivity: Dataset
+executability: Fully Executable
+description: Domains referenced in data definition document (define.xml) should be
+  included in the submission.
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - DA
+check:
+  all:
+    - name: DATASET
+      operator: variable_exists
+      value: '%Domains.Define%'
+outcome:
+  message: Domain referenced in define.xml but dataset is missing
+  severity: Error
+provenance:
+  p21_id: SD0061
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

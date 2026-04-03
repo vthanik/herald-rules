@@ -1,0 +1,35 @@
+id: HRL-SD-0198
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Split datasets should have matching variable lengths for future merges.
+  Datasets should be resized to the maximum length used prior to splitting.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: LENGTH
+      operator: all_values_equal
+      group_by: VARIABLE
+outcome:
+  message: Inconsistent variable length within split datasets
+  severity: Error
+provenance:
+  p21_id: SD1116
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB018
+  source_doc: SDTM-IG v3.3
+

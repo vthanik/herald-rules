@@ -1,0 +1,30 @@
+id: HRL-AD-0181
+version: 1
+status: Published
+standard: ADaM
+category: Cross-reference
+sensitivity: Record
+executability: Partially Executable
+description: The same subject in ADSL and DM must have the same value for age.  There
+  must be traceability between ADaM and SDTM.
+scope:
+  classes:
+    - ADSL
+  domains:
+    - ADSL
+check:
+  all:
+    - name: STUDYID
+      operator: non_empty
+    - name: USUBJID
+      operator: non_empty
+outcome:
+  message: For the same USUBJID, the ADSL.AGE != DM.AGE
+  severity: Error
+provenance:
+  p21_id: AD0204
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

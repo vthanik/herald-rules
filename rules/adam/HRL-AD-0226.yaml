@@ -1,0 +1,34 @@
+id: HRL-AD-0226
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: Within a study, All TRTxxA values must be the same for each unique value
+  of TRTxxAN, when both variables are populated.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: TRTVARIABLEA
+      operator: non_empty
+    - name: TRTVARIABLEAN
+      operator: non_empty
+    - name: '%Variables[TRT##A]%'
+      operator: all_values_equal
+      group_by: STUDYID,TRT%Variable.1%AN
+outcome:
+  message: Inconsistent value for TRT%Variable.1%A
+  severity: Error
+provenance:
+  p21_id: AD0243B
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

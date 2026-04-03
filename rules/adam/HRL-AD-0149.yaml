@@ -1,0 +1,34 @@
+id: HRL-AD-0149
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: If AWU (Analysis Window Unit) is populated, at least one of AWLO and
+  AWHI variables must be populated (the Analysis Window Beginning and Ending Timepoints).
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - any:
+        - name: AWLO
+          operator: non_empty
+        - name: AWHI
+          operator: non_empty
+    - name: AWU
+      operator: non_empty
+outcome:
+  message: AWU is populated but both AWLO and AWHI are not populated
+  severity: Error
+provenance:
+  p21_id: AD0161
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

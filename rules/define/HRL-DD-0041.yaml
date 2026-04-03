@@ -1,0 +1,26 @@
+id: HRL-DD-0041
+version: 1
+status: Published
+standard: Define-XML
+category: Presence
+sensitivity: Record
+executability: Not Executable
+description: 'For SDTM and SEND submission data (where def:StandardName is ''SDTM-IG''
+  or ''SEND-IG''), Domain attribute is required and must be included in Define.xml
+  and cannot be empty. Note: Refer to the data standards catalog by the relevant Regulatory
+  Agency for acceptance of standards and their versions.'
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Missing Domain value
+  severity: Error
+provenance:
+  p21_id: DD0045
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

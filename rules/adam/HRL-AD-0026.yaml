@@ -1,0 +1,30 @@
+id: HRL-AD-0026
+version: 1
+status: Published
+standard: ADaM
+category: Terminology
+sensitivity: Record
+executability: Partially Executable
+description: A variable with a suffix of DTF (Date Imputation Flag) has a value that
+  is not within Controlled Terminology for DATEFL (Y=Entire Date, M=Month and Day,
+  D= Day).
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: '%Variables[*DTF]%'
+      operator: non_empty
+outcome:
+  message: '%Variable.1%DTF variable is not in DATEFL codelist'
+  severity: Error
+provenance:
+  p21_id: AD0039
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

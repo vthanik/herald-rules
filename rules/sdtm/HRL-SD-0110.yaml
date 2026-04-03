@@ -1,0 +1,33 @@
+id: HRL-SD-0110
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Planned Order of Elements within Arm (TAETORD) should be NULL, when subject's
+  experience for a particular period of time is represented as an unplanned Element
+  (ETCD = 'UNPLAN').
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TA
+check:
+  all:
+    - name: TAETORD
+      operator: is_empty
+    - name: ETCD
+      operator: equal_to
+      value: UNPLAN
+outcome:
+  message: TAETORD is populated, ETCD = 'UNPLAN'
+  severity: Error
+provenance:
+  p21_id: SD1013
+  core_id: ~
+  cg_ids:
+    - CG0206
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

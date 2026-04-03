@@ -1,0 +1,40 @@
+id: HRL-AD-0142
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: For a set of [Subject (USUBJID), Parameter (PARAM)], Baseline type (BASETYPE)
+  must be populated when multiple baseline records are flagged.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: USUBJID
+      operator: non_empty
+    - name: PARAMCD
+      operator: non_empty
+    - name: ABLFL
+      operator: equal_to
+      value: 'Y'
+    - name: BASETYPE
+      operator: is_empty
+    - name: ABLFL
+      operator: is_unique
+      group_by: STUDYID,STUDYID,USUBJID,PARAMCD
+outcome:
+  message: Multiple baseline records exist for a unique USUBJID,PARAMCD with BASETYPE
+    null in all records
+  severity: Error
+provenance:
+  p21_id: AD0153
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.0
+

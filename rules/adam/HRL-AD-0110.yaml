@@ -1,0 +1,29 @@
+id: HRL-AD-0110
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: ABLFL is required if BASE or BASEC is present in the dataset.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: ABLFL
+outcome:
+  message: BASE or BASEC is present but ABLFL is not present
+  severity: Error
+provenance:
+  p21_id: AD0127A
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

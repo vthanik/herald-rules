@@ -1,0 +1,25 @@
+id: HRL-DD-0036
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: Order of variables must follow the order specified by CDISC standard.
+  See section 4.1.1.4 of the SDTM-IG for variable ordering requirements for the SDTM
+  or section 3 of the ADaM-IG for information about variable ordering for ADaM datasets.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Variable is in wrong order within Dataset <dataset>
+  severity: Error
+provenance:
+  p21_id: DD0039
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (PMDA)
+

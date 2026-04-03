@@ -1,0 +1,37 @@
+id: HRL-SD-0020
+version: 1
+status: Published
+standard: SDTM
+category: Terminology
+sensitivity: Value
+executability: Fully Executable
+
+description: >
+  AESER must be in (Y, N) in the AE domain. The serious adverse event flag must contain only the values Y or N.
+
+scope:
+  classes:
+    - EVENTS
+  domains:
+    - AE
+
+check:
+  all:
+    - name: AESER
+      operator: in
+      value:
+        - Y
+        - N
+
+outcome:
+  message: "AESER value '{AESER}' is not Y or N in AE for subject '{USUBJID}'"
+  severity: Error
+
+provenance:
+  p21_id: CT0020
+  core_id: CORE-000271
+  cg_ids:
+    - CG0020
+  fda_ids:
+    - FDA-AE-003
+  source_doc: "SDTM-IG v3.3 Section 6.2.1, CDISC CT C66742"

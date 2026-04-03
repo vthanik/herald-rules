@@ -1,0 +1,24 @@
+id: HRL-DD-0059
+version: 1
+status: Published
+standard: Define-XML
+category: Presence
+sensitivity: Record
+executability: Not Executable
+description: Alias is required for each split dataset (where more than one ItemGroupDef
+  exists for the same Domain) to provide a description for the full dataset.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Missing Alias
+  severity: Error
+provenance:
+  p21_id: DD0063
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

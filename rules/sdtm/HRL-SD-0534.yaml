@@ -1,0 +1,41 @@
+id: HRL-SD-0534
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: 'TSVCDREF variable value must be either ''MED-RT'' or ''NDF-RT'', when
+  TSPARMCD=''PCLAS''. (Note: Any version 2018-02-05 or earlier is NDF-RT, and any
+  version after is MED-RT.)'
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TS
+check:
+  all:
+    - any:
+        - name: TSVCDREF
+          operator: equal_to
+          value: NDF-RT
+        - name: TSVCDREF
+          operator: equal_to
+          value: MED-RT
+    - name: TSPARMCD
+      operator: equal_to
+      value: PCLAS
+    - name: TSVALNF
+      operator: is_empty
+outcome:
+  message: Invalid TSVCDREF value for PCLAS
+  severity: Error
+provenance:
+  p21_id: SD2243
+  core_id: ~
+  cg_ids:
+    - CG0455
+  fda_ids:
+    - FDAB011
+  source_doc: SDTM-IG v3.3
+

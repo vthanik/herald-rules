@@ -1,0 +1,37 @@
+id: HRL-SD-0109
+version: 1
+status: Published
+standard: SDTM
+category: Cross-reference
+sensitivity: Record
+executability: Partially Executable
+description: The combination of Element Code (ETCD) and Description of Element (ELEMENT)
+  values should match entries in the Trial Elements (TE) dataset, except for unplanned
+  Element (ETCD = 'UNPLAN').
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: ETCD
+      operator: non_empty
+    - name: ELEMENT
+      operator: non_empty
+outcome:
+  message: Invalid ETCD/ELEMENT
+  severity: Error
+provenance:
+  p21_id: SD1012
+  core_id: ~
+  cg_ids:
+    - CG0414
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

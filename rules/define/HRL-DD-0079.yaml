@@ -1,0 +1,23 @@
+id: HRL-DD-0079
+version: 1
+status: Published
+standard: Define-XML
+category: Cross-reference
+sensitivity: Record
+executability: Not Executable
+description: Stylesheet (".xsl") file referenced in Define.xml must exist.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Missing Define XSL
+  severity: Error
+provenance:
+  p21_id: DD0085
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

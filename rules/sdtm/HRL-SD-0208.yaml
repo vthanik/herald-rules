@@ -1,0 +1,33 @@
+id: HRL-SD-0208
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Relationship Type (RELTYPE)  variable values should be populated with
+  terms 'ONE', 'MANY', when Related Records (RELREC) dataset is used to identify relationships
+  between datasets.
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - RE
+check:
+  all:
+    - name: IDVARVAL
+      operator: is_empty
+    - name: RELTYPE
+      operator: in
+      value: ONE,MANY
+outcome:
+  message: Invalid value for RELTYPE variable
+  severity: Error
+provenance:
+  p21_id: SD1128
+  core_id: ~
+  cg_ids:
+    - CG0020
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

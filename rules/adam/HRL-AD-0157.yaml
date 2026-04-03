@@ -1,0 +1,33 @@
+id: HRL-AD-0157
+version: 1
+status: Published
+standard: ADaM
+category: Limit
+sensitivity: Record
+executability: Fully Executable
+description: Censor value (CNSR) must be an integer.  Defines whether the event was
+  censored (period of observation truncated prior to event being observed). It is
+  strongly recommended to use 0 as an event indicator and positive integers as censoring
+  indicators. It is also recommended that unique positive integers be used to indicate
+  coded descriptions of censoring reasons. CNSR is required for time-to-event parameters.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: CNSR
+      operator: matches_regex
+      value: '[0-9]*'
+outcome:
+  message: CNSR is not an integer >= 0
+  severity: Error
+provenance:
+  p21_id: AD0169
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

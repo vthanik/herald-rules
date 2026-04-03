@@ -1,0 +1,38 @@
+id: HRL-AD-0112
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: 'Within a study, All BASEC values must be the same for each unique value
+  group of [PARAMCD,BASE] when PARAMCD, BASE and BASEC are populated. (ADaM IG: There
+  must be a one-to-one map between BASE and BASEC within a given PARAM if BOTH are
+  populated).'
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: PARAMCD
+      operator: non_empty
+    - name: BASE
+      operator: non_empty
+    - name: BASEC
+      operator: non_empty
+    - name: BASEC
+      operator: all_values_equal
+      group_by: STUDYID,PARAMCD,BASE
+outcome:
+  message: Inconsistent value for BASEC
+  severity: Error
+provenance:
+  p21_id: AD0130
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

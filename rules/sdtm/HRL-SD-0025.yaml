@@ -1,0 +1,34 @@
+id: HRL-SD-0025
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+
+description: >
+  VSTESTCD must not be empty in the VS domain. The vital signs test short name is required for every vital signs record.
+
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - VS
+
+check:
+  all:
+    - name: VSTESTCD
+      operator: non_empty
+
+outcome:
+  message: "VSTESTCD is empty or missing in VS for subject '{USUBJID}'"
+  severity: Error
+
+provenance:
+  p21_id: SD0025
+  core_id: CORE-000276
+  cg_ids:
+    - CG0025
+  fda_ids:
+    []
+  source_doc: "SDTM-IG v3.3 Section 6.3.7"

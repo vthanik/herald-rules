@@ -1,0 +1,24 @@
+id: HRL-DD-0134
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: The value of the Name attribute in the def:SubClass element must be one
+  of the values from the CDISC/NCI subclass codelists.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Invalid use of Subclass for Class
+  severity: Error
+provenance:
+  p21_id: DD0140
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

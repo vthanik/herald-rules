@@ -1,0 +1,33 @@
+id: HRL-AD-0335
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: 'When validating ADaM datasets, the DM dataset must also be included
+  to ensure traceability. Note: For the final submission the eCTD structure should
+  be maintained. Therefore, the SDTM and ADaM datasets should be submitted in their
+  appropriate locations. Do not include the DM dataset in the ../analysis/adam/datasets
+  folder.'
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: DOMAIN
+      operator: variable_exists
+      value: DM
+outcome:
+  message: Traceability rules not executed due to missing DM dataset
+  severity: Error
+provenance:
+  p21_id: AD1024
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

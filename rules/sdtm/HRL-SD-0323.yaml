@@ -1,0 +1,32 @@
+id: HRL-SD-0323
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: When test product is added to existing treatment (TSPARMCD = 'ADDON'
+  and TSVAL = 'Y'), the Current Therapy or Treatment parameter should be provided
+  with Parameter Value populated (TSVAL should not be null when TSPARMCD = 'CURTRT').
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TS
+check:
+  all:
+    - name: TSPARMCD
+      operator: variable_exists
+      value: CURTRT
+outcome:
+  message: TSVAL is missing for the CURTRT Trial Summary Parameter, when ADDON parameter
+    equals 'Y'
+  severity: Error
+provenance:
+  p21_id: SD1308
+  core_id: ~
+  cg_ids:
+    - CG0275
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

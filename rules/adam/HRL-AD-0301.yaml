@@ -1,0 +1,33 @@
+id: HRL-AD-0301
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Within a Study and a Parameter, all ANRHIC (Analysis Normal Range Upper
+  Limit (C)) variable values must be the same for each unique value of ANRHI (Analysis
+  Normal Range Upper Limit), when variable ANRHI is populated
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: ANRHI
+      operator: non_empty
+    - name: ANRHIC
+      operator: all_values_equal
+      group_by: STUDYID,PARAMCD,ANRHI
+outcome:
+  message: Inconsistent value for ANRHIC
+  severity: Error
+provenance:
+  p21_id: AD0345
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

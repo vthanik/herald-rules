@@ -1,0 +1,32 @@
+id: HRL-SD-0249
+version: 1
+status: Published
+standard: SDTM
+category: Terminology
+sensitivity: Record
+executability: Fully Executable
+description: TSVAL for RANDOM record must be 'Y' or 'N'.
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TS
+check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: RANDOM
+    - name: TSVAL
+      operator: in
+      value: Y,N
+outcome:
+  message: Invalid TSVAL value for RANDOM
+  severity: Error
+provenance:
+  p21_id: SD1223
+  core_id: ~
+  cg_ids:
+    - CG0271
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

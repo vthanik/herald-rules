@@ -1,0 +1,39 @@
+id: HRL-SD-0292
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: For the trial summary parameter Randomization Quotient (TSPARMCD = 'RANDQT'),
+  the value must always be a number between 0 and 1, with some cases where the ratio
+  might be equal to 1.
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TS
+check:
+  all:
+    - name: TSVAL
+      operator: greater_than
+      value: '0'
+    - name: TSVAL
+      operator: less_than
+      value: eq 1
+    - name: TSPARMCD
+      operator: equal_to
+      value: RANDQT
+    - name: TSVAL
+      operator: non_empty
+outcome:
+  message: TSVAL is not between 0 and 1, when TSPARMCD = 'RANDQT'
+  severity: Error
+provenance:
+  p21_id: SD1269
+  core_id: ~
+  cg_ids:
+    - CG0280
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

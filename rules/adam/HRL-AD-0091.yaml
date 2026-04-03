@@ -1,0 +1,34 @@
+id: HRL-AD-0091
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Within a study, All AVISIT values must be the same for each unique value
+  group of [PARAMCD,AVISITN] when PARAMCD and primary variable AVISIT are populated.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: PARAMCD
+      operator: non_empty
+    - name: AVISIT
+      operator: non_empty
+    - name: AVISIT
+      operator: all_values_equal
+      group_by: STUDYID,PARAMCD,AVISITN
+outcome:
+  message: Inconsistent value for AVISIT
+  severity: Error
+provenance:
+  p21_id: AD0110
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.0
+

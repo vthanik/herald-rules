@@ -1,0 +1,32 @@
+id: HRL-AD-0313
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Within a study, DTHCAUSN values must be the same for each unique value
+  of DTHCAUS when primary variable DTHCAUS is populated.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: DTHCAUS
+      operator: non_empty
+    - name: DTHCAUSN
+      operator: all_values_equal
+      group_by: STUDYID,DTHCAUS
+outcome:
+  message: Inconsistent value for DTHCAUSN
+  severity: Error
+provenance:
+  p21_id: AD0360
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

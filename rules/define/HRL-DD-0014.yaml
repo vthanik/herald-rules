@@ -1,0 +1,25 @@
+id: HRL-DD-0014
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: The OID attribute for Method (the Method ID) must be unique within Define.xml.
+  Define-XML specification represents Methods as MethodDef elements within MetaDataVersion
+  element.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Duplicate Method OID
+  severity: Error
+provenance:
+  p21_id: DD0013
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

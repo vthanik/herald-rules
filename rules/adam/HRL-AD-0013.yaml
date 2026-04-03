@@ -1,0 +1,30 @@
+id: HRL-AD-0013
+version: 1
+status: Published
+standard: ADaM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: Variable must be a max of 8 characters, start with a letter A-Z and and
+  not contain anything other than letter, numbers, underscore (_).
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: matches_regex
+      value: '[A-Z][A-Z0-9_]{0,7}'
+outcome:
+  message: 'Illegal variable name: basic format is violated'
+  severity: Error
+provenance:
+  p21_id: AD0013
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

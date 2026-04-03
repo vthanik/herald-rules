@@ -1,0 +1,25 @@
+id: HRL-DD-0037
+version: 1
+status: Published
+standard: Define-XML
+category: Metadata
+sensitivity: Dataset
+executability: Not Executable
+description: Key Variables must be defined for each dataset. Define-XML specification
+  represents Key Variables as KeySequence attribute on ItemRef element. The KeySequence
+  attribute must be provided for at least one ItemRef within each ItemGroupDef.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Missing Key Variables value
+  severity: Error
+provenance:
+  p21_id: DD0040
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

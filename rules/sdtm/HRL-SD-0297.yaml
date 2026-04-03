@@ -1,0 +1,33 @@
+id: HRL-SD-0297
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Parameter Value Code (TSVALCD) and Parameter Value (TSVAL) should have
+  a one-to-one relationship.
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TS
+check:
+  all:
+    - name: TSPARMCD
+      operator: not_equal_to
+      value: STOPRULE
+    - name: TSVALCD
+      operator: all_values_equal
+      group_by: TSVAL,TSVCDREF
+outcome:
+  message: Inconsistent value for TSVALCD within TSVAL
+  severity: Error
+provenance:
+  p21_id: SD1278
+  core_id: ~
+  cg_ids:
+    - CG0265
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

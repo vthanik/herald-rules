@@ -1,0 +1,24 @@
+id: HRL-DD-0162
+version: 1
+status: Published
+standard: Define-XML
+category: Terminology
+sensitivity: Record
+executability: Not Executable
+description: The Data Type attribute for Codelist must have a value of 'text, 'integer',
+  or 'float'.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Invalid Data Type value for codelist
+  severity: Error
+provenance:
+  p21_id: OD0076
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

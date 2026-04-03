@@ -1,0 +1,35 @@
+id: HRL-SD-0410
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: Start Day of Obs Rel to Challenge Agent (--CHSTDY) variable value should
+  be populated, when Start Date/Time of Observation (--STDTC) and Date/Time of First
+  Challenge Agent Admin (RFCSTDTC) variables values are provided, and both of them
+  include complete date parts.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --CHSTDY
+      operator: non_empty
+outcome:
+  message: '%Domain%CHSTDY variable value is not populated'
+  severity: Error
+provenance:
+  p21_id: SD1397
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community SEND-IG-AR 1.0 (FDA)
+

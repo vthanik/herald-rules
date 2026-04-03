@@ -1,0 +1,29 @@
+id: HRL-AD-0173
+version: 1
+status: Published
+standard: ADaM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: For (R2)AyHI, y must be the analysis range (1 to 9) for an upper limit.  Ranges
+  capture different levels of cutoff values used to determine whether an analysis
+  is within or outside a clinically acceptable value range. It's expected that CDISC
+  ADaM rules include the standalone AyHI portion in next release.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all: []
+outcome:
+  message: 'Illegal variable name: y is not in [1-9] for (R2)AyHI'
+  severity: Error
+provenance:
+  p21_id: AD0191
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.0
+

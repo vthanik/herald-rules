@@ -1,0 +1,27 @@
+id: HRL-AD-0070
+version: 1
+status: Published
+standard: ADaM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: For TRTPGy(N) or For TRTPGy(N) and TRTAGy(N) (Pooled treatment groups)
+  y must be the pooling algorithm group (1 to 9).
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all: []
+outcome:
+  message: 'Illegal variable name: y is not in [1-9] for TRTPGy(N) or TRTAGy(N)'
+  severity: Error
+provenance:
+  p21_id: AD0094
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.0
+

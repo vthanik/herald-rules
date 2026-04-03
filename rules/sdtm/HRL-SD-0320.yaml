@@ -1,0 +1,30 @@
+id: HRL-SD-0320
+version: 1
+status: Published
+standard: SDTM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: Offset from the Anchor (TDSTOFF) variable value must be either 0, ISO
+  8601 format for duration (e.g. P80Y), or null.
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TD
+check:
+  all:
+    - name: TDSTOFF
+      operator: matches_regex
+      value: ^(R\d*/)?P(?:\d+(?:\.\d+)?Y)?(?:\d+(?:\.\d+)?M)?(?:\d+(?:\.\d+)?W)?(?:\d+(?:\.\d+)?D)?(?:T(?:\d+(?:\.\d+)?H)?(?:\d+(?:\.\d+)?M)?(?:\d+(?:\.\d+)?S)?)?$
+outcome:
+  message: Invalid value for TDSTOFF variable
+  severity: Error
+provenance:
+  p21_id: SD1301
+  core_id: ~
+  cg_ids:
+    - CG0376
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

@@ -1,0 +1,24 @@
+id: HRL-DD-0078
+version: 1
+status: Published
+standard: Define-XML
+category: Cross-reference
+sensitivity: Record
+executability: Not Executable
+description: Referenced File must exist. Define-XML specification represents File
+  references as xlink:href attributes within def:leaf element.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Referenced File is missing
+  severity: Error
+provenance:
+  p21_id: DD0084
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

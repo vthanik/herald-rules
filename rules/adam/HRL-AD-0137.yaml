@@ -1,0 +1,35 @@
+id: HRL-AD-0137
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Within a study and a given value of PARAMCD when both AVAL and AVALC
+  are populated, then all AVALC values must be the same for each unique value of AVAL
+  creating a one-to-one mapping.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: PARAMCD
+      operator: non_empty
+    - name: AVAL
+      operator: non_empty
+    - name: AVALC
+      operator: all_values_equal
+      group_by: STUDYID,PARAMCD,AVAL
+outcome:
+  message: Inconsistent value for AVALC
+  severity: Error
+provenance:
+  p21_id: AD0149
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.0
+

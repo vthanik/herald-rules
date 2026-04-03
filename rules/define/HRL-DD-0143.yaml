@@ -1,0 +1,24 @@
+id: HRL-DD-0143
+version: 1
+status: Published
+standard: Define-XML
+category: Format
+sensitivity: Record
+executability: Not Executable
+description: Attribute is defined as an integer, but value does not match the integer
+  format. Allowed string pattern for an integer is '-?digit+'.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Invalid integer value for <attribute>
+  severity: Error
+provenance:
+  p21_id: OD0013
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

@@ -1,0 +1,38 @@
+id: HRL-SD-0107
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Description of Element (ELEMENT) should be NULL, when subject's experience
+  for a particular period of time is represented as an unplanned Element, where Element
+  Code (ETCD) is equal to 'UNPLAN'.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: ELEMENT
+      operator: is_empty
+    - name: ETCD
+      operator: equal_to
+      value: UNPLAN
+outcome:
+  message: ELEMENT value is populated, when ETCD= 'UNPLAN'
+  severity: Error
+provenance:
+  p21_id: SD1010
+  core_id: ~
+  cg_ids:
+    - CG0152
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

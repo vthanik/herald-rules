@@ -1,0 +1,32 @@
+id: HRL-SD-0158
+version: 1
+status: Published
+standard: SDTM
+category: Metadata
+sensitivity: Dataset
+executability: Not Executable
+description: Datasets greater than 5 gigabytes (GB) in size should be split into smaller
+  datasets no larger than 5 GB.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all: []
+outcome:
+  message: Dataset is greater than 5 GB in size
+  severity: Error
+provenance:
+  p21_id: SD1071
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB024
+  source_doc: ADaM-IG v1.1
+

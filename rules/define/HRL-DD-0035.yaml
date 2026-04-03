@@ -1,0 +1,25 @@
+id: HRL-DD-0035
+version: 1
+status: Published
+standard: Define-XML
+category: Presence
+sensitivity: Record
+executability: Not Executable
+description: Value Level metadata must be defined for QVAL variable in each SUPPQUAL
+  dataset. Define-XML specification represents Value Level metadata as def:ValueListDef
+  element, which is referenced from ItemDef/def:ValueListRef element.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Missing Value Level metadata for QVAL in Dataset <dataset>
+  severity: Error
+provenance:
+  p21_id: DD0038
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

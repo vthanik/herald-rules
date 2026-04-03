@@ -1,0 +1,24 @@
+id: HRL-DD-0086
+version: 1
+status: Published
+standard: Define-XML
+category: Presence
+sensitivity: Record
+executability: Not Executable
+description: ParameterOID is required when the analysis result is based on specific
+  parameter(s) from a BDS structured dataset.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Missing required ParameterOID
+  severity: Error
+provenance:
+  p21_id: DD0092
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

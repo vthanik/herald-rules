@@ -1,0 +1,37 @@
+id: HRL-SD-0358
+version: 1
+status: Published
+standard: SDTM
+category: Terminology
+sensitivity: Record
+executability: Partially Executable
+description: Value for the Medication Class (--CLAS) variable must be populated using
+  ATC Text from the WHO Drug dictionary version specified in the define.xml.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --CLAS
+      operator: not_equal_to
+      value: MULTIPLE
+    - name: --CLAS
+      operator: non_empty
+outcome:
+  message: Value for %Domain%CLAS not found in WHODrug dictionary
+  severity: Error
+provenance:
+  p21_id: SD1345
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB017
+  source_doc: SDTM-IG v3.3
+

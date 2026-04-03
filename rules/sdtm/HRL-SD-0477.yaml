@@ -1,0 +1,35 @@
+id: HRL-SD-0477
+version: 1
+status: Published
+standard: SDTM
+category: Terminology
+sensitivity: Record
+executability: Partially Executable
+description: Value for High Level Term Code (--HLTCD) variable must be populated using
+  a High Level Term Code of the MedDRA dictionary of a version specified in the define.xml.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: '%Variables[--HLTCD]%'
+      operator: non_empty
+outcome:
+  message: Value for %Domain%HLTCD not found in MedDRA dictionary
+  severity: Error
+provenance:
+  p21_id: SD2011
+  core_id: ~
+  cg_ids:
+    - CG0382
+  fda_ids:
+    - FDAB003
+  source_doc: SDTM-IG v3.3
+

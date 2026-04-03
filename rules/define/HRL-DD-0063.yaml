@@ -1,0 +1,23 @@
+id: HRL-DD-0063
+version: 1
+status: Published
+standard: Define-XML
+category: Presence
+sensitivity: Record
+executability: Not Executable
+description: The Significant Digits attribute must be empty when DataType is not float.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Invalid use of Significant Digits
+  severity: Error
+provenance:
+  p21_id: DD0069
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

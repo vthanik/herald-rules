@@ -1,0 +1,52 @@
+id: HRL-SD-0212
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Serious Event (AESER) variable value is expected to be 'Y', when either
+  of Seriousness Criteria variables (AESCAN, AESCONG, AESDISAB, AESDTH, AESHOSP, AESLIFE,
+  AESMIE) has value 'Y'.
+scope:
+  classes:
+    - EVENTS
+  domains:
+    - AE
+check:
+  all:
+    - name: AESER
+      operator: equal_to
+      value: 'Y'
+    - name: AESCAN
+      operator: equal_to_case_insensitive
+      value: 'Y'
+    - name: AESCONG
+      operator: equal_to_case_insensitive
+      value: 'Y'
+    - name: AESDISAB
+      operator: equal_to_case_insensitive
+      value: 'Y'
+    - name: AESDTH
+      operator: equal_to_case_insensitive
+      value: 'Y'
+    - name: AESHOSP
+      operator: equal_to_case_insensitive
+      value: 'Y'
+    - name: AESLIFE
+      operator: equal_to_case_insensitive
+      value: 'Y'
+    - name: AESMIE
+      operator: equal_to_case_insensitive
+      value: 'Y'
+outcome:
+  message: AESER is not 'Y'
+  severity: Error
+provenance:
+  p21_id: SD1132
+  core_id: ~
+  cg_ids:
+    - CG0041
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

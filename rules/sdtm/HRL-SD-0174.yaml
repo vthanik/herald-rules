@@ -1,0 +1,35 @@
+id: HRL-SD-0174
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: Study Day of End (--ENDY) variable value should be populated, when End
+  Study Date/Time (--ENDTC) and Subject Reference Start Date/Time (RFSTDTC) variables
+  values are provided, and both of them include complete date part.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --ENDY
+      operator: non_empty
+outcome:
+  message: '%Domain%ENDY variable value is not populated'
+  severity: Error
+provenance:
+  p21_id: SD1092
+  core_id: ~
+  cg_ids:
+    - CG0222
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

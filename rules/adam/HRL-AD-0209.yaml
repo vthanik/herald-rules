@@ -1,0 +1,32 @@
+id: HRL-AD-0209
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: Within a study, All TRxxAGy values must be the same for each unique value
+  of TRxxAGyN when primary variable TRxxAGy is populated. analogous rule for AD0232.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: TRVARIABLEAGVARIABLE
+      operator: non_empty
+    - name: '%Variables[TR##AG#]%'
+      operator: all_values_equal
+      group_by: STUDYID,TR%Variable.1%AG%Variable.2%N
+outcome:
+  message: Inconsistent value for TR%Variable.1%AG%Variable.2%
+  severity: Error
+provenance:
+  p21_id: AD0235
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.0
+

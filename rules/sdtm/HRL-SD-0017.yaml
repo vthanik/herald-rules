@@ -1,0 +1,34 @@
+id: HRL-SD-0017
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+
+description: >
+  AETERM must not be empty in the AE domain. The verbatim adverse event term is required for every adverse event record.
+
+scope:
+  classes:
+    - EVENTS
+  domains:
+    - AE
+
+check:
+  all:
+    - name: AETERM
+      operator: non_empty
+
+outcome:
+  message: "AETERM is empty or missing in AE for subject '{USUBJID}'"
+  severity: Error
+
+provenance:
+  p21_id: SD0017
+  core_id: CORE-000268
+  cg_ids:
+    - CG0017
+  fda_ids:
+    - FDA-AE-001
+  source_doc: "SDTM-IG v3.3 Section 6.2.1"

@@ -1,0 +1,25 @@
+id: HRL-DD-0075
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: Only Value Level metadata that are referenced from a Variable should
+  be included in Define.xml. Define-XML specification represents Value Level metadata
+  as def:ValueListDef elements within MetaDataVersion element.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Value Level metadata <value level> is not referenced
+  severity: Error
+provenance:
+  p21_id: DD0081
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

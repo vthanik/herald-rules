@@ -1,0 +1,25 @@
+id: HRL-DD-0060
+version: 1
+status: Published
+standard: Define-XML
+category: Terminology
+sensitivity: Record
+executability: Not Executable
+description: The Alias Context attribute must have a value of 'DomainDescription'
+  for split datasets (when child of ItemGroupDef) and 'nci:ExtCodeID' for CodeList,
+  CodeListItem or EnumeratedItem elements.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Invalid Alias Context value
+  severity: Error
+provenance:
+  p21_id: DD0064
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

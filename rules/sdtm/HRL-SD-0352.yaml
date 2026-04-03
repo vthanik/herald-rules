@@ -1,0 +1,32 @@
+id: HRL-SD-0352
+version: 1
+status: Published
+standard: SDTM
+category: Cross-reference
+sensitivity: Record
+executability: Partially Executable
+description: A Link Group (RSLNKGRP) value for a response assessment that is referenced
+  in the Disease Response (RS) domain for a subject must also be present in the Tumor
+  Results (TR) domain for the appropriate measurement records for that subject.
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - RS
+check:
+  all:
+    - name: --LNKGRP
+      operator: non_empty
+    - name: USUBJID
+      operator: non_empty
+outcome:
+  message: RSLNKGRP value does not exist in TR domain
+  severity: Error
+provenance:
+  p21_id: SD1338
+  core_id: ~
+  cg_ids:
+    - CG0022
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

@@ -1,0 +1,25 @@
+id: HRL-DD-0118
+version: 1
+status: Published
+standard: Define-XML
+category: Terminology
+sensitivity: Record
+executability: Not Executable
+description: Variables defined in a Standard with a Controlled Terminology requirement
+  must have a codelist. Define-XML defines codelists using the CodeList element and
+  references to those using CodeListRef elements.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Expected Codelist is missing
+  severity: Error
+provenance:
+  p21_id: DD0124
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

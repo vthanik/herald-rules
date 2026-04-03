@@ -1,0 +1,29 @@
+id: HRL-AD-0136
+version: 1
+status: Published
+standard: ADaM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: Numeric Value of Parameter name (PARAMN) must be an integer.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: PARAMN
+      operator: matches_regex
+      value: '[-0-9]*'
+outcome:
+  message: PARAMN is not an integer
+  severity: Error
+provenance:
+  p21_id: AD0148
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.0
+

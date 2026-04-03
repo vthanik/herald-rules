@@ -1,0 +1,40 @@
+id: HRL-SD-0371
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: When Actual Arm Code (ACTARMCD)/Description of Actual Arm (ACTARM) are
+  not populated, the Reason Arm and/or Actual Arm is Null (ARMNRS) variable must be
+  populated with the reason ACTARMCD/ACTARM are null.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: ARMNRS
+      operator: non_empty
+    - name: ACTARMCD
+      operator: is_empty
+    - name: ACTARM
+      operator: is_empty
+outcome:
+  message: ARMNRS is not populated, when ACTARMCD or ACTARM is NULL
+  severity: Error
+provenance:
+  p21_id: SD1358
+  core_id: ~
+  cg_ids:
+    - CG0513
+    - CG0515
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

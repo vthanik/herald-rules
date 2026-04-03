@@ -1,0 +1,30 @@
+id: HRL-AD-0322
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: If BASECAyN is used in a dataset, BASECATy must also be present in that
+  dataset.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: BASECAT%Variable.1%
+outcome:
+  message: BASECAyN is present and BASECATy is not present
+  severity: Error
+provenance:
+  p21_id: AD0544
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

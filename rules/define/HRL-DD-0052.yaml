@@ -1,0 +1,24 @@
+id: HRL-DD-0052
+version: 1
+status: Published
+standard: Define-XML
+category: Presence
+sensitivity: Record
+executability: Not Executable
+description: For regulatory submission data, def:ArchiveLocationID attribute is required
+  and must be included in Define.xml and cannot be empty.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Missing def:ArchiveLocationID value
+  severity: Error
+provenance:
+  p21_id: DD0056
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

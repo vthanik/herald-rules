@@ -1,0 +1,37 @@
+id: HRL-SD-0161
+version: 1
+status: Published
+standard: SDTM
+category: Metadata
+sensitivity: Dataset
+executability: Partially Executable
+description: Variables designed only for SEND pre-clinical studies must be not included
+  in the SDTM dataset.
+scope:
+  classes:
+    - SPECIAL-PURPOSE
+  domains:
+    - SE
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: '%Variables.Core:Send Only%'
+outcome:
+  message: Variable which can be used only in SEND
+  severity: Error
+provenance:
+  p21_id: SD1074
+  core_id: ~
+  cg_ids:
+    - CG0352
+    - CG0353
+    - CG0354
+    - CG0355
+    - CG0356
+    - CG0357
+    - CG0358
+    - CG0621-CG0644
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

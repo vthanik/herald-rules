@@ -1,0 +1,31 @@
+id: HRL-SD-0508
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: '''Current Therapy or Treatment'' (CURTRT) record must be populated in
+  Trial Summary (TS) domain, when ADDON is ''Y''. It is expected for SDTM IG v3.1.2
+  data and required for data in all more recent SDTM versions.'
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TS
+check:
+  all:
+    - name: TSPARMCD
+      operator: variable_exists
+      value: CURTRT
+outcome:
+  message: Missing CURTRT Trial Summary Parameter
+  severity: Error
+provenance:
+  p21_id: SD2216
+  core_id: ~
+  cg_ids:
+    - CG0287
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

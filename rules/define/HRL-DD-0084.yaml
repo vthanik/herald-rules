@@ -1,0 +1,23 @@
+id: HRL-DD-0084
+version: 1
+status: Published
+standard: Define-XML
+category: Presence
+sensitivity: Record
+executability: Not Executable
+description: A Description element must be included in each arm:ResultDisplay.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Missing Required Description Element
+  severity: Error
+provenance:
+  p21_id: DD0090
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

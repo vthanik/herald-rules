@@ -1,0 +1,32 @@
+id: HRL-SD-0577
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Value of Original Result (--ORRES) variable is expected to be missing,
+  when observation was not performed (Status (--STAT) is 'NOT DONE').
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all: []
+outcome:
+  message: '%Domain%ORRES value is populated, when %Domain%STAT is ''NOT DONE'''
+  severity: Error
+provenance:
+  p21_id: SD1123
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB042
+  source_doc: P21 Community SEND-IG 3.0 (FDA)
+

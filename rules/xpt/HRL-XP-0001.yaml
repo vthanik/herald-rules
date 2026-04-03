@@ -1,0 +1,35 @@
+id: HRL-XP-0001
+version: 1
+status: Published
+standard: XPT
+category: Structure
+sensitivity: Dataset
+executability: Fully Executable
+
+description: >
+  Dataset name must not exceed 8 characters. The SAS V5 transport format limits member names to 8 characters.
+
+scope:
+  classes:
+    []
+  domains:
+    []
+
+check:
+  all:
+    - name: dataset_name
+      operator: shorter_than
+      value: 9
+
+outcome:
+  message: "Dataset name '{dataset_name}' exceeds 8 characters"
+  severity: Error
+
+provenance:
+  p21_id: XP0001
+  core_id: null
+  cg_ids:
+    - CG0401
+  fda_ids:
+    - FDA-XPT-001
+  source_doc: "SAS V5 Transport Format Specification"

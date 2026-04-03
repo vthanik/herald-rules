@@ -1,0 +1,31 @@
+id: HRL-SD-0244
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Trial Summary (TS) domain must contain only one record for 'AGEMIN' Parameter.
+scope:
+  classes:
+    - INTERVENTIONS
+  domains:
+    - AG
+check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: AGEMIN
+    - name: TSPARMCD
+      operator: is_unique
+outcome:
+  message: Multiple AGEMIN records
+  severity: Error
+provenance:
+  p21_id: SD1218
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB011
+  source_doc: SDTM-IG v3.3
+

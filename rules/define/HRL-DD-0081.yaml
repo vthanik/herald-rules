@@ -1,0 +1,27 @@
+id: HRL-DD-0081
+version: 1
+status: Published
+standard: Define-XML
+category: Metadata
+sensitivity: Dataset
+executability: Not Executable
+description: 'Analysis Results Metadata was developed specifically for ADaM and therefore
+  should not be included with SDTM or SEND defines. Analysis Results Metadata inclusion
+  is indicated by the presence of the arm:AnalysisResultDisplays element. Note: Refer
+  to the data standards catalog by the relevant Regulatory Agency for acceptance of
+  standards and their versions.'
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: ARM metadata included in non ADaM define.xml
+  severity: Error
+provenance:
+  p21_id: DD0087
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

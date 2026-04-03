@@ -1,0 +1,24 @@
+id: HRL-DD-0038
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Dataset
+executability: Not Executable
+description: The KeySequence attribute for ItemRef element must be unique within a
+  single ItemGroupDef.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Duplicate KeySequence
+  severity: Error
+provenance:
+  p21_id: DD0041
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

@@ -1,0 +1,34 @@
+id: HRL-SD-0421
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: '''Multiple Challenge Agent Category Ind'' (MCCATIND) record must be
+  populated in Challenge Agent Characterization (AC) domain.'
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: ACPARMCD
+      operator: variable_exists
+      value: MCCATIND
+outcome:
+  message: Missing MCCATIND Challenge Agent Parameter
+  severity: Error
+provenance:
+  p21_id: SD1409
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community SEND-IG-AR 1.0 (FDA)
+

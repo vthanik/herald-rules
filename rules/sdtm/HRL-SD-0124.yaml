@@ -1,0 +1,34 @@
+id: HRL-SD-0124
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: Start Relative to Reference Period (--STRF) should not be populated for
+  subjects with missing value for Reference Start Date/Time (RFSTDTC).
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --STRF
+      operator: non_empty
+outcome:
+  message: Value for %Domain%STRF is populated, when RFSTDTC is NULL
+  severity: Error
+provenance:
+  p21_id: SD1030
+  core_id: ~
+  cg_ids:
+    - CG0226
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

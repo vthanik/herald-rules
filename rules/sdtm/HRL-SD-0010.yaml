@@ -1,0 +1,34 @@
+id: HRL-SD-0010
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+
+description: >
+  ARMCD must not be empty for randomized subjects in the DM domain. When a subject has been randomized, the planned arm code must be populated.
+
+scope:
+  classes:
+    - SPECIAL-PURPOSE
+  domains:
+    - DM
+
+check:
+  all:
+    - name: ARMCD
+      operator: non_empty
+
+outcome:
+  message: "ARMCD is empty or missing for subject '{USUBJID}' in DM"
+  severity: Error
+
+provenance:
+  p21_id: SD0010
+  core_id: CORE-000261
+  cg_ids:
+    - CG0010
+  fda_ids:
+    []
+  source_doc: "SDTM-IG v3.3 Section 5.1"

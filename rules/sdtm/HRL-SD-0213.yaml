@@ -1,0 +1,37 @@
+id: HRL-SD-0213
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: A value for Description of Actual Arm (ACTARM) must have a unique value
+  for Actual Arm Code (ACTARMCD) with the domain.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: ACTARMCD
+      operator: non_empty
+    - name: ACTARMCD
+      operator: all_values_equal
+      group_by: ACTARM
+outcome:
+  message: Inconsistent value for ACTARM
+  severity: Error
+provenance:
+  p21_id: SD1133
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB009
+  source_doc: SDTM-IG v3.3
+

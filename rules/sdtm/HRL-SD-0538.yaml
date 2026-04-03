@@ -1,0 +1,32 @@
+id: HRL-SD-0538
+version: 1
+status: Published
+standard: SDTM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: TSVAL variable value must be in ISO 8601 format, when TSPARMCD='SSTDTC'.
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - SS
+check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: SSTDTC
+    - name: TSVAL
+      operator: non_empty
+outcome:
+  message: Invalid TSVAL value for SSTDTC
+  severity: Error
+provenance:
+  p21_id: SD2247
+  core_id: ~
+  cg_ids:
+    - CG0285
+  fda_ids:
+    - FDAB011
+  source_doc: SDTM-IG v3.3
+

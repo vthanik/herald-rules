@@ -1,0 +1,37 @@
+id: HRL-SD-0451
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: By its definition clinical baseline flags (e.g., last non-missing value
+  prior to first dose) should have only a single record for the same test for subject.
+  Therefore, each subject (USUBJID) should have no more than one record with Baseline
+  Flag (--BLFL) equals 'Y' for the same assessment which is defined by Test (--TESTCD),
+  Category (--CAT), Subcategory (--SCAT), Method (--METHOD), Specimen (--SPEC), Location
+  (--LOC), Laterality (--LAT) and Directionality (--DIR).
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - SC
+check:
+  all:
+    - name: --BLFL
+      operator: equal_to
+      value: 'Y'
+    - name: '%Domain%TESTCD'
+      operator: is_unique
+      group_by: USUBJID,%Domain%CAT,%Domain%SCAT,%Domain%METHOD,%Domain%SPEC,%Domain%LOC,%Domain%LAT,%Domain%DIR
+outcome:
+  message: Multiple BASELINE records for the same test
+  severity: Error
+provenance:
+  p21_id: SD1439
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB026
+  source_doc: SDTM-IG v3.3
+

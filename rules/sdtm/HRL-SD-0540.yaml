@@ -1,0 +1,29 @@
+id: HRL-SD-0540
+version: 1
+status: Published
+standard: SDTM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: TSVAL variable value must be numeric, when TSPARMCD='ACTSUB'.
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TS
+check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: ACTSUB
+outcome:
+  message: Invalid TSVAL value for ACTSUB
+  severity: Error
+provenance:
+  p21_id: SD2249
+  core_id: ~
+  cg_ids:
+    - CG0457
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

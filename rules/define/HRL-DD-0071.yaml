@@ -1,0 +1,24 @@
+id: HRL-DD-0071
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: If Order number is provided for any Codelist item (EnumeratedItem or
+  CodeListItem) within a Codelist, it must be provided for all other items as well.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Missing Order number
+  severity: Error
+provenance:
+  p21_id: DD0077
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

@@ -1,0 +1,25 @@
+id: HRL-DD-0031
+version: 1
+status: Published
+standard: Define-XML
+category: Terminology
+sensitivity: Record
+executability: Not Executable
+description: NCI Code for Codelist must exist in CDISC Controlled Terminology. Define-XML
+  specification represents NCI Code as Name attribute on Alias element when Context
+  attribute is "nci:ExtCodeID".
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Unknown NCI Code value for Codelist <codelist>
+  severity: Error
+provenance:
+  p21_id: DD0033
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

@@ -1,0 +1,34 @@
+id: HRL-SD-0575
+version: 1
+status: Published
+standard: SDTM
+category: Terminology
+sensitivity: Record
+executability: Partially Executable
+description: Value for the LOINC Code (--LOINC) variable must be populated using a
+  LOINC coding system version specified in the define.xml.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --LOINC
+      operator: non_empty
+outcome:
+  message: Value for %Domain%LOINC not found in LOINC coding system
+  severity: Error
+provenance:
+  p21_id: SD2285
+  core_id: ~
+  cg_ids:
+    - CG0400
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

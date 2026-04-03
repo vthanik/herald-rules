@@ -1,0 +1,24 @@
+id: HRL-DD-0104
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: The Origin for Visit Number (VISITNUM) variable should be consistent
+  across all datasets.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Inconsistent Origin for VISITNUM
+  severity: Error
+provenance:
+  p21_id: DD0110
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

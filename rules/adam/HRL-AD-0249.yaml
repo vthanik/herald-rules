@@ -1,0 +1,32 @@
+id: HRL-AD-0249
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: For Analysis Severity/Intensity(N), The CDISC ADaM Validation Checks
+  1.3 explicity require values of 1,2,3 while forbidding Null values for this permissible
+  variable.  In contrast, AESEVN can be 1,2,3 or null. Since ASEVN cannot be null,
+  the value it qualifies ASEV cannot be null. ASEV, if present, should apply imputation
+  rules for missing severity of adverse events as specified in the SAP or metadata.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: '%Variables[ASEV,ASEVN]%'
+      operator: non_empty
+outcome:
+  message: Analysis severity %Variable% value is null
+  severity: Error
+provenance:
+  p21_id: AD0282A
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

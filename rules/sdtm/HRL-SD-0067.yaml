@@ -1,0 +1,41 @@
+id: HRL-SD-0067
+version: 1
+status: Published
+standard: SDTM
+category: Metadata
+sensitivity: Dataset
+executability: Partially Executable
+description: Only variables listed in SDTM model should appear in a dataset. New sponsor
+  defined variables must not be added, and existing variables must not be renamed
+  or modified.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: in
+      value: =%Variables%
+outcome:
+  message: Variable appears in dataset, but is not in SDTM model
+  severity: Error
+provenance:
+  p21_id: SD0058
+  core_id: ~
+  cg_ids:
+    - CG0013
+    - CG0542
+    - CG0564
+    - CG0565
+    - CG0566
+    - CG0567
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

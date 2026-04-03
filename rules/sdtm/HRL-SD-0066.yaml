@@ -1,0 +1,35 @@
+id: HRL-SD-0066
+version: 1
+status: Published
+standard: SDTM
+category: Metadata
+sensitivity: Dataset
+executability: Partially Executable
+description: Variables described in SDTM IG as Expected should be included in the
+  dataset.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: '%Variables.Core:Expected%'
+outcome:
+  message: SDTM Expected variable %Variable% not found
+  severity: Error
+provenance:
+  p21_id: SD0057
+  core_id: ~
+  cg_ids:
+    - CG0016
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

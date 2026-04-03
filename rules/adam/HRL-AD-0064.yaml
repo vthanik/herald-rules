@@ -1,0 +1,27 @@
+id: HRL-AD-0064
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: Last treatment date (TRTEDT) for this patient record should be equal
+  to the max Last Treatment Date (TRxxEDT) among all periods 01 thru xx.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all: []
+outcome:
+  message: TRTEDT != Maximum TRxxEDT on this record
+  severity: Error
+provenance:
+  p21_id: AD0084
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

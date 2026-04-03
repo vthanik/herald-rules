@@ -1,0 +1,35 @@
+id: HRL-SD-0183
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: End Relative to Reference Time Point (--ENRTPT) variable must be included
+  into the domain, when End Relative Time Point (--ENTPT) variable is present.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: '%Domain%ENRTPT'
+outcome:
+  message: Missing %Domain%ENRTPT variable, when %Domain%ENTPT variable is present
+  severity: Error
+provenance:
+  p21_id: SD1102
+  core_id: ~
+  cg_ids:
+    - CG0057
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

@@ -1,0 +1,30 @@
+id: HRL-AD-0217
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: If both actual treatment (TRTA) and Planned Pooled Treatment y (TRTPGy)
+  are present, then Actual Pooled Treatment y (TRTAGy) must be present.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: TRTAG%Variable.1%
+outcome:
+  message: TRTPGy and TRTA are present but TRTAGy is not present
+  severity: Error
+provenance:
+  p21_id: AD0239
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

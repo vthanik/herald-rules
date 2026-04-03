@@ -1,0 +1,34 @@
+id: HRL-SD-0142
+version: 1
+status: Published
+standard: SDTM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: Qualifier Variable Label (QLABEL) value may have up to 40 characters.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: QLABEL
+      operator: matches_regex
+      value: .{0,40}
+outcome:
+  message: Invalid value for QLABEL
+  severity: Error
+provenance:
+  p21_id: SD1049
+  core_id: ~
+  cg_ids:
+    - CG0416
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

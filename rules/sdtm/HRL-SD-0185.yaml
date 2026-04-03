@@ -1,0 +1,35 @@
+id: HRL-SD-0185
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: Start Relative to Reference Time Point (--STRTPT) variable must be included
+  into the domain, when Start Relative Time Point (--STTPT) variable is present.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: '%Domain%STRTPT'
+outcome:
+  message: Missing %Domain%STRTPT variable, when %Domain%STTPT variable is present
+  severity: Error
+provenance:
+  p21_id: SD1104
+  core_id: ~
+  cg_ids:
+    - CG0060
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

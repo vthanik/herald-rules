@@ -1,0 +1,38 @@
+id: HRL-SD-0396
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: 'End Day of Obs Relative to Exposure (--XENDY) variable value should
+  be populated as defined by CDISC standards: --XENDY = (date portion of --ENDTC)
+  - (date portion of RFXSTDTC) +1 if --ENDTC is on or after RFXSTDTC; --XENDY = (date
+  portion of --DTC) - (date portion of RFXSTDTC) if --ENDTC precedes RFXSTDTC.'
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --XENDY
+      operator: equal_to
+      value: :DY(SUB:RFXSTDTC,%Domain%ENDTC)
+    - name: --XENDY
+      operator: non_empty
+outcome:
+  message: Incorrect value for %Domain%XENDY variable
+  severity: Error
+provenance:
+  p21_id: SD1383
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community SEND-IG-AR 1.0 (FDA)
+

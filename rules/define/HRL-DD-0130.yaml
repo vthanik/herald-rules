@@ -1,0 +1,25 @@
+id: HRL-DD-0130
+version: 1
+status: Published
+standard: Define-XML
+category: Terminology
+sensitivity: Record
+executability: Not Executable
+description: The value of the English dataset's description must match the one specified
+  in the CDISC standard for an ItemGroupDef element that represents a dataset defined
+  as following an SDTMIG or SENDIG standard.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Invalid dataset label value
+  severity: Error
+provenance:
+  p21_id: DD0136
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

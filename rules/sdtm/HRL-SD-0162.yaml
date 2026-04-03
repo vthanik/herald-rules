@@ -1,0 +1,35 @@
+id: HRL-SD-0162
+version: 1
+status: Published
+standard: SDTM
+category: Metadata
+sensitivity: Dataset
+executability: Partially Executable
+description: Variables described in IG as not recommended for usage should be not
+  included in the dataset.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: '%Variables.Core:Not Recommended%'
+outcome:
+  message: Variable not recommended for use
+  severity: Error
+provenance:
+  p21_id: SD1075
+  core_id: ~
+  cg_ids:
+    - CG0467
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

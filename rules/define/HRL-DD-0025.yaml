@@ -1,0 +1,25 @@
+id: HRL-DD-0025
+version: 1
+status: Published
+standard: Define-XML
+category: Format
+sensitivity: Record
+executability: Not Executable
+description: MedDRA version must be set to decimal value ending with 0 or 1, for example
+  '9.0' or '14.1'. Define-XML specification represents MedDRA version as Version attribute
+  on ExternalCodeList element within CodeList element.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Invalid MedDRA Version <version>
+  severity: Error
+provenance:
+  p21_id: DD0025
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

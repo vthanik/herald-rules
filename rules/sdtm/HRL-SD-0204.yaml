@@ -1,0 +1,35 @@
+id: HRL-SD-0204
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: Standardized Result in Numeric Format (--STRESN) variable value should
+  be populated, when Standardized Result in Character Format (--STRESC) variable value
+  represents a numeric value.
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TE
+check:
+  all:
+    - name: --STRESC
+      operator: non_empty
+    - name: --TESTCD
+      operator: not_equal_to
+      value: PH
+    - name: '%Domain%STRESN'
+      operator: non_empty
+outcome:
+  message: Missing value for %Domain%STRESN
+  severity: Error
+provenance:
+  p21_id: SD1122
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB031
+  source_doc: SDTM-IG v3.3
+

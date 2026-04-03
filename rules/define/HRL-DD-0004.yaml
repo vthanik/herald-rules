@@ -1,0 +1,34 @@
+id: HRL-DD-0004
+version: 1
+status: Published
+standard: Define-XML
+category: Structure
+sensitivity: Dataset
+executability: Fully Executable
+
+description: >
+  Dataset name must be a valid SAS V5 transport format name in Define-XML. Names must be 1-8 characters, start with a letter, and contain only letters, digits, and underscores.
+
+scope:
+  classes:
+    []
+  domains:
+    []
+
+check:
+  all:
+    - name: dataset_name
+      operator: is_valid_sas_v5_name
+
+outcome:
+  message: "Dataset name '{dataset_name}' is not a valid SAS V5 name in Define-XML"
+  severity: Error
+
+provenance:
+  p21_id: DD0004
+  core_id: null
+  cg_ids:
+    - CG0204
+  fda_ids:
+    - FDA-DEF-004
+  source_doc: "Define-XML v2.1 Specification Section 4.1, SAS V5 Format"

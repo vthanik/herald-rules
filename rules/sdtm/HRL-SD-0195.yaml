@@ -1,0 +1,36 @@
+id: HRL-SD-0195
+version: 1
+status: Published
+standard: SDTM
+category: Terminology
+sensitivity: Record
+executability: Partially Executable
+description: Value for Body System or Organ Class (--BODSYS) variable must be populated
+  using a System Organ Class of the MedDRA dictionary of a version specified in the
+  define.xml (Case-insensitive).
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: '%Variables[--BODSYS]%'
+      operator: non_empty
+outcome:
+  message: Value for %Domain%BODSYS not found in MedDRA dictionary
+  severity: Error
+provenance:
+  p21_id: SD1114
+  core_id: ~
+  cg_ids:
+    - CG0385
+  fda_ids:
+    - FDAB003
+  source_doc: SDTM-IG v3.3
+

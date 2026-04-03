@@ -1,0 +1,38 @@
+id: HRL-SD-0398
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: 'Start Day of Obs Rel to Challenge Agent (--CHSTDY) variable value should
+  be populated as defined by CDISC standards: --CHSTDY = (date portion of --STDTC)
+  - (date portion of RFCSTDTC) +1 if --STDTC is on or after RFCSTDTC; --CHSTDY = (date
+  portion of --STDTC) - (date portion of RFCSTDTC) if --STDTC precedes RFCSTDTC.'
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --CHSTDY
+      operator: equal_to
+      value: :DY(SUB:RFCSTDTC,%Domain%STDTC)
+    - name: --CHSTDY
+      operator: non_empty
+outcome:
+  message: Incorrect value for %Domain%CHSTDY variable
+  severity: Error
+provenance:
+  p21_id: SD1385
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community SEND-IG-AR 1.0 (FDA)
+

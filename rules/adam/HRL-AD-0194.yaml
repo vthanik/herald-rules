@@ -1,0 +1,38 @@
+id: HRL-AD-0194
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: When all 3 variables are populated and base <> 0, PCHG (percent change
+  from baseline) must equal the difference of Analysis Value (AVAL) minus Baseline
+  Value (BASE) divided by the baseline value, expressed as a percentage. AD0225A will
+  raise errors when BASE = 0.  AD0132B also complements this check.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: PCHG
+      operator: non_empty
+    - name: AVAL
+      operator: non_empty
+    - name: BASE
+      operator: non_empty
+    - name: BASE
+      operator: not_equal_to
+      value: '0'
+outcome:
+  message: 'Calculation issue: PCHG != (AVAL - BASE)/BASE * 100'
+  severity: Error
+provenance:
+  p21_id: AD0225
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

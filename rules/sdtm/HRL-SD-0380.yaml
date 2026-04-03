@@ -1,0 +1,37 @@
+id: HRL-SD-0380
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: There should be at most one disposition event record per subject per
+  Subcategory for Disposition Event (DSSCAT) per Epoch. If multiple disposition events
+  are reported for a Subcategory for DSSCAT and EPOCH, the sponsor should identify
+  a primary reason and use that to populate DSTERM and DSDECOD. Additional reasons
+  should be submitted in SUPPDS.
+scope:
+  classes:
+    - EVENTS
+  domains:
+    - DS
+check:
+  all:
+    - name: --CAT
+      operator: equal_to
+      value: DISPOSITION EVENT
+    - name: '%Domain%SEQ'
+      operator: all_values_equal
+      group_by: USUBJID,EPOCH,DSSCAT
+outcome:
+  message: Multiple disposition events for the same DSSCAT and EPOCH
+  severity: Error
+provenance:
+  p21_id: SD1367
+  core_id: ~
+  cg_ids:
+    - CG0536
+    - CG0537
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

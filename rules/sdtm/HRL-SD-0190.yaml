@@ -1,0 +1,35 @@
+id: HRL-SD-0190
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: Exposure (EX) dataset should be included in every submission.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: DOMAIN
+      operator: variable_exists
+      value: EX
+outcome:
+  message: Missing EX dataset
+  severity: Error
+provenance:
+  p21_id: SD1109
+  core_id: ~
+  cg_ids:
+    - CG0407
+  fda_ids:
+    - FDAB004
+  source_doc: SDTM-IG v3.3
+

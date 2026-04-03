@@ -1,0 +1,34 @@
+id: HRL-SD-0237
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: Date/Time of Informed Consent (RFICDTC) variable value should be populated.
+  It would be NULL only in studies not collecting this info.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: RFICDTC
+      operator: non_empty
+outcome:
+  message: Missing value for RFICDTC
+  severity: Error
+provenance:
+  p21_id: SD1210
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB038
+  source_doc: SDTM-IG v3.3
+

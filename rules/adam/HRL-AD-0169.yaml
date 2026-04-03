@@ -1,0 +1,27 @@
+id: HRL-AD-0169
+version: 1
+status: Published
+standard: ADaM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: For BASECATy, y must be the baseline value (BASE/BASEC) category (1 to
+  9).  The numeric version of this variable is anticipated to be BASECAyN.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all: []
+outcome:
+  message: 'Illegal variable name: y is not in [1-9] for BASECATy'
+  severity: Error
+provenance:
+  p21_id: AD0187
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.0
+

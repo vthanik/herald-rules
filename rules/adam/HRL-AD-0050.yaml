@@ -1,0 +1,31 @@
+id: HRL-AD-0050
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: If Planned Pooled Treatment y for Period xx (TRxxPGyN) numeric variable
+  is present, there must be a corresponding Planned Pooled Treatment y for Period
+  xx (TRxxPGy) character variable.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: TR%Variable.1%PG%Variable.2%
+outcome:
+  message: TRxxPGyN is present but TRxxPGy is not present
+  severity: Error
+provenance:
+  p21_id: AD0066
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

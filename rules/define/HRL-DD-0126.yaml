@@ -1,0 +1,24 @@
+id: HRL-DD-0126
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: For codelists that are non-extensible, the def:ExtendedValue attribute
+  is not applicable and must not be included.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Invalid use of def:ExtendedValue attribute
+  severity: Error
+provenance:
+  p21_id: DD0132
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

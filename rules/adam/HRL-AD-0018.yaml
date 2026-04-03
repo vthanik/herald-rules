@@ -1,0 +1,30 @@
+id: HRL-AD-0018
+version: 1
+status: Published
+standard: ADaM
+category: Terminology
+sensitivity: Record
+executability: Partially Executable
+description: A variable with a suffix of RFL must have a value that is Y or null (R
+  = record level flag variable).
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: '%Variables[*RFL]%'
+      operator: in
+      value: 'Y'
+outcome:
+  message: '%Variable.1%RFL value is not Y or null'
+  severity: Error
+provenance:
+  p21_id: AD0033
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

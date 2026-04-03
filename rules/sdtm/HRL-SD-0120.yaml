@@ -1,0 +1,36 @@
+id: HRL-SD-0120
+version: 1
+status: Published
+standard: SDTM
+category: Cross-reference
+sensitivity: Record
+executability: Partially Executable
+description: Combination of Visit Name (VISIT) and Visit Number (VISITNUM) in subject-level
+  domains should match that in the TV domain with the exception of Unscheduled and
+  Unplanned visits.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: VISIT
+      operator: not_equal_to
+      value: '''@and VISIT @neqic ''UNPLAN'
+outcome:
+  message: VISIT/VISITNUM values do not match TV domain data
+  severity: Error
+provenance:
+  p21_id: SD1023
+  core_id: ~
+  cg_ids:
+    - CG0031
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

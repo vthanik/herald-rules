@@ -1,0 +1,36 @@
+id: HRL-SD-0228
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: The structure of Events class domains should be one records per Event
+  per subject. No Events with the same Collected Term (--TERM), Decoded Term (--DECOD),
+  Category (--CAT), Subcategory (--SCAT), Occurrence (--OCCUR), Location (--LOC),
+  Laterality (--LAT), Directionality (--DIR), Severity (--SEV), Toxicity Grade (--TOXGR),
+  Visit Number (VISITNUM), Visit Day (VISITDY), and Start Reference Time Point (--STTPT)
+  values for the same Subject (USUBJID) and the same Start Date (--STDTC) are expected.
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - SC
+check:
+  all:
+    - name: --TERM
+      operator: non_empty
+    - name: '%Domain%STDTC'
+      operator: is_unique
+      group_by: USUBJID,%Domain%TERM,%Domain%DECOD,%Domain%CAT,%Domain%SCAT,%Domain%OCCUR,%Domain%LOC,%Domain%LAT,%Domain%DIR,%Domain%SEV,%Domain%TOXGR,VISITNUM,VISITDY,%Domain%STTPT
+outcome:
+  message: Duplicate records in %Domain% domain
+  severity: Error
+provenance:
+  p21_id: SD1201
+  core_id: ~
+  cg_ids:
+    - CG0019
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

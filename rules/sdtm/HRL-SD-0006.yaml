@@ -1,0 +1,35 @@
+id: HRL-SD-0006
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Dataset
+executability: Fully Executable
+
+description: >
+  SUBJID must be unique per STUDYID within the DM domain. No two subjects in the same study may share the same SUBJID value.
+
+scope:
+  classes:
+    - SPECIAL-PURPOSE
+  domains:
+    - DM
+
+check:
+  all:
+    - name: SUBJID
+      operator: is_unique
+      group_by: STUDYID
+
+outcome:
+  message: "SUBJID '{SUBJID}' is duplicated within STUDYID '{STUDYID}' in DM"
+  severity: Error
+
+provenance:
+  p21_id: SD0006
+  core_id: CORE-000257
+  cg_ids:
+    - CG0006
+  fda_ids:
+    []
+  source_doc: "SDTM-IG v3.3 Section 5.1"

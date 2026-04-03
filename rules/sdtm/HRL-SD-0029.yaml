@@ -1,0 +1,34 @@
+id: HRL-SD-0029
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+
+description: >
+  LBTEST must not be empty in the LB domain. The laboratory test name is required for every laboratory record.
+
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - LB
+
+check:
+  all:
+    - name: LBTEST
+      operator: non_empty
+
+outcome:
+  message: "LBTEST is empty or missing in LB for subject '{USUBJID}'"
+  severity: Error
+
+provenance:
+  p21_id: SD0029
+  core_id: CORE-000280
+  cg_ids:
+    - CG0029
+  fda_ids:
+    []
+  source_doc: "SDTM-IG v3.3 Section 6.3.4"

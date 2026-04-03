@@ -1,0 +1,38 @@
+id: HRL-SD-0399
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: 'End Day of Obs Rel to Challenge Agent (--CHENDY) variable value should
+  be populated as defined by CDISC standards: --CHENDY = (date portion of --ENDTC)
+  - (date portion of RFCSTDTC) +1 if --ENDTC is on or after RFCSTDTC; --CHENDY = (date
+  portion of --ENDTC) - (date portion of RFCSTDTC) if --ENDTC precedes RFCSTDTC.'
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --CHENDY
+      operator: equal_to
+      value: :DY(SUB:RFCSTDTC,%Domain%ENDTC)
+    - name: --CHENDY
+      operator: non_empty
+outcome:
+  message: Incorrect value for %Domain%CHENDY variable
+  severity: Error
+provenance:
+  p21_id: SD1386
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community SEND-IG-AR 1.0 (FDA)
+

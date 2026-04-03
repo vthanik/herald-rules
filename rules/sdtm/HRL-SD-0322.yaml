@@ -1,0 +1,32 @@
+id: HRL-SD-0322
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: When the study population is not healthy subjects (TSPARMCD = 'HLTSUBJI'
+  and TSVAL = 'N'), the Diagnosis Group parameter should be provided with Parameter
+  Value populated (TSVAL should not be null when TSPARMCD = 'TDIGRP').
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TS
+check:
+  all:
+    - name: TSPARMCD
+      operator: variable_exists
+      value: TDIGRP
+outcome:
+  message: TSVAL is missing for the TDIGRP Trial Summary Parameter, when HLTSUBJI
+    parameter equals 'N'
+  severity: Error
+provenance:
+  p21_id: SD1307
+  core_id: ~
+  cg_ids:
+    - CG0273
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

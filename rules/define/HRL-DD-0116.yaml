@@ -1,0 +1,23 @@
+id: HRL-DD-0116
+version: 1
+status: Published
+standard: Define-XML
+category: Cross-reference
+sensitivity: Record
+executability: Not Executable
+description: The referenced CDISC standard must be defined in a def:Standard element.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Referenced CDISC Standard is missing
+  severity: Error
+provenance:
+  p21_id: DD0122
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

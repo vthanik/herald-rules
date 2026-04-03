@@ -1,0 +1,41 @@
+id: HRL-SD-0136
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: Value of Start Relative to Reference Period (--STRF) or End Relative
+  to Reference Period (--ENRF) should not be populated, when an event or intervention
+  is marked as not occurred (--OCCUR='N').
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --STRF
+      operator: is_empty
+    - name: --ENRF
+      operator: is_empty
+    - name: --OCCUR
+      operator: equal_to
+      value: 'N'
+outcome:
+  message: Time point for non-occurred event or intervention is provided
+  severity: Error
+provenance:
+  p21_id: SD1042
+  core_id: ~
+  cg_ids:
+    - CG0420
+    - CG0421
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

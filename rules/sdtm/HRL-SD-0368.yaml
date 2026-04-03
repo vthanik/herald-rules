@@ -1,0 +1,30 @@
+id: HRL-SD-0368
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: When the Disease Milestone Instance Name (MIDS) variable is used in any
+  dataset, the Trial Disease Milestones (TM) dataset must be present for the study.
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - MI
+check:
+  all:
+    - name: DOMAIN
+      operator: variable_exists
+      value: TM
+outcome:
+  message: Missing TM dataset, when variable MIDS is present in a dataset
+  severity: Error
+provenance:
+  p21_id: SD1355
+  core_id: ~
+  cg_ids:
+    - CG0501
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

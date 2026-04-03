@@ -1,0 +1,30 @@
+id: HRL-AD-0325
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: If MCRITyMN is used in a dataset, MCRITyML must also be present in that
+  dataset.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: MCRIT%Variable.1%ML
+outcome:
+  message: MCRITyMN is present and MCRITyML is not present
+  severity: Error
+provenance:
+  p21_id: AD0552
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

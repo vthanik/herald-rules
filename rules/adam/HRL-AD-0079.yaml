@@ -1,0 +1,29 @@
+id: HRL-AD-0079
+version: 1
+status: Published
+standard: ADaM
+category: Cross-reference
+sensitivity: Record
+executability: Partially Executable
+description: When analysis period (APERIOD) exists such as 01, the BDS Analysis period
+  end date time (APEREDTM) must equal ADSL analysis period end date time (AP01EDTM)
+  for that period.
+scope:
+  classes:
+    - ADSL
+  domains:
+    - ADSL
+check:
+  all:
+    - name: APERIOD
+      operator: non_empty
+outcome:
+  message: BDS.APERIOD xx has an APEREDTM != ADSL.APxxEDTM
+  severity: Error
+provenance:
+  p21_id: AD0101
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

@@ -1,0 +1,35 @@
+id: HRL-SD-0091
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: All SUPPQUAL Domains records are associated with a single parent record
+  and must have a unique combination of Study Identifier (STUDYID), Unique Subject
+  Identifier (USUBJID), Identifying Variable (IDVAR), Identifying Variable Value (IDVARVAL)
+  and Qualifier Variable Name (QNAM) variable value. For all SUPPQUAL domain record
+  all The QNAM variable should be unique for each parent record.
+scope:
+  classes:
+    - INTERVENTIONS
+  domains:
+    - SU
+check:
+  all:
+    - name: USUBJID
+      operator: non_empty
+    - name: USUBJID
+      operator: is_unique
+      group_by: STUDYID,IDVAR,IDVARVAL,QNAM
+outcome:
+  message: SUPPQUAL duplicate records
+  severity: Error
+provenance:
+  p21_id: SD0086
+  core_id: ~
+  cg_ids:
+    - CG0411
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

@@ -1,0 +1,32 @@
+id: HRL-SD-0579
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Name of Treatment variables (--TRT) should not be populated with values
+  of 'OTHER'.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all: []
+outcome:
+  message: '%Domain%TRT equals ''OTHER'''
+  severity: Error
+provenance:
+  p21_id: SD1273
+  core_id: ~
+  cg_ids:
+    - CG0342
+  fda_ids: []
+  source_doc: P21 Community SDTM-IG 3.3 (FDA)
+

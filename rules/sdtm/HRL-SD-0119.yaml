@@ -1,0 +1,36 @@
+id: HRL-SD-0119
+version: 1
+status: Published
+standard: SDTM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: The value of Qualifier Variable Name (QNAM) should be limited to 8 characters,
+  cannot start with a number, and cannot contain characters other than letters in
+  upper case, numbers, or underscores.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: QNAM
+      operator: matches_regex
+      value: '[A-Z_][A-Z0-9_]{0,7}'
+outcome:
+  message: Invalid value for QNAM variable
+  severity: Error
+provenance:
+  p21_id: SD1022
+  core_id: ~
+  cg_ids:
+    - CG0417
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

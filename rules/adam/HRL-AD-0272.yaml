@@ -1,0 +1,39 @@
+id: HRL-AD-0272
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: If any of SMQzzNAM (Name) ,SMQzzCD (Code) or SMQzzSC (Scope) is populated,
+  then all of these MedDRA SMQ variables must be populated together.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: SMQVARIABLENAM
+      operator: non_empty
+    - name: SMQVARIABLECD
+      operator: non_empty
+    - name: SMQVARIABLESC
+      operator: non_empty
+    - name: '%Variables[SMQ##NAM]%'
+      operator: non_empty
+    - name: SMQVARIABLECD
+      operator: non_empty
+    - name: SMQVARIABLESC
+      operator: non_empty
+outcome:
+  message: 'Only some of these variables are present and populated: SMQ%Variable.1%NAM,SMQ%Variable.1%CD,SMQ%Variable.1%SC'
+  severity: Error
+provenance:
+  p21_id: AD0304
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

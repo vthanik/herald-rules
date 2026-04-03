@@ -1,0 +1,37 @@
+id: HRL-SD-0217
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: Derived Flag (--DRVFL) variable may be populated only when Result in
+  Original Units (--ORRES) value is NULL and Result in Std. Format (--STRESC) value
+  is populated (result is derived rather than collected).
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --DRVFL
+      operator: is_empty
+    - name: --ORRES
+      operator: non_empty
+outcome:
+  message: '%Domain%DRVFL=''Y'', when %Domain%ORRES value is populated'
+  severity: Error
+provenance:
+  p21_id: SD1138
+  core_id: ~
+  cg_ids:
+    - CG0348
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

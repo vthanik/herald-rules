@@ -1,0 +1,29 @@
+id: HRL-SD-0121
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Relationship Type (RELTYPE) must be NULL, when Identifying Variable (IDVAR)
+  is populated with a --SEQ value.
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - RE
+check:
+  all:
+    - name: RELTYPE
+      operator: is_empty
+outcome:
+  message: Invalid value for RELTYPE variable
+  severity: Error
+provenance:
+  p21_id: SD1026
+  core_id: ~
+  cg_ids:
+    - CG0419
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

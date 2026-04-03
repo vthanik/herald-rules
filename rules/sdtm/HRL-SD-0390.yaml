@@ -1,0 +1,32 @@
+id: HRL-SD-0390
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: All subjects with Reason Arm and/or Actual Arm is Null (ARMNRS) equal
+  to 'SCREEN FAILURE' should have records in the Inclusion/Exclusion Criteria Not
+  Met (IE) domain.
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - SC
+check:
+  all:
+    - name: ARMNRS
+      operator: equal_to_case_insensitive
+      value: SCREEN FAILURE
+outcome:
+  message: No records for SCREEN FAILURE subject are found in IE domain
+  severity: Error
+provenance:
+  p21_id: SD1377
+  core_id: ~
+  cg_ids:
+    - CG0109
+    - CG0513
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

@@ -1,0 +1,31 @@
+id: HRL-AD-0045
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: The presence of SDTM.EX (Exposure) domain implies that there should be
+  a Treatment End Date / Datetime field present in the ADaM data. ADaM rule AD0061
+  corresponds to start date and times. ADaM IG requires it if there is an investigational
+  product.
+scope:
+  classes:
+    - ADSL
+  domains:
+    - ADSL
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: TRTEDT,TRTEDTM
+outcome:
+  message: SDTM.EX is present but neither ADSL TRTEDT nor TRTEDTM are present
+  severity: Error
+provenance:
+  p21_id: AD0061A
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

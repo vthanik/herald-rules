@@ -1,0 +1,28 @@
+id: HRL-AD-0177
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: At least one analysis value (numeric or character) must be present in
+  BDS.
+scope:
+  classes:
+    - BDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: AVAL,AVALC
+outcome:
+  message: Neither AVAL nor AVALC are present in dataset
+  severity: Error
+provenance:
+  p21_id: AD0198
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

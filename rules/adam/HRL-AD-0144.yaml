@@ -1,0 +1,30 @@
+id: HRL-AD-0144
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: If Criterion y variable Flag is present, there must also be a corresponding
+  Criterion y variable.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: CRIT%Variable.1%
+outcome:
+  message: CRITyFL is present but CRITy is not present
+  severity: Error
+provenance:
+  p21_id: AD0156
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

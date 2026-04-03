@@ -1,0 +1,29 @@
+id: HRL-AD-0039
+version: 1
+status: Published
+standard: ADaM
+category: Cross-reference
+sensitivity: Record
+executability: Partially Executable
+description: The combination of Study Identifier (STUDYID) and Unique subject identifier
+  (USUBJID) is not found in the SDTM Demographics domain.  There must be traceability
+  between ADaM and SDTM.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all: []
+outcome:
+  message: The combination of STUDYID and USUBJID value does not exist in the SDTM
+    DM domain
+  severity: Error
+provenance:
+  p21_id: AD0053
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

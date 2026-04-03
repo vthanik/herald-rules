@@ -1,0 +1,40 @@
+id: HRL-SD-0159
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Value of Identifying Variable (IDVAR) variable must be populated, when
+  Related Domain Abbreviation (RDOMAIN) variable value is provided, with the only
+  exception of 'DM' value for RDOMAIN.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: RDOMAIN
+      operator: not_equal_to
+      value: DM
+    - name: IDVAR
+      operator: non_empty
+outcome:
+  message: Missing IDVAR value, when RDOMAIN value is provided
+  severity: Error
+provenance:
+  p21_id: SD1072
+  core_id: ~
+  cg_ids:
+    - CG0204
+    - CG0371
+    - CG0203
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

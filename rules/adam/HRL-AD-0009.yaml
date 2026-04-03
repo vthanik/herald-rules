@@ -1,0 +1,34 @@
+id: HRL-AD-0009
+version: 1
+status: Published
+standard: ADaM
+category: Format
+sensitivity: Value
+executability: Fully Executable
+
+description: >
+  TRTSDT must be a valid SAS date in ADSL. The treatment start date must be a valid numeric date value (SAS date integer).
+
+scope:
+  classes:
+    - ADSL
+  domains:
+    - ADSL
+
+check:
+  all:
+    - name: TRTSDT
+      operator: is_valid_date
+
+outcome:
+  message: "TRTSDT value '{TRTSDT}' is not a valid date in ADSL for subject '{USUBJID}'"
+  severity: Error
+
+provenance:
+  p21_id: AD0009
+  core_id: null
+  cg_ids:
+    - CG0109
+  fda_ids:
+    - FDA-AD-009
+  source_doc: "ADaM-IG v1.3 Section 3.1.2"

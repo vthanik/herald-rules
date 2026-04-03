@@ -1,0 +1,35 @@
+id: HRL-SD-0232
+version: 1
+status: Published
+standard: SDTM
+category: Limit
+sensitivity: Record
+executability: Fully Executable
+description: Start Date/Time of Treatment (EXSTDTC) variable value must be greater
+  than or equal to Date/Time of First Study Treatment (RFXSTDTC).
+scope:
+  classes:
+    - INTERVENTIONS
+  domains:
+    - EX
+check:
+  all:
+    - name: EXSTDTC
+      operator: greater_than
+      value: eq SUB:RFXSTDTC
+    - name: SUB:RFXSTDTC
+      operator: non_empty
+    - name: EXSTDTC
+      operator: non_empty
+outcome:
+  message: EXSTDTC date is before RFXSTDTC
+  severity: Error
+provenance:
+  p21_id: SD1205
+  core_id: ~
+  cg_ids:
+    - CG0148
+  fda_ids:
+    - FDAB008
+  source_doc: SDTM-IG v3.3
+

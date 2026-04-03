@@ -1,0 +1,45 @@
+id: HRL-SD-0281
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: RFSTDTC must be null when actual arm indicates that the subject is a
+  screen failure ('Screen Failure'), was not assigned to an arm ('Not Assigned'),
+  or was not treated ('NOTTRT'). This rule applies to studies where RFSTDTC is associated
+  with a treatment date.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: RFSTDTC
+      operator: is_empty
+    - name: ACTARM
+      operator: equal_to_case_insensitive
+      value: Screen Failure
+    - name: ACTARM
+      operator: equal_to_case_insensitive
+      value: Not Assigned
+    - name: ACTARM
+      operator: equal_to_case_insensitive
+      value: Not Treated
+outcome:
+  message: RFSTDTC is populated for subject who did not receive treatment
+  severity: Error
+provenance:
+  p21_id: SD1258
+  core_id: ~
+  cg_ids:
+    - CG0145
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

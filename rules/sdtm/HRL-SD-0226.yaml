@@ -1,0 +1,32 @@
+id: HRL-SD-0226
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: All values of Inclusion/Exclusion Criterion (IETEST) should be the same
+  for a given value of Inclusion/Exclusion Criterion Short Name (IETESTCD).
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - IE
+check:
+  all:
+    - name: IETEST
+      operator: non_empty
+    - name: IETEST
+      operator: all_values_equal
+      group_by: IETESTCD
+outcome:
+  message: Inconsistent value for IETEST within IETESTCD
+  severity: Error
+provenance:
+  p21_id: SD1150
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB009
+  source_doc: SDTM-IG v3.3
+

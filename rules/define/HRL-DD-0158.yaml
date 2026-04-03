@@ -1,0 +1,25 @@
+id: HRL-DD-0158
+version: 1
+status: Published
+standard: Define-XML
+category: Terminology
+sensitivity: Record
+executability: Not Executable
+description: The Repeating attribute for Dataset must have a value of 'Yes' or 'No'.
+  Define-XML specification represents Datasets as ItemGroupDef elements within MetaDataVersion
+  element.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Invalid Repeating value
+  severity: Error
+provenance:
+  p21_id: OD0072
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

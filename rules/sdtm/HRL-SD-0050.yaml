@@ -1,0 +1,34 @@
+id: HRL-SD-0050
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+
+description: >
+  DSTERM must not be empty in the DS domain. The reported disposition term is required for every disposition record.
+
+scope:
+  classes:
+    - EVENTS
+  domains:
+    - DS
+
+check:
+  all:
+    - name: DSTERM
+      operator: non_empty
+
+outcome:
+  message: "DSTERM is empty or missing in DS for subject '{USUBJID}'"
+  severity: Error
+
+provenance:
+  p21_id: SD0050
+  core_id: CORE-000300
+  cg_ids:
+    - CG0050
+  fda_ids:
+    []
+  source_doc: "SDTM-IG v3.3 Section 6.2.2"

@@ -1,0 +1,39 @@
+id: HRL-SD-0266
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: All values of Body System or Organ Class (--BODSYS) should be the same
+  for a given value of Body System or Organ Class Code (--BDSYCD).
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --BODSYS
+      operator: non_empty
+    - name: --BDSYCD
+      operator: non_empty
+    - name: '%Domain%BODSYS'
+      operator: all_values_equal
+      group_by: '%Domain%BDSYCD'
+outcome:
+  message: Inconsistent value for %Domain%BODSYS within %Domain%BDSYCD
+  severity: Error
+provenance:
+  p21_id: SD1242
+  core_id: ~
+  cg_ids:
+    - CG0083
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

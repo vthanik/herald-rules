@@ -1,0 +1,34 @@
+id: HRL-SD-0033
+version: 1
+status: Published
+standard: SDTM
+category: Format
+sensitivity: Value
+executability: Fully Executable
+
+description: >
+  LBDTC must be a valid ISO 8601 date/datetime string in the LB domain. The laboratory collection date must conform to ISO 8601 format.
+
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - LB
+
+check:
+  all:
+    - name: LBDTC
+      operator: is_valid_iso8601
+
+outcome:
+  message: "LBDTC value '{LBDTC}' is not a valid ISO 8601 date in LB"
+  severity: Error
+
+provenance:
+  p21_id: SD0033
+  core_id: CORE-000284
+  cg_ids:
+    - CG0033
+  fda_ids:
+    []
+  source_doc: "SDTM-IG v3.3 Section 6.3.4"

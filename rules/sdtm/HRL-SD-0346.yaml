@@ -1,0 +1,37 @@
+id: HRL-SD-0346
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: The Outcome of Adverse Event (AEOUT) variable is populated with the value
+  NOT RECOVERED/NOT RESOLVED, however the End Date/Time of Adverse Event (AEENDTC)
+  variable is populated with an end date for the adverse event. If the adverse event
+  has an outcome of NOT RECOVERED/NOT RESOLVED, it is expected that no end date is
+  available.
+scope:
+  classes:
+    - EVENTS
+  domains:
+    - AE
+check:
+  all:
+    - name: AEENDTC
+      operator: is_empty
+    - name: AEOUT
+      operator: equal_to
+      value: NOT RECOVERED/NOT RESOLVED
+    - name: AEOUT
+      operator: equal_to
+      value: ''''
+outcome:
+  message: Rule HRL-SD-0346 violation
+  severity: Error
+provenance:
+  p21_id: SD1332
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 rule SD1332
+

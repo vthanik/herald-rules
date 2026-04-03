@@ -1,0 +1,37 @@
+id: HRL-SD-0049
+version: 1
+status: Published
+standard: SDTM
+category: Limit
+sensitivity: Value
+executability: Fully Executable
+
+description: >
+  Study Day (--DY) must be non-zero. Per SDTM conventions, there is no Day 0 -- the day of the reference event is Day 1, and the day before is Day -1.
+
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+  domains:
+    []
+
+check:
+  all:
+    - name: {domain_prefix}DY
+      operator: not_equal_to
+      value: 0
+
+outcome:
+  message: "{domain_prefix}DY value is zero in {DOMAIN} -- Study Day cannot be 0"
+  severity: Error
+
+provenance:
+  p21_id: SD0049
+  core_id: CORE-000299
+  cg_ids:
+    - CG0049
+  fda_ids:
+    []
+  source_doc: "SDTM-IG v3.3 Section 4.1.5.1"

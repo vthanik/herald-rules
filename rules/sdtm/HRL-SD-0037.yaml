@@ -1,0 +1,34 @@
+id: HRL-SD-0037
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+
+description: >
+  MHTERM must not be empty in the MH domain. The verbatim medical history term is required for every medical history record.
+
+scope:
+  classes:
+    - EVENTS
+  domains:
+    - MH
+
+check:
+  all:
+    - name: MHTERM
+      operator: non_empty
+
+outcome:
+  message: "MHTERM is empty or missing in MH for subject '{USUBJID}'"
+  severity: Error
+
+provenance:
+  p21_id: SD0037
+  core_id: CORE-000288
+  cg_ids:
+    - CG0037
+  fda_ids:
+    []
+  source_doc: "SDTM-IG v3.3 Section 6.2.3"

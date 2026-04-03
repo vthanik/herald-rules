@@ -1,0 +1,33 @@
+id: HRL-AD-0336
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: 'When validating ADaM datasets, the AE dataset must also be included
+  to ensure traceability. Note: For the final submission the eCTD structure should
+  be maintained. Therefore, the SDTM and ADaM datasets should be submitted in their
+  appropriate locations. Do not include the AE dataset in the ../analysis/adam/datasets
+  folder.'
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: DOMAIN
+      operator: variable_exists
+      value: AE
+outcome:
+  message: Traceability rules not executed due to missing AE dataset
+  severity: Error
+provenance:
+  p21_id: AD1025
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

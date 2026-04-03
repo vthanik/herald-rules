@@ -1,0 +1,25 @@
+id: HRL-DD-0135
+version: 1
+status: Published
+standard: Define-XML
+category: Terminology
+sensitivity: Record
+executability: Not Executable
+description: The value of the Status attribute must be one of the values from the
+  CDISC/NCI standard Status codelist included in the Define-XML Controlled Terminology
+  (C172332).
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Invalid Status value
+  severity: Error
+provenance:
+  p21_id: DD0141
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

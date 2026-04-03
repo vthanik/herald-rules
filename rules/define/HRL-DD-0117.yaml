@@ -1,0 +1,24 @@
+id: HRL-DD-0117
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: The length of a value level slice must be less than or equal to the length
+  of the parent variable.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Variable/Value Level Length mismatch
+  severity: Error
+provenance:
+  p21_id: DD0123
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

@@ -1,0 +1,24 @@
+id: HRL-DD-0110
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: When SDTM Event or Intervention qualifier variable is used as FATESTCD,
+  then FATEST should be the corresponding qualifier variable label.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: FATESTCD/FATEST mismatch in Codelist <codelist>
+  severity: Error
+provenance:
+  p21_id: DD0116
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

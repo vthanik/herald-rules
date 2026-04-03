@@ -1,0 +1,30 @@
+id: HRL-AD-0244
+version: 1
+status: Published
+standard: ADaM
+category: Terminology
+sensitivity: Record
+executability: Partially Executable
+description: AESEVN and ASEVN must have values have values in [1,2,3] when populated.   AESEVN
+  can be null.  ASEVN cannot be null.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: '%Variables[AESEVN,ASEVN]%'
+      operator: in
+      value: '1,2,3'
+outcome:
+  message: '%Variable% value != 1, 2, 3, or null'
+  severity: Error
+provenance:
+  p21_id: AD0279
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

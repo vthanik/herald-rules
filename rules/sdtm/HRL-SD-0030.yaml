@@ -1,0 +1,34 @@
+id: HRL-SD-0030
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+
+description: >
+  LBTESTCD must not be empty in the LB domain. The laboratory test short name is required for every laboratory record.
+
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - LB
+
+check:
+  all:
+    - name: LBTESTCD
+      operator: non_empty
+
+outcome:
+  message: "LBTESTCD is empty or missing in LB for subject '{USUBJID}'"
+  severity: Error
+
+provenance:
+  p21_id: SD0030
+  core_id: CORE-000281
+  cg_ids:
+    - CG0030
+  fda_ids:
+    []
+  source_doc: "SDTM-IG v3.3 Section 6.3.4"

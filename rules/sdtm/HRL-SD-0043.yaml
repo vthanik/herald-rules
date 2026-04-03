@@ -1,0 +1,39 @@
+id: HRL-SD-0043
+version: 1
+status: Published
+standard: SDTM
+category: Structure
+sensitivity: Dataset
+executability: Fully Executable
+
+description: >
+  Variable names must be valid SAS V5 transport format names. Names must be 1-8 characters, start with a letter, and contain only letters, digits, and underscores.
+
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+  domains:
+    []
+
+check:
+  all:
+    - name: {all_variables}
+      operator: is_valid_sas_v5_name
+
+outcome:
+  message: "Variable name '{variable_name}' is not a valid SAS V5 transport name in {DOMAIN}"
+  severity: Error
+
+provenance:
+  p21_id: SD0043
+  core_id: CORE-000294
+  cg_ids:
+    - CG0043
+  fda_ids:
+    - FDA-STR-001
+  source_doc: "SAS V5 Transport Format Specification"

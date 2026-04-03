@@ -1,0 +1,39 @@
+id: HRL-SD-0045
+version: 1
+status: Published
+standard: SDTM
+category: Structure
+sensitivity: Dataset
+executability: Fully Executable
+
+description: >
+  Dataset label must not exceed 40 characters. This is a SAS V5 transport format limitation that applies to all SDTM datasets.
+
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+  domains:
+    []
+
+check:
+  all:
+    - name: {dataset_label}
+      operator: label_length_valid_v5
+
+outcome:
+  message: "Dataset label for {DOMAIN} exceeds 40 characters"
+  severity: Error
+
+provenance:
+  p21_id: SD0045
+  core_id: CORE-000296
+  cg_ids:
+    - CG0045
+  fda_ids:
+    - FDA-STR-003
+  source_doc: "SAS V5 Transport Format Specification"

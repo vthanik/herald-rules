@@ -1,0 +1,32 @@
+id: HRL-SD-0135
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: Values of Category (--CAT) and Subcategory (--SCAT) variables should
+  not be identical.
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - SC
+check:
+  all:
+    - name: --SCAT
+      operator: not_equal_to_variable
+      value: --CAT
+    - name: --CAT
+      operator: non_empty
+outcome:
+  message: Values for %Domain%CAT and %Domain%SCAT are identical
+  severity: Error
+provenance:
+  p21_id: SD1041
+  core_id: ~
+  cg_ids:
+    - CG0027
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

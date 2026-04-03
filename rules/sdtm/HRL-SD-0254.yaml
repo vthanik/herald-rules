@@ -1,0 +1,35 @@
+id: HRL-SD-0254
+version: 1
+status: Published
+standard: SDTM
+category: Terminology
+sensitivity: Record
+executability: Partially Executable
+description: Variable value must be populated with terms from user-defined value level
+  codelist as specified in define.xml file.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: +%Variables.@Clause.CodeList%
+      operator: in
+      value: '%Variable.@Clause.CodeList.Values%'
+outcome:
+  message: '%Variable% value not found in user-defined codelist ''%Variable.@Clause.CodeList.Name%''
+    when %Variable.@Clause.Expression%'
+  severity: Error
+provenance:
+  p21_id: SD1228
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

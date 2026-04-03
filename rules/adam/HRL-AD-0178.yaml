@@ -1,0 +1,30 @@
+id: HRL-AD-0178
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: If Actual Pooled Treatment y  (TRTAGyN) numeric variable is present,
+  there must be a corresponding Planned Pooled Treatment y (TRTPGy) character variable.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: TRTAG%Variable.1%
+outcome:
+  message: TRTAGyN is present but TRTAGy is not present
+  severity: Error
+provenance:
+  p21_id: AD0201
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

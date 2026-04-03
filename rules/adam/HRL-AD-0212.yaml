@@ -1,0 +1,34 @@
+id: HRL-AD-0212
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: Within a study, All TRxxAGyN values must be the same for each unique
+  value of TRxxAGy when both variables are populated. Analogous rule for AD0233.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: TRVARIABLEAGVARIABLE
+      operator: non_empty
+    - name: TRVARIABLEAGVARIABLEN
+      operator: non_empty
+    - name: '%Variables[TR##AG#N]%'
+      operator: all_values_equal
+      group_by: STUDYID,TR%Variable.1%AG%Variable.2%
+outcome:
+  message: Inconsistent value for TR%Variable.1%AG%Variable.2%N
+  severity: Error
+provenance:
+  p21_id: AD0236B
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

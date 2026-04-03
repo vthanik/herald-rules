@@ -1,0 +1,31 @@
+id: HRL-SD-0180
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: Value for Category (--CAT) variable should be populated, when value for
+  Subcategory (--SCAT) variable is populated.
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - SC
+check:
+  all:
+    - name: --SCAT
+      operator: is_empty
+    - name: --CAT
+      operator: is_empty
+outcome:
+  message: Missing %Domain%CAT value, when %Domain%SCAT value is populated
+  severity: Error
+provenance:
+  p21_id: SD1098
+  core_id: ~
+  cg_ids:
+    - CG0429
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

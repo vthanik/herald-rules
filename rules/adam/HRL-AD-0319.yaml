@@ -1,0 +1,32 @@
+id: HRL-AD-0319
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Randomized Population Flag (RANDFL) variable value should be 'Y' for
+  randomized subject (when Date of Randomization (RANDDT) variable value is populated)
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: RANDFL
+      operator: equal_to
+      value: 'Y'
+    - name: RANDDT
+      operator: non_empty
+outcome:
+  message: RANDFL value is not Y, when RANDDT is populated
+  severity: Error
+provenance:
+  p21_id: AD0366B
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

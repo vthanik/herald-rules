@@ -1,0 +1,40 @@
+id: HRL-SD-0144
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Both Identifying Variable (IDVAR) and Identifying Variable Value (IDVARVAL)
+  should not be populated, when relating information to the Demographics (DM) domain.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: IDVAR
+      operator: is_empty
+    - name: IDVARVAL
+      operator: is_empty
+    - name: RDOMAIN
+      operator: equal_to
+      value: DM
+outcome:
+  message: Unexpected value for IDVAR/IDVARVAL
+  severity: Error
+provenance:
+  p21_id: SD1051
+  core_id: ~
+  cg_ids:
+    - CG0203
+    - CG0204
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

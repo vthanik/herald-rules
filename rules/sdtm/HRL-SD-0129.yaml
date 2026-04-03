@@ -1,0 +1,26 @@
+id: HRL-SD-0129
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: Category for Disposition Event (DSCAT) should be populated.
+scope:
+  classes:
+    - EVENTS
+  domains:
+    - DS
+check:
+  all: []
+outcome:
+  message: Missing value for DSCAT
+  severity: Error
+provenance:
+  p21_id: SD1035
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB014
+  source_doc: SDTM-IG v3.3
+

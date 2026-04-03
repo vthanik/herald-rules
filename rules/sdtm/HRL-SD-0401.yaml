@@ -1,0 +1,37 @@
+id: HRL-SD-0401
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: Start Day of Obs relative to Exposure (--XSTDY) variable value should
+  not be imputed. It may only be populated, when both Start Date/Time of Observation
+  (--STDTC) and Date/Time of First Study Treatment (RFXSTDTC) variables values are
+  provided and both of them include complete date parts.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --XSTDY
+      operator: is_empty
+    - name: POOLID
+      operator: is_empty
+outcome:
+  message: '%Domain%XSTDY variable value is imputed'
+  severity: Error
+provenance:
+  p21_id: SD1388
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community SEND-IG-AR 1.0 (FDA)
+

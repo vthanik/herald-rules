@@ -1,0 +1,32 @@
+id: HRL-SD-0544
+version: 1
+status: Published
+standard: SDTM
+category: Terminology
+sensitivity: Record
+executability: Partially Executable
+description: TSVAL for COMPTRT record must be a valid preferred term from FDA Substance
+  Registration System (SRS).
+scope:
+  classes:
+    - SPECIAL-PURPOSE
+  domains:
+    - CO
+check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: COMPTRT
+    - name: TSVAL
+      operator: non_empty
+outcome:
+  message: Invalid TSVAL value for COMPTRT
+  severity: Error
+provenance:
+  p21_id: SD2253
+  core_id: ~
+  cg_ids:
+    - CG0445
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

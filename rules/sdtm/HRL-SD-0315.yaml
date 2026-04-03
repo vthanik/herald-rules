@@ -1,0 +1,32 @@
+id: HRL-SD-0315
+version: 1
+status: Published
+standard: SDTM
+category: Terminology
+sensitivity: Record
+executability: Fully Executable
+description: TSVAL for ADAPT record must be 'Y' or 'N'.
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TS
+check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: ADAPT
+    - name: TSVAL
+      operator: in
+      value: Y,N
+outcome:
+  message: Invalid TSVAL value for ADAPT parameter
+  severity: Error
+provenance:
+  p21_id: SD1296
+  core_id: ~
+  cg_ids:
+    - CG0282
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

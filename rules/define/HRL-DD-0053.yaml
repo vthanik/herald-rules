@@ -1,0 +1,26 @@
+id: HRL-DD-0053
+version: 1
+status: Published
+standard: Define-XML
+category: Presence
+sensitivity: Record
+executability: Not Executable
+description: For regulatory submission data, Description field is required for each
+  Dataset, Method, and Comment and must be included in Define.xml and cannot be empty.
+  Define-XML specification represents Description as Description/TranslatedText element
+  within ItemGroupDef, MethodDef, or def:CommentDef element.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Missing Description value
+  severity: Error
+provenance:
+  p21_id: DD0057
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

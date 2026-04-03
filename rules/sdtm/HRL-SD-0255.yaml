@@ -1,0 +1,33 @@
+id: HRL-SD-0255
+version: 1
+status: Published
+standard: SDTM
+category: Terminology
+sensitivity: Record
+executability: Partially Executable
+description: Variable value must be populated when value level attribute Mandatory='Yes'
+  as specified in define.xml file.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: +%Variables.@Clause.Mandatory:Y%
+      operator: non_empty
+outcome:
+  message: '%Variable% value is null when %Variable.@Clause.Expression%'
+  severity: Error
+provenance:
+  p21_id: SD1229
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

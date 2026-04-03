@@ -1,0 +1,35 @@
+id: HRL-SD-0095
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Results in Death (AESDTH) should equal 'Y', when Outcome of Adverse Event
+  (AEOUT)  is 'FATAL'.
+scope:
+  classes:
+    - EVENTS
+  domains:
+    - AE
+check:
+  all:
+    - name: AESDTH
+      operator: equal_to
+      value: 'Y'
+    - name: AEOUT
+      operator: equal_to
+      value: FATAL
+    - name: AEOUT
+      operator: equal_to
+      value: ''''
+outcome:
+  message: Rule HRL-SD-0095 violation
+  severity: Error
+provenance:
+  p21_id: SD0090
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 rule SD0090
+

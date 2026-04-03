@@ -1,0 +1,25 @@
+id: HRL-DD-0109
+version: 1
+status: Published
+standard: Define-XML
+category: Presence
+sensitivity: Record
+executability: Not Executable
+description: Split and unsplit datasets cannot both be listed in Define.xml. For FDA
+  submissions, Define.xml should only list unsplit datasets with split datasets placed
+  in a separate sub-directory labeled 'split'.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Split and unsplit datasets are both listed
+  severity: Error
+provenance:
+  p21_id: DD0115
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

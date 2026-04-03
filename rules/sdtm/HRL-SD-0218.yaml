@@ -1,0 +1,29 @@
+id: HRL-SD-0218
+version: 1
+status: Published
+standard: SDTM
+category: Metadata
+sensitivity: Dataset
+executability: Partially Executable
+description: Variables requested by PMDA in policy documents should be included in
+  the dataset. E.g., EPOCH.
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - DA
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: '%Variables[EPOCH]%'
+outcome:
+  message: PMDA Expected variable %Variable% not found
+  severity: Error
+provenance:
+  p21_id: SD1140
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community SDTM-IG 3.2 (PMDA)
+

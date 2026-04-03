@@ -1,0 +1,38 @@
+id: HRL-SD-0026
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+
+description: >
+  VSORRES must not be empty when VSSTAT is not 'NOT DONE' in the VS domain. When a vital signs test was performed, the original result must be populated.
+
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - VS
+
+check:
+  all:
+    - name: VSORRES
+      operator: non_empty
+      when:
+        name: VSSTAT
+        operator: not_equal_to
+        value: NOT DONE
+
+outcome:
+  message: "VSORRES is empty but VSSTAT is not 'NOT DONE' in VS for subject '{USUBJID}'"
+  severity: Error
+
+provenance:
+  p21_id: SD0026
+  core_id: CORE-000277
+  cg_ids:
+    - CG0026
+  fda_ids:
+    []
+  source_doc: "SDTM-IG v3.3 Section 6.3.7"

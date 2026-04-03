@@ -1,0 +1,32 @@
+id: HRL-SD-0150
+version: 1
+status: Published
+standard: SDTM
+category: Metadata
+sensitivity: Dataset
+executability: Fully Executable
+description: Datasets included in study data must be described in the data definition
+  document (define.xml).
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - DA
+check:
+  all:
+    - name: ORDER
+      operator: equal_to
+      value: '1'
+    - name: DATASET
+      operator: in
+      value: =%Domains.Define%
+outcome:
+  message: Dataset is not present in define.xml
+  severity: Error
+provenance:
+  p21_id: SD1063
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

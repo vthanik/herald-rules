@@ -1,0 +1,33 @@
+id: HRL-SD-0412
+version: 1
+status: Published
+standard: SDTM
+category: Limit
+sensitivity: Record
+executability: Fully Executable
+description: Start Date/Time of Agent (AGSTDTC) variable value must be greater than
+  or equal to Date/Time of First Challenge Agent Admin (RFCSTDTC).
+scope:
+  classes:
+    - INTERVENTIONS
+  domains:
+    - AG
+check:
+  all:
+    - name: AGSTDTC
+      operator: greater_than
+      value: eq SUB:RFCSTDTC
+    - name: SUB:RFCSTDTC
+      operator: non_empty
+    - name: AGSTDTC
+      operator: non_empty
+outcome:
+  message: AGSTDTC date is before RFCSTDTC
+  severity: Error
+provenance:
+  p21_id: SD1399
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community SEND-IG-AR 1.0 (FDA)
+

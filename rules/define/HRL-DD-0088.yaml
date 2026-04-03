@@ -1,0 +1,24 @@
+id: HRL-DD-0088
+version: 1
+status: Published
+standard: Define-XML
+category: Presence
+sensitivity: Record
+executability: Not Executable
+description: def:CommentOID is required if there is more than one analysis dataset
+  needed to create the respective result.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Missing required def:CommentOID
+  severity: Error
+provenance:
+  p21_id: DD0094
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

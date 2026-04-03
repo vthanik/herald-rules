@@ -1,0 +1,24 @@
+id: HRL-DD-0048
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: SASDatasetName attribute and filename (without extension) identified
+  by def:ArchiveLocationID (def:leaf/xlink:href attribute) must have the same value.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: SASDatasetName/def:ArchiveLocationID mismatch
+  severity: Error
+provenance:
+  p21_id: DD0052
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

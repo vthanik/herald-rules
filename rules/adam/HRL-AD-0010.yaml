@@ -1,0 +1,34 @@
+id: HRL-AD-0010
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+
+description: >
+  PARAMCD must not be empty in BDS (Basic Data Structure) datasets. The parameter code is a required variable that identifies the analysis parameter for each record.
+
+scope:
+  classes:
+    - BDS
+  domains:
+    []
+
+check:
+  all:
+    - name: PARAMCD
+      operator: non_empty
+
+outcome:
+  message: "PARAMCD is empty or missing in BDS dataset"
+  severity: Error
+
+provenance:
+  p21_id: AD0010
+  core_id: null
+  cg_ids:
+    - CG0110
+  fda_ids:
+    - FDA-AD-010
+  source_doc: "ADaM-IG v1.3 Section 3.2"

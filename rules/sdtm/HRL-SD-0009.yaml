@@ -1,0 +1,35 @@
+id: HRL-SD-0009
+version: 1
+status: Published
+standard: SDTM
+category: Terminology
+sensitivity: Value
+executability: Fully Executable
+
+description: >
+  RACE must be in controlled terminology in the DM domain. Valid values are defined by CDISC Controlled Terminology codelist C74457.
+
+scope:
+  classes:
+    - SPECIAL-PURPOSE
+  domains:
+    - DM
+
+check:
+  all:
+    - name: RACE
+      operator: codelist_terms
+      ct_codelist: C74457
+
+outcome:
+  message: "RACE value '{RACE}' is not in CDISC CT codelist C74457"
+  severity: Error
+
+provenance:
+  p21_id: CT0009
+  core_id: CORE-000260
+  cg_ids:
+    - CG0009
+  fda_ids:
+    []
+  source_doc: "SDTM-IG v3.3 Section 5.1, CDISC CT 2023-12-15"

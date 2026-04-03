@@ -1,0 +1,30 @@
+id: HRL-SD-0126
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: All subjects with Planned Arm Code (ARMCD) equals 'SCRNFAIL' should have
+  records in the Inclusion/Exclusion Criteria Not Met (IE) domain.
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - SC
+check:
+  all:
+    - name: ARMCD
+      operator: equal_to_case_insensitive
+      value: SCRNFAIL
+outcome:
+  message: No records for 'SCRNFAIL' subject are found in IE domain
+  severity: Error
+provenance:
+  p21_id: SD1032
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB028
+  source_doc: SDTM-IG v3.3
+

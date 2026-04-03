@@ -1,0 +1,33 @@
+id: HRL-AD-0032
+version: 1
+status: Published
+standard: ADaM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: 'The SAS format listed in the dataset must be valid. Here is a list of
+  SAS Datetime formats utilized in the rule algorithm: B8601DT, B8601DZ, DATEAMPM,
+  DATETIME, DTDATE, DTWKDATX, DTYEAR, DTYYQC, E8601DN, E8601DT, E8601DZ, MDYAMPM,
+  TOD, IS8601DN, IS8601DT, IS8601DZ'
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: FORMAT
+      operator: in
+      value: B8601DT, B8601DZ, DATEAMPM, DATETIME, DTDATE, DTWKDATX, DTYEAR, DTYYQC,
+        E8601DN, E8601DT, E8601DZ, MDYAMPM, TOD, IS8601DN, IS8601DT, IS8601DZ
+outcome:
+  message: '*DTM does not have the ADaM required SAS Datetime format'
+  severity: Error
+provenance:
+  p21_id: AD0043
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

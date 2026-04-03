@@ -1,0 +1,33 @@
+id: HRL-AD-0304
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: Within a Study and a Parameter, all AyLOC (Analysis Range y Lower Limit
+  (C)) variable values must be the same for each unique value of AyLO (Analysis Range
+  y Lower Limit), when variable AyLO is populated
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: AVARIABLELO
+      operator: non_empty
+    - name: '%Variables[A#LOC]%'
+      operator: all_values_equal
+      group_by: STUDYID,PARAMCD,A%Variable.1%LO
+outcome:
+  message: Inconsistent value for A%Variable.1%LOC
+  severity: Error
+provenance:
+  p21_id: AD0348
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

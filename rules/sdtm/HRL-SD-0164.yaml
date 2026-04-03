@@ -1,0 +1,30 @@
+id: HRL-SD-0164
+version: 1
+status: Published
+standard: SDTM
+category: Metadata
+sensitivity: Dataset
+executability: Partially Executable
+description: Variables requested by the relevant regulatory agency in policy documents
+  should be included in the dataset. E.g., EPOCH.
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - DA
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: '%Variables[EPOCH]%'
+outcome:
+  message: Regulatory Expected variable %Variable% not found
+  severity: Error
+provenance:
+  p21_id: SD1077
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB022
+  source_doc: SDTM-IG v3.3
+

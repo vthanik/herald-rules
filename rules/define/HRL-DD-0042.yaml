@@ -1,0 +1,24 @@
+id: HRL-DD-0042
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: For ADaM submission data (where def:StandardName is 'ADaM-IG'), Domain
+  attribute is not applicable and must not be included in Define.xml.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Invalid use of Domain attribute
+  severity: Error
+provenance:
+  p21_id: DD0046
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

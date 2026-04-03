@@ -1,0 +1,23 @@
+id: HRL-DD-0102
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: Study Identifier (STUDYID) variable should have Origin set to 'Protocol'.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Origin for STUDYID variable is not set to Protocol
+  severity: Error
+provenance:
+  p21_id: DD0108
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

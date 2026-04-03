@@ -1,0 +1,31 @@
+id: HRL-AD-0128
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: When CRITyFL (Analysis Criterion Flag) is populated, it's corresponding
+  parent Analysis Criterion y must be populated.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: CRITVARIABLE
+      operator: non_empty
+    - name: '%Variables[CRIT#FL]%'
+      operator: non_empty
+outcome:
+  message: CRITyFL is populated but CRITy is not populated
+  severity: Error
+provenance:
+  p21_id: AD0137
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

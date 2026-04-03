@@ -1,0 +1,31 @@
+id: HRL-AD-0227
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: When CNSR is present, the STARTDT and one of ADT or ADTM must be included
+  in the dataset.  In Time to Event studies, the basis of analysis is the time from
+  a defined starting point to the time of occurrence of the event of interest.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: STARTDT
+outcome:
+  message: CNSR is present but STARTDT is not present
+  severity: Error
+provenance:
+  p21_id: AD0245
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

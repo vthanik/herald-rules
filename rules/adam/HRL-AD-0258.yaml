@@ -1,0 +1,32 @@
+id: HRL-AD-0258
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Across studies, All AREL must be the same for each unique value of ARELN
+  when primary variable AREL is populated.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: AREL
+      operator: non_empty
+    - name: AREL
+      operator: all_values_equal
+      group_by: ARELN
+outcome:
+  message: Inconsistent value for AREL
+  severity: Error
+provenance:
+  p21_id: AD0289
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.0
+

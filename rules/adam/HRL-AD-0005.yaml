@@ -1,0 +1,34 @@
+id: HRL-AD-0005
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+
+description: >
+  TRT01P must not be empty in ADSL for randomized studies. The planned treatment for period 01 is required when the study involves randomization.
+
+scope:
+  classes:
+    - ADSL
+  domains:
+    - ADSL
+
+check:
+  all:
+    - name: TRT01P
+      operator: non_empty
+
+outcome:
+  message: "TRT01P is empty or missing in ADSL for subject '{USUBJID}'"
+  severity: Error
+
+provenance:
+  p21_id: AD0005
+  core_id: null
+  cg_ids:
+    - CG0105
+  fda_ids:
+    - FDA-AD-005
+  source_doc: "ADaM-IG v1.3 Section 3.1.2"

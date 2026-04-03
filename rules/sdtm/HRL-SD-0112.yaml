@@ -1,0 +1,33 @@
+id: HRL-SD-0112
+version: 1
+status: Published
+standard: SDTM
+category: Cross-reference
+sensitivity: Record
+executability: Partially Executable
+description: Epoch (EPOCH) values should match entries in the Trial Arms (TA) dataset.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: EPOCH
+      operator: non_empty
+outcome:
+  message: Invalid EPOCH
+  severity: Error
+provenance:
+  p21_id: SD1015
+  core_id: ~
+  cg_ids:
+    - CG0009
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

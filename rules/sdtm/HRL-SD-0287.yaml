@@ -1,0 +1,33 @@
+id: HRL-SD-0287
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: When the RELREC dataset is used to identify relationships between datasets
+  (in which case USUBJID and IDVARVAL are left null), instead of relating individual
+  records, --SEQ cannot be used for IDVAR because --SEQ only has meaning within a
+  subject within a dataset, not across datasets.
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - RE
+check:
+  all:
+    - name: IDVARVAL
+      operator: is_empty
+    - name: USUBJID
+      operator: is_empty
+outcome:
+  message: IDVAR equals --SEQ when IDVARVAL is null and USUBJID is null
+  severity: Error
+provenance:
+  p21_id: SD1264
+  core_id: ~
+  cg_ids:
+    - CG0201
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

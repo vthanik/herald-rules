@@ -1,0 +1,47 @@
+id: HRL-SD-0133
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: Value of Category (--CAT) should not be identical to that in Domain Abbreviation
+  (DOMAIN); Reported Term (--TERM); Name of Measurement, Test, or Examination (--TESTCD);
+  Name of Treatment (--TRT); Body System or Organ Class (--BODSYS).
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TE
+check:
+  all:
+    - name: --CAT
+      operator: not_equal_to
+      value: DOMAIN
+    - name: --CAT
+      operator: not_equal_to_variable
+      value: --TERM
+    - name: --CAT
+      operator: not_equal_to_variable
+      value: --TESTCD
+    - name: --CAT
+      operator: not_equal_to_variable
+      value: --TRT
+    - name: --CAT
+      operator: not_equal_to_variable
+      value: --BODSYS
+    - name: --CAT
+      operator: non_empty
+outcome:
+  message: '%Domain%CAT value is redundant with other variable values'
+  severity: Error
+provenance:
+  p21_id: SD1039
+  core_id: ~
+  cg_ids:
+    - CG0077
+    - CG0336
+    - CG0337
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

@@ -1,0 +1,30 @@
+id: HRL-AD-0324
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: If PCHGCAyN is used in a dataset, PCHGCATy must also be present in that
+  dataset.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: PCHGCAT%Variable.1%
+outcome:
+  message: PCHGCAyN is present and PCHGCATy is not present
+  severity: Error
+provenance:
+  p21_id: AD0546
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

@@ -1,0 +1,30 @@
+id: HRL-SD-0282
+version: 1
+status: Published
+standard: SDTM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: The value of Set Code (SETCD) should be no more than 8 characters in
+  length.
+scope:
+  classes:
+    - SPECIAL-PURPOSE
+  domains:
+    - SE
+check:
+  all:
+    - name: SETCD
+      operator: matches_regex
+      value: .{0,8}
+outcome:
+  message: Invalid value for SETCD
+  severity: Error
+provenance:
+  p21_id: SD1259
+  core_id: ~
+  cg_ids:
+    - CG0149
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

@@ -1,0 +1,28 @@
+id: HRL-AD-0180
+version: 1
+status: Published
+standard: ADaM
+category: Cross-reference
+sensitivity: Record
+executability: Partially Executable
+description: When analysis period (APERIOD) exists such as 01, the BDS Analysis period
+  start time (APERSTM) must = ADSL analysis period start time (AP01STM) for that period.
+scope:
+  classes:
+    - ADSL
+  domains:
+    - ADSL
+check:
+  all:
+    - name: APERIOD
+      operator: non_empty
+outcome:
+  message: BDS.APERIOD xx has an APERSTM != ADSL.APxxSTM
+  severity: Error
+provenance:
+  p21_id: AD0203
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

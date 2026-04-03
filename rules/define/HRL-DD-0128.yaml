@@ -1,0 +1,26 @@
+id: HRL-DD-0128
+version: 1
+status: Published
+standard: Define-XML
+category: Presence
+sensitivity: Record
+executability: Not Executable
+description: The def:CommentOID attribute is required for an ItemDef when its ItemOID
+  is referenced in an ItemRef that has the def:HasNoData attribute value Yes. A comment
+  must be included to explain why no data is present for the dataset's variables that
+  were planned for use in the study.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Missing required def:CommentOID for Variable
+  severity: Error
+provenance:
+  p21_id: DD0134
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

@@ -1,0 +1,37 @@
+id: HRL-SD-0216
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: Character Result/Finding in Original Units (--ORRES) value should be
+  NULL, when Derived Flag (--DRVFL) value is 'Y'.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --ORRES
+      operator: is_empty
+    - name: --DRVFL
+      operator: equal_to
+      value: 'Y'
+outcome:
+  message: Non-missing value for %Domain%ORRES, when %Domain%DRVFL='Y'
+  severity: Error
+provenance:
+  p21_id: SD1137
+  core_id: ~
+  cg_ids:
+    - CG0348
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

@@ -1,0 +1,29 @@
+id: HRL-AD-0041
+version: 1
+status: Published
+standard: ADaM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: The SAS TYPE for this variable does not equal Num.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: TYPE
+      operator: in
+      value: Num
+outcome:
+  message: '*DT is not a numeric variable'
+  severity: Error
+provenance:
+  p21_id: AD0058
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

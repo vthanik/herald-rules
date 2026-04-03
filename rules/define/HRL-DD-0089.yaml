@@ -1,0 +1,24 @@
+id: HRL-DD-0089
+version: 1
+status: Published
+standard: Define-XML
+category: Metadata
+sensitivity: Dataset
+executability: Not Executable
+description: ItemGroupOID attribute on arm:AnalysisDataset must reference a valid
+  ItemGroupDef
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Invalid ItemGroupOID reference
+  severity: Error
+provenance:
+  p21_id: DD0095
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

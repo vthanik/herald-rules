@@ -1,0 +1,34 @@
+id: HRL-SD-0016
+version: 1
+status: Published
+standard: SDTM
+category: Limit
+sensitivity: Value
+executability: Fully Executable
+
+description: >
+  AGE must be non-negative in the DM domain. Age values cannot be negative numbers.
+
+scope:
+  classes:
+    - SPECIAL-PURPOSE
+  domains:
+    - DM
+
+check:
+  all:
+    - name: AGE
+      operator: is_non_negative
+
+outcome:
+  message: "AGE value '{AGE}' is negative for subject '{USUBJID}' in DM"
+  severity: Error
+
+provenance:
+  p21_id: SD0016
+  core_id: CORE-000267
+  cg_ids:
+    - CG0016
+  fda_ids:
+    []
+  source_doc: "SDTM-IG v3.3 Section 5.1"

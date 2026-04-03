@@ -1,0 +1,24 @@
+id: HRL-DD-0068
+version: 1
+status: Published
+standard: Define-XML
+category: Terminology
+sensitivity: Record
+executability: Not Executable
+description: When Origin is provided at both the Variable and Value Level, then Origin
+  Type values must match.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Variable/Value Level Origin Type mismatch
+  severity: Error
+provenance:
+  p21_id: DD0074
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

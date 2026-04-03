@@ -1,0 +1,35 @@
+id: HRL-SD-0293
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: Pharmacokinetic Concentrations (PC) dataset should be included, when
+  a Pharmacokinetic Parameters(PP) dataset is present.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: DOMAIN
+      operator: variable_exists
+      value: PC
+outcome:
+  message: Missing PC dataset, when PP dataset is present
+  severity: Error
+provenance:
+  p21_id: SD1270
+  core_id: ~
+  cg_ids:
+    - CG0318
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

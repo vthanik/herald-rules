@@ -1,0 +1,36 @@
+id: HRL-SD-0339
+version: 1
+status: Published
+standard: SDTM
+category: Metadata
+sensitivity: Dataset
+executability: Partially Executable
+description: Variable Label in define.xml must match variable Label in dataset.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: equal_to_variable
+      value: '%Variables.Define.Label%'
+    - name: LABEL
+      operator: in
+      value: '%Variable.Define.Label%'
+outcome:
+  message: Define.xml/dataset variable label mismatch
+  severity: Error
+provenance:
+  p21_id: SD1324
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

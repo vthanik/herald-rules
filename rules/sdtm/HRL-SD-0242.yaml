@@ -1,0 +1,31 @@
+id: HRL-SD-0242
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Trial Summary (TS) domain must contain only one record for 'AGEMAX' Parameter.
+scope:
+  classes:
+    - INTERVENTIONS
+  domains:
+    - AG
+check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: AGEMAX
+    - name: TSPARMCD
+      operator: is_unique
+outcome:
+  message: Multiple AGEMAX records
+  severity: Error
+provenance:
+  p21_id: SD1216
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB011
+  source_doc: SDTM-IG v3.3
+

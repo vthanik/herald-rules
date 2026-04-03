@@ -1,0 +1,37 @@
+id: HRL-SD-0027
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+
+description: >
+  VSORRESU must not be empty when VSORRES is present in the VS domain. When a result is recorded, its unit must also be populated.
+
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - VS
+
+check:
+  all:
+    - name: VSORRESU
+      operator: non_empty
+      when:
+        name: VSORRES
+        operator: non_empty
+
+outcome:
+  message: "VSORRESU is empty but VSORRES is populated in VS for subject '{USUBJID}'"
+  severity: Error
+
+provenance:
+  p21_id: SD0027
+  core_id: CORE-000278
+  cg_ids:
+    - CG0027
+  fda_ids:
+    []
+  source_doc: "SDTM-IG v3.3 Section 6.3.7"

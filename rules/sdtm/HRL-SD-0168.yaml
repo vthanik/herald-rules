@@ -1,0 +1,39 @@
+id: HRL-SD-0168
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: 'Collection Study Day (--DY) variable value should be populated as defined
+  by CDISC standards: --DY = (date portion of --DTC) - (date portion of RFSTDTC) +1
+  if --DTC is on or after RFSTDTC; --DY = (date portion of --DTC) - (date portion
+  of RFSTDTC) if --DTC precedes RFSTDTC.'
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --DY
+      operator: equal_to
+      value: :DY(SUB:RFSTDTC,%Domain%DTC)
+    - name: --DY
+      operator: non_empty
+outcome:
+  message: Incorrect value for %Domain%DY variable
+  severity: Error
+provenance:
+  p21_id: SD1086
+  core_id: ~
+  cg_ids:
+    - CG0006
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

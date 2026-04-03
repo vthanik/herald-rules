@@ -1,0 +1,29 @@
+id: HRL-AD-0240
+version: 1
+status: Published
+standard: ADaM
+category: Terminology
+sensitivity: Record
+executability: Partially Executable
+description: AOCC*FL (1st Occurrence of Any ...) must be Y or null.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: '%Variables[AOCC*FL,AOCCFL]%'
+      operator: in
+      value: 'Y'
+outcome:
+  message: '%Variable% flag value is not Y or null'
+  severity: Error
+provenance:
+  p21_id: AD0272
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

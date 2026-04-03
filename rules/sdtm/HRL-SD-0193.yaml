@@ -1,0 +1,34 @@
+id: HRL-SD-0193
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: Trial Arms (TA) dataset should be included in every submission.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: DOMAIN
+      operator: variable_exists
+      value: TA
+outcome:
+  message: Missing TA dataset
+  severity: Error
+provenance:
+  p21_id: SD1112
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB011
+  source_doc: SDTM-IG v3.3
+

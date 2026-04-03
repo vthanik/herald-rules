@@ -1,0 +1,37 @@
+id: HRL-SD-0128
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: A value for Planned Arm Code (ARMCD) must have a unique value for Description
+  of Planned Arm (ARM) with the domain.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: ARM
+      operator: non_empty
+    - name: ARM
+      operator: all_values_equal
+      group_by: ARMCD
+outcome:
+  message: Inconsistent value for ARMCD
+  severity: Error
+provenance:
+  p21_id: SD1034
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB009
+  source_doc: SDTM-IG v3.3
+

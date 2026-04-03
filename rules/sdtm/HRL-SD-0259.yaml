@@ -1,0 +1,34 @@
+id: HRL-SD-0259
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: Device Type (DEVTYPE) Parameter must be populated for each Medical Device
+  in the Device Identifiers (DI) domain.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: DIPARMCD
+      operator: variable_exists
+      value: DEVTYPE
+outcome:
+  message: Missing DEVTYPE Parameter for Device
+  severity: Error
+provenance:
+  p21_id: SD1234
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community SDTM-IG 3.3 (FDA)
+

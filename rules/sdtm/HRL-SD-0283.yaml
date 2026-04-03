@@ -1,0 +1,39 @@
+id: HRL-SD-0283
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: The Version of the Reference Terminology variable (TSVCDVER) should be
+  populated with the version number of the Reference Terminology, when that Reference
+  Terminology is versioned.
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TS
+check:
+  all:
+    - name: TSVCDVER
+      operator: non_empty
+    - name: TSVCDREF
+      operator: equal_to_case_insensitive
+      value: CDISC
+    - name: TSVCDREF
+      operator: equal_to_case_insensitive
+      value: NDF-RT
+    - name: TSVCDREF
+      operator: equal_to_case_insensitive
+      value: MED-RT
+outcome:
+  message: TSVCDVER is null when Reference Terminology is versioned
+  severity: Error
+provenance:
+  p21_id: SD1260
+  core_id: ~
+  cg_ids:
+    - CG0267
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

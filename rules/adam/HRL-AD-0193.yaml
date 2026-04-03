@@ -1,0 +1,33 @@
+id: HRL-AD-0193
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: When all 3 variables are populated, CHG (change from baseline) must equal
+  Analysis Value (AVAL) minus Baseline Value (BASE).
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: CHG
+      operator: non_empty
+    - name: AVAL
+      operator: non_empty
+    - name: BASE
+      operator: non_empty
+outcome:
+  message: 'Calculation issue: CHG != AVAL - BASE'
+  severity: Error
+provenance:
+  p21_id: AD0223
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

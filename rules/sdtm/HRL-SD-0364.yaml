@@ -1,0 +1,35 @@
+id: HRL-SD-0364
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: Planned Start of Assessment Interval (--STINT) should not be NULL, when
+  Planned End of Assessment Interval (--ENINT) is populated.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --ENINT
+      operator: non_empty
+    - name: '%Domain%STINT'
+      operator: non_empty
+outcome:
+  message: Missing value for %Domain%STINT, when %Domain%ENINT is provided
+  severity: Error
+provenance:
+  p21_id: SD1351
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community SDTM-IG 3.3 (FDA)
+

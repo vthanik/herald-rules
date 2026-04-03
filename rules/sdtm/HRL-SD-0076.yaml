@@ -1,0 +1,30 @@
+id: HRL-SD-0076
+version: 1
+status: Published
+standard: SDTM
+category: Cross-reference
+sensitivity: Record
+executability: Partially Executable
+description: Planned Arm Code (ARMCD) values should match entries in the Trial Arms
+  (TA) dataset, except for subjects who failed screening (ARMCD = 'SCRNFAIL') or were
+  not fully assigned to an Arm (ARMCD = 'NOTASSGN').
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - SC
+check:
+  all:
+    - name: ARMCD
+      operator: non_empty
+outcome:
+  message: Invalid ARMCD
+  severity: Error
+provenance:
+  p21_id: SD0066
+  core_id: ~
+  cg_ids:
+    - CG0126
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

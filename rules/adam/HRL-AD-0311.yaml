@@ -1,0 +1,33 @@
+id: HRL-AD-0311
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: Within a study, all REGIONyN (Geographic Region y (N)) variable values
+  must be the same for each unique value of REGIONy (Geographic Region y), when primary
+  variable REGIONy is populated
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: REGIONVARIABLE
+      operator: non_empty
+    - name: '%Variables[REGION#N]%'
+      operator: all_values_equal
+      group_by: STUDYID,REGION%Variable.1%
+outcome:
+  message: Inconsistent value for REGION%Variable.1%N
+  severity: Error
+provenance:
+  p21_id: AD0356
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

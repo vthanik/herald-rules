@@ -1,0 +1,24 @@
+id: HRL-DD-0120
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: The IsNonStandard attribute must not be populated when the codelist is
+  standard.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Invalid use of IsNonStandard for Codelist
+  severity: Error
+provenance:
+  p21_id: DD0126
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

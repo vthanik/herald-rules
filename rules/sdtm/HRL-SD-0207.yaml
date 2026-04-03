@@ -1,0 +1,42 @@
+id: HRL-SD-0207
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: All values of Planned Time Point Number (--TPTNUM) variable should be
+  the same for a given value of Planned Time Point Name (--TPT) variable, Time Point
+  Reference (--TPTREF) variable, and Visit Number (VISITNUM) variable.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --TPTNUM
+      operator: non_empty
+    - name: '%Domain%TPTNUM'
+      operator: all_values_equal
+      group_by: '%Domain%TPT,%Domain%TPTREF,VISITNUM'
+outcome:
+  message: Inconsistent value for %Domain%TPTNUM within %Domain%TPT, %Domain%TPTREF,
+    VISITNUM
+  severity: Error
+provenance:
+  p21_id: SD1127
+  core_id: ~
+  cg_ids:
+    - CG0240
+    - CG0571
+    - CG0572
+    - CG0573
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

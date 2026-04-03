@@ -1,0 +1,30 @@
+id: HRL-AD-0027
+version: 1
+status: Published
+standard: ADaM
+category: Terminology
+sensitivity: Record
+executability: Partially Executable
+description: 'AD0040: A variable with a suffix of TMF (Time Imputation Flag) has a
+  value that is not within Controlled Terminology for TIMEFL (H= Entire Time, M=Minutes
+  and Seconds, S=Seconds).'
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: '%Variables[*TMF]%'
+      operator: non_empty
+outcome:
+  message: '%Variable.1%TMF variable is not in TIMEFL codelist'
+  severity: Error
+provenance:
+  p21_id: AD0040
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

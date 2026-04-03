@@ -1,0 +1,34 @@
+id: HRL-AD-0331
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: In a pair of corresponding character and numeric variables, the primary
+  or most commonly used variable must be present if its secondary version describing
+  it (*N or *C) is present.  This is a rule designed to look explicitly at variable
+  pairs defined in the CDISC standard documents.  A similar rule that checks custom
+  *N or *C variables (with a few exceptions) is AD1012. This rule is expected to be
+  added to CDISC ADaM Conformance Rules in the future.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: '%Variable.1%'
+outcome:
+  message: Secondary variable is present but its primary variable is not present
+  severity: Error
+provenance:
+  p21_id: AD1012A
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

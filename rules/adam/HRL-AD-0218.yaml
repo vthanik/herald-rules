@@ -1,0 +1,31 @@
+id: HRL-AD-0218
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: For a given period xx, If both actual treatment (TRTxxA) and Planned
+  Pooled Treatment y (TRxxPGy) are present, then Actual Pooled Treatment y (TRxxAGy)
+  must be present.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: TR%Variable.1%AG%Variable.2%
+outcome:
+  message: TRxxPGy and TRTxxA are present but TRxxAGy is not present
+  severity: Error
+provenance:
+  p21_id: AD0239A
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

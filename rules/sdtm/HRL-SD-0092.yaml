@@ -1,0 +1,33 @@
+id: HRL-SD-0092
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Subject Reference Start Date/Time (RFSTDTC) should be populated for all
+  randomized subjects, those where Planned Arm Code (ARMCD) is not equal to 'SCRNFAIL'
+  or 'NOTASSGN' or null.
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - SC
+check:
+  all:
+    - name: ARMCD
+      operator: non_empty
+    - name: RFSTDTC
+      operator: non_empty
+outcome:
+  message: RFSTDTC is not provided for a randomized subject
+  severity: Error
+provenance:
+  p21_id: SD0087
+  core_id: ~
+  cg_ids:
+    - CG0146
+    - CG0532
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

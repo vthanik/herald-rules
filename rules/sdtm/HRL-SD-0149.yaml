@@ -1,0 +1,33 @@
+id: HRL-SD-0149
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Serious Event (AESER) variable value is expected to be 'Y', when Occurred
+  with Overdose (AESOD) variable value equals 'Y'.
+scope:
+  classes:
+    - EVENTS
+  domains:
+    - AE
+check:
+  all:
+    - name: AESER
+      operator: equal_to
+      value: 'Y'
+    - name: AESOD
+      operator: equal_to
+      value: 'Y'
+outcome:
+  message: AESER is not 'Y', when AESOD equals 'Y'
+  severity: Error
+provenance:
+  p21_id: SD1062
+  core_id: ~
+  cg_ids:
+    - CG0041
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

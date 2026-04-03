@@ -1,0 +1,35 @@
+id: HRL-AD-0096
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: If ATPT (Analysis Timepoint) or ATPTREF (Analysis Timepoint Reference)
+  is populated, then both must be populated together.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: ATPT
+      operator: non_empty
+    - name: ATPTREF
+      operator: non_empty
+    - name: ATPT
+      operator: non_empty
+    - name: ATPTREF
+      operator: non_empty
+outcome:
+  message: 'Only one of these variables is populated: ATPTREF,ATPT'
+  severity: Error
+provenance:
+  p21_id: AD0115
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

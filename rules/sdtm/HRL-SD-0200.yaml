@@ -1,0 +1,32 @@
+id: HRL-SD-0200
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: At least one value of three variables Start Date/Time (--STDTC), Collection
+  Date/Time (--DTC) or Start Study Day (--STDY) should be populated.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all: []
+outcome:
+  message: Neither %Domain%STDTC, %Domain%DTC nor  %Domain%STDY are populated
+  severity: Error
+provenance:
+  p21_id: SD1118
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB038
+  source_doc: SDTM-IG v3.3
+

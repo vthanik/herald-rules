@@ -1,0 +1,36 @@
+id: HRL-SD-0475
+version: 1
+status: Published
+standard: SDTM
+category: Terminology
+sensitivity: Record
+executability: Partially Executable
+description: Value for High Level Term (--HLT) variable must be populated using a
+  High Level Term of the MedDRA dictionary of a version specified in the define.xml
+  (Case-insensitive).
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: '%Variables[--HLT]%'
+      operator: non_empty
+outcome:
+  message: Value for %Domain%HLT not found in MedDRA dictionary
+  severity: Error
+provenance:
+  p21_id: SD2010
+  core_id: ~
+  cg_ids:
+    - CG0381
+  fda_ids:
+    - FDAB003
+  source_doc: SDTM-IG v3.3
+

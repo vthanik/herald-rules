@@ -1,0 +1,26 @@
+id: HRL-DD-0061
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: Only Variables that are referenced from a Dataset or Value Level metadata
+  should be included in Define.xml. Define-XML specification represents variables
+  as ItemDef elements and variable references as ItemRef elements within an ItemGroupDef
+  or def:ValueListDef.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Variable <variable> is not referenced
+  severity: Error
+provenance:
+  p21_id: DD0067
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

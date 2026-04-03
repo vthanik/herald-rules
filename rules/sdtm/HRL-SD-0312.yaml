@@ -1,0 +1,30 @@
+id: HRL-SD-0312
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: Reason Not Done (--REASND) variable should not be present in the domain,
+  when the Pre-specified (--PRESP) variable is missing.
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - RE
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: '%Domain%PRESP'
+outcome:
+  message: '%Domain%REASND variable is present when %Domain%PRESP variable is missing'
+  severity: Error
+provenance:
+  p21_id: SD1293
+  core_id: ~
+  cg_ids:
+    - CG0053
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

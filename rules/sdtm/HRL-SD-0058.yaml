@@ -1,0 +1,34 @@
+id: HRL-SD-0058
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: Occurrence (--OCCUR) may only be populated, when a given Intervention
+  or Event has been pre-specified (--PRESP = 'Y').
+scope:
+  classes:
+    - INTERVENTIONS
+  domains:
+    - PR
+check:
+  all:
+    - name: --OCCUR
+      operator: is_empty
+    - name: --PRESP
+      operator: is_empty
+outcome:
+  message: Value for %Domain%OCCUR is populated for unsolicited Intervention or Event
+  severity: Error
+provenance:
+  p21_id: SD0041
+  core_id: ~
+  cg_ids:
+    - CG0086
+    - CG0087
+    - CG0089
+    - CG0654
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

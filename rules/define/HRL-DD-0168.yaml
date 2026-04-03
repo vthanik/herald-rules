@@ -1,0 +1,24 @@
+id: HRL-DD-0168
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: When Codelist contains at least one item with Term and Decoded Value
+  (CodeListItem), then all other items must be of the same type.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Codelist <codelist> is missing Decoded Values
+  severity: Error
+provenance:
+  p21_id: OD0082
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

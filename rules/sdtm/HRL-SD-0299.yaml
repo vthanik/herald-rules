@@ -1,0 +1,35 @@
+id: HRL-SD-0299
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: Toxicity (--TOX) variable should not be present in the domain, when the
+  Toxicity Grade (--TOXGR) variable is missing.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: '%Domain%TOXGR'
+outcome:
+  message: '%Domain%TOX variable is present when %Domain%TOXGR variable is missing'
+  severity: Error
+provenance:
+  p21_id: SD1280
+  core_id: ~
+  cg_ids:
+    - CG0084
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

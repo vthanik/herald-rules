@@ -1,0 +1,30 @@
+id: HRL-AD-0235
+version: 1
+status: Published
+standard: ADaM
+category: Cross-reference
+sensitivity: Record
+executability: Partially Executable
+description: Adverse Events specified in ADAE must be traceable to SDTM AE domain
+  based on Study (STUDYID), unique subject (USUBJID) and sequence (AESEQ).  ADaM ADAE
+  should be validated with SDTM AE to facility this check. There must be traceability
+  between ADaM and SDTM.  This usually refers to mapping issues since an ADAE records
+  must have been born from SDTM AE.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all: []
+outcome:
+  message: Record key from ADaM ADAE is not traceable to SDTM.AE (extra ADAE recs)
+  severity: Error
+provenance:
+  p21_id: AD0258
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

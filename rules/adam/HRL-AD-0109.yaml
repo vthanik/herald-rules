@@ -1,0 +1,32 @@
+id: HRL-AD-0109
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: Within a given Subject's PARAMCD, a baseline value is populated (either
+  BASE or BASEC) and there is not at least one record in that group marked as the
+  baseline (ABLFL = Y).
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: ABLFL
+      operator: variable_exists
+      value: 'Y'
+outcome:
+  message: BASE or BASEC is populated for a unique USUBJID,PARAMCD but no baseline
+    record exists
+  severity: Error
+provenance:
+  p21_id: AD0127
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

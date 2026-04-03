@@ -1,0 +1,25 @@
+id: HRL-DD-0021
+version: 1
+status: Published
+standard: Define-XML
+category: Terminology
+sensitivity: Record
+executability: Not Executable
+description: The def:DefineVersion should have a value of '1.0.0' for Define-XML v1.0,
+  '2.0.0' for Define-XML v2.0, or '2.1.n' for Define-XML v2.1. The n in '2.1.n' reflects
+  updates to the schema.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Invalid def:DefineVersion value
+  severity: Error
+provenance:
+  p21_id: DD0020
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

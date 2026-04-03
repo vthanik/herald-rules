@@ -1,0 +1,30 @@
+id: HRL-CT-0005
+version: 1
+status: Published
+standard: CT
+category: Terminology
+sensitivity: Record
+executability: Partially Executable
+description: Variable should be populated with terms from its CDISC controlled terminology
+  codelist. New terms can be added as long as they are not duplicates, synonyms or
+  subsets of existing standard terms.
+scope:
+  classes: []
+  domains: []
+check:
+  all:
+    - name: '%Variables.Config.CodeList.Extensible:Y%'
+      operator: in
+      value: '%Variable.Config.CodeList.Values%'
+outcome:
+  message: '%Variable% value not found in ''%Variable.Config.CodeList.Name%'' extensible
+    codelist'
+  severity: Error
+provenance:
+  p21_id: CT2002
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB017
+  source_doc: ADaM-IG v1.1
+

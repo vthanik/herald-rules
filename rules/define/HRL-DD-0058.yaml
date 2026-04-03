@@ -1,0 +1,24 @@
+id: HRL-DD-0058
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: The xml:lang attribute for TranslatedText element must be unique within
+  a single parent element.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Duplicate xml:lang
+  severity: Error
+provenance:
+  p21_id: DD0062
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

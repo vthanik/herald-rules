@@ -1,0 +1,31 @@
+id: HRL-AD-0146
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: If AWTDIFF is present then AWTARGET must be present.  This may fire simultaneously
+  with AD0159.  ADY and ARELTM are always required if AWTDIFF is present, which is
+  checked in AD0159.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: AWTARGET
+outcome:
+  message: AWTDIFF is present but AWTARGET is not present
+  severity: Error
+provenance:
+  p21_id: AD0158
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

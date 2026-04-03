@@ -1,0 +1,37 @@
+id: HRL-SD-0272
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: ECDOSE must either be null when ECOCCUR equals 'N', or ECDOSE must be
+  greater than 0. ECDOSE would be greater than 0 (when ECOCCUR equals N) for records
+  that represent specific dose amounts that are not taken, not given, or missed.
+scope:
+  classes:
+    - INTERVENTIONS
+  domains:
+    - EC
+check:
+  all:
+    - any:
+        - name: ECDOSE
+          operator: is_empty
+        - name: ECDOSE
+          operator: greater_than
+          value: '0'
+    - name: ECOCCUR
+      operator: equal_to
+      value: 'N'
+outcome:
+  message: ECDOSE is not null or greater than 0 when ECOCCUR = 'N'
+  severity: Error
+provenance:
+  p21_id: SD1248
+  core_id: ~
+  cg_ids:
+    - CG0101
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

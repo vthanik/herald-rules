@@ -1,0 +1,28 @@
+id: HRL-AD-0333
+version: 1
+status: Published
+standard: ADaM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: For ANLzzFL (Analysis Flag zz) and ANLzzFN (Analysis Flag zz (N)), 'zz'
+  is an index for the zzth record selection algorithm where 'zz' is must be in [01-99].  Similar
+  to CDISC ADaM Validation Checks No. 299-303.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all: []
+outcome:
+  message: 'Illegal variable name: zz is not in [01-99] for ANLzzFL/FN'
+  severity: Error
+provenance:
+  p21_id: AD1018
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

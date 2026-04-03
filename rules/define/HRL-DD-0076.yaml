@@ -1,0 +1,25 @@
+id: HRL-DD-0076
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: Only Codelists that are referenced from a Variable or Value Level metadata
+  should be included in Define.xml. Define-XML specification represents Codelists
+  as CodeList elements within MetaDataVersion element.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Codelist <codelist> is not referenced
+  severity: Error
+provenance:
+  p21_id: DD0082
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

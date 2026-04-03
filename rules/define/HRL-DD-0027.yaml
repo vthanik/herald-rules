@@ -1,0 +1,24 @@
+id: HRL-DD-0027
+version: 1
+status: Published
+standard: Define-XML
+category: Presence
+sensitivity: Record
+executability: Not Executable
+description: The def:ExtendedValue attribute is required when the CodedValue is an
+  extended value.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Required attribute def:ExtendedValue is missing or empty
+  severity: Error
+provenance:
+  p21_id: DD0029
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

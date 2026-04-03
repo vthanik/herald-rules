@@ -1,0 +1,25 @@
+id: HRL-DD-0008
+version: 1
+status: Published
+standard: Define-XML
+category: Metadata
+sensitivity: Dataset
+executability: Not Executable
+description: Define.xml must only contain elements that are defined in either ODM
+  or Define-XML specifications. The elements must also follow the cardinality and
+  order specified in the specifications.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Invalid content was found starting with element <element>
+  severity: Error
+provenance:
+  p21_id: DD0007
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

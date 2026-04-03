@@ -1,0 +1,35 @@
+id: HRL-SD-0304
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: Directionality (--DIR) variable should not be present in the domain,
+  when the Location (--LOC) variable is missing.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: '%Domain%LOC'
+outcome:
+  message: '%Domain%DIR variable is present when %Domain%LOC variable is missing'
+  severity: Error
+provenance:
+  p21_id: SD1285
+  core_id: ~
+  cg_ids:
+    - CG0116
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

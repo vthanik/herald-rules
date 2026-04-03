@@ -1,0 +1,32 @@
+id: HRL-SD-0314
+version: 1
+status: Published
+standard: SDTM
+category: Terminology
+sensitivity: Record
+executability: Fully Executable
+description: TSVAL for ADDON record must be 'Y' or 'N'.
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TS
+check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: ADDON
+    - name: TSVAL
+      operator: in
+      value: Y,N
+outcome:
+  message: Invalid TSVAL value for ADDON parameter
+  severity: Error
+provenance:
+  p21_id: SD1295
+  core_id: ~
+  cg_ids:
+    - CG0269
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

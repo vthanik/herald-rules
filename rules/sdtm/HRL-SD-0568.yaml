@@ -1,0 +1,31 @@
+id: HRL-SD-0568
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: '''Pediatric Study Indicator'' (PDSTIND) record must be populated in
+  Trial Summary (TS) domain. It is an ''FDA Desired'' parameter listed in the Technical
+  Conformance Guide (TCG).'
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TS
+check:
+  all:
+    - name: TSPARMCD
+      operator: variable_exists
+      value: PDSTIND
+outcome:
+  message: Missing PDSTIND Trial Summary Parameter
+  severity: Error
+provenance:
+  p21_id: SD2277
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB011
+  source_doc: SDTM-IG v3.3
+

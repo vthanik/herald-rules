@@ -1,0 +1,36 @@
+id: HRL-AD-0035
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: When both date and datetime variables are collected on the same record
+  for the same observation, the Date portion of the datetime variable should be equal
+  to the Date variable itself.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: '%Variables[*DT]%'
+      operator: equal_to
+      value: :DATE(%Variable.1%DTM)
+    - name: VARIABLEDT
+      operator: non_empty
+    - name: VARIABLEDTM
+      operator: non_empty
+outcome:
+  message: '%Variable.1%DT and its corresponding %Variable.1%DTM variable have different
+    date values'
+  severity: Error
+provenance:
+  p21_id: AD0045
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

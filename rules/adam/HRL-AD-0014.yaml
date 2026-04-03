@@ -1,0 +1,31 @@
+id: HRL-AD-0014
+version: 1
+status: Published
+standard: ADaM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: All ADaM variable labels must be no more than 40 characters in length.  This
+  should not be possible to fail with sas v5 xpt.  Dataset-XML or .csv can fail this
+  rule.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: LABEL
+      operator: matches_regex
+      value: .{0,40}
+outcome:
+  message: Variable label length is greater than 40 characters
+  severity: Error
+provenance:
+  p21_id: AD0016
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

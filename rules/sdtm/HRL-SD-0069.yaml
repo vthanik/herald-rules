@@ -1,0 +1,34 @@
+id: HRL-SD-0069
+version: 1
+status: Published
+standard: SDTM
+category: Metadata
+sensitivity: Dataset
+executability: Partially Executable
+description: Variables included in the dataset must be described in the data definition
+  document (define.xml).
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: in
+      value: =%Variables.Define%
+outcome:
+  message: Variable in dataset is not present in define.xml
+  severity: Error
+provenance:
+  p21_id: SD0060
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

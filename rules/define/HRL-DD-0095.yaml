@@ -1,0 +1,26 @@
+id: HRL-DD-0095
+version: 1
+status: Published
+standard: Define-XML
+category: Presence
+sensitivity: Record
+executability: Not Executable
+description: 'Guidance provided by regulatory agencies states that eCTD submissions
+  must include a define.xml file for each study in Module 4 (nonclinical) and Module
+  5 (clinical). Note: Refer to the data standards catalog by the relevant Regulatory
+  Agency for acceptance of standards and their versions.'
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Missing define.xml file
+  severity: Error
+provenance:
+  p21_id: DD0101
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

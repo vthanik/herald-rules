@@ -1,0 +1,24 @@
+id: HRL-DD-0123
+version: 1
+status: Published
+standard: Define-XML
+category: Presence
+sensitivity: Record
+executability: Not Executable
+description: An NCI code must be provided if the def:StandardOID attribute is set
+  on the CodeList in order to verify that CodeList exists in the terminology.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Missing required Alias
+  severity: Error
+provenance:
+  p21_id: DD0129
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

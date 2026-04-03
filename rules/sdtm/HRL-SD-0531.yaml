@@ -1,0 +1,35 @@
+id: HRL-SD-0531
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: TSVCDREF variable value must be 'SNOMED', when TSPARAMCD='INDIC'.
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TS
+check:
+  all:
+    - name: TSVCDREF
+      operator: equal_to
+      value: SNOMED
+    - name: TSPARMCD
+      operator: equal_to
+      value: INDIC
+    - name: TSVALNF
+      operator: is_empty
+outcome:
+  message: Invalid TSVCDREF value for INDIC
+  severity: Error
+provenance:
+  p21_id: SD2240
+  core_id: ~
+  cg_ids:
+    - CG0458
+  fda_ids:
+    - FDAB011
+  source_doc: SDTM-IG v3.3
+

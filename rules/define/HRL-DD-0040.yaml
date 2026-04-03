@@ -1,0 +1,23 @@
+id: HRL-DD-0040
+version: 1
+status: Published
+standard: Define-XML
+category: Terminology
+sensitivity: Record
+executability: Not Executable
+description: The SoftHard attribute must have a value of 'Soft' or 'Hard'.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Invalid SoftHard value
+  severity: Error
+provenance:
+  p21_id: DD0044
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

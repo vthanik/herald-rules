@@ -1,0 +1,34 @@
+id: HRL-SD-0007
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Dataset
+executability: Fully Executable
+
+description: >
+  USUBJID must be unique within the DM domain. Each subject should appear exactly once in the Demographics dataset.
+
+scope:
+  classes:
+    - SPECIAL-PURPOSE
+  domains:
+    - DM
+
+check:
+  all:
+    - name: USUBJID
+      operator: is_unique
+
+outcome:
+  message: "USUBJID '{USUBJID}' is duplicated in DM"
+  severity: Error
+
+provenance:
+  p21_id: SD0007
+  core_id: CORE-000258
+  cg_ids:
+    - CG0007
+  fda_ids:
+    []
+  source_doc: "SDTM-IG v3.3 Section 5.1"

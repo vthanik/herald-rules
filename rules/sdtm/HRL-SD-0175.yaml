@@ -1,0 +1,38 @@
+id: HRL-SD-0175
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: Study Day of End (--ENDY) variable value should not be imputed. It may
+  be only populated, when both End Study Date/Time (--ENDTC) and Subject Reference
+  Start Date/Time (RFSTDTC) variables values are provided, and both of them include
+  complete date part.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --ENDY
+      operator: is_empty
+    - name: POOLID
+      operator: is_empty
+outcome:
+  message: '%Domain%ENDY variable value is imputed'
+  severity: Error
+provenance:
+  p21_id: SD1093
+  core_id: ~
+  cg_ids:
+    - CG0223
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

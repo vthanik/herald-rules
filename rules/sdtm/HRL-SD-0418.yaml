@@ -1,0 +1,34 @@
+id: HRL-SD-0418
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: '''Challenge Agent Category'' (CAGTCAT) record must be populated in Challenge
+  Agent Characterization (AC) domain.'
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: ACPARMCD
+      operator: variable_exists
+      value: CAGTCAT
+outcome:
+  message: Missing CAGTCAT Challenge Agent Parameter
+  severity: Error
+provenance:
+  p21_id: SD1406
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community SEND-IG-AR 1.0 (FDA)
+

@@ -1,0 +1,35 @@
+id: HRL-AD-0231
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: In Time to Event studies, CNSDTDC Describes the circumstance represented
+  by the censoring date if different from the event date that warrants censoring.  If
+  present, CNSR must be present.   Note that adding CNSDTDSC provides additional information
+  when there is a difference between the event date that warrants censoring and the
+  actual date of censoring. If the event that warrants censoring is the same as the
+  onset date of the event that represents the censoring date, then the CNSDTDSC column
+  is not needed in the analysis dataset.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: CNSR
+outcome:
+  message: CNSDTDSC is present but CNSR is not present.
+  severity: Error
+provenance:
+  p21_id: AD0251
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

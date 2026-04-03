@@ -1,0 +1,34 @@
+id: HRL-SD-0013
+version: 1
+status: Published
+standard: SDTM
+category: Format
+sensitivity: Value
+executability: Fully Executable
+
+description: >
+  RFENDTC must be a valid ISO 8601 date/datetime string in the DM domain. The reference end date must conform to ISO 8601 format.
+
+scope:
+  classes:
+    - SPECIAL-PURPOSE
+  domains:
+    - DM
+
+check:
+  all:
+    - name: RFENDTC
+      operator: is_valid_iso8601
+
+outcome:
+  message: "RFENDTC value '{RFENDTC}' is not a valid ISO 8601 date in DM"
+  severity: Error
+
+provenance:
+  p21_id: SD0013
+  core_id: CORE-000264
+  cg_ids:
+    - CG0013
+  fda_ids:
+    []
+  source_doc: "SDTM-IG v3.3 Section 5.1"

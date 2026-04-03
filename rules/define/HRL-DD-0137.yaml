@@ -1,0 +1,24 @@
+id: HRL-DD-0137
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: The length of the value provided in Assigned Value must be less than
+  or equal to the variable length.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Length/Assigned Value mismatch
+  severity: Error
+provenance:
+  p21_id: DD0146
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

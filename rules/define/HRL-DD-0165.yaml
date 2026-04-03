@@ -1,0 +1,25 @@
+id: HRL-DD-0165
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: The Term must be unique within a Codelist. Define-XML specification represents
+  Term as CodedValue attribute on either EnumeratedItem or CodeListItem elements within
+  CodeList element.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Duplicate Term in Codelist <codelist>
+  severity: Error
+provenance:
+  p21_id: OD0079
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

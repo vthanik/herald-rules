@@ -1,0 +1,40 @@
+id: HRL-SD-0199
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: The structure of Findings class domains should be one record per Finding
+  Result per subject. No Finding Result with the same Test Short Name (--TESTCD) and
+  the same Qualifier variables at the same timepoint for the same Subject (USUBJID)
+  are expected.
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - EG
+check:
+  all:
+    - name: --TESTCD
+      operator: non_empty
+    - name: EGCAT
+      operator: not_equal_to
+      value: INTERPRETATION
+    - name: EGCAT
+      operator: not_equal_to
+      value: DIAGNOSIS
+    - name: '%Domain%DTC'
+      operator: is_unique
+      group_by: USUBJID,POOLID,SPDEVID,FETUSID,%Domain%TESTCD,%Domain%OBJ,%Domain%CAT,%Domain%SCAT,%Domain%POS,ICIMPLBL,%Domain%RESLOC,%Domain%METHOD,%Domain%SPEC,%Domain%ANTREG,%Domain%LOC,%Domain%LAT,%Domain%DIR,%Domain%PORTOT,%Domain%DRVFL,%Domain%EVAL,%Domain%EXCLFL,VISITNUM,VISITDY,%Domain%ENDTC,%Domain%DY,%Domain%ENDY,%Domain%NOMDY,%Domain%TPTNUM,%Domain%RFTDTC,%Domain%STINT,%Domain%ENINT
+outcome:
+  message: Duplicate records
+  severity: Error
+provenance:
+  p21_id: SD1117
+  core_id: ~
+  cg_ids:
+    - CG0019
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

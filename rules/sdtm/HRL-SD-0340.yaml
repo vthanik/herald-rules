@@ -1,0 +1,30 @@
+id: HRL-SD-0340
+version: 1
+status: Published
+standard: SDTM
+category: Metadata
+sensitivity: Dataset
+executability: Not Executable
+description: Dataset Description in define.xml must match dataset Description.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all: []
+outcome:
+  message: Define.xml/dataset description mismatch
+  severity: Error
+provenance:
+  p21_id: SD1325
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

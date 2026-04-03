@@ -1,0 +1,35 @@
+id: HRL-SD-0462
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: Planned Start of Assessment Interval (--STINT) variable must be included
+  in the domain, when Planned End of Assessment Interval (--ENINT) variable is present.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: '%Domain%STINT'
+outcome:
+  message: Missing %Domain%STINT variable, when %Domain%ENINT variable is present
+  severity: Error
+provenance:
+  p21_id: SD1451
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB044
+  source_doc: SDTM-IG v3.3
+

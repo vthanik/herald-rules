@@ -1,0 +1,34 @@
+id: HRL-AD-0015
+version: 1
+status: Published
+standard: ADaM
+category: Metadata
+sensitivity: Dataset
+executability: Partially Executable
+description: Variable label in the dataset should match the variable label described
+  in ADaM.  When creating a new variable, labels can be adjusted as appropriate. Currently,
+  this rule runs if a variable has a label that is defined in the ADaM metadata.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: equal_to_variable
+      value: '%Variables.Label%'
+    - name: LABEL
+      operator: in
+      value: '%Variable.Label%'
+outcome:
+  message: Variable label mismatch between dataset and ADaM standard
+  severity: Error
+provenance:
+  p21_id: AD0018
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

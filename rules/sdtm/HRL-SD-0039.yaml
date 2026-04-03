@@ -1,0 +1,34 @@
+id: HRL-SD-0039
+version: 1
+status: Published
+standard: SDTM
+category: Limit
+sensitivity: Value
+executability: Fully Executable
+
+description: >
+  EXDOSE must be non-negative in the EX domain. The dose amount administered cannot be a negative number.
+
+scope:
+  classes:
+    - INTERVENTIONS
+  domains:
+    - EX
+
+check:
+  all:
+    - name: EXDOSE
+      operator: is_non_negative
+
+outcome:
+  message: "EXDOSE value '{EXDOSE}' is negative in EX for subject '{USUBJID}'"
+  severity: Error
+
+provenance:
+  p21_id: SD0039
+  core_id: CORE-000290
+  cg_ids:
+    - CG0039
+  fda_ids:
+    []
+  source_doc: "SDTM-IG v3.3 Section 6.1.1"

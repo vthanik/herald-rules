@@ -1,0 +1,34 @@
+id: HRL-AD-0156
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: If the record is flagged as the baseline (ABLFL = Y), then the baseline
+  normal range indicator (BNRIND) value must equal the analysis normal range indicator
+  (ANRIND) value.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: BNRIND
+      operator: equal_to
+      value: ANRIND
+    - name: ABLFL
+      operator: equal_to
+      value: 'Y'
+outcome:
+  message: ABLFL = Y, but BNRIND != ANRIND
+  severity: Error
+provenance:
+  p21_id: AD0168
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

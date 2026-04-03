@@ -1,0 +1,36 @@
+id: HRL-AD-0229
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: When an event is censored, 3 other variables must be populated. CNSR
+  qualifies the AVAL variable. ADT and ADTM are the Analysis date and time of event
+  or censoring associated with AVAL.  STARTDT is the original date of risk for the
+  time-to-event analysis. This is generally the time at which a subject is first at
+  risk for the event of interest evaluation.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - any:
+        - name: ADTM
+          operator: not_equal_to
+          value: ''''')'
+    - name: CNSR
+      operator: non_empty
+outcome:
+  message: CNSR is populated but AVAL, STARTDT and one of [ADT, ADTM] are not populated
+  severity: Error
+provenance:
+  p21_id: AD0247
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

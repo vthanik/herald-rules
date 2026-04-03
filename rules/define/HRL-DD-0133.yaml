@@ -1,0 +1,25 @@
+id: HRL-DD-0133
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: Only Standards that are referenced from a Dataset or Codelist should
+  be included in Define.xml. Define-XML specification represents Standards as def:Standard
+  elements within the def:Standards element.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Standard <standard> is not referenced
+  severity: Error
+provenance:
+  p21_id: DD0139
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

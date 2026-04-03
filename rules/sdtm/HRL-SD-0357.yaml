@@ -1,0 +1,35 @@
+id: HRL-SD-0357
+version: 1
+status: Published
+standard: SDTM
+category: Terminology
+sensitivity: Record
+executability: Partially Executable
+description: Value for the Standardized Medication Name (--DECOD) variable must be
+  populated using a Drug Name from the WHO Drug dictionary version specified in the
+  define.xml.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --DECOD
+      operator: non_empty
+outcome:
+  message: Value for %Domain%DECOD not found in WHODrug dictionary
+  severity: Error
+provenance:
+  p21_id: SD1344
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB017
+  source_doc: SDTM-IG v3.3
+

@@ -1,0 +1,25 @@
+id: HRL-DD-0125
+version: 1
+status: Published
+standard: Define-XML
+category: Consistency
+sensitivity: Record
+executability: Not Executable
+description: The Name attribute for CodeList (the CodeList Name) must be unique within
+  Define.xml. Define-XML specification represents Codelists as CodeList elements within
+  MetaDataVersion element.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Duplicate Codelist Name
+  severity: Error
+provenance:
+  p21_id: DD0131
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: Define.xml
+

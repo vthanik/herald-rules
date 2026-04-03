@@ -1,0 +1,30 @@
+id: HRL-AD-0020
+version: 1
+status: Published
+standard: ADaM
+category: Terminology
+sensitivity: Record
+executability: Partially Executable
+description: A variable with a suffix of RFN must have a value that is 1 or null (R
+  = record level flag variable).
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: '%Variables[*RFN]%'
+      operator: in
+      value: '1'
+outcome:
+  message: '%Variable.1%RFN value is not 1 or null'
+  severity: Error
+provenance:
+  p21_id: AD0035
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

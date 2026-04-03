@@ -1,0 +1,31 @@
+id: HRL-SD-0536
+version: 1
+status: Published
+standard: SDTM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: TSVAL variable value must be in ISO 8601 format, when TSPARMCD='DCUTDTC'.
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TS
+check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: DCUTDTC
+    - name: TSVAL
+      operator: non_empty
+outcome:
+  message: Invalid TSVAL value for DCUTDTC
+  severity: Error
+provenance:
+  p21_id: SD2245
+  core_id: ~
+  cg_ids:
+    - CG0283
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

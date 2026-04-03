@@ -1,0 +1,33 @@
+id: HRL-AD-0312
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Within a study, all DTHCAUS (Cause of Death) variable values must be
+  the same for each unique value of DTHCAUSN (Cause of Death(N)), when variable DTHCAUSN
+  is populated.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: DTHCAUSN
+      operator: non_empty
+    - name: DTHCAUS
+      operator: all_values_equal
+      group_by: STUDYID,DTHCAUSN
+outcome:
+  message: Inconsistent value for DTHCAUS
+  severity: Error
+provenance:
+  p21_id: AD0359
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

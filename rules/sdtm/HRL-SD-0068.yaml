@@ -1,0 +1,40 @@
+id: HRL-SD-0068
+version: 1
+status: Published
+standard: SDTM
+category: Metadata
+sensitivity: Dataset
+executability: Partially Executable
+description: Variable DataType in define.xml must match variable Type in dataset.
+  Define-XML data types of 'integer' and 'float' match dataset type of 'Num', all
+  other match 'Char'.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: TYPE
+      operator: equal_to_variable
+      value: '%Variable.Define.Type.Basic%'
+    - name: VARIABLE
+      operator: equal_to_variable
+      value: VARIABLE
+    - name: TYPE
+      operator: non_empty
+outcome:
+  message: Define.xml/dataset variable type mismatch
+  severity: Error
+provenance:
+  p21_id: SD0059
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

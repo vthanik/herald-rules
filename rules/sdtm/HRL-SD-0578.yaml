@@ -1,0 +1,32 @@
+id: HRL-SD-0578
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Value of Reason Not Done (--REASND) variable should be populated, when
+  Status (--STAT) variable value is 'NOT DONE'.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all: []
+outcome:
+  message: Missing value for %Domain%REASND, when %Domain%STAT is 'NOT DONE'
+  severity: Error
+provenance:
+  p21_id: SD1124
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB042
+  source_doc: P21 Community SEND-IG 3.0 (FDA)
+

@@ -1,0 +1,31 @@
+id: HRL-AD-0294
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: If MCRITy (Analysis Multi-Response Criterion y) Flag variable is present,
+  there must also be a corresponding MCRITyML (Multi-Response Criterion y Evaluation)
+  variable.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: MCRIT%Variable.1%ML
+outcome:
+  message: MCRIT%Variable.1%ML is not present, when MCRIT%Variable.1% is present
+  severity: Error
+provenance:
+  p21_id: AD0338
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

@@ -1,0 +1,26 @@
+id: HRL-DD-0105
+version: 1
+status: Published
+standard: Define-XML
+category: Presence
+sensitivity: Record
+executability: Not Executable
+description: For Define-XML v2.0, the Pages field must be empty when Origin is not
+  'CRF'. For Define-XML v2.1, the Pages field is required when Origin is 'Collected'
+  and Source is 'Investigator' or 'Subject'. Define-XML specification represents Pages
+  as def:PDFPageRef elements within def:DocumentRef element.
+scope:
+  classes: []
+  domains: []
+check:
+  all: []
+outcome:
+  message: Invalid use of Pages
+  severity: Error
+provenance:
+  p21_id: DD0111
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community Define.xml (FDA)
+

@@ -1,0 +1,36 @@
+id: HRL-SD-0079
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: All Demographics (DM) subjects (USUBJID) should have at least one record
+  in the Disposition (DS) domain with only possible exceptions to Screen Failures
+  (ARMCD='SCRNFAIL') and Not Assigned Treatment (ARMCD='NOTASSGN') subjects.
+scope:
+  classes:
+    - FINDINGS
+  domains:
+    - SC
+check:
+  all:
+    - name: USUBJID
+      operator: non_empty
+    - name: ARMCD
+      operator: not_equal_to
+      value: SCRNFAIL
+    - name: ARMCD
+      operator: not_equal_to
+      value: NOTASSGN
+outcome:
+  message: No Disposition record found for subject
+  severity: Error
+provenance:
+  p21_id: SD0069
+  core_id: ~
+  cg_ids:
+    - CG0412
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

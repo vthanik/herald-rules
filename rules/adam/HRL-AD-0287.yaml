@@ -1,0 +1,33 @@
+id: HRL-AD-0287
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: Within a Study and a Parameter, all BASECATy (Baseline Category y) variable
+  values must be the same for each unique value of BASECAyN (Baseline Category y (N)),
+  when primary variable BASECATy is populated
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: BASECATVARIABLE
+      operator: non_empty
+    - name: '%Variables[BASECAT#]%'
+      operator: all_values_equal
+      group_by: STUDYID,PARAMCD,BASECA%Variable.1%N
+outcome:
+  message: Inconsistent value for BASECAT%Variable.1%
+  severity: Error
+provenance:
+  p21_id: AD0329
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

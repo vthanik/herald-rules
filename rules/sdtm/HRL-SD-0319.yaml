@@ -1,0 +1,35 @@
+id: HRL-SD-0319
+version: 1
+status: Published
+standard: SDTM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: The value of DOMAIN should be no more than 2 characters in length, excluding
+  Associated Persons domains.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: DOMAIN
+      operator: matches_regex
+      value: .{0,2}
+outcome:
+  message: Invalid value for DOMAIN variable
+  severity: Error
+provenance:
+  p21_id: SD1300
+  core_id: ~
+  cg_ids:
+    - CG0308
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

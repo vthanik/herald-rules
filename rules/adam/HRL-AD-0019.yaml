@@ -1,0 +1,30 @@
+id: HRL-AD-0019
+version: 1
+status: Published
+standard: ADaM
+category: Terminology
+sensitivity: Record
+executability: Partially Executable
+description: A variable with a suffix of PFL must have a value that is Y or null (P
+  = parameter level flag variable).
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: '%Variables[*PFL;!FUPFL]%'
+      operator: in
+      value: 'Y'
+outcome:
+  message: '%Variable.1%PFL value is not Y or null'
+  severity: Error
+provenance:
+  p21_id: AD0034
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

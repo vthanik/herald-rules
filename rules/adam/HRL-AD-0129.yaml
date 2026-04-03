@@ -1,0 +1,34 @@
+id: HRL-AD-0129
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: Within a study, All PARAM values must be the same for each unique value
+  of PARAMCD when both PARAMCD and PARAM are populated.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: PARAMCD
+      operator: non_empty
+    - name: PARAM
+      operator: non_empty
+    - name: PARAM
+      operator: all_values_equal
+      group_by: STUDYID,PARAMCD
+outcome:
+  message: Inconsistent value for PARAM within a unique PARAMCD
+  severity: Error
+provenance:
+  p21_id: AD0141
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

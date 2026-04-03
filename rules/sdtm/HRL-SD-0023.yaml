@@ -1,0 +1,41 @@
+id: HRL-SD-0023
+version: 1
+status: Published
+standard: SDTM
+category: Terminology
+sensitivity: Value
+executability: Fully Executable
+
+description: >
+  AEOUT must be in controlled terminology in the AE domain. The adverse event outcome must use CDISC CT codelist C66768.
+
+scope:
+  classes:
+    - EVENTS
+  domains:
+    - AE
+
+check:
+  all:
+    - name: AEOUT
+      operator: in
+      value:
+        - RECOVERED/RESOLVED
+        - RECOVERING/RESOLVING
+        - "NOT RECOVERED/NOT RESOLVED"
+        - "RECOVERED/RESOLVED WITH SEQUELAE"
+        - FATAL
+        - UNKNOWN
+
+outcome:
+  message: "AEOUT value '{AEOUT}' is not in CDISC CT codelist C66768 in AE"
+  severity: Error
+
+provenance:
+  p21_id: CT0023
+  core_id: CORE-000274
+  cg_ids:
+    - CG0023
+  fda_ids:
+    - FDA-AE-004
+  source_doc: "SDTM-IG v3.3 Section 6.2.1, CDISC CT C66768"

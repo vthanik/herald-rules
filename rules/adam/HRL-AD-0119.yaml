@@ -1,0 +1,33 @@
+id: HRL-AD-0119
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: When analysis range low (AyLO) equals 0, the Ratio to analysis range
+  low (R2AyLO) should not be populated since you cannot divide by 0.  AD0133 checks
+  the calculation is correct when AyLO does not equal 0.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: R2AVARIABLELO
+      operator: is_empty
+    - name: '%Variables[A#LO]%'
+      operator: equal_to
+      value: '0'
+outcome:
+  message: 'Calculation issue: A%Variable.1%LO = 0 but R2A%Variable.1%LO is populated'
+  severity: Error
+provenance:
+  p21_id: AD0133C
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

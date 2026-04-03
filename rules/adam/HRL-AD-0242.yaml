@@ -1,0 +1,35 @@
+id: HRL-AD-0242
+version: 1
+status: Published
+standard: ADaM
+category: Consistency
+sensitivity: Record
+executability: Fully Executable
+description: If DOSAEONU (Study Drug Dose at AE Onset unit) or DOSEAEON (Study Drug
+  Dose at AE Onset) is populated, then both must be populated together.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: DOSAEONU
+      operator: non_empty
+    - name: DOSEAEON
+      operator: non_empty
+    - name: DOSAEONU
+      operator: non_empty
+    - name: DOSEAEON
+      operator: non_empty
+outcome:
+  message: 'Only one of these variables is populated: DOSEAEON,DOSAEONU'
+  severity: Error
+provenance:
+  p21_id: AD0274
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

@@ -1,0 +1,47 @@
+id: HRL-SD-0366
+version: 1
+status: Published
+standard: SDTM
+category: Consistency
+sensitivity: Record
+executability: Partially Executable
+description: Standardized Result in Character Format (--STRESC) variable value should
+  be equal to Result or Finding in Original Units (--ORRES) variable value, when variable
+  values are numeric and Standard Units (--STRESU) and Original Units (--ORRESU) are
+  populated with the same units or are null.
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: --ORRES
+      operator: equal_to_variable
+      value: --STRESC
+    - name: --ORRES
+      operator: non_empty
+    - name: --STRESC
+      operator: non_empty
+    - name: --STRESN
+      operator: non_empty
+    - name: --ORRESU
+      operator: equal_to_variable
+      value: --STRESU
+outcome:
+  message: '%Domain%STRESC does not equal %Domain%ORRES when %Domain%STRESU is equal
+    to %Domain%ORRESU'
+  severity: Error
+provenance:
+  p21_id: SD1353
+  core_id: ~
+  cg_ids:
+    - CG0397
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

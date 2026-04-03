@@ -1,0 +1,29 @@
+id: HRL-AD-0158
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: If STARTDT is present then CNSR must be present.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: CNSR
+outcome:
+  message: STARTDT is present but CNSR is not present
+  severity: Error
+provenance:
+  p21_id: AD0170
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

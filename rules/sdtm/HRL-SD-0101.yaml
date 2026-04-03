@@ -1,0 +1,39 @@
+id: HRL-SD-0101
+version: 1
+status: Published
+standard: SDTM
+category: Limit
+sensitivity: Record
+executability: Fully Executable
+description: Subject Reference Start Date/Time (RFSTDTC) must be less than or equal
+  to Subject Reference End Date/Time (RFENDTC).
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: RFSTDTC
+      operator: less_than
+      value: eq RFENDTC
+    - name: RFSTDTC
+      operator: non_empty
+    - name: RFENDTC
+      operator: non_empty
+outcome:
+  message: RFSTDTC is after RFENDTC
+  severity: Error
+provenance:
+  p21_id: SD1002
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB034
+  source_doc: SDTM-IG v3.3
+

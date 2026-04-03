@@ -1,0 +1,30 @@
+id: HRL-SD-0118
+version: 1
+status: Published
+standard: SDTM
+category: Format
+sensitivity: Record
+executability: Partially Executable
+description: Character values should not have leading space ' ' characters, carriage
+  returns, or '.' as an entire value. The only exceptions are COVALn and TSVALn variables.
+scope:
+  classes:
+    - SPECIAL-PURPOSE
+  domains:
+    - CO
+check:
+  all:
+    - name: '%Variables[!COVAL#;!TSVAL#].Type.Basic:Char%'
+      operator: matches_regex
+      value: ^((?!^[ \t]|^\.+$).)*$
+outcome:
+  message: Unexpected character value in %Variable% variable
+  severity: Error
+provenance:
+  p21_id: SD1021
+  core_id: ~
+  cg_ids: []
+  fda_ids:
+    - FDAB015
+  source_doc: SDTM-IG v3.3
+

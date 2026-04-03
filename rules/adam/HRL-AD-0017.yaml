@@ -1,0 +1,29 @@
+id: HRL-AD-0017
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Partially Executable
+description: 'For subject-level numeric population flag variables: 0 = no (not included),
+  1 = yes (included).  Null values are not allowed.'
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: '%Variables[COMPLFN,FASFN,ITTFN,PPROTFN,SAFFN,RANDFN,ENRLFN]%'
+      operator: non_empty
+outcome:
+  message: '%Variable% subject-population flag value is null'
+  severity: Error
+provenance:
+  p21_id: AD0026
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

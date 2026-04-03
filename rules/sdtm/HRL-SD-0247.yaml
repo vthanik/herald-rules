@@ -1,0 +1,29 @@
+id: HRL-SD-0247
+version: 1
+status: Published
+standard: SDTM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: TSVAL for PLANSUB record must be numeric.
+scope:
+  classes:
+    - TRIAL DESIGN
+  domains:
+    - TS
+check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: PLANSUB
+outcome:
+  message: Invalid TSVAL value for PLANSUB
+  severity: Error
+provenance:
+  p21_id: SD1221
+  core_id: ~
+  cg_ids:
+    - CG0440
+  fda_ids: []
+  source_doc: SDTM-IG v3.3
+

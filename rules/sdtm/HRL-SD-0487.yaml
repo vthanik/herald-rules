@@ -1,0 +1,31 @@
+id: HRL-SD-0487
+version: 1
+status: Published
+standard: SDTM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: Age Range (AGETXT) variable values should be populated with 'number-number'
+  format.
+scope:
+  classes:
+    - INTERVENTIONS
+  domains:
+    - AG
+check:
+  all:
+    - name: AGETXT
+      operator: matches_regex
+      value: ([0-9]+)+-+([0-9]+)
+outcome:
+  message: Invalid value for AGETXT
+  severity: Error
+provenance:
+  p21_id: SD2019
+  core_id: ~
+  cg_ids:
+    - CG0434
+  fda_ids:
+    - FDAB005
+  source_doc: SDTM-IG v3.3
+

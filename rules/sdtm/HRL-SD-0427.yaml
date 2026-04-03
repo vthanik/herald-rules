@@ -1,0 +1,36 @@
+id: HRL-SD-0427
+version: 1
+status: Published
+standard: SDTM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: '''Biological Agent CoA Indicator'' (BACOAIND) record is expected in
+  the Challenge Agent Characterization (AC) domain when the Parameter Value (ACVAL)
+  for the ''Challenge Agent Category'' (CAGTCAT) parameter is ''BIOLOGICAL''.'
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+check:
+  all:
+    - name: ACPARMCD
+      operator: variable_exists
+      value: BACOAIND
+outcome:
+  message: Missing BACOAIND Challenge Agent Parameter when ACPARMCD = 'CAGTCAT' and
+    ACVAL = 'BIOLOGICAL'
+  severity: Error
+provenance:
+  p21_id: SD1415
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: P21 Community SEND-IG-AR 1.0 (FDA)
+

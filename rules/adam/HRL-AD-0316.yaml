@@ -1,0 +1,31 @@
+id: HRL-AD-0316
+version: 1
+status: Published
+standard: ADaM
+category: Presence
+sensitivity: Record
+executability: Fully Executable
+description: DOSEU (Treatment Dose Units) variable is required, DOSEON (Treatment
+  Dose at Record Start) or DOSCUMA (Cumulative Actual Treatment Dose) variable is
+  present in the dataset
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all:
+    - name: VARIABLE
+      operator: variable_exists
+      value: DOSEU
+outcome:
+  message: DOSEU variable is not present, when DOSEON or DOSCUMA is present
+  severity: Error
+provenance:
+  p21_id: AD0364
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.1
+

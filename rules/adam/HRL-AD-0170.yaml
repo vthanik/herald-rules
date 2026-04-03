@@ -1,0 +1,28 @@
+id: HRL-AD-0170
+version: 1
+status: Published
+standard: ADaM
+category: Format
+sensitivity: Record
+executability: Fully Executable
+description: For CHGCATy(N), y must be the change-from-baseline (CHG) category (1
+  to 9).  The rule was extended to allow the numeric representation of the variable
+  as per http://www.opencdisc.org/forum/ad0188-illegal-variable-name-y-not-1-9-chgcaty.
+scope:
+  classes:
+    - ADSL
+    - BDS
+    - OCCDS
+  domains: []
+check:
+  all: []
+outcome:
+  message: 'Illegal variable name: y is not in [1-9] for CHGCATy(N)'
+  severity: Error
+provenance:
+  p21_id: AD0188
+  core_id: ~
+  cg_ids: []
+  fda_ids: []
+  source_doc: ADaM-IG v1.0
+

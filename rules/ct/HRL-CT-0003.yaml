@@ -1,0 +1,43 @@
+id: HRL-CT-0003
+version: 1
+status: Published
+standard: SDTM
+category: Terminology
+sensitivity: Value
+executability: Fully Executable
+
+description: >
+  ETHNIC values must match CDISC Controlled Terminology. Values in the
+  ETHNIC variable must be from the C66790 codelist.
+
+scope:
+  classes:
+    - SPECIAL-PURPOSE
+  domains:
+    - DM
+
+check:
+  all:
+    - name: ETHNIC
+      operator: codelist_terms
+      ct_ref:
+        codelist: C66790
+        version: "2023-12-15"
+        terms:
+          - HISPANIC OR LATINO
+          - NOT HISPANIC OR LATINO
+          - NOT REPORTED
+          - UNKNOWN
+
+outcome:
+  message: "ETHNIC value '{ETHNIC}' does not match CDISC CT codelist C66790"
+  severity: Error
+
+provenance:
+  p21_id: CT0003
+  core_id: CORE-000261
+  cg_ids:
+    - CG0303
+  fda_ids:
+    - FDA-CT-003
+  source_doc: "CDISC CT 2023-12-15, Codelist C66790"
