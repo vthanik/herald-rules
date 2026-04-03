@@ -1,0 +1,27 @@
+id: SD0018
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The value of a Short Name of Measurement, Test or Examination (--TESTCD)
+  variable should be limited to 8 characters, cannot start with a number, and cannot
+  contain characters other than letters in upper case, numbers, or underscores.
+scope:
+  classes: []
+  domains:
+    - FINDINGS
+    - FINDINGSABOUT
+    - TI
+check: []
+outcome:
+  message: Invalid value for --TESTCD variable
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0018
+  pmda_category: Error
+  ig_versions: []
+

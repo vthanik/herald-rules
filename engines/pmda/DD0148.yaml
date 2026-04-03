@@ -1,0 +1,25 @@
+id: DD0148
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Define-XML defines Predecessor as a value that is copied from a variable
+  in another dataset. The Description child element identifies the dataset and variable
+  that is copied. To enable other validation rules, the structure of this column needs
+  to be in the form of DATASET.VARIABLE.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Invalid syntax for Predecessor
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0148
+  pmda_category: X
+  ig_versions: []
+

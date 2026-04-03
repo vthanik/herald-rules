@@ -1,0 +1,24 @@
+id: SD2233
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: '''Study End Date'' (SENDTC) record must be populated in Trial Summary
+  (TS) domain. It is expected for SDTM IG v3.1.2 data and required for data in all
+  more recent SDTM versions.'
+scope:
+  classes: []
+  domains: TS
+check: []
+outcome:
+  message: Missing SENDTC Trial Summary Parameter
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2233
+  pmda_category: Warning
+  ig_versions: []
+

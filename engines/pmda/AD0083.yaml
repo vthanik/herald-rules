@@ -1,0 +1,24 @@
+id: AD0083
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Date of First Exposure to Treatment (TRTSDT) must equal the First Treatment
+  in Period 01 (TRT01SDT). If TR01SDT (First Treatment in Period 01) exists it must
+  equal TRTSDT (First Treatment Date) of the entire trial for a given patient).
+scope:
+  classes: []
+  domains: ADSL
+check: []
+outcome:
+  message: TRTSDT != TR01SDT
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0083
+  pmda_category: Warning
+  ig_versions: []
+

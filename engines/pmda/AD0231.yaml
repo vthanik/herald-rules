@@ -1,0 +1,27 @@
+id: AD0231
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a study, all Planned Pooled Treatment y for Period xx (TRxxPGy)
+  variable values must be the same for each unique value of Planned Treatment for
+  Period xx (TRTxxP) variable when TRTxxP is populated. TRxxPGy is a more general
+  pooled treatment for TRTxxP, therefore it may be used for many TRTxxP.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+check: []
+outcome:
+  message: Inconsistent value for TRxxPGy within a unique TRTxxP
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0231
+  pmda_category: Error
+  ig_versions: []
+

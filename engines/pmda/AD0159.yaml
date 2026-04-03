@@ -1,0 +1,32 @@
+id: AD0159
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: 'If AWTDIFF (Analysis Window Diff from Target) is populated AWTARGET
+  (Analysis Window Target) must be populated. AWTDIFF = Absolute value of (ADY or
+  ARELTM) - AWTARGET. Note: A future rule should validate that the calculation is
+  correct. Rule enhanced by Pinnacle 21 to include ADY and ARELTM. If only AWTDIFF
+  is present and populated, this rule will fire even if some or all other variables
+  are not present. This may fire simultaneously with AD0158.'
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: 'Calculation issue: AWTDIFF is populated, but AWTARGET and/or one of [ADY,
+    ARELTM] are not both present and populated'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0159
+  pmda_category: Error
+  ig_versions: []
+

@@ -1,0 +1,33 @@
+id: SD1011
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Value of Duration, Elapsed Time, and Interval variables (--DUR, --ELTM,
+  --EVLINT, --STINT, --ENINT, TDSTOFF, TDTGTPAI, TDMINPAI, TDMAXPAI) must conform
+  to the ISO 8601 international standard.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-DM)
+    - INTERVENTIONS
+    - FINDINGS(-DO)
+    - EVENTS
+    - FINDINGSABOUT
+    - TRIALDESIGN(-TA
+    - -TI
+    - -TS
+    - -TV)
+check: []
+outcome:
+  message: Invalid ISO 8601 value for variable
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1011
+  pmda_category: Error
+  ig_versions: []
+

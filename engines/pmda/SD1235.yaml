@@ -1,0 +1,23 @@
+id: SD1235
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Value for Sponsor Device Identifier (SPDEVID) or Unique Subject Identifier
+  (USUBJID) variables should be populated for all records in Device In-Use (DU) domain.
+scope:
+  classes: []
+  domains: DU
+check: []
+outcome:
+  message: Neither SPDEVID nor USUBJID values are populated
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1235
+  pmda_category: Warning
+  ig_versions: []
+

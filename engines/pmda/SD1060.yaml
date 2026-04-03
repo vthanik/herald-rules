@@ -1,0 +1,23 @@
+id: SD1060
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The value of Visit Number (VISITNUM) variable should be unique for each
+  record within a subject.
+scope:
+  classes: []
+  domains: SV
+check: []
+outcome:
+  message: Duplicate VISITNUM
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1060
+  pmda_category: Warning
+  ig_versions: []
+

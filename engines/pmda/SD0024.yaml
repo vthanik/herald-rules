@@ -1,0 +1,25 @@
+id: SD0024
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Date/Time of Collection (--DTC) should not be null when End Date/Time
+  of Observation (--ENDTC) is not null.
+scope:
+  classes: []
+  domains:
+    - FINDINGS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Missing value for --DTC when --ENDTC is provided
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0024
+  pmda_category: Warning
+  ig_versions: []
+

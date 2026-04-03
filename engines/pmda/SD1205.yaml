@@ -1,0 +1,23 @@
+id: SD1205
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Start Date/Time of Treatment (EXSTDTC) variable value must be greater
+  than or equal to Date/Time of First Study Treatment (RFXSTDTC).
+scope:
+  classes: []
+  domains: EX
+check: []
+outcome:
+  message: EXSTDTC date is before RFXSTDTC
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1205
+  pmda_category: Error
+  ig_versions: []
+

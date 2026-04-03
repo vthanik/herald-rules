@@ -1,0 +1,23 @@
+id: SD1063
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Datasets included in study data must be described in the data definition
+  document (define.xml).
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Dataset is not present in define.xml
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1063
+  pmda_category: Error
+  ig_versions: []
+

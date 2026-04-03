@@ -1,0 +1,22 @@
+id: SD0084
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The value of Age (AGE) cannot be less than or equal to 0.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: Negative or zero value for AGE
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0084
+  pmda_category: Error
+  ig_versions: []
+

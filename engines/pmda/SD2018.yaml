@@ -1,0 +1,23 @@
+id: SD2018
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Value for Parameter Null Flavor (--VALNF) variable should be null when
+  Parameter Value (--VAL) variable value can be populated.
+scope:
+  classes: []
+  domains: TS
+check: []
+outcome:
+  message: Both --VAL and --VALNF variables are populated
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2018
+  pmda_category: Error
+  ig_versions: []
+

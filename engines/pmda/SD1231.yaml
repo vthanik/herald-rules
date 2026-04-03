@@ -1,0 +1,23 @@
+id: SD1231
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Value level length must not exceed the length as specified define.xml.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Variable value is longer than defined max length %Variable.@Clause.Length%
+    when value-level condition occurs
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1231
+  pmda_category: Warning
+  ig_versions: []
+

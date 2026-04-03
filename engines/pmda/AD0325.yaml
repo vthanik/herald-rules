@@ -1,0 +1,31 @@
+id: AD0325
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a Study and a Period, all Subperiod within Period (ASPER) variable
+  values must be the same for each unique value of Subperiod within Period (C) (ASPERC)
+  variable when the primary variable ASPERC is populated.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: Inconsistent value for ASPER
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0325
+  pmda_category: Error
+  ig_versions: []
+

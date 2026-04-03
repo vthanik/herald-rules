@@ -1,0 +1,23 @@
+id: AD0126
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a study, all PARCATyN values must be the same for each unique
+  value of PARCATy when the primary variable PARCATy is populated.
+scope:
+  classes: []
+  domains: BDS
+check: []
+outcome:
+  message: Inconsistent value for PARCATyN
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0126
+  pmda_category: Error
+  ig_versions: []
+

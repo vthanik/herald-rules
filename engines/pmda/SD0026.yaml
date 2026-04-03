@@ -1,0 +1,28 @@
+id: SD0026
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Original Units (--ORRESU) should not be null when Result or Finding in
+  Original Units (--ORRES) is provided is a numeric result.
+scope:
+  classes: []
+  domains:
+    - FINDINGS(-IE
+    - -QS
+    - -SC
+    - -SS)
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Missing value for --ORRESU when --ORRES is provided
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0026
+  pmda_category: Warning
+  ig_versions: []
+

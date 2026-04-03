@@ -1,0 +1,28 @@
+id: SD0042
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: When no response is provided for Occurrence (--OCCUR) for a pre-specified
+  Intervention or Event (--PRESP = 'Y'), then Status (--STAT) should be set to 'NOT
+  DONE'.
+scope:
+  classes: []
+  domains:
+    - INTERVENTIONS(-EX)
+    - EVENTS(-AE
+    - -DS
+    - -DV)
+check: []
+outcome:
+  message: --STAT does not equal 'NOT DONE' when --PRESP='Y' and --OCCUR is null
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0042
+  pmda_category: Warning
+  ig_versions: []
+

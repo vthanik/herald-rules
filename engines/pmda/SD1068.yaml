@@ -1,0 +1,23 @@
+id: SD1068
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The value of Element (Description of Element) variable must be unique
+  within Trial Elements (TE) domain.
+scope:
+  classes: []
+  domains: TE
+check: []
+outcome:
+  message: Duplicate ELEMENT value
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1068
+  pmda_category: Warning
+  ig_versions: []
+

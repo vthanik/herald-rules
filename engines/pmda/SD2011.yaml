@@ -1,0 +1,26 @@
+id: SD2011
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Value for High Level Term Code (--HLTCD) variable must be populated using
+  a High Level Term Code of the MedDRA dictionary of a version specified in the define.xml.
+scope:
+  classes: []
+  domains:
+    - AE
+    - CE
+    - MH
+check: []
+outcome:
+  message: Value for --HLTCD not found in MedDRA dictionary
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2011
+  pmda_category: Error
+  ig_versions: []
+

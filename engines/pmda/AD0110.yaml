@@ -1,0 +1,25 @@
+id: AD0110
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a study, all AVISIT values must be the same for each unique value
+  group of [PARAMCD, AVISITN] when PARAMCD and primary variable AVISIT are populated.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: Inconsistent value for AVISIT
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0110
+  pmda_category: Error
+  ig_versions: []
+

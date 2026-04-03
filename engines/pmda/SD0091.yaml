@@ -1,0 +1,23 @@
+id: SD0091
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Outcome of Adverse Event should equal 'FATAL' when Results in Death (AESDTH)
+  is 'Y'.
+scope:
+  classes: []
+  domains: AE
+check: []
+outcome:
+  message: AEOUT is not 'FATAL' when AESDTH='Y'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0091
+  pmda_category: Error
+  ig_versions: []
+

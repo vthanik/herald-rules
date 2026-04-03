@@ -1,0 +1,22 @@
+id: SD2248
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: TSVAL variable value must be in ISO 8601 format when TSPARMCD='SENDTC'.
+scope:
+  classes: []
+  domains: TS
+check: []
+outcome:
+  message: Invalid TSVAL value for SENDTC
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2248
+  pmda_category: Error
+  ig_versions: []
+

@@ -1,0 +1,31 @@
+id: AD0106B
+version: 1
+status: Reference
+standard: ADaM
+category: Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a study, all APERIOD values must be the same for each unique value
+  of APERIODC when the primary variable APERIOD is populated. Considering only those
+  rows on which both variables are populated.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: Inconsistent value for APERIOD
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0106B
+  pmda_category: Error
+  ig_versions: []
+

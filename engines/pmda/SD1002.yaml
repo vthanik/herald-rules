@@ -1,0 +1,23 @@
+id: SD1002
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Subject Reference Start Date/Time (RFSTDTC) must be less than or equal
+  to Subject Reference End Date/Time (RFENDTC).
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: RFSTDTC is after RFENDTC
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1002
+  pmda_category: Error
+  ig_versions: []
+

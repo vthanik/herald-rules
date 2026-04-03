@@ -1,0 +1,26 @@
+id: AD0237
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a study, all Planned Pooled Treatment y (TRTPGy) variable values
+  must be the same for each unique value of Planned Pooled Treatment y (N) (TRTPGyN)
+  variable when the primary variable TRTPGy is populated. Analogous rule for AD0240.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: Inconsistent value for TRTPGy
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0237
+  pmda_category: Error
+  ig_versions: []
+

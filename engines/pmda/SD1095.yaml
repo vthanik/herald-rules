@@ -1,0 +1,28 @@
+id: SD1095
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Split datasets must not have the name of original domain. E.g., lbhm.xpt
+  is a valid name when lb.xpt is not a valid dataset name for split domain.
+scope:
+  classes: []
+  domains:
+    - CO
+    - INTERVENTIONS
+    - FINDINGS
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Invalid dataset name for split domain
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1095
+  pmda_category: Error
+  ig_versions: []
+

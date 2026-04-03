@@ -1,0 +1,23 @@
+id: SD1379
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Element Code (ETCD) values defined in Trial Elements (TE) should be assigned
+  to at least one subject (USUBJID) in Subject Elements (SE).
+scope:
+  classes: []
+  domains: TE
+check: []
+outcome:
+  message: ETCD value does not present in SE
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1379
+  pmda_category: Warning
+  ig_versions: []
+

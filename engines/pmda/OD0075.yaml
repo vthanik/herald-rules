@@ -1,0 +1,25 @@
+id: OD0075
+version: 1
+status: Reference
+standard: Define-XML
+category: ODM/Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The Data Type attribute for Variable must have a value of 'text', 'integer',
+  'float', 'datetime', 'date', or 'time' for Define-XML v1.0, and 'text', 'integer',
+  'float', 'datetime', 'date', 'time', 'partialDate', 'partialTime', 'partialDatetime',
+  'incompleteDatetime', or 'durationDatetime' for Define-XML v2.0 and v2.1.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Invalid Data Type value for variable
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: OD0075
+  pmda_category: X
+  ig_versions: []
+

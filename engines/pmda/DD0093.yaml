@@ -1,0 +1,24 @@
+id: DD0093
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: When ParameterOID is included in a arm:AnalysisResult, then at least
+  one of the children arm:AnalysisDataset elements must be a BDS and the ParamerterOID
+  must reference a PARAMCD variable for that Dataset.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Improper use of ParameterOID
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0093
+  pmda_category: X
+  ig_versions: []
+

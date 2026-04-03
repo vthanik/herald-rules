@@ -1,0 +1,24 @@
+id: SD1464
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Dose Description (--DOSTXT) is textual description of the quantity of
+  an agent (e.g., drug, substance, radiation) taken or absorbed at a single administration.
+  For numeric representation of dose, Dose (--DOSE) variable should be utilized.
+scope:
+  classes: []
+  domains: INTERVENTIONS
+check: []
+outcome:
+  message: --DOSTXT is numeric value
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1464
+  pmda_category: Warning
+  ig_versions: []
+

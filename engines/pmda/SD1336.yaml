@@ -1,0 +1,24 @@
+id: SD1336
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: A Link ID (TRLNKID) value for a tumor that is referenced in the Tumor
+  Results (TR) domain for a subject must also be present in the Tumor Identification
+  (TU) domain for that subject.
+scope:
+  classes: []
+  domains: TR
+check: []
+outcome:
+  message: TRLNKID value does not exist in TU domain
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1336
+  pmda_category: Error
+  ig_versions: []
+

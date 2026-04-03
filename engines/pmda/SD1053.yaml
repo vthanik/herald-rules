@@ -1,0 +1,26 @@
+id: SD1053
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Records for subjects who failed a screening or were not assigned to study
+  treatment (ARMCD is 'SCRNFAIL' or 'NOTASSGN') should not be included in the Trial
+  Arms (TA) or Trial Visits (TV) datasets.
+scope:
+  classes: []
+  domains:
+    - TA
+    - TV
+check: []
+outcome:
+  message: Unexpected value for ARMCD variable
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1053
+  pmda_category: Warning
+  ig_versions: []
+

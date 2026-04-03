@@ -1,0 +1,26 @@
+id: SD1332
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The Outcome of Adverse Event (AEOUT) variable is populated with the value
+  NOT RECOVERED/NOT RESOLVED, however the End Date/Time of Adverse Event (AEENDTC)
+  variable is populated with an end date for the adverse event. If the adverse event
+  has an outcome of NOT RECOVERED/NOT RESOLVED, it is expected that no end date is
+  available.
+scope:
+  classes: []
+  domains: AE
+check: []
+outcome:
+  message: AEOUT = NOT RECOVERED/NOT RESOLVED, but an end date is provided
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1332
+  pmda_category: Warning
+  ig_versions: []
+

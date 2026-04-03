@@ -1,0 +1,35 @@
+id: SD1036
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Toxicity Grade (--TOXGR) should be provided when Toxicity (--TOX) is
+  populated.
+scope:
+  classes: []
+  domains:
+    - CP
+    - CV
+    - EG
+    - LB
+    - MI
+    - PC
+    - PP
+    - RE
+    - VS
+    - AE
+    - CE
+    - MH
+check: []
+outcome:
+  message: Missing value for --TOXGR when --TOX is populated
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1036
+  pmda_category: Warning
+  ig_versions: []
+

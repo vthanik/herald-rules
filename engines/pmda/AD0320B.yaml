@@ -1,0 +1,23 @@
+id: AD0320B
+version: 1
+status: Reference
+standard: ADaM
+category: Conformance
+sensitivity: Record
+executability: Not Executable
+description: The dataset label for a dataset named 'ADDL' must be 'Device-level Analysis
+  Dataset'.
+scope:
+  classes: []
+  domains: ADDL
+check: []
+outcome:
+  message: Non-standard dataset label
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0320B
+  pmda_category: Error
+  ig_versions: []
+

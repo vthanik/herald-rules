@@ -1,0 +1,24 @@
+id: SD1316
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All subjects who have Death records (SSSTRESC = 'DEAD') in Survival Status
+  (SS) domain should also have death records (DSDECOD='DEATH') in Disposition (DS)
+  domain.
+scope:
+  classes: []
+  domains: SS
+check: []
+outcome:
+  message: Missing 'DEATH' record for subject in DS domain
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1316
+  pmda_category: Warning
+  ig_versions: []
+

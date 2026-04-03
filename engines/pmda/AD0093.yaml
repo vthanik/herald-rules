@@ -1,0 +1,25 @@
+id: AD0093
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a study, all TRTP values must be the same for each unique value
+  of TRTPN when the primary variable TRTP is populated.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: Inconsistent value for TRTP
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0093
+  pmda_category: Error
+  ig_versions: []
+

@@ -1,0 +1,23 @@
+id: SD1313
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Epoch (EPOCH) variable should be provided when Category for Disposition
+  Event (DSCAT) equals 'DISPOSITION EVENT'.
+scope:
+  classes: []
+  domains: DS
+check: []
+outcome:
+  message: Missing EPOCH value when DSCAT is 'DISPOSITION EVENT'
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1313
+  pmda_category: Warning
+  ig_versions: []
+

@@ -1,0 +1,24 @@
+id: DD0050
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: For split datasets (where more than one ItemGroupDef exists for the same
+  Domain), the 2-letter prefix in SASDatasetName attribute and Domain attribute must
+  have the same value.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Domain/SASDatasetName mismatch for split dataset
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0050
+  pmda_category: X
+  ig_versions: []
+

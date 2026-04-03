@@ -1,0 +1,24 @@
+id: DD0081
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Only Value Level metadata that are referenced from a Variable should
+  be included in Define.xml. Define-XML specification represents Value Level metadata
+  as def:ValueListDef elements within MetaDataVersion element.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Value Level metadata <value level> is not referenced
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0081
+  pmda_category: X
+  ig_versions: []
+

@@ -1,0 +1,30 @@
+id: AD0196
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: 'Unlike SDTM, only some of ADaM Required variables (where Core attribute
+  is ''Req'') must be populated. CDISC ADaM rules affirm that PARAM and PARAMCD must
+  be populated, while others are populated as appropriate. Known Exceptions: TRTP,
+  TRTxxP, AGE, AGEU, RACE, SUBJID, AESER.'
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: Required Variable value is null
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0196
+  pmda_category: Error
+  ig_versions: []
+

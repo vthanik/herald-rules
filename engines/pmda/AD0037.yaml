@@ -1,0 +1,32 @@
+id: AD0037
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: 'Within a study, all *GRyN values must be the same for each unique value
+  of *GRy when the primary variable *GRy is populated. ADaM IG v1.0 p.11 general variable
+  naming conventions #10: If any combining of the SDTM character categories is done,
+  the name of the derived ADaM character grouping variable should end in GRy and the
+  name of its numeric equivalent should end in GRyN where y is an integer from 1-9
+  representing a grouping scheme. CDISC created 3 new explicit rules for ADAE which
+  were already covered by this general rule.'
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - BDS
+    - ADAE
+    - ADAMOTHER
+check: []
+outcome:
+  message: Inconsistent value for *GRyN
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0037
+  pmda_category: Error
+  ig_versions: []
+

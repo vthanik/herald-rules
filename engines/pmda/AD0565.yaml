@@ -1,0 +1,28 @@
+id: AD0565
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If Change to Baseline Category y (N) (BCHGCAyN) variable is used in a
+  dataset, Change to Baseline Category y (BCHGCATy) variable must also be present
+  in that dataset.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: BCHGCAyN is present and BCHGCATy is not present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0565
+  pmda_category: Error
+  ig_versions: []
+

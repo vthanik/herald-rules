@@ -1,0 +1,23 @@
+id: SD1130
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All values of Qualifier Variable Name (QNAM) should be the same for a
+  given value of Qualifier Variable Label (QLABEL).
+scope:
+  classes: []
+  domains: SUPPQUAL
+check: []
+outcome:
+  message: Inconsistent value for QNAM within QLABEL
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1130
+  pmda_category: Warning
+  ig_versions: []
+

@@ -1,0 +1,23 @@
+id: SD1349
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Study Identifier (STUDYID) values should be consistent for all subjects
+  in the Demographics (DM) domain for one study.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: Inconsistent STUDYID
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1349
+  pmda_category: Error
+  ig_versions: []
+

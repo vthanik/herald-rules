@@ -1,0 +1,23 @@
+id: SD0043
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Treatment Vehicle (--TRTV) should be provided when Treatment Vehicle
+  Amount (--VAMT) is specified.
+scope:
+  classes: []
+  domains: INTERVENTIONS
+check: []
+outcome:
+  message: Missing value for --TRTV when --VAMT is not null
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0043
+  pmda_category: Warning
+  ig_versions: []
+

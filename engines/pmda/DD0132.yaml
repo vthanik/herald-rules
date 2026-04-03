@@ -1,0 +1,23 @@
+id: DD0132
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: For codelists that are non-extensible, the def:ExtendedValue attribute
+  is not applicable and must not be included.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Invalid use of def:ExtendedValue attribute
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0132
+  pmda_category: ''
+  ig_versions: []
+

@@ -1,0 +1,24 @@
+id: SD1260
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The Version of the Reference Terminology variable (TSVCDVER) should be
+  populated with the version number of the Reference Terminology when that Reference
+  Terminology is versioned.
+scope:
+  classes: []
+  domains: TS
+check: []
+outcome:
+  message: TSVCDVER is null when Reference Terminology is versioned
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1260
+  pmda_category: Warning
+  ig_versions: []
+

@@ -1,0 +1,26 @@
+id: SD0070
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All Demographics (DM) subjects (USUBJID) participating in a study that
+  includes investigational product should have at least one record in the Exposure
+  (EX) domain, except for subjects who failed screening (ARMCD = 'SCRNFAIL'), were
+  not fully assigned to an Arm (ARMCD = 'NOTASSGN') or did not receive study treatment
+  (ACTARMCD = 'NOTTRT').
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: No Exposure record found for subject
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0070
+  pmda_category: Warning
+  ig_versions: []
+

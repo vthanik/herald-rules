@@ -1,0 +1,23 @@
+id: SD1334
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Date/Time of Informed Consent (RFICDTC) should not be after Subject Reference
+  Start Date/Time (RFSTDTC).
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: RFICDTC is after RFSTDTC
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1334
+  pmda_category: Warning
+  ig_versions: []
+

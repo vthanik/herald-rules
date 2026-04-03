@@ -1,0 +1,31 @@
+id: SD1094
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: 'Study Day of End (--ENDY) variable value should be populated as defined
+  by CDISC standards: --ENDY = (date portion of --ENDTC) - (date portion of RFSTDTC)
+  +1 if --ENDTC is on or after RFSTDTC; --ENDY = (date portion of --ENDTC) - (date
+  portion of RFSTDTC) if --ENDTC precedes RFSTDTC.'
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-CO
+    - -DM)
+    - INTERVENTIONS
+    - FINDINGS
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Incorrect value for --ENDY variable
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1094
+  pmda_category: Error
+  ig_versions: []
+

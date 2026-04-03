@@ -1,0 +1,26 @@
+id: DD0049
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: 'For SDTM and SEND submission data and for datasets that are not SUPPQUAL
+  and not split (where def:StandardName is ''SDTM-IG'' or ''SEND-IG'' and only one
+  ItemGroupDef exists for the Domain), Name, Domain, and SASDatasetName attributes
+  must have the same value. Note: Refer to the data standards catalog by the relevant
+  Regulatory Agency for acceptance of standards and their versions.'
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Name/Domain/SASDatasetName mismatch
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0049
+  pmda_category: X
+  ig_versions: []
+

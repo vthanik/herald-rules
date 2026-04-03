@@ -1,0 +1,22 @@
+id: SD1249
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: EXDOSE must be equal to 0 when EXTRT = 'PLACEBO'.
+scope:
+  classes: []
+  domains: EX
+check: []
+outcome:
+  message: EXDOSE does not equal 0 when EXTRT = 'PLACEBO'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1249
+  pmda_category: Error
+  ig_versions: []
+

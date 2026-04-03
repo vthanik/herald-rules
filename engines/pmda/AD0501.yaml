@@ -1,0 +1,30 @@
+id: AD0501
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: On a given record, if Subperiod within Period (ASPER) variable is populated,
+  then Period (APERIOD) variable must be populated.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: ASPER is populated and APERIOD is not populated
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0501
+  pmda_category: Error
+  ig_versions: []
+

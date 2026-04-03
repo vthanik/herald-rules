@@ -1,0 +1,24 @@
+id: DD0124
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Variables defined in a Standard with a Controlled Terminology requirement
+  must have a codelist. Define-XML defines codelists using the CodeList element and
+  references to those using CodeListRef elements.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Expected Codelist is missing
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0124
+  pmda_category: ''
+  ig_versions: []
+

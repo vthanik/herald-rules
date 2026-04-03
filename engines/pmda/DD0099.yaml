@@ -1,0 +1,23 @@
+id: DD0099
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Values for the AnalysisReason attribute are controlled by the Analysis
+  Reason extensible codelist in ADaM CT or Define CT.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Extended value for AnalysisReason
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0099
+  pmda_category: X
+  ig_versions: []
+

@@ -1,0 +1,23 @@
+id: OD0022
+version: 1
+status: Reference
+standard: Define-XML
+category: ODM/Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The OID attribute for Study element must be unique within a related series
+  of ODM documents.
+scope:
+  classes: []
+  domains: Reject
+check: []
+outcome:
+  message: Duplicate Study OID
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: OD0022
+  pmda_category: X
+  ig_versions: []
+

@@ -1,0 +1,34 @@
+id: AD0043
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: 'The SAS format listed in the dataset must be valid. Here is a list of
+  SAS Date formats utilized in the rule algorithm: B8601DT, B8601DZ, DATEAMPM, DATETIME,
+  DTDATE, DTWKDATX, DTYEAR, DTYYQC, E8601DN, E8601DT, E8601DZ, MDYAMPM, TOD, IS8601DN,
+  IS8601DT, IS8601DZ.'
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+    - BDS
+    - ADNCA
+    - MDBDS
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: '*DTM does not have the ADaM required SAS Datetime format'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0043
+  pmda_category: Error
+  ig_versions: []
+

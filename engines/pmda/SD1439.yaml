@@ -1,0 +1,30 @@
+id: SD1439
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: By its definition clinical baseline flags (e.g., last non-missing value
+  prior to first dose) should have only a single record for the same test for subject.
+  Therefore, each subject (USUBJID) should have no more than one record with Baseline
+  Flag (--BLFL) equals 'Y' for the same assessment which is defined by Test (--TESTCD),
+  Test Details (--TSTDTL), Category (--CAT), Subcategory (--SCAT), Method (--METHOD),
+  Specimen (--SPEC), Location (--LOC), Laterality (--LAT), Directionality (--DIR),
+  Position (--POS) and Object (--OBJ) variables.
+scope:
+  classes: []
+  domains:
+    - FINDINGS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Multiple BASELINE records for the same test
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1439
+  pmda_category: Warning
+  ig_versions: []
+

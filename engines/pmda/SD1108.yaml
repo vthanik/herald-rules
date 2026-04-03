@@ -1,0 +1,22 @@
+id: SD1108
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Vital Signs (VS) dataset should be included in every submission.
+scope:
+  classes: []
+  domains: VS
+check: []
+outcome:
+  message: Missing VS dataset
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1108
+  pmda_category: Warning
+  ig_versions: []
+

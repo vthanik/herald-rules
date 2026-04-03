@@ -1,0 +1,24 @@
+id: AD0696
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: For a set of [Sponsor Device Identifier (SPDEVID), Subject (USUBJID),
+  Parameter (PARAMCD), baseline type (BASETYPE)] only one record can be the actual
+  baseline value, marked by ABLFL = Y.
+scope:
+  classes: []
+  domains: MDBDS
+check: []
+outcome:
+  message: Multiple baseline records exist for a unique SPDEVID,USUBJID,PARAMCD,BASETYPE
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0696
+  pmda_category: Error
+  ig_versions: []
+

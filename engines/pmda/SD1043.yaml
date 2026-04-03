@@ -1,0 +1,26 @@
+id: SD1043
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All values of Short Name of Measurement, Test or Examination (--TESTCD)
+  should be the same for a given value of Name of Measurement, Test or Examination
+  (--TEST).
+scope:
+  classes: []
+  domains:
+    - FINDINGS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Inconsistent value for --TESTCD within --TEST
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1043
+  pmda_category: Warning
+  ig_versions: []
+

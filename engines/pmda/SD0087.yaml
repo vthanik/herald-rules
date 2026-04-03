@@ -1,0 +1,24 @@
+id: SD0087
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Subject Reference Start Date/Time (RFSTDTC) should be populated for all
+  randomized subjects, those where Planned Arm Code (ARMCD) is not equal to 'SCRNFAIL'
+  or 'NOTASSGN' or null.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: RFSTDTC is not provided for a randomized subject
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0087
+  pmda_category: Warning
+  ig_versions: []
+

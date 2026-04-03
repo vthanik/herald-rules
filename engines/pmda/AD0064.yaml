@@ -1,0 +1,25 @@
+id: AD0064
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If Actual Treatment (TRTxxAN) numeric variable is present, there must
+  be a corresponding Actual Treatment (TRTxxA) character variable.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+check: []
+outcome:
+  message: TRTxxAN is present, but TRTxxA is not present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0064
+  pmda_category: Error
+  ig_versions: []
+

@@ -1,0 +1,22 @@
+id: SD0001
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Domain table should have at least one record.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: No records in data source
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0001
+  pmda_category: Warning
+  ig_versions: []
+

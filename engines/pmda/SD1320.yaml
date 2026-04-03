@@ -1,0 +1,25 @@
+id: SD1320
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Character Result/Finding in Std Format (--STRESC) value should not be
+  null when Completion Status (--STAT) value is null.
+scope:
+  classes: []
+  domains:
+    - FINDINGS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Missing value for --STRESC when --STAT is null
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1320
+  pmda_category: Warning
+  ig_versions: []
+

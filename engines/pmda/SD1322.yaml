@@ -1,0 +1,24 @@
+id: SD1322
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Value for the Country (COUNTRY) variable must be populated using terms
+  found in Geopolitical Entities, Names, and Codes (GENC) dictionary. Note that country
+  codes in GENC and ISO 3166 are the same for most cases.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: Value for COUNTRY not found in GENC
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1322
+  pmda_category: Error
+  ig_versions: []
+

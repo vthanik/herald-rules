@@ -1,0 +1,26 @@
+id: AD0366A
+version: 1
+status: Reference
+standard: ADaM
+category: Conformance
+sensitivity: Record
+executability: Not Executable
+description: Date of Randomization (RANDDT) variable value should be populated for
+  randomized subjects (when Randomized Population Flag (RANDFL) variable value is
+  'Y').
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+check: []
+outcome:
+  message: Missing value for RANDDT when RANDFL is Y
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0366A
+  pmda_category: Error
+  ig_versions: []
+

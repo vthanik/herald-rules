@@ -1,0 +1,23 @@
+id: SD2283
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Value for the Null Flavor (TSVALNF) variable must be populated using
+  terms found in ISO 21090.
+scope:
+  classes: []
+  domains: TS
+check: []
+outcome:
+  message: Value for TSVALNF not found in ISO 21090
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2283
+  pmda_category: Warning
+  ig_versions: []
+

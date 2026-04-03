@@ -1,0 +1,22 @@
+id: SD1106
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Adverse Events (AE) dataset should be included in every submission.
+scope:
+  classes: []
+  domains: AE
+check: []
+outcome:
+  message: Missing AE dataset
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1106
+  pmda_category: Warning
+  ig_versions: []
+

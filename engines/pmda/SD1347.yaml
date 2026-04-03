@@ -1,0 +1,25 @@
+id: SD1347
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Fatal Adverse Event records (AEOUT = 'FATAL') in the Adverse Events (AE)
+  domain should have End Date/Time of Adverse Event (AEENDTC) equal to subject's Date/Time
+  of Death (DTHDTC) populated in the Demographics (DM) domain. Subject's Date/Time
+  of Death info should be consistent across all domains.
+scope:
+  classes: []
+  domains: AE
+check: []
+outcome:
+  message: AEENDTC for fatal AE is not the same as DM.DTHDTC
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1347
+  pmda_category: Warning
+  ig_versions: []
+

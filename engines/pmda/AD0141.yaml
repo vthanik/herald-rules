@@ -1,0 +1,26 @@
+id: AD0141
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a study, All PARAM values must be the same for each unique value
+  of PARAMCD when both PARAMCD and PARAM are populated.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: Inconsistent value for PARAM within a unique PARAMCD
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0141
+  pmda_category: Error
+  ig_versions: []
+

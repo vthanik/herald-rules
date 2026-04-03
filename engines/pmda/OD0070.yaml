@@ -1,0 +1,23 @@
+id: OD0070
+version: 1
+status: Reference
+standard: Define-XML
+category: ODM/Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The Length attribute is required when DataType is integer, float, or
+  text.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Missing Length value
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: OD0070
+  pmda_category: X
+  ig_versions: []
+

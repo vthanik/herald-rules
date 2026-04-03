@@ -1,0 +1,23 @@
+id: SD1074
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Variables designed only for SEND pre-clinical studies must be not included
+  in the SDTM dataset.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Variable which can be used only in SEND
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1074
+  pmda_category: Reject
+  ig_versions: []
+

@@ -1,0 +1,31 @@
+id: AD0090
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: At least 1 treatment variable is required in a BDS dataset. This requirement
+  is satisfied by any of the subject-level (ARM, ACTARM, TRTxxP, TRTxxA, TRTSEQP,
+  TRTSEQA, TRxxPGy, TRxxAGy, TSEQPGy, TSEQAGy) or record-level (TRTP, TRTA, TRTPGy,
+  TRTAGy) treatment variables. One is allowed to use any treatment variable in analysis
+  of BDS. Any subject-level treatment variable may be copied into the BDS dataset
+  from ADSL.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: None of the subject-level or record-level treatment variables defined in
+    the IG are present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0090
+  pmda_category: Error
+  ig_versions: []
+

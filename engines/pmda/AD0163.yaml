@@ -1,0 +1,26 @@
+id: AD0163
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If Baseline Toxicity Grade (BTOXGR) variable is present, then Analysis
+  Toxicity Grade (ATOXGR) and Baseline Record Flag (ABLFL) variables must be present.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: BTOXGR is present, but ATOXGR is not present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0163
+  pmda_category: Error
+  ig_versions: []
+

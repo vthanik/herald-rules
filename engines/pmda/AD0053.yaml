@@ -1,0 +1,27 @@
+id: AD0053
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The combination of Study Identifier (STUDYID) and Unique Subject Identifier
+  (USUBJID) is not found in the SDTM Demographics domain. There must be traceability
+  between ADaM and SDTM.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+check: []
+outcome:
+  message: The combination of STUDYID and USUBJID value does not exist in the SDTM
+    DM domain
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0053
+  pmda_category: Error
+  ig_versions: []
+

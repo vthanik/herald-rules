@@ -1,0 +1,23 @@
+id: DD0123
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The length of a value level slice must be less than or equal to the length
+  of the parent variable.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Variable/Value Level Length mismatch
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0123
+  pmda_category: X
+  ig_versions: []
+

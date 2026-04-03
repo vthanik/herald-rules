@@ -1,0 +1,24 @@
+id: DD0117
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: When an Analysis Results Metadata references an External Document, a
+  description for that document is required. The Document Description is represented
+  as a Description element inside the arm:Documentation element.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Incomplete Documentation for Analysis Results Metadata
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0117
+  pmda_category: X
+  ig_versions: []
+

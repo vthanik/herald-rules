@@ -1,0 +1,26 @@
+id: SD1454
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Reference Result in Standard Format (--STREFC) should be populated when
+  Derived Flag (--DRVFL) equals 'Y'
+scope:
+  classes: []
+  domains:
+    - FINDINGS(-MK
+    - -OE)
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: --STREFC is null when --DRVFL='Y'
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1454
+  pmda_category: Warning
+  ig_versions: []
+

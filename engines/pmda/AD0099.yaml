@@ -1,0 +1,30 @@
+id: AD0099
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Any variable ending in STDY (Start day) must have a value less than or
+  equal to its corresponding ENDY (end day) value.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: '*STDY is greater than *ENDY'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0099
+  pmda_category: Error
+  ig_versions: []
+

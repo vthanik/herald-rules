@@ -1,0 +1,22 @@
+id: DD0108
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Study Identifier (STUDYID) variable should have Origin set to 'Protocol'.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Origin for STUDYID variable is not set to Protocol
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0108
+  pmda_category: X
+  ig_versions: []
+

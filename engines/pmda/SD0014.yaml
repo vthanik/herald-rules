@@ -1,0 +1,22 @@
+id: SD0014
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Non-missing Dose (--DOSE) value must be greater than or equal to 0.
+scope:
+  classes: []
+  domains: INTERVENTIONS
+check: []
+outcome:
+  message: Negative value for --DOSE
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0014
+  pmda_category: Error
+  ig_versions: []
+

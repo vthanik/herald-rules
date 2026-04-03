@@ -1,0 +1,29 @@
+id: SD2271
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Start Study Date/Time (--STDTC) variable should be included into dataset
+  when Study Day of Start (--STDY) variable is present.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-CO
+    - -DM)
+    - INTERVENTIONS
+    - FINDINGS
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Missing --STDTC variable when --STDY variable is present
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2271
+  pmda_category: Warning
+  ig_versions: []
+

@@ -1,0 +1,23 @@
+id: SD1361
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Description of Planned Arm (ARM) must be populated when Planned Arm Code
+  (ARMCD) is populated, and vice versa.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: ARM is populated, but ARMCD is null, or vice versa
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1361
+  pmda_category: Error
+  ig_versions: []
+

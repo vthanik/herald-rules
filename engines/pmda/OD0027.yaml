@@ -1,0 +1,23 @@
+id: OD0027
+version: 1
+status: Reference
+standard: Define-XML
+category: ODM/Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The OID attribute for MetaDataVersion element must be unique within a
+  single study.
+scope:
+  classes: []
+  domains: Reject
+check: []
+outcome:
+  message: Duplicate MetaDataVersion OID
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: OD0027
+  pmda_category: X
+  ig_versions: []
+

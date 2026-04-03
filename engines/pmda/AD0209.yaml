@@ -1,0 +1,23 @@
+id: AD0209
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The same subject in ADSL and DM must have the same value for Site ID
+  (SITEID). There must be traceability between ADaM and SDTM.
+scope:
+  classes: []
+  domains: ADSL
+check: []
+outcome:
+  message: For the same USUBJID, the ADSL.SITEID != DM.SITEID
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0209
+  pmda_category: Error
+  ig_versions: []
+

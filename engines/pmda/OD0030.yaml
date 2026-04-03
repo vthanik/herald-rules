@@ -1,0 +1,23 @@
+id: OD0030
+version: 1
+status: Reference
+standard: Define-XML
+category: ODM/Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The OID attribute for ItemGroupDef element must be unique within a single
+  MetaDataVersion.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Duplicate ItemGroupDef OID
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: OD0030
+  pmda_category: X
+  ig_versions: []
+

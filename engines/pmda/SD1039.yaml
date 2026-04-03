@@ -1,0 +1,30 @@
+id: SD1039
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Value of Category (--CAT) should not be identical to that in Domain Abbreviation
+  (DOMAIN); Reported Term (--TERM); Name of Measurement, Test, or Examination (--TESTCD);
+  Name of Treatment (--TRT); Standardized Coded Term (--DECOD); Body System or Organ
+  Class (--BODSYS).
+scope:
+  classes: []
+  domains:
+    - INTERVENTIONS
+    - FINDINGS
+    - EVENTS
+    - FINDINGSABOUT
+    - TI
+check: []
+outcome:
+  message: --CAT value is redundant with other variable values
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1039
+  pmda_category: Warning
+  ig_versions: []
+

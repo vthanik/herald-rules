@@ -1,0 +1,24 @@
+id: DD0025
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: MedDRA version must be set to decimal value ending with 0 or 1, for example
+  '9.0' or '14.1'. Define-XML specification represents MedDRA version as Version attribute
+  on ExternalCodeList element within CodeList element.
+scope:
+  classes: []
+  domains: Reject
+check: []
+outcome:
+  message: Invalid MedDRA Version <version>
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0025
+  pmda_category: X
+  ig_versions: []
+

@@ -1,0 +1,29 @@
+id: SD0050
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: End Reference Time Point (--ENTPT) must not be null when End Relative
+  to Reference Time Point (--ENRTPT) is provided.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-CO
+    - -DM)
+    - INTERVENTIONS
+    - FINDINGS
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Missing value for --ENTPT when --ENRTPT is populated
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0050
+  pmda_category: Warning
+  ig_versions: []
+

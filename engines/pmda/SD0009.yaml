@@ -1,0 +1,26 @@
+id: SD0009
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: When Serious Event (AESER) variable value is 'Y', then at least one of
+  seriousness criteria variables is expected to have value 'Y' (Involves Cancer (AESCAN),
+  Congenital Anomaly or Birth Defect (AESCONG), Persist or Signif Disability/Incapacity
+  (AESDISAB), Results in Death (AESDTH), Requires or Prolongs Hospitalization (AESHOSP),
+  Is Life Threatening (AESLIFE), or Other Medically Important Serious Event (AESMIE)).
+scope:
+  classes: []
+  domains: AE
+check: []
+outcome:
+  message: No qualifiers set to 'Y' when AE is Serious
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0009
+  pmda_category: Warning
+  ig_versions: []
+

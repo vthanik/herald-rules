@@ -1,0 +1,27 @@
+id: SD2009
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Value for Lowest Level Term Code (--LLTCD) variable must be populated
+  using a Lowest Level Term Code of the MedDRA dictionary of a version specified in
+  the define.xml.
+scope:
+  classes: []
+  domains:
+    - AE
+    - CE
+    - MH
+check: []
+outcome:
+  message: Value for --LLTCD not found in MedDRA dictionary
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2009
+  pmda_category: Error
+  ig_versions: []
+

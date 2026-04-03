@@ -1,0 +1,30 @@
+id: SD1029
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Variables value must not include non-ASCII or non-printable characters
+  (outside of 32-126 ASCII code range), limited to variables which values may be converted
+  into new variable name or label (--TEST, --TESTCD, --PARM, --PARMCD, QLABEL, QNAM).
+scope:
+  classes: []
+  domains:
+    - FINDINGS
+    - FINDINGSABOUT
+    - SUPPQUAL
+    - TI
+    - TS
+    - STUDYREFERENCE
+check: []
+outcome:
+  message: Non-ASCII or non-printable characters in variable
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1029
+  pmda_category: Warning
+  ig_versions: []
+

@@ -1,0 +1,26 @@
+id: AD0076B
+version: 1
+status: Reference
+standard: ADaM
+category: Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a study, all TRTxxPN values must be the same for each unique value
+  of TRTxxP when the primary variable TRTxxP is populated. Considering only those
+  rows on which both variables are populated.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+check: []
+outcome:
+  message: Inconsistent value for TRTxxPN
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0076B
+  pmda_category: Error
+  ig_versions: []
+

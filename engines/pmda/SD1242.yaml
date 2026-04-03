@@ -1,0 +1,26 @@
+id: SD1242
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All values of Body System or Organ Class (--BODSYS) should be the same
+  for a given value of Body System or Organ Class Code (--BDSYCD).
+scope:
+  classes: []
+  domains:
+    - AE
+    - CE
+    - MH
+check: []
+outcome:
+  message: Inconsistent value for --BODSYS within --BDSYCD
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1242
+  pmda_category: Warning
+  ig_versions: []
+

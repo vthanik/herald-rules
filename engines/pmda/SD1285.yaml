@@ -1,0 +1,26 @@
+id: SD1285
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Directionality (--DIR) variable should not be present in the domain when
+  the Location (--LOC) variable is missing.
+scope:
+  classes: []
+  domains:
+    - INTERVENTIONS
+    - FINDINGS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: --DIR variable is present when --LOC variable is missing
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1285
+  pmda_category: Warning
+  ig_versions: []
+

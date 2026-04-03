@@ -1,0 +1,23 @@
+id: DD0018
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The ItemGroupDef def:ArchiveLocationID should match the ID of the child
+  def:leaf.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: def:ArchiveLocationID/def:leaf mismatch
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0018
+  pmda_category: X
+  ig_versions: []
+

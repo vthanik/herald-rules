@@ -1,0 +1,22 @@
+id: SD2249
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: TSVAL variable value must be numeric when TSPARMCD='ACTSUB'.
+scope:
+  classes: []
+  domains: TS
+check: []
+outcome:
+  message: Invalid TSVAL value for ACTSUB
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2249
+  pmda_category: Error
+  ig_versions: []
+

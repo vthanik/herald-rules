@@ -1,0 +1,23 @@
+id: DD0029
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The def:ExtendedValue attribute is required when the CodedValue is an
+  extended value.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Required attribute def:ExtendedValue is missing or empty
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0029
+  pmda_category: X
+  ig_versions: []
+

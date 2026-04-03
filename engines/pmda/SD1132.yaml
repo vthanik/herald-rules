@@ -1,0 +1,24 @@
+id: SD1132
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Serious Event (AESER) variable value is expected to be 'Y' when either
+  of Seriousness Criteria variables (AESCAN, AESCONG, AESDISAB, AESDTH, AESHOSP, AESLIFE,
+  AESMIE) has value 'Y'.
+scope:
+  classes: []
+  domains: AE
+check: []
+outcome:
+  message: AESER is not 'Y'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1132
+  pmda_category: Error
+  ig_versions: []
+

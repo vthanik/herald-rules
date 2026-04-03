@@ -1,0 +1,29 @@
+id: SD1127
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All values of Planned Time Point Number (--TPTNUM) variable should be
+  the same for a given value of Planned Time Point Name (--TPT) variable, Time Point
+  Reference (--TPTREF) variable, and Visit Number (VISITNUM) variable.
+scope:
+  classes: []
+  domains:
+    - CO
+    - INTERVENTIONS
+    - FINDINGS(-DO)
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Inconsistent value for --TPTNUM within --TPT, --TPTREF, VISITNUM
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1127
+  pmda_category: Warning
+  ig_versions: []
+

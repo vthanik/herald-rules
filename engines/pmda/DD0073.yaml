@@ -1,0 +1,28 @@
+id: DD0073
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: For Define-XML v2.0, the Origin Type attribute must have a value of 'CRF',
+  'Derived', 'Assigned', 'Protocol', 'eDT', or 'Predecessor' for SDTM and ADaM data
+  and 'COLLECTED', 'DERIVED', 'OTHER', or 'NOT AVAILABLE' for SEND data. For Define-XML
+  v2.1, the Origin Type attribute must have a value of 'Collected', 'Derived', 'Assigned',
+  'Protocol', or 'Predecessor' for SDTM, 'Collected', 'Derived', 'Assigned', 'Protocol',
+  'Other', 'Predecessor', or 'Not Available' for SEND, and 'Derived', 'Assigned',
+  or 'Predecessor' for ADaM.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Invalid Origin Type value
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0073
+  pmda_category: X
+  ig_versions: []
+

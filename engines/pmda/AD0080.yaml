@@ -1,0 +1,25 @@
+id: AD0080
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If Actual Treatment (TRTxxA) is present, its corresponding Planned Treatment
+  (TRTxxP) must be present.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+check: []
+outcome:
+  message: TRTxxA is present, but TRTxxP is not present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0080
+  pmda_category: Error
+  ig_versions: []
+

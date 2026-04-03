@@ -1,0 +1,23 @@
+id: SD0046
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All values of Qualifier Variable Label (QLABEL) should be the same for
+  a given value of Qualifier Variable Name (QNAM).
+scope:
+  classes: []
+  domains: SUPPQUAL
+check: []
+outcome:
+  message: Inconsistent value for QLABEL within QNAM
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0046
+  pmda_category: Error
+  ig_versions: []
+

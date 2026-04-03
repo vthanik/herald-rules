@@ -1,0 +1,24 @@
+id: OD0079
+version: 1
+status: Reference
+standard: Define-XML
+category: ODM/Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The Term must be unique within a Codelist. Define-XML specification represents
+  Term as CodedValue attribute on either EnumeratedItem or CodeListItem elements within
+  CodeList element.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Duplicate Term in Codelist <codelist>
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: OD0079
+  pmda_category: X
+  ig_versions: []
+

@@ -1,0 +1,23 @@
+id: SD1266
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: When the Description of Unplanned Element (SEUPDES) is not populated,
+  the Element Code (ETCD) should not be equal to 'UNPLAN'.
+scope:
+  classes: []
+  domains: SE
+check: []
+outcome:
+  message: ETCD equals 'UNPLAN' when SEUPDES is null
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1266
+  pmda_category: Warning
+  ig_versions: []
+

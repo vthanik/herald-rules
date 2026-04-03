@@ -1,0 +1,23 @@
+id: SD2244
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: TSVCDREF variable value must be 'GENC' (for FDA submissions) or 'ISO
+  3166-1 alpha-3' when TSPARMCD='FCNTRY'.
+scope:
+  classes: []
+  domains: TS
+check: []
+outcome:
+  message: Invalid TSVCDREF value for FCNTRY
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2244
+  pmda_category: Error
+  ig_versions: []
+

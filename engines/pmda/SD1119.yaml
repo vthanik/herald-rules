@@ -1,0 +1,27 @@
+id: SD1119
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: 'In the Comments (CO) domain, the following Identifier and Timing variables
+  are Permissible and may be populated as appropriate when comments are not related
+  to other domain records (i.e., RDOMAIN and IDVAR variable values are not populated):
+  COGRPID, COREFID, COSPID, VISIT, VISITNUM, VISITDY, TAETORD, CODY, COTPT, COTPTNUM,
+  COELTM, COTPTREF, CORFTDTC.'
+scope:
+  classes: []
+  domains: CO
+check: []
+outcome:
+  message: Inappropriate usage of variables in CO domain when comment is a child record
+    of another domain
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1119
+  pmda_category: Error
+  ig_versions: []
+

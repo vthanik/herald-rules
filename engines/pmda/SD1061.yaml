@@ -1,0 +1,23 @@
+id: SD1061
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Microbiology Specimen (MB) dataset should be included when a Microbiology
+  Susceptibility Test (MS) dataset is present.
+scope:
+  classes: []
+  domains: MB
+check: []
+outcome:
+  message: Missing MB dataset when MS dataset is present
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1061
+  pmda_category: Warning
+  ig_versions: []
+

@@ -1,0 +1,24 @@
+id: DD0080
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Only Methods that are referenced from a Variable or Value Level metadata
+  should be included in Define.xml. Define-XML specification represents Methods as
+  MethodDef elements within MetaDataVersion element.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Method <method> is not referenced
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0080
+  pmda_category: X
+  ig_versions: []
+

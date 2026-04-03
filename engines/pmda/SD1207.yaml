@@ -1,0 +1,23 @@
+id: SD1207
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: End Date/Time of Treatment (EXENDTC) variable value must be less than
+  or equal to Date/Time of Last Study Treatment (RFXENDTC).
+scope:
+  classes: []
+  domains: EX
+check: []
+outcome:
+  message: EXENDTC date is after RFXENDTC
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1207
+  pmda_category: Error
+  ig_versions: []
+

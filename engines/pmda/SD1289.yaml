@@ -1,0 +1,23 @@
+id: SD1289
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Dictionary-Derived Term (--DECOD) should be populated when Preferred
+  Term Code (--PTCD) is populated.
+scope:
+  classes: []
+  domains: EVENTS
+check: []
+outcome:
+  message: Missing value for --DECOD when --PTCD is populated
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1289
+  pmda_category: Error
+  ig_versions: []
+

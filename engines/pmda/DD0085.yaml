@@ -1,0 +1,22 @@
+id: DD0085
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Stylesheet (".xsl") file referenced in Define.xml must exist.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Missing Define XSL
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0085
+  pmda_category: X
+  ig_versions: []
+

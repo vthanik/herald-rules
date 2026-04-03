@@ -1,0 +1,26 @@
+id: AD0239
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If both actual treatment (TRTA) and Planned Pooled Treatment y (TRTPGy)
+  are present, then Actual Pooled Treatment y (TRTAGy) variable must be present.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: TRTPGy and TRTA are present, but TRTAGy is not present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0239
+  pmda_category: Error
+  ig_versions: []
+

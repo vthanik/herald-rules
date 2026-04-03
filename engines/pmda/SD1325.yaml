@@ -1,0 +1,22 @@
+id: SD1325
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Dataset Description in define.xml must match dataset Description.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Define.xml/dataset description mismatch
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1325
+  pmda_category: Error
+  ig_versions: []
+

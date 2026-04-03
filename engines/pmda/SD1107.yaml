@@ -1,0 +1,22 @@
+id: SD1107
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Lab Test Results (LB) dataset should be included in every submission.
+scope:
+  classes: []
+  domains: LB
+check: []
+outcome:
+  message: Missing LB dataset
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1107
+  pmda_category: Warning
+  ig_versions: []
+

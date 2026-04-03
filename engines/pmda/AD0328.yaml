@@ -1,0 +1,27 @@
+id: AD0328
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a Study and a Parameter, all Analysis Value Category y (N) (AVALCAyN)
+  variable values must be the same for each unique value of Analysis Value Category
+  y (AVALCATy) variable when the primary variable AVALCATy is populated.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: Inconsistent value for AVALCAyN
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0328
+  pmda_category: Error
+  ig_versions: []
+

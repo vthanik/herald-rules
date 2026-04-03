@@ -1,0 +1,22 @@
+id: SD1044
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Baseline Flag (--BLFL) should be present in all custom Findings domains.
+scope:
+  classes: []
+  domains: FINDINGS
+check: []
+outcome:
+  message: No --BLFL variable in custom Findings domain
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1044
+  pmda_category: Warning
+  ig_versions: []
+

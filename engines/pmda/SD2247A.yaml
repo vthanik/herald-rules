@@ -1,0 +1,23 @@
+id: SD2247A
+version: 1
+status: Reference
+standard: SDTM
+category: Conformance
+sensitivity: Record
+executability: Not Executable
+description: TSVAL variable value must be in ISO 8601 format and include at least
+  full date, when TSPARMCD='SSTDTC'.
+scope:
+  classes: []
+  domains: TS
+check: []
+outcome:
+  message: Incomplete date for study start date
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2247A
+  pmda_category: Error
+  ig_versions: []
+

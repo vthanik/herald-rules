@@ -1,0 +1,28 @@
+id: AD0405
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a subject, there should be only a single value of Analysis Toxicity
+  Description High (ATOXDSCH) variable for a given value of Parameter Code (PARAMCD)
+  variable, considering only those rows on which both variables are populated.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: Inconsistent value for ATOXDSCH within a subject and parameter
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0405
+  pmda_category: Warning
+  ig_versions: []
+

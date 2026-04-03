@@ -1,0 +1,25 @@
+id: SD1070
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All values of a Parameter Short Name (--PARMCD) variables should be the
+  same for a given value of a Parameter (--PARM) variables.
+scope:
+  classes: []
+  domains:
+    - TS
+    - STUDYREFERENCE
+check: []
+outcome:
+  message: Inconsistent value for --PARMCD within --PARM
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1070
+  pmda_category: Warning
+  ig_versions: []
+

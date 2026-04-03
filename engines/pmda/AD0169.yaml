@@ -1,0 +1,29 @@
+id: AD0169
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Censor (CNSR) value must be an integer. Defines whether the event was
+  censored (period of observation truncated prior to event being observed). It is
+  strongly recommended to use 0 as an event indicator and positive integers as censoring
+  indicators. It is also recommended that unique positive integers be used to indicate
+  coded descriptions of censoring reasons. CNSR is required for time-to-event parameters.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: CNSR is not an integer >= 0
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0169
+  pmda_category: Error
+  ig_versions: []
+

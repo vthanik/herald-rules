@@ -1,0 +1,23 @@
+id: SD1270
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Pharmacokinetic Concentrations (PC) dataset should be included when a
+  Pharmacokinetic Parameters (PP) dataset is present.
+scope:
+  classes: []
+  domains: PC
+check: []
+outcome:
+  message: Missing PC dataset when PP dataset is present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1270
+  pmda_category: Error
+  ig_versions: []
+

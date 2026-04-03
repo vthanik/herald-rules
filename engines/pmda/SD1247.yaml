@@ -1,0 +1,25 @@
+id: SD1247
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: ECDOSE must be greater than zero when ECOCCUR does not equal 'N', ECSTAT
+  does not equal 'NOT DONE', and ECDOSTXT is null. ECDOSE must not be set to zero
+  (0) as an alternative method for indicating doses not taken, not given, or missed.
+scope:
+  classes: []
+  domains: EC
+check: []
+outcome:
+  message: ECDOSE is not greater than 0 when ECOCCUR does not equal 'N' and ECDOSTXT
+    is null
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1247
+  pmda_category: Warning
+  ig_versions: []
+

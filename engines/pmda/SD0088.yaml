@@ -1,0 +1,26 @@
+id: SD0088
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Subject Reference End Date/Time (RFENDTC) should be populated for all
+  randomized subjects, those where Planned Arm Code (ARMCD) is not equal to 'SCRNFAIL'
+  or 'NOTASSGN' or null. If the study is ongoing, Parameter Value (TSVAL) for the
+  'ONGOSIND/Ongoing Study Indicator' parameter should be set to 'Y' in the Trial Summary
+  (TS) domain.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: RFENDTC is not provided for a randomized subject
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0088
+  pmda_category: Warning
+  ig_versions: []
+

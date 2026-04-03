@@ -1,0 +1,23 @@
+id: AD0678
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a study, All DEVTYGyN values must be the same for each unique
+  value of DEVTYGy, when both variables are populated. Analogous rule for AD0677.
+scope:
+  classes: []
+  domains: ADDL
+check: []
+outcome:
+  message: Inconsistent value for DEVTYGyN
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0678
+  pmda_category: Error
+  ig_versions: []
+

@@ -1,0 +1,25 @@
+id: SD0095
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Supplemental Qualifiers special purpose dataset (SUPP--) can only be
+  used to capture non-standard variables and their association to parent records in
+  general-observation-class datasets (Events, Findings, Interventions) and Demographics.
+  Another exception is Subject Visits domain in SDTM-IG prior v3.4.
+scope:
+  classes: []
+  domains: SUPPQUAL
+check: []
+outcome:
+  message: Invalid usage of SUPPQUAL for non-general-observation-class Domain
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0095
+  pmda_category: Error
+  ig_versions: []
+

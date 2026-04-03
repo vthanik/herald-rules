@@ -1,0 +1,23 @@
+id: SD1097
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: A treatment-emergent flag should be included in SUPPAE according to the
+  FDA business rule that states, 'A treatment-emergent flag should be submitted'.
+scope:
+  classes: []
+  domains: AE
+check: []
+outcome:
+  message: No Treatment Emergent info for Adverse Event
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1097
+  pmda_category: Warning
+  ig_versions: []
+

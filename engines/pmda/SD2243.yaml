@@ -1,0 +1,24 @@
+id: SD2243
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: 'TSVCDREF variable value must be either ''MED-RT'' or ''NDF-RT'' when
+  TSPARMCD=''PCLAS''. (Note: Any version 2018-02-05 or earlier is NDF-RT, and any
+  version after is MED-RT).'
+scope:
+  classes: []
+  domains: TS
+check: []
+outcome:
+  message: Invalid TSVCDREF value for PCLAS
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2243
+  pmda_category: Warning
+  ig_versions: []
+

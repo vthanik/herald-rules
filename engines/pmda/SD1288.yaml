@@ -1,0 +1,23 @@
+id: SD1288
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All values of Preferred Term Code (--PTCD) should be the same for a given
+  value of Dictionary-Derived Term (--DECOD).
+scope:
+  classes: []
+  domains: EVENTS
+check: []
+outcome:
+  message: Inconsistent value for --PTCD within --DECOD
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1288
+  pmda_category: Error
+  ig_versions: []
+

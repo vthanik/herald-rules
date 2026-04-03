@@ -1,0 +1,24 @@
+id: SD1263
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: MBRESCAT is expected to be populated in all records where a microorganism
+  has been identified (MBTESTCD = 'ORGANISM'), excluding records where MBSTRESC equals
+  'NO GROWTH' or MBMETHOD equals 'GRAM STAIN'.
+scope:
+  classes: []
+  domains: MB
+check: []
+outcome:
+  message: MBRESCAT is null when MBTESTCD = 'ORGANISM'
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1263
+  pmda_category: Warning
+  ig_versions: []
+

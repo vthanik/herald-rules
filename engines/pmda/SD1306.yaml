@@ -1,0 +1,25 @@
+id: SD1306
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: When the study population is healthy subjects (TSPARMCD = 'HLTSUBJI'
+  and TSVAL = 'Y'), the Diagnosis Group parameter should be provided with a null Parameter
+  Value (TSVAL should be null when TSPARMCD = 'TDIGRP').
+scope:
+  classes: []
+  domains: TS
+check: []
+outcome:
+  message: The TDIGRP Trial Summary Parameter is not provided with TSVAL equal to
+    null when HLTSUBJI parameter equals 'Y'
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1306
+  pmda_category: Warning
+  ig_versions: []
+

@@ -1,0 +1,23 @@
+id: SD9999
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The structure for custom dataset should be based on one of the general
+  observation classes (EVENTS, FINDINGS, INTERVENTIONS) defined by the SDTM model.
+scope:
+  classes: []
+  domains: UNRECOGNIZED
+check: []
+outcome:
+  message: Dataset class not recognized
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD9999
+  pmda_category: Error
+  ig_versions: []
+

@@ -1,0 +1,26 @@
+id: SD1369
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Reference Result in Standard Format (--STREFC) should be populated when
+  Reference Result in Original Units (--ORREF) is populated.
+scope:
+  classes: []
+  domains:
+    - FINDINGS(-MK
+    - -OE)
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: --STREFC is null when --ORREF is populated
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1369
+  pmda_category: Error
+  ig_versions: []
+

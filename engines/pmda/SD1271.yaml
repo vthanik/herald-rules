@@ -1,0 +1,25 @@
+id: SD1271
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The combination of Description of Element (ELEMENT), Rule for Start of
+  Element (TESTRL), Rule for End of Element (TEENRL), and Planned Duration of Element
+  (TEDUR) should be unique for each Element Code (ETCD).
+scope:
+  classes: []
+  domains: TE
+check: []
+outcome:
+  message: The combination of ELEMENT, TESTRL TEENRL, and TEDUR is not unique for
+    each ETCD
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1271
+  pmda_category: Warning
+  ig_versions: []
+

@@ -1,0 +1,32 @@
+id: AD0362
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The value of Analysis Start Datetime (ASTDTM) variable must be less or
+  equal to Analysis End Datetime (AENDTM) variable value.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+    - BDS
+    - ADNCA
+    - MDBDS
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: Value of ASTDTM is greater than value of AENDTM
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0362
+  pmda_category: Error
+  ig_versions: []
+

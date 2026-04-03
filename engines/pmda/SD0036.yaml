@@ -1,0 +1,25 @@
+id: SD0036
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Character Result/Finding in Std Units (--STRESC) must be populated when
+  Result or Finding in Original Units (--ORRES) is provided.
+scope:
+  classes: []
+  domains:
+    - FINDINGS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Missing value for --STRESC when --ORRES is provided
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0036
+  pmda_category: Error
+  ig_versions: []
+

@@ -1,0 +1,25 @@
+id: AD0691
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a given Subject's SPDEVID and PARAMCD, a baseline value is populated
+  (either BASE or BASEC) and there is not at least one record in that group marked
+  as the baseline (ABLFL = Y).
+scope:
+  classes: []
+  domains: MDBDS
+check: []
+outcome:
+  message: BASE or BASEC is populated for a unique SPDEVID,USUBJID,PARAMCD but no
+    baseline record exists
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0691
+  pmda_category: Error
+  ig_versions: []
+

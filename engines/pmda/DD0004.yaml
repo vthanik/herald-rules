@@ -1,0 +1,23 @@
+id: DD0004
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Define.xml must only contain attributes that are defined in either ODM
+  or Define-XML specification.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Attribute <attribute> is not allowed to appear in element <element>
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0004
+  pmda_category: X
+  ig_versions: []
+

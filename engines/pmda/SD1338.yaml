@@ -1,0 +1,24 @@
+id: SD1338
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: A Link Group (RSLNKGRP) value for a response assessment that is referenced
+  in the Disease Response (RS) domain for a subject must also be present in the Tumor
+  Results (TR) domain for the appropriate measurement records for that subject.
+scope:
+  classes: []
+  domains: RS
+check: []
+outcome:
+  message: RSLNKGRP value does not exist in TR domain
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1338
+  pmda_category: Error
+  ig_versions: []
+

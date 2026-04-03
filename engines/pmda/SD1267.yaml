@@ -1,0 +1,23 @@
+id: SD1267
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Planned Order of Element within Arm (TAETORD) variable value must be
+  an integer.
+scope:
+  classes: []
+  domains: TA
+check: []
+outcome:
+  message: Invalid value for TAETORD
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1267
+  pmda_category: Error
+  ig_versions: []
+

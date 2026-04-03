@@ -1,0 +1,30 @@
+id: CT2001
+version: 1
+status: Reference
+standard: SDTM
+category: Controlled Terminology
+sensitivity: Record
+executability: Not Executable
+description: Variable must be populated with terms from its CDISC controlled terminology
+  codelist. New terms cannot be added into non-extensible codelists.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Variable value not found in non-extensible codelist
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: CT2001
+  pmda_category: Reject
+  ig_versions: []
+  pmda_notes: "Violation of CT2001 for the following variable/codelist pairs will
+    be considered part of Rejection criteria. All others will be\r\nconsidered Errors.\r\n\r\n<Variable
+    Name (Codelist Name)>\r\nAGEU (AGEU)\r\nCOUNTRY (COUNTRY)\r\nIECAT (IECAT)\r\nRELTYPE
+    (RELTYPE)\r\nSEX (SEX)\r\n--BLFL (NY)\r\n--DRVFL (NY)\r\n--FAST (NY)\r\n--OCCUR
+    (NY)\r\n--PRESP (NY)\r\nAESER (NY)\r\nAESCONG (NY)\r\nAESDISAB (NY)\r\nAESDTH
+    (NY)\r\nAESHOSP (NY)\r\nAESLIFE (NY)\r\nAECONTRT (NY)\r\nAESCAN (NY)\r\nAESMIE
+    (NY)\r\nAESOD (NY)\r\nIEORRES (NY)\r\nIESTRESC (NY)\r\n--STAT (ND)"
+

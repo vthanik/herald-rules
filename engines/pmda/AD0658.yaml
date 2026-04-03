@@ -1,0 +1,24 @@
+id: AD0658
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: 'NCAXFN (PK NCA Exclusion Flag (N)) must be 1 or null.  It is a numeric
+  flag for exclusion of a record into a PK NCA calculation: 1 = exclusion, null =
+  inclusion.'
+scope:
+  classes: []
+  domains: ADNCA
+check: []
+outcome:
+  message: NCAXFN value is not 1 or null
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0658
+  pmda_category: Error
+  ig_versions: []
+

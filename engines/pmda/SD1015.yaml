@@ -1,0 +1,28 @@
+id: SD1015
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Epoch (EPOCH) values should match entries in the Trial Arms (TA) dataset.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-CO
+    - -DM)
+    - INTERVENTIONS
+    - FINDINGS(-SC)
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: EPOCH is not in TA.EPOCH
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1015
+  pmda_category: Error
+  ig_versions: []
+

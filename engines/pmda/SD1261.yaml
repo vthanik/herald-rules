@@ -1,0 +1,23 @@
+id: SD1261
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Subject Status Date/Time of Assessment (SSDTC) must be greater than or
+  equal to Date/Time of Death (DTHDTC) when the subject's status is 'DEAD'.
+scope:
+  classes: []
+  domains: SS
+check: []
+outcome:
+  message: SSDTC is not greater than or equal to DTHDTC when SSSTRESC = 'DEAD'
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1261
+  pmda_category: Warning
+  ig_versions: []
+

@@ -1,0 +1,24 @@
+id: SD1290
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If multiple disposition events are reported for an EPOCH, the sponsor
+  should identify a primary reason and use that to populate DSTERM and DSDECOD. Additional
+  reasons should be submitted in SUPPDS.
+scope:
+  classes: []
+  domains: DS
+check: []
+outcome:
+  message: Multiple disposition events for the same EPOCH
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1290
+  pmda_category: Warning
+  ig_versions: []
+

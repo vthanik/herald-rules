@@ -1,0 +1,23 @@
+id: SD1453
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The value of Sequence Number (DISEQ) variable must be unique for each
+  record within a domain and within each Sponsor Device Identifier (SPDEVID)
+scope:
+  classes: []
+  domains: DI
+check: []
+outcome:
+  message: Duplicate value for --SEQ variable
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1453
+  pmda_category: Error
+  ig_versions: []
+

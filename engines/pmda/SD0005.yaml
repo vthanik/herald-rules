@@ -1,0 +1,32 @@
+id: SD0005
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The value of Sequence Number (--SEQ) variable must be unique for each
+  record within a domain and within each Unique Subject Identifier (USUBJID) or Pool
+  Identifier (POOLID) variables value when they are present in the domain. Exclusions
+  are DE, DO, DT, DU, and DX domains.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-DM)
+    - INTERVENTIONS(-DX)
+    - FINDINGS(-DO
+    - -DU)
+    - EVENTS(-DE
+    - -DT)
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Duplicate value for --SEQ variable
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0005
+  pmda_category: Error
+  ig_versions: []
+

@@ -1,0 +1,28 @@
+id: AD0546
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If Percent Chg from Baseline Category y (N) (PCHGCAyN) variable is used
+  in a dataset, Percent Chg from Baseline Category y (PCHGCATy) variable must also
+  be present in that dataset.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: PCHGCAyN is present and PCHGCATy is not present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0546
+  pmda_category: Error
+  ig_versions: []
+

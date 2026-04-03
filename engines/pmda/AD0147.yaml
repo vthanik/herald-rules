@@ -1,0 +1,23 @@
+id: AD0147
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a study, all PARAMN values must be the same for each unique value
+  of PARAM when the primary variable PARAM is populated.
+scope:
+  classes: []
+  domains: BDS
+check: []
+outcome:
+  message: Inconsistent value for PARAMN
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0147
+  pmda_category: Error
+  ig_versions: []
+

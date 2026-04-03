@@ -1,0 +1,24 @@
+id: SD1016
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The combination of Inclusion/Exclusion Criterion Short Name (IETESTCD),
+  Criterion (IETEST), and Category (IECAT) values should match entries in the Trial
+  Inclusion/Exclusion Criteria (TI) dataset.
+scope:
+  classes: []
+  domains: IE
+check: []
+outcome:
+  message: IETESTCD/IETEST/IECAT values do not exist in TI domain
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1016
+  pmda_category: Error
+  ig_versions: []
+

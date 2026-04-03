@@ -1,0 +1,31 @@
+id: AD0041A
+version: 1
+status: Reference
+standard: ADaM
+category: Conformance
+sensitivity: Record
+executability: Not Executable
+description: '*DT variables must have non-missing SAS Date Format.'
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+    - BDS
+    - ADNCA
+    - MDBDS
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: '*DT variable has missing SAS Date Format'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0041A
+  pmda_category: Error
+  ig_versions: []
+

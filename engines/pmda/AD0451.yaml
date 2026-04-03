@@ -1,0 +1,28 @@
+id: AD0451
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: On a given record, if Multi-Response Criterion y Eval (N) (MCRITyMN)
+  variable value is populated, then Multi-Response Criterion y Evaluation (MCRITyML)
+  variable value must also be populated.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: MCRITyMN is populated, but MCRITyML is not populated
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0451
+  pmda_category: Error
+  ig_versions: []
+

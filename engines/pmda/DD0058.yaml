@@ -1,0 +1,25 @@
+id: DD0058
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Label field is required for each Variable and must be included in Define.xml
+  and cannot be empty. However, Label field is optional for Value Level metadata.
+  Define-XML specification represents Label as Description/TranslatedText element
+  within ItemDef element.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Missing Label value
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0058
+  pmda_category: X
+  ig_versions: []
+

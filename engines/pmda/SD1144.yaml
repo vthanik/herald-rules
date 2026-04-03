@@ -1,0 +1,24 @@
+id: SD1144
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The medical history dataset includes the subject's prior history at the
+  start of the trial. Start Date/Time of Medical History Event (MHSTDTC) should be
+  before Subject Reference Start Date/Time (RFSTDTC).
+scope:
+  classes: []
+  domains: MH
+check: []
+outcome:
+  message: MHSTDTC date is after RFSTDTC
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1144
+  pmda_category: Warning
+  ig_versions: []
+

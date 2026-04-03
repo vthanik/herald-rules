@@ -1,0 +1,26 @@
+id: SD0002
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Required variables (where Core attribute is 'Req') cannot be null for
+  any records.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Null value in variable marked as Required
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0002
+  pmda_category: Reject
+  ig_versions: []
+  pmda_notes: "Violation of SD0002 will be considered part of Rejection criteria,
+    except for the following variables in DM domain that will be considered Errors.\r\n\r\n<Variable
+    Name>\r\nARMCD\r\nARM\r\nACTARMCD\r\nACTARM"
+

@@ -1,0 +1,26 @@
+id: SD1461
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Body System or Organ Class Code (--BDSYCD) must be populated when Body
+  System or Organ Class (--BODSYS) is populated.
+scope:
+  classes: []
+  domains:
+    - AE
+    - CE
+    - MH
+check: []
+outcome:
+  message: --BDSYCD is null when --BODSYS is populated
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1461
+  pmda_category: Warning
+  ig_versions: []
+

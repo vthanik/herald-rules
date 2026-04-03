@@ -1,0 +1,26 @@
+id: SD1042
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Value of Start Relative to Reference Period (--STRF) or End Relative
+  to Reference Period (--ENRF) should not be populated when an event or intervention
+  is marked as not occurred (--OCCUR='N').
+scope:
+  classes: []
+  domains:
+    - INTERVENTIONS
+    - EVENTS
+check: []
+outcome:
+  message: Time point for non-occurred event or intervention is provided
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1042
+  pmda_category: Warning
+  ig_versions: []
+

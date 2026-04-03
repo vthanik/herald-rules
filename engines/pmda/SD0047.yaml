@@ -1,0 +1,26 @@
+id: SD0047
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Status (--STAT) should be set to 'NOT DONE' or Derived Flag (--DRVFL)
+  should have a value of 'Y' when Result or Finding in Original Units (--ORRES) is
+  null.
+scope:
+  classes: []
+  domains:
+    - FINDINGS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Missing value for --ORRES when --STAT or --DRVFL is not populated
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0047
+  pmda_category: Warning
+  ig_versions: []
+

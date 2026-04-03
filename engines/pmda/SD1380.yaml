@@ -1,0 +1,34 @@
+id: SD1380
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: 'At least one of the following subject identifier variables must be populated
+  for each record: Unique Subject Identifier (USUBJID), Associated Persons Identifier
+  (APID), Sponsor Device Identifier (SPDEVID), or Pool Identifier (POOLID).'
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-DM
+    - -SE
+    - -SM)
+    - INTERVENTIONS
+    - FINDINGS
+    - EVENTS
+    - FINDINGSABOUT
+    - RELATIONSHIP(-DR
+    - -POOLDEF
+    - -RELREC)
+check: []
+outcome:
+  message: No subject identifier variables are populated
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1380
+  pmda_category: Error
+  ig_versions: []
+

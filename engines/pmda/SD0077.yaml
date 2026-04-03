@@ -1,0 +1,27 @@
+id: SD0077
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Reference record defined by Related Domain Abbreviation (RDOMAIN), Unique
+  Subject Identifier (USUBJID), Identifying Variable (IDVAR) and Identifying Variable
+  Value (IDVARVAL) must exist in the target Domain.
+scope:
+  classes: []
+  domains:
+    - CO
+    - RELREC
+    - SUPPQUAL
+check: []
+outcome:
+  message: Invalid referenced record
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0077
+  pmda_category: Error
+  ig_versions: []
+

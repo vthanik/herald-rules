@@ -1,0 +1,26 @@
+id: AD0134
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: When all 3 variables are populated and AyHI does not equal 0, Ratio to
+  AyHI (R2AyHI) must equal Analysis Value (AVAL) / Analysis Range y HI Value (AyHI).
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: 'Calculation issue: R2AyHI != AVAL / AyHI'
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0134
+  pmda_category: Warning
+  ig_versions: []
+

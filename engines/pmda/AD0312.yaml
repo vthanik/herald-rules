@@ -1,0 +1,31 @@
+id: AD0312
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Standardized MedDRA Query Scope (SMQzzSC) variable value must be BROAD,
+  NARROW, or NULL. The search strategy for SMQs can be narrow or broad. The preferred
+  terms that are narrow in scope have high specificity for identifying events of interest
+  while the broad terms have high sensitivity. By definition, all narrow terms are
+  also considered within the broad score. Therefore, to summarize all broad terms,
+  terms with either narrow OR broad would be considered. Will be null for terms that
+  do not meet the criteria. Conditional on whether SMQ analysis is done.
+scope:
+  classes: []
+  domains:
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+check: []
+outcome:
+  message: SMQzzSC value != BROAD, NARROW or null
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0312
+  pmda_category: Error
+  ig_versions: []
+

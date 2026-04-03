@@ -1,0 +1,33 @@
+id: AD0121
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Any variable ending in SDT (Start Date) must have a value less than or
+  equal to its corresponding EDT (End Date) value (e.g., ADSL - TRTSDT, TR01SDT, AP01SDT;
+  BDS - APERSDT).
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+    - BDS
+    - ADNCA
+    - MDBDS
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: '*SDT is greater than *EDT'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0121
+  pmda_category: Error
+  ig_versions: []
+

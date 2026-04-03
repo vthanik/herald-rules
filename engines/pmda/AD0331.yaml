@@ -1,0 +1,27 @@
+id: AD0331
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a Study and a Parameter, all Change from Baseline Category y (CHGCATy)
+  variable values must be the same for each unique value of Change from Baseline Category
+  y (N) (CHGCATyN) variable when variable CHGCATyN is populated.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: Inconsistent value for CHGCAT*
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0331
+  pmda_category: Error
+  ig_versions: []
+

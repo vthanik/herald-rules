@@ -1,0 +1,23 @@
+id: AD0687
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The value of DEVIPDT (Date Device Implanted) variable must be less or
+  equal to DEVXPDT (Date Device Explanted)
+scope:
+  classes: []
+  domains: ADDL
+check: []
+outcome:
+  message: Value of DEVIPDT is greater than value of DEVXPDT
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0687
+  pmda_category: Error
+  ig_versions: []
+

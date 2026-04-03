@@ -1,0 +1,24 @@
+id: DD0139
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Only Standards that are referenced from a Dataset or Codelist should
+  be included in Define.xml. Define-XML specification represents Standards as def:Standard
+  elements within the def:Standards element.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Standard '%standard%' is not referenced
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0139
+  pmda_category: ''
+  ig_versions: []
+

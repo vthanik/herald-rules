@@ -1,0 +1,23 @@
+id: DD0121
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The IsNonStandard attribute must be populated when the dataset is not
+  standard (i.e., does not have a def:StandardOID attribute).
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Missing IsNonStandard attribute for Dataset
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0121
+  pmda_category: ''
+  ig_versions: []
+

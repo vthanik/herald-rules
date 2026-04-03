@@ -1,0 +1,28 @@
+id: SD1371
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Result or Finding in Original Units (--ORRES) should be populated when
+  Last Observation Before Exposure Flag (--LOBXFL) is set to 'Y’ unless the record
+  is derived (--DRVFL = 'Y').
+scope:
+  classes: []
+  domains:
+    - FINDINGS(-DD
+    - -IE
+    - -SC)
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: --ORRES is null when --LOBXFL = 'Y' (and --DRVFL is null)
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1371
+  pmda_category: Error
+  ig_versions: []
+

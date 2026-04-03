@@ -1,0 +1,23 @@
+id: OD0048
+version: 1
+status: Reference
+standard: Define-XML
+category: ODM/Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Referenced Codelist must first be defined on Codelists tab. Define-XML
+  specification represents Codelists as CodeList elements within MetaDataVersion element.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Referenced Codelist is missing
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: OD0048
+  pmda_category: X
+  ig_versions: []
+

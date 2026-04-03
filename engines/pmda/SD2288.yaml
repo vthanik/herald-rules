@@ -1,0 +1,26 @@
+id: SD2288
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All subjects (USUBJID) should have at least one record in the Disposition
+  (DS) domain with Disposition Category (DSCAT) equal to DISPOSITION EVENT. Subjects
+  with ARMCD='SCRNFAIL', ARMCD = null, or ARMCD='NOTASSGN' are excluded from this
+  check.  If the study is ongoing, Parameter Value (TSVAL) for the 'ONGOSIND/Ongoing
+  Study Indicator' parameter should be set to 'Y' in the Trial Summary (TS) domain.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: No DISPOSITION EVENT record found for subject
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2288
+  pmda_category: Warning
+  ig_versions: []
+

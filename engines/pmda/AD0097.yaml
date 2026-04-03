@@ -1,0 +1,27 @@
+id: AD0097
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If Planned Pooled Treatment y (TRTPGyN) numeric variable is present,
+  there must be a corresponding Planned Pooled Treatment y (TRTPGy) character variable.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: TRTPGyN is present, but TRTPGy is not present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0097
+  pmda_category: Error
+  ig_versions: []
+

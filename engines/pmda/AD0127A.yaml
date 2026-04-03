@@ -1,0 +1,25 @@
+id: AD0127A
+version: 1
+status: Reference
+standard: ADaM
+category: Conformance
+sensitivity: Record
+executability: Not Executable
+description: ABLFL is required if BASE or BASEC is present in the dataset.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: BASE or BASEC is present, but ABLFL is not present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0127A
+  pmda_category: Error
+  ig_versions: []
+

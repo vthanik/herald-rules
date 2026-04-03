@@ -1,0 +1,30 @@
+id: SD0031
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Start Date/Time of Observation (--STDTC), Start Relative to Reference
+  Period (--STRF) or Start Relative to Reference Time Point (--STRTPT) should not
+  be null when End Date/Time of Observation (--ENDTC), End Relative to Reference Period
+  (--ENRF) or End Relative to Reference Time Period (--ENRTPT) is not null.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-CO
+    - -DM)
+    - INTERVENTIONS
+    - EVENTS
+check: []
+outcome:
+  message: Missing values for --STDTC, --STRF and --STRTPT when --ENDTC, --ENRF or
+    --ENRTPT is provided
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0031
+  pmda_category: Warning
+  ig_versions: []
+

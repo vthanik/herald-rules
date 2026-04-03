@@ -1,0 +1,29 @@
+id: SD1125
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All values of Planned Elapsed Time (--ELTM) variable should be the same
+  for a given value of Planned Time Point Name (--TPT) variable, Time Point Reference
+  (--TPTREF) and/or Visit Number (VISITNUM).
+scope:
+  classes: []
+  domains:
+    - CO
+    - INTERVENTIONS
+    - FINDINGS(-DO)
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Inconsistent value for --ELTM within --TPT, --TPTREF and/or VISITNUM
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1125
+  pmda_category: Warning
+  ig_versions: []
+

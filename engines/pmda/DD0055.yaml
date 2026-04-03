@@ -1,0 +1,29 @@
+id: DD0055
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: 'For Define-XML 2.0, the Class attribute must have a value of ''SPECIAL
+  PURPOSE'', ''FINDINGS'', ''FINDINGS ABOUT'', ''EVENTS'', ''INTERVENTIONS'', ''TRIAL
+  DESIGN'', or ''RELATIONSHIP'' for SDTM and SEND data and ''SUBJECT LEVEL ANALYSIS
+  DATASET'', ''BASIC DATA STRUCTURE'', ''OCCURRENCE DATA STRUCTURE'' (IG v1.1 and
+  above), or ''ADAM OTHER'' for ADaM data. For Define-XML 2.1, the Class attribute
+  must have a value that is found in the GNRLOBSC (C103329) codelist in Define-CT.
+  Note: Refer to the data standards catalog by the relevant Regulatory Agency for
+  acceptance of standards and their versions.'
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Invalid Class value
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0055
+  pmda_category: X
+  ig_versions: []
+

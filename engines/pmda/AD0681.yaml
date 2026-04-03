@@ -1,0 +1,23 @@
+id: AD0681
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a study, All MODELGy values must be the same for each unique value
+  of MODELGyN, when both variables are populated. Analogous rule for AD0682.
+scope:
+  classes: []
+  domains: ADDL
+check: []
+outcome:
+  message: Inconsistent value for MODELGy
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0681
+  pmda_category: Error
+  ig_versions: []
+

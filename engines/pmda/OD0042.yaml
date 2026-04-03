@@ -1,0 +1,22 @@
+id: OD0042
+version: 1
+status: Reference
+standard: Define-XML
+category: ODM/Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The Order number attribute must be unique.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Duplicate Order number
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: OD0042
+  pmda_category: X
+  ig_versions: []
+

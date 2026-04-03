@@ -1,0 +1,24 @@
+id: OD0073
+version: 1
+status: Reference
+standard: Define-XML
+category: ODM/Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The IsReferenceData attribute for Dataset must have a value of 'Yes'
+  or 'No'. Define-XML specification represents Datasets as ItemGroupDef elements within
+  MetaDataVersion element.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Invalid Reference Data value
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: OD0073
+  pmda_category: X
+  ig_versions: []
+

@@ -1,0 +1,25 @@
+id: SD0045
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Character Result/Finding in Std Units (--STRESC) should be provided when
+  Result Category (--RESCAT) is specified.
+scope:
+  classes: []
+  domains:
+    - FINDINGS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Missing value for --STRESC when --RESCAT is populated
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0045
+  pmda_category: Warning
+  ig_versions: []
+

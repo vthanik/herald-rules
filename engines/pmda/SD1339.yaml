@@ -1,0 +1,37 @@
+id: SD1339
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The EPOCH variable is not populated, however either a start date or a
+  collection date is provided. The presence of a start date or collection date for
+  a record should allow for the EPOCH variable to be populated. Variables requested
+  by the relevant regulatory agency in policy documents (e.g., EPOCH) should be included
+  in the dataset and populated.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-CO
+    - -DM
+    - -SV)
+    - INTERVENTIONS(-DX)
+    - FINDINGS(-DO
+    - -DU
+    - -SC)
+    - EVENTS(-DS
+    - -DT
+    - -MH)
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Missing EPOCH value when a start or observation date is provided
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1339
+  pmda_category: Warning
+  ig_versions: []
+

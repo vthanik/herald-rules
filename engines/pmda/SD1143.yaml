@@ -1,0 +1,24 @@
+id: SD1143
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: When a description of Other Medically Important Serious Adverse Events
+  category is collected on a CRF, sponsors should place the description in the SUPPAE
+  dataset using the standard supplemental qualifier name code AESOSP.
+scope:
+  classes: []
+  domains: AE
+check: []
+outcome:
+  message: No Details info for AESMIE Adverse Event in SUPPAE domain
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1143
+  pmda_category: Warning
+  ig_versions: []
+

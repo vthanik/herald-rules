@@ -1,0 +1,26 @@
+id: AD1024
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: 'When validating ADaM datasets, the DM dataset must also be included
+  to ensure traceability. Note: For the final submission the eCTD structure should
+  be maintained. Therefore, the SDTM and ADaM datasets should be submitted in their
+  appropriate locations. Do not include the DM dataset in the ../analysis/adam/datasets
+  folder.'
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Traceability rules not executed due to missing DM dataset
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD1024
+  pmda_category: Error
+  ig_versions: []
+

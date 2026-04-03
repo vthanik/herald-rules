@@ -1,0 +1,26 @@
+id: SD1448
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Standardized Result in Numeric Format (--STRESN) variable value should
+  be null when Standardized Result in Character Format (--STRESC) variable value does
+  not represent a numeric value, (e.g., 'BLQ', value contains '<' or '>', etc.).
+scope:
+  classes: []
+  domains:
+    - FINDINGS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: --STRESN is populated when --STRESC value is not numeric
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1448
+  pmda_category: Error
+  ig_versions: []
+

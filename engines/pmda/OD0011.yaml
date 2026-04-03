@@ -1,0 +1,22 @@
+id: OD0011
+version: 1
+status: Reference
+standard: Define-XML
+category: ODM/Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Define.xml must use UTF-8, UTF-16, or ISO-8859-1 encoding.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Invalid XML encoding
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: OD0011
+  pmda_category: X
+  ig_versions: []
+

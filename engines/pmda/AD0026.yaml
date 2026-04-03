@@ -1,0 +1,25 @@
+id: AD0026
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: 'For subject-level numeric population flag variables: 0 = no (not included),
+  1 = yes (included). Null values are not allowed.'
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+check: []
+outcome:
+  message: Variable subject-population flag value is null
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0026
+  pmda_category: Error
+  ig_versions: []
+

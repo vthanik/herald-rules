@@ -1,0 +1,29 @@
+id: AD0282A
+version: 1
+status: Reference
+standard: ADaM
+category: Conformance
+sensitivity: Record
+executability: Not Executable
+description: For Analysis Severity/Intensity (N) (ASEVN) variables, the CDISC ADaM
+  Validation Checks v1.3 explicitly require values of 1, 2, 3 while forbidding null
+  values for this permissible variable. In contrast, AESEVN can be 1, 2, 3, or null.
+  Since ASEVN cannot be null, the value it qualifies ASEV cannot be null. ASEV, if
+  present, should apply imputation rules for missing severity of adverse events as
+  specified in the SAP or metadata.
+scope:
+  classes: []
+  domains:
+    - OCCDS
+    - ADAE
+check: []
+outcome:
+  message: Analysis severity Variable value is null
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0282A
+  pmda_category: Error
+  ig_versions: []
+

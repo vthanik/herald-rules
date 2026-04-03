@@ -1,0 +1,23 @@
+id: SD1355
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: When the Disease Milestone Instance Name (MIDS) variable is used in any
+  dataset, the Trial Disease Milestones (TM) dataset must be present for the study.
+scope:
+  classes: []
+  domains: TM
+check: []
+outcome:
+  message: Missing TM dataset when variable MIDS is present in a dataset
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1355
+  pmda_category: Warning
+  ig_versions: []
+

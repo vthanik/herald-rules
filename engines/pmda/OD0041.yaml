@@ -1,0 +1,23 @@
+id: OD0041
+version: 1
+status: Reference
+standard: Define-XML
+category: ODM/Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The ItemOID attribute for ItemRef element must be unique within a single
+  ItemGroupDef.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Duplicate ItemRef ItemOID
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: OD0041
+  pmda_category: X
+  ig_versions: []
+

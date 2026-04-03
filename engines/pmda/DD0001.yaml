@@ -1,0 +1,24 @@
+id: DD0001
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: There is an XML schema validation issue with either Define.xml structure
+  or content that is not covered by one of the other rules. It is most likely an issue
+  with element declarations.
+scope:
+  classes: []
+  domains: Reject
+check: []
+outcome:
+  message: XML schema validation issue within Define.xml
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0001
+  pmda_category: X
+  ig_versions: []
+

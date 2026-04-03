@@ -1,0 +1,27 @@
+id: AD0167
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If Baseline Reference Range Indicator (BNRIND) variable is present, then
+  Analysis Reference Range Indicator (ANRIND) and Baseline Record Flag (ABLFL) variables
+  must be present.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: BNRIND is present, but ABLFL is not present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0167
+  pmda_category: Error
+  ig_versions: []
+

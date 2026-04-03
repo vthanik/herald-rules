@@ -1,0 +1,25 @@
+id: SD1272
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Test Code variables (--TESTCD) should not be populated with values of
+  'OTHER'.
+scope:
+  classes: []
+  domains:
+    - FINDINGS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: --TESTCD equals 'OTHER'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1272
+  pmda_category: Error
+  ig_versions: []
+

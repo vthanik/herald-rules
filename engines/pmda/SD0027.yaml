@@ -1,0 +1,25 @@
+id: SD0027
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Result or Finding in Original Units (--ORRES) should not be null when
+  Original Units (--ORRESU) is provided.
+scope:
+  classes: []
+  domains:
+    - FINDINGS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Missing value for --ORRES when --ORRESU is provided
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0027
+  pmda_category: Warning
+  ig_versions: []
+

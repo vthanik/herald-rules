@@ -1,0 +1,23 @@
+id: OD0078
+version: 1
+status: Reference
+standard: Define-XML
+category: ODM/Define-XML
+sensitivity: Record
+executability: Not Executable
+description: When CodeList DataType is 'text' the SASFormatName should start with
+  a '$'.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Invalid SASFormatName value for text Codelist
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: OD0078
+  pmda_category: X
+  ig_versions: []
+

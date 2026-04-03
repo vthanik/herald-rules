@@ -1,0 +1,23 @@
+id: SD1133
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: A value for Description of Actual Arm (ACTARM) must have a unique value
+  for Actual Arm Code (ACTARMCD) with the domain.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: Inconsistent value for ACTARM
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1133
+  pmda_category: Error
+  ig_versions: []
+

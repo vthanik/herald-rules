@@ -1,0 +1,25 @@
+id: SD1258
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: RFSTDTC must be null when actual arm indicates that the subject is a
+  screen failure ('Screen Failure'), was not assigned to an arm ('Not Assigned'),
+  was not treated ('NOTTRT'), or actual arm is null. This rule applies to studies
+  where RFSTDTC is associated with a treatment date.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: RFSTDTC is populated for subject who did not receive treatment
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1258
+  pmda_category: Warning
+  ig_versions: []
+

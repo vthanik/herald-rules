@@ -1,0 +1,23 @@
+id: SD1268
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The Name of the Reference Terminology (TSVCDREF) must be populated when
+  the Version of the Reference Terminology (TSVCDVER) is populated.
+scope:
+  classes: []
+  domains: TS
+check: []
+outcome:
+  message: TSVCDREF is null when TSVCDVER is populated
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1268
+  pmda_category: Warning
+  ig_versions: []
+

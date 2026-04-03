@@ -1,0 +1,24 @@
+id: SD1366
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Subject Reference End Date/Time (RFENDTC) should be null for screen failures
+  or unassigned subjects. Therefore, when the Reason Arm and/or Actual Arm is Null
+  (ARMNRS) variable is populated, RFENDTC should be null.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: RFENDTC is populated when ARMNRS is not null
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1366
+  pmda_category: Warning
+  ig_versions: []
+

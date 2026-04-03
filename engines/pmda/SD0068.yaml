@@ -1,0 +1,23 @@
+id: SD0068
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: A value for Inclusion/Exclusion Criterion Short Name (IETESTCD) must
+  be present the Trial Inclusion/Exclusion Criteria (TI) domain.
+scope:
+  classes: []
+  domains: IE
+check: []
+outcome:
+  message: IETESTCD value doesn't exist in TI domain
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0068
+  pmda_category: Error
+  ig_versions: []
+

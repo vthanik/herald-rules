@@ -1,0 +1,23 @@
+id: SD0062
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Domain table must have a valid format (e.g., SAS transport (XPORT) v.5
+  or text-delimited).
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Incompatible data source
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0062
+  pmda_category: Reject
+  ig_versions: []
+

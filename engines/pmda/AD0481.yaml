@@ -1,0 +1,26 @@
+id: AD0481
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: There should be only a single value of Strat Fact w Val from Verif Source
+  (N) (STRATwVN) variable for a given value of Strat Factor w Value from Verif Source
+  (STRATwV) variable, considering only those rows on which both variables are populated.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+check: []
+outcome:
+  message: Inconsistent value for STRATwVN
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0481
+  pmda_category: Error
+  ig_versions: []
+

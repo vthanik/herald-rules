@@ -1,0 +1,26 @@
+id: SD1370
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Numeric Reference Result in Std Units (--STREFN) should be populated
+  when Reference Result in Standard Format (--STREFC) is populated.
+scope:
+  classes: []
+  domains:
+    - FINDINGS(-MK
+    - -OE)
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: --STREFN is null when --STREFC is populated
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1370
+  pmda_category: Error
+  ig_versions: []
+

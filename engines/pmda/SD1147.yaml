@@ -1,0 +1,32 @@
+id: SD1147
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Pre-specified (--PRESP) variable should be included into dataset when
+  Occurrence (--OCCUR) variable is present. (--PRESP/Events) Used to indicate whether
+  the event described by --TERM was pre-specified on a CRF. Value is Y for pre-specified
+  events, null for spontaneously reported events. (--PRESP/Interventions) Used when
+  a specific intervention is pre-specified on a CRF. Values should be 'Y' or null.
+  (--OCCUR) Used to record whether a pre-specified event occurred when information
+  about the occurrence of a specific event is solicited.
+scope:
+  classes: []
+  domains:
+    - INTERVENTIONS(-EX)
+    - EVENTS(-AE
+    - -DS
+    - -DV)
+check: []
+outcome:
+  message: Missing --PRESP variable when --OCCUR variable is present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1147
+  pmda_category: Error
+  ig_versions: []
+

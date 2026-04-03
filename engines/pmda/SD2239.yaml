@@ -1,0 +1,32 @@
+id: SD2239
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Planned Time Point Name (--TPT) value must be consistent for all records
+  with same Subject (USUBJID), Visit Num (VISITNUM), Object (--OBJ) and Assessment
+  Date/Time (--DTC).
+scope:
+  classes: []
+  domains:
+    - FINDINGS(-DD
+    - -DO
+    - -DU
+    - -IS
+    - -MI
+    - -RP
+    - -SS)
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Inconsistent value for --TPT
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2239
+  pmda_category: Error
+  ig_versions: []
+

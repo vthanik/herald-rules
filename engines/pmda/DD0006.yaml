@@ -1,0 +1,22 @@
+id: DD0006
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Required elements must be included in Define.xml and cannot be empty.
+scope:
+  classes: []
+  domains: Reject
+check: []
+outcome:
+  message: Missing required <element> value
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0006
+  pmda_category: X
+  ig_versions: []
+

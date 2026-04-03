@@ -1,0 +1,27 @@
+id: SD2014
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Value for Body System or Organ Class Code (--BDSYCD) variable should
+  be populated using a System Organ Class Code of the MedDRA dictionary of a version
+  specified in the define.xml.
+scope:
+  classes: []
+  domains:
+    - AE
+    - CE
+    - MH
+check: []
+outcome:
+  message: Value for --BDSYCD not found in MedDRA dictionary
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2014
+  pmda_category: Warning
+  ig_versions: []
+

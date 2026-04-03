@@ -1,0 +1,24 @@
+id: SD1373
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: RFSTDTC must be null when the Reason Arm and/or Actual Arm is Null (ARMNRS)
+  variable is populated (excluding values of UNPLANNED TREATMENT), which indicates
+  that the subject did not receive treatment.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: RFSTDTC is populated for subject who did not receive treatment
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1373
+  pmda_category: Warning
+  ig_versions: []
+

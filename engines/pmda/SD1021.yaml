@@ -1,0 +1,25 @@
+id: SD1021
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Character values should not have leading space ' ' characters, carriage
+  returns, or '.' as an entire value. The only exceptions are COVALn and TSVALn variables.
+scope:
+  classes: []
+  domains:
+    - ALL(-RELSPEC
+    - -RELSUB)
+check: []
+outcome:
+  message: Unexpected character value in variable
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1021
+  pmda_category: Warning
+  ig_versions: []
+

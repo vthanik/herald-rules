@@ -1,0 +1,28 @@
+id: AD0221
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a study, all Category y (*CATy) variable values must be the same
+  for each unique value of the variable it categorizes within a PARAMCD. [AVAL:AVALCATy],
+  [AVALC:AVALCATy], [BASE:BASECATy], [BASEC:BASECATy], [CHG:CHGCATy], [PCHG:PCHGCATy],
+  [BCHG:BCHGCATy]. A Category may be the same across values.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: Inconsistent value for *CATy
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0221
+  pmda_category: Error
+  ig_versions: []
+

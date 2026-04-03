@@ -1,0 +1,23 @@
+id: SD1005
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Study Identifier (STUDYID) values must match the STUDYID in Demographics
+  (DM) domain.
+scope:
+  classes: []
+  domains: ALL(-DM)
+check: []
+outcome:
+  message: Invalid STUDYID
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1005
+  pmda_category: Error
+  ig_versions: []
+

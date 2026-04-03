@@ -1,0 +1,22 @@
+id: SD1035
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Category for Disposition Event (DSCAT) should be populated.
+scope:
+  classes: []
+  domains: DS
+check: []
+outcome:
+  message: Missing value for DSCAT
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1035
+  pmda_category: Warning
+  ig_versions: []
+

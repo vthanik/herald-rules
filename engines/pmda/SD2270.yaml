@@ -1,0 +1,28 @@
+id: SD2270
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Collection Study Date/Time (--DTC) variable should be included into dataset
+  when Collection Study Day (--DY) variable is present.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE
+    - INTERVENTIONS
+    - FINDINGS(-DO)
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Missing --DTC variable when --DY variable is present
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2270
+  pmda_category: Warning
+  ig_versions: []
+

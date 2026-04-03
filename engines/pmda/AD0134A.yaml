@@ -1,0 +1,26 @@
+id: AD0134A
+version: 1
+status: Reference
+standard: ADaM
+category: Conformance
+sensitivity: Record
+executability: Not Executable
+description: R2AyHI = AVAL / AyHI. Therefore, if R2AyHI is present, both AVAL and
+  AyHI must be present for calculation consistency.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: 'Calculation issue: R2AyHI is present, but AVAL and/or AyHI is not present'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0134A
+  pmda_category: Error
+  ig_versions: []
+

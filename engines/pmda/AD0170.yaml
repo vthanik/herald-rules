@@ -1,0 +1,23 @@
+id: AD0170
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If Time-to-Event Origin Date for Subject (STARTDT) variable is present,
+  then Censor (CNSR) variable must be present.
+scope:
+  classes: []
+  domains: BDS
+check: []
+outcome:
+  message: STARTDT is present, but CNSR is not present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0170
+  pmda_category: Error
+  ig_versions: []
+

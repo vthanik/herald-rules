@@ -1,0 +1,30 @@
+id: AD0132B
+version: 1
+status: Reference
+standard: ADaM
+category: Conformance
+sensitivity: Record
+executability: Not Executable
+description: If any of CHG (change), PCHG (percent change), or R2BASE (ratio of Analysis
+  Value to Base) is populated, the values necessary for its calculation must both
+  be present and populated. CHG = AVAL - BASE, PCHG = (AVAL - BASE)/BASE * 100, R2BASE
+  = AVAL / BASE. Once this issue is resolved, there is greater potential for rules
+  AD0132, AD0225, AD0223 to fire.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: 'Calculation issue: CHG, PCHG or R2BASE is populated, but AVAL and/or BASE
+    are not present and populated'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0132B
+  pmda_category: Error
+  ig_versions: []
+

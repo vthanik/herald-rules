@@ -1,0 +1,30 @@
+id: SD1088
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Study Day of Start (--STDY) variable value should be populated when Start
+  Study Date (--STDTC) and Subject Reference Start Date/Time (RFSTDTC) variables values
+  are provided, and both include complete date part.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-CO
+    - -DM)
+    - INTERVENTIONS
+    - FINDINGS
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: --STDY variable value is not populated
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1088
+  pmda_category: Warning
+  ig_versions: []
+

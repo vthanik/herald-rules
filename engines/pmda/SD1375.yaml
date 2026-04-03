@@ -1,0 +1,25 @@
+id: SD1375
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: RFENDTC must be null when actual arm indicates that the subject is a
+  screen failure ('Screen Failure'), was not assigned to an arm ('Not Assigned') or
+  was not treated ('NOTTRT') (or null). This rule applies to studies where RFENDTC
+  is associated with a treatment date.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: RFENDTC is populated for subject who did not receive treatment
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1375
+  pmda_category: Warning
+  ig_versions: []
+

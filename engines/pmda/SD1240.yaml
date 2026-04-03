@@ -1,0 +1,23 @@
+id: SD1240
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All subjects should have an Informed Consent record in the Disposition
+  domain.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: No Informed Consent Obtained record in DS domain for subject
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1240
+  pmda_category: Warning
+  ig_versions: []
+

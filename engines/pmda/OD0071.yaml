@@ -1,0 +1,22 @@
+id: OD0071
+version: 1
+status: Reference
+standard: Define-XML
+category: ODM/Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The Significant Digits attribute is required when DataType is float.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Missing Significant Digits value
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: OD0071
+  pmda_category: X
+  ig_versions: []
+

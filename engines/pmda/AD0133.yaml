@@ -1,0 +1,26 @@
+id: AD0133
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: When all 3 variables are populated and AyLO does not equal 0, Ratio to
+  AyLO (R2AyLO) must equal Analysis Value (AVAL) / Analysis Range y LO Value (AyLO).
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: 'Calculation issue: R2AyLO != AVAL / AyLO'
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0133
+  pmda_category: Warning
+  ig_versions: []
+

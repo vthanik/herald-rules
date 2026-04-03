@@ -1,0 +1,23 @@
+id: DD0125
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The referenced CT standard must be defined in a def:Standard element
+  with Type='CT'.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Referenced CT Standard is missing
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0125
+  pmda_category: ''
+  ig_versions: []
+

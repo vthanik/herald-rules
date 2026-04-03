@@ -1,0 +1,26 @@
+id: SD1034
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: A value for Planned Arm Code (ARMCD) must have a unique value for Description
+  of Planned Arm (ARM) with the domain.
+scope:
+  classes: []
+  domains:
+    - DM
+    - TA
+    - TV
+check: []
+outcome:
+  message: Inconsistent value for ARMCD
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1034
+  pmda_category: Error
+  ig_versions: []
+

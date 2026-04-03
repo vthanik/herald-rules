@@ -1,0 +1,23 @@
+id: OD0080
+version: 1
+status: Reference
+standard: Define-XML
+category: ODM/Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Variable Data Type must match the Data Type of the referenced Codelist.
+  Define-XML specification represents Variable as ItemDef.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Codelist/Variable Data Type mismatch
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: OD0080
+  pmda_category: X
+  ig_versions: []
+

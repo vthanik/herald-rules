@@ -1,0 +1,25 @@
+id: SD1331
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Start Date/Time of Event, Exposure (--STDTC) must be less or equal to
+  Date/Time of Collection(--DTC).
+scope:
+  classes: []
+  domains:
+    - INTERVENTIONS
+    - EVENTS(-BE)
+check: []
+outcome:
+  message: --STDTC is after --DTC
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1331
+  pmda_category: Error
+  ig_versions: []
+

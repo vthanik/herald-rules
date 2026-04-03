@@ -1,0 +1,23 @@
+id: SD1273
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Name of Treatment variables (--TRT) should not be populated with values
+  of 'OTHER'.
+scope:
+  classes: []
+  domains: INTERVENTIONS
+check: []
+outcome:
+  message: --TRT equals 'OTHER'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1273
+  pmda_category: Error
+  ig_versions: []
+

@@ -1,0 +1,23 @@
+id: SD1251
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Treatment Vehicle Amount Units (--VAMTU) value must be null when Treatment
+  Vehicle Amount (--TRTV) value is null.
+scope:
+  classes: []
+  domains: INTERVENTIONS
+check: []
+outcome:
+  message: --VAMTU value is populatd when --TRTV is null
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1251
+  pmda_category: Warning
+  ig_versions: []
+

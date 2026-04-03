@@ -1,0 +1,25 @@
+id: AD0366B
+version: 1
+status: Reference
+standard: ADaM
+category: Conformance
+sensitivity: Record
+executability: Not Executable
+description: Randomized Population Flag (RANDFL) variable value should be 'Y' for
+  randomized subject (when Date of Randomization (RANDDT) variable value is populated).
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+check: []
+outcome:
+  message: RANDFL value is not Y when RANDDT is populated
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0366B
+  pmda_category: Error
+  ig_versions: []
+

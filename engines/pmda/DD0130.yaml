@@ -1,0 +1,22 @@
+id: DD0130
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The def:IsNonStandard attribute must have a value of 'Yes'.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Invalid def:IsNonStandard value
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0130
+  pmda_category: ''
+  ig_versions: []
+

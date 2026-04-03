@@ -1,0 +1,27 @@
+id: AD0234
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a study, all Actual Pooled Treatment y for Period xx (TRxxAGy)
+  variable values must be the same for each unique value of Actual Treatment for Period
+  xx (TRTxxA) when TRTxxA is populated. TRxxAGy is a more general pooled treatment
+  for TRTxxA, therefore it may be used for many TRTxxA.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+check: []
+outcome:
+  message: Inconsistent value for TRxxAGy within a unique TRTxxA
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0234
+  pmda_category: Error
+  ig_versions: []
+

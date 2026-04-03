@@ -1,0 +1,24 @@
+id: SD0092
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Description of Unplanned Element (SEUPDES) should be populated when subject's
+  experience for a particular period of time is represented as an unplanned Element,
+  where Element Code (ETCD) is equal to 'UNPLAN'.
+scope:
+  classes: []
+  domains: SE
+check: []
+outcome:
+  message: Missing value for SEUPDES when ETCD='UNPLAN'
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0092
+  pmda_category: Warning
+  ig_versions: []
+

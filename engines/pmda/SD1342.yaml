@@ -1,0 +1,23 @@
+id: SD1342
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Date/Time of First Study Treatment (RFXSTDTC) variable must be populated
+  when Date/Time of Last Study Treatment (RFXENDTC)variable value is provided.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: Missing value for RFXSTDTC when RFXENDTC is provided
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1342
+  pmda_category: Warning
+  ig_versions: []
+

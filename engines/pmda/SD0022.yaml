@@ -1,0 +1,28 @@
+id: SD0022
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: One Start Time-Point variable is expected to be populated when an event
+  or intervention occurred. (E.g., Start Date/Time of Event or Intervention (--STDTC),
+  or Start Relative to Reference Period (--STRF), or Start Relative to Reference Period
+  (--STRTPT) should not be missing, or Occurrence (--OCCUR) = 'N' or Completion Status
+  (--STAT) != '').
+scope:
+  classes: []
+  domains:
+    - INTERVENTIONS
+    - EVENTS
+check: []
+outcome:
+  message: Missing Start Time-Point value
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0022
+  pmda_category: Warning
+  ig_versions: []
+

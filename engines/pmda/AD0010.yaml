@@ -1,0 +1,32 @@
+id: AD0010
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: When a Flag variable (FL) is Y, its corresponding Flag numeric variable
+  (FN) must be 1.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+    - BDS
+    - ADNCA
+    - MDBDS
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: '*FL = Y and *FN != 1'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0010
+  pmda_category: Error
+  ig_versions: []
+

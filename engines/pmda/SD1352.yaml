@@ -1,0 +1,30 @@
+id: SD1352
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The structure of Interventions class domains should be one record per
+  Intervention Episode per subject. No Interventions with the same Treatment (--TRT),
+  Decoded Term (--DECOD), Mood (--MOOD), Category (--CAT), Subcategory (--SCAT), Route
+  (--ROUTE), Location (--LOC) and Treatment Vehicle (--TRTV) values for the same Subject
+  (USUBJID) with the same Start Date (--STDTC), Planned Time Point Name (--TPT), and
+  Planned Time Point Number (--TPTNUM) are expected.
+scope:
+  classes: []
+  domains:
+    - AG
+    - EC
+    - EX
+check: []
+outcome:
+  message: Duplicate records in domain
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1352
+  pmda_category: Warning
+  ig_versions: []
+

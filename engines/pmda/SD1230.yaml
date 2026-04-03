@@ -1,0 +1,23 @@
+id: SD1230
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Value level datatype must match the datatype described in define.xml.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Variable datatype is not %Variable.@Clause.DataType% when value-level condition
+    occurs
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1230
+  pmda_category: Warning
+  ig_versions: []
+

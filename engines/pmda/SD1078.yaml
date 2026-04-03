@@ -1,0 +1,25 @@
+id: SD1078
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Permissible variable should not be present in domain, when the variable
+  has missing value for all records in the dataset (SDTM-IG 3.1.1 - 3.2). Permissible
+  variable should not be present in domain, when the variable is not present on study
+  CRFs (SDTM-IG 3.3 and higher).
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Permissible variable with missing value for all records
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1078
+  pmda_category: Warning
+  ig_versions: []
+

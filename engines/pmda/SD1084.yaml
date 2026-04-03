@@ -1,0 +1,29 @@
+id: SD1084
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Collection Study Day (--DY) variable value should be populated when Collection
+  Study Date/Time (--DTC) and Subject Reference Start Date/Time (RFSTDTC) variables
+  values are provided, and both include complete date part.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE
+    - INTERVENTIONS
+    - FINDINGS(-DO)
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: --DY variable value is not populated
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1084
+  pmda_category: Warning
+  ig_versions: []
+

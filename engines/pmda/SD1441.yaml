@@ -1,0 +1,26 @@
+id: SD1441
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: MedDRA coding High Level Term (--HLT) should be consistent for the same
+  collected term (--TERM).
+scope:
+  classes: []
+  domains:
+    - AE
+    - CE
+    - MH
+check: []
+outcome:
+  message: Inconsistent value for --HLT within --TERM
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1441
+  pmda_category: Warning
+  ig_versions: []
+

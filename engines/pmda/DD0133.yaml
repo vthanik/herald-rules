@@ -1,0 +1,24 @@
+id: DD0133
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The def:CommentOID attribute is required when the value of the ItemGroupDef
+  def:HasNoData attribute is 'Yes'. A comment must be included to explain why no data
+  are present for datasets that were planned for use in the study.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Missing required def:CommentOID for Dataset
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0133
+  pmda_category: ''
+  ig_versions: []
+

@@ -1,0 +1,23 @@
+id: SD0089
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: At least one of Rule for End of Element (TEENRL) or Planned Duration
+  of Element (TEDUR) should be populated.
+scope:
+  classes: []
+  domains: TE
+check: []
+outcome:
+  message: Missing values for TEENRL and TEDUR
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0089
+  pmda_category: Error
+  ig_versions: []
+

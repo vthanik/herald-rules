@@ -1,0 +1,22 @@
+id: DD0090
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: A Description element must be included in each arm:ResultDisplay.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Missing Required Description Element
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0090
+  pmda_category: X
+  ig_versions: []
+

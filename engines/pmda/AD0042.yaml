@@ -1,0 +1,33 @@
+id: AD0042
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: 'The SAS format listed in the dataset must be valid. Here is a list of
+  SAS Time formats utilized in the rule algorithm: B8601LZ, B8601TM, B8601TZ, E8601LZ,
+  E8601TM, E8601TZ, HHMM, HOUR, MMSS, TIME, TIMEAMPM, IS8601TM, IS8601TZ, TOD.'
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+    - BDS
+    - ADNCA
+    - MDBDS
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: '*TM does not have the ADaM required SAS time format'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0042
+  pmda_category: Error
+  ig_versions: []
+

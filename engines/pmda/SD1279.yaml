@@ -1,0 +1,23 @@
+id: SD1279
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Dose Description (ECDOSTXT) should be populated when Dose (ECDOSE) is
+  null, ECOCCUR does not equal 'N', and ECSTAT does not equal 'NOT DONE'.
+scope:
+  classes: []
+  domains: EC
+check: []
+outcome:
+  message: ECDOSTXT is null when ECDOSE is null and ECOCCUR does not equal 'N'
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1279
+  pmda_category: Warning
+  ig_versions: []
+

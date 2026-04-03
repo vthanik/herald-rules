@@ -1,0 +1,31 @@
+id: SD1238
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: --RFTDTC is defined as the Date/time for a fixed reference time point
+  defined by --TPTREF, therefore --RFTDTC should only be populated when --TPTREF is
+  populated.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-DM
+    - -SE
+    - -SV)
+    - INTERVENTIONS
+    - FINDINGS(-DO)
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: --RFTDTC is populated when --TPTREF is not populated
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1238
+  pmda_category: Error
+  ig_versions: []
+

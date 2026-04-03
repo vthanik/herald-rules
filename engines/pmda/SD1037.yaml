@@ -1,0 +1,33 @@
+id: SD1037
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: A value for a Toxicity (--TOX) variable should be provided when a Toxicity
+  Grade (--TOXGR) variable value is populated and greater than 0.
+scope:
+  classes: []
+  domains:
+    - CP
+    - CV
+    - EG
+    - LB
+    - MI
+    - MO
+    - PC
+    - PP
+    - RE
+    - VS
+check: []
+outcome:
+  message: Missing value for --TOX when --TOXGR is populated
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1037
+  pmda_category: Warning
+  ig_versions: []
+

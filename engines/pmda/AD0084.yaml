@@ -1,0 +1,25 @@
+id: AD0084
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Date of Last Exposure to Treatment (TRTEDT) for this patient record should
+  be equal to the max Last Treatment Date (TRxxEDT) among all Periods 01 thru xx.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+check: []
+outcome:
+  message: TRTEDT != Maximum TRxxEDT on this record
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0084
+  pmda_category: Warning
+  ig_versions: []
+

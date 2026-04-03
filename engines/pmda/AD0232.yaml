@@ -1,0 +1,25 @@
+id: AD0232
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a study, all Planned Pooled Treatment y for Period xx (TRxxPGy)
+  variable values must be the same for each unique value of Planned Pooled Trt y for
+  Period xx (N) (TRxxPGyN) variable when the primary variable TRxxPGy is populated.
+  analogous rule for AD0235.
+scope:
+  classes: []
+  domains: ADSL
+check: []
+outcome:
+  message: Inconsistent value for TRxxPGy
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0232
+  pmda_category: Error
+  ig_versions: []
+

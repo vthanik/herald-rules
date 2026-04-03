@@ -1,0 +1,23 @@
+id: SD1298
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If LBTOXGR value is from a numeric scale, represent only the number (e.g.,
+  "2" and not "Grade 2").
+scope:
+  classes: []
+  domains: LB
+check: []
+outcome:
+  message: LBTOXGR is not a numeric value when a numeric scale is used
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1298
+  pmda_category: Warning
+  ig_versions: []
+

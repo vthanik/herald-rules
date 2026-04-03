@@ -1,0 +1,23 @@
+id: DD0138
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The referenced standard (name and version), is not valid or could not
+  be found.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Referenced Standard is missing
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0138
+  pmda_category: ''
+  ig_versions: []
+

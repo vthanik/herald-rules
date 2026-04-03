@@ -1,0 +1,26 @@
+id: AD0287
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Across studies, all Causality (AEREL) variable values must be the same
+  for each unique value of Causality (N) (AERELN) variable when the primary variable
+  AEREL is populated.
+scope:
+  classes: []
+  domains:
+    - ADAE
+    - ADAMOTHER
+check: []
+outcome:
+  message: Inconsistent value for AEREL
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0287
+  pmda_category: Error
+  ig_versions: []
+

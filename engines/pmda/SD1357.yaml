@@ -1,0 +1,28 @@
+id: SD1357
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Disease Milestone Instance Date/Time (MIDSDTC) variable should not be
+  present in the domain when the Disease Milestone Instance Name (MIDS) variable is
+  missing.
+scope:
+  classes: []
+  domains:
+    - INTERVENTIONS
+    - EVENTS
+    - FINDINGS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: MIDS variable is missing, when MIDSDTC variable is present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1357
+  pmda_category: Error
+  ig_versions: []
+

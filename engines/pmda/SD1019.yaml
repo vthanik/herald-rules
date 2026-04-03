@@ -1,0 +1,23 @@
+id: SD1019
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Planned Study Day of Visit (VISITDY) should equal null for unplanned
+  visits, where Description of Unplanned Visit (SVUPDES) is populated.
+scope:
+  classes: []
+  domains: SV
+check: []
+outcome:
+  message: VISITDY is populated for unplanned visit
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1019
+  pmda_category: Error
+  ig_versions: []
+

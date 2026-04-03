@@ -1,0 +1,23 @@
+id: DD0092
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: ParameterOID is required when the analysis result is based on specific
+  parameter(s) from a BDS structured dataset.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Missing required ParameterOID
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0092
+  pmda_category: X
+  ig_versions: []
+

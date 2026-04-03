@@ -1,0 +1,24 @@
+id: SD0058
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Only variables listed in SDTM model should appear in a dataset. New sponsor
+  defined variables must not be added, and existing variables must not be renamed
+  or modified.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Variable appears in dataset, but is not in SDTM model
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0058
+  pmda_category: Error
+  ig_versions: []
+

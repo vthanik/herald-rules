@@ -1,0 +1,23 @@
+id: DD0084
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Referenced File must exist. Define-XML specification represents File
+  references as xlink:href attributes within def:leaf element.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Referenced File is missing
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0084
+  pmda_category: X
+  ig_versions: []
+

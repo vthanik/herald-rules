@@ -1,0 +1,32 @@
+id: AD0361
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The value of Analysis Start Date (ASTDT) variable must be less or equal
+  to Analysis End Date (AENDT) variable value.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+    - BDS
+    - ADNCA
+    - MDBDS
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: Value of ASTDT is greater than value of AENDT
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0361
+  pmda_category: Error
+  ig_versions: []
+

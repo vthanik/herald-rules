@@ -1,0 +1,24 @@
+id: DD0141
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The value of the Status attribute must be one of the values from the
+  CDISC/NCI standard Status codelist included in the Define-XML Controlled Terminology
+  (C172332).
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Invalid Status value
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0141
+  pmda_category: ''
+  ig_versions: []
+

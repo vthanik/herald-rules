@@ -1,0 +1,22 @@
+id: SD1003
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Age (AGE) should be provided when Age Units (AGEU) are populated.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: Missing value for AGE when AGEU is provided
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1003
+  pmda_category: Warning
+  ig_versions: []
+

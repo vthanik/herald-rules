@@ -1,0 +1,24 @@
+id: SD1363
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Planned Arm Code (ARMCD) and Description of Planned Arm (ARM) must be
+  null for subjects who are not assigned to treatment. This includes Screen Failure
+  subjects and Not Assigned subjects.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: ARMCD/ARM is populated for a subject not assigned to treatment
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1363
+  pmda_category: Error
+  ig_versions: []
+

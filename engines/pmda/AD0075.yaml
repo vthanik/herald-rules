@@ -1,0 +1,25 @@
+id: AD0075
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If the Planned Treatment (TRTxxPN) numeric variable is present, there
+  must be a corresponding Planned Treatment (TRTxxP) character variable.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+check: []
+outcome:
+  message: TRTxxPN is present, but TRTxxP is not present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0075
+  pmda_category: Error
+  ig_versions: []
+

@@ -1,0 +1,26 @@
+id: AD0289
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Across studies, all Analysis Causality (AREL) variable values must be
+  the same for each unique value of Analysis Causality (N) (ARELN) variable when the
+  primary variable AREL is populated.
+scope:
+  classes: []
+  domains:
+    - ADAE
+    - ADAMOTHER
+check: []
+outcome:
+  message: Inconsistent value for AREL
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0289
+  pmda_category: Error
+  ig_versions: []
+

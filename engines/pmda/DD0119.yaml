@@ -1,0 +1,22 @@
+id: DD0119
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The PublishingSet attribute is required when Type is 'CT'.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Missing PublishingSet value
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0119
+  pmda_category: ''
+  ig_versions: []
+

@@ -1,0 +1,31 @@
+id: SD0006
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All subjects should have at least one baseline observation (--BLFL =
+  'Y') in EG, LB, MB, MS, PC and VS domains, except for subjects who failed screening
+  (ARMCD = 'SCRNFAIL') or were not fully assigned to an Arm (ARMCD = 'NOTASSGN') or
+  were not treated (ACTARMCD = 'NOTTRT').
+scope:
+  classes: []
+  domains:
+    - EG
+    - LB
+    - MB
+    - MS
+    - PC
+    - VS
+check: []
+outcome:
+  message: No baseline flag record in Domain for subject
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0006
+  pmda_category: Warning
+  ig_versions: []
+

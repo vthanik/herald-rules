@@ -1,0 +1,23 @@
+id: SD1237
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: There should be one record per device property defined by SPDEVID and
+  DOTESTCD variables.
+scope:
+  classes: []
+  domains: DO
+check: []
+outcome:
+  message: Duplicate records in Device Property
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1237
+  pmda_category: Warning
+  ig_versions: []
+

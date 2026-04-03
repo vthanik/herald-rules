@@ -1,0 +1,23 @@
+id: SD1254
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: DTHFL must equal 'Y' when there is a record in the Adverse Events (AE)
+  domain with AEOUT = 'FATAL'.
+scope:
+  classes: []
+  domains: AE
+check: []
+outcome:
+  message: DTHFL does not equal 'Y' when AE.AEOUT = 'FATAL'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1254
+  pmda_category: Error
+  ig_versions: []
+

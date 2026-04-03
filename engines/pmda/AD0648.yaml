@@ -1,0 +1,25 @@
+id: AD0648
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If TRTEMwFL is included, TRTEMFL is defined as the overall treatment
+  emergent flag. If any Treatment Emergent Analysis w Flag (TRTEMwFL) variables are
+  flagged Y, then the overall Treatment Emergent Analysis Flag (TRTEMFL) variable
+  should also be Y.
+scope:
+  classes: []
+  domains: ADAE
+check: []
+outcome:
+  message: TRTEMwFL = Y and TRTEMFL != Y
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0648
+  pmda_category: Error
+  ig_versions: []
+

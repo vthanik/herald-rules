@@ -1,0 +1,23 @@
+id: SD1046
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: I/E Criterion Original Result (IEORRES) must equal 'N' when Inclusion/Exclusion
+  Category (IECAT) is 'INCLUSION'.
+scope:
+  classes: []
+  domains: IE
+check: []
+outcome:
+  message: IESTRESC is not 'N' when IECAT ='INCLUSION'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1046
+  pmda_category: Error
+  ig_versions: []
+

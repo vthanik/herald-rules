@@ -1,0 +1,26 @@
+id: SD0075
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Identifying Variable (IDVAR) must have a valid value of variables from
+  a referenced Domain.
+scope:
+  classes: []
+  domains:
+    - CO
+    - RELREC
+    - SUPPQUAL
+check: []
+outcome:
+  message: Invalid IDVAR
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0075
+  pmda_category: Error
+  ig_versions: []
+

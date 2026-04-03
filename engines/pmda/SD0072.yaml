@@ -1,0 +1,26 @@
+id: SD0072
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Related Domain Abbreviation (RDOMAIN) must have a valid value of Domains
+  included in the study data.
+scope:
+  classes: []
+  domains:
+    - CO
+    - RELREC
+    - SUPPQUAL
+check: []
+outcome:
+  message: Invalid RDOMAIN
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0072
+  pmda_category: Error
+  ig_versions: []
+

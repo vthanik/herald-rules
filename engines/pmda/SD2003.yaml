@@ -1,0 +1,25 @@
+id: SD2003
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Description of Actual Arm (ACTARM) values should match entries in the
+  Trial Arms (TA) dataset, except for subjects who failed screening ('Screen Failure'),
+  or were not fully assigned to an Arm ('Not Assigned'), or randomized, but not treated
+  ('Not Treated') or received non-planned treatment ('Unplanned Treatment').
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: Invalid value for ACTARM
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2003
+  pmda_category: Error
+  ig_versions: []
+

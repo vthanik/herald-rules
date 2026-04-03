@@ -1,0 +1,28 @@
+id: SD1449
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: 'Reported Term for the Adverse Event (AETERM) is expected to be coded
+  using the Medical Dictionary for Regulatory Affairs (MedDRA). Sponsors should code
+  each term to the MedDRA-specified hierarchy of terms. These terms/codes are represented
+  in SDTM variables that are subject to MedDRA: AELLT, AELLTCD, AEDECOD, AEPTCD, AEHLT,
+  AEHLTCD, AEHLGT, AEHLGTCD, AEBODSYS, AEBDSYCD, AESOC, AESOCCD.'
+scope:
+  classes: []
+  domains: AE
+check: []
+outcome:
+  message: 'Missing values for one or more variables subject to MedDRA: --LLT, --LLTCD,
+    --DECOD, --PTCD, --HLT, --HLTCD, --HLGT, --HLGTCD, --BODSYS, --BDSYCD, --SOC,
+    --SOCCD'
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1449
+  pmda_category: Warning
+  ig_versions: []
+

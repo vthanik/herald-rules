@@ -1,0 +1,22 @@
+id: SD1324
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Variable Label in define.xml must match variable Label in dataset.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Define.xml/dataset variable label mismatch
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1324
+  pmda_category: Error
+  ig_versions: []
+

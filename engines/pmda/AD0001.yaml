@@ -1,0 +1,22 @@
+id: AD0001
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: ADaM Subject level (ADSL) dataset should be included in every submission.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Missing ADSL dataset
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0001
+  pmda_category: Reject
+  ig_versions: []
+

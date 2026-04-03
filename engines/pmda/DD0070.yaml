@@ -1,0 +1,23 @@
+id: DD0070
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: For regulatory submission data, SASFieldName attribute is required and
+  must be included in Define.xml and cannot be empty.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Missing SASFieldName value
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0070
+  pmda_category: X
+  ig_versions: []
+

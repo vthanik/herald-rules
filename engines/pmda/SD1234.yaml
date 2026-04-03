@@ -1,0 +1,23 @@
+id: SD1234
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Device Type (DEVTYPE) Parameter must be populated for each Medical Device
+  in the Device Identifiers (DI) domain.
+scope:
+  classes: []
+  domains: DI
+check: []
+outcome:
+  message: Missing DEVTYPE Parameter for Device
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1234
+  pmda_category: Error
+  ig_versions: []
+

@@ -1,0 +1,25 @@
+id: SD1264
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: When the RELREC dataset is used to identify relationships between datasets
+  (in which case USUBJID and IDVARVAL are left null), instead of relating individual
+  records, --SEQ cannot be used for IDVAR because --SEQ only has meaning within a
+  subject within a dataset, not across datasets.
+scope:
+  classes: []
+  domains: RELREC
+check: []
+outcome:
+  message: IDVAR equals --SEQ when IDVARVAL is null and USUBJID is null
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1264
+  pmda_category: Error
+  ig_versions: []
+

@@ -1,0 +1,27 @@
+id: SD2008C
+version: 1
+status: Reference
+standard: SDTM
+category: Conformance
+sensitivity: Record
+executability: Not Executable
+description: Case for Lowest Level Term (--LLT) variable must be sentence case using
+  a Lowest Level Term of the MedDRA dictionary of a version specified in the define.xml
+  (Case-sensitive).
+scope:
+  classes: []
+  domains:
+    - AE
+    - CE
+    - MH
+check: []
+outcome:
+  message: Value for --LLT is in incorrect case
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2008C
+  pmda_category: Warning
+  ig_versions: []
+

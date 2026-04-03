@@ -1,0 +1,23 @@
+id: SD1253
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: DTHFL must equal 'Y' when there is a record in the Death Details (DD)
+  domain.
+scope:
+  classes: []
+  domains: DD
+check: []
+outcome:
+  message: DTHFL does not equal 'Y' when DD record is present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1253
+  pmda_category: Error
+  ig_versions: []
+

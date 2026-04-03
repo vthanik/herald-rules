@@ -1,0 +1,29 @@
+id: AD0381
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: 'Within a parameter, there should be only a single value of a primary
+  variable (*) for a given value of secondary variable (*N), considering only those
+  rows on which both variables are populated. Covers variable pairs: BTOXGR/BTOXGRN,
+  BTOXGRL/BTOXGRLN, BTOXGRH/BTOXGRHN, ATOXGRL/ATOXGRLN, ATOXGRH/ATOXGRHN.'
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: Inconsistent value for Variable within a unique PARAMCD
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0381
+  pmda_category: Error
+  ig_versions: []
+

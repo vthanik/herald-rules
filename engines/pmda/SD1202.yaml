@@ -1,0 +1,31 @@
+id: SD1202
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Start Date/Time (--STDTC) variable value must be less than or equal to
+  Date/Time of End of Participation (RFPENDTC). If the study is ongoing, Parameter
+  Value (TSVAL) for the 'ONGOSIND/Ongoing Study Indicator' parameter should be set
+  to 'Y' in the Trial Summary (TS) domain.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-CO
+    - -DM)
+    - INTERVENTIONS
+    - FINDINGS(-DO)
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: --STDTC date is after RFPENDTC
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1202
+  pmda_category: Warning
+  ig_versions: []
+

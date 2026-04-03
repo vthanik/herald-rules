@@ -1,0 +1,29 @@
+id: SD1023
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Combination of Visit Name (VISIT) and Visit Number (VISITNUM) in subject-level
+  domains should match that in the TV domain except for Unscheduled and Unplanned
+  visits.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE
+    - INTERVENTIONS
+    - FINDINGS
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: VISIT/VISITNUM values do not match TV domain data
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1023
+  pmda_category: Warning
+  ig_versions: []
+

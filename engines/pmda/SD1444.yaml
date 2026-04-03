@@ -1,0 +1,26 @@
+id: SD1444
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: MedDRA System Organ Class (--SOC) should be consistent for the same collected
+  term (--TERM).
+scope:
+  classes: []
+  domains:
+    - AE
+    - CE
+    - MH
+check: []
+outcome:
+  message: Inconsistent value for --SOC within --TERM
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1444
+  pmda_category: Warning
+  ig_versions: []
+

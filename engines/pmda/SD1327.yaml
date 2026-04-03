@@ -1,0 +1,25 @@
+id: SD1327
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The Related Subject or Pool Identifier (RSUBJID) value should not be
+  equal to Pool Identifier (POOLID).
+scope:
+  classes: []
+  domains:
+    - RELSPEC
+    - RELSUB
+check: []
+outcome:
+  message: RSUBJID is equal to POOLID
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1327
+  pmda_category: Error
+  ig_versions: []
+

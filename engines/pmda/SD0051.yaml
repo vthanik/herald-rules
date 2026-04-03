@@ -1,0 +1,29 @@
+id: SD0051
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All values of Visit Name (VISIT) should be the same for a given value
+  of Visit Number (VISITNUM).
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE
+    - INTERVENTIONS
+    - FINDINGS
+    - EVENTS
+    - FINDINGSABOUT
+    - TV
+check: []
+outcome:
+  message: Inconsistent value for VISIT within VISITNUM
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0051
+  pmda_category: Warning
+  ig_versions: []
+

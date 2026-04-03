@@ -1,0 +1,23 @@
+id: SD1259
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The value of Set Code (SETCD) should be no more than 8 characters in
+  length.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: Invalid value for SETCD exceeding 8 characters
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1259
+  pmda_category: Warning
+  ig_versions: []
+

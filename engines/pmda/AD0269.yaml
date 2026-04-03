@@ -1,0 +1,32 @@
+id: AD0269
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: A Treatment Flag variable must have a value that is Y or null. Examples
+  of such Flags variables in ADaM-IG 1.2 are Treatment Emergent Analysis Flag (TRTEMFL),
+  Pre-treatment Flag (PREFL), On Treatment Record Flag (ONTRTFL), Follow-up Flag (FUPFL),
+  and Last Value On Treatment Record Flag (LVOTFL).
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: Variable flag value is not Y or null
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0269
+  pmda_category: Error
+  ig_versions: []
+

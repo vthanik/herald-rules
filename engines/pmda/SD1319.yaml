@@ -1,0 +1,26 @@
+id: SD1319
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All records in the Disposition (DS) and Protocol Deviations (DV) domains
+  should have the Start Date/Time of Event (--STDTC) equal to or after a subject's
+  Date/Time of Informed Consent (RFICDTC) in the Demographics (DM) domain.
+scope:
+  classes: []
+  domains:
+    - DS
+    - DV
+check: []
+outcome:
+  message: --STDTC is before RFICDTC
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1319
+  pmda_category: Warning
+  ig_versions: []
+

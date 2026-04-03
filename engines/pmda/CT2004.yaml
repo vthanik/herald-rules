@@ -1,0 +1,29 @@
+id: CT2004
+version: 1
+status: Reference
+standard: SDTM
+category: Controlled Terminology
+sensitivity: Record
+executability: Not Executable
+description: Variable must be populated with terms from its CDISC controlled terminology
+  codelist when its value level condition is met. New terms cannot be added into non-extensible
+  codelists.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Variable value not found in non-extensible codelist when value-level condition
+    occurs
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: CT2004
+  pmda_category: Reject
+  ig_versions: []
+  pmda_notes: "Violation of CT2004 for the following variable/codelist pairs will
+    be considered part of Rejection criteria. All others will be\r\nconsidered Errors.\r\n\r\n<Variable
+    Name (Codelist Name)>\r\nTSVAL when TSPARMCD value is SEXPOP (SEXPOP)\r\nTSVAL
+    when TSPARMCD value is ADDON (NY)\r\nTSVAL when TSPARMCD value is RANDOM (NY)"
+

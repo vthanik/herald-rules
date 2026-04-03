@@ -1,0 +1,28 @@
+id: AD0160
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If Analysis Window Unit (AWU) variable is present, then Analysis Window
+  Beginning Timepoint (AWLO) and (Analysis Window Ending Timepoint) AWHI variables
+  must be present.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: AWU is present, but both AWLO and AWHI are not present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0160
+  pmda_category: Error
+  ig_versions: []
+

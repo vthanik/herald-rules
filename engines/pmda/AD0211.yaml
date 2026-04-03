@@ -1,0 +1,27 @@
+id: AD0211
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: 'ABLFN (Analysis Baseline Flag Numeric) must be 1 or null. For Parameter-Level
+  and Record-Level Numeric Population Flag variables: 1 = yes (included). Null values
+  are allowed.'
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: ABLFN value is not 1 or null
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0211
+  pmda_category: Error
+  ig_versions: []
+

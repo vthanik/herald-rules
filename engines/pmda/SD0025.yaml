@@ -1,0 +1,25 @@
+id: SD0025
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Date/Time of Specimen Collection (--DTC) must be less or equal to End
+  Date/Time of Specimen Collection (--ENDTC).
+scope:
+  classes: []
+  domains:
+    - FINDINGS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: --DTC is after --ENDTC
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0025
+  pmda_category: Error
+  ig_versions: []
+

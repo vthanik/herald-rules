@@ -1,0 +1,23 @@
+id: SD1076
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: SDTM model variable may be added into standard domains according to its
+  domain general class, if there are no restrictions on their usage specified in IG.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Model Permissible variable added into standard domain
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1076
+  pmda_category: Warning
+  ig_versions: []
+

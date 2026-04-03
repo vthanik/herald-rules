@@ -1,0 +1,27 @@
+id: AD0133B
+version: 1
+status: Reference
+standard: ADaM
+category: Conformance
+sensitivity: Record
+executability: Not Executable
+description: If R2AyLO is populated, the values necessary for its calculation must
+  both be present and populated. R2AyLO = AVAL / AyLO. Once this issue is resolved,
+  there is greater potential for AD0133 to fire.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: 'Calculation issue: R2AyLO is populated, but AVAL and/or AyLO are not populated'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0133B
+  pmda_category: Error
+  ig_versions: []
+

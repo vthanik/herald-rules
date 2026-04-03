@@ -1,0 +1,23 @@
+id: DD0116
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: When SDTM Event or Intervention qualifier variable is used as FATESTCD,
+  then FATEST should be the corresponding qualifier variable label.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: FATESTCD/FATEST mismatch in Codelist <codelist>
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0116
+  pmda_category: X
+  ig_versions: []
+

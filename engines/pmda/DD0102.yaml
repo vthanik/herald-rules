@@ -1,0 +1,23 @@
+id: DD0102
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Guidance provided by regulatory agencies states that the Annotated CRF
+  should be provided as a PDF with the file name 'acrf.pdf'.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Invalid Annotated CRF document name
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0102
+  pmda_category: X
+  ig_versions: []
+

@@ -1,0 +1,28 @@
+id: DD0072
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: 'For regulatory submission data, Origin is required for all SDTM, ADaM,
+  and SEND variables. It is at the sponsors discretion whether to provide Origin at
+  the Variable or Value Level. When Origin is provided for each Value Level item,
+  then providing Origin on the Variable is optional. Define-XML specification represents
+  variable Origin as def:Origin element under ItemDef element. Note: Refer to the
+  data standards catalog by the relevant Regulatory Agency for acceptance of standards
+  and their versions.'
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Missing Origin
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0072
+  pmda_category: X
+  ig_versions: []
+

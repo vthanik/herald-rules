@@ -1,0 +1,23 @@
+id: SD0061
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Domains referenced in data definition document (define.xml) should be
+  included in the submission.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Domain referenced in define.xml, but dataset is missing
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0061
+  pmda_category: Error
+  ig_versions: []
+

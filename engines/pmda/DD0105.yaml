@@ -1,0 +1,23 @@
+id: DD0105
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: In SDTM, all --DY, --STDY, and --ENDY variables must have Origin set
+  to 'Derived'.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Origin for Study Day variable <define variable> is not set to Derived
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0105
+  pmda_category: X
+  ig_versions: []
+

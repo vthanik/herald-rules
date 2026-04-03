@@ -1,0 +1,27 @@
+id: SD1462
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: When using a multi-axial dictionary such as MedDRA, Body System or System
+  Organ Class (--BODSYS) variable value should be populated as Primary System Organ
+  Class Code (--SOC) used for analysis.
+scope:
+  classes: []
+  domains:
+    - AE
+    - CE
+    - MH
+check: []
+outcome:
+  message: Not the same values for --SOC and --BODSYS
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1462
+  pmda_category: Warning
+  ig_versions: []
+

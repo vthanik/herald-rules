@@ -1,0 +1,32 @@
+id: AD0251
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: In Time to Event studies, Censor Date Description (CNSDTDSC) variable
+  describes the circumstance represented by the censoring date if different from the
+  event date that warrants censoring. If present, Censor (CNSR) variable must be present.
+  Note that adding CNSDTDSC provides additional information when there is a difference
+  between the event date that warrants censoring and the actual date of censoring.
+  If the event that warrants censoring is the same as the onset date of the event
+  that represents the censoring date, then the CNSDTDSC column is not needed in the
+  analysis dataset.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: CNSDTDSC is present, but CNSR is not present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0251
+  pmda_category: Error
+  ig_versions: []
+

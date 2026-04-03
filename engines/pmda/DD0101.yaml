@@ -1,0 +1,25 @@
+id: DD0101
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: 'Guidance provided by regulatory agencies states that eCTD submissions
+  must include a define.xml file for each study in Module 4 (nonclinical) and Module
+  5 (clinical). Note: Refer to the data standards catalog by the relevant Regulatory
+  Agency for acceptance of standards and their versions.'
+scope:
+  classes: []
+  domains: Reject
+check: []
+outcome:
+  message: Missing define.xml file
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0101
+  pmda_category: X
+  ig_versions: []
+

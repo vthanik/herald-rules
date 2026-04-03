@@ -1,0 +1,30 @@
+id: SD1292
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Start Relative to Reference Time Point (--STRTPT) must be populated when
+  Start Reference Time Point (--STTPT) is populated.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-DM
+    - -SE
+    - -SV)
+    - INTERVENTIONS
+    - FINDINGS(-DO)
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Missing value for --STRTPT when --STTPT is populated
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1292
+  pmda_category: Warning
+  ig_versions: []
+

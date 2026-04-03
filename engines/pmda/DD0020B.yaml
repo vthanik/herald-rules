@@ -1,0 +1,25 @@
+id: DD0020B
+version: 1
+status: Reference
+standard: Define-XML
+category: Conformance
+sensitivity: Record
+executability: Not Executable
+description: The def:DefineVersion should have a value of '2.0.0' for Define-XML v2.0
+  or '2.1.n' for Define-XML v2.1. The n in '2.1.n' reflects updates to the schema.
+scope:
+  classes: []
+  domains: Reject
+check: []
+outcome:
+  message: Invalid def:DefineVersion value
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0020B
+  pmda_category: X
+  ig_versions: []
+  pmda_notes: PMDA does accept the define.xml version 2.0.0 and 2.1.n only under this
+    validation rule.
+

@@ -1,0 +1,23 @@
+id: DD0114
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Split datasets can only be used for general-observation-class datasets
+  (Events, Findings, Findings About, Interventions).
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Invalid usage of split datasets for non-general-observation-class datasets
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0114
+  pmda_category: X
+  ig_versions: []
+

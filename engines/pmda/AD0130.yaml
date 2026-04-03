@@ -1,0 +1,27 @@
+id: AD0130
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: 'Within a study, all BASEC values must be the same for each unique value
+  group of [PARAMCD, BASE] when PARAMCD, BASE and BASEC are populated. (ADaM IG: There
+  must be a one-to-one map between BASE and BASEC within a given PARAM if BOTH are
+  populated).'
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+check: []
+outcome:
+  message: Inconsistent value for BASEC
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0130
+  pmda_category: Warning
+  ig_versions: []
+

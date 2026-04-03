@@ -1,0 +1,28 @@
+id: AD0304
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If any of SMQ Name (SMQzzNAM), SMQ Code (SMQzzCD) or SMQ Scope (SMQzzSC)
+  variable is populated, then all of these MedDRA SMQ variables must be populated
+  together.
+scope:
+  classes: []
+  domains:
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+check: []
+outcome:
+  message: 'Only some of these variables are present and populated: SMQzzNAM, SMQzzCD,
+    SMQzzSC'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0304
+  pmda_category: Error
+  ig_versions: []
+

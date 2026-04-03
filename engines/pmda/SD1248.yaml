@@ -1,0 +1,24 @@
+id: SD1248
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: ECDOSE must either be null when ECOCCUR equals 'N', or ECDOSE must be
+  greater than 0. ECDOSE would be greater than 0 (when ECOCCUR equals N) for records
+  that represent specific dose amounts that are not taken, not given, or missed.
+scope:
+  classes: []
+  domains: EC
+check: []
+outcome:
+  message: ECDOSE is not null or greater than 0 when ECOCCUR = 'N'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1248
+  pmda_category: Error
+  ig_versions: []
+

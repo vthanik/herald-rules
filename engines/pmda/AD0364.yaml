@@ -1,0 +1,27 @@
+id: AD0364
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Treatment Dose Units (DOSEU) variable is required when either Treatment
+  Dose at Record Start (DOSEON) or Cumulative Actual Treatment Dose (DOSCUMA) variable
+  is present in the dataset.
+scope:
+  classes: []
+  domains:
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+check: []
+outcome:
+  message: DOSEU variable is not present when DOSEON or DOSCUMA is present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0364
+  pmda_category: Error
+  ig_versions: []
+

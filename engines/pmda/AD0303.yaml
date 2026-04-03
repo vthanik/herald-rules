@@ -1,0 +1,28 @@
+id: AD0303
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: For Customized MedDRA Query Name (SMQzzNAM) variables , zz must be the
+  ordered CQ of interest (01 to 99). This ordering can be based on importance or some
+  other sponsor-defined criteria. It is recommended that the ordering be consistent
+  across studies within a development program.
+scope:
+  classes: []
+  domains:
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+check: []
+outcome:
+  message: 'Illegal variable name: zz is not in [01-99] for CQzzNAM'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0303
+  pmda_category: Error
+  ig_versions: []
+

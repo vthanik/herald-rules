@@ -1,0 +1,22 @@
+id: DD0008
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: An element was found in the wrong position within Define.xml.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Element in wrong position within Define.xml
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0008
+  pmda_category: X
+  ig_versions: []
+

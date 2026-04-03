@@ -1,0 +1,26 @@
+id: AD0239A
+version: 1
+status: Reference
+standard: ADaM
+category: Conformance
+sensitivity: Record
+executability: Not Executable
+description: For a given period xx, If both Actual Treatment for Period xx (TRTxxA)
+  and Planned Pooled Treatment y for Period xx (TRxxPGy) variables are present, then
+  Actual Pooled Treatment y for Period xx (TRxxAGy) variable must be present.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+check: []
+outcome:
+  message: TRxxPGy and TRTxxA are present, but TRxxAGy is not present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0239A
+  pmda_category: Error
+  ig_versions: []
+

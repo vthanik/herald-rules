@@ -1,0 +1,30 @@
+id: AD0492
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If Shift $y (SHIFTy) variable is present, the variable pair it is describing
+  should also be present. Pairs include (BASECATy/ AVALCATy), (BNRIND/ANRIND), (ByIND/AyIND),
+  (BTOXGR/ATOXGR), (BTOXGRL/ATOXGRL), (BTOXGRH/ATOXGRH), (BASE/AVAL) and (BASEC/AVALC).
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: SHIFTy is present and all of the following variable pairs (BASECATy, AVALCATy),
+    (BNRIND, ANRIND), (ByIND, AyIND), (BTOXGR, ATOXGR), (BTOXGRL, ATOXGRL), (BTOXGRH,
+    ATOXGRH), (BASE, AVAL) and (BASEC, AVALC) are not present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0492
+  pmda_category: Error
+  ig_versions: []
+

@@ -1,0 +1,31 @@
+id: AD0352
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Analysis Range y Indicator (AyIND) variable indicates the relationship
+  of Analysis Value (AVAL) to the analysis range variables Analysis Range y Lower
+  Limit (AyLO) and/or Analysis Range y Upper Limit (AyHI), or the relationship of
+  Analysis Value (C) (AVALC) variable to the analysis range variables Analysis Range
+  y Lower Limit (C) (AyLOC) and/or Analysis Range y Upper Limit (C) AyHIC. At least
+  one of AyLO, AyHI, AyLOC, and AyHIC is expected to be present for use of AyIND variable.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: None of AyLO, AyHI, AyLOC, or AyHIC variables is present when AyIND is
+    present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0352
+  pmda_category: Error
+  ig_versions: []
+

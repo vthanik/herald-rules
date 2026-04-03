@@ -1,0 +1,23 @@
+id: SD1073
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Variables described in IG as inappropriate for usage must be not included
+  in the dataset.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Variable prohibited for use in SDTM
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1073
+  pmda_category: Error
+  ig_versions: []
+

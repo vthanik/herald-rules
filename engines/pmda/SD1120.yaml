@@ -1,0 +1,23 @@
+id: SD1120
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Comments should be stored in Comments (CO) domain, rather than be put
+  into Supplemental Qualifier (SUPP--) domains.
+scope:
+  classes: []
+  domains: SUPPQUAL
+check: []
+outcome:
+  message: Comments in SUPPQUAL domain
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1120
+  pmda_category: Warning
+  ig_versions: []
+

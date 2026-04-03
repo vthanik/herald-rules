@@ -1,0 +1,28 @@
+id: AD0264
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If a Time (*TM) variable is indicated to be imputed by population of
+  an Imputation Flag (*TMF) variable value, that Time (*TM) variable must have a value.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - BDS
+    - OCCDS
+    - ADAE
+    - ADAMOTHER
+check: []
+outcome:
+  message: '*TMF is populated, but *TM is not populated'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0264
+  pmda_category: Error
+  ig_versions: []
+

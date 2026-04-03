@@ -1,0 +1,26 @@
+id: AD0230B
+version: 1
+status: Reference
+standard: ADaM
+category: Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a study, all Actual Sequence of Treatments (N) (TRTSEQAN) variable
+  values must be the same for each unique value of Actual Sequence of Treatment (TRTSEQA)
+  variable when both variables are populated.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+check: []
+outcome:
+  message: Inconsistent value for TRTSEQAN
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0230B
+  pmda_category: Error
+  ig_versions: []
+

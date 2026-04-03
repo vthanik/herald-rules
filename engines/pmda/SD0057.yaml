@@ -1,0 +1,23 @@
+id: SD0057
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Variables described in SDTM IG as Expected should be included in the
+  dataset.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: SDTM Expected variable not found
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0057
+  pmda_category: Warning
+  ig_versions: []
+

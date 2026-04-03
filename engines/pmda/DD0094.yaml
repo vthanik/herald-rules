@@ -1,0 +1,23 @@
+id: DD0094
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: def:CommentOID is required if there is more than one analysis dataset
+  needed to create the respective result.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Missing required def:CommentOID
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0094
+  pmda_category: X
+  ig_versions: []
+

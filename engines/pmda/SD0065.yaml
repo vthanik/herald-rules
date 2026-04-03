@@ -1,0 +1,31 @@
+id: SD0065
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All Unique Subject Identifier (USUBJID) + Visit Name (VISIT) + Visit
+  Number (VISITNUM) combination values in data should be present in the Subject Visits
+  (SV) domain. There is an exception for records, where Status (--STAT) variable value
+  is populated. E.g., --STAT = 'NOT DONE'. Another exception is for records, where
+  Occurrence (ECOCCUR) is 'N' in EC domain.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-SV)
+    - INTERVENTIONS
+    - FINDINGS
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: USUBJID/VISIT/VISITNUM values do not match SV domain data
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0065
+  pmda_category: Warning
+  ig_versions: []
+

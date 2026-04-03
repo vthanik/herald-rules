@@ -1,0 +1,27 @@
+id: SD1201
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The structure of Events class domains should be one record per Event
+  per subject. No Events with the same Collected Term (--TERM), Decoded Term (--DECOD),
+  Category (--CAT), Subcategory (--SCAT), Occurrence (--OCCUR), Location (--LOC),
+  Laterality (--LAT), Directionality (--DIR), Severity (--SEV), Toxicity Grade (--TOXGR),
+  Visit Number (VISITNUM), Visit Day (VISITDY), and Start Reference Time Point (--STTPT)
+  values for the same Subject (USUBJID) and the same Start Date (--STDTC) are expected.
+scope:
+  classes: []
+  domains: EVENTS
+check: []
+outcome:
+  message: Duplicate records in domain
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1201
+  pmda_category: Warning
+  ig_versions: []
+

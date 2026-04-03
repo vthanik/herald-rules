@@ -1,0 +1,25 @@
+id: SD1473
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Upper end of reference range for continuous measurement in standard units
+  (--ORNRHI) should be populated only for continuous results (--ORRES is numeric value).
+  Allowed "numeric" values may include optional >, <, =, a space and - leading symbols
+  in the listed order. For example, "<= -1.2".
+scope:
+  classes: []
+  domains: LB
+check: []
+outcome:
+  message: --ORRES is not numeric value, when --STNRHI is populated
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1473
+  pmda_category: Warning
+  ig_versions: []
+

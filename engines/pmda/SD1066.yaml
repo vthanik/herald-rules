@@ -1,0 +1,23 @@
+id: SD1066
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Variable Value (IDVARVAL) variable value should not be populated when
+  Relationship Type (RELTYPE) variable value is populated.
+scope:
+  classes: []
+  domains: RELREC
+check: []
+outcome:
+  message: IDVARVAL value is populated when RELTYPE values is populated
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1066
+  pmda_category: Warning
+  ig_versions: []
+

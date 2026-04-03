@@ -1,0 +1,28 @@
+id: SD0003
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Value of Dates/Time variables (*DTC) must conform to the ISO 8601 international
+  standard.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE
+    - INTERVENTIONS
+    - FINDINGS
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Invalid ISO 8601 value for variable
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0003
+  pmda_category: Error
+  ig_versions: []
+

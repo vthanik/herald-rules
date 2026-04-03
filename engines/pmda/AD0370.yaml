@@ -1,0 +1,32 @@
+id: AD0370
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If a Time variable is indicated to be imputated by population of an Imputation
+  Flag (*TMF), that Time variable (*TM) or Datetime variable (*DTM) must have a value.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+    - BDS
+    - ADNCA
+    - MDBDS
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: '*TMF is populated, but *TM or *DTM is not populated'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0370
+  pmda_category: Error
+  ig_versions: []
+

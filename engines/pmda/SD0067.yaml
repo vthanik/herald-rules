@@ -1,0 +1,25 @@
+id: SD0067
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Element Code (ETCD) values should match entries in the Trial Elements
+  (TE) dataset, except for unplanned Element (ETCD = 'UNPLAN').
+scope:
+  classes: []
+  domains:
+    - SE
+    - TA
+check: []
+outcome:
+  message: Invalid ETCD
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0067
+  pmda_category: Error
+  ig_versions: []
+

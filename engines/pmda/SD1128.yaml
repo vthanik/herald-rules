@@ -1,0 +1,24 @@
+id: SD1128
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Relationship Type (RELTYPE) variable values should be populated with
+  terms 'ONE', 'MANY' when Related Records (RELREC) dataset is used to identify relationships
+  between datasets.
+scope:
+  classes: []
+  domains: RELREC
+check: []
+outcome:
+  message: Invalid value for RELTYPE variable
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1128
+  pmda_category: Error
+  ig_versions: []
+

@@ -1,0 +1,29 @@
+id: SD2238
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Start Reference Time Point (--STTPT) value must be consistent for all
+  records with same Subject (USUBJID) and Start Date/Time (--STDTC) values.
+scope:
+  classes: []
+  domains:
+    - INTERVENTIONS(-DX
+    - -EC
+    - -PR)
+    - EVENTS(-DE
+    - -DT
+    - -HO)
+check: []
+outcome:
+  message: Inconsistent value for --STTPT
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2238
+  pmda_category: Error
+  ig_versions: []
+

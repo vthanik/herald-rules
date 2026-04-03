@@ -1,0 +1,25 @@
+id: SD0017
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The value of Name of Measurement, Test or Examination (--TEST) should
+  be no more than 40 characters in length.
+scope:
+  classes: []
+  domains:
+    - FINDINGS(-IE)
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Invalid value for --TEST variable
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0017
+  pmda_category: Error
+  ig_versions: []
+

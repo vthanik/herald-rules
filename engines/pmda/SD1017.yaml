@@ -1,0 +1,23 @@
+id: SD1017
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Visit Number (VISITNUM) values should match entries in the Trial Visits
+  (TV) dataset when they are planned visits (SVUPDES = null).
+scope:
+  classes: []
+  domains: SV
+check: []
+outcome:
+  message: VISITNUM value does not match TV domain data
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1017
+  pmda_category: Warning
+  ig_versions: []
+

@@ -1,0 +1,25 @@
+id: SD1308
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: When test product is added to existing treatment (TSPARMCD = 'ADDON'
+  and TSVAL = 'Y'), the Current Therapy or Treatment parameter should be provided
+  with Parameter Value populated (TSVAL should not be null when TSPARMCD = 'CURTRT').
+scope:
+  classes: []
+  domains: TS
+check: []
+outcome:
+  message: TSVAL is missing for the CURTRT Trial Summary Parameter when ADDON parameter
+    equals 'Y'
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1308
+  pmda_category: Warning
+  ig_versions: []
+

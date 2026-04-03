@@ -1,0 +1,26 @@
+id: SD1079
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: 'The order of variables should reflect the order of the variables in
+  the SDTM Model. Variables for the three general observation classes must be ordered
+  with Identifiers first, followed by the Topic, Qualifier, and Timing variables.
+  Within each role, variables must be ordered as shown in SDTM: Tables 2.2.1, 2.2.2,
+  2.2.3, 2.2.4, and 2.2.5.'
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Variable is in wrong order within domain
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1079
+  pmda_category: Warning
+  ig_versions: []
+

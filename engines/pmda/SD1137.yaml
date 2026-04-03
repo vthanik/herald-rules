@@ -1,0 +1,25 @@
+id: SD1137
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Character Result/Finding in Original Units (--ORRES) value should be
+  null when Derived Flag (--DRVFL) value is 'Y'.
+scope:
+  classes: []
+  domains:
+    - FINDINGS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Non-missing value for --ORRES when --DRVFL='Y'
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1137
+  pmda_category: Warning
+  ig_versions: []
+

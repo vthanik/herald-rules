@@ -1,0 +1,29 @@
+id: SD1103
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Start Reference Time Point (--STTPT) variable must be included into the
+  domain when Start Relative to Reference Time Point (--STRTPT) variable is present.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-CO
+    - -DM)
+    - INTERVENTIONS
+    - FINDINGS
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Missing --STTPT variable when --STRTPT variable is present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1103
+  pmda_category: Error
+  ig_versions: []
+

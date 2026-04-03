@@ -1,0 +1,24 @@
+id: SD1359
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: When Planned Arm Code (ARMCD)/Description of Planned Arm (ARM) are not
+  populated, the Reason Arm and/or Actual Arm is Null (ARMNRS) variable must be populated
+  with the reason ARMCD/ARM are null.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: ARMNRS is not populated when ARMCD/ARM are not provided
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1359
+  pmda_category: Error
+  ig_versions: []
+

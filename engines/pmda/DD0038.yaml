@@ -1,0 +1,24 @@
+id: DD0038
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Value Level metadata must be defined for QVAL variable in each SUPPQUAL
+  dataset. Define-XML specification represents Value Level metadata as def:ValueListDef
+  element, which is referenced from ItemDef/def:ValueListRef element.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Missing Value Level metadata for QVAL in Dataset <dataset>
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0038
+  pmda_category: X
+  ig_versions: []
+

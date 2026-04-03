@@ -1,0 +1,26 @@
+id: SD0080
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Start Date/Time of Adverse Event (AESTDTC) should be less than or equal
+  to the Start Date/Time of the latest Disposition Event (DSSTDTC). Investigator should
+  provide a date of study discontinuation for each subject in Disposition (DS) domain.
+  If the study is ongoing, Parameter Value (TSVAL) for the 'ONGOSIND/Ongoing Study
+  Indicator' parameter should be set to 'Y' in the Trial Summary (TS) domain.
+scope:
+  classes: []
+  domains: AE
+check: []
+outcome:
+  message: AE start date is after the latest Disposition date
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0080
+  pmda_category: Warning
+  ig_versions: []
+

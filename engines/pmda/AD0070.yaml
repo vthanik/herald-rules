@@ -1,0 +1,26 @@
+id: AD0070
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If Actual Pooled Treatment y for Period xx (TRxxAGyN) numeric variable
+  is present, there must be a corresponding Actual Pooled Treatment y for Period xx
+  (TRxxAGy) character variable.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+check: []
+outcome:
+  message: TRxxAGyN is present, but TRxxAGy is not present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0070
+  pmda_category: Error
+  ig_versions: []
+

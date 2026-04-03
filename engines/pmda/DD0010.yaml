@@ -1,0 +1,23 @@
+id: DD0010
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: ODM attributes that are not explicitly specified in Define.xml standard
+  should generally not be included.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: ODM attribute <attribute> should not be included in Define.xml
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0010
+  pmda_category: X
+  ig_versions: []
+

@@ -1,0 +1,28 @@
+id: AD0382
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a parameter, there should be only a single value of Baseline Toxicity
+  Grade (N) (BTOXGRN) variable for a given value of Baseline Toxicity Grade (BTOXGR)
+  variable, considering only those rows on which both variables are populated.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: Inconsistent value for BTOXGRN within a unique PARAMCD
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0382
+  pmda_category: Error
+  ig_versions: []
+

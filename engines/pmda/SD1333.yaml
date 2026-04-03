@@ -1,0 +1,27 @@
+id: SD1333
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The Outcome of Adverse Event (AEOUT) variable is populated with the value
+  RECOVERED/RESOLVED, however the End Date/Time of Adverse Event (AEENDTC) or Duration
+  of Adverse Event (AEDUR) variables are null. If the adverse event has an outcome
+  of RECOVERED/RESOLVED, it is expected that an end date or a collected duration be
+  provided.
+scope:
+  classes: []
+  domains: AE
+check: []
+outcome:
+  message: AEOUT = RECOVERED/RESOLVED, but an end date or collected duration is not
+    provided
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1333
+  pmda_category: Warning
+  ig_versions: []
+

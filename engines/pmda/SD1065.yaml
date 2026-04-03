@@ -1,0 +1,23 @@
+id: SD1065
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Value of Related Domain Abbreviation (RDOMAIN) variable must be populated
+  when value of Identifying Variable (IDVAR) variable is populated.
+scope:
+  classes: []
+  domains: CO
+check: []
+outcome:
+  message: Missing RDOMAIN value when IDVAR is populated
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1065
+  pmda_category: Error
+  ig_versions: []
+

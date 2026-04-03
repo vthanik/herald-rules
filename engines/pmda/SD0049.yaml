@@ -1,0 +1,29 @@
+id: SD0049
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Start Reference Time Point (--STTPT) must not be null when Start Relative
+  to Reference Time Point (--STRTPT) is provided.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-CO
+    - -DM)
+    - INTERVENTIONS
+    - FINDINGS
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Missing value for --STTPT when --STRTPT is populated
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0049
+  pmda_category: Warning
+  ig_versions: []
+

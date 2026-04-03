@@ -1,0 +1,28 @@
+id: AD0338
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: If Analysis Multi-Response Criterion y (MCRITy) variable is present,
+  there must also be a corresponding Multi-Response Criterion y Evaluation (MCRITyML)
+  flag variable.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: MCRITyML is not present when MCRITy is present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0338
+  pmda_category: Error
+  ig_versions: []
+

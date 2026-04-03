@@ -1,0 +1,28 @@
+id: SD0032
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Planned Time Point Name (--TPT) should not be null when Planned Time
+  Point Number (--TPTNUM) is populated.
+scope:
+  classes: []
+  domains:
+    - CO
+    - INTERVENTIONS(-DX)
+    - FINDINGS
+    - EVENTS(-DS)
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Missing value for --TPT when --TPTNUM is provided
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0032
+  pmda_category: Warning
+  ig_versions: []
+

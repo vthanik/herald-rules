@@ -1,0 +1,23 @@
+id: SD1362
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Description of Actual Arm (ACTARM) must be populated when Actual Arm
+  Code (ACTARMCD) is populated, and vice versa.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: ACTARM is populated, but ACTARMCD is null, or vice versa
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1362
+  pmda_category: Error
+  ig_versions: []
+

@@ -1,0 +1,23 @@
+id: SD1286
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: A value of Incl/Excl Criterion Short Name (IETESTCD) must be unique within
+  a version of inclusion/exclusion criteria (TIVERS).
+scope:
+  classes: []
+  domains: TI
+check: []
+outcome:
+  message: IETESTCD is not unique within TIVERS
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1286
+  pmda_category: Error
+  ig_versions: []
+

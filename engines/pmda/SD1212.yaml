@@ -1,0 +1,27 @@
+id: SD1212
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Standardized Result in Numeric Format (--STRESN) variable value should
+  be equal Standardized Result in Character Format (--STRESC) variable value when
+  Standardized Result in Character Format (--STRESC) variable value represents a numeric
+  value.
+scope:
+  classes: []
+  domains:
+    - FINDINGS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: --STRESN does not equal --STRESC
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1212
+  pmda_category: Error
+  ig_versions: []
+

@@ -1,0 +1,33 @@
+id: AD0016
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All ADaM variable labels must be no more than 40 characters in length.
+  This should not be possible to fail with sas v5 xpt. Dataset-XML or .csv can fail
+  this rule.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+    - BDS
+    - ADNCA
+    - MDBDS
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: Variable label length is greater than 40 characters
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0016
+  pmda_category: Error
+  ig_versions: []
+

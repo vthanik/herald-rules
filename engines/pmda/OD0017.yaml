@@ -1,0 +1,23 @@
+id: OD0017
+version: 1
+status: Reference
+standard: Define-XML
+category: ODM/Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Attribute is defined as a datetime, but value does not match the datetime
+  format. Allowed string pattern for a datetime is 'YYYY-MM-DD T hh:mm:ss(.n+)? ((+|-)hh:mm)?'.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Invalid datetime value for <attribute>
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: OD0017
+  pmda_category: X
+  ig_versions: []
+

@@ -1,0 +1,26 @@
+id: SD1309
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: When the study type is interventional (TSPARMCD = 'STYPE' and TSVAL =
+  'INTERVENTIONAL'), the Investigational Therapy or Treatment parameter should be
+  provided with Parameter Value populated (TSVAL should not be null when TSPARMCD
+  = 'TRT').
+scope:
+  classes: []
+  domains: TS
+check: []
+outcome:
+  message: TSVAL is missing for the TRT Trial Summary Parameter when STYPE parameter
+    equals 'INTERVENTIONAL'
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1309
+  pmda_category: Warning
+  ig_versions: []
+

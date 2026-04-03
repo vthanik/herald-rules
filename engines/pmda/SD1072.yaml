@@ -1,0 +1,26 @@
+id: SD1072
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Value of Identifying Variable (IDVAR) variable must be populated when
+  Related Domain Abbreviation (RDOMAIN) variable value is provided, with the only
+  exception of 'DM' value for RDOMAIN.
+scope:
+  classes: []
+  domains:
+    - RELREC
+    - SUPPQUAL
+check: []
+outcome:
+  message: Missing IDVAR value when RDOMAIN value is provided
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1072
+  pmda_category: Warning
+  ig_versions: []
+

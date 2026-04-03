@@ -1,0 +1,23 @@
+id: SD1051
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Both Identifying Variable (IDVAR) and Identifying Variable Value (IDVARVAL)
+  should not be populated when relating information to the Demographics (DM) domain.
+scope:
+  classes: []
+  domains: SUPPQUAL
+check: []
+outcome:
+  message: Unexpected value for IDVAR/IDVARVAL
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1051
+  pmda_category: Warning
+  ig_versions: []
+

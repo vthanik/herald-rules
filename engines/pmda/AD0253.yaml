@@ -1,0 +1,30 @@
+id: AD0253
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Adverse Events specified in SDTM AE domain must be traceable to ADaM
+  ADAE dataset based on Study Identifier (STUDYID), Unique Subject Identifier (USUBJID)
+  and Sequence Number (AESEQ) variables. The ADAE structure for the standard adverse
+  event safety dataset must have at least one record per each AE recorded in SDTM
+  AE domain. However, subjects not analyzed (e.g., Screen Failures) who have AEs recorded
+  in SDTM AE, but not in ADSL do not need to be included in ADAE. Currently, this
+  check does not take into account the latter. Please check your ADSL file to see
+  if these issues are for Screen Failures.
+scope:
+  classes: []
+  domains: AE
+check: []
+outcome:
+  message: Record key from SDTM AE is not traceable to ADaM ADAE (not enough ADAE
+    recs)
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0253
+  pmda_category: Error
+  ig_versions: []
+

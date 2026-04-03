@@ -1,0 +1,25 @@
+id: DD0028
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Codelist Term must match the value in CDISC Controlled Terminology for
+  corresponding NCI Code. Define-XML specification represents Term as CodedValue attribute
+  on either EnumeratedItem or CodeListItem elements within CodeList element. NCI Code
+  is represented as Name attribute on Alias element when Context attribute is "nci:ExtCodeID".
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Term/NCI Code mismatch in Codelist <codelist>
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0028
+  pmda_category: X
+  ig_versions: []
+

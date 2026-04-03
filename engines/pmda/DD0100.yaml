@@ -1,0 +1,23 @@
+id: DD0100
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Values for the AnalysisPurpose attribute are controlled by the Analysis
+  Purpose extensible codelist in ADaM CT or Define CT.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Extended value for AnalysisPurpose
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0100
+  pmda_category: X
+  ig_versions: []
+

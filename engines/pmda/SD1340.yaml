@@ -1,0 +1,24 @@
+id: SD1340
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Subjects that are not treated (ACTARMCD='NOTTRT' or null) should not
+  have any Exposure records. Run-in records (EPOCH='RUN-IN') are excluded from firing
+  for this validation rule.
+scope:
+  classes: []
+  domains: EX
+check: []
+outcome:
+  message: EX record is present when subject is not treated
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1340
+  pmda_category: Warning
+  ig_versions: []
+

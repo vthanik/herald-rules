@@ -1,0 +1,24 @@
+id: SD1297
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: TSVAL should not be populated with a value from the ISO 21090 Null Flavor
+  codelist, or synonyms of the values. The TSVALNF variable should be used to capture
+  these values, not TSVAL.
+scope:
+  classes: []
+  domains: TS
+check: []
+outcome:
+  message: TSVAL is populated with a value from the ISO 21090 null flavor codelist
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1297
+  pmda_category: Error
+  ig_versions: []
+

@@ -1,0 +1,25 @@
+id: AD0117
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a study, all ATPT values must be the same for each unique value
+  group of [PARAMCD, ATPTN] when PARAMCD and primary variable ATPT are populated.
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: Inconsistent value for ATPT
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0117
+  pmda_category: Error
+  ig_versions: []
+

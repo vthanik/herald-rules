@@ -1,0 +1,23 @@
+id: OD0082
+version: 1
+status: Reference
+standard: Define-XML
+category: ODM/Define-XML
+sensitivity: Record
+executability: Not Executable
+description: When Codelist contains at least one item with Term and Decoded Value
+  (CodeListItem), then all other items must be of the same type.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Codelist <codelist> is missing Decoded Values
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: OD0082
+  pmda_category: X
+  ig_versions: []
+

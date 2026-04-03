@@ -1,0 +1,24 @@
+id: DD0078
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: Only Documents that are referenced from a Method or Comment should be
+  included in Define.xml. Define-XML specification represents Documents as def:leaf
+  elements within MetaDataVersion element.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Document <document> is not referenced
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0078
+  pmda_category: X
+  ig_versions: []
+

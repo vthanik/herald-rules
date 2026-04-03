@@ -1,0 +1,29 @@
+id: SD1102
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: End Relative to Reference Time Point (--ENRTPT) variable must be included
+  into the domain when End Relative Time Point (--ENTPT) variable is present.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-CO
+    - -DM)
+    - INTERVENTIONS
+    - FINDINGS
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Missing --ENRTPT variable when --ENTPT variable is present
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1102
+  pmda_category: Warning
+  ig_versions: []
+

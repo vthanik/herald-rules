@@ -1,0 +1,35 @@
+id: SD1077
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Variables requested by the relevant regulatory agency in policy documents
+  should be included in the dataset. E.g., EPOCH.
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-CO
+    - -DM
+    - -SV)
+    - INTERVENTIONS(-DX
+    - -SU)
+    - FINDINGS(-DO
+    - -DU
+    - -SC)
+    - EVENTS(-DE
+    - -DT
+    - -MH)
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Regulatory Expected variable not found
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1077
+  pmda_category: Warning
+  ig_versions: []
+

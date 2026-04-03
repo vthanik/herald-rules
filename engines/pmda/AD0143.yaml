@@ -1,0 +1,27 @@
+id: AD0143
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: PARAMCD value must be a max of 8 characters, start with a letter A-Z
+  or underscore, and not contain anything other than letters, numbers, or underscore
+  (_).
+scope:
+  classes: []
+  domains:
+    - BDS
+    - ADNCA
+    - MDBDS
+check: []
+outcome:
+  message: Illegal PARAMCD value
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0143
+  pmda_category: Error
+  ig_versions: []
+

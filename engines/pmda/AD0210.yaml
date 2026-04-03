@@ -1,0 +1,23 @@
+id: AD0210
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The same subject in ADSL and DM must have the same value for Arm (ARM).
+  There must be traceability between ADaM and SDTM.
+scope:
+  classes: []
+  domains: ADSL
+check: []
+outcome:
+  message: For the same USUBJID, the ADSL.ARM != DM.ARM
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0210
+  pmda_category: Error
+  ig_versions: []
+

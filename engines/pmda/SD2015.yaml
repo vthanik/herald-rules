@@ -1,0 +1,27 @@
+id: SD2015
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Value for System Organ Class (--SOC) variable must be populated using
+  a System Organ Class of the MedDRA dictionary of a version specified in the define.xml
+  (Case-insensitive).
+scope:
+  classes: []
+  domains:
+    - AE
+    - CE
+    - MH
+check: []
+outcome:
+  message: Value for --SOC not found in MedDRA dictionary
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2015
+  pmda_category: Error
+  ig_versions: []
+

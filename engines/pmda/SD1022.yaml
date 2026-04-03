@@ -1,0 +1,24 @@
+id: SD1022
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The value of Qualifier Variable Name (QNAM) should be limited to 8 characters,
+  cannot start with a number, and cannot contain characters other than letters in
+  upper case, numbers, or underscores.
+scope:
+  classes: []
+  domains: SUPPQUAL
+check: []
+outcome:
+  message: Invalid value for QNAM variable
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1022
+  pmda_category: Error
+  ig_versions: []
+

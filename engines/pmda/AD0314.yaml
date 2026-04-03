@@ -1,0 +1,25 @@
+id: AD0314
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Original or Prior MedDRA Coding (DECDORGy, BDSYORGy, HLGTORGy, HLTORGy,
+  LLTORGy, LLTNORGy) variables should have the suffix 'y' which represents an integer
+  [1-9] corresponding to a previous version.
+scope:
+  classes: []
+  domains: ADAE
+check: []
+outcome:
+  message: 'Illegal variable name: y is not in [1-9] for original or prior MedDRA
+    coding variables of form *ORGy'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0314
+  pmda_category: Error
+  ig_versions: []
+

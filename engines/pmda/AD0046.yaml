@@ -1,0 +1,34 @@
+id: AD0046
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: A variable with a suffix of DY (day) must not equal zero. Variables whose
+  names end in DY are relative day variables. In ADaM as in the SDTM, there is no
+  day 0. If there is a need to create a relative day variable that includes day 0,
+  then its name must not end in DY.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+    - BDS
+    - ADNCA
+    - MDBDS
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: '*DY = 0'
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0046
+  pmda_category: Error
+  ig_versions: []
+

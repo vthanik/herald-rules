@@ -1,0 +1,25 @@
+id: SD1131
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: A Standard Result value (--STRESC) is expected to be populated for Baseline
+  records (--BLFL='Y').
+scope:
+  classes: []
+  domains:
+    - FINDINGS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Missing --STRESC value for Baseline record
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1131
+  pmda_category: Warning
+  ig_versions: []
+

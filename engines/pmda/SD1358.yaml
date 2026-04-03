@@ -1,0 +1,24 @@
+id: SD1358
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: When Actual Arm Code (ACTARMCD)/Description of Actual Arm (ACTARM) are
+  not populated, the Reason Arm and/or Actual Arm is Null (ARMNRS) variable must be
+  populated with the reason ACTARMCD/ACTARM are null.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: ARMNRS is not populated, when ACTARMCD or ACTARM is null
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1358
+  pmda_category: Error
+  ig_versions: []
+

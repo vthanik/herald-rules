@@ -1,0 +1,24 @@
+id: AD0061
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The presence of SDTM.EX (Exposure) domain implies that there should be
+  a Treatment Start Date (TRTSDT) / Datetime (TRTSDTM) variable present in the ADaM
+  data.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: SDTM.EX is present, but neither ADSL TRTSDT nor TRTSDTM are present
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0061
+  pmda_category: Error
+  ig_versions: []
+

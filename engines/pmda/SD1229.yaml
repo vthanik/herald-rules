@@ -1,0 +1,23 @@
+id: SD1229
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Variable value must be populated when value level attribute Mandatory='Yes'
+  as specified in define.xml file.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Variable value is null when value-level condition occurs
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1229
+  pmda_category: Warning
+  ig_versions: []
+

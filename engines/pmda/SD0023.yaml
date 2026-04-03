@@ -1,0 +1,27 @@
+id: SD0023
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Completion Status (--STAT) should be set to 'NOT DONE' when Reason Not
+  Done (--REASND) is populated.
+scope:
+  classes: []
+  domains:
+    - INTERVENTIONS
+    - FINDINGS
+    - EVENTS
+    - FINDINGSABOUT
+check: []
+outcome:
+  message: Missing value for --STAT when --REASND is provided
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0023
+  pmda_category: Warning
+  ig_versions: []
+

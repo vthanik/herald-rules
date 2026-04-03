@@ -1,0 +1,24 @@
+id: SD1469
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: When the EC domain is implemented in conjunction with the EX domain,
+  EXVAMT and EXVAMTU should not be used in EX; collected values instead would be represented
+  in ECDOSE and ECDOSU.
+scope:
+  classes: []
+  domains: EX
+check: []
+outcome:
+  message: EXVAMTU variable in EX domain is present when EC domain exists
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1469
+  pmda_category: Warning
+  ig_versions: []
+

@@ -1,0 +1,23 @@
+id: SD0085
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: I/E Criterion Original Result (IEORRES) and I/E Criterion Result in Std
+  Format (IESTRESC) should have the same value.
+scope:
+  classes: []
+  domains: IE
+check: []
+outcome:
+  message: Mismatch between IEORRES and IESTRESC values
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0085
+  pmda_category: Warning
+  ig_versions: []
+

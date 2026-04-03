@@ -1,0 +1,22 @@
+id: AD0660
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: METABFL (Metabolite Flag) must be Y or null.
+scope:
+  classes: []
+  domains: ADNCA
+check: []
+outcome:
+  message: METABFL value is not Y or null
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0660
+  pmda_category: Error
+  ig_versions: []
+

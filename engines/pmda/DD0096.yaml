@@ -1,0 +1,25 @@
+id: DD0096
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: At least one analysis variable element must be available for any given
+  analysis result. If there are more than one analysis dataset specified for a specific
+  result, the analysis variable element may be available for one of the respective
+  datasets only.
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Missing required arm:AnalysisVariable element
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0096
+  pmda_category: X
+  ig_versions: []
+

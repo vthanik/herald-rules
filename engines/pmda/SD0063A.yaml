@@ -1,0 +1,29 @@
+id: SD0063A
+version: 1
+status: Reference
+standard: SDTM
+category: Conformance
+sensitivity: Record
+executability: Not Executable
+description: Variable Label in the dataset should match the variable label described
+  in SDTM IG. When creating a new domain Variable Labels could be adjusted as appropriate
+  to properly convey the meaning in the context of the data being submitted.
+scope:
+  classes: []
+  domains:
+    - ALL(-APAE
+    - -APMH
+    - -APRELSUB
+    - -RELSUB
+    - -APDM)
+check: []
+outcome:
+  message: SDTM/dataset variable label mismatch
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0063A
+  pmda_category: Warning
+  ig_versions: []
+

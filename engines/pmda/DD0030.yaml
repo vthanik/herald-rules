@@ -1,0 +1,22 @@
+id: DD0030
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: The def:ExtendedValue attribute must have a value of 'Yes'.
+scope:
+  classes: []
+  domains: Warning
+check: []
+outcome:
+  message: Invalid def:ExtendedValue value
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0030
+  pmda_category: X
+  ig_versions: []
+

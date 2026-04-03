@@ -1,0 +1,24 @@
+id: SD0083
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The value of Unique Subject Identifier (USUBJID) variable must be unique
+  for each subject across all trials in the submission. In the Demographics (DM) domain,
+  there should only be one record per subject.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: Duplicate USUBJID in DM within STUDYID
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0083
+  pmda_category: Error
+  ig_versions: []
+

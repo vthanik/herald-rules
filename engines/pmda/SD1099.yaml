@@ -1,0 +1,28 @@
+id: SD1099
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Category (--CAT) variable should be included into dataset when Subcategory
+  (--SCAT) variable is present.
+scope:
+  classes: []
+  domains:
+    - INTERVENTIONS
+    - FINDINGS
+    - EVENTS
+    - FINDINGSABOUT
+    - TI
+check: []
+outcome:
+  message: Missing --CAT variable when --SCAT variable is present
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1099
+  pmda_category: Warning
+  ig_versions: []
+

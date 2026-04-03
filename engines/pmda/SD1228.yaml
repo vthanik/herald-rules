@@ -1,0 +1,24 @@
+id: SD1228
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Variable value must be populated with terms from user-defined value level
+  codelist as specified in define.xml file.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Variable value not found in user-defined codelist when value-level condition
+    occurs
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1228
+  pmda_category: Warning
+  ig_versions: []
+

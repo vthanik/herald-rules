@@ -1,0 +1,24 @@
+id: AD0242
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a study, all Actual Treatment for Period xx (N) (TRTxxAN) variable
+  values must be the same for each unique value of Actual Treatment for Period xx
+  (TRTxxA) variable when the primary variable TRTxxA is populated.
+scope:
+  classes: []
+  domains: ADSL
+check: []
+outcome:
+  message: Inconsistent value for TRTxxAN
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0242
+  pmda_category: Error
+  ig_versions: []
+

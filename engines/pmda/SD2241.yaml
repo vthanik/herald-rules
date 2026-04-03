@@ -1,0 +1,22 @@
+id: SD2241
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: TSVCDREF variable value must be 'UNII' when TSPARMCD='CURTRT'.
+scope:
+  classes: []
+  domains: TS
+check: []
+outcome:
+  message: Invalid TSVCDREF value for CURTRT
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2241
+  pmda_category: Warning
+  ig_versions: []
+

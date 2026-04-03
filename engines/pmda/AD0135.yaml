@@ -1,0 +1,23 @@
+id: AD0135
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Within a study, All SHIFTy values must be the same for each unique value
+  of SHIFTyN when PARAMCD and primary variable SHIFTy are populated.
+scope:
+  classes: []
+  domains: BDS
+check: []
+outcome:
+  message: Inconsistent value for SHIFTy
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0135
+  pmda_category: Error
+  ig_versions: []
+

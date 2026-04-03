@@ -1,0 +1,32 @@
+id: AD0252
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Variables described in ADaM IG as inappropriate for usage must be not
+  included in the dataset. i.e., for ADAE, there is no need for AVAL, AVALC and Parameter
+  variables.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+    - BDS
+    - ADNCA
+    - MDBDS
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+check: []
+outcome:
+  message: Variable present in dataset is prohibited for use in ADaM
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0252
+  pmda_category: Error
+  ig_versions: []
+

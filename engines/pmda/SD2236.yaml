@@ -1,0 +1,23 @@
+id: SD2236
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: A value for an Actual Arm Code (ACTARMCD) variable is expected to be
+  equal to a value of an Arm Code (ARMCD) variable.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: ACTARMCD does not equal ARMCD
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD2236
+  pmda_category: Warning
+  ig_versions: []
+

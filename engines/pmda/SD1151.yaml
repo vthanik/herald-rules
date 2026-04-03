@@ -1,0 +1,24 @@
+id: SD1151
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All values of Inclusion/Exclusion Criterion Short Name (IETESTCD) should
+  be the same for a given value of Inclusion/Exclusion Criterion (IETEST) and Protocol
+  Criteria Versions (TIVERS).
+scope:
+  classes: []
+  domains: TI
+check: []
+outcome:
+  message: Inconsistent value for IETESTCD within IETEST
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1151
+  pmda_category: Error
+  ig_versions: []
+

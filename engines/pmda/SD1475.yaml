@@ -1,0 +1,23 @@
+id: SD1475
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Variable Label should follow limitations of SAS XPORT format v5. It should
+  not exceed 40 characters.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Variable label length is greater than 40 characters
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1475
+  pmda_category: Error
+  ig_versions: []
+

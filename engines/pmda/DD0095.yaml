@@ -1,0 +1,23 @@
+id: DD0095
+version: 1
+status: Reference
+standard: Define-XML
+category: Define-XML
+sensitivity: Record
+executability: Not Executable
+description: ItemGroupOID attribute on arm:AnalysisDataset must reference a valid
+  ItemGroupDef
+scope:
+  classes: []
+  domains: Error
+check: []
+outcome:
+  message: Invalid ItemGroupOID reference
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: DD0095
+  pmda_category: X
+  ig_versions: []
+

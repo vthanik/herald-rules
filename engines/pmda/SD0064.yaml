@@ -1,0 +1,32 @@
+id: SD0064
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: All Subjects (USUBJID) must be present in Demographics (DM) domain.
+scope:
+  classes: []
+  domains:
+    - ALL(-DM
+    - -DI
+    - -OI
+    - -TA
+    - -TD
+    - -TE
+    - -TI
+    - -TM
+    - -TS
+    - -TV)
+check: []
+outcome:
+  message: Subject is not present in DM domain
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0064
+  pmda_category: Reject
+  ig_versions: []
+

@@ -1,0 +1,26 @@
+id: SD0013
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: Start Date/Time of Event, Exposure or Observation (--STDTC) must be less
+  or equal to End Date/Time of Event, Exposure or Observation (--ENDTC).
+scope:
+  classes: []
+  domains:
+    - SPECIALPURPOSE(-CO)
+    - INTERVENTIONS
+    - EVENTS
+check: []
+outcome:
+  message: --STDTC is after --ENDTC
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD0013
+  pmda_category: Error
+  ig_versions: []
+

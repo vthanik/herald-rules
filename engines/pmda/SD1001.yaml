@@ -1,0 +1,23 @@
+id: SD1001
+version: 1
+status: Reference
+standard: SDTM
+category: SDTM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The value of Subject Identifier for the Study (SUBJID) variable must
+  be unique for each subject within the study.
+scope:
+  classes: []
+  domains: DM
+check: []
+outcome:
+  message: SUBJID is not unique for each subject within study
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: SD1001
+  pmda_category: Error
+  ig_versions: []
+

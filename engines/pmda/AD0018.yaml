@@ -1,0 +1,33 @@
+id: AD0018
+version: 1
+status: Reference
+standard: ADaM
+category: ADaM Conformance
+sensitivity: Record
+executability: Not Executable
+description: The variable label in the dataset should match the variable label described
+  in ADaM. When creating a new variable, labels can be adjusted as appropriate. Currently,
+  this rule runs if a variable has a label that is defined in the ADaM metadata.
+scope:
+  classes: []
+  domains:
+    - ADSL
+    - ADDL
+    - BDS
+    - ADNCA
+    - MDBDS
+    - OCCDS
+    - ADAE
+    - MDOCCDS
+    - ADAMOTHER
+check: []
+outcome:
+  message: Variable label mismatch between dataset and ADaM standard
+  severity: Warning
+provenance:
+  source_doc: PMDA Validation Rules v6.0
+  authority: PMDA
+  rule_id: AD0018
+  pmda_category: Warning
+  ig_versions: []
+
