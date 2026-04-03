@@ -1,0 +1,33 @@
+# P21 Sheet validation against Define-XML v2.1 Specification
+# Section: 5.3.13.1
+id: DD0084
+version: 1
+status: Published
+standard: Define-XML
+category: Codelist Definition
+sensitivity: Record
+executability: Fully Executable
+description: >
+  Extended codelist terms must be flagged with def:ExtendedValue when CT is non-extensible.
+scope:
+  classes: []
+  domains: []
+check:
+  all:
+    - name: terminology
+      operator: not_empty
+    - name: __term_not_in_ct
+      operator: equal_to
+      value: true
+    - name: __extended_value_flag
+      operator: not_equal_to
+      value: "Yes" 
+outcome:
+  message: "Codelist term is not in standard CT but is not flagged as extended. Set def:ExtendedValue='Yes' for sponsor-added terms."
+  severity: Error
+provenance:
+  source_doc: CDISC Define-XML v2.1 Specification
+  authority: CDISC
+  section: "5.3.13.1"
+  cited_guidance: >
+    P21 DD0029: If a codelist exists but not all terms are in CDISC CT, terms not included must have def:ExtendedValue set to 'Yes'.

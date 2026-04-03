@@ -1,0 +1,30 @@
+# P21 Sheet validation against Define-XML v2.1 Specification
+# Section: 5.3.12.1
+id: DD0055
+version: 1
+status: Published
+standard: Define-XML
+category: Cross-Reference
+sensitivity: Record
+executability: Fully Executable
+description: >
+  Codelist referenced by a variable must exist in the Codelists sheet.
+scope:
+  classes: []
+  domains: []
+check:
+  all:
+    - name: codelist_id
+      operator: not_empty
+    - name: __codelist_exists
+      operator: equal_to
+      value: false
+outcome:
+  message: "Codelist referenced by variable does not exist in the Codelists sheet."
+  severity: Error
+provenance:
+  source_doc: CDISC Define-XML v2.1 Specification
+  authority: CDISC
+  section: "5.3.12.1"
+  cited_guidance: >
+    CodeListOID — Required. Must match the OID of a CodeList element in the same MetaDataVersion.

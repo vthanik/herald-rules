@@ -47,6 +47,28 @@ CDISC_API_KEY=<key>
 ```
 Never commit `.local/` — it's gitignored.
 
+## Adding Rules or Engines
+
+When adding a new rule or defining a new engine, ALL of the following must be updated:
+
+1. **YAML rule file** — Create in `engines/<engine>/<rule_id>.yaml`
+2. **herald-master-rules.csv** — Append row with all 20 columns
+3. **Config JSON(s)** — Add rule ID to relevant `configs/*.json` files
+4. **manifest.json** — Update engine rule counts and config rule counts
+5. **CHANGELOG.md** — Document the addition
+
+When modifying a rule:
+- Increment the `version` field in the YAML
+- Update the master CSV row
+- Update CHANGELOG.md
+
+When deprecating a rule:
+- Set `status: Deprecated` in YAML
+- Add `deprecated` section with date, reason, replaced_by
+- Update master CSV status column
+- Do NOT remove from config JSON (keeps audit trail)
+- Update CHANGELOG.md
+
 ## Rules
 
 - Never re-introduce P21 dependency (engines/core/ was deleted, rules/ was deleted)

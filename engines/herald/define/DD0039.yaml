@@ -1,0 +1,30 @@
+# P21 Sheet validation against Define-XML v2.1 Specification
+# Section: 5.3.9.2
+id: DD0039
+version: 1
+status: Published
+standard: Define-XML
+category: Variable Definition
+sensitivity: Record
+executability: Fully Executable
+description: >
+  Variable order must be a positive integer when provided.
+scope:
+  classes: []
+  domains: []
+check:
+  all:
+    - name: order
+      operator: not_empty
+    - name: order
+      operator: less_than_or_equal_to
+      value: 0
+outcome:
+  message: "Variable order must be a positive integer."
+  severity: Error
+provenance:
+  source_doc: CDISC Define-XML v2.1 Specification
+  authority: CDISC
+  section: "5.3.9.2"
+  cited_guidance: >
+    OrderNumber — Optional. Integer. Display order of the variable within the domain dataset.

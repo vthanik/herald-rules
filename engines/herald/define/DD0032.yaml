@@ -1,0 +1,31 @@
+# P21 Sheet validation against Define-XML v2.1 Specification
+# Section: 4.3.2.2
+id: DD0032
+version: 1
+status: Published
+standard: Define-XML
+category: Origin Metadata
+sensitivity: Record
+executability: Fully Executable
+description: >
+  For ADaM datasets, Origin 'Not Available' is not valid.
+scope:
+  classes: []
+  domains: []
+check:
+  all:
+    - name: purpose
+      operator: equal_to
+      value: Analysis
+    - name: origin
+      operator: equal_to
+      value: Not Available
+outcome:
+  message: "Origin 'Not Available' is not valid for ADaM datasets."
+  severity: Error
+provenance:
+  source_doc: CDISC Define-XML v2.1 Specification
+  authority: CDISC
+  section: "4.3.2.2"
+  cited_guidance: >
+    For ADaM datasets — Not Available is not valid.

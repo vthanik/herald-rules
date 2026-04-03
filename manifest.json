@@ -7,15 +7,16 @@
     "fda": "FDA Validator Rules v1.6 (December 2022) + Business Rules v1.5",
     "pmda": "PMDA Validation Rules v6.0 (March 2025)",
     "ct": "NCI EVS CDISC Controlled Terminology (2025-09-26)",
-    "herald": "Herald-original rules (gap-fill for P21 parity)"
+    "herald": "Herald-original rules (gap-fill for P21 parity)",
+    "herald-define": "Herald Define-XML v2.1 spec validation (85 rules in engines/herald/define/)"
   },
   "stats": {
-    "total_engine_rules": 3394,
+    "total_engine_rules": 3479,
     "by_engine": {
       "cdisc": 450,
       "ct": 1210,
       "fda": 660,
-      "herald": 33,
+      "herald": 118,
       "pmda": 1041
     },
     "configs": 10
@@ -47,7 +48,7 @@
       "authority": "FDA",
       "standard": "Define-XML",
       "version": "2.1",
-      "rule_count": 1903
+      "rule_count": 1988
     },
     {
       "file": "fda-sdtm-ig-3.2.json",
@@ -75,7 +76,7 @@
       "authority": "PMDA",
       "standard": "Define-XML",
       "version": "2.1",
-      "rule_count": 2284
+      "rule_count": 2296
     },
     {
       "file": "pmda-sdtm-ig-3.2.json",

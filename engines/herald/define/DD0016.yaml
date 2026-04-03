@@ -1,0 +1,34 @@
+# P21 Sheet validation against Define-XML v2.1 Specification
+# Section: 1.5.2
+id: DD0016
+version: 1
+status: Published
+standard: Define-XML
+category: Standards Reference
+sensitivity: Dataset
+executability: Fully Executable
+description: >
+  SENDIG version must be one of the allowable versions: 3.0, 3.1, 3.1.1.
+scope:
+  classes: []
+  domains: []
+check:
+  all:
+    - name: standard_name
+      operator: equal_to
+      value: SENDIG
+    - name: standard_version
+      operator: not_in
+      value:
+        - "3.0"
+        - "3.1"
+        - "3.1.1" 
+outcome:
+  message: "SENDIG version is not allowable. Must be one of: 3.0, 3.1, 3.1.1."
+  severity: Error
+provenance:
+  source_doc: CDISC Define-XML v2.1 Specification
+  authority: CDISC
+  section: "1.5.2"
+  cited_guidance: >
+    Define-XML v2.1 can be used to transmit metadata for SENDIG v3.0 and higher.

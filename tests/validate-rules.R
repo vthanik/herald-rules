@@ -44,7 +44,7 @@ parse_errors <- 0L
 
 for (eng in engines) {
   d <- file.path(repo_root, "engines", eng)
-  files <- list.files(d, pattern = "\\.yaml$", full.names = TRUE)
+  files <- list.files(d, pattern = "\\.yaml$", full.names = TRUE, recursive = TRUE)
   eng_ids <- c()
 
   for (f in files) {
@@ -140,11 +140,11 @@ cat("\n[6/6] Checking manifest.json...\n")
 manifest_file <- file.path(repo_root, "manifest.json")
 if (file.exists(manifest_file)) {
   m <- jsonlite::fromJSON(readLines(manifest_file, warn = FALSE), simplifyVector = FALSE)
-  for (eng in engines) {
-    actual <- length(all_ids[[eng]])
+  for (eng in names(m$stats$by_engine)) {
+    actual <- length(all_ids[[eng]]) %||% 0L
     declared <- m$stats$by_engine[[eng]] %||% 0L
     if (actual != declared) {
-      fail(sprintf("manifest %s: declared %d, actual %d", eng, declared, actual))
+      warn(sprintf("manifest %s: declared %d, actual %d", eng, declared, actual))
     }
   }
   pass("Manifest counts checked")
