@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Within a study, all Actual Pooled Treatment y for Period xx (TRxxAGy)
   variable values must be the same for each unique value of Actual Pooled Trt y for
   Period xx (N) (TRxxAGyN) variable when both variables are populated. Analogous rule
@@ -14,7 +14,10 @@ scope:
   domains:
     - ADSL
     - ADDL
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for TRxxAGy
   severity: Error

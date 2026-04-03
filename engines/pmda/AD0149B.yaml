@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Within a study and a given value of PARAMCD when both AVAL and AVALC
   are populated, then all AVALC values must be the same for each unique value of AVAL
   creating a one-to-one mapping. Considering only those rows on which both variables
@@ -15,7 +15,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for AVALC
   severity: Warning

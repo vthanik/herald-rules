@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Element Code (ETCD) must have a unique value for a given value of Description
   of Element (ELEMENT) within the domain.
 scope:
@@ -12,7 +12,10 @@ scope:
   domains:
     - SE
     - TA
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Non-unique value for ETCD within ELEMENT
   severity: Warning

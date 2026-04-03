@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Severity/Intensity (N) (AESEVN) and Analysis Severity/Intensity (N) (ASEVN)
   variables must have values in [1, 2, 3] when populated. AESEVN can be null. ASEVN
   cannot be null.
@@ -14,7 +14,10 @@ scope:
     - OCCDS
     - ADAE
     - MDOCCDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Variable value != 1, 2, 3, or null
   severity: Error

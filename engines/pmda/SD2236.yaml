@@ -4,13 +4,17 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: A value for an Actual Arm Code (ACTARMCD) variable is expected to be
   equal to a value of an Arm Code (ARMCD) variable.
 scope:
   classes: []
   domains: DM
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: equal_to
+      value: __expected__
 outcome:
   message: ACTARMCD does not equal ARMCD
   severity: Warning

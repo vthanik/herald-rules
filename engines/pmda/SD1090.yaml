@@ -4,21 +4,26 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: 'Study Day of Start (--STDY) variable value should be populated as defined
   by CDISC standards: --STDY = (date portion of --STDTC) - (date portion of RFSTDTC)
   +1 if --STDTC is on or after RFSTDTC; --STDY = (date portion of --STDTC) - (date
   portion of RFSTDTC) if --STDTC precedes RFSTDTC.'
 scope:
-  classes: []
-  domains:
-    - SPECIALPURPOSE(-CO
-    - -DM)
-    - INTERVENTIONS
-    - FINDINGS
-    - EVENTS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude: DM
+  Use_Case: INDH
+check:
+  all:
+    - name: --STDTC
+      operator: is_complete_date
+    - name: RFSTDTC
+      operator: is_complete_date
+    - name: --STDY
+      operator: not_equal_to
+      value: $val_stdy
 outcome:
   message: Incorrect value for --STDY variable
   severity: Error
@@ -28,4 +33,5 @@ provenance:
   rule_id: SD1090
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000552
 

@@ -4,13 +4,16 @@ status: Reference
 standard: Define-XML
 category: ODM/Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Attribute is defined as an integer, but value does not match the integer
   format. Allowed string pattern for an integer is '-?digit+'.
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid integer value for <attribute>
   severity: Error

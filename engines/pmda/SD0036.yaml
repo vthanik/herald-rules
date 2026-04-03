@@ -4,15 +4,26 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Character Result/Finding in Std Units (--STRESC) must be populated when
   Result or Finding in Original Units (--ORRES) is provided.
 scope:
-  classes: []
-  domains:
-    - FINDINGS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
+check:
+  all:
+    - any:
+        - name: --ORRES
+          operator: non_empty
+        - name: --DRVFL
+          operator: equal_to
+          value: 'Y'
+    - all:
+        - name: --STRESC
+          operator: empty
 outcome:
   message: Missing value for --STRESC when --ORRES is provided
   severity: Error
@@ -22,4 +33,5 @@ provenance:
   rule_id: SD0036
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000021
 

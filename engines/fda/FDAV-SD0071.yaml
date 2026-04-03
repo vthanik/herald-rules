@@ -6,7 +6,18 @@ Description: The combination of Description of Planned Arm (ARM) and Planned Arm
   (ARMCD) values must match entries in the Trial Arms (TA) dataset, except for subjects
   who failed screening (ARMCD = 'SCRNFAIL') or were not fully assigned to an Arm (ARMCD
   = 'NOTASSGN').
-Check: []
+Check:
+  all:
+    - name: ARM
+      operator: is_not_contained_by
+      value:
+        - Screen Failure
+        - Not Assigned
+        - SCREEN FAILURE
+        - NOT ASSIGNED
+    - name: ARM
+      operator: is_not_contained_by
+      value: $arm_list
 Outcome:
   Message: Invalid ARM/ARMCD
 Rule Type: Record Data
@@ -27,4 +38,11 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000368
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
 

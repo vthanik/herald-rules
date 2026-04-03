@@ -8,7 +8,10 @@ Description: The structure of Interventions class domains should be one record p
   (--ROUTE), Location (--LOC) and Treatment Vehicle (--TRTV) values for the same Subject
   (USUBJID) with the same Start Date (--STDTC), Planned Time Point Name (--TPT), and
   Planned Time Point Number (--TPTNUM) are expected.
-Check: []
+Check:
+  all:
+    - name: __key_variables__
+      operator: is_unique
 Outcome:
   Message: Duplicate records in domain
 Rule Type: Record Data
@@ -29,4 +32,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

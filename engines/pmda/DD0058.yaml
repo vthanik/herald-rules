@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Label field is required for each Variable and must be included in Define.xml
   and cannot be empty. However, Label field is optional for Value Level metadata.
   Define-XML specification represents Label as Description/TranslatedText element
@@ -12,7 +12,10 @@ description: Label field is required for each Variable and must be included in D
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Missing Label value
   severity: Error

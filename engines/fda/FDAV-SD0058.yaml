@@ -5,7 +5,29 @@ Core:
 Description: Only variables listed in SDTM model should appear in a dataset. New sponsor
   defined variables must not be added, and existing variables must not be renamed
   or modified.
-Check: []
+Check:
+  all:
+    - name: variable_name
+      operator: not_equal_to
+      value: EXMETHOD
+    - name: variable_name
+      operator: not_equal_to
+      value: EGBEATNO
+    - name: variable_name
+      operator: not_equal_to
+      value: ICIMPLBL
+    - name: variable_name
+      operator: not_equal_to
+      value: MSAGENT
+    - name: variable_name
+      operator: not_equal_to
+      value: MSCONC
+    - name: variable_name
+      operator: not_equal_to
+      value: MSCONCU
+    - name: variable_name
+      operator: is_not_contained_by
+      value: $allowed_variables
 Outcome:
   Message: Variable appears in dataset, but is not in SDTM model
 Rule Type: Record Data
@@ -27,4 +49,11 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-001079
+Executability: Partially Executable - Possible Underreporting
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
 

@@ -4,16 +4,22 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Value of Identifying Variable (IDVAR) variable must be populated when
   Related Domain Abbreviation (RDOMAIN) variable value is provided, with the only
   exception of 'DM' value for RDOMAIN.
 scope:
-  classes: []
-  domains:
-    - RELREC
-    - SUPPQUAL
-check: []
+  Classes:
+    Include: RELATIONSHIP
+  Domains:
+    Include: SUPP--
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: IDVAR
+      operator: non_empty
+    - name: IDVARVAL
+      operator: empty
 outcome:
   message: Missing IDVAR value when RDOMAIN value is provided
   severity: Warning
@@ -23,4 +29,5 @@ provenance:
   rule_id: SD1072
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000135
 

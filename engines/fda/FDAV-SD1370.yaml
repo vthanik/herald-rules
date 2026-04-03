@@ -4,7 +4,12 @@ Core:
   Version: '1'
 Description: Numeric Reference Result in Std Units (--STREFN) should be populated
   when Reference Result in Standard Format (--STREFC) is populated.
-Check: []
+Check:
+  all:
+    - name: --STREFC
+      operator: non_empty
+    - name: --STREFN
+      operator: empty
 Outcome:
   Message: --STREFN is null when --STREFC is populated
 Rule Type: Record Data
@@ -15,6 +20,13 @@ Source: FDA Validator Rules v1.6
 Domains: FINDINGS, FINDINGS ABOUT
 Standard: SDTM
 Publisher ID: CG0550
-IG Versions:
-  - SDTMIG 3.3
+IG Versions: SDTMIG 3.3
+CORE Reference: CORE-000295
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

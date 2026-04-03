@@ -4,7 +4,13 @@ Core:
   Version: '1'
 Description: When the Description of Unplanned Element (SEUPDES) is not populated,
   the Element Code (ETCD) should not be equal to 'UNPLAN'.
-Check: []
+Check:
+  all:
+    - name: SEUPDES
+      operator: empty
+    - name: ETCD
+      operator: equal_to
+      value: UNPLAN
 Outcome:
   Message: ETCD equals 'UNPLAN' when SEUPDES is null
 Rule Type: Record Data
@@ -25,4 +31,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000256
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: SE
+  Use_Case: INDH, NONCLIN
 

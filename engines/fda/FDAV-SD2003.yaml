@@ -6,7 +6,22 @@ Description: Description of Actual Arm (ACTARM) values should match entries in t
   Trial Arms (TA) dataset, except for subjects who failed screening ('Screen Failure'),
   or were not fully assigned to an Arm ('Not Assigned'), or randomized, but not treated
   ('Not Treated') or received non-planned treatment ('Unplanned Treatment').
-Check: []
+Check:
+  all:
+    - name: ACTARM
+      operator: is_not_contained_by
+      value:
+        - Screen Failure
+        - Not Assigned
+        - Not Treated
+        - Unplanned Treatment
+        - SCREEN FAILURE
+        - NOT ASSIGNED
+        - NOT TREATED
+        - UNPLANNED TREATMENT
+    - name: ACTARM
+      operator: is_not_contained_by
+      value: $ARMS_IN_TA
 Outcome:
   Message: Invalid value for ACTARM
 Rule Type: Record Data
@@ -21,4 +36,11 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000367
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
 

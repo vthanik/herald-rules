@@ -4,13 +4,16 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Date/Time of Informed Consent (RFICDTC) should not be after Subject Reference
   Start Date/Time (RFSTDTC).
 scope:
   classes: []
   domains: DM
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: RFICDTC is after RFSTDTC
   severity: Warning

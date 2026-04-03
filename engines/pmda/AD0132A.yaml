@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: When baseline (BASE) equals 0, the Ratio to Baseline (R2BASE) should
   not be populated since you cannot divide by 0. AD0132 checks the RSBASE calculation
   is correct when BASE does not equal 0.
@@ -14,7 +14,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: 'Calculation issue: BASE = 0, but R2BASE is populated'
   severity: Error

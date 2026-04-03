@@ -4,7 +4,16 @@ Core:
   Version: '1'
 Description: Visit Number (VISITNUM) values should match entries in the Trial Visits
   (TV) dataset, when they are planned visits (SVUPDES = NULL).
-Check: []
+Check:
+  all:
+    - any:
+        - name: SVUPDES
+          operator: empty
+        - name: SVUPDES
+          operator: not_exists
+    - name: VISITNUM
+      operator: is_not_contained_by
+      value: $visitnums_in_tv
 Outcome:
   Message: VISITNUM value does not match TV domain data
 Rule Type: Record Data
@@ -20,4 +29,11 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000842
+Executability: Partially Executable - Possible Overreporting
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: SV
 

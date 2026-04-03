@@ -4,16 +4,25 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Value of Start Relative to Reference Period (--STRF) or End Relative
   to Reference Period (--ENRF) should not be populated when an event or intervention
   is marked as not occurred (--OCCUR='N').
 scope:
-  classes: []
-  domains:
-    - INTERVENTIONS
-    - EVENTS
-check: []
+  Classes:
+    Include:
+      - INTERVENTIONS
+      - EVENTS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: --OCCUR
+      operator: equal_to
+      value: 'N'
+    - name: --STRF
+      operator: non_empty
 outcome:
   message: Time point for non-occurred event or intervention is provided
   severity: Warning
@@ -23,4 +32,5 @@ provenance:
   rule_id: SD1042
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000240
 

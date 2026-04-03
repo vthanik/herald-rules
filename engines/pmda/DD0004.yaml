@@ -4,13 +4,16 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Define.xml must only contain attributes that are defined in either ODM
   or Define-XML specification.
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Attribute <attribute> is not allowed to appear in element <element>
   severity: Error

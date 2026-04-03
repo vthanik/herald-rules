@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: When a Flag variable (FL) is N, its corresponding Flag numeric variable
   (FN) must be 0.
 scope:
@@ -19,7 +19,10 @@ scope:
     - ADAE
     - MDOCCDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: '*FL = N and *FN != 0'
   severity: Error

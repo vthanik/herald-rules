@@ -4,12 +4,27 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Age (AGE) should be provided when Age Units (AGEU) are populated.
 scope:
-  classes: []
-  domains: DM
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+check:
+  all:
+    - name: AGEU
+      operator: non_empty
+    - any:
+        - name: AGETXT
+          operator: not_exists
+        - name: AGETXT
+          operator: empty
+    - any:
+        - name: AGE
+          operator: not_exists
+        - name: AGE
+          operator: empty
 outcome:
   message: Missing value for AGE when AGEU is provided
   severity: Warning
@@ -19,4 +34,5 @@ provenance:
   rule_id: SD1003
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000453
 

@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Within a Study and a Parameter, all Multi-Response Criterion y Eval (N)
   (MCRITyMN) variable values must be the same for each unique value of Multi-Response
   Criterion y Evaluation (MCRITyML) variable when the primary variable MCRITyML is
@@ -16,7 +16,10 @@ scope:
     - ADNCA
     - MDBDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for MCRITyMN
   severity: Error

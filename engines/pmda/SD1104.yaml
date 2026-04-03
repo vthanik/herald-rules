@@ -4,19 +4,21 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Start Relative to Reference Time Point (--STRTPT) variable must be included
   into the domain when Start Relative Time Point (--STTPT) variable is present.
 scope:
-  classes: []
-  domains:
-    - SPECIALPURPOSE(-CO
-    - -DM)
-    - INTERVENTIONS
-    - FINDINGS
-    - EVENTS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: --STTPT
+      operator: exists
+    - name: --STRTPT
+      operator: not_exists
 outcome:
   message: Missing --STRTPT variable when --STTPT variable is present
   severity: Warning
@@ -26,4 +28,5 @@ provenance:
   rule_id: SD1104
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000261
 

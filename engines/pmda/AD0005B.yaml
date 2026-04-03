@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: 'A variable with a suffix of FL must have value that is Y, N or null
   (Exception 1: ABLFL, ANLzzFL. Exception 2: Population flags COMPLFL, FASFL, ITTFL,
   PPROTFL, SAFFL, RANDFL, ENRLFL cannot be null and at least 1 must be included in
@@ -21,7 +21,10 @@ scope:
     - ADAE
     - MDOCCDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: '*FL value is not Y, N or null'
   severity: Error

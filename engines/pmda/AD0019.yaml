@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: 'For subject-level character population flag variables: N = no (not included),
   Y = yes (included). Null values are not allowed.'
 scope:
@@ -19,7 +19,10 @@ scope:
     - ADAE
     - MDOCCDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Variable subject-population flag value is null
   severity: Error

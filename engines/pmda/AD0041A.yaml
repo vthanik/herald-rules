@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: '*DT variables must have non-missing SAS Date Format.'
 scope:
   classes: []
@@ -18,7 +18,10 @@ scope:
     - ADAE
     - MDOCCDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __date_variable__
+      operator: is_valid_iso8601
 outcome:
   message: '*DT variable has missing SAS Date Format'
   severity: Error

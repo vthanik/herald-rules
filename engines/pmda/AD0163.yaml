@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If Baseline Toxicity Grade (BTOXGR) variable is present, then Analysis
   Toxicity Grade (ATOXGR) and Baseline Record Flag (ABLFL) variables must be present.
 scope:
@@ -13,7 +13,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: BTOXGR is present, but ATOXGR is not present
   severity: Error

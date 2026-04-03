@@ -4,14 +4,17 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Actual Arm Code (ACTARMCD) and Actual Arm (ACTARM) must be null for subjects
   who weren't treated. This includes Screen Failure subjects, Not Assigned subjects,
   and Not Treated subjects.
 scope:
   classes: []
   domains: DM
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: ACTARMCD/ACTARM is populated for a subject who wasn't treated
   severity: Error

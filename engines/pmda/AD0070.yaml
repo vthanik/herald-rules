@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If Actual Pooled Treatment y for Period xx (TRxxAGyN) numeric variable
   is present, there must be a corresponding Actual Pooled Treatment y for Period xx
   (TRxxAGy) character variable.
@@ -13,7 +13,10 @@ scope:
   domains:
     - ADSL
     - ADDL
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: TRxxAGyN is present, but TRxxAGy is not present
   severity: Error

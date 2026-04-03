@@ -4,12 +4,15 @@ status: Reference
 standard: Define-XML
 category: ODM/Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: The Mandatory attribute must have a value of 'Yes' or 'No'.
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid Mandatory value
   severity: Error

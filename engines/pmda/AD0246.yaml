@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: When Censor (CNSR) variable is present, the Time-to-Event Origin Date
   for Subject (STARTDT) and one of Analysis Date (ADT) or Analysis Datetime (ADTM)
   variables must be included in the dataset. In Time to Event studies, the basis of
@@ -16,7 +16,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: CNSR is present, but both ADT and ADTM are not present
   severity: Error

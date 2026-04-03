@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: For Customized MedDRA Query Name (SMQzzNAM) variables , zz must be the
   ordered CQ of interest (01 to 99). This ordering can be based on importance or some
   other sponsor-defined criteria. It is recommended that the ordering be consistent
@@ -15,7 +15,10 @@ scope:
     - OCCDS
     - ADAE
     - MDOCCDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: 'Illegal variable name: zz is not in [01-99] for CQzzNAM'
   severity: Error

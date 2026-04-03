@@ -4,13 +4,16 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: MedDRA coding info should be populated using variables in the Events
   General Observation Class, but not in SUPPQUAL domains.
 scope:
   classes: []
   domains: SUPPQUAL
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Unexpected MedDRA coding in the SUPPQUAL domain
   severity: Warning

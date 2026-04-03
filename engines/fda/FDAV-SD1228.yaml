@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Variable value must be populated with terms from user-defined value level
   codelist as specified in define.xml file.
-Check: []
+Check:
+  all:
+    - name: __ct_variable__
+      operator: in_codelist
 Outcome:
   Message: Variable value not found in user-defined codelist when value-level condition
     occurs
@@ -26,4 +29,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

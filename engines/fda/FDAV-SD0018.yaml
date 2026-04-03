@@ -5,7 +5,11 @@ Core:
 Description: The value of a Short Name of Measurement, Test or Examination (--TESTCD)
   variable should be limited to 8 characters, cannot start with a number, and cannot
   contain characters other than letters in upper case, numbers, or underscores.
-Check: []
+Check:
+  any:
+    - name: IETESTCD
+      operator: not_matches_regex
+      value: ^[a-zA-Z_][a-zA-Z0-9_]{0,7}$
 Outcome:
   Message: Invalid value for --TESTCD variable
 Rule Type: Record Data
@@ -26,4 +30,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000541
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

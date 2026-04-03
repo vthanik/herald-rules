@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Standard Units (--STRESU) must be consistent for all records with the
   same Short Name of Measurement, Test or Examination (--TESTCD), Object of the Observation
   (--OBJ), Measurement Test, or Examination Detail (--TSTDTL), Category (--CAT), Specimen
@@ -14,7 +14,10 @@ scope:
   domains:
     - FINDINGS
     - FINDINGSABOUT
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for Standard Units
   severity: Warning

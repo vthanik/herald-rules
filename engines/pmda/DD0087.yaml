@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: 'Analysis Results Metadata was developed specifically for ADaM and therefore
   should not be included with SDTM or SEND defines. Analysis Results Metadata inclusion
   is indicated by the presence of the arm:AnalysisResultDisplays element. Note: Refer
@@ -13,7 +13,10 @@ description: 'Analysis Results Metadata was developed specifically for ADaM and 
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: ARM metadata included in non ADaM define.xml
   severity: Error

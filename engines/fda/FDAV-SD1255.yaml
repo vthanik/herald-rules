@@ -4,7 +4,16 @@ Core:
   Version: '1'
 Description: DTHFL must equal 'Y' when there is a record in the Adverse Events (AE)
   domain with AESDTH = 'Y'.
-Check: []
+Check:
+  all:
+    - name: AESDTH
+      operator: equal_to
+      value: 'Y'
+      value_is_literal: yes
+    - name: DTHFL
+      operator: not_equal_to
+      value: 'Y'
+      value_is_literal: yes
 Outcome:
   Message: DTHFL does not equal 'Y' when AE.AESDTH = 'Y'
 Rule Type: Record Data
@@ -19,4 +28,12 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000253
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+  Use_Case: INDH
 

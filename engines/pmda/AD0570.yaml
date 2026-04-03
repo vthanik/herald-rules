@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If any of the subject-level subperiod timing variables (PxxSw, PxxSwSDT,
   PxxSwSTM, PxxSwSDM, PxxSwSDF, PxxSwSTF, PxxSwEDT, PxxSwETM, PxxSwEDM, PxxSwEDF,
   PxxSwETF) are present, there must be a corresponding Planned Treatment for Period
@@ -14,7 +14,10 @@ scope:
   domains:
     - ADSL
     - ADDL
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Variable is present, but TRTxxP is not present
   severity: Error

@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: ODM/Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: The Data Type attribute for Variable must have a value of 'text', 'integer',
   'float', 'datetime', 'date', or 'time' for Define-XML v1.0, and 'text', 'integer',
   'float', 'datetime', 'date', 'time', 'partialDate', 'partialTime', 'partialDatetime',
@@ -12,7 +12,10 @@ description: The Data Type attribute for Variable must have a value of 'text', '
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid Data Type value for variable
   severity: Error

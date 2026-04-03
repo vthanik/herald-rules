@@ -4,15 +4,32 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Description of Actual Arm (ACTARM) values should match entries in the
   Trial Arms (TA) dataset, except for subjects who failed screening ('Screen Failure'),
   or were not fully assigned to an Arm ('Not Assigned'), or randomized, but not treated
   ('Not Treated') or received non-planned treatment ('Unplanned Treatment').
 scope:
-  classes: []
-  domains: DM
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+check:
+  all:
+    - name: ACTARM
+      operator: is_not_contained_by
+      value:
+        - Screen Failure
+        - Not Assigned
+        - Not Treated
+        - Unplanned Treatment
+        - SCREEN FAILURE
+        - NOT ASSIGNED
+        - NOT TREATED
+        - UNPLANNED TREATMENT
+    - name: ACTARM
+      operator: is_not_contained_by
+      value: $ARMS_IN_TA
 outcome:
   message: Invalid value for ACTARM
   severity: Error
@@ -22,4 +39,5 @@ provenance:
   rule_id: SD2003
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000367
 

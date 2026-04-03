@@ -7,7 +7,13 @@ Description: All Unique Subject Identifier (USUBJID) + Visit Name (VISIT) + Visi
   (SV) domain. There is an exception for records, where Status (--STAT) variable value
   is populated. E.g., --STAT = 'NOT DONE'. Another exception is for records, where
   Occurrence (ECOCCUR) is 'N' in EC domain.
-Check: []
+Check:
+  all:
+    - name: VISITNUM
+      operator: non_empty
+    - name: VISITNUM
+      operator: is_not_contained_by
+      value: $sv_visitnum
 Outcome:
   Message: USUBJID/VISIT/VISITNUM values do not match SV domain data
 Rule Type: Record Data
@@ -24,4 +30,12 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000168
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude: SV
+  Use_Case: INDH
 

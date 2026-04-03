@@ -4,7 +4,16 @@ Core:
   Version: '1'
 Description: Arm Code (ARMCD) values defined in Trial Arms (TA) should be assigned
   to at least one subject (USUBJID) in Demographics (DM).
-Check: []
+Check:
+  all:
+    - name: ARMCD
+      operator: is_not_contained_by
+      value:
+        - SCRNFAIL
+        - NOTASSGN
+    - name: ARMCD
+      operator: is_not_contained_by
+      value: $armcd_list
 Outcome:
   Message: ARMCD value not present in DM
 Rule Type: Record Data
@@ -25,4 +34,11 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000531
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
 

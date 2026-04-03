@@ -4,7 +4,11 @@ Core:
   Version: '1'
 Description: All domains based on the general observation classes (Interventions,
   Events, Findings) should have at least one Timing variable present.
-Check: []
+Check:
+  all:
+    - name: $dataset_variables
+      operator: shares_no_elements_with
+      value: $timing_variables
 Outcome:
   Message: No timing variables are present in dataset
 Rule Type: Record Data
@@ -25,4 +29,17 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000575
+Executability: Partially Executable - Possible Underreporting
+Scope:
+  Classes:
+    Include:
+      - FINDINGS
+      - INTERVENTIONS
+      - EVENTS
+  Domains:
+    Exclude:
+      - IE
+      - SC
+  Use_Case: NONCLIN, INDH
 

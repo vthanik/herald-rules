@@ -5,7 +5,15 @@ Core:
 Description: Study Day of Start (--STDY) variable value should be populated, when
   Start Study Date (--STDTC) and Subject Reference Start Date/Time (RFSTDTC) variables
   values are provided, and both of them include complete date part.
-Check: []
+Check:
+  all:
+    - name: --STDTC
+      operator: is_complete_date
+    - name: RFSTDTC
+      operator: is_complete_date
+    - name: --STDY
+      operator: not_equal_to
+      value: $val_stdy
 Outcome:
   Message: --STDY variable value is not populated
 Rule Type: Record Data
@@ -26,4 +34,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000552
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude: DM
+  Use_Case: INDH
 

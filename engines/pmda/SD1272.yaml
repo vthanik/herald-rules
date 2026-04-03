@@ -4,15 +4,20 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Test Code variables (--TESTCD) should not be populated with values of
   'OTHER'.
 scope:
-  classes: []
-  domains:
-    - FINDINGS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: --TESTCD
+      operator: equal_to
+      value: OTHER
 outcome:
   message: --TESTCD equals 'OTHER'
   severity: Error
@@ -22,4 +27,5 @@ provenance:
   rule_id: SD1272
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000159
 

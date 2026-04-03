@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If TRTEMwFL is included, TRTEMFL is defined as the overall treatment
   emergent flag. If any Treatment Emergent Analysis w Flag (TRTEMwFL) variables are
   flagged Y, then the overall Treatment Emergent Analysis Flag (TRTEMFL) variable
@@ -12,7 +12,10 @@ description: If TRTEMwFL is included, TRTEMFL is defined as the overall treatmen
 scope:
   classes: []
   domains: ADAE
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: TRTEMwFL = Y and TRTEMFL != Y
   severity: Error

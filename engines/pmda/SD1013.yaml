@@ -4,14 +4,23 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Planned Order of Elements within Arm (TAETORD) should be null when subject's
   experience for a particular period of time is represented as an unplanned Element
   (ETCD = 'UNPLAN').
 scope:
-  classes: []
-  domains: SE
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: SE
+  Use_Case: INDH
+check:
+  all:
+    - name: ETCD
+      operator: equal_to
+      value: UNPLAN
+    - name: TAETORD
+      operator: non_empty
 outcome:
   message: TAETORD is populated, ETCD = 'UNPLAN'
   severity: Error
@@ -21,4 +30,5 @@ provenance:
   rule_id: SD1013
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000020
 

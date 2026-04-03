@@ -4,7 +4,13 @@ Core:
   Version: '1'
 Description: When the Disease Milestone Instance Name (MIDS) variable is used in any
   dataset, the Trial Disease Milestones (TM) dataset must be present for the study.
-Check: []
+Check:
+  all:
+    - name: $MIDS_EXISTS
+      operator: equal_to
+      value: yes
+    - name: TM
+      operator: not_exists
 Outcome:
   Message: Missing TM dataset, when variable MIDS is present in a dataset
 Rule Type: Record Data
@@ -15,6 +21,12 @@ Source: FDA Validator Rules v1.6
 Domains: INTERVENTIONS, EVENTS, FINDINGS, FINDINGS ABOUT
 Standard: SDTM
 Publisher ID: CG0501
-IG Versions:
-  - SDTMIG 3.3
+IG Versions: SDTMIG 3.3
+CORE Reference: CORE-000297
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
 

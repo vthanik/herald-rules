@@ -4,14 +4,28 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: MBRESCAT is expected to be populated in all records where a microorganism
   has been identified (MBTESTCD = 'ORGANISM'), excluding records where MBSTRESC equals
   'NO GROWTH' or MBMETHOD equals 'GRAM STAIN'.
 scope:
-  classes: []
-  domains: MB
-check: []
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: MB
+check:
+  all:
+    - name: MBTESTCD
+      operator: equal_to
+      value: ORGANISM
+    - name: MBSTRESC
+      operator: not_equal_to_case_insensitive
+      value: NO GROWTH
+    - name: MBMETHOD
+      operator: not_equal_to_case_insensitive
+      value: GRAM STAIN
+    - name: MBRESCAT
+      operator: empty
 outcome:
   message: MBRESCAT is null when MBTESTCD = 'ORGANISM'
   severity: Warning
@@ -21,4 +35,5 @@ provenance:
   rule_id: SD1263
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000332
 

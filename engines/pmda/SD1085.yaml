@@ -4,20 +4,26 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Collection Study Day (--DY) variable value should not be imputed. It
   may be only populated when both Collection Study Date/Time (--DTC) and Subject Reference
   Start Date/Time (RFSTDTC) variables values are provided and both include complete
   date part.
 scope:
-  classes: []
-  domains:
-    - SPECIALPURPOSE
-    - INTERVENTIONS
-    - FINDINGS(-DO)
-    - EVENTS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH
+check:
+  all:
+    - name: --DY
+      operator: non_empty
+    - any:
+        - name: --DTC
+          operator: is_incomplete_date
+        - name: RFSTDTC
+          operator: is_incomplete_date
 outcome:
   message: --DY variable value is imputed
   severity: Warning
@@ -27,4 +33,5 @@ provenance:
   rule_id: SD1085
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000354
 

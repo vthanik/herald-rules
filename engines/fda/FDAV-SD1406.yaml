@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: '''Challenge Agent Category'' (CAGTCAT) record must be populated in Challenge
   Agent Characterization (AC) domain.'
-Check: []
+Check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 Outcome:
   Message: Missing CAGTCAT Challenge Agent Parameter
 Rule Type: Record Data
@@ -15,6 +18,6 @@ Source: FDA Validator Rules v1.6
 Domains: AC
 Standard: SDTM
 Publisher ID: ''
-IG Versions:
-  - SENDIG-AR 1.0
+IG Versions: SENDIG-AR 1.0
+Executability: Partially Executable
 

@@ -4,7 +4,12 @@ Core:
   Version: '1'
 Description: Value for Parameter Value (--VAL) variable must be populated. --VAL can
   only be null when Parameter Null Flavor (--VALNF) variable value is populated.
-Check: []
+Check:
+  all:
+    - name: TSVAL
+      operator: empty
+    - name: TSVALNF
+      operator: empty
 Outcome:
   Message: Missing values for both --VAL and --VALNF
 Rule Type: Record Data
@@ -24,4 +29,11 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000149
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
 

@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Value for the LOINC Code (--LOINC) variable must be populated using a
   LOINC coding system version specified in the define.xml.
-Check: []
+Check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 Outcome:
   Message: Value for --LOINC not found in LOINC coding system
 Rule Type: Record Data
@@ -21,4 +24,5 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+Executability: Fully Executable
 

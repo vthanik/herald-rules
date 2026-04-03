@@ -4,20 +4,21 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Time Point Reference (--TPTREF) variable must be included into the domain
   when Planned Elapsed Time from Time Point Ref (--ELTM) variable is present.
 scope:
-  classes: []
-  domains:
-    - SPECIALPURPOSE(-DM
-    - -SE
-    - -SV)
-    - INTERVENTIONS
-    - FINDINGS(-DO)
-    - EVENTS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: --ELTM
+      operator: exists
+    - name: --TPTREF
+      operator: not_exists
 outcome:
   message: Missing --TPTREF variable when --ELTM variable is present
   severity: Error
@@ -27,4 +28,5 @@ provenance:
   rule_id: SD1246
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000167
 

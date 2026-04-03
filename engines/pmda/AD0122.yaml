@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Any variable ending in SDTM (Start Date Time) must have a value less
   than or equal to its corresponding EDTM (End Date Time) value (e.g., ADSL - TRTSDTM,
   TR01SDTM, AP01SDTM; BDS - APERSDTM).
@@ -20,7 +20,10 @@ scope:
     - ADAE
     - MDOCCDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: in_range
 outcome:
   message: '*SDTM is greater than *EDTM'
   severity: Error

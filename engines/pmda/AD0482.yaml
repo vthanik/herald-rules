@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: In a pair of corresponding character and numeric variables, the primary
   or most commonly used variable must be populated if its secondary variable describing
   it is populated. Corresponding character and numeric values must also have a one-to-one
@@ -17,7 +17,10 @@ scope:
     - ADNCA
     - MDBDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Primary variable BCHGCATy is populated, but its secondary variable BCHGCAyN
     is not populated

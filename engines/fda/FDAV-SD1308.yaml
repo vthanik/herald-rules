@@ -5,7 +5,16 @@ Core:
 Description: When test product is added to existing treatment (TSPARMCD = 'ADDON'
   and TSVAL = 'Y'), the Current Therapy or Treatment parameter should be provided
   with Parameter Value populated (TSVAL should not be null when TSPARMCD = 'CURTRT').
-Check: []
+Check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: CURTRT
+    - name: $ADDON_Y
+      operator: greater_than_or_equal_to
+      value: 1
+    - name: TSVAL
+      operator: empty
 Outcome:
   Message: TSVAL is missing for the CURTRT Trial Summary Parameter, when ADDON parameter
     equals 'Y'
@@ -22,4 +31,11 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000532
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
 

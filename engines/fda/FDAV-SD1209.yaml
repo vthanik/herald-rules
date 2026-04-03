@@ -5,7 +5,10 @@ Core:
 Description: Value for Date/Time of Last Study Treatment (RFXENDTC) variable must
   be populated, when Date/Time of First Study Treatment (RFXSTDTC) variable value
   is provided.
-Check: []
+Check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 Outcome:
   Message: Missing value for RFXENDTC, when RFXSTDTC is provided
 Rule Type: Record Data
@@ -24,4 +27,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Partially Executable
 

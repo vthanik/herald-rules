@@ -4,20 +4,28 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: 'Collection Study Day (--DY) variable value should be populated as defined
   by CDISC standards: --DY = (date portion of --DTC) - (date portion of RFSTDTC) +1
   if --DTC is on or after RFSTDTC; --DY = (date portion of --DTC) - (date portion
   of RFSTDTC) if --DTC precedes RFSTDTC.'
 scope:
-  classes: []
-  domains:
-    - SPECIALPURPOSE
-    - INTERVENTIONS
-    - FINDINGS(-DO)
-    - EVENTS
-    - FINDINGSABOUTT
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: NONCLIN, INDH, PROD
+check:
+  all:
+    - name: --DY
+      operator: non_empty
+    - name: --DTC
+      operator: is_complete_date
+    - name: RFSTDTC
+      operator: is_complete_date
+    - name: --DY
+      operator: not_equal_to
+      value: $val_dy
 outcome:
   message: Incorrect value for --DY variable
   severity: Error
@@ -27,4 +35,5 @@ provenance:
   rule_id: SD1086
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000529
 

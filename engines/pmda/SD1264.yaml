@@ -4,15 +4,26 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: When the RELREC dataset is used to identify relationships between datasets
   (in which case USUBJID and IDVARVAL are left null), instead of relating individual
   records, --SEQ cannot be used for IDVAR because --SEQ only has meaning within a
   subject within a dataset, not across datasets.
 scope:
-  classes: []
-  domains: RELREC
-check: []
+  Classes:
+    Include: RELATIONSHIP
+  Domains:
+    Include: RELREC
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: IDVARVAL
+      operator: empty
+    - name: USUBJID
+      operator: empty
+    - name: IDVAR
+      operator: ends_with
+      value: SEQ
 outcome:
   message: IDVAR equals --SEQ when IDVARVAL is null and USUBJID is null
   severity: Error
@@ -22,4 +33,5 @@ provenance:
   rule_id: SD1264
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000136
 

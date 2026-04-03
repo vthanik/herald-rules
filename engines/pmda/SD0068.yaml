@@ -4,13 +4,20 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: A value for Inclusion/Exclusion Criterion Short Name (IETESTCD) must
   be present the Trial Inclusion/Exclusion Criteria (TI) domain.
 scope:
-  classes: []
-  domains: IE
-check: []
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: IE
+  Use_Case: INDH
+check:
+  all:
+    - name: IETESTCD
+      operator: is_not_contained_by
+      value: $ti_ietestcd
 outcome:
   message: IETESTCD value doesn't exist in TI domain
   severity: Error
@@ -20,4 +27,5 @@ provenance:
   rule_id: SD0068
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000228
 

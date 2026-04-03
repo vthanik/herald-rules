@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: The structure for custom dataset should be based on one of the general
   observation classes (EVENTS, FINDINGS, INTERVENTIONS) defined by the SDTM model.
-Check: []
+Check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 Outcome:
   Message: Dataset class not recognized
 Rule Type: Record Data
@@ -26,4 +29,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Partially Executable
 

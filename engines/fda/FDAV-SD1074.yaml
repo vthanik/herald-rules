@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Variables designed only for SEND pre-clinical studies must be not included
   in the SDTM dataset.
-Check: []
+Check:
+  all:
+    - name: --DTHREL
+      operator: exists
 Outcome:
   Message: Variable which can be used only in SEND
 Rule Type: Record Data
@@ -21,4 +24,11 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000226
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
 

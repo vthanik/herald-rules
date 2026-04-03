@@ -5,7 +5,12 @@ Core:
 Description: Value of Category (--CAT) should not be identical to that in Domain Abbreviation
   (DOMAIN); Reported Term (--TERM); Name of Measurement, Test, or Examination (--TESTCD);
   Name of Treatment (--TRT); Body System or Organ Class (--BODSYS).
-Check: []
+Check:
+  all:
+    - name: MHCAT
+      operator: non_empty
+    - name: MHCAT
+      operator: has_same_values
 Outcome:
   Message: --CAT value is redundant with other variable values
 Rule Type: Record Data
@@ -26,4 +31,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000365
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: MH
+    include_split_datasets: yes
 

@@ -4,12 +4,15 @@ status: Reference
 standard: Define-XML
 category: ODM/Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Define.xml must contain a root element called ODM.
 scope:
   classes: []
   domains: Reject
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid root element
   severity: Error

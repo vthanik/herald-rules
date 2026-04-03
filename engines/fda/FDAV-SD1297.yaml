@@ -5,7 +5,15 @@ Core:
 Description: TSVAL should not be populated with a value from the ISO 21090 null flavor
   codelist, or synonyms of the values. The TSVALNF variable should be used to capture
   these values, not TSVAL.
-Check: []
+Check:
+  all:
+    - name: TSVALNF
+      operator: empty
+    - name: TSVAL
+      operator: matches_regex
+      value: (?i:^(NI|No information|INV|Invalid|OTH|Other|PINF|Positive infinity|NINF|Negative
+        infinity|UNC|Unencoded|DER|Derived|UNK|Unknown|ASKU|Asked but unknown|NAV|Temporarily
+        unavailable|NASK|Not asked|TRC|Trace|MSK|Masked|QS|Sufficient Quantity)$)
 Outcome:
   Message: TSVAL is populated with a value from the ISO 21090 null flavor codelist
 Rule Type: Record Data
@@ -20,4 +28,11 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000787
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
 

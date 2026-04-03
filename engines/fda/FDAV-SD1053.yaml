@@ -5,7 +5,15 @@ Core:
 Description: Records for subjects who failed a screening or were not assigned to study
   treatment (ARMCD is 'SCRNFAIL' or 'NOTASSGN') should not be included in the Trial
   Arms (TA) or Trial Visits (TV) datasets.
-Check: []
+Check:
+  all:
+    - name: ARM
+      operator: is_contained_by
+      value:
+        - Screen Failure
+        - Not Assigned
+        - Unplanned Treatment
+        - Not Treated
 Outcome:
   Message: Unexpected value for ARMCD variable
 Rule Type: Record Data
@@ -21,4 +29,13 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000371
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include:
+      - TA
+      - TV
 

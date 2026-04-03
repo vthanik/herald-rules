@@ -4,7 +4,11 @@ Core:
   Version: '1'
 Description: Variable Data Types in the dataset should match the variable data types
   described in SDTM.
-Check: []
+Check:
+  all:
+    - name: variable_data_type
+      operator: not_equal_to
+      value: library_variable_data_type
 Outcome:
   Message: SDTM/dataset variable type mismatch
 Rule Type: Record Data
@@ -21,4 +25,11 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-001082
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
 

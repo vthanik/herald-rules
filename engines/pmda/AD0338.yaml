@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If Analysis Multi-Response Criterion y (MCRITy) variable is present,
   there must also be a corresponding Multi-Response Criterion y Evaluation (MCRITyML)
   flag variable.
@@ -15,7 +15,10 @@ scope:
     - ADNCA
     - MDBDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: MCRITyML is not present when MCRITy is present
   severity: Error

@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: When all 3 variables are populated and base &lt;&gt; 0, Percent Change
   to Baseline (PBCHG) must equal the difference of Baseline Value (BASE) minus Analysis
   Value (AVAL) divided by the analysis value (AVAL), expressed as a percentage.
@@ -15,7 +15,10 @@ scope:
     - ADNCA
     - MDBDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: 'Calculation issue: PBCHG != (BASE - AVAL)/AVAL * 100'
   severity: Error

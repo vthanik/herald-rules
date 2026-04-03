@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Start Date/Time of Milestone (SMSTDTC) should not be null. The start
   date/time of the Disease Milestone is the critical date/time, and must be populated.
-Check: []
+Check:
+  all:
+    - name: SMSTDTC
+      operator: empty
 Outcome:
   Message: SMSTDTC is null
 Rule Type: Record Data
@@ -15,6 +18,12 @@ Source: FDA Validator Rules v1.6
 Domains: SM
 Standard: SDTM
 Publisher ID: CG0547
-IG Versions:
-  - SDTMIG 3.3
+IG Versions: SDTMIG 3.3
+CORE Reference: CORE-000109
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: SM
 

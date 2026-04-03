@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Body System (--BODSYS) should be consistent for the same collected term
   (--TERM).
 scope:
@@ -13,7 +13,10 @@ scope:
     - AE
     - CE
     - MH
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for --BODSYS within --TERM
   severity: Warning

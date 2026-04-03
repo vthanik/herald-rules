@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Analysis Range y Indicator (AyIND) variable indicates the relationship
   of Analysis Value (AVAL) to the analysis range variables Analysis Range y Lower
   Limit (AyLO) and/or Analysis Range y Upper Limit (AyHI), or the relationship of
@@ -17,7 +17,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: None of AyLO, AyHI, AyLOC, or AyHIC variables is present when AyIND is
     present

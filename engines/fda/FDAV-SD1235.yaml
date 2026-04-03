@@ -4,7 +4,34 @@ Core:
   Version: '1'
 Description: Value for Sponsor Device Identifier (SPDEVID) or Unique Subject Identifier
   (USUBJID) variables should be populated for all records in Divice In-Use (DU) domain
-Check: []
+Check:
+  any:
+    - all:
+        - name: DOMAIN
+          operator: prefix_matches_regex
+          prefix: 2
+          value: (AP|ap)
+        - name: APID
+          operator: not_exists
+    - all:
+        - name: DOMAIN
+          operator: not_prefix_matches_regex
+          prefix: 2
+          value: (AP|ap)
+        - name: STUDYID
+          operator: exists
+        - name: --SEQ
+          operator: exists
+        - name: USUBJID
+          operator: not_exists
+        - name: SPDEVID
+          operator: not_exists
+        - name: POOLID
+          operator: not_exists
+        - name: SPTOBID
+          operator: not_exists
+        - name: STOCONID
+          operator: not_exists
 Outcome:
   Message: Neither SPDEVID nor USUBJID values are populated
 Rule Type: Record Data
@@ -18,4 +45,16 @@ Publisher ID: CG0554
 IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000107
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include:
+      - EVENTS
+      - INTERVENTIONS
+      - FINDINGS ABOUT
+      - FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

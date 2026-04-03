@@ -4,13 +4,16 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Start Date/Time of Treatment (EXSTDTC) variable value must be greater
   than or equal to Date/Time of First Study Treatment (RFXSTDTC).
 scope:
   classes: []
   domains: EX
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: EXSTDTC date is before RFXSTDTC
   severity: Error

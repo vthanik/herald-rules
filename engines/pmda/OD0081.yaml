@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: ODM/Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: 'Codelist must have at least one item. Define-XML specification allows
   Codelists to contain 3 types of items: 1) list of Terms (EnumeratedItem); 2) list
   of Terms and Decoded Values (CodeListItem); 3) or a reference to external dictionary
@@ -12,7 +12,10 @@ description: 'Codelist must have at least one item. Define-XML specification all
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: non_empty
 outcome:
   message: Codelist <codelist> is empty
   severity: Error

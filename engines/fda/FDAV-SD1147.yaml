@@ -9,7 +9,12 @@ Description: Pre-specified (--PRESP) variable should be included into dataset, w
   a specific intervention is pre-specified on a CRF. Values should be 'Y' or null.
   (--OCCUR) Used to record whether a pre-specified event occurred when information
   about the occurrence of a specific event is solicited.
-Check: []
+Check:
+  all:
+    - name: --PRESP
+      operator: not_exists
+    - name: --OCCUR
+      operator: exists
 Outcome:
   Message: Missing --PRESP variable, when --OCCUR variable is present
 Rule Type: Record Data
@@ -26,4 +31,18 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000015
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include:
+      - EVENTS
+      - INTERVENTIONS
+  Domains:
+    Exclude:
+      - AE
+      - DS
+      - DV
+      - EX
+  Use_Case: INDH, PROD
 

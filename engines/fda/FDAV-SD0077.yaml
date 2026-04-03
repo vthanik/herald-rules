@@ -5,7 +5,17 @@ Core:
 Description: Reference record defined by Related Domain Abbreviation (RDOMAIN), Unique
   Subject Identifier (USUBJID), Identifying Variable (IDVAR) and Identifying Variable
   Value (IDVARVAL) must exist in the target Domain.
-Check: []
+Check:
+  all:
+    - name: IDVAR
+      operator: non_empty
+    - name: IDVARVAL
+      operator: non_empty
+    - name: IDVARVAL
+      operator: not_equal_to
+      type_insensitive: yes
+      value: IDVAR
+      value_is_reference: yes
 Outcome:
   Message: Invalid referenced record
 Rule Type: Record Data
@@ -26,4 +36,17 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000206
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include:
+      - SPECIAL PURPOSE
+      - RELATIONSHIP
+  Domains:
+    Include:
+      - CO
+      - SUPP--
+      - RELREC
+  Use_Case: NONCLIN, INDH, PROD
 

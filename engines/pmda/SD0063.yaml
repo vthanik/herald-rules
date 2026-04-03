@@ -4,19 +4,25 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Variable Label in the dataset should match the variable label described
   in SDTM IG. When creating a new domain Variable Labels could be adjusted as appropriate
   to properly convey the meaning in the context of the data being submitted.
 scope:
-  classes: []
-  domains:
-    - ALL(-APAE
-    - -APMH
-    - -APRELSUB
-    - -RELSUB
-    - -APDM)
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+check:
+  all:
+    - name: variable_name
+      operator: equal_to
+      value: library_variable_name
+    - name: library_variable_label
+      operator: non_empty
+    - name: variable_label
+      operator: not_equal_to
+      value: library_variable_label
 outcome:
   message: SDTM/dataset variable label mismatch
   severity: Warning
@@ -26,4 +32,5 @@ provenance:
   rule_id: SD0063
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000398
 

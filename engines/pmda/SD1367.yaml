@@ -4,16 +4,31 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: There should be at most one disposition event record per subject per
   Subcategory for Disposition Event (DSSCAT) per Epoch. If multiple disposition events
   are reported for a Subcategory for DSSCAT and EPOCH, the sponsor should identify
   a primary reason and use that to populate DSTERM and DSDECOD. Additional reasons
   should be submitted in SUPPDS.
 scope:
-  classes: []
-  domains: DS
-check: []
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: DS
+  Use_Case: INDH
+check:
+  all:
+    - name: DSCAT
+      operator: equal_to
+      value: DISPOSITION EVENT
+      value_is_literal: yes
+    - name: DSSCAT
+      operator: exists
+    - name: EPOCH
+      operator: is_not_unique_set
+      value:
+        - USUBJID
+        - DSSCAT
 outcome:
   message: Multiple disposition events for the same DSSCAT and EPOCH
   severity: Warning
@@ -23,4 +38,5 @@ provenance:
   rule_id: SD1367
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000213
 

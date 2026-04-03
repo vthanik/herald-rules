@@ -5,7 +5,10 @@ Core:
 Description: Variable should be populated with terms from its CDISC controlled terminology
   codelist, when its value level condition is met. New terms can be added as long
   as they are not duplicates, synonyms or subsets of existing standard terms.
-Check: []
+Check:
+  all:
+    - name: __ct_variable__
+      operator: in_codelist
 Outcome:
   Message: Variable value not found in extensible codelist when value-level condition
     occurs
@@ -27,4 +30,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

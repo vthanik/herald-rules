@@ -4,14 +4,17 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: There is an XML schema validation issue with either Define.xml structure
   or content that is not covered by one of the other rules. It is most likely an issue
   with element declarations.
 scope:
   classes: []
   domains: Reject
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: XML schema validation issue within Define.xml
   severity: Error

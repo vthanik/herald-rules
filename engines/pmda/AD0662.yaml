@@ -4,14 +4,17 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If TMPCTDF (Percent Diff. Nominal vs. Actual Time) is populated, both
   ARRLT (Actual Rel. Time from Ref. Dose) and NRRLT (Nominal Rel. Time from Ref. Dose)
   must be populated.
 scope:
   classes: []
   domains: ADNCA
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: TMPCTDF is populated and ARRLT or NRRLT are not populated
   severity: Error

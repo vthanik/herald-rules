@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: 'Reported Term for the Adverse Event (AETERM) is expected to be coded
   using the Medical Dictionary for Regulatory Affairs (MedDRA). Sponsors should code
   each term to the MedDRA-specified hierarchy of terms. These terms/codes are represented
@@ -13,7 +13,10 @@ description: 'Reported Term for the Adverse Event (AETERM) is expected to be cod
 scope:
   classes: []
   domains: AE
-check: []
+check:
+  all:
+    - name: __required_variable__
+      operator: exists
 outcome:
   message: 'Missing values for one or more variables subject to MedDRA: --LLT, --LLTCD,
     --DECOD, --PTCD, --HLT, --HLTCD, --HLGT, --HLGTCD, --BODSYS, --BDSYCD, --SOC,

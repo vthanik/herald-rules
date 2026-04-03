@@ -6,7 +6,10 @@ Description: End Day of Obs Relative to Exposure (--XENDY) variable value should
   be imputed. It may only be populated, when both End Date/Time of Observation (--ENDTC)
   and Date/Time of First Study Treatment (RFXSTDTC) variables values are provided
   and both of them include complete date parts.
-Check: []
+Check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 Outcome:
   Message: --XENDY variable value is imputed
 Rule Type: Record Data
@@ -17,6 +20,6 @@ Source: FDA Validator Rules v1.6
 Domains: INTERVENTIONS, FINDINGS, EVENTS, FINDINGS ABOUT
 Standard: SDTM
 Publisher ID: ''
-IG Versions:
-  - SENDIG-AR 1.0
+IG Versions: SENDIG-AR 1.0
+Executability: Fully Executable
 

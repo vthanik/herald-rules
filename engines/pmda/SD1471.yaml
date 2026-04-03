@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Upper end of reference range for continuous measurement in original units
   (--ORNRHI) should be populated only for continuous results (--ORRES is numeric value).
   Allowed "numeric" values may include optional >, <, =, a space and - leading symbols
@@ -12,7 +12,10 @@ description: Upper end of reference range for continuous measurement in original
 scope:
   classes: []
   domains: LB
-check: []
+check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 outcome:
   message: --ORRES is not numeric value, when --ORNRHI is populated
   severity: Warning

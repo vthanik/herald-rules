@@ -4,17 +4,21 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The value of a Short Name of Measurement, Test or Examination (--TESTCD)
   variable should be limited to 8 characters, cannot start with a number, and cannot
   contain characters other than letters in upper case, numbers, or underscores.
 scope:
-  classes: []
-  domains:
-    - FINDINGS
-    - FINDINGSABOUT
-    - TI
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
+check:
+  any:
+    - name: IETESTCD
+      operator: not_matches_regex
+      value: ^[a-zA-Z_][a-zA-Z0-9_]{0,7}$
 outcome:
   message: Invalid value for --TESTCD variable
   severity: Error
@@ -24,4 +28,5 @@ provenance:
   rule_id: SD0018
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000541
 

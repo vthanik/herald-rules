@@ -4,7 +4,11 @@ Core:
   Version: '1'
 Description: Variables described in SDTM IG as Expected should be included in the
   dataset.
-Check: []
+Check:
+  all:
+    - name: variable_name
+      operator: not_contains_all
+      value: $expected_variables
 Outcome:
   Message: SDTM Expected variable not found
 Rule Type: Record Data
@@ -21,4 +25,12 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000334
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD, NONCLIN
 

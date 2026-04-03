@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Standard Units (--STRESU) should not be NULL, when Character Result/Finding
   in Std Units (--STRESC) is provided as a numeric result.
-Check: []
+Check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 Outcome:
   Message: Missing value for --STRESU, when --STRESC is provided
 Rule Type: Record Data
@@ -25,4 +28,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

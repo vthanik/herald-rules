@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Within a study, all TRTPN values must be the same for each unique value
   of TRTP when the primary variable TRTP is populated. Considering only those rows
   on which both variables are populated.
@@ -15,7 +15,10 @@ scope:
     - ADNCA
     - MDBDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for TRTPN
   severity: Error

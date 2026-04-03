@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: All values of a Parameter Short Name (--PARMCD) variables should be the
   same for a given value of a Parameter (--PARM) variables.
-Check: []
+Check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 Outcome:
   Message: Inconsistent value for --PARMCD within --PARM
 Rule Type: Record Data
@@ -25,4 +28,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

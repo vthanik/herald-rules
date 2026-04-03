@@ -5,7 +5,15 @@ Core:
 Description: All values of Planned Time Point Number (--TPTNUM) variable should be
   the same for a given value of Planned Time Point Name (--TPT) variable, Time Point
   Reference (--TPTREF) variable, and Visit Number (VISITNUM) variable.
-Check: []
+Check:
+  all:
+    - name: VISITNUM
+      operator: not_exists
+    - name: --TPTREF
+      operator: not_exists
+    - name: --TPT
+      operator: is_not_unique_relationship
+      value: --TPTNUM
 Outcome:
   Message: Inconsistent value for --TPTNUM within --TPT, --TPTREF, VISITNUM
 Rule Type: Record Data
@@ -22,4 +30,12 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000141
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH
 

@@ -5,7 +5,16 @@ Core:
 Description: When the study type is interventional (TSPARMCD = 'STYPE' and TSVAL =
   'INTERVENTIONAL'), the Pharmacologic Class parameter should be provided with Parameter
   Value populated (TSVAL should not be null when TSPARMCD = 'PCLAS').
-Check: []
+Check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: PCLAS
+    - name: $STYPE_INTERVENTIONAL
+      operator: greater_than_or_equal_to
+      value: 1
+    - name: TSVAL
+      operator: empty
 Outcome:
   Message: TSVAL is missing for the PCLAS Trial Summary Parameter, when STYPE parameter
     equals 'INTERVENTIONAL'
@@ -22,4 +31,11 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000497
+Executability: Partially Executable - Possible Overreporting
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
 

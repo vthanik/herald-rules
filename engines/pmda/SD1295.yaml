@@ -4,12 +4,26 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: TSVAL for ADDON record must be 'Y' or 'N'.
 scope:
-  classes: []
-  domains: TS
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
+check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: ADDON
+      value_is_literal: yes
+    - name: TSVAL
+      operator: non_empty
+    - name: TSVAL
+      operator: is_not_contained_by
+      value:
+        - 'N'
+        - 'Y'
 outcome:
   message: Invalid TSVAL value for ADDON parameter
   severity: Error
@@ -19,4 +33,5 @@ provenance:
   rule_id: SD1295
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000372
 

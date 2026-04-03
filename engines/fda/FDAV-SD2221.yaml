@@ -4,7 +4,38 @@ Core:
   Version: '1'
 Description: '''Registry Identifier'' (REGID) record may be populated in Trial Summary
   (TS) domain. It is expected for SDTM IG v3.1.2 data and all more recent SDTM versions.'
-Check: []
+Check:
+  all:
+    - name: TSPARMCD
+      operator: not_contains_all
+      value:
+        - ADDON
+        - AGEMAX
+        - AGEMIN
+        - LENGTH
+        - PLANSUB
+        - RANDOM
+        - SEXPOP
+        - STOPRULE
+        - TBLIND
+        - TCNTRL
+        - TITLE
+        - TPHASE
+        - TTYPE
+        - OBJPRIM
+        - SPONSOR
+        - REGID
+        - OUTMSPRI
+        - FCNTRY
+        - ADAPT
+        - DCUTDTC
+        - DCUTDESC
+        - NARMS
+        - STYPE
+        - SSTDTC
+        - SENDTC
+        - ACTSUB
+        - HLTSUBJI
 Outcome:
   Message: Missing REGID Trial Summary Parameter
 Rule Type: Record Data
@@ -20,4 +51,11 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000740
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
 

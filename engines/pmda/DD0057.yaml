@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: For regulatory submission data, Description field is required for each
   Dataset, Method, and Comment and must be included in Define.xml and cannot be empty.
   Define-XML specification represents Description as Description/TranslatedText element
@@ -12,7 +12,10 @@ description: For regulatory submission data, Description field is required for e
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Missing Description value
   severity: Error

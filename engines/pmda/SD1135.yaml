@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Study Day variables (*DY) value should not be negative in Exposure (EX)
   and Exposure As Collected (EC) datasets.
 scope:
@@ -12,7 +12,10 @@ scope:
   domains:
     - EC
     - EX
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Negative value of Study Day variable
   severity: Warning

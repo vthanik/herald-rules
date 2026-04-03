@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Within a parameter, there should be only a single value of Percent Change
   to Baseline Category y (N) (PBCHGCyN) variable for a given value of Percent Change
   to Baseline Category y (PBCHGCAy) variable, considering only those rows on which
@@ -16,7 +16,10 @@ scope:
     - ADNCA
     - MDBDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for PBCHGCyN within a unique PARAMCD
   severity: Error

@@ -4,13 +4,16 @@ status: Reference
 standard: Define-XML
 category: ODM/Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Attribute is defined as a datetime, but value does not match the datetime
   format. Allowed string pattern for a datetime is 'YYYY-MM-DD T hh:mm:ss(.n+)? ((+|-)hh:mm)?'.
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __date_variable__
+      operator: is_valid_iso8601
 outcome:
   message: Invalid datetime value for <attribute>
   severity: Error

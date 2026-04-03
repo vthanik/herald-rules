@@ -4,13 +4,21 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Treatment Vehicle (--TRTV) should be provided when Treatment Vehicle
   Amount (--VAMT) is specified.
 scope:
-  classes: []
-  domains: INTERVENTIONS
-check: []
+  Classes:
+    Include: INTERVENTIONS
+  Domains:
+    Include: ALL
+  Use_Case: INDH
+check:
+  all:
+    - name: --VAMT
+      operator: non_empty
+    - name: --TRTV
+      operator: empty
 outcome:
   message: Missing value for --TRTV when --VAMT is not null
   severity: Warning
@@ -20,4 +28,5 @@ provenance:
   rule_id: SD0043
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000100
 

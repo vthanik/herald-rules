@@ -4,14 +4,22 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Subject Reference End Date/Time (RFENDTC) should be null for screen failures
   or unassigned subjects. Therefore, when the Reason Arm and/or Actual Arm is Null
   (ARMNRS) variable is populated, RFENDTC should be null.
 scope:
-  classes: []
-  domains: DM
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+  Use_Case: INDH
+check:
+  all:
+    - name: ARMNRS
+      operator: non_empty
+    - name: RFENDTC
+      operator: non_empty
 outcome:
   message: RFENDTC is populated when ARMNRS is not null
   severity: Warning
@@ -21,4 +29,5 @@ provenance:
   rule_id: SD1366
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000192
 

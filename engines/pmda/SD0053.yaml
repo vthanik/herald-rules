@@ -4,15 +4,24 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Description of Arm (ARM) must equal 'Not Assigned' when Arm Code (ARMCD)
   is 'NOTASSGN', and vice versa.
 scope:
-  classes: []
-  domains:
-    - DM
-    - TA
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+check:
+  all:
+    - name: ARMCD
+      operator: is_contained_by
+      value:
+        - SCRNFAIL
+        - NOTASSGN
+    - name: ARMCD
+      operator: not_equal_to
+      value: ACTARMCD
 outcome:
   message: ARM is not 'Not Assigned' when ARMCD equals 'NOTASSGN', or vice versa
   severity: Error
@@ -22,4 +31,5 @@ provenance:
   rule_id: SD0053
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000377
 

@@ -4,14 +4,24 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Subject Status Date/Time of Assessment (SSDTC) must be greater than or
   equal to Start Date/Time of Disposition Event (DSSTDTC) when the subject's status
   is 'DEAD'.
 scope:
-  classes: []
-  domains: SS
-check: []
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: SS
+check:
+  all:
+    - name: SSSTRESC
+      operator: equal_to
+      value: DEAD
+      value_is_literal: yes
+    - name: SSDTC
+      operator: date_less_than
+      value: $max_ds_dsstdtc
 outcome:
   message: SSDTC is not greater than or equal to DSSTDTC when SSSTRESC = 'DEAD'
   severity: Warning
@@ -21,4 +31,5 @@ provenance:
   rule_id: SD1262
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000178
 

@@ -4,7 +4,15 @@ Core:
   Version: '1'
 Description: Planned Time Point Name (--TPT) value must be consistent for all records
   with same Subject (USUBJID) and Assessment Date/Time (--DTC).
-Check: []
+Check:
+  all:
+    - name: VISITNUM
+      operator: not_exists
+    - name: --TPTREF
+      operator: not_exists
+    - name: --TPT
+      operator: is_not_unique_relationship
+      value: --TPTNUM
 Outcome:
   Message: Inconsistent value for --TPT
 Rule Type: Record Data
@@ -21,4 +29,12 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000141
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH
 

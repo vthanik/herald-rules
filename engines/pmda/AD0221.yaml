@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Within a study, all Category y (*CATy) variable values must be the same
   for each unique value of the variable it categorizes within a PARAMCD. [AVAL:AVALCATy],
   [AVALC:AVALCATy], [BASE:BASECATy], [BASEC:BASECATy], [CHG:CHGCATy], [PCHG:PCHGCATy],
@@ -15,7 +15,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for *CATy
   severity: Error

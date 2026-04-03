@@ -4,12 +4,15 @@ status: Reference
 standard: Define-XML
 category: ODM/Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Define.xml must use UTF-8, UTF-16, or ISO-8859-1 encoding.
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid XML encoding
   severity: Error

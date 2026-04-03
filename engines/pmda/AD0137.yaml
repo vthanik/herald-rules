@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: When CRITyFL (Analysis Criterion Flag) is populated, it's corresponding
   parent Analysis Criterion y must be populated.
 scope:
@@ -14,7 +14,10 @@ scope:
     - ADNCA
     - MDBDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: CRITyFL is populated, but CRITy is not populated
   severity: Error

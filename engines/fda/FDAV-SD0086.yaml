@@ -7,7 +7,27 @@ Description: All SUPPQUAL Domains records are associated with a single parent re
   Identifier (USUBJID), Identifying Variable (IDVAR), Identifying Variable Value (IDVARVAL)
   and Qualifier Variable Name (QNAM) variable value. For all SUPPQUAL domain record
   all The QNAM variable should be unique for each parent record.
-Check: []
+Check:
+  any:
+    - all:
+        - name: RDOMAIN
+          operator: equal_to
+          value: DM
+          value_is_literal: yes
+        - name: USUBJID
+          operator: is_not_unique_set
+          value: QNAM
+    - all:
+        - name: RDOMAIN
+          operator: not_equal_to
+          value: DM
+          value_is_literal: yes
+        - name: USUBJID
+          operator: is_not_unique_set
+          value:
+            - IDVAR
+            - IDVARVAL
+            - QNAM
 Outcome:
   Message: SUPPQUAL duplicate records
 Rule Type: Record Data
@@ -28,4 +48,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000203
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: SUPP--
+  Use_Case: INDH, PROD
 

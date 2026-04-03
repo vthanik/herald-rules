@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: For Define-XML v2.0, when def:Origin/@Type is 'CRF', then def:DocumentRef
   must match the def:DocumentRef in def:AnnotatedCRF element. For Define-XML v2.1,
   when def:Origin/@Type is 'Collected' and def:Origin/@Source is 'Investigator' or
@@ -13,7 +13,10 @@ description: For Define-XML v2.0, when def:Origin/@Type is 'CRF', then def:Docum
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: CRF Origin is not referencing AnnotatedCRF
   severity: Error

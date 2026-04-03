@@ -4,13 +4,22 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Subject Death Flag (DTHFL) value must equal 'Y' when Date/Time of Death
   (DTHDTC) is provided.
 scope:
-  classes: []
-  domains: DM
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+  Use_Case: INDH
+check:
+  all:
+    - name: DTHDTC
+      operator: non_empty
+    - name: DTHFL
+      operator: not_equal_to
+      value: 'Y'
 outcome:
   message: Missing value for DTHFL when DTHDTC is populated
   severity: Error
@@ -20,4 +29,5 @@ provenance:
   rule_id: SD2004
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000007
 

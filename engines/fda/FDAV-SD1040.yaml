@@ -5,7 +5,11 @@ Core:
 Description: Value of Subcategory (--SCAT) should not be  identical to that in Domain
   Abbreviation (DOMAIN); Reported Term (--TERM); Name of Measurement, Test, or Examination
   (--TESTCD); Name of Treatment (--TRT); Body System or Organ Class (--BODSYS).
-Check: []
+Check:
+  all:
+    - name: --SCAT
+      operator: equal_to_case_insensitive
+      value: --DECOD
 Outcome:
   Message: --SCAT value is redundant with other variable values
 Rule Type: Record Data
@@ -26,4 +30,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000195
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: ALL
+  Use_Case: INDH
 

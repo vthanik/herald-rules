@@ -4,13 +4,23 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: DTHFL must equal 'Y' when there is a record in the Death Details (DD)
   domain.
 scope:
-  classes: []
-  domains: DD
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+  Use_Case: INDH
+check:
+  all:
+    - name: DTHFL
+      operator: not_equal_to
+      value: 'Y'
+    - name: USUBJID
+      operator: is_contained_by
+      value: $usubjids_in_dd
 outcome:
   message: DTHFL does not equal 'Y' when DD record is present
   severity: Error
@@ -20,4 +30,5 @@ provenance:
   rule_id: SD1253
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000108
 

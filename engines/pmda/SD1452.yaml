@@ -4,13 +4,16 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Non-missing Treatment Vehicle Amount (--VAMT) value must be greater than
   or equal to 0.
 scope:
   classes: []
   domains: INTERVENTIONS
-check: []
+check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 outcome:
   message: Negative value for --VAMT
   severity: Error

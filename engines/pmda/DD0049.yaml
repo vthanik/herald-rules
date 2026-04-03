@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: 'For SDTM and SEND submission data and for datasets that are not SUPPQUAL
   and not split (where def:StandardName is ''SDTM-IG'' or ''SEND-IG'' and only one
   ItemGroupDef exists for the Domain), Name, Domain, and SASDatasetName attributes
@@ -13,7 +13,10 @@ description: 'For SDTM and SEND submission data and for datasets that are not SU
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Name/Domain/SASDatasetName mismatch
   severity: Error

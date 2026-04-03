@@ -4,7 +4,16 @@ Core:
   Version: '1'
 Description: Reference Result in Standard Format (--STREFC) should be populated when
   Reference Result in Original Units (--ORREF) is populated.
-Check: []
+Check:
+  all:
+    - any:
+        - name: --ORREF
+          operator: non_empty
+        - name: --DRVFL
+          operator: equal_to
+          value: 'Y'
+    - name: --STREFC
+      operator: empty
 Outcome:
   Message: --STREFC is null when --ORREF is populated
 Rule Type: Record Data
@@ -15,6 +24,13 @@ Source: FDA Validator Rules v1.6
 Domains: FINDINGS, FINDINGS ABOUT
 Standard: SDTM
 Publisher ID: CG0549
-IG Versions:
-  - SDTMIG 3.3
+IG Versions: SDTMIG 3.3
+CORE Reference: CORE-000110
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

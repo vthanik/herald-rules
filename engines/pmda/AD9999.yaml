@@ -4,13 +4,16 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Validation is defined only for ADSL, BDS, and OCCDS datasets. Other dataset
   structures are not currently supported.
 scope:
   classes: []
   domains: UNRECOGNIZED
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Dataset not validated
   severity: Warning

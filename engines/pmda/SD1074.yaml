@@ -4,13 +4,18 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Variables designed only for SEND pre-clinical studies must be not included
   in the SDTM dataset.
 scope:
-  classes: []
-  domains: []
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+check:
+  all:
+    - name: --DTHREL
+      operator: exists
 outcome:
   message: Variable which can be used only in SEND
   severity: Error
@@ -20,4 +25,5 @@ provenance:
   rule_id: SD1074
   pmda_category: Reject
   ig_versions: []
+  core_reference: CORE-000226
 

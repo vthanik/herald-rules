@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: All subjects included into ADaM datasets should be present in ADSL dataset
   and use the same Unique Subject Identifier (USUBJID).
 scope:
@@ -17,7 +17,10 @@ scope:
     - ADAE
     - MDOCCDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: USUBJID value does not exist in the ADaM ADSL domain
   severity: Error

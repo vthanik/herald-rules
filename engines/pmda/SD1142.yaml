@@ -4,13 +4,16 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Applicant should consult the PMDA beforehand if the dataset exceeds the
   file size specified by PMDA.
 scope:
   classes: []
   domains: []
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: in_range
 outcome:
   message: Dataset is greater than 5 GB in size
   severity: Warning

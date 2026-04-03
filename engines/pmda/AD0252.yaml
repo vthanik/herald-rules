@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Variables described in ADaM IG as inappropriate for usage must be not
   included in the dataset. i.e., for ADAE, there is no need for AVAL, AVALC and Parameter
   variables.
@@ -19,7 +19,10 @@ scope:
     - OCCDS
     - ADAE
     - MDOCCDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Variable present in dataset is prohibited for use in ADaM
   severity: Error

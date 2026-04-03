@@ -4,12 +4,20 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: TSVAL variable value must be in ISO 8601 format when TSPARMCD='SENDTC'.
 scope:
-  classes: []
-  domains: TS
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
+check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: SENDTC
+    - name: TSVAL
+      operator: invalid_date
 outcome:
   message: Invalid TSVAL value for SENDTC
   severity: Error
@@ -19,4 +27,5 @@ provenance:
   rule_id: SD2248
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000506
 

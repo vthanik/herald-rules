@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Split datasets should have matching variable lengths for future mergers.
   Datasets should be resized to the maximum length used prior to splitting.
 scope:
@@ -14,7 +14,10 @@ scope:
     - FINDINGS
     - EVENTS
     - FINDINGSABOUT
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent variable length within split datasets
   severity: Warning

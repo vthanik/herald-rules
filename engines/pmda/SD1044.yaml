@@ -4,12 +4,15 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Baseline Flag (--BLFL) should be present in all custom Findings domains.
 scope:
   classes: []
   domains: FINDINGS
-check: []
+check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 outcome:
   message: No --BLFL variable in custom Findings domain
   severity: Warning

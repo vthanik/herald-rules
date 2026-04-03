@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Collection Study Date/Time (--DTC) variable should be included into dataset,
   when Collection Study Day (--DY) variable is present.
-Check: []
+Check:
+  all:
+    - name: __required_variable__
+      operator: exists
 Outcome:
   Message: Missing --DTC variable, when --DY variable is present
 Rule Type: Record Data
@@ -21,4 +24,5 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+Executability: Fully Executable
 

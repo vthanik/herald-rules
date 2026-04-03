@@ -4,7 +4,12 @@ Core:
   Version: '1'
 Description: Value for Category (--CAT) variable should be populated, when value for
   Subcategory (--SCAT) variable is populated.
-Check: []
+Check:
+  all:
+    - name: IESCAT
+      operator: non_empty
+    - name: IECAT
+      operator: empty
 Outcome:
   Message: Missing --CAT value, when --SCAT value is populated
 Rule Type: Record Data
@@ -25,4 +30,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000785
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TI
+  Use_Case: INDH
 

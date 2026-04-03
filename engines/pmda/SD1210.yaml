@@ -4,13 +4,16 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Date/Time of Informed Consent (RFICDTC) variable value should be populated.
   It would be null only in studies not collecting this info.
 scope:
   classes: []
   domains: DM
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Missing value for RFICDTC
   severity: Warning

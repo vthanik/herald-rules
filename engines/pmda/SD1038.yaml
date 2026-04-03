@@ -4,13 +4,23 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Sequence Number (TSSEQ) must have a unique value for a given value of
   Trial Summary Parameter Short Name (TSPARMCD) within the domain.
 scope:
-  classes: []
-  domains: TS
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
+  Use_Case: INDH, NONCLIN
+check:
+  all:
+    - name: TSPARMCD
+      operator: is_not_unique_set
+      value: DOMAIN
+    - name: TSSEQ
+      operator: is_not_unique_set
+      value: TSPARMCD
 outcome:
   message: Non-unique value for TSSEQ variable within TSPARMCD
   severity: Error
@@ -20,4 +30,5 @@ provenance:
   rule_id: SD1038
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000154
 

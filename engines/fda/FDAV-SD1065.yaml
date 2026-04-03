@@ -4,7 +4,12 @@ Core:
   Version: '1'
 Description: Value of Related Domain Abbreviation (RDOMAIN) variable must be populated,
   when value of Identifying Variable (IDVAR) variable is populated.
-Check: []
+Check:
+  all:
+    - name: IDVAR
+      operator: non_empty
+    - name: RDOMAIN
+      operator: empty
 Outcome:
   Message: Missing RDOMAIN value, when IDVAR is populated
 Rule Type: Record Data
@@ -25,4 +30,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000090
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: CO
+  Use_Case: INDH
 

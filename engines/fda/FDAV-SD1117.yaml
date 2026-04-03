@@ -6,7 +6,10 @@ Description: The structure of Findings class domains should be one record per Fi
   Result per subject. No Finding Result with the same Test Short Name (--TESTCD) and
   the same Qualifier variables at the same timepoint for the same Subject (USUBJID)
   are expected.
-Check: []
+Check:
+  all:
+    - name: __key_variables__
+      operator: is_unique
 Outcome:
   Message: Duplicate records
 Rule Type: Record Data
@@ -28,4 +31,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

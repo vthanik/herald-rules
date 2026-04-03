@@ -5,7 +5,56 @@ Core:
 Description: ECDOSE must be greater than zero when ECOCCUR does not equal 'N' , ECSTAT
   does not equal 'NOT DONE', and ECDOSTXT is null. ECDOSE must not be set to zero
   (0) as an alternative method for indicating doses not taken, not given, or missed.
-Check: []
+Check:
+  any:
+    - all:
+        - name: ECOCCUR
+          operator: not_equal_to
+          value: 'N'
+          value_is_literal: yes
+        - name: ECSTAT
+          operator: empty
+        - name: ECDOSTXT
+          operator: empty
+        - name: ECDOSE
+          operator: less_than_or_equal_to
+          value: 0
+    - all:
+        - name: ECOCCUR
+          operator: not_equal_to
+          value: 'N'
+          value_is_literal: yes
+        - name: ECSTAT
+          operator: not_exists
+        - name: ECDOSTXT
+          operator: empty
+        - name: ECDOSE
+          operator: less_than_or_equal_to
+          value: 0
+    - all:
+        - name: ECOCCUR
+          operator: not_equal_to
+          value: 'N'
+          value_is_literal: yes
+        - name: ECSTAT
+          operator: empty
+        - name: ECDOSTXT
+          operator: not_exists
+        - name: ECDOSE
+          operator: less_than_or_equal_to
+          value: 0
+    - all:
+        - name: ECOCCUR
+          operator: not_equal_to
+          value: 'N'
+          value_is_literal: yes
+        - name: ECSTAT
+          operator: not_exists
+        - name: ECDOSTXT
+          operator: not_exists
+        - name: ECDOSE
+          operator: less_than_or_equal_to
+          value: 0
 Outcome:
   Message: ECDOSE is not greater than 0 when ECOCCUR does not equal 'N' and ECDOSTXT
     is null
@@ -20,4 +69,12 @@ Publisher ID: CG0100
 IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000137
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: INTERVENTIONS
+  Domains:
+    Include: EC
+  Use_Case: INDH
 

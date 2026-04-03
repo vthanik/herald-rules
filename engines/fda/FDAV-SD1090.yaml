@@ -6,7 +6,15 @@ Description: 'Study Day of Start (--STDY) variable value should be populated as 
   by CDISC standards: --STDY = (date portion of --STDTC) - (date portion of RFSTDTC)
   +1 if --STDTC is on or after RFSTDTC; --STDY = (date portion of --STDTC) - (date
   portion of RFSTDTC) if --STDTC precedes RFSTDTC.'
-Check: []
+Check:
+  all:
+    - name: --STDTC
+      operator: is_complete_date
+    - name: RFSTDTC
+      operator: is_complete_date
+    - name: --STDY
+      operator: not_equal_to
+      value: $val_stdy
 Outcome:
   Message: Incorrect value for --STDY variable
 Rule Type: Record Data
@@ -27,4 +35,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000552
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude: DM
+  Use_Case: INDH
 

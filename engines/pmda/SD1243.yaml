@@ -4,16 +4,24 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: All values of Body System or Organ Class Code (--BDSYCD) should be the
   same for a given value of Body System or Organ Class (--BODSYS).
 scope:
-  classes: []
-  domains:
-    - AE
-    - CE
-    - MH
-check: []
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: ALL
+  Use_Case: INDH
+check:
+  all:
+    - name: --BDSYCD
+      operator: exists
+    - name: --BODSYS
+      operator: exists
+    - name: --BDSYCD
+      operator: is_not_unique_relationship
+      value: --BODSYS
 outcome:
   message: Inconsistent value for --BDSYCD within --BODSYS
   severity: Warning
@@ -23,4 +31,5 @@ provenance:
   rule_id: SD1243
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000184
 

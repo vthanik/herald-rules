@@ -4,13 +4,16 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If DOSPCTDF (Percent Diff. Nominal vs. Actual Dose) is populated, both
   DOSEP (Planned Treatment Dose) and DOSEA (Actual Treatment Dose) must be populated.
 scope:
   classes: []
   domains: ADNCA
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: DOSPCTDF is populated and DOSEP and DOSEA are not populated
   severity: Error

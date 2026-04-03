@@ -5,7 +5,13 @@ Core:
 Description: Description of Unplanned Element (SEUPDES) should be populated, when
   subject's experience for a particular period of time is represented as an unplanned
   Element, where Element Code (ETCD) is equal to 'UNPLAN'.
-Check: []
+Check:
+  all:
+    - name: SEUPDES
+      operator: non_empty
+    - name: ETCD
+      operator: not_equal_to
+      value: UNPLAN
 Outcome:
   Message: Missing value for SEUPDES, when ETCD='UNPLAN'
 Rule Type: Record Data
@@ -26,4 +32,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000095
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: SE
+  Use_Case: INDH
 

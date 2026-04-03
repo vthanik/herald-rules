@@ -4,7 +4,33 @@ Core:
   Version: '1'
 Description: Character Result/Finding in Original Units (--ORRES) value should be
   NULL, when Derived Flag (--DRVFL) value is 'Y'.
-Check: []
+Check:
+  any:
+    - all:
+        - name: --STAT
+          operator: empty
+        - name: --DRVFL
+          operator: not_equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: --ORRES
+          operator: empty
+    - all:
+        - name: --STAT
+          operator: empty
+        - name: --DRVFL
+          operator: not_exists
+        - name: --ORRES
+          operator: empty
+    - all:
+        - name: --STAT
+          operator: not_exists
+        - name: --DRVFL
+          operator: not_equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: --ORRES
+          operator: empty
 Outcome:
   Message: Non-missing value for --ORRES, when --DRVFL='Y'
 Rule Type: Record Data
@@ -21,4 +47,12 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000200
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

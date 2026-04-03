@@ -4,26 +4,20 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Laterality (--LAT) variable should not be present in the domain when
   the Location (--LOC) variable is missing.
 scope:
-  classes: []
-  domains:
-    - INTERVENTIONS
-    - FINDINGS(-DA
-    - -DU
-    - -IE
-    - -PC
-    - -PP
-    - -QS
-    - -SC)
-    - EVENTS(-BE
-    - -CE
-    - -DE
-    - -DS)
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+check:
+  all:
+    - name: --LOC
+      operator: not_exists
+    - name: --LAT
+      operator: exists
 outcome:
   message: --LAT variable is present when --LOC variable is missing
   severity: Warning
@@ -33,4 +27,5 @@ provenance:
   rule_id: SD1283
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000079
 

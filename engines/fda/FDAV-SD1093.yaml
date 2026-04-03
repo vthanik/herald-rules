@@ -6,7 +6,18 @@ Description: Study Day of End (--ENDY) variable value should not be imputed. It 
   be only populated, when both End Study Date/Time (--ENDTC) and Subject Reference
   Start Date/Time (RFSTDTC) variables values are provided, and both of them include
   complete date part.
-Check: []
+Check:
+  any:
+    - all:
+        - name: --ENDTC
+          operator: is_incomplete_date
+        - name: --ENDY
+          operator: non_empty
+    - all:
+        - name: RFSTDTC
+          operator: is_incomplete_date
+        - name: --ENDY
+          operator: non_empty
 Outcome:
   Message: --ENDY variable value is imputed
 Rule Type: Record Data
@@ -27,4 +38,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000139
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude: DM
+  Use_Case: INDH
 

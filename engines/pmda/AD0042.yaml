@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: 'The SAS format listed in the dataset must be valid. Here is a list of
   SAS Time formats utilized in the rule algorithm: B8601LZ, B8601TM, B8601TZ, E8601LZ,
   E8601TM, E8601TZ, HHMM, HOUR, MMSS, TIME, TIMEAMPM, IS8601TM, IS8601TZ, TOD.'
@@ -20,7 +20,10 @@ scope:
     - ADAE
     - MDOCCDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: '*TM does not have the ADaM required SAS time format'
   severity: Error

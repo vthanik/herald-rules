@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: TSVAL and TSVALCD values must be populated from the same concept description
   record in SNOMED CT.
-Check: []
+Check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 Outcome:
   Message: TSVAL/TSVALCD value mismatch for TDIGRP
 Rule Type: Record Data
@@ -19,4 +22,5 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+Executability: Fully Executable
 

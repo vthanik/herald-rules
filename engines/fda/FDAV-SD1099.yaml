@@ -4,7 +4,12 @@ Core:
   Version: '1'
 Description: Category (--CAT) variable should be included into dataset, when Subcategory
   (--SCAT) variable is present.
-Check: []
+Check:
+  all:
+    - name: IESCAT
+      operator: exists
+    - name: IECAT
+      operator: not_exists
 Outcome:
   Message: Missing --CAT variable, when --SCAT variable is present
 Rule Type: Record Data
@@ -25,4 +30,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000786
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TI
+  Use_Case: INDH
 

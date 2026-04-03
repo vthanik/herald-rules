@@ -4,16 +4,25 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Reference Result in Standard Format (--STREFC) should be populated when
   Reference Result in Original Units (--ORREF) is populated.
 scope:
-  classes: []
-  domains:
-    - FINDINGS(-MK
-    - -OE)
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
+check:
+  all:
+    - any:
+        - name: --ORREF
+          operator: non_empty
+        - name: --DRVFL
+          operator: equal_to
+          value: 'Y'
+    - name: --STREFC
+      operator: empty
 outcome:
   message: --STREFC is null when --ORREF is populated
   severity: Error
@@ -23,4 +32,5 @@ provenance:
   rule_id: SD1369
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000110
 

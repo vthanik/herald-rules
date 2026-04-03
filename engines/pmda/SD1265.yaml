@@ -4,14 +4,23 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: For subjective data (when QORIG='ASSIGNED'), QEVAL should be populated,
   and the value should reflect the role of the person or institution assigning the
   value.
 scope:
-  classes: []
-  domains: SUPPQUAL
-check: []
+  Classes:
+    Include: RELATIONSHIP
+  Domains:
+    Include: SUPP--
+check:
+  all:
+    - name: QORIG
+      operator: equal_to_case_insensitive
+      value: ASSIGNED
+      value_is_literal: yes
+    - name: QEVAL
+      operator: empty
 outcome:
   message: QEVAL is null when QORIG equals 'ASSIGNED'
   severity: Warning
@@ -21,4 +30,5 @@ provenance:
   rule_id: SD1265
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000375
 

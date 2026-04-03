@@ -4,7 +4,15 @@ Core:
   Version: '1'
 Description: Identifying Variable (IDVAR) must have a valid value of variables from
   a referenced Domain.
-Check: []
+Check:
+  all:
+    - name: RDOMAIN
+      operator: exists
+    - name: IDVAR
+      operator: non_empty
+    - name: IDVAR
+      operator: is_not_contained_by
+      value: $rdomain_variables
 Outcome:
   Message: Invalid IDVAR
 Rule Type: Record Data
@@ -25,4 +33,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000953
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: CO
+  Use_Case: INDH, PROD
 

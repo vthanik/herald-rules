@@ -4,13 +4,25 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: TSVAL value must be either ISO 8601 format for time period (e.g., P80Y)
   or null when TSPARMCD='AGEMAX'.
 scope:
-  classes: []
-  domains: TS
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
+  Use_Case: INDH
+check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: AGEMAX
+    - name: TSVAL
+      operator: non_empty
+    - name: TSVAL
+      negative: no
+      operator: invalid_duration
 outcome:
   message: Invalid TSVAL value for AGEMAX
   severity: Error
@@ -20,4 +32,5 @@ provenance:
   rule_id: SD1215
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000294
 

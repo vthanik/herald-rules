@@ -4,21 +4,29 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Study Day of Start (--STDY) variable value should not be imputed. It
   may be only populated when both Start Study Date/Time (--STDTC) and Subject Reference
   Start Date/Time (RFSTDTC) variables values are provided, and both include complete
   date part.
 scope:
-  classes: []
-  domains:
-    - SPECIALPURPOSE(-CO
-    - -DM)
-    - INTERVENTIONS
-    - FINDINGS
-    - EVENTS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH
+check:
+  any:
+    - all:
+        - name: --STDTC
+          operator: is_incomplete_date
+        - name: --STDY
+          operator: non_empty
+    - all:
+        - name: RFSTDTC
+          operator: is_incomplete_date
+        - name: --STDY
+          operator: non_empty
 outcome:
   message: --STDY variable value is imputed
   severity: Warning
@@ -28,4 +36,5 @@ provenance:
   rule_id: SD1089
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000138
 

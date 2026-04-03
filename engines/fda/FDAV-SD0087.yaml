@@ -5,7 +5,10 @@ Core:
 Description: Subject Reference Start Date/Time (RFSTDTC) should be populated for all
   randomized subjects, those where Planned Arm Code (ARMCD) is not equal to 'SCRNFAIL'
   or 'NOTASSGN' or null.
-Check: []
+Check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 Outcome:
   Message: RFSTDTC is not provided for a randomized subject
 Rule Type: Record Data
@@ -26,4 +29,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Partially Executable
 

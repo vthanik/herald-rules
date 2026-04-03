@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: --RFTDTC is defined as the Date/time for a fixed reference time point
   defined by --TPTREF, therefore --RFTDTC should only be populated when --TPTREF is
   populated.
@@ -18,7 +18,10 @@ scope:
     - FINDINGS(-DO)
     - EVENTS
     - FINDINGSABOUT
-check: []
+check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 outcome:
   message: --RFTDTC is populated when --TPTREF is not populated
   severity: Error

@@ -4,21 +4,25 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: All Unique Subject Identifier (USUBJID) + Visit Name (VISIT) + Visit
   Number (VISITNUM) combination values in data should be present in the Subject Visits
   (SV) domain. There is an exception for records, where Status (--STAT) variable value
   is populated. E.g., --STAT = 'NOT DONE'. Another exception is for records, where
   Occurrence (ECOCCUR) is 'N' in EC domain.
 scope:
-  classes: []
-  domains:
-    - SPECIALPURPOSE(-SV)
-    - INTERVENTIONS
-    - FINDINGS
-    - EVENTS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude: SV
+  Use_Case: INDH
+check:
+  all:
+    - name: VISITNUM
+      operator: non_empty
+    - name: VISITNUM
+      operator: is_not_contained_by
+      value: $sv_visitnum
 outcome:
   message: USUBJID/VISIT/VISITNUM values do not match SV domain data
   severity: Warning
@@ -28,4 +32,5 @@ provenance:
   rule_id: SD0065
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000168
 

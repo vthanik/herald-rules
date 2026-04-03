@@ -4,13 +4,16 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Age Range (AGETXT) variable values should be populated with 'number-number'
   format.
 scope:
   classes: []
   domains: DM
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid value for AGETXT
   severity: Warning

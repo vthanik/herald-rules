@@ -4,15 +4,24 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Description of Arm (ARM) must equal 'Screen Failure' when Arm Code (ARMCD)
   is 'SCRNFAIL', and vice versa.
 scope:
-  classes: []
-  domains:
-    - DM
-    - TA
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+check:
+  all:
+    - name: ACTARMCD
+      operator: is_contained_by
+      value:
+        - SCRNFAIL
+        - NOTASSGN
+    - name: ACTARMCD
+      operator: not_equal_to
+      value: ARMCD
 outcome:
   message: ARM is not 'Screen Failure' when ARMCD equals 'SCRNFAIL', or vice versa
   severity: Error
@@ -22,4 +31,5 @@ provenance:
   rule_id: SD0011
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000543
 

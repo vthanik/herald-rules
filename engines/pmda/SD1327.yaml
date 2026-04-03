@@ -4,15 +4,21 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The Related Subject or Pool Identifier (RSUBJID) value should not be
   equal to Pool Identifier (POOLID).
 scope:
-  classes: []
-  domains:
-    - RELSPEC
-    - RELSUB
-check: []
+  Classes:
+    Include: RELATIONSHIP
+  Domains:
+    Include: RELSUB
+check:
+  all:
+    - name: RSUBJID
+      operator: non_empty
+    - name: RSUBJID
+      operator: equal_to
+      value: POOLID
 outcome:
   message: RSUBJID is equal to POOLID
   severity: Error
@@ -22,4 +28,5 @@ provenance:
   rule_id: SD1327
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000232
 

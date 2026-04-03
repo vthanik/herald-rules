@@ -4,13 +4,16 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The value of DEVIPDT (Date Device Implanted) variable must be less or
   equal to DEVXPDT (Date Device Explanted)
 scope:
   classes: []
   domains: ADDL
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: in_range
 outcome:
   message: Value of DEVIPDT is greater than value of DEVXPDT
   severity: Error

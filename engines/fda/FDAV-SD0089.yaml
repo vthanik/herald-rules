@@ -4,7 +4,18 @@ Core:
   Version: '1'
 Description: At least one of Rule for End of Element (TEENRL) or Planned Duration
   of Element (TEDUR) should be populated.
-Check: []
+Check:
+  all:
+    - any:
+        - name: TEDUR
+          operator: empty
+        - name: TEDUR
+          operator: not_exists
+    - any:
+        - name: TEENRL
+          operator: empty
+        - name: TEENRL
+          operator: not_exists
 Outcome:
   Message: Missing values for TEENRL and TEDUR
 Rule Type: Record Data
@@ -25,4 +36,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000027
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TE
+  Use_Case: INDH, NONCLIN
 

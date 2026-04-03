@@ -5,7 +5,10 @@ Core:
 Description: '''Biological Agent Genus and Species'' (BAGENSPC) record is expected
   in the Challenge Agent Characterization (AC) domain when the Parameter Value (ACVAL)
   for the ''Challenge Agent Category'' (CAGTCAT) parameter is ''BIOLOGICAL''.'
-Check: []
+Check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 Outcome:
   Message: Missing BAGENSPC Challenge Agent Parameter when ACPARMCD = 'CAGTCAT' and
     ACVAL = 'BIOLOGICAL'
@@ -17,6 +20,6 @@ Source: FDA Validator Rules v1.6
 Domains: AC
 Standard: SDTM
 Publisher ID: ''
-IG Versions:
-  - SENDIG-AR 1.0
+IG Versions: SENDIG-AR 1.0
+Executability: Partially Executable
 

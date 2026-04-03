@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Variables value must not include non-ASCII or non-printable characters
   (outside of 32-126 ASCII code range), limited to variables which values may be converted
   into new variable name or label (--TEST, --TESTCD, --PARM, --PARMCD, QLABEL, QNAM).
@@ -17,7 +17,10 @@ scope:
     - TI
     - TS
     - STUDYREFERENCE
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Non-ASCII or non-printable characters in variable
   severity: Warning

@@ -4,13 +4,16 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: When SDTM Event or Intervention qualifier variable is used as FATESTCD,
   then FATEST should be the corresponding qualifier variable label.
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: FATESTCD/FATEST mismatch in Codelist <codelist>
   severity: Error

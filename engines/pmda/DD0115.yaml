@@ -4,14 +4,17 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Split and unsplit datasets cannot both be listed in Define.xml. For FDA
   submissions, Define.xml should only list unsplit datasets with split datasets placed
   in a separate sub-directory labeled 'split'.
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Split and unsplit datasets are both listed
   severity: Error

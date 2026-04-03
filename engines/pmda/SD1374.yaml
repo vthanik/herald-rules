@@ -4,14 +4,23 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: All Demographics (DM) subjects (USUBJID) should have at least one record
   in the Disposition (DS) domain with only possible exceptions to subjects who did
   not receive treatment (ACTARMCD is null).
 scope:
-  classes: []
-  domains: DM
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+  Use_Case: INDH
+check:
+  all:
+    - name: ACTARMCD
+      operator: non_empty
+    - name: USUBJID
+      operator: is_not_contained_by
+      value: $ds_usubjid
 outcome:
   message: No Disposition record found for subject
   severity: Warning
@@ -21,4 +30,5 @@ provenance:
   rule_id: SD1374
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000296
 

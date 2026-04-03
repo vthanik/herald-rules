@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: When analysis Phase (APHASE) variable is defined, the Phase Start Date
   (PHSDT) variable value must equal ADSL Phase w Start Date (PHwSDT) variable value
   for that phase defined by the value in Phase (N) (APHASEN) variable. APHASEN = w.
@@ -18,7 +18,10 @@ scope:
     - ADAE
     - MDOCCDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: APHASEN w has a PHSDT != ADSL.PHwSDT
   severity: Error

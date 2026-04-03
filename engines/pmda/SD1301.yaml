@@ -4,13 +4,22 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Offset from the Anchor (TDSTOFF) variable value must be either 0, ISO
   8601 format for duration (e.g., P80Y), or null.
 scope:
-  classes: []
-  domains: TD
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TD
+check:
+  all:
+    - name: TDSTOFF
+      operator: not_equal_to
+      value: 0
+    - name: TDSTOFF
+      operator: not_matches_regex
+      value: ^P(?=\d+[YMWD])(\d+Y)?(\d+M)?(\d+W)?(\d+D)?(T(?=\d+[HMS])(\d+H)?(\d+M)?(\d+S)?)?$
 outcome:
   message: Invalid value for TDSTOFF variable
   severity: Error
@@ -20,4 +29,5 @@ provenance:
   rule_id: SD1301
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000779
 

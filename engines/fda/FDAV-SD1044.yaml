@@ -3,7 +3,10 @@ Core:
   Status: Reference
   Version: '1'
 Description: Baseline Flag (--BLFL) should be present in all custom Findings domains.
-Check: []
+Check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 Outcome:
   Message: No --BLFL variable in custom Findings domain
 Rule Type: Record Data
@@ -18,4 +21,5 @@ IG Versions:
   - SDTMIG 3.1.2
   - SDTMIG 3.1.3
   - SDTMIG 3.2
+Executability: Fully Executable
 

@@ -4,14 +4,17 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Only Methods that are referenced from a Variable or Value Level metadata
   should be included in Define.xml. Define-XML specification represents Methods as
   MethodDef elements within MetaDataVersion element.
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Method <method> is not referenced
   severity: Error

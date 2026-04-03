@@ -4,18 +4,25 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable - Possible Underreporting
 description: All domains based on the general observation classes (Interventions,
   Events, Findings) should have at least one Timing variable present.
 scope:
-  classes: []
-  domains:
-    - INTERVENTIONS
-    - FINDINGS(-IE
-    - -SC)
-    - EVENTS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include:
+      - FINDINGS
+      - INTERVENTIONS
+      - EVENTS
+  Domains:
+    Exclude:
+      - IE
+      - SC
+  Use_Case: NONCLIN, INDH
+check:
+  all:
+    - name: $dataset_variables
+      operator: shares_no_elements_with
+      value: $timing_variables
 outcome:
   message: No timing variables are present in dataset
   severity: Warning
@@ -25,4 +32,5 @@ provenance:
   rule_id: SD1299
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000575
 

@@ -4,19 +4,23 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: All values of Visit Name (VISIT) should be the same for a given value
   of Visit Number (VISITNUM).
 scope:
-  classes: []
-  domains:
-    - SPECIALPURPOSE
-    - INTERVENTIONS
-    - FINDINGS
-    - EVENTS
-    - FINDINGSABOUT
-    - TV
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH
+check:
+  all:
+    - name: VISITNUM
+      operator: is_contained_by
+      value: $tv_visitnum
+    - name: VISIT
+      operator: is_not_unique_relationship
+      value: VISITNUM
 outcome:
   message: Inconsistent value for VISIT within VISITNUM
   severity: Warning
@@ -26,4 +30,5 @@ provenance:
   rule_id: SD0051
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000361
 

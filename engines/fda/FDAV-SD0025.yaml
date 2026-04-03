@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Date/Time of Specimen Collection (--DTC) must be less or equal to End
   Date/Time of Specimen Collection (--ENDTC).
-Check: []
+Check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 Outcome:
   Message: --DTC is after --ENDTC
 Rule Type: Record Data
@@ -25,4 +28,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

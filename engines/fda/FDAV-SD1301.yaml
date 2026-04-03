@@ -4,7 +4,14 @@ Core:
   Version: '1'
 Description: Offset from the Anchor (TDSTOFF) variable value must be either 0, ISO
   8601 format for duration (e.g. P80Y), or null.
-Check: []
+Check:
+  all:
+    - name: TDSTOFF
+      operator: not_equal_to
+      value: 0
+    - name: TDSTOFF
+      operator: not_matches_regex
+      value: ^P(?=\d+[YMWD])(\d+Y)?(\d+M)?(\d+W)?(\d+D)?(T(?=\d+[HMS])(\d+H)?(\d+M)?(\d+S)?)?$
 Outcome:
   Message: Invalid value for TDSTOFF variable
 Rule Type: Record Data
@@ -18,4 +25,11 @@ Publisher ID: CG0376
 IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000779
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TD
 

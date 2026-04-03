@@ -4,13 +4,16 @@ status: Reference
 standard: SDTM
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: TSVAL variable value must be in ISO 8601 format and include at least
   full date, when TSPARMCD='SSTDTC'.
 scope:
   classes: []
   domains: TS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Incomplete date for study start date
   severity: Error

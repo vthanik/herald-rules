@@ -4,13 +4,16 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Variable Label should follow limitations of SAS XPORT format v5. It should
   not exceed 40 characters.
 scope:
   classes: []
   domains: []
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: in_range
 outcome:
   message: Variable label length is greater than 40 characters
   severity: Error

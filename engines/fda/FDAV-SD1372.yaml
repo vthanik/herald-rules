@@ -4,7 +4,14 @@ Core:
   Version: '1'
 Description: Character Result/Finding in Std Format (--STRESC) should be populated
   when Last Observation Before Exposure Flag (--LOBXFL) is set to 'Y'.
-Check: []
+Check:
+  all:
+    - name: --LOBXFL
+      operator: equal_to
+      value: 'Y'
+      value_is_literal: yes
+    - name: --STRESC
+      operator: empty
 Outcome:
   Message: --STRESC is null when --LOBXFL = 'Y'
 Rule Type: Record Data
@@ -15,6 +22,13 @@ Source: FDA Validator Rules v1.6
 Domains: FINDINGS, FINDINGS ABOUT
 Standard: SDTM
 Publisher ID: CG0569
-IG Versions:
-  - SDTMIG 3.3
+IG Versions: SDTMIG 3.3
+CORE Reference: CORE-000105
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH
 

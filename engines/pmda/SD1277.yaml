@@ -4,13 +4,20 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Reported Term variables (--TERM) should not be populated with values
   of 'MULTIPLE'.
 scope:
-  classes: []
-  domains: EVENTS
-check: []
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: ALL
+  Use_Case: INDH
+check:
+  all:
+    - name: --TERM
+      operator: equal_to
+      value: MULTIPLE
 outcome:
   message: --TERM equals 'MULTIPLE'
   severity: Error
@@ -20,4 +27,5 @@ provenance:
   rule_id: SD1277
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000164
 

@@ -4,19 +4,25 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: All values of Planned Time Point Name (--TPT) variable should be the
   same for a given value of Planned Time Point Number (--TPTNUM) variable, Time Point
   Reference (--TPTREF) variable, and Visit Number (VISITNUM) variable.
 scope:
-  classes: []
-  domains:
-    - CO
-    - INTERVENTIONS
-    - FINDINGS(-DO)
-    - EVENTS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH
+check:
+  all:
+    - name: VISITNUM
+      operator: not_exists
+    - name: --TPTREF
+      operator: not_exists
+    - name: --TPT
+      operator: is_not_unique_relationship
+      value: --TPTNUM
 outcome:
   message: Inconsistent value for --TPT within --TPTNUM, --TPTREF, VISITNUM
   severity: Warning
@@ -26,4 +32,5 @@ provenance:
   rule_id: SD1126
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000141
 

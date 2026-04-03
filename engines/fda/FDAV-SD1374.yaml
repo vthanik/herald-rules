@@ -5,7 +5,13 @@ Core:
 Description: All Demographics (DM) subjects (USUBJID) should have at least one record
   in the Disposition (DS) domain with only possible exceptions to subjects who did
   not receive treatment (ACTARMCD is null).
-Check: []
+Check:
+  all:
+    - name: ACTARMCD
+      operator: non_empty
+    - name: USUBJID
+      operator: is_not_contained_by
+      value: $ds_usubjid
 Outcome:
   Message: No Disposition record found for subject
 Rule Type: Record Data
@@ -16,6 +22,13 @@ Source: FDA Validator Rules v1.6
 Domains: DM
 Standard: SDTM
 Publisher ID: CG0540
-IG Versions:
-  - SDTMIG 3.3
+IG Versions: SDTMIG 3.3
+CORE Reference: CORE-000296
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+  Use_Case: INDH
 

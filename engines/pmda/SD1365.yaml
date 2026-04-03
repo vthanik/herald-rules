@@ -4,14 +4,23 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: ADSL Population Flags, which had standard Supplemental Qualifiers included
   in previous versions of the SDTMIG (COMPLT, FASFL/FULLSET, ITT, PPROTFL/PPROT, SAFFL/SAFETY,
   etc.) should no longer be used in SDTM.
 scope:
-  classes: []
-  domains: SUPPQUAL
-check: []
+  Classes:
+    Include: RELATIONSHIP
+  Domains:
+    Include: SUPP--
+check:
+  all:
+    - name: RDOMAIN
+      operator: equal_to_case_insensitive
+      value: DM
+    - name: QNAM
+      operator: matches_regex
+      value: (ENRFL|SAFFL|EFFFL|ITTFL|PPROTFL|COMPLFL|COMPLT|FULLSET|ITT|PPROT|SAFETY)
 outcome:
   message: ADSL Population Flags provided in SDTM
   severity: Warning
@@ -21,4 +30,5 @@ provenance:
   rule_id: SD1365
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000211
 

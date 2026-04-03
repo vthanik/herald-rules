@@ -6,7 +6,10 @@ Description: Planned Start of Assessment Interval (--STINT) and Planned End of A
   Interval (--ENINT) variables should be present and populated when Name of Measurement,
   Test or Examination (--TEST) is over a time interval, 'T1 to T2', where 'T1' is
   represented by the value in --STINT and 'T2' is represented by the value in --ENINT.
-Check: []
+Check:
+  all:
+    - name: __required_variable__
+      operator: exists
 Outcome:
   Message: Missing values for --STINT and --ENINT variables when --TEST references
     'T1 to T2'
@@ -28,4 +31,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

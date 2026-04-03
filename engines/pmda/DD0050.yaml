@@ -4,14 +4,17 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: For split datasets (where more than one ItemGroupDef exists for the same
   Domain), the 2-letter prefix in SASDatasetName attribute and Domain attribute must
   have the same value.
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Domain/SASDatasetName mismatch for split dataset
   severity: Error

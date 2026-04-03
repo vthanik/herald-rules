@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: 'Within a study, all BASEC values must be the same for each unique value
   group of [PARAMCD, BASE] when PARAMCD, BASE and BASEC are populated. (ADaM IG: There
   must be a one-to-one map between BASE and BASEC within a given PARAM if BOTH are
@@ -14,7 +14,10 @@ scope:
   domains:
     - BDS
     - ADNCA
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for BASEC
   severity: Warning

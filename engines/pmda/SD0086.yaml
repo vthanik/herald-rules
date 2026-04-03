@@ -4,16 +4,39 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: All SUPPQUAL Domains records are associated with a single parent record
   and must have a unique combination of Study Identifier (STUDYID), Unique Subject
   Identifier (USUBJID), Identifying Variable (IDVAR), Identifying Variable Value (IDVARVAL)
   and Qualifier Variable Name (QNAM) variable value. For all SUPPQUAL domain record
   all The QNAM variable should be unique for each parent record.
 scope:
-  classes: []
-  domains: SUPPQUAL
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: SUPP--
+  Use_Case: INDH, PROD
+check:
+  any:
+    - all:
+        - name: RDOMAIN
+          operator: equal_to
+          value: DM
+          value_is_literal: yes
+        - name: USUBJID
+          operator: is_not_unique_set
+          value: QNAM
+    - all:
+        - name: RDOMAIN
+          operator: not_equal_to
+          value: DM
+          value_is_literal: yes
+        - name: USUBJID
+          operator: is_not_unique_set
+          value:
+            - IDVAR
+            - IDVARVAL
+            - QNAM
 outcome:
   message: SUPPQUAL duplicate records
   severity: Error
@@ -23,4 +46,5 @@ provenance:
   rule_id: SD0086
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000203
 

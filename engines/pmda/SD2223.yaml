@@ -4,16 +4,49 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: '''Pharmacological Class of Investigational Therapy'' (PCLAS) record
   must be populated in Trial Summary (TS) domain when study type is ''INTERVENTIONAL''
   and if Intervention Type (INTTYPE) is one for which pharmacological class is applicable.
   It is expected for SDTM IG v3.1.2 data and required for data in all more recent
   SDTM versions.'
 scope:
-  classes: []
-  domains: TS
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
+check:
+  all:
+    - name: TSPARMCD
+      operator: not_contains_all
+      value:
+        - ADDON
+        - AGEMAX
+        - AGEMIN
+        - LENGTH
+        - PLANSUB
+        - RANDOM
+        - SEXPOP
+        - STOPRULE
+        - TBLIND
+        - TCNTRL
+        - TITLE
+        - TPHASE
+        - TTYPE
+        - OBJPRIM
+        - SPONSOR
+        - REGID
+        - OUTMSPRI
+        - FCNTRY
+        - ADAPT
+        - DCUTDTC
+        - DCUTDESC
+        - NARMS
+        - STYPE
+        - SSTDTC
+        - SENDTC
+        - ACTSUB
+        - HLTSUBJI
 outcome:
   message: Missing PCLAS Trial Summary Parameter
   severity: Warning
@@ -23,4 +56,5 @@ provenance:
   rule_id: SD2223
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000740
 

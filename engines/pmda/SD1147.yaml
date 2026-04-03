@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Pre-specified (--PRESP) variable should be included into dataset when
   Occurrence (--OCCUR) variable is present. (--PRESP/Events) Used to indicate whether
   the event described by --TERM was pre-specified on a CRF. Value is Y for pre-specified
@@ -13,13 +13,23 @@ description: Pre-specified (--PRESP) variable should be included into dataset wh
   (--OCCUR) Used to record whether a pre-specified event occurred when information
   about the occurrence of a specific event is solicited.
 scope:
-  classes: []
-  domains:
-    - INTERVENTIONS(-EX)
-    - EVENTS(-AE
-    - -DS
-    - -DV)
-check: []
+  Classes:
+    Include:
+      - EVENTS
+      - INTERVENTIONS
+  Domains:
+    Exclude:
+      - AE
+      - DS
+      - DV
+      - EX
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: --PRESP
+      operator: not_exists
+    - name: --OCCUR
+      operator: exists
 outcome:
   message: Missing --PRESP variable when --OCCUR variable is present
   severity: Error
@@ -29,4 +39,5 @@ provenance:
   rule_id: SD1147
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000015
 

@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Within a study, all Planned Pooled Treatment y (TRTPGy) variable values
   must be the same for each unique value of Planned Pooled Treatment y (N) (TRTPGyN)
   variable when both variables are populated. Analogous rule for AD0240.
@@ -15,7 +15,10 @@ scope:
     - ADNCA
     - MDBDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for TRTPGy
   severity: Error

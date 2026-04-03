@@ -4,14 +4,17 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: When ParameterOID is included in a arm:AnalysisResult, then at least
   one of the children arm:AnalysisDataset elements must be a BDS and the ParamerterOID
   must reference a PARAMCD variable for that Dataset.
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Improper use of ParameterOID
   severity: Error

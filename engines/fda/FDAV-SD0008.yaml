@@ -5,7 +5,10 @@ Core:
 Description: Value for the Dictionary-Derived Term (--DECOD) variable must be populated
   using a Preferred Term of the MedDRA dictionary of a version specified in the define.xml
   (Case-insensitive).
-Check: []
+Check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 Outcome:
   Message: Value for --DECOD not found in MedDRA dictionary
 Rule Type: Record Data
@@ -22,4 +25,5 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+Executability: Fully Executable
 

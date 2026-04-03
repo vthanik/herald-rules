@@ -4,23 +4,20 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Only one of the Unique Subject Identifier (USUBJID) or Pool Identifier
   (POOLID) variables values may be populated, not both.
 scope:
-  classes: []
-  domains:
-    - SPECIALPURPOSE(-DM
-    - -SE
-    - -SM)
-    - INTERVENTIONS
-    - FINDINGS
-    - EVENTS
-    - FINDINGSABOUT
-    - RELATIONSHIP(-DR
-    - -POOLDEF
-    - -RELREC)
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: RELSUB
+check:
+  all:
+    - name: USUBJID
+      operator: non_empty
+    - name: POOLID
+      operator: non_empty
 outcome:
   message: Redundant values for USUBJID and POOLID
   severity: Error
@@ -30,4 +27,5 @@ provenance:
   rule_id: SD2024
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000229
 

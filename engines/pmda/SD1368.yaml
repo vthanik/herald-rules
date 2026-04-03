@@ -4,13 +4,18 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Start Date/Time of Milestone (SMSTDTC) should not be null. The start
   date/time of the Disease Milestone is the critical date/time and must be populated.
 scope:
-  classes: []
-  domains: SM
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: SM
+check:
+  all:
+    - name: SMSTDTC
+      operator: empty
 outcome:
   message: SMSTDTC is null
   severity: Error
@@ -20,4 +25,5 @@ provenance:
   rule_id: SD1368
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000109
 

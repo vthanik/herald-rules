@@ -8,7 +8,10 @@ Description: The structure of Events class domains should be one records per Eve
   Laterality (--LAT), Directionality (--DIR), Severity (--SEV), Toxicity Grade (--TOXGR),
   Visit Number (VISITNUM), Visit Day (VISITDY), and Start Reference Time Point (--STTPT)
   values for the same Subject (USUBJID) and the same Start Date (--STDTC) are expected.
-Check: []
+Check:
+  all:
+    - name: __key_variables__
+      operator: is_unique
 Outcome:
   Message: Duplicate records in domain
 Rule Type: Record Data
@@ -29,4 +32,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

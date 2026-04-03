@@ -4,14 +4,23 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: A Link Group (RSLNKGRP) value for a response assessment that is referenced
   in the Disease Response (RS) domain for a subject must also be present in the Tumor
   Results (TR) domain for the appropriate measurement records for that subject.
 scope:
-  classes: []
-  domains: RS
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: --LNKGRP
+      operator: exists
+    - name: $VARIABLE_COUNT
+      operator: less_than
+      value: 2
 outcome:
   message: RSLNKGRP value does not exist in TR domain
   severity: Error
@@ -21,4 +30,5 @@ provenance:
   rule_id: SD1338
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000358
 

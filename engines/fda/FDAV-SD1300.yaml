@@ -4,7 +4,11 @@ Core:
   Version: '1'
 Description: The value of DOMAIN should be no more than 2 characters in length, excluding
   Associated Persons domains.
-Check: []
+Check:
+  all:
+    - name: DOMAIN
+      operator: longer_than
+      value: 2
 Outcome:
   Message: Invalid value for DOMAIN variable
 Rule Type: Record Data
@@ -21,4 +25,12 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000180
+Executability: Fully Executable
+Scope:
+  Classes:
+    Exclude: RELATIONSHIP
+  Domains:
+    Exclude: AP--
+  Use_Case: INDH, PROD
 

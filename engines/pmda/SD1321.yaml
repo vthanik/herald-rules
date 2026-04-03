@@ -4,13 +4,16 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: A treatment-emergent flag should be included in SUPPAE according to the
   FDA business rule that states, 'A treatment-emergent flag should be submitted'.
 scope:
   classes: []
   domains: AE
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: No Treatment Emergent info for Adverse Event (missing SUPPAE)
   severity: Warning

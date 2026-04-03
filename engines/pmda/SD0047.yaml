@@ -4,16 +4,43 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Status (--STAT) should be set to 'NOT DONE' or Derived Flag (--DRVFL)
   should have a value of 'Y' when Result or Finding in Original Units (--ORRES) is
   null.
 scope:
-  classes: []
-  domains:
-    - FINDINGS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
+check:
+  any:
+    - all:
+        - name: --STAT
+          operator: empty
+        - name: --DRVFL
+          operator: not_equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: --ORRES
+          operator: empty
+    - all:
+        - name: --STAT
+          operator: empty
+        - name: --DRVFL
+          operator: not_exists
+        - name: --ORRES
+          operator: empty
+    - all:
+        - name: --STAT
+          operator: not_exists
+        - name: --DRVFL
+          operator: not_equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: --ORRES
+          operator: empty
 outcome:
   message: Missing value for --ORRES when --STAT or --DRVFL is not populated
   severity: Warning
@@ -23,4 +50,5 @@ provenance:
   rule_id: SD0047
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000200
 

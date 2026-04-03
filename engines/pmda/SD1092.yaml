@@ -4,20 +4,25 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Study Day of End (--ENDY) variable value should be populated when End
   Study Date/Time (--ENDTC) and Subject Reference Start Date/Time (RFSTDTC) variables
   values are provided, and both include complete date part.
 scope:
-  classes: []
-  domains:
-    - SPECIALPURPOSE(-CO
-    - -DM)
-    - INTERVENTIONS
-    - FINDINGS
-    - EVENTS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude: DM
+  Use_Case: INDH
+check:
+  all:
+    - name: --ENDTC
+      operator: is_complete_date
+    - name: RFSTDTC
+      operator: is_complete_date
+    - name: --ENDY
+      operator: not_equal_to
+      value: $val_endy
 outcome:
   message: --ENDY variable value is not populated
   severity: Warning
@@ -27,4 +32,5 @@ provenance:
   rule_id: SD1092
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000553
 

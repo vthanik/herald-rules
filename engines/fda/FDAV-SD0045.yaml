@@ -4,7 +4,12 @@ Core:
   Version: '1'
 Description: Character Result/Finding in Std Units (--STRESC) should be provided,
   when Result Category (--RESCAT) is specified.
-Check: []
+Check:
+  all:
+    - name: --RESCAT
+      operator: non_empty
+    - name: --STRESC
+      operator: empty
 Outcome:
   Message: Missing value for --STRESC, when --RESCAT is populated
 Rule Type: Record Data
@@ -25,4 +30,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000101
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

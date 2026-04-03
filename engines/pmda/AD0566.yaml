@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If Percent Change to Baseline Category y (N) (PBCHGCyN) variable is used
   in a dataset, Percent Change to Baseline Category y (PBCHGCAy) variable must also
   be present in that dataset.
@@ -15,7 +15,10 @@ scope:
     - ADNCA
     - MDBDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: PBCHGCyN is present and PBCHGCAy is not present
   severity: Error

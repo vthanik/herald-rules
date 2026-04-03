@@ -4,13 +4,20 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Value for Parameter Null Flavor (--VALNF) variable should be null when
   Parameter Value (--VAL) variable value can be populated.
 scope:
-  classes: []
-  domains: TS
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
+check:
+  all:
+    - name: TSVAL
+      operator: empty
+    - name: TSVALNF
+      operator: empty
 outcome:
   message: Both --VAL and --VALNF variables are populated
   severity: Error
@@ -20,4 +27,5 @@ provenance:
   rule_id: SD2018
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000149
 

@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: When Baseline (BASE) equals 0, the Percent Change from Baseline (PCHG)
   should not be populated since you cannot divide by 0. AD0225 checks the PCHG calculation
   is correct when BASE does not equal 0. AD0132B also complements this rule.
@@ -14,7 +14,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: 'Calculation issue: BASE = 0, but PCHG is populated'
   severity: Error

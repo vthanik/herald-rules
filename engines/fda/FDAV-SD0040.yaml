@@ -5,7 +5,10 @@ Core:
 Description: All values of Name of Measurement, Test or Examination (--TEST) should
   be the same for a given value of Short Name of Measurement, Test or Examination
   (--TESTCD).
-Check: []
+Check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 Outcome:
   Message: Inconsistent value for --TEST within --TESTCD
 Rule Type: Record Data
@@ -26,4 +29,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

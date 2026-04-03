@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Any variable ending in SDY (Start day) must have a value less than or
   equal to its corresponding EDY (end day) value.
 scope:
@@ -17,7 +17,10 @@ scope:
     - ADAE
     - MDOCCDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: in_range
 outcome:
   message: '*SDY is greater than *EDY'
   severity: Error

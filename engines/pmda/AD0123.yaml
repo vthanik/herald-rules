@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Within a study, all PARAMTYP values must be the same for each unique
   value of PARAMCD when PARAMCD is populated. If a PARAMCD is said to be derived,
   all instances must be derived. More than one parameter can be derived.
@@ -14,7 +14,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for PARAMTYP
   severity: Error

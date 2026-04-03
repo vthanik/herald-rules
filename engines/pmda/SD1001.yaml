@@ -4,13 +4,20 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The value of Subject Identifier for the Study (SUBJID) variable must
   be unique for each subject within the study.
 scope:
-  classes: []
-  domains: DM
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+  Use_Case: INDH
+check:
+  all:
+    - name: SUBJID
+      operator: is_not_unique_set
+      value: STUDYID
 outcome:
   message: SUBJID is not unique for each subject within study
   severity: Error
@@ -20,4 +27,5 @@ provenance:
   rule_id: SD1001
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000186
 

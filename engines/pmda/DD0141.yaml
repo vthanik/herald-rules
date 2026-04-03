@@ -4,14 +4,17 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: The value of the Status attribute must be one of the values from the
   CDISC/NCI standard Status codelist included in the Define-XML Controlled Terminology
   (C172332).
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid Status value
   severity: Error

@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: 'Analysis Baseline Flag character (ABLFL) must be Y or null. For parameter-level
   and record-level character population flag variables: Y = yes (included). Null values
   are allowed.'
@@ -14,7 +14,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: ABLFL value is not Y or null
   severity: Error

@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Datasets greater than 5 gigabytes (GB) in size should be split into smaller
   datasets no larger than 5 GB.
-Check: []
+Check:
+  all:
+    - name: __variable__
+      operator: in_range
 Outcome:
   Message: Dataset is greater than 5 GB in size
 Rule Type: Record Data
@@ -25,4 +28,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

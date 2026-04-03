@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Datasets included in study data must be described in the data definition
   document (define.xml).
-Check: []
+Check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 Outcome:
   Message: Dataset is not present in define.xml
 Rule Type: Record Data
@@ -25,4 +28,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Partially Executable
 

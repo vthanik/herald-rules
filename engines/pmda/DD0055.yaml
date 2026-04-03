@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: 'For Define-XML 2.0, the Class attribute must have a value of ''SPECIAL
   PURPOSE'', ''FINDINGS'', ''FINDINGS ABOUT'', ''EVENTS'', ''INTERVENTIONS'', ''TRIAL
   DESIGN'', or ''RELATIONSHIP'' for SDTM and SEND data and ''SUBJECT LEVEL ANALYSIS
@@ -16,7 +16,10 @@ description: 'For Define-XML 2.0, the Class attribute must have a value of ''SPE
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid Class value
   severity: Error

@@ -5,7 +5,10 @@ Core:
 Description: --RFTDTC is defined as the Date/time for a fixed reference time point
   defined by --TPTREF, therefore --RFTDTC should only be populated when --TPTREF is
   populated.
-Check: []
+Check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 Outcome:
   Message: --RFTDTC is populated when --TPTREF is not populated
 Rule Type: Record Data
@@ -22,4 +25,5 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+Executability: Fully Executable
 

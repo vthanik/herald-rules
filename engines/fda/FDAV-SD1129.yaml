@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: At least one of Age (AGE) or Age Text (AGETXT) variables should be included
   into Demographics (DM) domain.
-Check: []
+Check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 Outcome:
   Message: Neither AGE nor AGETXT variables are present
 Rule Type: Record Data
@@ -24,4 +27,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Partially Executable
 

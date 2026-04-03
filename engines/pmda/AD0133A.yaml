@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: R2AyLO = AVAL / AyLO. therefore if R2AyLO is present, both AVAL and AyLO
   must be present for calculation consistency.
 scope:
@@ -13,7 +13,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: 'Calculation issue: R2AyLO is present, but AVAL and/or AyLO is not present'
   severity: Error

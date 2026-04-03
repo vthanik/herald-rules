@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Original Units (--ORRESU) should not be null when Result or Finding in
   Original Units (--ORRES) is provided is a numeric result.
 scope:
@@ -15,7 +15,10 @@ scope:
     - -SC
     - -SS)
     - FINDINGSABOUT
-check: []
+check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 outcome:
   message: Missing value for --ORRESU when --ORRES is provided
   severity: Warning

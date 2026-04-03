@@ -4,13 +4,16 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Referenced File must exist. Define-XML specification represents File
   references as xlink:href attributes within def:leaf element.
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Referenced File is missing
   severity: Error

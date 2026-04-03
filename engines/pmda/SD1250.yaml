@@ -4,20 +4,21 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Planned Time Point Number (--TPTNUM) variable must be included into the
   domain when Planned Time Point Name (--TPT) variable is present.
 scope:
-  classes: []
-  domains:
-    - SPECIALPURPOSE(-DM
-    - -SE
-    - -SV)
-    - INTERVENTIONS
-    - FINDINGS(-DO)
-    - EVENTS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: --TPT
+      operator: exists
+    - name: --TPTNUM
+      operator: not_exists
 outcome:
   message: Missing --TPTNUM variable when --TPT variable is present
   severity: Error
@@ -27,4 +28,5 @@ provenance:
   rule_id: SD1250
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000026
 

@@ -4,12 +4,25 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: TSVAL variable value must be numeric when TSPARMCD='NARMS'.
 scope:
-  classes: []
-  domains: TS
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
+check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: NARMS
+    - any:
+        - name: TSVAL
+          operator: less_than_or_equal_to
+          value: 0
+        - name: TSVAL
+          operator: not_matches_regex
+          value: (-?[1-9]\d*|0)$
 outcome:
   message: Invalid TSVAL value for NARMS
   severity: Error
@@ -19,4 +32,5 @@ provenance:
   rule_id: SD2246
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000587
 

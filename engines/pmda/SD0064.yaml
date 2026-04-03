@@ -4,22 +4,21 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: All Subjects (USUBJID) must be present in Demographics (DM) domain.
 scope:
-  classes: []
-  domains:
-    - ALL(-DM
-    - -DI
-    - -OI
-    - -TA
-    - -TD
-    - -TE
-    - -TI
-    - -TM
-    - -TS
-    - -TV)
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude: AP--
+  Use_Case: NONCLIN, INDH
+check:
+  all:
+    - name: USUBJID
+      operator: non_empty
+    - name: USUBJID
+      operator: is_not_contained_by
+      value: $dm_usubjid
 outcome:
   message: Subject is not present in DM domain
   severity: Error
@@ -29,4 +28,5 @@ provenance:
   rule_id: SD0064
   pmda_category: Reject
   ig_versions: []
+  core_reference: CORE-000201
 

@@ -4,14 +4,17 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Only Value Level metadata that are referenced from a Variable should
   be included in Define.xml. Define-XML specification represents Value Level metadata
   as def:ValueListDef elements within MetaDataVersion element.
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Value Level metadata <value level> is not referenced
   severity: Error

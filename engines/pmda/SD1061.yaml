@@ -4,13 +4,20 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Microbiology Specimen (MB) dataset should be included when a Microbiology
   Susceptibility Test (MS) dataset is present.
 scope:
-  classes: []
-  domains: MB
-check: []
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: MS
+check:
+  all:
+    - name: MS
+      operator: exists
+    - name: MB
+      operator: not_exists
 outcome:
   message: Missing MB dataset when MS dataset is present
   severity: Warning
@@ -20,4 +27,5 @@ provenance:
   rule_id: SD1061
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000188
 

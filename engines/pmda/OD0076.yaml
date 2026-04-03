@@ -4,13 +4,16 @@ status: Reference
 standard: Define-XML
 category: ODM/Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: The Data Type attribute for Codelist must have a value of 'text, 'integer',
   or 'float'.
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid Data Type value for codelist
   severity: Error

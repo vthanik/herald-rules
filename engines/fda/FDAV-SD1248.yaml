@@ -5,7 +5,14 @@ Core:
 Description: ECDOSE must either be null when ECOCCUR equals 'N', or ECDOSE must be
   greater than 0. ECDOSE would be greater than 0 (when ECOCCUR equals N) for records
   that represent specific dose amounts that are not taken, not given, or missed.
-Check: []
+Check:
+  all:
+    - name: ECOCCUR
+      operator: equal_to
+      value: 'N'
+    - name: ECDOSE
+      operator: less_than_or_equal_to
+      value: 0
 Outcome:
   Message: ECDOSE is not null or greater than 0 when ECOCCUR = 'N'
 Rule Type: Record Data
@@ -19,4 +26,12 @@ Publisher ID: CG0101
 IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000004
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: INTERVENTIONS
+  Domains:
+    Include: EC
+  Use_Case: INDH
 

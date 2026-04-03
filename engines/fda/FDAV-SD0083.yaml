@@ -5,7 +5,11 @@ Core:
 Description: The value of Unique Subject Identifier (USUBJID) variable must be unique
   for each subject across all trials in the submission. In the Demographics (DM) domain,
   there should only be one record per subject.
-Check: []
+Check:
+  all:
+    - name: USUBJID
+      operator: is_not_unique_set
+      value: DOMAIN
 Outcome:
   Message: Duplicate USUBJID in DM within STUDYID
 Rule Type: Record Data
@@ -26,4 +30,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000351
+Executability: Partially Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+  Use_Case: NONCLIN, INDH
 

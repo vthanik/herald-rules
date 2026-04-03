@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Variables described in IG as not recommended for usage should be not
   included in the dataset.
-Check: []
+Check:
+  all:
+    - name: --STDTC
+      operator: exists
 Outcome:
   Message: Variable not recommended for use
 Rule Type: Record Data
@@ -22,4 +25,12 @@ IG Versions:
   - SDTMIG 3.3
   - SENDIG 3.0
   - SENDIG-AR 1.0
+CORE Reference: CORE-000207
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD, NONCLIN
 

@@ -4,18 +4,21 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Time Point Reference (--TPTREF) should not be null when Planned Elapsed
   Time from Time Point Ref (--ELTM) is populated.
 scope:
-  classes: []
-  domains:
-    - CO
-    - INTERVENTIONS
-    - FINDINGS
-    - EVENTS(-DS)
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: --TPTREF
+      operator: empty
+    - name: --ELTM
+      operator: non_empty
 outcome:
   message: Missing value for --TPTREF when --ELTM is provided
   severity: Warning
@@ -25,4 +28,5 @@ provenance:
   rule_id: SD0034
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000028
 

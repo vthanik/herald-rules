@@ -4,7 +4,15 @@ Core:
   Version: '1'
 Description: All values of Body System or Organ Class (--BODSYS) should be the same
   for a given value of Body System or Organ Class Code (--BDSYCD).
-Check: []
+Check:
+  all:
+    - name: --BDSYCD
+      operator: exists
+    - name: --BODSYS
+      operator: exists
+    - name: --BDSYCD
+      operator: is_not_unique_relationship
+      value: --BODSYS
 Outcome:
   Message: Inconsistent value for --BODSYS within --BDSYCD
 Rule Type: Record Data
@@ -21,4 +29,12 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000184
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: ALL
+  Use_Case: INDH
 

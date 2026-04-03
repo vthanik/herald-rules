@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: One End Time-Point variable is expected to be populated when an event
   or an intervention occurred. (E.g., End Date/Time of Event or Intervention (--ENDTC),
   or End Relative to Reference Period (--ENRF), or End Relative to Reference Period
@@ -20,7 +20,10 @@ scope:
     - -DS
     - -DT
     - -DV)
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Missing End Time-Point value
   severity: Warning

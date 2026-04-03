@@ -4,13 +4,25 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: I/E Criterion Original Result (IEORRES) must equal 'N' when Inclusion/Exclusion
   Category (IECAT) is 'INCLUSION'.
 scope:
-  classes: []
-  domains: IE
-check: []
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: IE
+  Use_Case: INDH
+check:
+  all:
+    - name: IECAT
+      operator: equal_to
+      value: INCLUSION
+      value_is_literal: yes
+    - name: IEORRES
+      operator: not_equal_to
+      value: 'N'
+      value_is_literal: yes
 outcome:
   message: IESTRESC is not 'N' when IECAT ='INCLUSION'
   severity: Error
@@ -20,4 +32,5 @@ provenance:
   rule_id: SD1046
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000001
 

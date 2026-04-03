@@ -4,13 +4,16 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Variable value must be populated when value level attribute Mandatory='Yes'
   as specified in define.xml file.
 scope:
   classes: []
   domains: []
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Variable value is null when value-level condition occurs
   severity: Warning

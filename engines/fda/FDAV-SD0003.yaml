@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Value of Dates/Time variables (*DTC) must conform to the ISO 8601 international
   standard.
-Check: []
+Check:
+  all:
+    - name: __date_variable__
+      operator: is_valid_iso8601
 Outcome:
   Message: Invalid ISO 8601 value for variable
 Rule Type: Record Data
@@ -25,4 +28,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

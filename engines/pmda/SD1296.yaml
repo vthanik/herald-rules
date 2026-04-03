@@ -4,12 +4,23 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: TSVAL for ADAPT record must be 'Y' or 'N'.
 scope:
-  classes: []
-  domains: TS
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
+check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: ADAPT
+    - name: TSVAL
+      operator: is_not_contained_by
+      value:
+        - 'Y'
+        - 'N'
 outcome:
   message: Invalid TSVAL value for ADAPT parameter
   severity: Error
@@ -19,4 +30,5 @@ provenance:
   rule_id: SD1296
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000563
 

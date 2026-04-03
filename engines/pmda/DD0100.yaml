@@ -4,13 +4,16 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Values for the AnalysisPurpose attribute are controlled by the Analysis
   Purpose extensible codelist in ADaM CT or Define CT.
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Extended value for AnalysisPurpose
   severity: Error

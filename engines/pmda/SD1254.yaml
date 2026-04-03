@@ -4,13 +4,25 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: DTHFL must equal 'Y' when there is a record in the Adverse Events (AE)
   domain with AEOUT = 'FATAL'.
 scope:
-  classes: []
-  domains: AE
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+  Use_Case: INDH
+check:
+  all:
+    - name: AEOUT
+      operator: equal_to
+      value: FATAL
+      value_is_literal: yes
+    - name: DTHFL
+      operator: not_equal_to
+      value: 'Y'
+      value_is_literal: yes
 outcome:
   message: DTHFL does not equal 'Y' when AE.AEOUT = 'FATAL'
   severity: Error
@@ -20,4 +32,5 @@ provenance:
   rule_id: SD1254
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000254
 

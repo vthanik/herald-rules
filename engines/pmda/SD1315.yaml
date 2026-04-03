@@ -4,14 +4,24 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Reported Term for the Disposition Event (DSTERM) and Standardized Disposition
   Term (DSDECOD) should contain the same value when Category for Disposition Event
   (DSCAT) is 'PROTOCOL MILESTONE'.
 scope:
-  classes: []
-  domains: DS
-check: []
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: DS
+check:
+  all:
+    - name: DSCAT
+      operator: equal_to
+      value: PROTOCOL MILESTONE
+      value_is_literal: yes
+    - name: DSTERM
+      operator: not_equal_to
+      value: DSDECOD
 outcome:
   message: DSDECOD is not the same as DSTERM when DSCAT='PROTOCOL MILESTONE'
   severity: Warning
@@ -21,4 +31,5 @@ provenance:
   rule_id: SD1315
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000322
 

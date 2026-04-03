@@ -6,7 +6,15 @@ Description: Collection Study Day (--DY) variable value should not be imputed. I
   may be only populated, when both Collection Study Date/Time (--DTC) and Subject
   Reference Start Date/Time (RFSTDTC) variables values are provided and both of them
   include complete date part.
-Check: []
+Check:
+  all:
+    - name: --DY
+      operator: non_empty
+    - any:
+        - name: --DTC
+          operator: is_incomplete_date
+        - name: RFSTDTC
+          operator: is_incomplete_date
 Outcome:
   Message: --DY variable value is imputed
 Rule Type: Record Data
@@ -27,4 +35,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000354
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH
 

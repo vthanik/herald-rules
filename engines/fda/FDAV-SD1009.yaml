@@ -4,7 +4,11 @@ Core:
   Version: '1'
 Description: The value of Element Code (ETCD) should be no more than 8 characters
   in length.
-Check: []
+Check:
+  all:
+    - name: ETCD
+      operator: longer_than
+      value: 8
 Outcome:
   Message: Invalid value for ETCD
 Rule Type: Record Data
@@ -25,4 +29,17 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000143
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include:
+      - TRIAL DESIGN
+      - SPECIAL PURPOSE
+  Domains:
+    Include:
+      - TA
+      - TE
+      - SE
+  Use_Case: INDH, NONCLIN
 

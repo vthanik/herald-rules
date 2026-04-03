@@ -5,7 +5,15 @@ Core:
 Description: Reported Term for the Disposition Event (DSTERM) and Standardized Disposition
   Term (DSDECOD) should contain the same value, when Category for Disposition Event
   (DSCAT) is 'PROTOCOL MILESTONE'.
-Check: []
+Check:
+  all:
+    - name: DSCAT
+      operator: equal_to
+      value: PROTOCOL MILESTONE
+      value_is_literal: yes
+    - name: DSTERM
+      operator: not_equal_to
+      value: DSDECOD
 Outcome:
   Message: DSDECOD is not the same as DSTERM, when DSCAT='PROTOCOL MILESTONE'
 Rule Type: Record Data
@@ -20,4 +28,11 @@ IG Versions:
   - SDTMIG 3.1.2
   - SDTMIG 3.1.3
   - SDTMIG 3.2
+CORE Reference: CORE-000322
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: DS
 

@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Within a Study and a Parameter, all Analysis Range y Lower Limit (C)
   (AyLOC) variable values must be the same for each unique value of Analysis Range
   y Lower Limit (AyLO) variable when variable AyLO is populated.
@@ -14,7 +14,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for AyLOC
   severity: Error

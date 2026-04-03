@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If a Time (*TM) variable is indicated to be imputed by population of
   an Imputation Flag (*TMF) variable value, that Time (*TM) variable must have a value.
 scope:
@@ -15,7 +15,10 @@ scope:
     - OCCDS
     - ADAE
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: '*TMF is populated, but *TM is not populated'
   severity: Error

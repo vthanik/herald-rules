@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: There should be only a single value of Strat Factor w Value from Verif
   Source (STRATwV) variable for a given value of Strat Fact w Val from Verif Source
   (N) (STRATwVN) variable, considering only those rows on which both variables are
@@ -14,7 +14,10 @@ scope:
   domains:
     - ADSL
     - ADDL
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for STRATwV
   severity: Error

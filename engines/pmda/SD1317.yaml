@@ -4,15 +4,25 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: DEATH records (DSDECOD='DEATH') in the Disposition (DS) domain should
   have Start Date of Event (DSSTDTC) equal to subject's Date/Time of Death (DTHDTC)
   populated in the Demographics (DM) domain. Subject's Date/Time of Death info should
   be consistent across all domains.
 scope:
-  classes: []
-  domains: DS
-check: []
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: DS
+  Use_Case: INDH
+check:
+  all:
+    - name: DSDECOD
+      operator: equal_to
+      value: DEATH
+    - name: DSSTDTC
+      operator: not_equal_to
+      value: DTHDTC
 outcome:
   message: DSSTDTC for DEATH record is not the same as DM.DTHDTC
   severity: Error
@@ -22,4 +32,5 @@ provenance:
   rule_id: SD1317
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000034
 

@@ -5,7 +5,19 @@ Core:
 Description: Result or Finding in Original Units (--ORRES) should be populated when
   Last Observation Before Exposure Flag (--LOBXFL) is set to 'Y', unless the record
   is derived (--DRVFL = 'Y').
-Check: []
+Check:
+  all:
+    - name: --ORRES
+      operator: empty
+    - name: --LOBXFL
+      operator: equal_to
+      value: 'Y'
+    - any:
+        - name: --DRVFL
+          operator: not_exists
+        - name: --DRVFL
+          operator: not_equal_to
+          value: 'Y'
 Outcome:
   Message: --ORRES is null when --LOBXFL = 'Y' (and --DRVFL is null)
 Rule Type: Record Data
@@ -16,6 +28,13 @@ Source: FDA Validator Rules v1.6
 Domains: FINDINGS, FINDINGS ABOUT
 Standard: SDTM
 Publisher ID: CG0553
-IG Versions:
-  - SDTMIG 3.3
+IG Versions: SDTMIG 3.3
+CORE Reference: CORE-000083
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH
 

@@ -4,17 +4,20 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Related Device Identifier (RDEVID) and Related Subject or Pool Identifier
   (RSUBJID) should not both be populated for the same record.
 scope:
-  classes: []
-  domains:
-    - APDM
-    - APAE
-    - APMH
-    - APRELSUB
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: AP--
+check:
+  all:
+    - name: RSUBJID
+      operator: non_empty
+    - name: RDEVID
+      operator: non_empty
 outcome:
   message: RDEVID is not null when RSUBJID is populated
   severity: Error
@@ -24,4 +27,5 @@ provenance:
   rule_id: SD1326
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000233
 

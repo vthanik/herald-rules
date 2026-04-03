@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: For RACEGRy (Pooled rRace Group), y must be the pooling algorithm group
   (1 to 9).
 scope:
@@ -12,7 +12,10 @@ scope:
   domains:
     - ADSL
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: 'Illegal variable name: y is not in [1-9] for RACEGRy(N)'
   severity: Error

@@ -4,12 +4,15 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Dataset Description in define.xml must match dataset Description.
 scope:
   classes: []
   domains: []
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Define.xml/dataset description mismatch
   severity: Error

@@ -4,7 +4,13 @@ Core:
   Version: '1'
 Description: Values of Category (--CAT) and Subcategory (--SCAT) variables should
   not be identical.
-Check: []
+Check:
+  all:
+    - name: --SCAT
+      operator: non_empty
+    - name: --SCAT
+      operator: equal_to
+      value: --CAT
 Outcome:
   Message: Values for --CAT and --SCAT are identical
 Rule Type: Record Data
@@ -25,4 +31,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000237
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

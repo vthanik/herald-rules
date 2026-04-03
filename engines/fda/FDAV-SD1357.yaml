@@ -5,7 +5,12 @@ Core:
 Description: Disease Milestone Instance Date/Time (MIDSDTC) variable should not be
   present in the domain, when the Disease Milestone Instance Name (MIDS) variable
   is missing.
-Check: []
+Check:
+  all:
+    - name: MIDSDTC
+      operator: exists
+    - name: MIDS
+      operator: not_exists
 Outcome:
   Message: MIDSDTC variable is present when MIDS variable is missing
 Rule Type: Record Data
@@ -16,6 +21,12 @@ Source: FDA Validator Rules v1.6
 Domains: INTERVENTIONS, EVENTS, FINDINGS, FINDINGS ABOUT
 Standard: SDTM
 Publisher ID: CG0503
-IG Versions:
-  - SDTMIG 3.3
+IG Versions: SDTMIG 3.3
+CORE Reference: CORE-000193
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
 

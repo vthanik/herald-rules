@@ -4,13 +4,16 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: An NCI Code must not be provided when a codelist is non-standard (i.e.,
   codelist does not have a Terminology version defined).
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid use of NCI Code for Codelist
   severity: Error

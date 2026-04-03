@@ -3,7 +3,10 @@ Core:
   Status: Reference
   Version: '1'
 Description: Dataset Description in define.xml must match dataset Description.
-Check: []
+Check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 Outcome:
   Message: Define.xml/dataset description mismatch
 Rule Type: Record Data
@@ -24,4 +27,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

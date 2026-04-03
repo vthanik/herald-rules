@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: 'For regulatory submission data, Origin is required for all SDTM, ADaM,
   and SEND variables. It is at the sponsors discretion whether to provide Origin at
   the Variable or Value Level. When Origin is provided for each Value Level item,
@@ -15,7 +15,10 @@ description: 'For regulatory submission data, Origin is required for all SDTM, A
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Missing Origin
   severity: Error

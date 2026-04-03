@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Start Date/Time of Observation (--STDTC), Start Relative to Reference
   Period (--STRF) or Start Relative to Reference Time Point (--STRTPT) should not
   be null when End Date/Time of Observation (--ENDTC), End Relative to Reference Period
@@ -16,7 +16,10 @@ scope:
     - -DM)
     - INTERVENTIONS
     - EVENTS
-check: []
+check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 outcome:
   message: Missing values for --STDTC, --STRF and --STRTPT when --ENDTC, --ENRF or
     --ENRTPT is provided

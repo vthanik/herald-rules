@@ -4,18 +4,31 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: When no response is provided for Occurrence (--OCCUR) for a pre-specified
   Intervention or Event (--PRESP = 'Y'), then Status (--STAT) should be set to 'NOT
   DONE'.
 scope:
-  classes: []
-  domains:
-    - INTERVENTIONS(-EX)
-    - EVENTS(-AE
-    - -DS
-    - -DV)
-check: []
+  Classes:
+    Include:
+      - EVENTS
+      - INTERVENTIONS
+  Domains:
+    Exclude:
+      - DS
+      - DV
+      - EX
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: --PRESP
+      operator: equal_to
+      value: 'Y'
+    - name: --OCCUR
+      operator: empty
+    - name: --STAT
+      operator: not_equal_to
+      value: NOT DONE
 outcome:
   message: --STAT does not equal 'NOT DONE' when --PRESP='Y' and --OCCUR is null
   severity: Warning
@@ -25,4 +38,5 @@ provenance:
   rule_id: SD0042
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000117
 

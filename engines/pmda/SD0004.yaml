@@ -4,18 +4,25 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Domain Abbreviation (DOMAIN) variable should be consistent with the name
   of the dataset.
 scope:
-  classes: []
-  domains:
-    - ALL(-POOLDEF
-    - -RELREC
-    - -RELSPEC
-    - -RELSUB
-    - -SUPPQUAL)
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude:
+      - SUPP--
+      - RELREC
+      - RELREF
+      - POOLDEF
+  Use_Case: INDH, PROD, NONCLIN
+check:
+  all:
+    - name: dataset_name
+      operator: prefix_not_equal_to
+      prefix: 2
+      value: DOMAIN
 outcome:
   message: Inconsistent value for DOMAIN
   severity: Warning
@@ -25,4 +32,5 @@ provenance:
   rule_id: SD0004
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000598
 

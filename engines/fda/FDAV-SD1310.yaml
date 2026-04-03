@@ -5,7 +5,16 @@ Core:
 Description: When the study type is interventional (TSPARMCD = 'STYPE' and TSVAL =
   'INTERVENTIONAL'), the Intervention Model parameter should be provided with Parameter
   Value populated (TSVAL should not be null when TSPARMCD = 'INTMODEL').
-Check: []
+Check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: INTMODEL
+    - name: $STYPE_INTERVENTIONAL
+      operator: greater_than_or_equal_to
+      value: 1
+    - name: TSVAL
+      operator: empty
 Outcome:
   Message: TSVAL is missing for the INTMODEL Trial Summary Parameter, when STYPE parameter
     equals 'INTERVENTIONAL'
@@ -22,4 +31,11 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000469
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
 

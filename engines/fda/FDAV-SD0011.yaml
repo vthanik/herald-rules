@@ -4,7 +4,16 @@ Core:
   Version: '1'
 Description: Description of Arm (ARM) must equal 'Screen Failure',  when Arm Code
   (ARMCD) is 'SCRNFAIL', and vice versa.
-Check: []
+Check:
+  all:
+    - name: ACTARMCD
+      operator: is_contained_by
+      value:
+        - SCRNFAIL
+        - NOTASSGN
+    - name: ACTARMCD
+      operator: not_equal_to
+      value: ARMCD
 Outcome:
   Message: ARM is not 'Screen Failure', when ARMCD equals 'SCRNFAIL', or vice versa
 Rule Type: Record Data
@@ -19,4 +28,11 @@ IG Versions:
   - SDTMIG 3.1.2
   - SDTMIG 3.1.3
   - SDTMIG 3.2
+CORE Reference: CORE-000543
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
 

@@ -4,14 +4,17 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Key Variables must be defined for each dataset. Define-XML specification
   represents Key Variables as KeySequence attribute on ItemRef element. The KeySequence
   attribute must be provided for at least one ItemRef within each ItemGroupDef.
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __required_variable__
+      operator: exists
 outcome:
   message: Missing Key Variables value
   severity: Error

@@ -6,7 +6,16 @@ Description: Time Point Reference (--TPTREF) variable should not be present in t
   domain, when the Planned Elapsed Time from Time Point Ref (--ELTM) variable, Planned
   Time Point Number (--TPTNUM) variable, and Planned Time Point (--TPT) variable are
   missing.
-Check: []
+Check:
+  all:
+    - name: --ELTM
+      operator: not_exists
+    - name: --TPTNUM
+      operator: not_exists
+    - name: --TPT
+      operator: not_exists
+    - name: --TPTREF
+      operator: exists
 Outcome:
   Message: --TPTREF variable is present when --ELTM, --TPTNUM, and --TPT are missing
 Rule Type: Record Data
@@ -23,4 +32,12 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000080
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

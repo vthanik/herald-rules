@@ -3,7 +3,15 @@ Core:
   Status: Reference
   Version: '1'
 Description: Variables described in SDTM IG as Required must be included in the dataset.
-Check: []
+Check:
+  all:
+    - name: $required_variables
+      operator: exists
+    - name: variable_name
+      operator: is_contained_by
+      value: $required_variables
+    - name: variable_value
+      operator: empty
 Outcome:
   Message: SDTM Required variable not found
 Rule Type: Record Data
@@ -20,4 +28,12 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000356
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD, NONCLIN
 

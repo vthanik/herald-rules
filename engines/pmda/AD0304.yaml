@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If any of SMQ Name (SMQzzNAM), SMQ Code (SMQzzCD) or SMQ Scope (SMQzzSC)
   variable is populated, then all of these MedDRA SMQ variables must be populated
   together.
@@ -14,7 +14,10 @@ scope:
     - OCCDS
     - ADAE
     - MDOCCDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: 'Only some of these variables are present and populated: SMQzzNAM, SMQzzCD,
     SMQzzSC'

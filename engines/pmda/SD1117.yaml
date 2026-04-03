@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The structure of Findings class domains should be one record per Finding
   Result per subject. No Finding Result with the same Test Short Name (--TESTCD) and
   the same Qualifier variables at the same timepoint for the same Subject (USUBJID)
@@ -19,7 +19,10 @@ scope:
     - -TR
     - -TU)
     - FINDINGSABOUT
-check: []
+check:
+  all:
+    - name: __key_variables__
+      operator: is_unique
 outcome:
   message: Duplicate records
   severity: Warning

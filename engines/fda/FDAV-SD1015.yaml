@@ -3,7 +3,13 @@ Core:
   Status: Reference
   Version: '1'
 Description: Epoch (EPOCH) values should match entries in the Trial Arms (TA) dataset.
-Check: []
+Check:
+  all:
+    - name: EPOCH
+      operator: is_not_contained_by
+      value: $ta_epoch
+    - name: EPOCH
+      operator: non_empty
 Outcome:
   Message: Invalid EPOCH
 Rule Type: Record Data
@@ -19,4 +25,12 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000271
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH
 

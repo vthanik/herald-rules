@@ -4,13 +4,24 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Parameter Value Code (TSVALCD) and Parameter Value (TSVAL) should have
   a one-to-one relationship.
 scope:
-  classes: []
-  domains: TS
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
+  Use_Case: INDH
+check:
+  all:
+    - name: TSVAL
+      operator: non_empty
+    - name: TSVALCD
+      operator: non_empty
+    - name: TSVAL
+      operator: is_not_unique_relationship
+      value: TSVALCD
 outcome:
   message: Inconsistent value for TSVALCD within TSVAL
   severity: Error
@@ -20,4 +31,5 @@ provenance:
   rule_id: SD1278
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000152
 

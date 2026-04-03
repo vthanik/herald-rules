@@ -4,13 +4,54 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Serious Event (AESER) variable value is expected to be 'Y' when Occurred
   with Overdose (AESOD) variable value equals 'Y'.
 scope:
-  classes: []
-  domains: AE
-check: []
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: AE
+  Use_Case: INDH
+check:
+  all:
+    - any:
+        - name: AESCAN
+          operator: equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: AESCONG
+          operator: equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: AESDISAB
+          operator: equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: AESDTH
+          operator: equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: AESHOSP
+          operator: equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: AESLIFE
+          operator: equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: AESOD
+          operator: equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: AESMIE
+          operator: equal_to
+          value: 'Y'
+          value_is_literal: yes
+    - name: AESER
+      operator: not_equal_to
+      value: 'Y'
+      value_is_literal: yes
 outcome:
   message: AESER is not 'Y' when AESOD equals 'Y'
   severity: Warning
@@ -20,4 +61,5 @@ provenance:
   rule_id: SD1062
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000022
 

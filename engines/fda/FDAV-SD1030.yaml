@@ -4,7 +4,12 @@ Core:
   Version: '1'
 Description: Start Relative to Reference Period (--STRF) should not be populated for
   subjects with missing value for Reference Start Date/Time (RFSTDTC).
-Check: []
+Check:
+  all:
+    - name: RFSTDTC
+      operator: empty
+    - name: --STRF
+      operator: non_empty
 Outcome:
   Message: Value for --STRF is populated, when RFSTDTC is NULL
 Rule Type: Record Data
@@ -24,4 +29,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000262
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude: DM
+  Use_Case: INDH
 

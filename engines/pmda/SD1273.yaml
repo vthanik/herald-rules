@@ -4,13 +4,20 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Name of Treatment variables (--TRT) should not be populated with values
   of 'OTHER'.
 scope:
-  classes: []
-  domains: INTERVENTIONS
-check: []
+  Classes:
+    Include: INTERVENTIONS
+  Domains:
+    Include: ALL
+  Use_Case: INDH
+check:
+  all:
+    - name: --TRT
+      operator: equal_to
+      value: OTHER
 outcome:
   message: --TRT equals 'OTHER'
   severity: Error
@@ -20,4 +27,5 @@ provenance:
   rule_id: SD1273
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000160
 

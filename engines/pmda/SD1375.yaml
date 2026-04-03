@@ -4,15 +4,29 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: RFENDTC must be null when actual arm indicates that the subject is a
   screen failure ('Screen Failure'), was not assigned to an arm ('Not Assigned') or
   was not treated ('NOTTRT') (or null). This rule applies to studies where RFENDTC
   is associated with a treatment date.
 scope:
-  classes: []
-  domains: DM
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+check:
+  all:
+    - name: ACTARM
+      operator: is_contained_by
+      value:
+        - Screen Failure
+        - Not Assigned
+        - Not Treated
+        - SCREEN FAILURE
+        - NOT ASSIGNED
+        - NOT TREATED
+    - name: RFENDTC
+      operator: non_empty
 outcome:
   message: RFENDTC is populated for subject who did not receive treatment
   severity: Warning
@@ -22,4 +36,5 @@ provenance:
   rule_id: SD1375
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000369
 

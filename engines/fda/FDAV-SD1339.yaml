@@ -7,7 +7,10 @@ Description: The EPOCH variable is not populated, however either a start date or
   a record should allow for the EPOCH variable to be populated. Variables requested
   by the relevant regulatory agency in policy documents (e.g., EPOCH) should be included
   in the dataset and populated.
-Check: []
+Check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 Outcome:
   Message: Missing EPOCH value, when a start or observation date is provided
 Rule Type: Record Data
@@ -24,4 +27,5 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+Executability: Partially Executable
 

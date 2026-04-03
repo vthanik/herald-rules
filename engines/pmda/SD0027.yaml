@@ -4,15 +4,42 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Result or Finding in Original Units (--ORRES) should not be null when
   Original Units (--ORRESU) is provided.
 scope:
-  classes: []
-  domains:
-    - FINDINGS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
+check:
+  any:
+    - all:
+        - name: --STAT
+          operator: empty
+        - name: --DRVFL
+          operator: not_equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: --ORRES
+          operator: empty
+    - all:
+        - name: --STAT
+          operator: empty
+        - name: --DRVFL
+          operator: not_exists
+        - name: --ORRES
+          operator: empty
+    - all:
+        - name: --STAT
+          operator: not_exists
+        - name: --DRVFL
+          operator: not_equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: --ORRES
+          operator: empty
 outcome:
   message: Missing value for --ORRES when --ORRESU is provided
   severity: Warning
@@ -22,4 +49,5 @@ provenance:
   rule_id: SD0027
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000200
 

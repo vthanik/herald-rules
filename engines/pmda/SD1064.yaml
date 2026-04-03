@@ -4,13 +4,16 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The value of Element Code (ETCD) variable must be unique within Trial
   Elements (TE) domain.
 scope:
   classes: []
   domains: TE
-check: []
+check:
+  all:
+    - name: __key_variables__
+      operator: is_unique
 outcome:
   message: Duplicate ETCD value
   severity: Error

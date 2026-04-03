@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Value for High Level Term (--HLT) variable must be populated using a
   High Level Term of the MedDRA dictionary of a version specified in the define.xml
   (Case-insensitive).
@@ -14,7 +14,10 @@ scope:
     - AE
     - CE
     - MH
-check: []
+check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 outcome:
   message: Value for --HLT not found in MedDRA dictionary
   severity: Error

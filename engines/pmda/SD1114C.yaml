@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Case for Body System or Organ Class (--BODSYS) variable must follow MedDRA
   sentence case and be populated using a System Organ Class of the MedDRA dictionary
   of a version specified in the define.xml (Case-sensitive).
@@ -14,7 +14,10 @@ scope:
     - AE
     - CE
     - MH
-check: []
+check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 outcome:
   message: Value for --BODSYS is in incorrect case
   severity: Warning

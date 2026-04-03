@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If any of Analysis Duration Units (ADURU) or Analysis Duration (N) (ADURN)
   variables is populated, then both must be populated together.
 scope:
@@ -12,7 +12,10 @@ scope:
   domains:
     - ADAE
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: 'Only one of these variables is populated: ADURU, ADURN'
   severity: Error

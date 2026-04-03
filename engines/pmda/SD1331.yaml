@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Start Date/Time of Event, Exposure (--STDTC) must be less or equal to
   Date/Time of Collection(--DTC).
 scope:
@@ -12,7 +12,10 @@ scope:
   domains:
     - INTERVENTIONS
     - EVENTS(-BE)
-check: []
+check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 outcome:
   message: --STDTC is after --DTC
   severity: Error

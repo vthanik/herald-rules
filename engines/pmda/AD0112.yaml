@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If ARELTMU (Analysis Relative Time unit) or ARELTM (Analysis Relative
   Time) is populated, then both must be populated together.
 scope:
@@ -14,7 +14,10 @@ scope:
     - ADNCA
     - MDBDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: 'Only one of these variables is populated: ARELTM, ARELTMU'
   severity: Error

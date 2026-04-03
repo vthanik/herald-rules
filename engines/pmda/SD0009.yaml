@@ -4,16 +4,72 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: When Serious Event (AESER) variable value is 'Y', then at least one of
   seriousness criteria variables is expected to have value 'Y' (Involves Cancer (AESCAN),
   Congenital Anomaly or Birth Defect (AESCONG), Persist or Signif Disability/Incapacity
   (AESDISAB), Results in Death (AESDTH), Requires or Prolongs Hospitalization (AESHOSP),
   Is Life Threatening (AESLIFE), or Other Medically Important Serious Event (AESMIE)).
 scope:
-  classes: []
-  domains: AE
-check: []
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: AE
+  Use_Case: INDH
+check:
+  all:
+    - name: AESER
+      operator: not_equal_to
+      value: 'N'
+    - all:
+        - any:
+            - name: AESCAN
+              operator: not_exists
+            - name: AESCAN
+              operator: not_equal_to
+              value: 'Y'
+        - any:
+            - name: AESCONG
+              operator: not_exists
+            - name: AESCONG
+              operator: not_equal_to
+              value: 'Y'
+        - any:
+            - name: AESDISAB
+              operator: not_exists
+            - name: AESDISAB
+              operator: not_equal_to
+              value: 'Y'
+        - any:
+            - name: AESDTH
+              operator: not_exists
+            - name: AESDTH
+              operator: not_equal_to
+              value: 'Y'
+        - any:
+            - name: AESHOSP
+              operator: not_exists
+            - name: AESHOSP
+              operator: not_equal_to
+              value: 'Y'
+        - any:
+            - name: AESLIFE
+              operator: not_exists
+            - name: AESLIFE
+              operator: not_equal_to
+              value: 'Y'
+        - any:
+            - name: AESOD
+              operator: not_exists
+            - name: AESOD
+              operator: not_equal_to
+              value: 'Y'
+        - any:
+            - name: AESMIE
+              operator: not_exists
+            - name: AESMIE
+              operator: not_equal_to
+              value: 'Y'
 outcome:
   message: No qualifiers set to 'Y' when AE is Serious
   severity: Warning
@@ -23,4 +79,5 @@ provenance:
   rule_id: SD0009
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000266
 

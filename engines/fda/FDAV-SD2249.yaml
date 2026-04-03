@@ -3,7 +3,14 @@ Core:
   Status: Reference
   Version: '1'
 Description: TSVAL variable value must be numeric, when TSPARMCD='ACTSUB'.
-Check: []
+Check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: ACTSUB
+    - name: TSVAL
+      operator: not_matches_regex
+      value: ^[1-9]\d*$
 Outcome:
   Message: Invalid TSVAL value for ACTSUB
 Rule Type: Record Data
@@ -19,4 +26,11 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000338
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
 

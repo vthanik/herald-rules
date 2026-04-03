@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: When Analysis Range High (AyHI) = 0, the Ratio to Analysis Range High
   (R2AyHI) should not be populated since you cannot divide by 0. AD0134 checks the
   calculation is correct when AyLO != '0'.
@@ -14,7 +14,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: 'Calculation issue: AyHI = 0, but R2AyHI is populated'
   severity: Error

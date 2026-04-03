@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Collection Study Day (--DY) variable value should be populated when Collection
   Study Date/Time (--DTC) and Subject Reference Start Date/Time (RFSTDTC) variables
   values are provided, and both include complete date part.
@@ -16,7 +16,10 @@ scope:
     - FINDINGS(-DO)
     - EVENTS
     - FINDINGSABOUT
-check: []
+check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 outcome:
   message: --DY variable value is not populated
   severity: Warning

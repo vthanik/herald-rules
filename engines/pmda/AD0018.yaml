@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The variable label in the dataset should match the variable label described
   in ADaM. When creating a new variable, labels can be adjusted as appropriate. Currently,
   this rule runs if a variable has a label that is defined in the ADaM metadata.
@@ -20,7 +20,10 @@ scope:
     - ADAE
     - MDOCCDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Variable label mismatch between dataset and ADaM standard
   severity: Warning

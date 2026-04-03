@@ -5,7 +5,12 @@ Core:
 Description: Subject Reference End Date/Time (RFENDTC) should be null for screen failures
   or unassigned subjects. Therefore, when the Reason Arm and/or Actual Arm is Null
   (ARMNRS) variable is populated, RFENDTC should be null.
-Check: []
+Check:
+  all:
+    - name: ARMNRS
+      operator: non_empty
+    - name: RFENDTC
+      operator: non_empty
 Outcome:
   Message: RFENDTC is populated when ARMNRS is not null
 Rule Type: Record Data
@@ -16,6 +21,13 @@ Source: FDA Validator Rules v1.6
 Domains: DM
 Standard: SDTM
 Publisher ID: CG0530
-IG Versions:
-  - SDTMIG 3.3
+IG Versions: SDTMIG 3.3
+CORE Reference: CORE-000192
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+  Use_Case: INDH
 

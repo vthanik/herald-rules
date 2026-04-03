@@ -4,14 +4,24 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: TSVAL should not be populated with a value from the ISO 21090 Null Flavor
   codelist, or synonyms of the values. The TSVALNF variable should be used to capture
   these values, not TSVAL.
 scope:
-  classes: []
-  domains: TS
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
+check:
+  all:
+    - name: TSVALNF
+      operator: empty
+    - name: TSVAL
+      operator: matches_regex
+      value: (?i:^(NI|No information|INV|Invalid|OTH|Other|PINF|Positive infinity|NINF|Negative
+        infinity|UNC|Unencoded|DER|Derived|UNK|Unknown|ASKU|Asked but unknown|NAV|Temporarily
+        unavailable|NASK|Not asked|TRC|Trace|MSK|Masked|QS|Sufficient Quantity)$)
 outcome:
   message: TSVAL is populated with a value from the ISO 21090 null flavor codelist
   severity: Error
@@ -21,4 +31,5 @@ provenance:
   rule_id: SD1297
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000787
 

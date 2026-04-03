@@ -4,16 +4,30 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: All records in the Disposition (DS) and Protocol Deviations (DV) domains
   should have the Start Date/Time of Event (--STDTC) equal to or after a subject's
   Date/Time of Informed Consent (RFICDTC) in the Demographics (DM) domain.
 scope:
-  classes: []
-  domains:
-    - DS
-    - DV
-check: []
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: DS
+  Use_Case: INDH
+check:
+  all:
+    - name: DSDECOD
+      operator: present_on_multiple_rows_within
+      within: USUBJID
+    - name: DSDECOD
+      operator: equal_to
+      value: INFORMED CONSENT OBTAINED
+    - name: $min_ds_dsstdtc
+      operator: not_equal_to
+      value: RFICDTC
+    - name: $min_ds_dsstdtc
+      operator: equal_to
+      value: DSSTDTC
 outcome:
   message: --STDTC is before RFICDTC
   severity: Warning
@@ -23,4 +37,5 @@ provenance:
   rule_id: SD1319
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000363
 

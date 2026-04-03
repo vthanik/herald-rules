@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: 'Define.xml must reference the following namespaces: 1) CDISC ODM xmlns="http://www.cdisc.org/ns/odm/v1.3"
   for Define-XML v2.0 and v2.1 or xmlns="http://www.cdisc.org/ns/odm/v1.2" for Define-XML
   v1.0; 2) CDISC Define xmlns:def="http://www.cdisc.org/ns/def/v2.1" for Define-XML
@@ -16,7 +16,10 @@ description: 'Define.xml must reference the following namespaces: 1) CDISC ODM x
 scope:
   classes: []
   domains: Reject
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Missing or invalid <namespace> namespace reference
   severity: Error

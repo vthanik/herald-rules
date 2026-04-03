@@ -4,15 +4,28 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Actual Arm Code (ACTARMCD) values should match entries in the Trial Arms
   (TA) dataset, except for subjects who failed screening ('SCRNFAIL'), or were not
   fully assigned to an Arm ('NOTASSGN'), or randomized, but not treated ('NOTTRT'),
   or received non-planned treatment ('UNPLAN').
 scope:
-  classes: []
-  domains: DM
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+check:
+  all:
+    - name: ACTARMCD
+      operator: is_not_contained_by
+      value:
+        - SCRNFAIL
+        - NOTASSGN
+        - NOTTRT
+        - UNPLAN
+    - name: ACTARMCD
+      operator: is_not_contained_by
+      value: $armcd_list
 outcome:
   message: Invalid value for ACTARMCD
   severity: Error
@@ -22,4 +35,5 @@ provenance:
   rule_id: SD2002
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000331
 

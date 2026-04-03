@@ -4,19 +4,21 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Start Relative to Reference Period (--STRF) should not be populated for
   subjects with missing value for Reference Start Date/Time (RFSTDTC).
 scope:
-  classes: []
-  domains:
-    - SPECIALPURPOSE(-CO
-    - -DM)
-    - INTERVENTIONS
-    - FINDINGS
-    - EVENTS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude: DM
+  Use_Case: INDH
+check:
+  all:
+    - name: RFSTDTC
+      operator: empty
+    - name: --STRF
+      operator: non_empty
 outcome:
   message: Value for --STRF is populated when RFSTDTC is null
   severity: Warning
@@ -26,4 +28,5 @@ provenance:
   rule_id: SD1030
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000262
 

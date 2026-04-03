@@ -4,14 +4,23 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: TSVAL for FCNTRY record must be a valid term from Geopolitical Entities,
   Names, and Codes (GENC) dictionary. GENC is an FDA requirement. Note that the Country
   codes in GENC and ISO 3166-1 alpha-3 are the same for most cases.
 scope:
-  classes: []
-  domains: TS
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
+check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: FCNTRY
+    - name: TSVCDREF
+      operator: not_equal_to
+      value: ISO 3166-1 alpha-3
 outcome:
   message: Invalid TSVAL value for FCNTRY
   severity: Error
@@ -21,4 +30,5 @@ provenance:
   rule_id: SD1323
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000339
 

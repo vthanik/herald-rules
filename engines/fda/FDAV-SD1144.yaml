@@ -5,7 +5,13 @@ Core:
 Description: The medical history dataset includes the subject's prior history at the
   start of the trial. Start Date/Time of Medical History Event (MHSTDTC) should be
   before Subject Reference Start Date/Time (RFSTDTC).
-Check: []
+Check:
+  all:
+    - name: MHSTDTC
+      operator: non_empty
+    - name: MHSTDTC
+      operator: date_greater_than_or_equal_to
+      value: RFSTDTC
 Outcome:
   Message: MHSTDTC date is after RFSTDTC
 Rule Type: Record Data
@@ -22,4 +28,12 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000236
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: MH
+  Use_Case: INDH
 

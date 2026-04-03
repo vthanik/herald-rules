@@ -4,7 +4,15 @@ Core:
   Version: '1'
 Description: Required variables (where Core attribute is 'Req') cannot be NULL for
   any records.
-Check: []
+Check:
+  all:
+    - name: $required_variables
+      operator: exists
+    - name: variable_name
+      operator: is_contained_by
+      value: $required_variables
+    - name: variable_value
+      operator: empty
 Outcome:
   Message: NULL value in variable marked as Required
 Rule Type: Record Data
@@ -25,4 +33,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000356
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD, NONCLIN
 

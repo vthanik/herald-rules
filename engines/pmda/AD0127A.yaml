@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: ABLFL is required if BASE or BASEC is present in the dataset.
 scope:
   classes: []
@@ -12,7 +12,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: BASE or BASEC is present, but ABLFL is not present
   severity: Error

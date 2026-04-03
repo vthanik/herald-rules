@@ -4,13 +4,19 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Variables described in IG as inappropriate for usage must be not included
   in the dataset.
 scope:
-  classes: []
-  domains: []
-check: []
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: AE
+  Use_Case: INDH
+check:
+  all:
+    - name: AEOCCUR
+      operator: exists
 outcome:
   message: Variable prohibited for use in SDTM
   severity: Error
@@ -20,4 +26,5 @@ provenance:
   rule_id: SD1073
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000012
 

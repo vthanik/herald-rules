@@ -4,14 +4,24 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: ECDOSE must either be null when ECOCCUR equals 'N', or ECDOSE must be
   greater than 0. ECDOSE would be greater than 0 (when ECOCCUR equals N) for records
   that represent specific dose amounts that are not taken, not given, or missed.
 scope:
-  classes: []
-  domains: EC
-check: []
+  Classes:
+    Include: INTERVENTIONS
+  Domains:
+    Include: EC
+  Use_Case: INDH
+check:
+  all:
+    - name: ECOCCUR
+      operator: equal_to
+      value: 'N'
+    - name: ECDOSE
+      operator: less_than_or_equal_to
+      value: 0
 outcome:
   message: ECDOSE is not null or greater than 0 when ECOCCUR = 'N'
   severity: Error
@@ -21,4 +31,5 @@ provenance:
   rule_id: SD1248
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000004
 

@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If Actual Treatment (TRTxxA) is present, its corresponding Planned Treatment
   (TRTxxP) must be present.
 scope:
@@ -12,7 +12,10 @@ scope:
   domains:
     - ADSL
     - ADDL
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: TRTxxA is present, but TRTxxP is not present
   severity: Error

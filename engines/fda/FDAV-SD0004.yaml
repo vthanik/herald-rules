@@ -4,7 +4,12 @@ Core:
   Version: '1'
 Description: Domain Abbreviation (DOMAIN) variable should be consistent with the name
   of the dataset.
-Check: []
+Check:
+  all:
+    - name: dataset_name
+      operator: prefix_not_equal_to
+      prefix: 2
+      value: DOMAIN
 Outcome:
   Message: Inconsistent value for DOMAIN
 Rule Type: Record Data
@@ -25,4 +30,16 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000598
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude:
+      - SUPP--
+      - RELREC
+      - RELREF
+      - POOLDEF
+  Use_Case: INDH, PROD, NONCLIN
 

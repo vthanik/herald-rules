@@ -4,13 +4,16 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: At least one of Age (AGE) or Age Text (AGETXT) variables should be included
   into Demographics (DM) domain.
 scope:
   classes: []
   domains: DM
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Neither AGE nor AGETXT variables are present
   severity: Error

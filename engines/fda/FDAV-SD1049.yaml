@@ -3,7 +3,11 @@ Core:
   Status: Reference
   Version: '1'
 Description: Qualifier Variable Label (QLABEL) value may have up to 40 characters.
-Check: []
+Check:
+  all:
+    - name: QLABEL
+      operator: longer_than
+      value: 40
 Outcome:
   Message: Invalid value for QLABEL
 Rule Type: Record Data
@@ -24,4 +28,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000222
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: RELATIONSHIP
+  Domains:
+    Include: SUPP--
+  Use_Case: INDH, PROD
 

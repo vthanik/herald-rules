@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: A variable with a suffix of DY (day) must not equal zero. Variables whose
   names end in DY are relative day variables. In ADaM as in the SDTM, there is no
   day 0. If there is a need to create a relative day variable that includes day 0,
@@ -21,7 +21,10 @@ scope:
     - ADAE
     - MDOCCDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: '*DY = 0'
   severity: Error

@@ -4,13 +4,27 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: At least one of Rule for End of Element (TEENRL) or Planned Duration
   of Element (TEDUR) should be populated.
 scope:
-  classes: []
-  domains: TE
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TE
+  Use_Case: INDH, NONCLIN
+check:
+  all:
+    - any:
+        - name: TEDUR
+          operator: empty
+        - name: TEDUR
+          operator: not_exists
+    - any:
+        - name: TEENRL
+          operator: empty
+        - name: TEENRL
+          operator: not_exists
 outcome:
   message: Missing values for TEENRL and TEDUR
   severity: Error
@@ -20,4 +34,5 @@ provenance:
   rule_id: SD0089
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000027
 

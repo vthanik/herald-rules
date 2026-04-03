@@ -4,7 +4,14 @@ Core:
   Version: '1'
 Description: Both Identifying Variable (IDVAR) and Identifying Variable Value (IDVARVAL)
   should not be populated, when relating information to the Demographics (DM) domain.
-Check: []
+Check:
+  all:
+    - name: RDOMAIN
+      operator: not_equal_to
+      value: DM
+      value_is_literal: yes
+    - name: IDVAR
+      operator: empty
 Outcome:
   Message: Unexpected value for IDVAR/IDVARVAL
 Rule Type: Record Data
@@ -25,4 +32,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000134
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: RELATIONSHIP
+  Domains:
+    Include: SUPP--
+  Use_Case: INDH, PROD
 

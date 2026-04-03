@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Start Date/Time of Event, Exposure (--STDTC) must be less or equal to
   Date/Time of Collection(--DTC)
-Check: []
+Check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 Outcome:
   Message: --STDTC is after --DTC
 Rule Type: Record Data
@@ -25,4 +28,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

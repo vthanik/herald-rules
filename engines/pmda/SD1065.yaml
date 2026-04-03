@@ -4,13 +4,21 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Value of Related Domain Abbreviation (RDOMAIN) variable must be populated
   when value of Identifying Variable (IDVAR) variable is populated.
 scope:
-  classes: []
-  domains: CO
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: CO
+  Use_Case: INDH
+check:
+  all:
+    - name: IDVAR
+      operator: non_empty
+    - name: RDOMAIN
+      operator: empty
 outcome:
   message: Missing RDOMAIN value when IDVAR is populated
   severity: Error
@@ -20,4 +28,5 @@ provenance:
   rule_id: SD1065
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000090
 

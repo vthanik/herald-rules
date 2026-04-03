@@ -5,7 +5,12 @@ Core:
 Description: When Actual Arm Code (ACTARMCD)/Description of Actual Arm (ACTARM) are
   not populated, the Reason Arm and/or Actual Arm is Null (ARMNRS) variable must be
   populated with the reason ACTARMCD/ACTARM are null.
-Check: []
+Check:
+  all:
+    - name: ACTARMCD
+      operator: empty
+    - name: ARMNRS
+      operator: empty
 Outcome:
   Message: ARMNRS is not populated, when ACTARMCD or ACTARM is NULL
 Rule Type: Record Data
@@ -16,6 +21,13 @@ Source: FDA Validator Rules v1.6
 Domains: DM
 Standard: SDTM
 Publisher ID: CG0513, CG0515
-IG Versions:
-  - SDTMIG 3.3
+IG Versions: SDTMIG 3.3
+CORE Reference: CORE-000223
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+  Use_Case: INDH
 

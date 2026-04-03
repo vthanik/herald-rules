@@ -4,13 +4,16 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: The SASDatasetName value does not conform to SAS Transport file naming
   rules. Allowed string pattern for SASDatasetName is '[A-Za-z_][A-Za-z0-9_]*'.
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid SASDatasetName value
   severity: Error

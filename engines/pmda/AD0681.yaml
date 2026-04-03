@@ -4,13 +4,16 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Within a study, All MODELGy values must be the same for each unique value
   of MODELGyN, when both variables are populated. Analogous rule for AD0682.
 scope:
   classes: []
   domains: ADDL
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for MODELGy
   severity: Error

@@ -7,7 +7,10 @@ Description: 'Reported Term for the Adverse Event (AETERM) is expected to be cod
   each term to the MedDRA-specified hierarchy of terms. These terms/codes are represented
   in SDTM variables that are subject to MedDRA: AELLT, AELLTCD, AEDECOD, AEPTCD, AEHLT,
   AEHLTCD, AEHLGT, AEHLGTCD, AEBODSYS, AEBDSYCD, AESOC, AESOCCD.'
-Check: []
+Check:
+  all:
+    - name: __required_variable__
+      operator: exists
 Outcome:
   Message: 'Missing values for one or more variables subject to MedDRA: --LLT, --LLTCD,
     --DECOD, --PTCD, --HLT, --HLTCD, --HLGT, --HLGTCD, --BODSYS, --BDSYCD, --SOC,
@@ -24,4 +27,5 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+Executability: Fully Executable
 

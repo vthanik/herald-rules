@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: A Treatment Flag variable must have a value that is Y or null. Examples
   of such Flags variables in ADaM-IG 1.2 are Treatment Emergent Analysis Flag (TRTEMFL),
   Pre-treatment Flag (PREFL), On Treatment Record Flag (ONTRTFL), Follow-up Flag (FUPFL),
@@ -19,7 +19,10 @@ scope:
     - ADAE
     - MDOCCDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Variable flag value is not Y or null
   severity: Error

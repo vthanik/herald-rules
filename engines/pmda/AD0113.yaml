@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: When ARELTM is present, the anchor time variable and ARELTMU must also
   be included in the dataset, and the anchor time variable must be identified in the
   metadata for ARELTM.
@@ -15,7 +15,10 @@ scope:
     - ADNCA
     - MDBDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: ARELTMU is present, but ARELTM is not present
   severity: Error

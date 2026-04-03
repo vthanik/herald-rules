@@ -5,7 +5,12 @@ Core:
 Description: Subject Reference End Date/Time (RFENDTC) should be populated for all
   randomized subjects, those where Planned Arm Code (ARMCD) is not equal to 'SCRNFAIL'
   or 'NOTASSGN' or null.
-Check: []
+Check:
+  all:
+    - name: ARM
+      operator: non_empty
+    - name: RFENDTC
+      operator: empty
 Outcome:
   Message: RFENDTC is not provided for a randomized subject
 Rule Type: Record Data
@@ -26,4 +31,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000191
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+  Use_Case: INDH
 

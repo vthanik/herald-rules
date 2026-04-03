@@ -4,13 +4,16 @@ status: Reference
 standard: Define-XML
 category: ODM/Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: When Codelist contains at least one item with Term and Decoded Value
   (CodeListItem), then all other items must be of the same type.
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Codelist <codelist> is missing Decoded Values
   severity: Error

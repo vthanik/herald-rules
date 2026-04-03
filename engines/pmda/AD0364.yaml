@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Treatment Dose Units (DOSEU) variable is required when either Treatment
   Dose at Record Start (DOSEON) or Cumulative Actual Treatment Dose (DOSCUMA) variable
   is present in the dataset.
@@ -14,7 +14,10 @@ scope:
     - OCCDS
     - ADAE
     - MDOCCDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: DOSEU variable is not present when DOSEON or DOSCUMA is present
   severity: Error

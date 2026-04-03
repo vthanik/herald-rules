@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: There should be one record per device property defined by SPDEVID and
   DOTESTCD variables
-Check: []
+Check:
+  all:
+    - name: __key_variables__
+      operator: is_unique
 Outcome:
   Message: Duplicate records in Device Property
 Rule Type: Record Data
@@ -18,4 +21,5 @@ Publisher ID: ''
 IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
+Executability: Fully Executable
 

@@ -4,7 +4,12 @@ Core:
   Version: '1'
 Description: Only one of the Unique Subject Identifier (USUBJID) or Pool Identifier
   (POOLID) variables values may be populated, not both.
-Check: []
+Check:
+  all:
+    - name: USUBJID
+      operator: non_empty
+    - name: POOLID
+      operator: non_empty
 Outcome:
   Message: Redundant values for USUBJID and POOLID
 Rule Type: Record Data
@@ -24,4 +29,11 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000229
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: RELSUB
 

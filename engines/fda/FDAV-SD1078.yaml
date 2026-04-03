@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Permissible variable should not be present in domain, when the variable
   has missing value for all records in the dataset.
-Check: []
+Check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 Outcome:
   Message: Permissible variable with missing value for all records
 Rule Type: Record Data
@@ -21,4 +24,5 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+Executability: Partially Executable
 

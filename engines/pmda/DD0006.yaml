@@ -4,12 +4,15 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Required elements must be included in Define.xml and cannot be empty.
 scope:
   classes: []
   domains: Reject
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Missing required <element> value
   severity: Error

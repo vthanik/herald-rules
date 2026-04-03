@@ -4,14 +4,17 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Subjects that are not assigned to an Arm (ARMCD='NOTASSGN') or are screen
   failures (ARMCD='SCRNFAIL'), or ARM=null, should not have any Exposure records.
   Run-in records (EPOCH='RUN-IN') are excluded from firing for this validation rule.
 scope:
   classes: []
   domains: EX
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: EX record is present when subject is not assigned to an arm
   severity: Warning

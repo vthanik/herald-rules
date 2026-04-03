@@ -4,7 +4,16 @@ Core:
   Version: '1'
 Description: I/E Criterion Original Result (IEORRES) must equal 'N', when Inclusion/Exclusion
   Category (IECAT) is 'INCLUSION'.
-Check: []
+Check:
+  all:
+    - name: IECAT
+      operator: equal_to
+      value: INCLUSION
+      value_is_literal: yes
+    - name: IEORRES
+      operator: not_equal_to
+      value: 'N'
+      value_is_literal: yes
 Outcome:
   Message: Inconsistent values for IEORRES/IECAT
 Rule Type: Record Data
@@ -20,4 +29,12 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000001
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: IE
+  Use_Case: INDH
 

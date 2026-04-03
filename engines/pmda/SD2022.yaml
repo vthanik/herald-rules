@@ -4,13 +4,26 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Age Units (AGEU) variable values should be provided when Age (AGE) or
   Age Range (AGETXT) variables values are populated.
 scope:
-  classes: []
-  domains: DM
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+check:
+  all:
+    - any:
+        - name: AGEU
+          operator: not_exists
+        - name: AGEU
+          operator: empty
+    - any:
+        - name: AGETXT
+          operator: non_empty
+        - name: AGE
+          operator: non_empty
 outcome:
   message: Missing value for AGEU when AGE or AGETXT is populated
   severity: Warning
@@ -20,4 +33,5 @@ provenance:
   rule_id: SD2022
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000452
 

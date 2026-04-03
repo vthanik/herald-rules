@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: For regulatory submission data, Class field is required and must be included
   in Define.xml and cannot be empty. Define-XML v2.0 specification represents Class
   as def:Class attribute on ItemGroupDef element. Define-XML v2.1 specification represents
@@ -12,7 +12,10 @@ description: For regulatory submission data, Class field is required and must be
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Missing Class value
   severity: Error

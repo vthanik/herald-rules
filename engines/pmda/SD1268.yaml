@@ -4,13 +4,20 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The Name of the Reference Terminology (TSVCDREF) must be populated when
   the Version of the Reference Terminology (TSVCDVER) is populated.
 scope:
-  classes: []
-  domains: TS
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
+check:
+  all:
+    - name: TSVCDVER
+      operator: non_empty
+    - name: TSVCDREF
+      operator: empty
 outcome:
   message: TSVCDREF is null when TSVCDVER is populated
   severity: Warning
@@ -20,4 +27,5 @@ provenance:
   rule_id: SD1268
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000153
 

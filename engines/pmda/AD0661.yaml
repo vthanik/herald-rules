@@ -4,13 +4,16 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: When ADOSEDUR is present, NDOSEDUR and/or DOSEDURU must also be included
   in the dataset.
 scope:
   classes: []
   domains: ADNCA
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: ADOSEDUR is present and NDOSEDUR or DOSEDURU is not present
   severity: Error

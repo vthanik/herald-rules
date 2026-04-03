@@ -3,7 +3,13 @@ Core:
   Status: Reference
   Version: '1'
 Description: All Subjects (USUBJID) must be present in Demographics (DM) domain.
-Check: []
+Check:
+  all:
+    - name: USUBJID
+      operator: non_empty
+    - name: USUBJID
+      operator: is_not_contained_by
+      value: $dm_usubjid
 Outcome:
   Message: Subject is not present in DM domain
 Rule Type: Record Data
@@ -24,4 +30,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000201
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude: AP--
+  Use_Case: NONCLIN, INDH
 

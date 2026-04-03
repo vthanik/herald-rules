@@ -4,7 +4,14 @@ Core:
   Version: '1'
 Description: DTHFL must equal 'Y' when there is a record in the Death Details (DD)
   domain.
-Check: []
+Check:
+  all:
+    - name: DTHFL
+      operator: not_equal_to
+      value: 'Y'
+    - name: USUBJID
+      operator: is_contained_by
+      value: $usubjids_in_dd
 Outcome:
   Message: DTHFL does not equal 'Y' when DD record is present
 Rule Type: Record Data
@@ -18,4 +25,12 @@ Publisher ID: CG0133
 IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000108
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+  Use_Case: INDH
 

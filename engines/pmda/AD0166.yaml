@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If Baseline Reference Range Indicator (BNRIND) variable is present, then
   Analysis Reference Range Indicator (ANRIND) and Baseline Record Flag (ABLFL) variables
   must be present.
@@ -14,7 +14,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: BNRIND is present, but ANRIND is not present
   severity: Error

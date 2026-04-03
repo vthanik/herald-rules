@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Date/Time of Collection (--DTC) should not be null when End Date/Time
   of Observation (--ENDTC) is not null.
 scope:
@@ -12,7 +12,10 @@ scope:
   domains:
     - FINDINGS
     - FINDINGSABOUT
-check: []
+check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 outcome:
   message: Missing value for --DTC when --ENDTC is provided
   severity: Warning

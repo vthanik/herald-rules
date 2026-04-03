@@ -3,7 +3,10 @@ Core:
   Status: Reference
   Version: '1'
 Description: Variable Label in define.xml must match variable Label in dataset.
-Check: []
+Check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 Outcome:
   Message: Define.xml/dataset variable label mismatch
 Rule Type: Record Data
@@ -24,4 +27,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

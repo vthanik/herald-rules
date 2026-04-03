@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Adverse Events specified in SDTM AE domain must be traceable to ADaM
   ADAE dataset based on Study Identifier (STUDYID), Unique Subject Identifier (USUBJID)
   and Sequence Number (AESEQ) variables. The ADAE structure for the standard adverse
@@ -16,7 +16,10 @@ description: Adverse Events specified in SDTM AE domain must be traceable to ADa
 scope:
   classes: []
   domains: AE
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Record key from SDTM AE is not traceable to ADaM ADAE (not enough ADAE
     recs)

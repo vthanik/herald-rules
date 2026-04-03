@@ -6,7 +6,15 @@ Description: 'Study Day of End (--ENDY) variable value should be populated as de
   by CDISC standards: --ENDY = (date portion of --ENDTC) - (date portion of RFSTDTC)
   +1 if --ENDTC is on or after RFSTDTC; --ENDY = (date portion of --ENDTC) - (date
   portion of RFSTDTC) if --ENDTC precedes RFSTDTC.'
-Check: []
+Check:
+  all:
+    - name: --ENDTC
+      operator: is_complete_date
+    - name: RFSTDTC
+      operator: is_complete_date
+    - name: --ENDY
+      operator: not_equal_to
+      value: $val_endy
 Outcome:
   Message: Incorrect value for --ENDY variable
 Rule Type: Record Data
@@ -27,4 +35,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000553
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude: DM
+  Use_Case: INDH
 

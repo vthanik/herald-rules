@@ -5,7 +5,10 @@ Core:
 Description: Value for High Level Term (--HLT) variable must be populated using a
   High Level Term of the MedDRA dictionary of a version specified in the define.xml
   (Case-insensitive).
-Check: []
+Check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 Outcome:
   Message: Value for --HLT not found in MedDRA dictionary
 Rule Type: Record Data
@@ -21,4 +24,5 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+Executability: Fully Executable
 

@@ -7,7 +7,10 @@ Description: One End Time-Point variable is expected to be populated when an eve
   or End Relative to Reference Period (--ENRF), or End Relative to Reference Period
   (--ENRTPT) should not be missing, or Occurrence (--OCCUR) = 'N' or Completion Status
   (--STAT) != '') or Duration (--DUR) != '').
-Check: []
+Check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 Outcome:
   Message: Missing End Time-Point value
 Rule Type: Record Data
@@ -24,4 +27,5 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+Executability: Partially Executable
 

@@ -5,7 +5,16 @@ Core:
 Description: Planned Arm Code (ARMCD) values should match entries in the Trial Arms
   (TA) dataset, except for subjects who failed screening (ARMCD = 'SCRNFAIL') or were
   not fully assigned to an Arm (ARMCD = 'NOTASSGN').
-Check: []
+Check:
+  all:
+    - name: ARMCD
+      operator: is_not_contained_by
+      value:
+        - SCRNFAIL
+        - NOTASSGN
+    - name: ARMCD
+      operator: is_not_contained_by
+      value: $armcd_list
 Outcome:
   Message: Invalid ARMCD
 Rule Type: Record Data
@@ -26,4 +35,11 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000531
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
 

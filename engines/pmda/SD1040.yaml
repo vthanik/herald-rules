@@ -4,20 +4,22 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Value of Subcategory (--SCAT) should not be identical to that in Domain
   Abbreviation (DOMAIN); Reported Term (--TERM); Name of Measurement, Test, or Examination
   (--TESTCD); Name of Treatment (--TRT); Standardized Coded Term (--DECOD); Body System
   or Organ Class (--BODSYS).
 scope:
-  classes: []
-  domains:
-    - INTERVENTIONS
-    - FINDINGS
-    - EVENTS
-    - FINDINGSABOUT
-    - TI
-check: []
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: ALL
+  Use_Case: INDH
+check:
+  all:
+    - name: --SCAT
+      operator: equal_to_case_insensitive
+      value: --DECOD
 outcome:
   message: --SCAT value is redundant with other variable values
   severity: Warning
@@ -27,4 +29,5 @@ provenance:
   rule_id: SD1040
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000195
 

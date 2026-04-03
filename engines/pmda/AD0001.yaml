@@ -4,12 +4,15 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: ADaM Subject level (ADSL) dataset should be included in every submission.
 scope:
   classes: []
   domains: []
-check: []
+check:
+  all:
+    - name: __dataset__
+      operator: exists
 outcome:
   message: Missing ADSL dataset
   severity: Error

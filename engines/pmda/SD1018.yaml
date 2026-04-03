@@ -4,14 +4,26 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The combination of Visit Number (VISITNUM), Visit Name (VISIT), and Planned
   Study Day of Visit (VISITDY) values should match entries in the Trial Visits (TV)
   dataset when they are planned visits (SVUPDES = null).
 scope:
-  classes: []
-  domains: SV
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude: TV
+  Use_Case: INDH
+check:
+  all:
+    - name: VISIT
+      operator: non_empty
+    - name: SVPRESP
+      operator: equal_to
+      value: 'Y'
+    - name: VISIT
+      operator: is_not_contained_by
+      value: $tv_visit
 outcome:
   message: VISITNUM/VISIT/VISITDY values do not match TV domain data
   severity: Warning
@@ -21,4 +33,5 @@ provenance:
   rule_id: SD1018
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000269
 

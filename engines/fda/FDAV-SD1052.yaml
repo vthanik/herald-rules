@@ -4,7 +4,11 @@ Core:
   Version: '1'
 Description: Order of Element within Arm (TAETORD) must have a unique value for a
   given value of Planned Arm Code (ARMCD) within the domain.
-Check: []
+Check:
+  all:
+    - name: TAETORD
+      operator: is_not_unique_set
+      value: ARM
 Outcome:
   Message: Non-unique value for TAETORD within ARMCD
 Rule Type: Record Data
@@ -25,4 +29,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000144
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TA
+  Use_Case: INDH
 

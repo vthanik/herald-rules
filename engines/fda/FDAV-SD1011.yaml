@@ -5,7 +5,12 @@ Core:
 Description: Value of Duration, Elapsed Time, and Interval variables (--DUR, --ELTM,
   --EVLINT, --STINT, --ENINT, TDSTOFF, TDTGTPAI, TDMINPAI, TDMAXPAI) must conform
   to the ISO 8601 international standard.
-Check: []
+Check:
+  all:
+    - name: --TPTREF
+      operator: empty
+    - name: --ELTM
+      operator: non_empty
 Outcome:
   Message: Invalid ISO 8601 value for variable
 Rule Type: Record Data
@@ -26,4 +31,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000028
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

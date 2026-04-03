@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: When all 3 variables are populated and AyHI does not equal 0, Ratio to
   AyHI (R2AyHI) must equal Analysis Value (AVAL) / Analysis Range y HI Value (AyHI).
 scope:
@@ -13,7 +13,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: 'Calculation issue: R2AyHI != AVAL / AyHI'
   severity: Warning

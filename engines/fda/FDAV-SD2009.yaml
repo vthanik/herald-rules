@@ -5,7 +5,10 @@ Core:
 Description: Value for Lowest Level Term Code (--LLTCD) variable must be populated
   using a Lowest Level Term Code of the MedDRA dictionary of a version specified in
   the define.xml.
-Check: []
+Check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 Outcome:
   Message: Value for --LLTCD not found in MedDRA dictionary
 Rule Type: Record Data
@@ -21,4 +24,5 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+Executability: Fully Executable
 

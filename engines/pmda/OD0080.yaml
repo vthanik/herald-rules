@@ -4,13 +4,16 @@ status: Reference
 standard: Define-XML
 category: ODM/Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Variable Data Type must match the Data Type of the referenced Codelist.
   Define-XML specification represents Variable as ItemDef.
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Codelist/Variable Data Type mismatch
   severity: Error

@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: 'For SDTM and SEND submission data (where def:StandardName is ''SDTM-IG''
   or ''SEND-IG''), Domain attribute is required and must be included in Define.xml
   and cannot be empty. Note: Refer to the data standards catalog by the relevant Regulatory
@@ -12,7 +12,10 @@ description: 'For SDTM and SEND submission data (where def:StandardName is ''SDT
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Missing Domain value
   severity: Error

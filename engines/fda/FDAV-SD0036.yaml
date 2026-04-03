@@ -4,7 +4,17 @@ Core:
   Version: '1'
 Description: Character Result/Finding in Std Units (--STRESC) must be populated, when
   Result or Finding in Original Units (--ORRES) is provided.
-Check: []
+Check:
+  all:
+    - any:
+        - name: --ORRES
+          operator: non_empty
+        - name: --DRVFL
+          operator: equal_to
+          value: 'Y'
+    - all:
+        - name: --STRESC
+          operator: empty
 Outcome:
   Message: Missing value for --STRESC, when --ORRES is provided
 Rule Type: Record Data
@@ -25,4 +35,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000021
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

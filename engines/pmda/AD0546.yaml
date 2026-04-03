@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If Percent Chg from Baseline Category y (N) (PCHGCAyN) variable is used
   in a dataset, Percent Chg from Baseline Category y (PCHGCATy) variable must also
   be present in that dataset.
@@ -15,7 +15,10 @@ scope:
     - ADNCA
     - MDBDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: PCHGCAyN is present and PCHGCATy is not present
   severity: Error

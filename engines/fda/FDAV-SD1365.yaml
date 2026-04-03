@@ -5,7 +5,14 @@ Core:
 Description: ADSL Population Flags, which had standard Supplemental Qualifiers included
   in previous versions of the SDTMIG (COMPLT, FASFL/FULLSET, ITT, PPROTFL/PPROT, SAFFL/SAFETY,
   etc.) should no longer be used in SDTM.
-Check: []
+Check:
+  all:
+    - name: RDOMAIN
+      operator: equal_to_case_insensitive
+      value: DM
+    - name: QNAM
+      operator: matches_regex
+      value: (ENRFL|SAFFL|EFFFL|ITTFL|PPROTFL|COMPLFL|COMPLT|FULLSET|ITT|PPROT|SAFETY)
 Outcome:
   Message: ADSL Population Flags provided in SDTM
 Rule Type: Record Data
@@ -16,6 +23,12 @@ Source: FDA Validator Rules v1.6
 Domains: SUPPQUAL
 Standard: SDTM
 Publisher ID: CG0528
-IG Versions:
-  - SDTMIG 3.3
+IG Versions: SDTMIG 3.3
+CORE Reference: CORE-000211
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: RELATIONSHIP
+  Domains:
+    Include: SUPP--
 

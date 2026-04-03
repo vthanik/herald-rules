@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: The Outcome of Adverse Event (AEOUT) variable is populated with the value
   RECOVERED/RESOLVED, however the End Date/Time of Adverse Event (AEENDTC) or Duration
   of Adverse Event (AEDUR) variables are null. If the adverse event has an outcome
@@ -13,7 +13,10 @@ description: The Outcome of Adverse Event (AEOUT) variable is populated with the
 scope:
   classes: []
   domains: AE
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: AEOUT = RECOVERED/RESOLVED, but an end date or collected duration is not
     provided

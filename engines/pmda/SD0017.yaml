@@ -4,15 +4,20 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The value of Name of Measurement, Test or Examination (--TEST) should
   be no more than 40 characters in length.
 scope:
-  classes: []
-  domains:
-    - FINDINGS(-IE)
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Exclude: IE
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: --TEST
+      operator: longer_than
+      value: 40
 outcome:
   message: Invalid value for --TEST variable
   severity: Error
@@ -22,4 +27,5 @@ provenance:
   rule_id: SD0017
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000199
 

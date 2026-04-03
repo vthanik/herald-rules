@@ -4,13 +4,16 @@ status: Reference
 standard: Define-XML
 category: ODM/Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The OID attribute for ItemGroupDef element must be unique within a single
   MetaDataVersion.
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __key_variables__
+      operator: is_unique
 outcome:
   message: Duplicate ItemGroupDef OID
   severity: Error

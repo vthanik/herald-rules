@@ -4,12 +4,15 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Study Identifier (STUDYID) variable should have Origin set to 'Protocol'.
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Origin for STUDYID variable is not set to Protocol
   severity: Error

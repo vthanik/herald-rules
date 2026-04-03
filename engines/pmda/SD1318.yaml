@@ -4,14 +4,17 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Subjects who have DSDECOD = 'PROTOCOL VIOLATION' or DSDECOD = 'PROTOCOL
   DEVIATION' records in the Disposition (DS) domain should have supportive records
   with details in the Protocol Deviations (DV) domain.
 scope:
   classes: []
   domains: DS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: No records for subject are found in DV domain
   severity: Error

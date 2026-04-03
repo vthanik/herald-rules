@@ -4,7 +4,15 @@ Core:
   Version: '1'
 Description: All values of Preferred Term Code (--PTCD) should be the same for a given
   value of Dictionary-Derived Term (--DECOD).
-Check: []
+Check:
+  all:
+    - name: --DECOD
+      operator: exists
+    - name: --PTCD
+      operator: exists
+    - name: --PTCD
+      operator: is_not_unique_relationship
+      value: --DECOD
 Outcome:
   Message: Inconsistent value for --PTCD within --DECOD
 Rule Type: Record Data
@@ -20,4 +28,12 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000268
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: ALL
+  Use_Case: INDH
 

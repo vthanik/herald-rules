@@ -4,7 +4,12 @@ Core:
   Version: '1'
 Description: Start Relative to Reference Time Point (--STRTPT) variable must be included
   into the domain, when Start Relative Time Point (--STTPT) variable is present.
-Check: []
+Check:
+  all:
+    - name: --STTPT
+      operator: exists
+    - name: --STRTPT
+      operator: not_exists
 Outcome:
   Message: Missing --STRTPT variable, when --STTPT variable is present
 Rule Type: Record Data
@@ -25,4 +30,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000261
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

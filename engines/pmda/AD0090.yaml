@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: At least 1 treatment variable is required in a BDS dataset. This requirement
   is satisfied by any of the subject-level (ARM, ACTARM, TRTxxP, TRTxxA, TRTSEQP,
   TRTSEQA, TRxxPGy, TRxxAGy, TSEQPGy, TSEQAGy) or record-level (TRTP, TRTA, TRTPGy,
@@ -17,7 +17,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: None of the subject-level or record-level treatment variables defined in
     the IG are present

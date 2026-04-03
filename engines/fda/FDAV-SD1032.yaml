@@ -4,7 +4,17 @@ Core:
   Version: '1'
 Description: All subjects with Planned Arm Code (ARMCD) equals 'SCRNFAIL' should have
   records in the Inclusion/Exclusion Criteria Not Met (IE) domain.
-Check: []
+Check:
+  all:
+    - name: ACTARMCD
+      operator: is_not_contained_by_case_insensitive
+      value:
+        - SCRNFAIL
+        - NOTASSGN
+        - NOTTRT
+    - name: USUBJID
+      operator: is_not_contained_by
+      value: $usubjids_in_ex
 Outcome:
   Message: No records for 'SCRNFAIL' subject are found in IE domain
 Rule Type: Record Data
@@ -19,4 +29,11 @@ IG Versions:
   - SDTMIG 3.1.2
   - SDTMIG 3.1.3
   - SDTMIG 3.2
+CORE Reference: CORE-000366
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
 

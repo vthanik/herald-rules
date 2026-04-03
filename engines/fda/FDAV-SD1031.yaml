@@ -4,7 +4,12 @@ Core:
   Version: '1'
 Description: End Relative to Reference Period (--ENRF) should not be populated for
   subjects with missing value for Reference End Date/Time (RFENDTC).
-Check: []
+Check:
+  all:
+    - name: RFENDTC
+      operator: empty
+    - name: --ENRF
+      operator: non_empty
 Outcome:
   Message: Value for --ENRF is populated, when RFENDTC is NULL
 Rule Type: Record Data
@@ -24,4 +29,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000177
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude: DM
+  Use_Case: INDH
 

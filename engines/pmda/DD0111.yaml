@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: For Define-XML v2.0, the Pages field must be empty when Origin Type is
   not 'CRF'. For Define-XML v2.1, the Pages field is required when Origin Type is
   'Collected' and Source is 'Investigator' or 'Subject'. Define-XML specification
@@ -12,7 +12,10 @@ description: For Define-XML v2.0, the Pages field must be empty when Origin Type
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid use of Pages
   severity: Error

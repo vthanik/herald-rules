@@ -4,16 +4,23 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Toxicity (--TOX) variable should not be present in the domain when the
   Toxicity Grade (--TOXGR) variable is missing.
 scope:
-  classes: []
-  domains:
-    - FINDINGS
-    - EVENTS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include:
+      - EVENTS
+      - FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: --TOXGR
+      operator: not_exists
+    - name: --TOX
+      operator: exists
 outcome:
   message: --TOX variable is present when --TOXGR variable is missing
   severity: Warning
@@ -23,4 +30,5 @@ provenance:
   rule_id: SD1280
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000023
 

@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: When all 3 variables are populated and BASE does not equal 0, Ratio to
   Base (R2BASE) must equal Analysis Value (AVAL) / Baseline Value (BASE). AD0132A
   will raise errors when BASE equals 0. AD0132B also complements this check.
@@ -14,7 +14,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: 'Calculation issue: R2BASE != AVAL / BASE'
   severity: Warning

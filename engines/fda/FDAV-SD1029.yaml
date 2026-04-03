@@ -5,7 +5,10 @@ Core:
 Description: Variables value must not include non-ASCII or non-printable characters
   (outside of 32-126 ASCII code range), limited to variables which values may be converted
   into new variable name or label (--TEST, --TESTCD, --PARM, --PARMCD, QLABEL, QNAM).
-Check: []
+Check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 Outcome:
   Message: Non-ASCII or non-printable characters in variable
 Rule Type: Record Data
@@ -26,4 +29,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Partially Executable
 

@@ -4,7 +4,12 @@ Core:
   Version: '1'
 Description: Planned Time Point Number (--TPTNUM) should not be NULL, when Planned
   Time Point Name (--TPT) is populated.
-Check: []
+Check:
+  all:
+    - name: --TPT
+      operator: exists
+    - name: --TPTNUM
+      operator: not_exists
 Outcome:
   Message: Missing value for --TPTNUM, when --TPT is provided
 Rule Type: Record Data
@@ -25,4 +30,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000026
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

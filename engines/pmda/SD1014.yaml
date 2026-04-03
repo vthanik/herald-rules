@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Order of Element within Arm (TAETORD) values should match entries in
   the Trial Arms (TA) dataset.
 scope:
@@ -15,7 +15,10 @@ scope:
     - FINDINGS(-DO)
     - EVENTS
     - FINDINGSABOUT
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid TAETORD
   severity: Error

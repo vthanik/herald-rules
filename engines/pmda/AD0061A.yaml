@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: The presence of SDTM.EX (Exposure) domain implies that there should be
   a Treatment End Date (TRTEDT) / Datetime (TRTEDTM) variable present in the ADaM
   data. ADaM rule AD0061 corresponds to Start Date and Times. ADaM IG requires it
@@ -12,7 +12,10 @@ description: The presence of SDTM.EX (Exposure) domain implies that there should
 scope:
   classes: []
   domains: []
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: SDTM.EX is present, but neither ADSL TRTEDT nor TRTEDTM are present
   severity: Error

@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: For a given period xx, If both Actual Treatment for Period xx (TRTxxA)
   and Planned Pooled Treatment y for Period xx (TRxxPGy) variables are present, then
   Actual Pooled Treatment y for Period xx (TRxxAGy) variable must be present.
@@ -13,7 +13,10 @@ scope:
   domains:
     - ADSL
     - ADDL
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: TRxxPGy and TRTxxA are present, but TRxxAGy is not present
   severity: Error

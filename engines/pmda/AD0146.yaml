@@ -4,13 +4,16 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Within a study, all PARAM values must be the same for each unique value
   of PARAMN when the primary variable PARAM is populated.
 scope:
   classes: []
   domains: BDS
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for PARAM
   severity: Error

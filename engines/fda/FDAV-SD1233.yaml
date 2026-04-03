@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: All Medical Devices (SPDEVID) must be present in Device Identifier (DI)
   domain.
-Check: []
+Check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 Outcome:
   Message: Device is not present in DI domain
 Rule Type: Record Data
@@ -19,4 +22,5 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+Executability: Partially Executable
 

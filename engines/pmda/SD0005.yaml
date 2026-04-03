@@ -4,22 +4,38 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The value of Sequence Number (--SEQ) variable must be unique for each
   record within a domain and within each Unique Subject Identifier (USUBJID) or Pool
   Identifier (POOLID) variables value when they are present in the domain. Exclusions
   are DE, DO, DT, DU, and DX domains.
 scope:
-  classes: []
-  domains:
-    - SPECIALPURPOSE(-DM)
-    - INTERVENTIONS(-DX)
-    - FINDINGS(-DO
-    - -DU)
-    - EVENTS(-DE
-    - -DT)
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude: TS
+check:
+  any:
+    - all:
+        - name: --SEQ
+          operator: exists
+        - name: USUBJID
+          operator: non_empty
+        - name: --SEQ
+          operator: is_not_unique_set
+          value:
+            - DOMAIN
+            - USUBJID
+    - all:
+        - name: --SEQ
+          operator: exists
+        - name: POOLID
+          operator: non_empty
+        - name: --SEQ
+          operator: is_not_unique_set
+          value:
+            - DOMAIN
+            - POOLID
 outcome:
   message: Duplicate value for --SEQ variable
   severity: Error
@@ -29,4 +45,5 @@ provenance:
   rule_id: SD0005
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000544
 

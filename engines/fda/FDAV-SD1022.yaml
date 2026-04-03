@@ -5,7 +5,11 @@ Core:
 Description: The value of Qualifier Variable Name (QNAM) should be limited to 8 characters,
   cannot start with a number, and cannot contain characters other than letters in
   upper case, numbers, or underscores.
-Check: []
+Check:
+  all:
+    - name: QNAM
+      operator: not_matches_regex
+      value: ^[A-Z_][A-Z0-9_]{0,7}$
 Outcome:
   Message: Invalid value for QNAM variable
 Rule Type: Record Data
@@ -26,4 +30,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000221
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: RELATIONSHIP
+  Domains:
+    Include: SUPP--
+  Use_Case: INDH, PROD
 

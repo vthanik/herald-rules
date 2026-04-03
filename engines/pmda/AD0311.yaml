@@ -4,14 +4,17 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Across studies, all SMQ Scope (N) (SMQzzSCN) variable values must be
   the same for each unique value of SMQ Scope (SMQzzSC ) variable when the primary
   variable SMQzzSC is populated. The usual mapping is BROAD=1, NARROW=2.
 scope:
   classes: []
   domains: ADAE
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for SMQzzSCN
   severity: Error

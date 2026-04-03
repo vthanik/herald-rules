@@ -4,13 +4,37 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable - Possible Underreporting
 description: SDTM model variable may be added into standard domains according to its
   domain general class, if there are no restrictions on their usage specified in IG.
 scope:
-  classes: []
-  domains: []
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+check:
+  all:
+    - name: variable_name
+      operator: not_equal_to
+      value: EXMETHOD
+    - name: variable_name
+      operator: not_equal_to
+      value: EGBEATNO
+    - name: variable_name
+      operator: not_equal_to
+      value: ICIMPLBL
+    - name: variable_name
+      operator: not_equal_to
+      value: MSAGENT
+    - name: variable_name
+      operator: not_equal_to
+      value: MSCONC
+    - name: variable_name
+      operator: not_equal_to
+      value: MSCONCU
+    - name: variable_name
+      operator: is_not_contained_by
+      value: $allowed_variables
 outcome:
   message: Model Permissible variable added into standard domain
   severity: Warning
@@ -20,4 +44,5 @@ provenance:
   rule_id: SD1076
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-001079
 

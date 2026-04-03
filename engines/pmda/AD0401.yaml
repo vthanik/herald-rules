@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: On a given record, if Analysis Toxicity Description Low (ATOXDSCL) variable
   value is populated, then both Analysis Value (AVAL) and the Analysis Toxicity Grade
   Low (ATOXGRL) variable values must be populated.
@@ -15,7 +15,10 @@ scope:
     - ADNCA
     - MDBDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: AVAL is not populated or ATOXGRL is not populated, and ATOXDSCL is populated
   severity: Error

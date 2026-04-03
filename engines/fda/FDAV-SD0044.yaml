@@ -4,7 +4,12 @@ Core:
   Version: '1'
 Description: Treatment Vehicle Amount Units (--VAMTU) should not be NULL,  when Treatment
   Vehicle Amount (--VAMT) is populated.
-Check: []
+Check:
+  all:
+    - name: --TRTV
+      operator: empty
+    - name: --VAMTU
+      operator: non_empty
 Outcome:
   Message: Missing value for --VAMTU, when --VAMT is populated
 Rule Type: Record Data
@@ -25,4 +30,11 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000091
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: INTERVENTIONS
+  Domains:
+    Include: ALL
 

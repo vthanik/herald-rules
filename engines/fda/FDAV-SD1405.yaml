@@ -5,7 +5,10 @@ Core:
 Description: Date/Time of First Challenge Agent Admin (RFCSTDTC) variable must be
   populated, when Date/Time of Last Challenge Agent Admin (RFXENDTC) variable value
   is provided.
-Check: []
+Check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 Outcome:
   Message: Missing value for RFCSTDTC, when RFCENDTC is provided
 Rule Type: Record Data
@@ -16,6 +19,6 @@ Source: FDA Validator Rules v1.6
 Domains: DM
 Standard: SDTM
 Publisher ID: FDAB043
-IG Versions:
-  - SENDIG-AR 1.0
+IG Versions: SENDIG-AR 1.0
+Executability: Partially Executable
 

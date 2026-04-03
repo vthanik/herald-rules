@@ -6,7 +6,14 @@ Description: Supplemental Qualifiers special purpose dataset (SUPP--) can only b
   used to capture non-standard variables and their association to parent records in
   general-observation-class datasets (Events, Findings, Interventions) and Demographics.
   Another exception is Subject Visits domain in SDTM-IG prior v3.4
-Check: []
+Check:
+  all:
+    - name: RDOMAIN
+      operator: not_equal_to
+      value: DM
+      value_is_literal: yes
+    - name: IDVAR
+      operator: empty
 Outcome:
   Message: Invalid usage of SUPPQUAL for non-general-observation-class Domain
 Rule Type: Record Data
@@ -27,4 +34,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000134
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: RELATIONSHIP
+  Domains:
+    Include: SUPP--
+  Use_Case: INDH, PROD
 

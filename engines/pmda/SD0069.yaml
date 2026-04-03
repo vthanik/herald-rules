@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: All Demographics (DM) subjects (USUBJID) should have at least one record
   in the Disposition (DS) domain. The only possible exceptions for SDTMIG v3.2 (and
   earlier) are Screen Failures (ARMCD=SCRNFAIL) and Not Assigned Treatment (ARMCD=NOTASSGN)
@@ -12,9 +12,21 @@ description: All Demographics (DM) subjects (USUBJID) should have at least one r
   (TSVAL) for the 'ONGOSIND/Ongoing Study Indicator' parameter should be set to 'Y'
   in the Trial Summary (TS) domain.
 scope:
-  classes: []
-  domains: DM
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: DM
+check:
+  all:
+    - name: ACTARMCD
+      operator: is_not_contained_by
+      value:
+        - SCRNFAIL
+        - NOTASSGN
+        - NOTTRT
+    - name: USUBJID
+      operator: is_not_contained_by
+      value: $ds_usubjid
 outcome:
   message: No Disposition record found for subject
   severity: Warning
@@ -24,4 +36,5 @@ provenance:
   rule_id: SD0069
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000515
 

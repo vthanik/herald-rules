@@ -4,13 +4,16 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The Origin for Unique Subject Identifier (USUBJID) variable should be
   consistent across all datasets.
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent Origin for USUBJID
   severity: Error

@@ -4,7 +4,17 @@ Core:
   Version: '1'
 Description: Occurrence (--OCCUR) may only be populated, when a given Intervention
   or Event has been pre-specified (--PRESP = 'Y').
-Check: []
+Check:
+  all:
+    - name: --PRESP
+      operator: equal_to
+      value: 'Y'
+    - name: --STAT
+      operator: empty
+    - name: --OCCUR
+      operator: exists
+    - name: --OCCUR
+      operator: empty
 Outcome:
   Message: Value for --OCCUR is populated for unsolicited Intervention or Event
 Rule Type: Record Data
@@ -20,4 +30,18 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000018
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include:
+      - EVENTS
+      - INTERVENTIONS
+  Domains:
+    Exclude:
+      - AE
+      - DS
+      - DV
+      - EX
+  Use_Case: INDH
 

@@ -5,7 +5,13 @@ Core:
 Description: Value of Start Relative to Reference Period (--STRF) or End Relative
   to Reference Period (--ENRF) should not be populated, when an event or intervention
   is marked as not occurred (--OCCUR='N').
-Check: []
+Check:
+  all:
+    - name: --OCCUR
+      operator: equal_to
+      value: 'N'
+    - name: --STRF
+      operator: non_empty
 Outcome:
   Message: Time point for non-occurred event or intervention is provided
 Rule Type: Record Data
@@ -25,4 +31,14 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000240
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include:
+      - INTERVENTIONS
+      - EVENTS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

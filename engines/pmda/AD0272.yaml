@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: 1st Occurrence * Flag (AOCC*FL) variable values must be Y or null.
 scope:
   classes: []
@@ -13,7 +13,10 @@ scope:
     - ADAE
     - MDOCCDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Variable flag value is not Y or null
   severity: Error

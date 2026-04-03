@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Planned Start of Assessment Interval (--STINT) should not be NULL, when
   Planned End of Assessment Interval (--ENINT) is populated.
-Check: []
+Check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 Outcome:
   Message: Missing value for --STINT, when --ENINT is provided
 Rule Type: Record Data
@@ -25,4 +28,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

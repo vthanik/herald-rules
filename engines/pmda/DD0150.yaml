@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: 'Invalid combination of def:Standard elements found in a v2.1 define.xml
   file. For SEND, at least two Standards must be defined: (1) where Type=''IG'' and
   Name begins with ''SENDIG'' and (2) where Type=''CT'' and PublishingSet=''SEND''.
@@ -15,7 +15,10 @@ description: 'Invalid combination of def:Standard elements found in a v2.1 defin
 scope:
   classes: []
   domains: Reject
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Missing expected Standard
   severity: Error

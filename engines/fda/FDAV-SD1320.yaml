@@ -4,7 +4,33 @@ Core:
   Version: '1'
 Description: Character Result/Finding in Std Format (--STRESC) value should not be
   NULL, when Completion Status (--STAT) value is NULL.
-Check: []
+Check:
+  any:
+    - all:
+        - name: --STAT
+          operator: empty
+        - name: --DRVFL
+          operator: not_equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: --ORRES
+          operator: empty
+    - all:
+        - name: --STAT
+          operator: empty
+        - name: --DRVFL
+          operator: not_exists
+        - name: --ORRES
+          operator: empty
+    - all:
+        - name: --STAT
+          operator: not_exists
+        - name: --DRVFL
+          operator: not_equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: --ORRES
+          operator: empty
 Outcome:
   Message: Missing value for --STRESC, when --STAT is null
 Rule Type: Record Data
@@ -25,4 +51,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000200
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

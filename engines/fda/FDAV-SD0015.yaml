@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Non-missing Duration of Event, Exposure or Observation (--DUR) value
   must be greater than or equal to 0.
-Check: []
+Check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 Outcome:
   Message: Negative value for --DUR
 Rule Type: Record Data
@@ -25,4 +28,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

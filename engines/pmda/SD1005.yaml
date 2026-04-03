@@ -4,13 +4,20 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Study Identifier (STUDYID) values must match the STUDYID in Demographics
   (DM) domain.
 scope:
-  classes: []
-  domains: ALL(-DM)
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, NONCLIN
+check:
+  all:
+    - name: STUDYID
+      operator: is_not_contained_by
+      value: $dm_studyid
 outcome:
   message: Invalid STUDYID
   severity: Error
@@ -20,4 +27,5 @@ provenance:
   rule_id: SD1005
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000172
 

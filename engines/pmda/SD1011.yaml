@@ -4,23 +4,22 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Value of Duration, Elapsed Time, and Interval variables (--DUR, --ELTM,
   --EVLINT, --STINT, --ENINT, TDSTOFF, TDTGTPAI, TDMINPAI, TDMAXPAI) must conform
   to the ISO 8601 international standard.
 scope:
-  classes: []
-  domains:
-    - SPECIALPURPOSE(-DM)
-    - INTERVENTIONS
-    - FINDINGS(-DO)
-    - EVENTS
-    - FINDINGSABOUT
-    - TRIALDESIGN(-TA
-    - -TI
-    - -TS
-    - -TV)
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: --TPTREF
+      operator: empty
+    - name: --ELTM
+      operator: non_empty
 outcome:
   message: Invalid ISO 8601 value for variable
   severity: Error
@@ -30,4 +29,5 @@ provenance:
   rule_id: SD1011
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000028
 

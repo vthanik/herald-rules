@@ -6,7 +6,19 @@ Description: RFENDTC must be null when actual arm indicates that the subject is 
   screen failure ('Screen Failure'), was not assigned to an arm ('Not Assigned'),
   or was not treated ('NOTTRT') (or null). This rule applies to studies where RFENDTC
   is associated with a treatment date.
-Check: []
+Check:
+  all:
+    - name: ACTARM
+      operator: is_contained_by
+      value:
+        - Screen Failure
+        - Not Assigned
+        - Not Treated
+        - SCREEN FAILURE
+        - NOT ASSIGNED
+        - NOT TREATED
+    - name: RFENDTC
+      operator: non_empty
 Outcome:
   Message: RFENDTC is populated for subject who did not receive treatment
 Rule Type: Record Data
@@ -20,4 +32,11 @@ Publisher ID: CG0141
 IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
+CORE Reference: CORE-000369
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
 

@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The def:CommentOID attribute is required for an ItemDef when its ItemOID
   is referenced in an ItemRef that has the def:HasNoData attribute value 'Yes'. A
   comment must be included to explain why no data is present for the dataset's variables
@@ -12,7 +12,10 @@ description: The def:CommentOID attribute is required for an ItemDef when its It
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __required_variable__
+      operator: exists
 outcome:
   message: Missing required def:CommentOID for Variable
   severity: Error

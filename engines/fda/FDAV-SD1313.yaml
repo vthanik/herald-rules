@@ -4,7 +4,17 @@ Core:
   Version: '1'
 Description: Epoch (EPOCH) variable should be provided, when Category for Disposition
   Event (DSCAT) equals 'DISPOSITION EVENT'.
-Check: []
+Check:
+  all:
+    - name: DSCAT
+      operator: present_on_multiple_rows_within
+      within: USUBJID
+    - name: DSCAT
+      operator: equal_to
+      value: DISPOSITION EVENT
+      value_is_literal: yes
+    - name: EPOCH
+      operator: empty
 Outcome:
   Message: Missing EPOCH value, when DSCAT is 'DISPOSITION EVENT'
 Rule Type: Record Data
@@ -20,4 +30,11 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000329
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: DS
 

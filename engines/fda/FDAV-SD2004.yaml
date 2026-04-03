@@ -4,7 +4,13 @@ Core:
   Version: '1'
 Description: Subject Death Flag (DTHFL) value must equal 'Y', when Date/Time of Death
   (DTHDTC) is provided.
-Check: []
+Check:
+  all:
+    - name: DTHDTC
+      operator: non_empty
+    - name: DTHFL
+      operator: not_equal_to
+      value: 'Y'
 Outcome:
   Message: Missing value for DTHFL, when DTHDTC is populated
 Rule Type: Record Data
@@ -19,4 +25,12 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000007
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+  Use_Case: INDH
 

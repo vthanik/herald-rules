@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: When all 3 variables are populated, Change to Baseline (BCHG) must equal
   Baseline Value (BASE) minus Analysis Value (AVAL).
 scope:
@@ -14,7 +14,10 @@ scope:
     - ADNCA
     - MDBDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: 'Calculation issue: BCHG != BASE - AVAL'
   severity: Error

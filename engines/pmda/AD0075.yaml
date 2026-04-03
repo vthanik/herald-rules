@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If the Planned Treatment (TRTxxPN) numeric variable is present, there
   must be a corresponding Planned Treatment (TRTxxP) character variable.
 scope:
@@ -12,7 +12,10 @@ scope:
   domains:
     - ADSL
     - ADDL
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: TRTxxPN is present, but TRTxxP is not present
   severity: Error

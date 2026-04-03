@@ -4,13 +4,27 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Element Code (ETCD) values defined in Trial Elements (TE) should be assigned
   for at least one Arm Code (ARMCD) in Trial Arms (Trial Arms).
 scope:
-  classes: []
-  domains: TE
-check: []
+  Classes:
+    Include:
+      - SPECIAL PURPOSE
+      - TRIAL DESIGN
+  Domains:
+    Include:
+      - SE
+      - TA
+  Use_Case: INDH
+check:
+  all:
+    - name: ETCD
+      operator: not_equal_to
+      value: UNPLAN
+    - name: ETCD
+      operator: is_not_contained_by
+      value: $te_etcd
 outcome:
   message: ETCD value does not present in TA
   severity: Error
@@ -20,4 +34,5 @@ provenance:
   rule_id: SD1378
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000173
 

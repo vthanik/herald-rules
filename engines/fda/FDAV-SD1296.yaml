@@ -3,7 +3,16 @@ Core:
   Status: Reference
   Version: '1'
 Description: TSVAL for ADAPT record must be 'Y' or 'N'.
-Check: []
+Check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: ADAPT
+    - name: TSVAL
+      operator: is_not_contained_by
+      value:
+        - 'Y'
+        - 'N'
 Outcome:
   Message: Invalid TSVAL value for ADAPT parameter
 Rule Type: Record Data
@@ -19,4 +28,11 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000563
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
 

@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If Ratio to Analysis Range y Lower Limit (R2AyLO) flag variable is present,
   there must also be a corresponding Analysis Range y Lower Limit (AyLO) variable.
 scope:
@@ -13,7 +13,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: AyLO variable is not present when R2AyLO is present
   severity: Error

@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: The combination of Study Identifier (STUDYID) and Unique Subject Identifier
   (USUBJID) is not found in the SDTM Demographics domain. There must be traceability
   between ADaM and SDTM.
@@ -13,7 +13,10 @@ scope:
   domains:
     - ADSL
     - ADDL
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: The combination of STUDYID and USUBJID value does not exist in the SDTM
     DM domain

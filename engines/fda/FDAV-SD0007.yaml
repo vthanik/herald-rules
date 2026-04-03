@@ -6,7 +6,10 @@ Description: Standard Units (--STRESU) must be consistent for all records with t
   same Short Name of Measurement, Test or Examination (--TESTCD), Object of the Observation
   (--OBJ), Measurement,Test, or Examination Detail (--TSTDTL), Category (--CAT), Subcategory
   (--SCAT), Specimen Type (--SPEC) and Method of Test or Examination (--METHOD).
-Check: []
+Check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 Outcome:
   Message: Inconsistent value for Standard Units
 Rule Type: Record Data
@@ -27,4 +30,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

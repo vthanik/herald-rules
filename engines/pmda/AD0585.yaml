@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Within a parameter, there should be only a single value of Change to
   Baseline Category y (N) (BCHGCAyN) variable for a given value of Change to Baseline
   Category y (BCHGCATy) variable, considering only those rows on which both variables
@@ -16,7 +16,10 @@ scope:
     - ADNCA
     - MDBDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for BCHGCAyN within a unique PARAMCD
   severity: Error

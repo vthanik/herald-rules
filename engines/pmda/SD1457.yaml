@@ -4,14 +4,17 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Dataset Name (DATASET) should follow limitations of SAS XPORT format
   v5. It should not exceed 8 characters and cannot contain characters other than letters
   in upper case, numbers, or underscores.
 scope:
   classes: []
   domains: []
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid value for Dataset Name
   severity: Error

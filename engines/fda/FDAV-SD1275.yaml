@@ -4,7 +4,11 @@ Core:
   Version: '1'
 Description: Test Code variables (--TESTCD) should not be populated with values of
   'MULTIPLE'.
-Check: []
+Check:
+  all:
+    - name: --TESTCD
+      operator: equal_to
+      value: MULTIPLE
 Outcome:
   Message: --TESTCD equals 'MULTIPLE'
 Rule Type: Record Data
@@ -21,4 +25,12 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000162
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

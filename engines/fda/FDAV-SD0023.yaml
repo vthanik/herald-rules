@@ -4,7 +4,13 @@ Core:
   Version: '1'
 Description: Completion Status (--STAT) should be set to 'NOT DONE', when Reason Not
   Done (--REASND) is populated.
-Check: []
+Check:
+  all:
+    - name: --REASND
+      operator: non_empty
+    - name: --STAT
+      operator: not_equal_to
+      value: NOT DONE
 Outcome:
   Message: Missing value for --STAT, when --REASND is provided
 Rule Type: Record Data
@@ -25,4 +31,17 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000225
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude:
+      - EX
+      - AE
+      - DS
+      - DV
+      - IE
+  Use_Case: INDH, PROD
 

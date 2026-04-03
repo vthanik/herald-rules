@@ -4,15 +4,20 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The value of Parameter (--PARM) variable should be no more than 40 characters
   in length.
 scope:
-  classes: []
-  domains:
-    - TS
-    - STUDYREFERENCE
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
+  Use_Case: INDH
+check:
+  all:
+    - name: TSPARM
+      operator: longer_than
+      value: 40
 outcome:
   message: Invalid value for --PARM variable
   severity: Error
@@ -22,4 +27,5 @@ provenance:
   rule_id: SD0019
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000148
 

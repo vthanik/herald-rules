@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If Change from Baseline Category y (N) (CHGCATyN) variable is used in
   a dataset, Change from Baseline Category y (CHGCATy) variable must also be present
   in that dataset.
@@ -15,7 +15,10 @@ scope:
     - ADNCA
     - MDBDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: CHGCATyN is present and CHGCATy is not present
   severity: Error

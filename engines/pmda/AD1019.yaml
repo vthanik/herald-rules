@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: For ADSL Trial Dates xx variables of form TRxx... and APxx..., 'xx' must
   be the treatment period (01 to 99). This rule covers 20 distinct variable forms
   listed in ADSL. It's anticipated that the CDISC ADaM Validation team will release
@@ -12,7 +12,10 @@ description: For ADSL Trial Dates xx variables of form TRxx... and APxx..., 'xx'
 scope:
   classes: []
   domains: ADSL
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: 'Illegal variable name: xx is not in [01-99] for an ADSL trial date'
   severity: Error

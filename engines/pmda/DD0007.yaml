@@ -4,14 +4,17 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Define.xml must only contain elements that are defined in either ODM
   or Define-XML specifications. The elements must also follow the cardinality and
   order specified in the specifications.
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid content was found starting with element <element>
   severity: Error

@@ -4,7 +4,12 @@ Core:
   Version: '1'
 Description: Dictionary-Derived Term (--DECOD) should be populated when Preferred
   Term Code (--PTCD) is populated.
-Check: []
+Check:
+  all:
+    - name: --PTCD
+      operator: non_empty
+    - name: --DECOD
+      operator: empty
 Outcome:
   Message: Missing value for --DECOD, when --PTCD is populated
 Rule Type: Record Data
@@ -20,4 +25,12 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000267
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: ALL
+  Use_Case: INDH
 

@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: By its definition Last Observation Before Exposure Flag (--LOBXFL) should
   have only a single record for the same test for subject. Therefore, each subject
   (USUBJID) should have no more than one record with Last Observation Before Exposure
@@ -17,7 +17,10 @@ scope:
   domains:
     - FINDINGS
     - FINDINGSABOUT
-check: []
+check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 outcome:
   message: Multiple --LOBXFL records for the same test
   severity: Warning

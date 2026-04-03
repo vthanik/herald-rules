@@ -5,7 +5,21 @@ Core:
 Description: All values of Planned Elapsed Time (--ELTM) variable should be the same
   for a given value of Planned Time Point Name (--TPT) variable, Time Point Reference
   (--TPTREF) and/or Visit Number (VISITNUM)
-Check: []
+Check:
+  all:
+    - name: --TPT
+      operator: non_empty
+    - name: --TPTNUM
+      operator: non_empty
+    - name: --ELTM
+      operator: non_empty
+    - name: --ELTM
+      operator: is_inconsistent_across_dataset
+      value:
+        - DOMAIN
+        - VISITNUM
+        - --TPTREF
+        - --TPTNUM
 Outcome:
   Message: Inconsistent value for  --ELTM within --TPT, --TPTREF and/or VISITNUM
 Rule Type: Record Data
@@ -22,4 +36,12 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000142
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH
 

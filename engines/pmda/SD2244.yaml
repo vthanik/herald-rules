@@ -4,13 +4,16 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: TSVCDREF variable value must be 'GENC' (for FDA submissions) or 'ISO
   3166-1 alpha-3' when TSPARMCD='FCNTRY'.
 scope:
   classes: []
   domains: TS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid TSVCDREF value for FCNTRY
   severity: Error

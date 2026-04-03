@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Age Range (AGETXT) variable values should be populated with 'number-number'
   format.
-Check: []
+Check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 Outcome:
   Message: Invalid value for AGETXT
 Rule Type: Record Data
@@ -24,4 +27,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Partially Executable
 

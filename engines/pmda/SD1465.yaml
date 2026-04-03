@@ -4,13 +4,16 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Value of Related Domain Abbreviation (RDOMAIN) variable should be populated
   when value of Identifying Variable Value (IDVARVAL) variable is populated.
 scope:
   classes: []
   domains: CO
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Missing RDOMAIN value when IDVARVAL is populated
   severity: Error

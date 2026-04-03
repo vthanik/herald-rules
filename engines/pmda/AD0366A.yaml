@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Date of Randomization (RANDDT) variable value should be populated for
   randomized subjects (when Randomized Population Flag (RANDFL) variable value is
   'Y').
@@ -13,7 +13,10 @@ scope:
   domains:
     - ADSL
     - ADDL
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Missing value for RANDDT when RANDFL is Y
   severity: Error

@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: All Demographics (DM) subjects (USUBJID) participating in a study that
   includes investigational product should have at least one record in the Exposure
   (EX) domain, except for subjects who failed screening (ARMCD = 'SCRNFAIL'), were
@@ -13,7 +13,10 @@ description: All Demographics (DM) subjects (USUBJID) participating in a study t
 scope:
   classes: []
   domains: DM
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: No Exposure record found for subject
   severity: Warning

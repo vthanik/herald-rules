@@ -4,17 +4,28 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Standardized Result in Character Format (--STRESC) variable value should
   be equal to Result or Finding in Original Units (--ORRES) variable value when variable
   values are numeric and Standard Units (--STRESU) and Original Units (--ORRESU) are
   populated with the same units or are null.
 scope:
-  classes: []
-  domains:
-    - FINDINGS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
+check:
+  all:
+    - any:
+        - name: --ORRES
+          operator: non_empty
+        - name: --DRVFL
+          operator: equal_to
+          value: 'Y'
+    - all:
+        - name: --STRESC
+          operator: empty
 outcome:
   message: --STRESC does not equal --ORRES when --STRESU is equal to --ORRESU
   severity: Warning
@@ -24,4 +35,5 @@ provenance:
   rule_id: SD1353
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000021
 

@@ -4,13 +4,25 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Epoch (EPOCH) variable should be provided when Category for Disposition
   Event (DSCAT) equals 'DISPOSITION EVENT'.
 scope:
-  classes: []
-  domains: DS
-check: []
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: DS
+check:
+  all:
+    - name: DSCAT
+      operator: present_on_multiple_rows_within
+      within: USUBJID
+    - name: DSCAT
+      operator: equal_to
+      value: DISPOSITION EVENT
+      value_is_literal: yes
+    - name: EPOCH
+      operator: empty
 outcome:
   message: Missing EPOCH value when DSCAT is 'DISPOSITION EVENT'
   severity: Warning
@@ -20,4 +32,5 @@ provenance:
   rule_id: SD1313
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000329
 

@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: For additional Flag (AOCCzzFL) variables representing the 1st Occurrence
   of an analysis event or datapoint, zz must be nth flag variable (01 to 99). The
   main purpose of these flags is to facilitate data point traceability between records
@@ -19,7 +19,10 @@ scope:
     - OCCDS
     - ADAE
     - MDOCCDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: 'Illegal variable name: zz is not in [01-99] for AOCCzzFL'
   severity: Error

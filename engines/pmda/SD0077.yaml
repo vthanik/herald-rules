@@ -4,17 +4,32 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Reference record defined by Related Domain Abbreviation (RDOMAIN), Unique
   Subject Identifier (USUBJID), Identifying Variable (IDVAR) and Identifying Variable
   Value (IDVARVAL) must exist in the target Domain.
 scope:
-  classes: []
-  domains:
-    - CO
-    - RELREC
-    - SUPPQUAL
-check: []
+  Classes:
+    Include:
+      - SPECIAL PURPOSE
+      - RELATIONSHIP
+  Domains:
+    Include:
+      - CO
+      - SUPP--
+      - RELREC
+  Use_Case: NONCLIN, INDH, PROD
+check:
+  all:
+    - name: IDVAR
+      operator: non_empty
+    - name: IDVARVAL
+      operator: non_empty
+    - name: IDVARVAL
+      operator: not_equal_to
+      type_insensitive: yes
+      value: IDVAR
+      value_is_reference: yes
 outcome:
   message: Invalid referenced record
   severity: Error
@@ -24,4 +39,5 @@ provenance:
   rule_id: SD0077
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000206
 

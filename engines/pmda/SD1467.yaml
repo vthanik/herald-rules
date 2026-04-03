@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Occurrence Indicator (--OCCUR) variable should not be used in cases of
   spontaneously reported event occurred (--PRESP=null) and prespecified event which
   has no response (--PRESP='Y' and --STAT='NOT DONE').  See SDTMIG 3.4 section 4.5.7
@@ -16,7 +16,10 @@ scope:
     - EVENTS(-AE
     - -DS
     - -DV)
-check: []
+check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 outcome:
   message: --OCCUR is populated when --PRESP is null or --STAT is 'NOT DONE'
   severity: Warning

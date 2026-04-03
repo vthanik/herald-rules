@@ -8,7 +8,10 @@ Description: By its definition clinical baseline flags (e.g., last non-missing v
   Flag (--BLFL) equals 'Y' for the same assessment which is defined by Test (--TESTCD),
   Category (--CAT), Subcategory (--SCAT), Method (--METHOD), Specimen (--SPEC), Location
   (--LOC), Laterality (--LAT) and Directionality (--DIR).
-Check: []
+Check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 Outcome:
   Message: Multiple BASELINE records for the same test
 Rule Type: Record Data
@@ -29,4 +32,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Partially Executable
 

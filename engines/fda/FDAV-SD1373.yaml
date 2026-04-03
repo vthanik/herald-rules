@@ -5,7 +5,16 @@ Core:
 Description: RFSTDTC must be null when the Reason Arm and/or Actual Arm is Null (ARMNRS)
   variable is populated (excluding values of UNPLANNED TREATMENT), which indicates
   that the subject did not receive treatment.
-Check: []
+Check:
+  all:
+    - name: ARMNRS
+      operator: non_empty
+    - name: ARMNRS
+      operator: not_equal_to
+      value: UNPLANNED TREATMENT
+      value_is_literal: yes
+    - name: RFSTDTC
+      operator: non_empty
 Outcome:
   Message: RFSTDTC is populated for subject who did not receive treatment
 Rule Type: Record Data
@@ -16,6 +25,13 @@ Source: FDA Validator Rules v1.6
 Domains: DM
 Standard: SDTM
 Publisher ID: CG0534
-IG Versions:
-  - SDTMIG 3.3
+IG Versions: SDTMIG 3.3
+CORE Reference: CORE-000758
+Executability: Partially Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+  Use_Case: INDH
 

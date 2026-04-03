@@ -4,14 +4,25 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: If multiple disposition events are reported for an EPOCH, the sponsor
   should identify a primary reason and use that to populate DSTERM and DSDECOD. Additional
   reasons should be submitted in SUPPDS.
 scope:
-  classes: []
-  domains: DS
-check: []
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: DS
+check:
+  all:
+    - name: DSCAT
+      operator: equal_to
+      value: DISPOSITION EVENT
+    - name: DSCAT
+      operator: is_not_unique_set
+      value:
+        - USUBJID
+        - EPOCH
 outcome:
   message: Multiple disposition events for the same EPOCH
   severity: Warning
@@ -21,4 +32,5 @@ provenance:
   rule_id: SD1290
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000586
 

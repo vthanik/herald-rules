@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The structure of Interventions class domains should be one record per
   Intervention Episode per subject. No Interventions with the same Treatment (--TRT),
   Decoded Term (--DECOD), Mood (--MOOD), Category (--CAT), Subcategory (--SCAT), Route
@@ -17,7 +17,10 @@ scope:
     - AG
     - EC
     - EX
-check: []
+check:
+  all:
+    - name: __key_variables__
+      operator: is_unique
 outcome:
   message: Duplicate records in domain
   severity: Warning

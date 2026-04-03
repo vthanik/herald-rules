@@ -4,13 +4,24 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: DTHFL must equal 'Y' when there is a record in the Subject Status (SS)
   domain with SSSTRESC = 'DEAD'.
 scope:
-  classes: []
-  domains: SS
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+check:
+  all:
+    - name: SSSTRESC
+      operator: equal_to
+      value: DEAD
+      value_is_literal: yes
+    - name: DTHFL
+      operator: not_equal_to
+      value: 'Y'
+      value_is_literal: yes
 outcome:
   message: DTHFL does not equal 'Y' when SS.SSSTRESC = 'DEAD'
   severity: Error
@@ -20,4 +31,5 @@ provenance:
   rule_id: SD1252
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000008
 

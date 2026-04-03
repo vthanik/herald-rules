@@ -4,14 +4,25 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: When a description of Other Medically Important Serious Adverse Events
   category is collected on a CRF, sponsors should place the description in the SUPPAE
   dataset using the standard supplemental qualifier name code AESOSP.
 scope:
-  classes: []
-  domains: AE
-check: []
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: AE
+  Use_Case: INDH
+check:
+  all:
+    - name: QNAM
+      operator: equal_to
+      value: AESOSP
+      value_is_literal: yes
+    - name: AESMIE
+      operator: not_equal_to
+      value: 'Y'
 outcome:
   message: No Details info for AESMIE Adverse Event in SUPPAE domain
   severity: Warning
@@ -21,4 +32,5 @@ provenance:
   rule_id: SD1143
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000597
 

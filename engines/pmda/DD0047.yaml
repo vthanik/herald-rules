@@ -4,13 +4,16 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: For regulatory submission data, SASDatasetName attribute is required
   and must be included in Define.xml and cannot be empty.
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __dataset__
+      operator: exists
 outcome:
   message: Missing SASDatasetName value
   severity: Error

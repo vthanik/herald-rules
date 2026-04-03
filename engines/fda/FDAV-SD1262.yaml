@@ -5,7 +5,15 @@ Core:
 Description: Subject Status Date/Time of Assessment (SSDTC) must be greater than or
   equal to Start Date/Time of Disposition Event (DSSTDTC) when the subject's status
   is 'DEAD'.
-Check: []
+Check:
+  all:
+    - name: SSSTRESC
+      operator: equal_to
+      value: DEAD
+      value_is_literal: yes
+    - name: SSDTC
+      operator: date_less_than
+      value: $max_ds_dsstdtc
 Outcome:
   Message: SSDTC is not greater than or equal to DSSTDTC, when SSSTRESC = 'DEAD'
 Rule Type: Record Data
@@ -19,4 +27,11 @@ Publisher ID: CG0172
 IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000178
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: SS
 

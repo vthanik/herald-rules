@@ -4,12 +4,15 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Exposure (EX) dataset should be included in every submission.
 scope:
   classes: []
   domains: EX
-check: []
+check:
+  all:
+    - name: __dataset__
+      operator: exists
 outcome:
   message: Missing EX dataset
   severity: Warning

@@ -4,14 +4,25 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Planned Arm Code (ARMCD) values should match entries in the Trial Arms
   (TA) dataset, except for subjects who failed screening (ARMCD = 'SCRNFAIL') or were
   not fully assigned to an Arm (ARMCD = 'NOTASSGN').
 scope:
-  classes: []
-  domains: DM
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+check:
+  all:
+    - name: ARMCD
+      operator: is_not_contained_by
+      value:
+        - SCRNFAIL
+        - NOTASSGN
+    - name: ARMCD
+      operator: is_not_contained_by
+      value: $armcd_list
 outcome:
   message: Invalid ARMCD
   severity: Error
@@ -21,4 +32,5 @@ provenance:
   rule_id: SD0066
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000531
 

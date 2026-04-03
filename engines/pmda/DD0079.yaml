@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Only Comments that are referenced from Standards/Terminologies, Dataset,
   Variable, Value Level metadata, or Codelists should be included in Define.xml. Define-XML
   specification represents Comments as def:CommentDef elements within MetaDataVersion
@@ -12,7 +12,10 @@ description: Only Comments that are referenced from Standards/Terminologies, Dat
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Comment <comment> is not referenced
   severity: Error

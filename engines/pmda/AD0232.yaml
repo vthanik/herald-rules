@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Within a study, all Planned Pooled Treatment y for Period xx (TRxxPGy)
   variable values must be the same for each unique value of Planned Pooled Trt y for
   Period xx (N) (TRxxPGyN) variable when the primary variable TRxxPGy is populated.
@@ -12,7 +12,10 @@ description: Within a study, all Planned Pooled Treatment y for Period xx (TRxxP
 scope:
   classes: []
   domains: ADSL
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for TRxxPGy
   severity: Error

@@ -4,7 +4,14 @@ Core:
   Version: '1'
 Description: Split datasets must not have name of original domain. E.g., lbhm.xpt
   is a valid name, when lb.xpt is not a valid dataset name for split domain.
-Check: []
+Check:
+  any:
+    - name: dataset_name
+      operator: shorter_than
+      value: 3
+    - name: dataset_name
+      operator: longer_than
+      value: 4
 Outcome:
   Message: Invalid dataset name for split domain
 Rule Type: Record Data
@@ -25,4 +32,14 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000510
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude:
+      - SUPP--
+      - AP--
+    include_split_datasets: yes
 

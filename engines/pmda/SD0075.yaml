@@ -4,16 +4,24 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Identifying Variable (IDVAR) must have a valid value of variables from
   a referenced Domain.
 scope:
-  classes: []
-  domains:
-    - CO
-    - RELREC
-    - SUPPQUAL
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: CO
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: RDOMAIN
+      operator: exists
+    - name: IDVAR
+      operator: non_empty
+    - name: IDVAR
+      operator: is_not_contained_by
+      value: $rdomain_variables
 outcome:
   message: Invalid IDVAR
   severity: Error
@@ -23,4 +31,5 @@ provenance:
   rule_id: SD0075
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000953
 

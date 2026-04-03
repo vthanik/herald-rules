@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: The Analysis Period (APERIOD) values will be a number like 01. There
   must be a corresponding Date of Last Exposure in Period xx variable for this period
   (like TR01EDT) in ADSL dataset.
@@ -18,7 +18,10 @@ scope:
     - ADAE
     - MDOCCDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: There is no TRxxEDT variable in ADSL for every unique xx value of APERIOD
   severity: Warning

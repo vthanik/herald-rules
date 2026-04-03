@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: End Study Date/Time (--ENDTC) variable should be included into dataset,
   when Study Day of End (--ENDY) variable is present.
-Check: []
+Check:
+  all:
+    - name: __required_variable__
+      operator: exists
 Outcome:
   Message: Missing --ENDTC variable, when --ENDY variable is present
 Rule Type: Record Data
@@ -21,4 +24,5 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+Executability: Fully Executable
 

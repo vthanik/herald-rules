@@ -4,7 +4,13 @@ Core:
   Version: '1'
 Description: The Related Subject or Pool Identifier (RSUBJID) value should not be
   equal to USUBJID.
-Check: []
+Check:
+  all:
+    - name: RSUBJID
+      operator: non_empty
+    - name: RSUBJID
+      operator: equal_to
+      value: USUBJID
 Outcome:
   Message: RSUBJID is equal to USUBJID
 Rule Type: Record Data
@@ -18,4 +24,11 @@ Publisher ID: CG0363
 IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000231
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: RELSUB
 

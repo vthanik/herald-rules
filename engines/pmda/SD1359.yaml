@@ -4,14 +4,22 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: When Planned Arm Code (ARMCD)/Description of Planned Arm (ARM) are not
   populated, the Reason Arm and/or Actual Arm is Null (ARMNRS) variable must be populated
   with the reason ARMCD/ARM are null.
 scope:
-  classes: []
-  domains: DM
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+  Use_Case: INDH
+check:
+  all:
+    - name: ARMCD
+      operator: empty
+    - name: ARMNRS
+      operator: empty
 outcome:
   message: ARMNRS is not populated when ARMCD/ARM are not provided
   severity: Error
@@ -21,4 +29,5 @@ provenance:
   rule_id: SD1359
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000045
 

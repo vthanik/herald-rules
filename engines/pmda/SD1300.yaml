@@ -4,18 +4,20 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The value of DOMAIN should be no more than 2 characters in length, excluding
   Associated Persons domains.
 scope:
-  classes: []
-  domains:
-    - ALL(-POOLDEF
-    - -RELREC
-    - -RELSPEC
-    - -RELSUB
-    - -SUPPQUAL)
-check: []
+  Classes:
+    Exclude: RELATIONSHIP
+  Domains:
+    Exclude: AP--
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: DOMAIN
+      operator: longer_than
+      value: 2
 outcome:
   message: Invalid value (not 2 chars) for DOMAIN variable
   severity: Error
@@ -25,4 +27,5 @@ provenance:
   rule_id: SD1300
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000180
 

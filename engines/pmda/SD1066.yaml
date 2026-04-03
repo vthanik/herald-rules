@@ -4,13 +4,24 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Variable Value (IDVARVAL) variable value should not be populated when
   Relationship Type (RELTYPE) variable value is populated.
 scope:
-  classes: []
-  domains: RELREC
-check: []
+  Classes:
+    Include: RELATIONSHIP
+  Domains:
+    Include: RELREC
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: IDVARVAL
+      operator: empty
+    - name: USUBJID
+      operator: empty
+    - name: IDVAR
+      operator: ends_with
+      value: SEQ
 outcome:
   message: IDVARVAL value is populated when RELTYPE values is populated
   severity: Warning
@@ -20,4 +31,5 @@ provenance:
   rule_id: SD1066
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000136
 

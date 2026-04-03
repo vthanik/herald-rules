@@ -4,13 +4,20 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Order of Element within Arm (TAETORD) must have a unique value for a
   given value of Planned Arm Code (ARMCD) within the domain.
 scope:
-  classes: []
-  domains: TA
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TA
+  Use_Case: INDH
+check:
+  all:
+    - name: TAETORD
+      operator: is_not_unique_set
+      value: ARM
 outcome:
   message: Non-unique value for TAETORD within ARMCD
   severity: Error
@@ -20,4 +27,5 @@ provenance:
   rule_id: SD1052
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000144
 

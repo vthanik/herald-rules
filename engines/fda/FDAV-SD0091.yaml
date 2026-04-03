@@ -4,7 +4,45 @@ Core:
   Version: '1'
 Description: Outcome of Adverse Event should equal 'FATAL', when Results in Death
   (AESDTH) is 'Y'.
-Check: []
+Check:
+  all:
+    - any:
+        - name: AESCAN
+          operator: equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: AESCONG
+          operator: equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: AESDISAB
+          operator: equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: AESDTH
+          operator: equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: AESHOSP
+          operator: equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: AESLIFE
+          operator: equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: AESOD
+          operator: equal_to
+          value: 'Y'
+          value_is_literal: yes
+        - name: AESMIE
+          operator: equal_to
+          value: 'Y'
+          value_is_literal: yes
+    - name: AESER
+      operator: not_equal_to
+      value: 'Y'
+      value_is_literal: yes
 Outcome:
   Message: AEOUT is not 'FATAL', when AESDTH='Y'
 Rule Type: Record Data
@@ -20,4 +58,12 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000022
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: AE
+  Use_Case: INDH
 

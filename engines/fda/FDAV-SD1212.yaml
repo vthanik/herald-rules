@@ -6,7 +6,11 @@ Description: Standardized Result in Numeric Format (--STRESN) variable value sho
   be equal Standardized Result in Character Format (--STRESC) variable value, when
   Standardized Result in Character Format (--STRESC) variable value represents a numeric
   value.
-Check: []
+Check:
+  all:
+    - name: __variable__
+      operator: equal_to
+      value: __expected__
 Outcome:
   Message: --STRESN does not equal --STRESC
 Rule Type: Record Data
@@ -27,4 +31,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

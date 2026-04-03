@@ -4,16 +4,24 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Subject Reference End Date/Time (RFENDTC) should be populated for all
   randomized subjects, those where Planned Arm Code (ARMCD) is not equal to 'SCRNFAIL'
   or 'NOTASSGN' or null. If the study is ongoing, Parameter Value (TSVAL) for the
   'ONGOSIND/Ongoing Study Indicator' parameter should be set to 'Y' in the Trial Summary
   (TS) domain.
 scope:
-  classes: []
-  domains: DM
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+  Use_Case: INDH
+check:
+  all:
+    - name: ARM
+      operator: non_empty
+    - name: RFENDTC
+      operator: empty
 outcome:
   message: RFENDTC is not provided for a randomized subject
   severity: Warning
@@ -23,4 +31,5 @@ provenance:
   rule_id: SD0088
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000191
 

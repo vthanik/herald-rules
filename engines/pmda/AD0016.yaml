@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: All ADaM variable labels must be no more than 40 characters in length.
   This should not be possible to fail with sas v5 xpt. Dataset-XML or .csv can fail
   this rule.
@@ -20,7 +20,10 @@ scope:
     - ADAE
     - MDOCCDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: in_range
 outcome:
   message: Variable label length is greater than 40 characters
   severity: Error

@@ -7,7 +7,11 @@ Description: 'Order of variables should reflect the order of the variables in th
   with Identifiers first, followed by the Topic, Qualifier, and Timing variables.
   Within each role, variables must be ordered as shown in SDTM: Tables 2.2.1, 2.2.2,
   2.2.3, 2.2.4, and 2.2.5.'
-Check: []
+Check:
+  all:
+    - name: $column_order_from_dataset
+      operator: is_not_ordered_subset_of
+      value: $column_order_from_library
 Outcome:
   Message: Variable is in wrong order within domain
 Rule Type: Record Data
@@ -28,4 +32,11 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000852
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
 

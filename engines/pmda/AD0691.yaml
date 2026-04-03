@@ -4,14 +4,18 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Within a given Subject's SPDEVID and PARAMCD, a baseline value is populated
   (either BASE or BASEC) and there is not at least one record in that group marked
   as the baseline (ABLFL = Y).
 scope:
   classes: []
   domains: MDBDS
-check: []
+check:
+  all:
+    - name: __BLFL__
+      operator: has_value
+      value: 'Y'
 outcome:
   message: BASE or BASEC is populated for a unique SPDEVID,USUBJID,PARAMCD but no
     baseline record exists

@@ -6,7 +6,10 @@ Description: Paired variables such as TEST/TESTCD must be populated using terms 
   the same Codelist Code value in CDISC control terminology. There is one-to-one relationship
   between paired variable values defined in CDISC control terminology by Codelist
   Code value within the same value level condition.
-Check: []
+Check:
+  all:
+    - name: __ct_paired_variables__
+      operator: codelist_code_match
 Outcome:
   Message: Coded and Decoded values do not have the same Code in CDISC CT when value-level
     condition occurs
@@ -28,4 +31,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

@@ -5,7 +5,16 @@ Core:
 Description: All subjects who have Death records (SSSTRESC = 'DEAD') in Survival Status
   (SS) domain should also have death records (DSDECOD='DEATH') in Disposition (DS)
   domain.
-Check: []
+Check:
+  all:
+    - name: SSSTRESC
+      operator: equal_to
+      value: DEAD
+      value_is_literal: yes
+    - name: $ds_dsdecod
+      operator: does_not_contain
+      value: DEATH
+      value_is_literal: yes
 Outcome:
   Message: Missing 'DEATH' record for subject in DS domain
 Rule Type: Record Data
@@ -19,4 +28,11 @@ Publisher ID: CG0067
 IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000251
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: SS
 

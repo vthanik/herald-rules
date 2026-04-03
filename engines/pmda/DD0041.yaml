@@ -4,13 +4,16 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The KeySequence attribute for ItemRef element must be unique within a
   single ItemGroupDef.
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __key_variables__
+      operator: is_unique
 outcome:
   message: Duplicate KeySequence
   severity: Error

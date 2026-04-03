@@ -4,13 +4,16 @@ status: Reference
 standard: Define-XML
 category: ODM/Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The OID attribute for MetaDataVersion element must be unique within a
   single study.
 scope:
   classes: []
   domains: Reject
-check: []
+check:
+  all:
+    - name: __key_variables__
+      operator: is_unique
 outcome:
   message: Duplicate MetaDataVersion OID
   severity: Error

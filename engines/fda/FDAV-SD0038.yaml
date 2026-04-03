@@ -3,7 +3,17 @@ Core:
   Status: Reference
   Version: '1'
 Description: Study Day variables (*DY) value should not equal 0.
-Check: []
+Check:
+  all:
+    - name: --DY
+      operator: non_empty
+    - name: --DTC
+      operator: is_complete_date
+    - name: RFSTDTC
+      operator: is_complete_date
+    - name: --DY
+      operator: not_equal_to
+      value: $val_dy
 Outcome:
   Message: Value of Study Day variable equals 0
 Rule Type: Record Data
@@ -23,4 +33,12 @@ IG Versions:
   - SENDIG 3.1
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
+CORE Reference: CORE-000529
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: NONCLIN, INDH, PROD
 

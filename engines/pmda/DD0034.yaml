@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: NCI Code for Codelist Term must exist in CDISC Controlled Terminology.
   Define-XML specification represents Term as CodedValue attribute on either EnumeratedItem
   or CodeListItem elements within CodeList element. NCI Code is represented as Name
@@ -12,7 +12,10 @@ description: NCI Code for Codelist Term must exist in CDISC Controlled Terminolo
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Unknown NCI Code value for Term in Codelist <codelist>
   severity: Error

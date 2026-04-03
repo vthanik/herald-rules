@@ -4,16 +4,30 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Subject Reference End Date/Time (RFENDTC) should be populated for all
   treated subjects, those where Actual Arm Code (ACTARMCD) is not equal to 'SCRNFAIL',
   'NOTASSGN' or 'NOTTRT' (or null). If the study is ongoing, Parameter Value (TSVAL)
   for the 'ONGOSIND/Ongoing Study Indicator' parameter should be set to 'Y' in the
   Trial Summary (TS) domain.
 scope:
-  classes: []
-  domains: DM
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+check:
+  all:
+    - name: ACTARM
+      operator: is_not_contained_by
+      value:
+        - Screen Failure
+        - Not Assigned
+        - Not Treated
+        - SCREEN FAILURE
+        - NOT ASSIGNED
+        - NOT TREATED
+    - name: RFENDTC
+      operator: empty
 outcome:
   message: RFENDTC is not provided for a treated subject
   severity: Warning
@@ -23,4 +37,5 @@ provenance:
   rule_id: SD1376
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000378
 

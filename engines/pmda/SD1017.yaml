@@ -4,13 +4,24 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable - Possible Overreporting
 description: Visit Number (VISITNUM) values should match entries in the Trial Visits
   (TV) dataset when they are planned visits (SVUPDES = null).
 scope:
-  classes: []
-  domains: SV
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: SV
+check:
+  all:
+    - any:
+        - name: SVUPDES
+          operator: empty
+        - name: SVUPDES
+          operator: not_exists
+    - name: VISITNUM
+      operator: is_not_contained_by
+      value: $visitnums_in_tv
 outcome:
   message: VISITNUM value does not match TV domain data
   severity: Warning
@@ -20,4 +31,5 @@ provenance:
   rule_id: SD1017
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000842
 

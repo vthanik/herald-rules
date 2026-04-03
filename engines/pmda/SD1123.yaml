@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Value of Original Result (--ORRES) variable is expected to be missing
   when observation was not performed (Status (--STAT) is 'NOT DONE').
 scope:
@@ -12,7 +12,10 @@ scope:
   domains:
     - FINDINGS
     - FINDINGSABOUT
-check: []
+check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 outcome:
   message: --ORRES value is populated when --STAT is 'NOT DONE'
   severity: Warning

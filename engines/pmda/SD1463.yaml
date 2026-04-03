@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: When using a multi-axial dictionary such as MedDRA, Body System or Organ
   Class Code (--BDSYCD) variable value should be populated as Primary System Organ
   Class Code (--SOCCD) used for analysis.
@@ -14,7 +14,10 @@ scope:
     - AE
     - CE
     - MH
-check: []
+check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 outcome:
   message: Not the same values for --SOCCD and --BDSYCD
   severity: Warning

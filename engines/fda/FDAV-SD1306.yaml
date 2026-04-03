@@ -5,7 +5,21 @@ Core:
 Description: When the study population is healthy subjects (TSPARMCD = 'HLTSUBJI'
   and TSVAL = 'Y'), the Diagnosis Group parameter should be provided with a null Parameter
   Value (TSVAL should be null when TSPARMCD = 'TDIGRP').
-Check: []
+Check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: TDIGRP
+    - name: $HLTSUBJI_Y
+      operator: greater_than_or_equal_to
+      value: 1
+    - all:
+        - name: TSVAL
+          operator: not_equal_to
+          value: HEALTHY SUBJECTS
+          value_is_literal: yes
+        - name: TSVAL
+          operator: non_empty
 Outcome:
   Message: The TDIGRP Trial Summary Parameter is not provided with TSVAL equal to
     null, when HLTSUBJI parameter equals 'Y'
@@ -21,4 +35,11 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000473
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
 

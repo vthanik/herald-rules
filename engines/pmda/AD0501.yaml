@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: On a given record, if Subperiod within Period (ASPER) variable is populated,
   then Period (APERIOD) variable must be populated.
 scope:
@@ -17,7 +17,10 @@ scope:
     - ADAE
     - MDOCCDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: ASPER is populated and APERIOD is not populated
   severity: Error

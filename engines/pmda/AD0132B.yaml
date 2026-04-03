@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If any of CHG (change), PCHG (percent change), or R2BASE (ratio of Analysis
   Value to Base) is populated, the values necessary for its calculation must both
   be present and populated. CHG = AVAL - BASE, PCHG = (AVAL - BASE)/BASE * 100, R2BASE
@@ -16,7 +16,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: 'Calculation issue: CHG, PCHG or R2BASE is populated, but AVAL and/or BASE
     are not present and populated'

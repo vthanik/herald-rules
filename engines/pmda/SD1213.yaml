@@ -4,14 +4,17 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Subject Reference Start Date/Time (RFSTDTC) should be populated for all
   treated subjects, those where Actual Arm Code (ACTARMCD) is not equal to 'SCRNFAIL',
   'NOTASSGN', 'NOTTRT', or null.
 scope:
   classes: []
   domains: DM
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: RFSTDTC is not provided for a treated subject
   severity: Warning

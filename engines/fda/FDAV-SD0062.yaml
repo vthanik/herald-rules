@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Domain table must have a valid format (e.g., SAS transport (XPORT) v.5
   or text-delimited).
-Check: []
+Check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 Outcome:
   Message: Incompatible data source
 Rule Type: Record Data
@@ -25,4 +28,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Partially Executable
 

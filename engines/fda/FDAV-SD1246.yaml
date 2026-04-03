@@ -4,7 +4,12 @@ Core:
   Version: '1'
 Description: Time Point Reference (--TPTREF) variable must be included into the domain,
   when Planned Elapsed Time from Time Point Ref (--ELTM) variable is present.
-Check: []
+Check:
+  all:
+    - name: --ELTM
+      operator: exists
+    - name: --TPTREF
+      operator: not_exists
 Outcome:
   Message: Missing --TPTREF variable, when --ELTM variable is present
 Rule Type: Record Data
@@ -25,4 +30,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000167
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

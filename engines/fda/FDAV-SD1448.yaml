@@ -5,7 +5,10 @@ Core:
 Description: Standardized Result in Numeric Format (--STRESN) variable value should
   be null when Standardized Result in Character Format (--STRESC) variable value does
   not represent a numeric value, (e.g. 'BLQ', value contains '<' or '>', etc.).
-Check: []
+Check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 Outcome:
   Message: --STRESN is populated when --STRESC value is not numeric
 Rule Type: Record Data
@@ -26,4 +29,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

@@ -4,13 +4,16 @@ status: Reference
 standard: Define-XML
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: The def:DefineVersion should have a value of '2.0.0' for Define-XML v2.0
   or '2.1.n' for Define-XML v2.1. The n in '2.1.n' reflects updates to the schema.
 scope:
   classes: []
   domains: Reject
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid def:DefineVersion value
   severity: Error

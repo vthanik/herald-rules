@@ -4,7 +4,12 @@ Core:
   Version: '1'
 Description: End Relative to Reference Time Point (--ENRTPT) variable must be included
   into the domain, when End Relative Time Point (--ENTPT) variable is present.
-Check: []
+Check:
+  all:
+    - name: --ENTPT
+      operator: exists
+    - name: --ENRTPT
+      operator: not_exists
 Outcome:
   Message: Missing --ENRTPT variable, when --ENTPT variable is present
 Rule Type: Record Data
@@ -25,4 +30,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000084
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

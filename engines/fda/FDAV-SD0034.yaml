@@ -4,7 +4,12 @@ Core:
   Version: '1'
 Description: Time Point Reference (--TPTREF) should not be NULL, when Planned Elapsed
   Time from Time Point Ref (--ELTM) is populated.
-Check: []
+Check:
+  all:
+    - name: --TPTREF
+      operator: empty
+    - name: --ELTM
+      operator: non_empty
 Outcome:
   Message: Missing value for --TPTREF, when --ELTM is provided
 Rule Type: Record Data
@@ -25,4 +30,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000028
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

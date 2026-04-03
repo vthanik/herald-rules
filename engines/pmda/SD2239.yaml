@@ -4,22 +4,25 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Planned Time Point Name (--TPT) value must be consistent for all records
   with same Subject (USUBJID), Visit Num (VISITNUM), Object (--OBJ) and Assessment
   Date/Time (--DTC).
 scope:
-  classes: []
-  domains:
-    - FINDINGS(-DD
-    - -DO
-    - -DU
-    - -IS
-    - -MI
-    - -RP
-    - -SS)
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH
+check:
+  all:
+    - name: VISITNUM
+      operator: not_exists
+    - name: --TPTREF
+      operator: not_exists
+    - name: --TPT
+      operator: is_not_unique_relationship
+      value: --TPTNUM
 outcome:
   message: Inconsistent value for --TPT
   severity: Error
@@ -29,4 +32,5 @@ provenance:
   rule_id: SD2239
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000141
 

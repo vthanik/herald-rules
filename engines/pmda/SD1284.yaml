@@ -4,16 +4,24 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Portion or Totality (--PORTOT) variable should not be present in the
   domain when the Location (--LOC) variable is missing.
 scope:
-  classes: []
-  domains:
-    - INTERVENTIONS
-    - FINDINGS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include:
+      - INTERVENTIONS
+      - FINDINGS
+      - EVENTS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: --LOC
+      operator: not_exists
+    - name: --PORTOT
+      operator: exists
 outcome:
   message: --PORTOT variable is present when --LOC variable is missing
   severity: Warning
@@ -23,4 +31,5 @@ provenance:
   rule_id: SD1284
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000096
 

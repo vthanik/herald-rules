@@ -5,7 +5,19 @@ Core:
 Description: MBRESCAT is expected to be populated in all records where a microorganism
   has been identified (MBTESTCD = 'ORGANISM'), excluding records where MBSTRESC equals
   'NO GROWTH' or MBMETHOD equals 'GRAM STAIN'.
-Check: []
+Check:
+  all:
+    - name: MBTESTCD
+      operator: equal_to
+      value: ORGANISM
+    - name: MBSTRESC
+      operator: not_equal_to_case_insensitive
+      value: NO GROWTH
+    - name: MBMETHOD
+      operator: not_equal_to_case_insensitive
+      value: GRAM STAIN
+    - name: MBRESCAT
+      operator: empty
 Outcome:
   Message: MBRESCAT is null when MBTESTCD = 'ORGANISM'
 Rule Type: Record Data
@@ -22,4 +34,11 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000332
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: MB
 

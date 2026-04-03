@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: For a set of [Subject (USUBJID), Parameter (PARAMCD), baseline type (BASETYPE)]
   only one record can be the actual baseline value, marked by ABLFL = Y.
 scope:
@@ -12,7 +12,10 @@ scope:
   domains:
     - BDS
     - ADNCA
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Multiple baseline records exist for a unique USUBJID, PARAMCD, BASETYPE
   severity: Error

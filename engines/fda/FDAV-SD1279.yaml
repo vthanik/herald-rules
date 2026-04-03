@@ -4,7 +4,48 @@ Core:
   Version: '1'
 Description: Dose Description (ECDOSTXT) should be populated when Dose (ECDOSE) is
   null, ECOCCUR does not equal 'N', and ECSTAT does not equal 'NOT DONE'.
-Check: []
+Check:
+  any:
+    - all:
+        - name: ECDOSE
+          operator: empty
+        - name: ECOCCUR
+          operator: not_equal_to
+          value: 'N'
+          value_is_literal: yes
+        - name: ECSTAT
+          operator: empty
+        - name: ECDOSTXT
+          operator: empty
+    - all:
+        - name: ECDOSE
+          operator: empty
+        - name: ECOCCUR
+          operator: not_equal_to
+          value: 'N'
+          value_is_literal: yes
+        - name: ECSTAT
+          operator: not_exists
+        - name: ECDOSTXT
+          operator: empty
+    - all:
+        - name: ECDOSE
+          operator: empty
+        - name: ECOCCUR
+          operator: not_exists
+        - name: ECSTAT
+          operator: empty
+        - name: ECDOSTXT
+          operator: empty
+    - all:
+        - name: ECDOSE
+          operator: empty
+        - name: ECOCCUR
+          operator: not_exists
+        - name: ECSTAT
+          operator: not_exists
+        - name: ECDOSTXT
+          operator: empty
 Outcome:
   Message: ECDOSTXT is null when ECDOSE is null and ECOCCUR does not equal 'N'
 Rule Type: Record Data
@@ -18,4 +59,12 @@ Publisher ID: CG0462
 IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000217
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: INTERVENTIONS
+  Domains:
+    Include: EC
+  Use_Case: INDH
 

@@ -4,7 +4,16 @@ Core:
   Version: '1'
 Description: DTHFL must equal 'Y' when there is a record in the Subject Status (SS)
   domain with SSSTRESC = 'DEAD'.
-Check: []
+Check:
+  all:
+    - name: SSSTRESC
+      operator: equal_to
+      value: DEAD
+      value_is_literal: yes
+    - name: DTHFL
+      operator: not_equal_to
+      value: 'Y'
+      value_is_literal: yes
 Outcome:
   Message: DTHFL does not equal 'Y' when SS.SSSTRESC = 'DEAD'
 Rule Type: Record Data
@@ -18,4 +27,11 @@ Publisher ID: CG0132
 IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000008
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
 

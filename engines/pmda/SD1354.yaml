@@ -4,13 +4,24 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Arm Code (ARMCD) values defined in Trial Arms (TA) should be assigned
   to at least one subject (USUBJID) in Demographics (DM).
 scope:
-  classes: []
-  domains: TA
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+check:
+  all:
+    - name: ARMCD
+      operator: is_not_contained_by
+      value:
+        - SCRNFAIL
+        - NOTASSGN
+    - name: ARMCD
+      operator: is_not_contained_by
+      value: $armcd_list
 outcome:
   message: ARMCD value is not present in DM
   severity: Warning
@@ -20,4 +31,5 @@ provenance:
   rule_id: SD1354
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000531
 

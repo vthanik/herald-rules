@@ -4,13 +4,16 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: 'TSVALCD for PCLAS record must be a valid code from MED-RT or NDF-RT
   (Note: Any version 2018-02-05 or earlier uses NDF-RT, and any version after is MED-RT).'
 scope:
   classes: []
   domains: TS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid TSVALCD value for PCLAS
   severity: Warning

@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Randomized Population Flag (RANDFL) variable value should be 'Y' for
   randomized subject (when Date of Randomization (RANDDT) variable value is populated).
 scope:
@@ -12,7 +12,10 @@ scope:
   domains:
     - ADSL
     - ADDL
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: RANDFL value is not Y when RANDDT is populated
   severity: Error

@@ -4,12 +4,15 @@ status: Reference
 standard: Define-XML
 category: ODM/Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The Order number attribute must be unique.
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __key_variables__
+      operator: is_unique
 outcome:
   message: Duplicate Order number
   severity: Error

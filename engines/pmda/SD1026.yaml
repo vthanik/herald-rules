@@ -4,13 +4,23 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Relationship Type (RELTYPE) must be null when Identifying Variable (IDVAR)
   is populated with a --SEQ value.
 scope:
-  classes: []
-  domains: RELREC
-check: []
+  Classes:
+    Include: RELATIONSHIP
+  Domains:
+    Include: RELREC
+  Use_Case: INDH, PROD
+check:
+  all:
+    - name: IDVAR
+      operator: suffix_matches_regex
+      suffix: 3
+      value: SEQ
+    - name: RELTYPE
+      operator: non_empty
 outcome:
   message: Invalid value for RELTYPE variable
   severity: Error
@@ -20,4 +30,5 @@ provenance:
   rule_id: SD1026
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000202
 

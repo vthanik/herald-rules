@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Start Date/Time of Agent (AGSTDTC) variable value must be greater than
   or equal to Date/Time of First Challenge Agent Admin (RFCSTDTC).
-Check: []
+Check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 Outcome:
   Message: AGSTDTC date is before RFCSTDTC
 Rule Type: Record Data
@@ -15,6 +18,6 @@ Source: FDA Validator Rules v1.6
 Domains: AG
 Standard: SDTM
 Publisher ID: ''
-IG Versions:
-  - SENDIG-AR 1.0
+IG Versions: SENDIG-AR 1.0
+Executability: Partially Executable
 

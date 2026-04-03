@@ -6,7 +6,11 @@ Description: Expected variables may contain some null values, but in most cases 
   not contain null values for every record. When no data has been collected for an
   Expected variable, however, a null column must still be included in the dataset,
   and a comment must be included in the define.xml to state that data was not collected.
-Check: []
+Check:
+  all:
+    - name: variable_name
+      operator: not_contains_all
+      value: $expected_variables
 Outcome:
   Message: Expected variable with missing value for all records
 Rule Type: Record Data
@@ -27,4 +31,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000334
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD, NONCLIN
 

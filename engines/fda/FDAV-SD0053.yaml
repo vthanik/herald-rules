@@ -4,7 +4,16 @@ Core:
   Version: '1'
 Description: Description of Arm (ARM) must equal 'Not Assigned', when Arm Code (ARMCD)
   is 'NOTASSGN', and vice versa.
-Check: []
+Check:
+  all:
+    - name: ARMCD
+      operator: is_contained_by
+      value:
+        - SCRNFAIL
+        - NOTASSGN
+    - name: ARMCD
+      operator: not_equal_to
+      value: ACTARMCD
 Outcome:
   Message: ARM is not 'Not Assigned', when ARMCD equals 'NOTASSGN', or vice versa
 Rule Type: Record Data
@@ -19,4 +28,11 @@ IG Versions:
   - SDTMIG 3.1.2
   - SDTMIG 3.1.3
   - SDTMIG 3.2
+CORE Reference: CORE-000377
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
 

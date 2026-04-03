@@ -4,14 +4,17 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Relationship Type (RELTYPE) variable values should be populated with
   terms 'ONE', 'MANY' when Related Records (RELREC) dataset is used to identify relationships
   between datasets.
 scope:
   classes: []
   domains: RELREC
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid value for RELTYPE variable
   severity: Error

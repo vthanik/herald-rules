@@ -4,13 +4,20 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Treatment Vehicle Amount Units (--VAMTU) value must be null when Treatment
   Vehicle Amount (--TRTV) value is null.
 scope:
-  classes: []
-  domains: INTERVENTIONS
-check: []
+  Classes:
+    Include: INTERVENTIONS
+  Domains:
+    Include: ALL
+check:
+  all:
+    - name: --TRTV
+      operator: empty
+    - name: --VAMTU
+      operator: non_empty
 outcome:
   message: --VAMTU value is populatd when --TRTV is null
   severity: Warning
@@ -20,4 +27,5 @@ provenance:
   rule_id: SD1251
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000091
 

@@ -4,14 +4,17 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: NCI Code for Codelist must exist in CDISC Controlled Terminology. Define-XML
   specification represents NCI Code as Name attribute on Alias element when Context
   attribute is "nci:ExtCodeID".
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Unknown NCI Code value for Codelist <codelist>
   severity: Error

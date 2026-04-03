@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Start Study Date/Time (--STDTC) variable should be included into dataset
   when Study Day of Start (--STDY) variable is present.
 scope:
@@ -16,7 +16,10 @@ scope:
     - FINDINGS
     - EVENTS
     - FINDINGSABOUT
-check: []
+check:
+  all:
+    - name: __required_variable__
+      operator: exists
 outcome:
   message: Missing --STDTC variable when --STDY variable is present
   severity: Warning

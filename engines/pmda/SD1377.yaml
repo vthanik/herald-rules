@@ -4,14 +4,26 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: All subjects with Reason Arm and/or Actual Arm is Null (ARMNRS) equal
   to 'SCREEN FAILURE' should have records in the Inclusion/Exclusion Criteria Not
   Met (IE) domain.
 scope:
-  classes: []
-  domains: DM
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
+check:
+  all:
+    - name: ACTARMCD
+      operator: is_not_contained_by_case_insensitive
+      value:
+        - SCRNFAIL
+        - NOTASSGN
+        - NOTTRT
+    - name: USUBJID
+      operator: is_not_contained_by
+      value: $usubjids_in_ex
 outcome:
   message: No records for SCREEN FAILURE subject are found in IE domain
   severity: Warning
@@ -21,4 +33,5 @@ provenance:
   rule_id: SD1377
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000366
 

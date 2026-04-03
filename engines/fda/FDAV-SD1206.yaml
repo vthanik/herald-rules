@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Start Date/Time of Treatment (EXSTDTC) variable value must be less than
   or equal to Date/Time of Last Study Treatment (RFXENDTC).
-Check: []
+Check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 Outcome:
   Message: EXSTDTC date is after RFXENDTC
 Rule Type: Record Data
@@ -23,4 +26,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Partially Executable
 

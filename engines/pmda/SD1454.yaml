@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Reference Result in Standard Format (--STREFC) should be populated when
   Derived Flag (--DRVFL) equals 'Y'
 scope:
@@ -13,7 +13,10 @@ scope:
     - FINDINGS(-MK
     - -OE)
     - FINDINGSABOUT
-check: []
+check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 outcome:
   message: --STREFC is null when --DRVFL='Y'
   severity: Warning

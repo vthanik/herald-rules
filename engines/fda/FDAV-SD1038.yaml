@@ -4,7 +4,14 @@ Core:
   Version: '1'
 Description: Sequence Number (TSSEQ) must have a  unique value for a given value of
   Trial Summary Parameter Short Name (TSPARMCD) within the domain.
-Check: []
+Check:
+  all:
+    - name: TSPARMCD
+      operator: is_not_unique_set
+      value: DOMAIN
+    - name: TSSEQ
+      operator: is_not_unique_set
+      value: TSPARMCD
 Outcome:
   Message: Non-unique value for TSSEQ variable within TSPARMCD
 Rule Type: Record Data
@@ -25,4 +32,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000154
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
+  Use_Case: INDH, NONCLIN
 

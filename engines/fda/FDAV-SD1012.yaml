@@ -5,7 +5,14 @@ Core:
 Description: The combination of Element Code (ETCD) and Description of Element (ELEMENT)
   values should match entries in the Trial Elements (TE) dataset, except for unplanned
   Element (ETCD = 'UNPLAN').
-Check: []
+Check:
+  all:
+    - name: ETCD
+      operator: not_equal_to
+      value: UNPLAN
+    - name: ETCD
+      operator: is_not_contained_by
+      value: $te_etcd
 Outcome:
   Message: Invalid ETCD/ELEMENT
 Rule Type: Record Data
@@ -26,4 +33,16 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000173
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include:
+      - SPECIAL PURPOSE
+      - TRIAL DESIGN
+  Domains:
+    Include:
+      - SE
+      - TA
+  Use_Case: INDH
 

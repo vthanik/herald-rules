@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Define-XML defines Predecessor as a value that is copied from a variable
   in another dataset. The Description child element identifies the dataset and variable
   that is copied. To enable other validation rules, the structure of this column needs
@@ -12,7 +12,10 @@ description: Define-XML defines Predecessor as a value that is copied from a var
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid syntax for Predecessor
   severity: Error

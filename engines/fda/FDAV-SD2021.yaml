@@ -4,7 +4,20 @@ Core:
   Version: '1'
 Description: Either of Age (AGE) or Age Range (AGETXT) variable values should be provided,
   when Age Units (AGEU) are populated.
-Check: []
+Check:
+  all:
+    - name: AGEU
+      operator: non_empty
+    - any:
+        - name: AGETXT
+          operator: not_exists
+        - name: AGETXT
+          operator: empty
+    - any:
+        - name: AGE
+          operator: not_exists
+        - name: AGE
+          operator: empty
 Outcome:
   Message: Missing values for both AGE and AGETXT, when AGEU is provided
 Rule Type: Record Data
@@ -24,4 +37,11 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000453
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
 

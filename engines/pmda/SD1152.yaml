@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The structure of study data should be one record per unique combination
   of values in Key Variables provided in Define.xml file by KeySequence attribute
   for each domain or dataset. Note that Key Variables should represent physical structure
@@ -14,7 +14,10 @@ description: The structure of study data should be one record per unique combina
 scope:
   classes: []
   domains: []
-check: []
+check:
+  all:
+    - name: __key_variables__
+      operator: is_unique
 outcome:
   message: Duplicate records per Key Variables in Define.xml
   severity: Error

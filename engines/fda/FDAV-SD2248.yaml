@@ -3,7 +3,13 @@ Core:
   Status: Reference
   Version: '1'
 Description: TSVAL variable value must be in ISO 8601 format, when TSPARMCD='SENDTC'.
-Check: []
+Check:
+  all:
+    - name: TSPARMCD
+      operator: equal_to
+      value: SENDTC
+    - name: TSVAL
+      operator: invalid_date
 Outcome:
   Message: Invalid TSVAL value for SENDTC
 Rule Type: Record Data
@@ -19,4 +25,11 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000506
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
 

@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If Shift $y (SHIFTy) variable is present, the variable pair it is describing
   should also be present. Pairs include (BASECATy/ AVALCATy), (BNRIND/ANRIND), (ByIND/AyIND),
   (BTOXGR/ATOXGR), (BTOXGRL/ATOXGRL), (BTOXGRH/ATOXGRH), (BASE/AVAL) and (BASEC/AVALC).
@@ -15,7 +15,10 @@ scope:
     - ADNCA
     - MDBDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: SHIFTy is present and all of the following variable pairs (BASECATy, AVALCATy),
     (BNRIND, ANRIND), (ByIND, AyIND), (BTOXGR, ATOXGR), (BTOXGRL, ATOXGRL), (BTOXGRH,

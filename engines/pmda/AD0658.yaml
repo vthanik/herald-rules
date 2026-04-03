@@ -4,14 +4,17 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: 'NCAXFN (PK NCA Exclusion Flag (N)) must be 1 or null.  It is a numeric
   flag for exclusion of a record into a PK NCA calculation: 1 = exclusion, null =
   inclusion.'
 scope:
   classes: []
   domains: ADNCA
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: NCAXFN value is not 1 or null
   severity: Error

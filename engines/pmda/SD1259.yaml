@@ -4,13 +4,24 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The value of Set Code (SETCD) should be no more than 8 characters in
   length.
 scope:
-  classes: []
-  domains: DM
-check: []
+  Classes:
+    Include:
+      - SPECIAL PURPOSE
+      - TRIAL DESIGN
+  Domains:
+    Include:
+      - DM
+      - TX
+  Use_Case: INDH, NONCLIN
+check:
+  all:
+    - name: SETCD
+      operator: matches_regex
+      value: ^(.){9,}$
 outcome:
   message: Invalid value for SETCD exceeding 8 characters
   severity: Warning
@@ -20,4 +31,5 @@ provenance:
   rule_id: SD1259
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000088
 

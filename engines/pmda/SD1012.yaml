@@ -4,16 +4,28 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: The combination of Element Code (ETCD) and Description of Element (ELEMENT)
   values should match entries in the Trial Elements (TE) dataset, except for unplanned
   Element (ETCD = 'UNPLAN').
 scope:
-  classes: []
-  domains:
-    - SE
-    - TA
-check: []
+  Classes:
+    Include:
+      - SPECIAL PURPOSE
+      - TRIAL DESIGN
+  Domains:
+    Include:
+      - SE
+      - TA
+  Use_Case: INDH
+check:
+  all:
+    - name: ETCD
+      operator: not_equal_to
+      value: UNPLAN
+    - name: ETCD
+      operator: is_not_contained_by
+      value: $te_etcd
 outcome:
   message: Invalid ETCD/ELEMENT
   severity: Error
@@ -23,4 +35,5 @@ provenance:
   rule_id: SD1012
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000173
 

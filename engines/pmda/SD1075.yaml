@@ -4,13 +4,19 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Variables described in IG as not recommended for usage should be not
   included in the dataset.
 scope:
-  classes: []
-  domains: []
-check: []
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD, NONCLIN
+check:
+  all:
+    - name: --STDTC
+      operator: exists
 outcome:
   message: Variable not recommended for use
   severity: Warning
@@ -20,4 +26,5 @@ provenance:
   rule_id: SD1075
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000207
 

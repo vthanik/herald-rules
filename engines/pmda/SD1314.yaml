@@ -4,13 +4,23 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: When Reported Term for the Disposition Event (DSTERM) is 'COMPLETED',
   Standardized Disposition Term (DSDECOD) should have the same value 'COMPLETED'.
 scope:
-  classes: []
-  domains: DS
-check: []
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: DS
+  Use_Case: INDH
+check:
+  all:
+    - name: DSTERM
+      operator: equal_to
+      value: COMPLETED
+    - name: DSDECOD
+      operator: not_equal_to
+      value: COMPLETED
 outcome:
   message: DSDECOD is not 'COMPLETED' when DSTERM='COMPLETED'
   severity: Warning
@@ -20,4 +30,5 @@ provenance:
   rule_id: SD1314
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000033
 

@@ -6,7 +6,17 @@ Description: Standardized Result in Character Format (--STRESC) variable value s
   be equal to Result or Finding in Original Units (--ORRES) variable value, when variable
   values are numeric and Standard Units (--STRESU) and Original Units (--ORRESU) are
   populated with the same units or are null.
-Check: []
+Check:
+  all:
+    - any:
+        - name: --ORRES
+          operator: non_empty
+        - name: --DRVFL
+          operator: equal_to
+          value: 'Y'
+    - all:
+        - name: --STRESC
+          operator: empty
 Outcome:
   Message: --STRESC does not equal --ORRES when --STRESU is equal to --ORRESU
 Rule Type: Record Data
@@ -27,4 +37,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000021
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

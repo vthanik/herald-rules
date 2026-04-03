@@ -4,14 +4,29 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Planned Arm Code (ARMCD) and Description of Planned Arm (ARM) must be
   null for subjects who are not assigned to treatment. This includes Screen Failure
   subjects and Not Assigned subjects.
 scope:
-  classes: []
-  domains: DM
-check: []
+  Classes:
+    Include:
+      - TRIAL DESIGN
+      - SPECIAL PURPOSE
+  Domains:
+    Include:
+      - DM
+      - TA
+      - TV
+check:
+  all:
+    - name: ARM
+      operator: is_contained_by_case_insensitive
+      value:
+        - Screen Failure
+        - Not Assigned
+        - Not Treated
+        - Unplanned Treatment
 outcome:
   message: ARMCD/ARM is populated for a subject not assigned to treatment
   severity: Error
@@ -21,4 +36,5 @@ provenance:
   rule_id: SD1363
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000115
 

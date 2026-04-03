@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Within a Study and a Parameter, all Change from Baseline Category y (N)
   (CHGCATyN) variable values must be the same for each unique value of Change from
   Baseline Category y (CHGCATy) variable when the primary variable CHGCATy is populated.
@@ -14,7 +14,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 outcome:
   message: Inconsistent value for CHGCAT*N
   severity: Error

@@ -5,7 +5,19 @@ Core:
 Description: Subject Reference End Date/Time (RFENDTC) should be populated for all
   treated subjects, those where Actual Arm Code (ACTARMCD) is not equal to 'SCRNFAIL',
   'NOTASSGN' or 'NOTTRT' (or null).
-Check: []
+Check:
+  all:
+    - name: ACTARM
+      operator: is_not_contained_by
+      value:
+        - Screen Failure
+        - Not Assigned
+        - Not Treated
+        - SCREEN FAILURE
+        - NOT ASSIGNED
+        - NOT TREATED
+    - name: RFENDTC
+      operator: empty
 Outcome:
   Message: RFENDTC is not provided for a treated subject
 Rule Type: Record Data
@@ -19,4 +31,11 @@ Publisher ID: CG0142
 IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
+CORE Reference: CORE-000378
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
 

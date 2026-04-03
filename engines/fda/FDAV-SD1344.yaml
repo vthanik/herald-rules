@@ -5,7 +5,10 @@ Core:
 Description: Value for the Standardized Medication Name (--DECOD) variable must be
   populated using a Drug Name from the WHO Drug dictionary version specified in the
   define.xml.
-Check: []
+Check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 Outcome:
   Message: Value for --DECOD not found in WHODrug dictionary
 Rule Type: Record Data
@@ -22,4 +25,5 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+Executability: Fully Executable
 

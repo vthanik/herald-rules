@@ -4,7 +4,14 @@ Core:
   Version: '1'
 Description: When Reported Term for the Disposition Event (DSTERM) is 'COMPLETED',
   Standardized Disposition Term (DSDECOD) should have the same value 'COMPLETED'.
-Check: []
+Check:
+  all:
+    - name: DSTERM
+      operator: equal_to
+      value: COMPLETED
+    - name: DSDECOD
+      operator: not_equal_to
+      value: COMPLETED
 Outcome:
   Message: DSDECOD is not 'COMPLETED', when DSTERM='COMPLETED'
 Rule Type: Record Data
@@ -20,4 +27,12 @@ IG Versions:
   - SDTMIG 3.1.3
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000033
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: EVENTS
+  Domains:
+    Include: DS
+  Use_Case: INDH
 

@@ -5,7 +5,16 @@ Core:
 Description: Combination of Visit Name (VISIT) and Visit Number (VISITNUM) in subject-level
   domains should match that in the TV domain with the exception of Unscheduled and
   Unplanned visits.
-Check: []
+Check:
+  all:
+    - name: VISIT
+      operator: non_empty
+    - name: SVPRESP
+      operator: equal_to
+      value: 'Y'
+    - name: VISIT
+      operator: is_not_contained_by
+      value: $tv_visit
 Outcome:
   Message: VISIT/VISITNUM values do not match TV domain data
 Rule Type: Record Data
@@ -22,4 +31,12 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000269
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude: TV
+  Use_Case: INDH
 

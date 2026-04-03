@@ -4,7 +4,15 @@ Core:
   Version: '1'
 Description: Unique Subject Identifier (USUBJID) variable value should not be populated,
   when Relationship Type (RELTYPE) variable value is populated.
-Check: []
+Check:
+  all:
+    - name: IDVARVAL
+      operator: empty
+    - name: USUBJID
+      operator: empty
+    - name: IDVAR
+      operator: ends_with
+      value: SEQ
 Outcome:
   Message: USUBJID value is populated, when RELTYPE values is populated
 Rule Type: Record Data
@@ -25,4 +33,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000136
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: RELATIONSHIP
+  Domains:
+    Include: RELREC
+  Use_Case: INDH, PROD
 

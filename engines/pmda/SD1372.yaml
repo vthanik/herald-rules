@@ -4,17 +4,23 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Character Result/Finding in Std Format (--STRESC) should be populated
   when Last Observation Before Exposure Flag (--LOBXFL) is set to 'Y'.
 scope:
-  classes: []
-  domains:
-    - FINDINGS(-DD
-    - -IE
-    - -SC)
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH
+check:
+  all:
+    - name: --LOBXFL
+      operator: equal_to
+      value: 'Y'
+      value_is_literal: yes
+    - name: --STRESC
+      operator: empty
 outcome:
   message: --STRESC is null when --LOBXFL = 'Y'
   severity: Error
@@ -24,4 +30,5 @@ provenance:
   rule_id: SD1372
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000105
 

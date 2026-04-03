@@ -5,7 +5,11 @@ Core:
 Description: Variable length should be assigned based on actual stored data to minimize
   file size. Datasets should be re-sized to the maximum length of actual data used
   prior to splitting.
-Check: []
+Check:
+  all:
+    - name: __variable__
+      operator: max_length
+      value: 200
 Outcome:
   Message: Variable length is too long for actual data
 Rule Type: Record Data
@@ -26,4 +30,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

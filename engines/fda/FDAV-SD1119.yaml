@@ -7,7 +7,12 @@ Description: 'In the Comments (CO) domain, the following Identifier and Timing v
   to other domain records (i.e., RDOMAIN and IDVAR variable values are not populated):
   COGRPID, COREFID, COSPID, VISIT, VISITNUM, VISITDY, TAETORD, CODY, COTPT, COTPTNUM,
   COELTM, COTPTREF, CORFTDTC.'
-Check: []
+Check:
+  all:
+    - name: IDVAR
+      operator: non_empty
+    - name: CODTC
+      operator: non_empty
 Outcome:
   Message: Inappropriate usage of variables in CO domain, when comment is a child
     record of another domain
@@ -29,4 +34,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000187
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: CO
+  Use_Case: INDH
 

@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If both actual treatment (TRTA) and Planned Pooled Treatment y (TRTPGy)
   are present, then Actual Pooled Treatment y (TRTAGy) variable must be present.
 scope:
@@ -13,7 +13,10 @@ scope:
     - BDS
     - ADNCA
     - MDBDS
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: TRTPGy and TRTA are present, but TRTAGy is not present
   severity: Error

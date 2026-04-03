@@ -5,7 +5,28 @@ Core:
 Description: The value of Sequence Number (--SEQ) variable must be unique for each
   record within a domain and within each combination of Sponsor Device Identifier
   (SPDEVID) and Unique Subject Identifier (USUBJID) variables' values.
-Check: []
+Check:
+  any:
+    - all:
+        - name: --SEQ
+          operator: exists
+        - name: USUBJID
+          operator: non_empty
+        - name: --SEQ
+          operator: is_not_unique_set
+          value:
+            - DOMAIN
+            - USUBJID
+    - all:
+        - name: --SEQ
+          operator: exists
+        - name: POOLID
+          operator: non_empty
+        - name: --SEQ
+          operator: is_not_unique_set
+          value:
+            - DOMAIN
+            - POOLID
 Outcome:
   Message: Duplicate value for --SEQ variable
 Rule Type: Record Data
@@ -19,4 +40,11 @@ Publisher ID: CG0028
 IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
+CORE Reference: CORE-000544
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Exclude: TS
 

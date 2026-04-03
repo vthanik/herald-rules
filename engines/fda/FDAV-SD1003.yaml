@@ -3,7 +3,20 @@ Core:
   Status: Reference
   Version: '1'
 Description: Age (AGE) should be provided, when Age Units (AGEU) are populated.
-Check: []
+Check:
+  all:
+    - name: AGEU
+      operator: non_empty
+    - any:
+        - name: AGETXT
+          operator: not_exists
+        - name: AGETXT
+          operator: empty
+    - any:
+        - name: AGE
+          operator: not_exists
+        - name: AGE
+          operator: empty
 Outcome:
   Message: Missing value for AGE, when AGEU is provided
 Rule Type: Record Data
@@ -14,6 +27,12 @@ Source: FDA Validator Rules v1.6
 Domains: DM
 Standard: SDTM
 Publisher ID: CG0433, CG0666
-IG Versions:
-  - SDTMIG 3.1.2
+IG Versions: SDTMIG 3.1.2
+CORE Reference: CORE-000453
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: DM
 

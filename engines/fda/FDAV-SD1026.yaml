@@ -4,7 +4,14 @@ Core:
   Version: '1'
 Description: Relationship Type (RELTYPE) must be NULL, when Identifying Variable (IDVAR)
   is populated with a --SEQ value.
-Check: []
+Check:
+  all:
+    - name: IDVAR
+      operator: suffix_matches_regex
+      suffix: 3
+      value: SEQ
+    - name: RELTYPE
+      operator: non_empty
 Outcome:
   Message: Invalid value for RELTYPE variable
 Rule Type: Record Data
@@ -25,4 +32,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000202
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: RELATIONSHIP
+  Domains:
+    Include: RELREC
+  Use_Case: INDH, PROD
 

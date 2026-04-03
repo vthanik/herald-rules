@@ -4,14 +4,22 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: When the Temporal Relation to Milestone Instance (RELMIDS) variable is
   used in any dataset, the Trial Disease Milestones (TM) dataset must be present for
   the study.
 scope:
-  classes: []
-  domains: TM
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+check:
+  all:
+    - name: $RELMIDS_EXISTS
+      operator: equal_to
+      value: yes
+    - name: TM
+      operator: not_exists
 outcome:
   message: Missing TM dataset when variable RELMIDS is present in a dataset
   severity: Warning
@@ -21,4 +29,5 @@ provenance:
   rule_id: SD1356
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000777
 

@@ -9,7 +9,10 @@ Description: 'SAS v5 export format has a limitation on variables length up to 20
   words or numbers. See SDTM IG #4.1.5.3.2 for details. This risk-assessment check
   is triggered based on assumption that if original value was truncated, then the
   actual data value length is exactly 200 characters.'
-Check: []
+Check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 Outcome:
   Message: High risk of truncated value for --TERM variable
 Rule Type: Record Data
@@ -30,4 +33,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

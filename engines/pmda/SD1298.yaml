@@ -4,13 +4,23 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: If LBTOXGR value is from a numeric scale, represent only the number (e.g.,
   "2" and not "Grade 2").
 scope:
-  classes: []
-  domains: LB
-check: []
+  Classes:
+    Include: FINDINGS
+  Domains:
+    Include: LB
+  Use_Case: INDH
+check:
+  all:
+    - name: LBTOXGR
+      operator: matches_regex
+      value: .*[a-zA-Z].*
+    - name: LBTOXGR
+      operator: matches_regex
+      value: .*[0-9].*
 outcome:
   message: LBTOXGR is not a numeric value when a numeric scale is used
   severity: Warning
@@ -20,4 +30,5 @@ provenance:
   rule_id: SD1298
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000169
 

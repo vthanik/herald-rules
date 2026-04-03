@@ -4,7 +4,11 @@ Core:
   Version: '1'
 Description: Study Identifier (STUDYID) values should be consistent for all subjects
   in the Demographics (DM) domain for one study.
-Check: []
+Check:
+  all:
+    - name: STUDYID
+      operator: is_not_contained_by
+      value: $dm_studyid
 Outcome:
   Message: Inconsistent STUDYID
 Rule Type: Record Data
@@ -25,4 +29,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000172
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, NONCLIN
 

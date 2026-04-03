@@ -5,7 +5,47 @@ Core:
 Description: The combination of Description of Element (ELEMENT), Rule for Start of
   Element (TESTRL), Rule for End of Element (TEENRL), and Planned Duration of Element
   (TEDUR) should be unique for each Element Code (ETCD).
-Check: []
+Check:
+  any:
+    - name: ETCD
+      operator: is_not_unique_set
+      value:
+        - ELEMENT
+        - TESTRL
+        - TEENRL
+        - TEDUR
+    - all:
+        - name: ETCD
+          operator: is_unique_set
+          value:
+            - ELEMENT
+            - TESTRL
+            - TEENRL
+            - TEDUR
+        - name: ELEMENT
+          operator: is_not_unique_set
+          value:
+            - TESTRL
+            - TEENRL
+            - TEDUR
+        - name: TESTRL
+          operator: is_not_unique_set
+          value:
+            - ELEMENT
+            - TEENRL
+            - TEDUR
+        - name: TEENRL
+          operator: is_not_unique_set
+          value:
+            - ELEMENT
+            - TESTRL
+            - TEDUR
+        - name: TEDUR
+          operator: is_not_unique_set
+          value:
+            - ELEMENT
+            - TEENRL
+            - TESTRL
 Outcome:
   Message: The combination of ELEMENT, TESTRL TEENRL, and TEDUR is not unique for
     each ETCD
@@ -27,4 +67,12 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+CORE Reference: CORE-000580
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TE
+  Use_Case: INDH
 

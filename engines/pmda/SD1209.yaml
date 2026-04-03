@@ -4,14 +4,17 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Value for Date/Time of Last Study Treatment (RFXENDTC) variable must
   be populated when Date/Time of First Study Treatment (RFXSTDTC) variable value is
   provided.
 scope:
   classes: []
   domains: DM
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Missing value for RFXENDTC when RFXSTDTC is provided
   severity: Warning

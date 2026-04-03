@@ -4,13 +4,16 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: There should be only one record for a unique value of USUBJID per study
   in the ADSL dataset.
 scope:
   classes: []
   domains: ADSL
-check: []
+check:
+  all:
+    - name: __key_variables__
+      operator: is_unique
 outcome:
   message: USUBJID duplicate values are not allowed within a study
   severity: Error

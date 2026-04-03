@@ -4,13 +4,16 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Related Domain Abbreviation (RDOMAIN) variable should have Origin set
   to 'Assigned'.
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Origin for RDOMAIN variable is not set to Assigned
   severity: Error

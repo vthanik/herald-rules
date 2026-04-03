@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If Analysis Value Category y (N) (AVALCAyN) variable is used in a dataset,
   Analysis Value Category y (AVALCATy) variable must also be present in that dataset.
 scope:
@@ -14,7 +14,10 @@ scope:
     - ADNCA
     - MDBDS
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: AVALCAyN is present and AVALCATy is not present
   severity: Error

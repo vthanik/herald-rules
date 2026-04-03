@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Permissible variable should not be present in domain, when the variable
   has missing value for all records in the dataset (SDTM-IG 3.1.1 - 3.2). Permissible
   variable should not be present in domain, when the variable is not present on study
@@ -12,7 +12,10 @@ description: Permissible variable should not be present in domain, when the vari
 scope:
   classes: []
   domains: []
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Permissible variable with missing value for all records
   severity: Warning

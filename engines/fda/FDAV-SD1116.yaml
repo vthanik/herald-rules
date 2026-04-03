@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Split datasets should have matching variable lengths for future merges.
   Datasets should be resized to the maximum length used prior to splitting.
-Check: []
+Check:
+  all:
+    - name: __variable__
+      operator: consistent_within_subject
 Outcome:
   Message: Inconsistent variable length within split datasets
 Rule Type: Record Data
@@ -25,4 +28,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

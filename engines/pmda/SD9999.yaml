@@ -4,13 +4,16 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: The structure for custom dataset should be based on one of the general
   observation classes (EVENTS, FINDINGS, INTERVENTIONS) defined by the SDTM model.
 scope:
   classes: []
   domains: UNRECOGNIZED
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Dataset class not recognized
   severity: Error

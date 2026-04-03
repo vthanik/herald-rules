@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Time Point Reference (--TPTREF) variable must be included into the domain,
   when Date/Time of Reference Point (--RFTDTC) variable is present.
-Check: []
+Check:
+  all:
+    - name: __required_variable__
+      operator: exists
 Outcome:
   Message: Missing --TPTREF variable, when --RFTDTC variable is present
 Rule Type: Record Data
@@ -25,4 +28,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

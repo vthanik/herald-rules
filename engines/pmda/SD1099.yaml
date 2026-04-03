@@ -4,18 +4,21 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Category (--CAT) variable should be included into dataset when Subcategory
   (--SCAT) variable is present.
 scope:
-  classes: []
-  domains:
-    - INTERVENTIONS
-    - FINDINGS
-    - EVENTS
-    - FINDINGSABOUT
-    - TI
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TI
+  Use_Case: INDH
+check:
+  all:
+    - name: IESCAT
+      operator: exists
+    - name: IECAT
+      operator: not_exists
 outcome:
   message: Missing --CAT variable when --SCAT variable is present
   severity: Warning
@@ -25,4 +28,5 @@ provenance:
   rule_id: SD1099
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000786
 

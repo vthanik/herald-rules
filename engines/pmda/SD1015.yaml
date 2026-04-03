@@ -4,18 +4,21 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: Epoch (EPOCH) values should match entries in the Trial Arms (TA) dataset.
 scope:
-  classes: []
-  domains:
-    - SPECIALPURPOSE(-CO
-    - -DM)
-    - INTERVENTIONS
-    - FINDINGS(-SC)
-    - EVENTS
-    - FINDINGSABOUT
-check: []
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH
+check:
+  all:
+    - name: EPOCH
+      operator: is_not_contained_by
+      value: $ta_epoch
+    - name: EPOCH
+      operator: non_empty
 outcome:
   message: EPOCH is not in TA.EPOCH
   severity: Error
@@ -25,4 +28,5 @@ provenance:
   rule_id: SD1015
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000271
 

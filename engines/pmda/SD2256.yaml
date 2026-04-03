@@ -4,12 +4,28 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: TSVCDREF variable value must be 'UNII' when TSPARMCD='COMPTRT'.
 scope:
-  classes: []
-  domains: TS
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TS
+check:
+  all:
+    - any:
+        - name: TSPARMCD
+          operator: equal_to
+          value: COMPTRT
+        - name: TSPARMCD
+          operator: equal_to
+          value: CURTRT
+        - name: TSPARMCD
+          operator: equal_to
+          value: TRT
+    - name: TSVCDREF
+      operator: not_equal_to
+      value: UNII
 outcome:
   message: Invalid TSVCDREF value for COMPTRT
   severity: Warning
@@ -19,4 +35,5 @@ provenance:
   rule_id: SD2256
   pmda_category: Warning
   ig_versions: []
+  core_reference: CORE-000735
 

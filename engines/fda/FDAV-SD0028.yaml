@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: Reference Range Upper Limit-Std Units (--STNRHI) value must be greater
   than or equal to Reference Range Lower Limit-Std Units (--STNRLO) value.
-Check: []
+Check:
+  all:
+    - name: __variable__
+      operator: in_range
 Outcome:
   Message: Value for --STNRHI is less than value for --STNRLO
 Rule Type: Record Data
@@ -25,4 +28,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

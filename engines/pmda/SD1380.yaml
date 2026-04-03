@@ -4,24 +4,48 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: 'At least one of the following subject identifier variables must be populated
   for each record: Unique Subject Identifier (USUBJID), Associated Persons Identifier
   (APID), Sponsor Device Identifier (SPDEVID), or Pool Identifier (POOLID).'
 scope:
-  classes: []
-  domains:
-    - SPECIALPURPOSE(-DM
-    - -SE
-    - -SM)
-    - INTERVENTIONS
-    - FINDINGS
-    - EVENTS
-    - FINDINGSABOUT
-    - RELATIONSHIP(-DR
-    - -POOLDEF
-    - -RELREC)
-check: []
+  Classes:
+    Include:
+      - EVENTS
+      - INTERVENTIONS
+      - FINDINGS ABOUT
+      - FINDINGS
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
+check:
+  any:
+    - all:
+        - name: DOMAIN
+          operator: prefix_matches_regex
+          prefix: 2
+          value: (AP|ap)
+        - name: APID
+          operator: not_exists
+    - all:
+        - name: DOMAIN
+          operator: not_prefix_matches_regex
+          prefix: 2
+          value: (AP|ap)
+        - name: STUDYID
+          operator: exists
+        - name: --SEQ
+          operator: exists
+        - name: USUBJID
+          operator: not_exists
+        - name: SPDEVID
+          operator: not_exists
+        - name: POOLID
+          operator: not_exists
+        - name: SPTOBID
+          operator: not_exists
+        - name: STOCONID
+          operator: not_exists
 outcome:
   message: No subject identifier variables are populated
   severity: Error
@@ -31,4 +55,5 @@ provenance:
   rule_id: SD1380
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000107
 

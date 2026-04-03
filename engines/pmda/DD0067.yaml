@@ -4,7 +4,7 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: Only Variables that are referenced from a Dataset or Value Level metadata
   should be included in Define.xml. Define-XML specification represents variables
   as ItemDef elements and variable references as ItemRef elements within an ItemGroupDef
@@ -12,7 +12,10 @@ description: Only Variables that are referenced from a Dataset or Value Level me
 scope:
   classes: []
   domains: Warning
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Variable <variable> is not referenced
   severity: Error

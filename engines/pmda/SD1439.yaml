@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: By its definition clinical baseline flags (e.g., last non-missing value
   prior to first dose) should have only a single record for the same test for subject.
   Therefore, each subject (USUBJID) should have no more than one record with Baseline
@@ -17,7 +17,10 @@ scope:
   domains:
     - FINDINGS
     - FINDINGSABOUT
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Multiple BASELINE records for the same test
   severity: Warning

@@ -4,7 +4,7 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: All subjects should have at least one baseline observation (--BLFL =
   'Y') in EG, LB, MB, MS, PC and VS domains, except for subjects who failed screening
   (ARMCD = 'SCRNFAIL') or were not fully assigned to an Arm (ARMCD = 'NOTASSGN') or
@@ -18,7 +18,11 @@ scope:
     - MS
     - PC
     - VS
-check: []
+check:
+  all:
+    - name: __BLFL__
+      operator: has_value
+      value: 'Y'
 outcome:
   message: No baseline flag record in Domain for subject
   severity: Warning

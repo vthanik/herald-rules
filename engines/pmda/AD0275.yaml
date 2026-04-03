@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: If Cumulative Study Drug Dose Unit (DOSECUMU) or Cumulative Study Drug
   Dose (DOSECUM) variable is populated, then both variables must be populated together.
 scope:
@@ -12,7 +12,10 @@ scope:
   domains:
     - ADAE
     - ADAMOTHER
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Only one of DOSECUMU, DOSECUM is populated
   severity: Error

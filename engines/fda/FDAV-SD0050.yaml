@@ -4,7 +4,10 @@ Core:
   Version: '1'
 Description: End Reference Time Point (--ENTPT) must not be NULL, when End Relative
   to Reference Time Point (--ENRTPT) is provided.
-Check: []
+Check:
+  all:
+    - name: __domain_variable__
+      operator: check_value
 Outcome:
   Message: Missing value for --ENTPT, when --ENRTPT is populated
 Rule Type: Record Data
@@ -25,4 +28,5 @@ IG Versions:
   - SENDIG 3.1.1
   - SENDIG-AR 1.0
   - SENDIG-DART 1.1
+Executability: Fully Executable
 

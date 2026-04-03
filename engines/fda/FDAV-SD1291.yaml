@@ -4,7 +4,12 @@ Core:
   Version: '1'
 Description: End Relative to Reference Time Point (--ENRTPT) must be populated when
   End Reference Time Point (--ENTPT) is populated.
-Check: []
+Check:
+  all:
+    - name: --ENTPT
+      operator: non_empty
+    - name: --ENRTPT
+      operator: empty
 Outcome:
   Message: Missing value for --ENRTPT, when --ENTPT is populated
 Rule Type: Record Data
@@ -21,4 +26,12 @@ IG Versions:
   - SDTMIG 3.2
   - SDTMIG 3.3
   - SENDIG-AR 1.0
+CORE Reference: CORE-000106
+Executability: Fully Executable
+Scope:
+  Classes:
+    Include: ALL
+  Domains:
+    Include: ALL
+  Use_Case: INDH, PROD
 

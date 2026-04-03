@@ -4,14 +4,17 @@ status: Reference
 standard: Define-XML
 category: Define-XML
 sensitivity: Record
-executability: Not Executable
+executability: Partially Executable
 description: 'The Purpose attribute must have a value of ''Tabulation'' for SDTM and
   SEND data and ''Analysis'' for ADaM data. Note: Refer to the data standards catalog
   by the relevant Regulatory Agency for acceptance of standards and their versions.'
 scope:
   classes: []
   domains: Error
-check: []
+check:
+  all:
+    - name: __see_description__
+      operator: manual_review
 outcome:
   message: Invalid Purpose value
   severity: Error

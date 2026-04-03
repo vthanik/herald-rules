@@ -4,13 +4,21 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: A value of Incl/Excl Criterion Short Name (IETESTCD) must be unique within
   a version of inclusion/exclusion criteria (TIVERS).
 scope:
-  classes: []
-  domains: TI
-check: []
+  Classes:
+    Include: TRIAL DESIGN
+  Domains:
+    Include: TI
+check:
+  all:
+    - name: TIVERS
+      operator: exists
+    - name: IETESTCD
+      operator: is_not_unique_set
+      value: TIVERS
 outcome:
   message: IETESTCD is not unique within TIVERS
   severity: Error
@@ -20,4 +28,5 @@ provenance:
   rule_id: SD1286
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000145
 

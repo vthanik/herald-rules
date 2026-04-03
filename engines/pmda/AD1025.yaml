@@ -4,7 +4,7 @@ status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: 'When validating ADaM datasets, the AE dataset must also be included
   to ensure traceability. Note: For the final submission the eCTD structure should
   be maintained. Therefore, the SDTM and ADaM datasets should be submitted in their
@@ -13,7 +13,10 @@ description: 'When validating ADaM datasets, the AE dataset must also be include
 scope:
   classes: []
   domains: []
-check: []
+check:
+  all:
+    - name: __dataset__
+      operator: exists
 outcome:
   message: Traceability rules not executed due to missing AE dataset
   severity: Error

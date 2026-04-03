@@ -4,16 +4,24 @@ status: Reference
 standard: SDTM
 category: SDTM Conformance
 sensitivity: Record
-executability: Not Executable
+executability: Fully Executable
 description: 'In the Comments (CO) domain, the following Identifier and Timing variables
   are Permissible and may be populated as appropriate when comments are not related
   to other domain records (i.e., RDOMAIN and IDVAR variable values are not populated):
   COGRPID, COREFID, COSPID, VISIT, VISITNUM, VISITDY, TAETORD, CODY, COTPT, COTPTNUM,
   COELTM, COTPTREF, CORFTDTC.'
 scope:
-  classes: []
-  domains: CO
-check: []
+  Classes:
+    Include: SPECIAL PURPOSE
+  Domains:
+    Include: CO
+  Use_Case: INDH
+check:
+  all:
+    - name: IDVAR
+      operator: non_empty
+    - name: CODTC
+      operator: non_empty
 outcome:
   message: Inappropriate usage of variables in CO domain when comment is a child record
     of another domain
@@ -24,4 +32,5 @@ provenance:
   rule_id: SD1119
   pmda_category: Error
   ig_versions: []
+  core_reference: CORE-000187
 
