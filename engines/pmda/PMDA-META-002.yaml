@@ -1,0 +1,35 @@
+id: PMDA-META-002
+version: 1
+status: Published
+standard: SDTM
+category: Metadata
+sensitivity: Record
+executability: Fully Executable
+
+description: >
+  Variable labels must not exceed 40 characters (SAS V5 transport limit).
+  PMDA enforces strict V5 compliance for all submitted XPT files.
+
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+
+check:
+  all:
+    - name: __variable_labels__
+      operator: label_length_valid_v5
+
+outcome:
+  message: "Variable label exceeds 40-character SAS V5 limit"
+  severity: Error
+
+provenance:
+  source_doc: "PMDA Validation Rules v6.0"
+  authority: PMDA

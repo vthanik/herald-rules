@@ -1,0 +1,35 @@
+id: PMDA-NAM-001
+version: 1
+status: Published
+standard: SDTM
+category: Naming
+sensitivity: Dataset
+executability: Fully Executable
+
+description: >
+  Variable names must be valid SAS V5 names (uppercase, max 8 chars).
+  Required for PMDA eDTD XPT compliance.
+
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+
+check:
+  all:
+    - name: __variable_names__
+      operator: is_valid_sas_v5_name
+
+outcome:
+  message: "Variable name does not conform to SAS V5 naming rules"
+  severity: Error
+
+provenance:
+  source_doc: "PMDA Validation Rules v6.0"
+  authority: PMDA

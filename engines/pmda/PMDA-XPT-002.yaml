@@ -1,0 +1,35 @@
+id: PMDA-XPT-002
+version: 1
+status: Published
+standard: SDTM
+category: XPT Structure
+sensitivity: Value
+executability: Fully Executable
+
+description: >
+  No trailing spaces in character values. PMDA submissions require
+  clean character data without trailing whitespace.
+
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+
+check:
+  all:
+    - name: __all_character__
+      operator: no_trailing_space
+
+outcome:
+  message: "Character value has trailing spaces"
+  severity: Warning
+
+provenance:
+  source_doc: "PMDA Validation Rules v6.0"
+  authority: PMDA

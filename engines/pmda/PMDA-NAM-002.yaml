@@ -1,0 +1,35 @@
+id: PMDA-NAM-002
+version: 1
+status: Published
+standard: SDTM
+category: Naming
+sensitivity: Dataset
+executability: Fully Executable
+
+description: >
+  Variable names must be uppercase. PMDA requires all variable names
+  in submitted XPT files to use only uppercase letters.
+
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+
+check:
+  all:
+    - name: __variable_names__
+      operator: is_uppercase
+
+outcome:
+  message: "Variable name contains lowercase characters"
+  severity: Error
+
+provenance:
+  source_doc: "PMDA Validation Rules v6.0"
+  authority: PMDA

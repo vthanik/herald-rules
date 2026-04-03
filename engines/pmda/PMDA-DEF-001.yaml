@@ -1,0 +1,28 @@
+id: PMDA-DEF-001
+version: 1
+status: Published
+standard: Define-XML
+category: Define Metadata
+sensitivity: Dataset
+executability: Fully Executable
+
+description: >
+  Dataset label must be non-empty. PMDA requires every submitted dataset
+  to carry a descriptive label in both the XPT header and Define-XML.
+
+scope:
+  classes: []
+  domains: []
+
+check:
+  all:
+    - name: __dataset_label__
+      operator: non_empty
+
+outcome:
+  message: "Dataset label is missing or empty"
+  severity: Error
+
+provenance:
+  source_doc: "PMDA Validation Rules v6.0"
+  authority: PMDA

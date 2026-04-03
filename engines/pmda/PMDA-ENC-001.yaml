@@ -1,0 +1,35 @@
+id: PMDA-ENC-001
+version: 1
+status: Published
+standard: SDTM
+category: Encoding
+sensitivity: Record
+executability: Fully Executable
+
+description: >
+  Character values must be valid ASCII or Shift-JIS. PMDA eDTD submissions
+  require all character data to use compatible encoding.
+
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+
+check:
+  all:
+    - name: __all_character__
+      operator: is_ascii
+
+outcome:
+  message: "Non-ASCII characters found; verify Shift-JIS compatibility"
+  severity: Error
+
+provenance:
+  source_doc: "PMDA Validation Rules v6.0"
+  authority: PMDA

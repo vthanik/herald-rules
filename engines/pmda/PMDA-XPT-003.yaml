@@ -1,0 +1,35 @@
+id: PMDA-XPT-003
+version: 1
+status: Published
+standard: SDTM
+category: XPT Structure
+sensitivity: Key
+executability: Fully Executable
+
+description: >
+  Key variables must not contain missing values. STUDYID and USUBJID
+  (or equivalent keys) must be populated in every record for PMDA submissions.
+
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+
+check:
+  all:
+    - name: __key_variables__
+      operator: non_empty
+
+outcome:
+  message: "Key variable contains missing value"
+  severity: Error
+
+provenance:
+  source_doc: "PMDA Validation Rules v6.0"
+  authority: PMDA

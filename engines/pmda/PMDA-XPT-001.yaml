@@ -1,0 +1,36 @@
+id: PMDA-XPT-001
+version: 1
+status: Published
+standard: SDTM
+category: XPT Structure
+sensitivity: Record
+executability: Fully Executable
+
+description: >
+  Character variables must not exceed 200 bytes (SAS V5 transport limit).
+  PMDA enforces the V5 maximum width for all character columns.
+
+scope:
+  classes:
+    - EVENTS
+    - FINDINGS
+    - INTERVENTIONS
+    - SPECIAL-PURPOSE
+    - TRIAL DESIGN
+    - RELATIONSHIP
+    - ASSOCIATED PERSONS
+  domains: []
+
+check:
+  all:
+    - name: __all_character__
+      operator: shorter_than
+      value: 201
+
+outcome:
+  message: "Character value exceeds 200-byte SAS V5 limit"
+  severity: Error
+
+provenance:
+  source_doc: "PMDA Validation Rules v6.0"
+  authority: PMDA
