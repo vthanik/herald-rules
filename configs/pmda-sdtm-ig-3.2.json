@@ -1,0 +1,38 @@
+{
+  "config_id": "pmda-sdtm-ig-3.2",
+  "authority": "PMDA",
+  "standard": "SDTM-IG",
+  "version": "3.2",
+  "source_documents": [
+    "CDISC SDTM-IG v3.2",
+    "PMDA Validation Rules v6.0"
+  ],
+  "ct_package": "sdtm-ct",
+  "rule_ids": [
+    "HRL-CT-0004",
+    "HRL-CT-0005",
+    "HRL-CT-0006",
+    "HRL-CT-0007",
+    "HRL-CT-0008",
+    "HRL-CT-0009",
+    "HRL-SD-0218",
+    "HRL-SD-0219",
+    "HRL-SD-0220",
+    "HRL-SD-0252",
+    "HRL-XP-0001",
+    "HRL-XP-0002",
+    "HRL-XP-0003",
+    "HRL-XP-0004",
+    "HRL-XP-0005",
+    "PMDA-ENC-001",
+    "PMDA-NAM-001",
+    "PMDA-NAM-002",
+    "PMDA-META-001",
+    "PMDA-META-002",
+    "PMDA-XPT-001",
+    "PMDA-XPT-002",
+    "PMDA-XPT-003",
+    "PMDA-DEF-001"
+  ],
+  "severity_overrides": {}
+}

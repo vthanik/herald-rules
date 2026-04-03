@@ -1,0 +1,32 @@
+{
+  "NY": {
+    "codelist_code": "C66742",
+    "codelist_name": "No Yes Response",
+    "extensible": false,
+    "terms": [
+      "N",
+      "Y"
+    ]
+  },
+  "PARAMTYP": {
+    "codelist_code": "C81224",
+    "codelist_name": "Parameter Type",
+    "extensible": false,
+    "terms": [
+      "DERIVED",
+      "IMPUTED"
+    ]
+  },
+  "DTYPE": {
+    "codelist_code": "C81225",
+    "codelist_name": "Analysis Derivation Type",
+    "extensible": true,
+    "terms": [
+      "LOCF",
+      "WOCF",
+      "AVERAGE",
+      "ENDPOINT",
+      "LOV"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "ct_version": "2026-03-28",
+  "source": "NCI EVS CDISC Controlled Terminology",
+  "api_url": "https://api-evsrest.nci.nih.gov/api/v1/concept/ncit",
+  "packages": [
+    {
+      "file": "sdtm-ct.json",
+      "standard": "SDTM",
+      "codelists": 8,
+      "date": "2026-03-28"
+    },
+    {
+      "file": "adam-ct.json",
+      "standard": "ADaM",
+      "codelists": 3,
+      "date": "2026-03-28"
+    }
+  ]
+}

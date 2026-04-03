@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "herald_min_version": "0.1.0",
+  "generated": "2026-04-03T11:13:15Z",
+  "ct_version": "2026-03-28",
+  "stats": {
+    "total_rules": 1102,
+    "total_engine_rules": 1081,
+    "by_standard": {
+      "define": 168,
+      "adam": 338,
+      "meta": 0,
+      "sdtm": 582,
+      "xpt": 5,
+      "ct": 9
+    },
+    "by_engine": {
+      "pmda": 9,
+      "fda": 86,
+      "core": 986,
+      "ct": 0
+    },
+    "configs": 10
+  },
+  "configs": [
+    {
+      "file": "all.json",
+      "authority": "Combined",
+      "standard": "All",
+      "version": "2026.2",
+      "rule_count": 1100
+    },
+    {
+      "file": "fda-adam-ig-1.1.json",
+      "authority": "FDA",
+      "standard": "ADaM-IG",
+      "version": "1.1",
+      "rule_count": 346
+    },
+    {
+      "file": "fda-adam-ig-1.2.json",
+      "authority": "FDA",
+      "standard": "ADaM-IG",
+      "version": "1.2",
+      "rule_count": 349
+    },
+    {
+      "file": "fda-define-xml-2.1.json",
+      "authority": "FDA",
+      "standard": "Define-XML",
+      "version": "2.1",
+      "rule_count": 173
+    },
+    {
+      "file": "fda-sdtm-ig-3.2.json",
+      "authority": "FDA",
+      "standard": "SDTM-IG",
+      "version": "3.2",
+      "rule_count": 117
+    },
+    {
+      "file": "fda-sdtm-ig-3.3.json",
+      "authority": "FDA",
+      "standard": "SDTM-IG",
+      "version": "3.3",
+      "rule_count": 594
+    },
+    {
+      "file": "pmda-adam-ig-1.1.json",
+      "authority": "PMDA",
+      "standard": "ADaM-IG",
+      "version": "1.1",
+      "rule_count": 352
+    },
+    {
+      "file": "pmda-define-xml-2.1.json",
+      "authority": "PMDA",
+      "standard": "Define-XML",
+      "version": "2.1",
+      "rule_count": 174
+    },
+    {
+      "file": "pmda-sdtm-ig-3.2.json",
+      "authority": "PMDA",
+      "standard": "SDTM-IG",
+      "version": "3.2",
+      "rule_count": 24
+    },
+    {
+      "file": "pmda-sdtm-ig-3.3.json",
+      "authority": "PMDA",
+      "standard": "SDTM-IG",
+      "version": "3.3",
+      "rule_count": 603
+    }
+  ]
+}

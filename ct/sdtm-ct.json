@@ -1,0 +1,97 @@
+{
+  "SEX": {
+    "codelist_code": "C66731",
+    "codelist_name": "Sex",
+    "extensible": false,
+    "terms": [
+      "F",
+      "M",
+      "U",
+      "UNDIFFERENTIATED"
+    ]
+  },
+  "RACE": {
+    "codelist_code": "C74457",
+    "codelist_name": "Race",
+    "extensible": true,
+    "terms": [
+      "AMERICAN INDIAN OR ALASKA NATIVE",
+      "ASIAN",
+      "BLACK OR AFRICAN AMERICAN",
+      "NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER",
+      "WHITE",
+      "MULTIPLE",
+      "NOT REPORTED",
+      "UNKNOWN",
+      "OTHER"
+    ]
+  },
+  "ETHNIC": {
+    "codelist_code": "C66790",
+    "codelist_name": "Ethnicity",
+    "extensible": false,
+    "terms": [
+      "HISPANIC OR LATINO",
+      "NOT HISPANIC OR LATINO",
+      "NOT REPORTED",
+      "UNKNOWN"
+    ]
+  },
+  "NY": {
+    "codelist_code": "C66742",
+    "codelist_name": "No Yes Response",
+    "extensible": false,
+    "terms": [
+      "N",
+      "Y"
+    ]
+  },
+  "AESEV": {
+    "codelist_code": "C66769",
+    "codelist_name": "Severity/Intensity Scale for Adverse Events",
+    "extensible": false,
+    "terms": [
+      "MILD",
+      "MODERATE",
+      "SEVERE"
+    ]
+  },
+  "AEREL": {
+    "codelist_code": "C66768",
+    "codelist_name": "Causality",
+    "extensible": true,
+    "terms": [
+      "NOT RELATED",
+      "UNLIKELY RELATED",
+      "POSSIBLY RELATED",
+      "RELATED",
+      "PROBABLY RELATED",
+      "DEFINITELY RELATED"
+    ]
+  },
+  "AEOUT": {
+    "codelist_code": "C66768",
+    "codelist_name": "Outcome of Event",
+    "extensible": false,
+    "terms": [
+      "RECOVERED/RESOLVED",
+      "RECOVERING/RESOLVING",
+      "NOT RECOVERED/NOT RESOLVED",
+      "RECOVERED/RESOLVED WITH SEQUELAE",
+      "FATAL",
+      "UNKNOWN"
+    ]
+  },
+  "EPOCH": {
+    "codelist_code": "C99079",
+    "codelist_name": "Epoch",
+    "extensible": true,
+    "terms": [
+      "SCREENING",
+      "RUN-IN",
+      "TREATMENT",
+      "FOLLOW-UP",
+      "NOT APPLICABLE"
+    ]
+  }
+}
