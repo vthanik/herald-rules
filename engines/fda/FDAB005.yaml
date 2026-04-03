@@ -1,0 +1,14 @@
+Core:
+  Id: FDAB005
+  Status: Reference
+Description: Age should be provided for all subjects, except where not collected for
+  screen failures.
+Check: []
+Outcome:
+  Message: Age should be provided for all subjects, except where not collected for
+    screen failures.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

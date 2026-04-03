@@ -1,0 +1,16 @@
+Core:
+  Id: FDAB017
+  Status: Reference
+Description: Controlled terms should use the exact term (case, spelling, and punctuation)
+  used by the terminology maintenance organizations (e.g., MedDRA, CDISC controlled
+  terminology).
+Check: []
+Outcome:
+  Message: Controlled terms should use the exact term (case, spelling, and punctuation)
+    used by the terminology maintenance organizations (e.g., MedDRA, CDISC controlled
+    terminology).
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

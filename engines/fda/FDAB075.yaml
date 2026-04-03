@@ -1,0 +1,20 @@
+Core:
+  Id: FDAB075
+  Status: Reference
+Description: For a specific organ/tissue, the number of animals that were examined
+  (ORGANEXM=1), that were examined but not usable (e.g. autolyzed tissue or tissue
+  not found in section examined. ORGANEXM=2), and that were not examined (ORGANEXM=3),
+  should be consistent between the MI.xpt (MISTAT, MISPCUFL) and Tumor.xpt for the
+  same dosing group and sex. Explain any inconsistencies in the nSDRG.
+Check: []
+Outcome:
+  Message: For a specific organ/tissue, the number of animals that were examined (ORGANEXM=1),
+    that were examined but not usable (e.g. autolyzed tissue or tissue not found in
+    section examined. ORGANEXM=2), and that were not examined (ORGANEXM=3), should
+    be consistent between the MI.xpt (MISTAT, MISPCUFL) and Tumor.xpt for the same
+    dosing group and sex. Explain any inconsistencies in the nSDRG.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

@@ -1,0 +1,14 @@
+Core:
+  Id: FDAB031
+  Status: Reference
+Description: Standardized Result in Numeric Format should be populated whenever it
+  is applicable.
+Check: []
+Outcome:
+  Message: Standardized Result in Numeric Format should be populated whenever it is
+    applicable.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

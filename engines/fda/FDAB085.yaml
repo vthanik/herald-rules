@@ -1,0 +1,16 @@
+Core:
+  Id: FDAB085
+  Status: Reference
+Description: For findings in MISTRESC using the NEOPLASM controlled terminology list,
+  malignancy status in MIRESCAT should align with any benign or malignant designation
+  in NEOPLASM. Explain any inconsistencies in the nSDRG.
+Check: []
+Outcome:
+  Message: For findings in MISTRESC using the NEOPLASM controlled terminology list,
+    malignancy status in MIRESCAT should align with any benign or malignant designation
+    in NEOPLASM. Explain any inconsistencies in the nSDRG.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

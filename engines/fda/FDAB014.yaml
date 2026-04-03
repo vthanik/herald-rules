@@ -1,0 +1,12 @@
+Core:
+  Id: FDAB014
+  Status: Reference
+Description: Category for Disposition Event (DSCAT) should be populated.
+Check: []
+Outcome:
+  Message: Category for Disposition Event (DSCAT) should be populated.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

@@ -1,0 +1,12 @@
+Core:
+  Id: FDAB025
+  Status: Reference
+Description: Randomized subjects are expected to receive a study treatment.
+Check: []
+Outcome:
+  Message: Randomized subjects are expected to receive a study treatment.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

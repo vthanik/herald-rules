@@ -1,0 +1,14 @@
+Core:
+  Id: FDAB066
+  Status: Reference
+Description: In SEND 3.1 data elements that would be mapped to RE and CV should be
+  submitted if collected and included in the study report.
+Check: []
+Outcome:
+  Message: In SEND 3.1 data elements that would be mapped to RE and CV should be submitted
+    if collected and included in the study report.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

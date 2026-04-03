@@ -1,0 +1,23 @@
+Core:
+  Id: FDAB063
+  Status: Reference
+Description: The MI domain should contain at least one record for every scheduled
+  tissue for all subjects in the study (i.e., if an organ was examined and found normal,
+  it should have a record indicating NORMAL). In addition unscheduled tissues that
+  were examined should also have a record. Subjects that were not scheduled for examination
+  should not have records unless they were examined. If an organ was scheduled but
+  not examined or no results, there should be a row with a reason not done.
+Check: []
+Outcome:
+  Message: The MI domain should contain at least one record for every scheduled tissue
+    for all subjects in the study (i.e., if an organ was examined and found normal,
+    it should have a record indicating NORMAL). In addition unscheduled tissues that
+    were examined should also have a record. Subjects that were not scheduled for
+    examination should not have records unless they were examined. If an organ was
+    scheduled but not examined or no results, there should be a row with a reason
+    not done.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

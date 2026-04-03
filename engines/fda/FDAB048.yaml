@@ -1,0 +1,14 @@
+Core:
+  Id: FDAB048
+  Status: Reference
+Description: Result modifiers for the MA and MI domains should be included in SUPPMA
+  and SUPPMI unless all findings are normal for nonclinical data.
+Check: []
+Outcome:
+  Message: Result modifiers for the MA and MI domains should be included in SUPPMA
+    and SUPPMI unless all findings are normal for nonclinical data.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

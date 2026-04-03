@@ -1,0 +1,14 @@
+Core:
+  Id: FDAB011
+  Status: Reference
+Description: All trial design data should be submitted as specified in the FDA Study
+  Data Technical Conformance Guide (TCG).
+Check: []
+Outcome:
+  Message: All trial design data should be submitted as specified in the FDA Study
+    Data Technical Conformance Guide (TCG).
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

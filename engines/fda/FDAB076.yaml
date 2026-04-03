@@ -1,0 +1,16 @@
+Core:
+  Id: FDAB076
+  Status: Reference
+Description: The time in days/weeks to death or sacrifice, and the status of death
+  or sacrifice for each animal should be consistent between the SEND data and Tumor.xpt
+  (DTHSACTM, DTHSACST). Explain any inconsistencies in the nSDRG.
+Check: []
+Outcome:
+  Message: The time in days/weeks to death or sacrifice, and the status of death or
+    sacrifice for each animal should be consistent between the SEND data and Tumor.xpt
+    (DTHSACTM, DTHSACST). Explain any inconsistencies in the nSDRG.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

@@ -1,0 +1,14 @@
+Core:
+  Id: FDAB055
+  Status: Reference
+Description: Trial participants should self-report race and ethnicity and they should
+  not be assigned by the study team.
+Check: []
+Outcome:
+  Message: Trial participants should self-report race and ethnicity and they should
+    not be assigned by the study team.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

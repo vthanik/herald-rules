@@ -1,0 +1,14 @@
+Core:
+  Id: FDAB044
+  Status: Reference
+Description: When timing info is provided as a reference to a particular timepoint,
+  the timepoint should be also populated.
+Check: []
+Outcome:
+  Message: When timing info is provided as a reference to a particular timepoint,
+    the timepoint should be also populated.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

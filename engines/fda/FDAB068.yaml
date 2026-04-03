@@ -1,0 +1,12 @@
+Core:
+  Id: FDAB068
+  Status: Reference
+Description: A record in RELREC should always correctly join to two records.
+Check: []
+Outcome:
+  Message: A record in RELREC should always correctly join to two records.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

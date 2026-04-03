@@ -1,0 +1,16 @@
+Core:
+  Id: FDAB058
+  Status: Reference
+Description: The term "Spanish origin" can be used to collect ethnicity data. If the
+  term "Spanish origin" is collected, it should be mapped to the controlled terminology
+  "HISPANIC OR LATINO" for submission.
+Check: []
+Outcome:
+  Message: The term "Spanish origin" can be used to collect ethnicity data. If the
+    term "Spanish origin" is collected, it should be mapped to the controlled terminology
+    "HISPANIC OR LATINO" for submission.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

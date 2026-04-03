@@ -1,0 +1,13 @@
+Core:
+  Id: FDAB037
+  Status: Reference
+Description: Time point reference should be provided, when reference time point is
+  used.
+Check: []
+Outcome:
+  Message: Time point reference should be provided, when reference time point is used.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

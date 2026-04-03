@@ -1,0 +1,16 @@
+Core:
+  Id: FDAB077
+  Status: Reference
+Description: For each specific tumor the relationship to death in MI.xpt (MIDTHREL)
+  should match with cause of death for the same tumor in Tumor.xpt (DEATHCAU). Explain
+  any inconsistencies in the nSDRG.
+Check: []
+Outcome:
+  Message: For each specific tumor the relationship to death in MI.xpt (MIDTHREL)
+    should match with cause of death for the same tumor in Tumor.xpt (DEATHCAU). Explain
+    any inconsistencies in the nSDRG.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

@@ -1,0 +1,14 @@
+Core:
+  Id: FDAB081
+  Status: Reference
+Description: The tumor detection time of a specific organ/tissue should not be later
+  than the death or sacrifice time for each animal.
+Check: []
+Outcome:
+  Message: The tumor detection time of a specific organ/tissue should not be later
+    than the death or sacrifice time for each animal.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

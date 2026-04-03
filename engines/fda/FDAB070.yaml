@@ -1,0 +1,14 @@
+Core:
+  Id: FDAB070
+  Status: Reference
+Description: Standardized units should be consistent for a given drug or metabolite
+  across pharmacokinetic datasets within a submission.
+Check: []
+Outcome:
+  Message: Standardized units should be consistent for a given drug or metabolite
+    across pharmacokinetic datasets within a submission.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

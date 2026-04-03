@@ -1,0 +1,10 @@
+# Raw downloaded files (large Excel/data)
+engines/**/.raw/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*~

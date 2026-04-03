@@ -1,0 +1,14 @@
+Core:
+  Id: FDAB064
+  Status: Reference
+Description: When possible, RFSTDTC should be the first day of exposure to test compound
+  rather than challenge agents or other interventions.
+Check: []
+Outcome:
+  Message: When possible, RFSTDTC should be the first day of exposure to test compound
+    rather than challenge agents or other interventions.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

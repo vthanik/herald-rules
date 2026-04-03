@@ -1,0 +1,16 @@
+Core:
+  Id: FDAB078
+  Status: Reference
+Description: For each specific tumor the malignancy status should be consistent between
+  the MI.xpt (MIRESCAT) and Tumor.xpt (MALIGNST). Explain any inconsistencies in the
+  nSDRG.
+Check: []
+Outcome:
+  Message: For each specific tumor the malignancy status should be consistent between
+    the MI.xpt (MIRESCAT) and Tumor.xpt (MALIGNST). Explain any inconsistencies in
+    the nSDRG.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

@@ -1,0 +1,16 @@
+Core:
+  Id: FDAB057
+  Status: Reference
+Description: 'When collecting ethnicity demographic data from clinical trial participants,
+  the following two minimum choices should be offered: "HISPANIC OR LATINO" or "NOT
+  HISPANIC OR LATINO"'
+Check: []
+Outcome:
+  Message: 'When collecting ethnicity demographic data from clinical trial participants,
+    the following two minimum choices should be offered: "HISPANIC OR LATINO" or "NOT
+    HISPANIC OR LATINO"'
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

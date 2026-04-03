@@ -1,0 +1,14 @@
+Core:
+  Id: FDAB003
+  Status: Reference
+Description: Adverse events should be coded using the most current version released
+  by MedDRA at the study start.
+Check: []
+Outcome:
+  Message: Adverse events should be coded using the most current version released
+    by MedDRA at the study start.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5

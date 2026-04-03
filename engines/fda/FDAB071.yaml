@@ -1,0 +1,14 @@
+Core:
+  Id: FDAB071
+  Status: Reference
+Description: A specimen material type should be named consistently across pharmacokinetic
+  datasets within a submission.
+Check: []
+Outcome:
+  Message: A specimen material type should be named consistently across pharmacokinetic
+    datasets within a submission.
+Rule Type: Record Data
+Sensitivity: Record
+Authorities:
+- Organization: FDA
+Source: FDA Business Rules v1.5
