@@ -3,7 +3,7 @@ version: 1
 status: Published
 standard: SDTM
 category: Presence
-sensitivity: Record
+sensitivity: Dataset
 executability: Fully Executable
 description: Per FDA Study Data Technical Conformance Guide, an additional custom
   domain called LC structured identically to LB should contain conventional units
@@ -18,7 +18,7 @@ check:
       value: LB
 outcome:
   message: Missing LC domain when LB domain is present
-  severity: Error
+  severity: Warning
 provenance:
   source_doc: Herald-original (gap analysis vs P21 Community catalog)
   authority: Herald

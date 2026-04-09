@@ -11,12 +11,12 @@
     "herald-define": "Herald Define-XML v2.1 spec validation (93 rules in engines/herald/define/)"
   },
   "stats": {
-    "total_engine_rules": 3592,
+    "total_engine_rules": 3593,
     "by_engine": {
       "cdisc": 450,
       "ct": 1210,
       "fda": 660,
-      "herald": 231,
+      "herald": 232,
       "pmda": 1041
     },
     "configs": 10
