@@ -80,14 +80,54 @@ When deprecating a rule:
 ## Validation
 
 ```bash
-Rscript tests/validate-rules.R
+Rscript tests/validate-rules.R          # All engines: YAML, IDs, configs, manifest
+Rscript tests/validate-herald-rules.R   # HRL-* rules: sequences, CSV coverage, operators
+Rscript tests/validate-define-rules.R   # DD rules: spec sections, cross-refs, CSV
 ```
 
-Checks: YAML parsing, required fields, no duplicate IDs, config references valid, manifest counts match.
+## Herald Rule ID Convention
+
+ALL herald-authored rules use `HRL-{CAT}-NNN` prefix:
+
+| Prefix | Category | Directory | Notes |
+|--------|----------|-----------|-------|
+| `HRL-AD-NNN` | ADaM gap-fill | `engines/herald/` | 21 rules |
+| `HRL-FM-NNN` | Form metadata | `engines/herald/` | 40 rules |
+| `HRL-MD-NNN` | Metadata (ADaM v1.2) | `engines/herald/` | 40 rules |
+| `HRL-OD-NNN` | ODM conformance | `engines/herald/` | 9 rules |
+| `HRL-SD-NNN` | SDTM gap-fill | `engines/herald/` | 9 rules |
+| `HRL-TS-NNN` | Trial summary | `engines/herald/` | 5 rules |
+| `HRL-DD-NNN` | Define-XML spec | `engines/herald/define/` | 14 rules |
+| `HRL-VAR/LBL/TYP/LEN/DS/CL-NNN` | Hardcoded spec checks | `engines/herald/` | 7 rules |
+| `HRL-CT-NNNN` | CT per-codelist | `engines/ct/` | 1,210 rules |
+
+P21 IDs preserved in `p21_reference` provenance field. `DD0001-DD0085` keep bare DD prefix (herald-native spec rules).
+
+## Cross-Reference: Herald R Package
+
+The herald R package (`/home/vignesh/projects/herald/`) consumes rules from this catalog.
+
+### Key Files in Herald R Package
+- `R/val-checks.R` -- 7 hardcoded HRL-* spec checks (`HRL-VAR-001/002`, `HRL-LBL-001`, `HRL-TYP-001`, `HRL-LEN-001`, `HRL-DS-001`, `HRL-CL-001`)
+- `R/val-engine.R` -- `validate()` orchestrator
+- `R/rule-execute.R` -- YAML rule execution, `grepl("^HRL-", rule_id)` routing
+- `R/rule-operator.R` -- Operator registry (96 core + 60 herald operators)
+- `R/rule-fetch.R` -- Rule resolution from herald-rules cache
+
+### Herald ↔ Herald-Rules Sync
+
+ALWAYS keep these two repos in sync:
+- Any hardcoded rule in `R/val-checks.R` must have a matching YAML in
+  `engines/herald/` with `executability: Hardcoded`
+- All rule IDs use `HRL-{CAT}-NNN` prefix (no HERALD- prefix, no bare P21 IDs)
+- When adding/renaming hardcoded rules, update BOTH repos in the same session
+- Run `Rscript tests/validate-rules.R` to verify sync
+
+Always sync `README.md` after any rule additions, ID changes, or count updates.
 
 ## Key Files
 
-- `herald-master-rules.csv` -- 2,240 rules, 20 columns, full provenance (source of truth)
+- `herald-master-rules.csv` -- 2,389 rules, 20 columns, full provenance (source of truth)
 - `herald-controlled-terminology.csv` -- 44,970 CT terms with extensibility
 - `manifest.json` -- engine rule counts and config summaries
 - `CHANGELOG.md` -- release history

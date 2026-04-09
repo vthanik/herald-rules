@@ -1,0 +1,20 @@
+id: DD0086
+version: 1
+status: Published
+standard: Define-XML
+category: Conformance
+sensitivity: Study
+executability: Reference
+description: The def:DefineVersion should have a value of '2.0.0' for Define-XML v2.0.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Invalid def:DefineVersion value
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.2 (Define-XML)
+  authority: Herald
+  p21_reference: DD0020A
+

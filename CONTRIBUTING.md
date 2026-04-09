@@ -91,12 +91,18 @@ Rule IDs follow a strict naming convention based on the source authority:
 | CDISC CORE | `CORE-NNNNNN` | `CORE-000005` |
 | FDA Business Rules | `FDABXXX` | `FDAB001` |
 | PMDA Validation | `PMDAXXX` | `PMDA001` |
-| herald custom | `HRLD-XXXX` | `HRLD-0001` |
+| herald custom (YAML) | `HRL-{CAT}-NNN` | `HRL-AD-001` |
+| herald custom (hardcoded) | `HRL-{CAT}-NNN` | `HRL-VAR-001` |
+| herald CT per-codelist | `HRL-CT-NNNN` | `HRL-CT-0001` |
+| herald Define-XML spec | `DDNNNN` | `DD0001` |
 
 - For CDISC CORE rules, use the official CORE ID from the
   [cdisc-open-rules](https://github.com/cdisc-org/cdisc-open-rules) repository.
 - For FDA rules, use the next sequential `FDAB` number.
-- For custom herald rules (not from any authority), use the `HRLD-` prefix.
+- For herald-authored rules, use the `HRL-{CAT}-NNN` prefix where `CAT` is a
+  short category code (e.g. AD, SD, TS, FM, MD, OD, VAR, LBL, DS, CL).
+- For hardcoded spec checks in `R/val-checks.R`, create a reference YAML in
+  `engines/herald/` with `executability: Hardcoded`.
 
 ### Step 2: Create the YAML file
 

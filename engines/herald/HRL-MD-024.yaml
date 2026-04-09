@@ -1,0 +1,21 @@
+id: HRL-MD-024
+version: 1
+status: Published
+standard: ADaM
+category: Specification Metadata
+sensitivity: Study
+executability: Reference
+description: A value is required for Form for each Section. Sections must be associated
+  to a Form.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Missing Form value for Section
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.2 (Metadata)
+  authority: Herald
+  p21_reference: MD4024
+

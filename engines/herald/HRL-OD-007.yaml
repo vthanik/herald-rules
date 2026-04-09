@@ -1,0 +1,21 @@
+id: HRL-OD-007
+version: 1
+status: Published
+standard: Define-XML
+category: ODM Conformance
+sensitivity: Study
+executability: Reference
+description: Attribute or element is defined as a time, but text string does not match
+  the named data format. Allowed string pattern for a time is 'hh:mm:ss(.n+)? ((+|-)hh:mm)?'.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Invalid time value
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.2 (ODM)
+  authority: Herald
+  p21_reference: OD0016
+

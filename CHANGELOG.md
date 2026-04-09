@@ -8,6 +8,55 @@ for release cadence details.
 
 ---
 
+## v2026.2.2 -- 2026-04-09
+
+### Herald-Native Rule ID Scheme (HRL- prefix)
+
+All 132 herald engine rules renamed from P21/PMDA IDs to herald-native
+`HRL-{CAT}-NNN` prefix, consistent with the existing `HRL-CT-NNNN` pattern.
+P21 IDs preserved in `p21_reference` provenance field for traceability.
+
+**Rule families renamed:**
+- HRL-AD-001 through HRL-AD-021 (21 ADaM gap-fill rules)
+- HRL-FM-001 through HRL-FM-040 (40 form metadata rules)
+- HRL-MD-001 through HRL-MD-040 (40 ADaM v1.2 metadata rules)
+- HRL-OD-001 through HRL-OD-009 (9 ODM conformance rules)
+- HRL-SD-001 through HRL-SD-009 (9 SDTM gap-fill rules)
+- HRL-TS-001 through HRL-TS-005 (5 trial summary rules)
+- HRL-DD-001 through HRL-DD-014 (14 Define-XML spec rules, P21-sourced)
+
+### New Hardcoded Spec-Check Rules (7 rules)
+
+Cataloged 7 rules hardcoded in the herald R package as reference YAMLs
+(`executability: Hardcoded`). Added to all 10 submission config profiles.
+
+- HRL-VAR-001: Variable in spec but missing from data
+- HRL-VAR-002: Variable in data but not in spec
+- HRL-LBL-001: Variable label mismatch vs spec
+- HRL-TYP-001: Variable type mismatch (char vs numeric)
+- HRL-LEN-001: Character value exceeds spec byte length
+- HRL-DS-001: Dataset label mismatch vs spec
+- HRL-CL-001: Value not in spec codelist
+
+### Define-XML Rules Renumbered
+
+8 new Define-XML spec rules renumbered from P21 IDs into herald sequence:
+- HRL-DD-001 (ex DD0086): Invalid attribute length in Define.xml
+- HRL-DD-002 (ex DD0145): Data Type/Assigned Value mismatch
+- HRL-DD-003 (ex DD0146): Length/Assigned Value mismatch
+- HRL-DD-004 (ex DD0147): Assigned value not found in codelist
+- HRL-DD-005 (ex DD0149): Invalid Data Type for --DTC/--DUR variable
+- HRL-DD-006 (ex DD0151): Check Value not found in Codelist
+- HRL-DD-007 (ex DD0152): Coded and Decoded values do not have same C-Code
+- HRL-DD-008 through HRL-DD-014: ARM metadata validation rules
+
+### Bug Fix
+
+- HRL-SD-002 (ex SD1071): Fixed `source_doc` from "P21 ADaM Validation Rules v1.1"
+  to "P21 Validation Rules" (this is an SDTM rule, not ADaM).
+
+---
+
 ## v2026.2.1 -- 2026-04-03
 
 ### CDISC Library API Integration

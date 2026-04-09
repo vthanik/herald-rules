@@ -1,0 +1,21 @@
+id: HRL-DD-003
+version: 1
+status: Published
+standard: Define-XML
+category: Conformance
+sensitivity: Study
+executability: Reference
+description: The length of the value provided in Assigned Value must be less than
+  or equal to the variable length.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Length/Assigned Value mismatch
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.2 (Define-XML)
+  authority: Herald
+  p21_reference: DD0146
+

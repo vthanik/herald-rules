@@ -1,0 +1,21 @@
+id: HRL-MD-005
+version: 1
+status: Published
+standard: ADaM
+category: Specification Metadata
+sensitivity: Study
+executability: Reference
+description: A Name value is required for each Event.  Name is a required attribute
+  for the StudyEventDef element. Events are represented in ODM as StudyEventDef elements.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Missing Name value for Event
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.2 (Metadata)
+  authority: Herald
+  p21_reference: MD4005
+

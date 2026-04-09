@@ -1,0 +1,21 @@
+id: HRL-DD-006
+version: 1
+status: Published
+standard: Define-XML
+category: Conformance
+sensitivity: Study
+executability: Reference
+description: A value found in a Where Clause is not found in the defined Codelist
+  within the linked Terminology.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Check Value not found in Codelist
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.2 (Define-XML)
+  authority: Herald
+  p21_reference: DD0151
+

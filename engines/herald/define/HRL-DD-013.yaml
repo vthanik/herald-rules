@@ -1,0 +1,20 @@
+id: HRL-DD-013
+version: 1
+status: Published
+standard: Define-XML
+category: ARM Metadata
+sensitivity: Study
+executability: Reference
+description: >
+  ParameterOID is required when the analysis result is based on specific parameter(s) from a BDS structured dataset.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Missing required ParameterOID
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.2 (Define-XML)
+  authority: Herald
+  p21_reference: DD0092

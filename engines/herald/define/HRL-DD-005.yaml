@@ -1,0 +1,24 @@
+id: HRL-DD-005
+version: 1
+status: Published
+standard: Define-XML
+category: Conformance
+sensitivity: Study
+executability: Reference
+description: SEND/SDTM variables that represent ISO 8601 formatted date/times/datetimes
+  (--DTC and --DUR) should have a Data Type value of 'datetime', 'date', 'time', 'partialDate',
+  'partialTime', 'partialDatetime', 'incompleteDatetime', or 'durationDatetime'. In
+  Define-XML 2.1, 'intervalDatetime' is also a valid Data Type. A Data Type value
+  of 'text' is invalid.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Invalid Data Type for --DTC/--DUR variable
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.2 (Define-XML)
+  authority: Herald
+  p21_reference: DD0149
+

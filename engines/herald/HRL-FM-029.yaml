@@ -1,0 +1,21 @@
+id: HRL-FM-029
+version: 1
+status: Published
+standard: ADaM
+category: Specification Metadata
+sensitivity: Study
+executability: Reference
+description: A value is required for Codelist for each Term. Terms must be associated
+  to a Codelist.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Missing Codelist value for Term
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.1 (Form Metadata)
+  authority: Herald
+  p21_reference: FM0029
+

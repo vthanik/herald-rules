@@ -4,7 +4,7 @@ Regulatory validation rule catalog for the [herald](https://github.com/vthanik/h
 
 ## Overview
 
-**3,479 executable YAML rules** covering FDA, PMDA, and CDISC conformance requirements for SDTM, ADaM, SEND, and Define-XML submissions.
+**3,592 YAML rules** covering FDA, PMDA, and CDISC conformance requirements for SDTM, ADaM, SEND, and Define-XML submissions.
 
 | Engine | Rules | Source |
 |--------|------:|--------|
@@ -12,7 +12,7 @@ Regulatory validation rule catalog for the [herald](https://github.com/vthanik/h
 | `fda` | 660 | FDA Business Rules v1.5 (86) + Validator Rules v1.6 (574) |
 | `pmda` | 1,041 | PMDA Validation Rules v6.0 (SDTM/ADaM/Define-XML) |
 | `ct` | 1,210 | NCI EVS Controlled Terminology (6 meta-rules + 1,204 per-codelist) |
-| `herald` | 118 | Herald-original (33 gap-fill + 85 Define-XML v2.1 spec validation) |
+| `herald` | 231 | Herald-original: 124 gap-fill (HRL-AD/FM/MD/OD/SD/TS) + 100 Define-XML spec + 7 hardcoded spec checks |
 
 ## Repository Structure
 
@@ -22,8 +22,8 @@ herald-rules/
 │   ├── cdisc/              450 YAML -- CDISC Library conformance rules
 │   ├── ct/               1,210 YAML -- Per-codelist CT rules with baked-in terms
 │   ├── fda/                660 YAML -- FDA Business + Validator Rules
-│   ├── herald/              33 YAML -- Herald-original gap-fill rules
-│   │   └── define/          85 YAML -- Define-XML v2.1 spec validation (DD0001--DD0085)
+│   ├── herald/             131 YAML -- Herald-original gap-fill + hardcoded spec checks (HRL- prefix)
+│   │   └── define/         100 YAML -- Define-XML v2.1 spec validation (DD0001--DD0086, HRL-DD-001--014)
 │   └── pmda/             1,041 YAML -- PMDA Validation Rules v6.0
 ├── configs/                        -- 10 submission profile configs
 │   ├── fda-sdtm-ig-3.2.json
@@ -110,7 +110,7 @@ See [RULE_SCHEMA.md](RULE_SCHEMA.md) for the complete schema with all operators.
 
 ## Define-XML v2.1 Spec Validation
 
-85 rules (DD0001--DD0085) validate P21 Excel specifications against the CDISC Define-XML v2.1 standard before `write_define_xml()` generates output:
+100 rules validate P21 Excel specifications against the CDISC Define-XML v2.1 standard before `write_define_xml()` generates output:
 
 | Group | Rules | What they validate |
 |-------|------:|-------------------|
@@ -122,7 +122,8 @@ See [RULE_SCHEMA.md](RULE_SCHEMA.md) for the complete schema with all operators.
 | Methods & Comments | DD0056--DD0063 | Type (Computation/Imputation), descriptions |
 | Cross-Reference | DD0064--DD0073 | All ID linkages between spec sheets |
 | Orphan Detection | DD0074--DD0077 | Unreferenced methods, comments, codelists |
-| P21 Alignment | DD0078--DD0085 | ARM metadata, origin consistency, datatype match |
+| P21 Alignment | DD0078--DD0086 | ARM metadata, origin consistency, datatype match |
+| P21-Sourced (HRL-DD) | HRL-DD-001--014 | Assigned value type/length/codelist, DTC data types, ARM metadata |
 
 Traceability to specific spec sections is documented in [engines/herald/define/TRACEABILITY.md](engines/herald/define/TRACEABILITY.md).
 
@@ -139,16 +140,16 @@ validate(data, spec, config = "fda-define-xml-2.1")
 
 | Config | Authority | Standard | Rules |
 |--------|-----------|----------|------:|
-| `fda-sdtm-ig-3.2` | FDA | SDTM-IG 3.2 | 2,267 |
-| `fda-sdtm-ig-3.3` | FDA | SDTM-IG 3.3 | 2,267 |
-| `fda-adam-ig-1.1` | FDA | ADaM-IG 1.1 | 1,817 |
-| `fda-adam-ig-1.2` | FDA | ADaM-IG 1.2 | 1,817 |
-| `fda-define-xml-2.1` | FDA | Define-XML 2.1 | 1,988 |
-| `pmda-sdtm-ig-3.2` | PMDA | SDTM-IG 3.2 | 2,734 |
-| `pmda-sdtm-ig-3.3` | PMDA | SDTM-IG 3.3 | 2,734 |
-| `pmda-adam-ig-1.1` | PMDA | ADaM-IG 1.1 | 2,284 |
-| `pmda-define-xml-2.1` | PMDA | Define-XML 2.1 | 2,296 |
-| `all` | Combined | All | 3,479 |
+| `fda-sdtm-ig-3.2` | FDA | SDTM-IG 3.2 | 2,275 |
+| `fda-sdtm-ig-3.3` | FDA | SDTM-IG 3.3 | 2,275 |
+| `fda-adam-ig-1.1` | FDA | ADaM-IG 1.1 | 456 |
+| `fda-adam-ig-1.2` | FDA | ADaM-IG 1.2 | 496 |
+| `fda-define-xml-2.1` | FDA | Define-XML 2.1 | 2,019 |
+| `pmda-sdtm-ig-3.2` | PMDA | SDTM-IG 3.2 | 2,742 |
+| `pmda-sdtm-ig-3.3` | PMDA | SDTM-IG 3.3 | 2,742 |
+| `pmda-adam-ig-1.1` | PMDA | ADaM-IG 1.1 | 505 |
+| `pmda-define-xml-2.1` | PMDA | Define-XML 2.1 | 2,320 |
+| `all` | Combined | All | 3,499 |
 
 ## Quarterly Refresh
 
@@ -169,7 +170,8 @@ Individual scripts:
 ## Validation
 
 ```bash
-Rscript tests/validate-rules.R         # Structural: YAML parsing, IDs, configs, manifest
+Rscript tests/validate-rules.R          # Structural: YAML parsing, IDs, configs, manifest
+Rscript tests/validate-herald-rules.R   # HRL-* rules: sequences, CSV coverage, operators
 Rscript tests/validate-define-rules.R   # Content: DD rule fields, operators, provenance, values
 ```
 

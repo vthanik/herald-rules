@@ -1,22 +1,22 @@
 {
   "schema_version": 2,
   "herald_min_version": "0.1.0",
-  "generated": "2026-04-03T13:18:46Z",
+  "generated": "2026-04-09",
   "sources": {
     "cdisc": "CDISC Library API (library.cdisc.org)",
     "fda": "FDA Validator Rules v1.6 (December 2022) + Business Rules v1.5",
     "pmda": "PMDA Validation Rules v6.0 (March 2025)",
     "ct": "NCI EVS CDISC Controlled Terminology (2025-09-26)",
     "herald": "Herald-original rules (gap-fill for P21 parity)",
-    "herald-define": "Herald Define-XML v2.1 spec validation (85 rules in engines/herald/define/)"
+    "herald-define": "Herald Define-XML v2.1 spec validation (93 rules in engines/herald/define/)"
   },
   "stats": {
-    "total_engine_rules": 3479,
+    "total_engine_rules": 3592,
     "by_engine": {
       "cdisc": 450,
       "ct": 1210,
       "fda": 660,
-      "herald": 118,
+      "herald": 231,
       "pmda": 1041
     },
     "configs": 10

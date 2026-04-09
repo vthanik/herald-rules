@@ -1,0 +1,29 @@
+id: HRL-AD-015
+version: 1
+status: Published
+standard: ADaM
+category: Data Quality
+sensitivity: Record
+executability: Fully Executable
+description: >
+  When AVAL, BASE, and PCHG are all non-missing and BASE is non-zero,
+  PCHG must equal (AVAL - BASE) / BASE * 100 within a tolerance of ±0.005.
+  AD0225A (companion rule) covers the BASE = 0 case.
+scope:
+  classes:
+    - BASIC DATA STRUCTURE
+  domains: []
+check:
+  all:
+    - name: PCHG
+      operator: within_tolerance_of_formula
+      formula: "(AVAL - BASE) / BASE * 100"
+      tolerance: 0.005
+      guard_nonzero: BASE
+outcome:
+  message: "Calculation issue: PCHG != (AVAL-BASE)/BASE*100"
+  severity: Error
+provenance:
+  source_doc: PMDA Validation Rules v6.0 (March 2025)
+  authority: Herald
+  p21_reference: AD0225

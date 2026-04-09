@@ -1,0 +1,20 @@
+id: HRL-DD-012
+version: 1
+status: Published
+standard: Define-XML
+category: ARM Metadata
+sensitivity: Study
+executability: Reference
+description: >
+  The OID for an arm:AnalysisResult must be unique within a arm:ResultDisplay.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Duplicate arm:AnalysisResult OID
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.2 (Define-XML)
+  authority: Herald
+  p21_reference: DD0091

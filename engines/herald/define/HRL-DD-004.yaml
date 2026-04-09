@@ -1,0 +1,21 @@
+id: HRL-DD-004
+version: 1
+status: Published
+standard: Define-XML
+category: Conformance
+sensitivity: Study
+executability: Reference
+description: When a variable or value level record is subject to controlled terminology,
+  the Assigned Value must be populated with a term from its associated codelist.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Assigned value not found in codelist
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.2 (Define-XML)
+  authority: Herald
+  p21_reference: DD0147
+

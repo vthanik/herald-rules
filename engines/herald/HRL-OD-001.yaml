@@ -1,0 +1,20 @@
+id: HRL-OD-001
+version: 1
+status: Published
+standard: Define-XML
+category: ODM Conformance
+sensitivity: Study
+executability: Reference
+description: The ODM file must reference the CDISC ODM namespace 'http://www.cdisc.org/ns/odm/v1.2'.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Missing or invalid Namespace attribute
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.2 (ODM)
+  authority: Herald
+  p21_reference: OD0002
+

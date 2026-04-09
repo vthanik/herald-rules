@@ -1,0 +1,21 @@
+id: HRL-FM-015
+version: 1
+status: Published
+standard: ADaM
+category: Specification Metadata
+sensitivity: Study
+executability: Reference
+description: Section value must be a valid Section. Valid sections are those which
+  have a ItemGroupDef element.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Invalid Section value for Question
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.1 (Form Metadata)
+  authority: Herald
+  p21_reference: FM0015
+

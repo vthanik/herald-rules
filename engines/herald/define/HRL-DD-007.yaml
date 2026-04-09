@@ -1,0 +1,21 @@
+id: HRL-DD-007
+version: 1
+status: Published
+standard: Define-XML
+category: Conformance
+sensitivity: Study
+executability: Reference
+description: Paired variables such as TEST/TESTCD must be populated using terms with
+  the same Term Code (C-Code) value.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Coded and Decoded values do not have the same C-Code
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.2 (Define-XML)
+  authority: Herald
+  p21_reference: DD0152
+

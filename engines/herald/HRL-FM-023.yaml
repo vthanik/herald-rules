@@ -1,0 +1,21 @@
+id: HRL-FM-023
+version: 1
+status: Published
+standard: ADaM
+category: Specification Metadata
+sensitivity: Study
+executability: Reference
+description: A Name value is required for each Section.  Name is a required attribute
+  for the ItemGroupDef element. Sections are represented in ODM as ItemGroupDef elements.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Missing Name value for Section
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.1 (Form Metadata)
+  authority: Herald
+  p21_reference: FM0023
+

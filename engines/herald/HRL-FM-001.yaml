@@ -1,0 +1,20 @@
+id: HRL-FM-001
+version: 1
+status: Published
+standard: ADaM
+category: Specification Metadata
+sensitivity: Study
+executability: Reference
+description: Codelist Name should not contain 2 or more spaces in sequence.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Invalid Codelist Name
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.1 (Form Metadata)
+  authority: Herald
+  p21_reference: FM0001
+

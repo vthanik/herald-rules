@@ -1,0 +1,21 @@
+id: HRL-FM-014
+version: 1
+status: Published
+standard: ADaM
+category: Specification Metadata
+sensitivity: Study
+executability: Reference
+description: A value is required for Section for each Question. Questions must be
+  associated to a Form and Section.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Missing Section value for Question
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.1 (Form Metadata)
+  authority: Herald
+  p21_reference: FM0014
+

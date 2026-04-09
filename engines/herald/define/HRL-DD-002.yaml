@@ -1,0 +1,21 @@
+id: HRL-DD-002
+version: 1
+status: Published
+standard: Define-XML
+category: Conformance
+sensitivity: Study
+executability: Reference
+description: The value provided in Assigned Value must match the Data Type of the
+  variable.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Data Type/Assigned Value mismatch
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.2 (Define-XML)
+  authority: Herald
+  p21_reference: DD0145
+

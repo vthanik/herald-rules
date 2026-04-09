@@ -1,0 +1,20 @@
+id: HRL-DD-011
+version: 1
+status: Published
+standard: Define-XML
+category: ARM Metadata
+sensitivity: Study
+executability: Reference
+description: >
+  A Description element must be included in each arm:ResultDisplay.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Missing Required Description Element
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.2 (Define-XML)
+  authority: Herald
+  p21_reference: DD0090

@@ -1,0 +1,21 @@
+id: HRL-FM-028
+version: 1
+status: Published
+standard: ADaM
+category: Specification Metadata
+sensitivity: Study
+executability: Reference
+description: Codelists associated with a QLABEL should have Terms less than or equal
+  to 40 characters in length to adhere to SAS XPTV5 requirements.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Invalid Display Term value for Codelist referenced by QLABEL
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.1 (Form Metadata)
+  authority: Herald
+  p21_reference: FM0028
+

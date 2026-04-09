@@ -82,10 +82,13 @@ Core:
 
 | Authority | Pattern | Example | Directory |
 |-----------|---------|---------|-----------|
-| CDISC CORE | `CORE-NNNNNN` | `CORE-000005` | `engines/core/` |
+| CDISC CORE | `CORE-NNNNNN` | `CORE-000005` | `engines/cdisc/` |
 | FDA Business Rules | `FDABXXX` | `FDAB001` | `engines/fda/` |
 | PMDA Validation | `PMDAXXX` | `PMDA001` | `engines/pmda/` |
-| herald custom | `HRLD-XXXX` | `HRLD-0001` | `engines/core/` |
+| herald custom (YAML) | `HRL-{CAT}-NNN` | `HRL-AD-001` | `engines/herald/` |
+| herald custom (hardcoded) | `HRL-{CAT}-NNN` | `HRL-VAR-001` | `engines/herald/` |
+| herald CT per-codelist | `HRL-CT-NNNN` | `HRL-CT-0001` | `engines/ct/` |
+| herald Define-XML spec | `DDNNNN` | `DD0001` | `engines/herald/define/` |
 
 ---
 

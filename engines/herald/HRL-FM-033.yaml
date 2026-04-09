@@ -1,0 +1,21 @@
+id: HRL-FM-033
+version: 1
+status: Published
+standard: ADaM
+category: Specification Metadata
+sensitivity: Study
+executability: Reference
+description: SDTM Target should reference a variable in the domain specified in the
+  SDTM Target Domains column on the Forms tab.
+scope:
+  classes: []
+  domains: []
+check: []
+outcome:
+  message: Invalid SDTM Target value
+  severity: Error
+provenance:
+  source_doc: P21 ADaM Validation Rules v1.1 (Form Metadata)
+  authority: Herald
+  p21_reference: FM0033
+
