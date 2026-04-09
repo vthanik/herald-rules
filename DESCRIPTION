@@ -1,0 +1,26 @@
+Package: heraldRules
+Type: Package
+Title: Validation Rules Data for the 'herald' Package
+Version: 0.1.0
+Authors@R: person("Vignesh", role = c("aut", "cre"),
+    email = "vthanik@users.noreply.github.com")
+Description: Provides pre-compiled validation rules, submission profile
+    configurations, and CDISC controlled terminology for use with the
+    'herald' clinical dataset submission package. Includes 3,593 rules
+    covering CDISC conformance (CDISC Library), FDA Business and Validator
+    rules, PMDA rules, NCI EVS controlled terminology, and Herald-original
+    gap-fill rules. Bundling rules as a CRAN data package ensures fully
+    offline operation, version-pinned reproducibility, and compliance with
+    air-gapped pharmaceutical validation environments.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+LazyDataCompression: xz
+Depends: R (>= 4.1.0)
+Suggests:
+    herald,
+    testthat (>= 3.0.0)
+URL: https://github.com/vthanik/herald-rules
+BugReports: https://github.com/vthanik/herald-rules/issues
+RoxygenNote: 7.3.3
+Config/testthat/edition: 3
