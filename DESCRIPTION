@@ -1,4 +1,4 @@
-Package: herald.rules
+Package: heraldrules
 Type: Package
 Title: Validation Rules Data for the 'herald' Package
 Version: 0.1.0
