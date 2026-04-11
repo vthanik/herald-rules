@@ -1,6 +1,6 @@
 #' List available submission profile configurations
 #'
-#' Returns the names of all submission profiles bundled in \pkg{heraldRules}.
+#' Returns the names of all submission profiles bundled in \pkg{herald.rules}.
 #' Pass any of these to \code{\link{hr_get_config}} or
 #' \code{\link{hr_rules_for_config}}.
 #'
@@ -12,7 +12,7 @@
 #'
 #' @export
 hr_list_configs <- function() {
-  sort(names(heraldRules::hr_configs))
+  sort(names(herald.rules::hr_configs))
 }
 
 #' Get rule IDs for a submission profile
@@ -32,7 +32,7 @@ hr_list_configs <- function() {
 #' @export
 hr_get_config <- function(config) {
   stopifnot(is.character(config), length(config) == 1L)
-  cfg <- heraldRules::hr_configs[[config]]
+  cfg <- herald.rules::hr_configs[[config]]
   if (is.null(cfg)) {
     available <- paste(hr_list_configs(), collapse = ", ")
     stop(
@@ -60,5 +60,5 @@ hr_get_config <- function(config) {
 #' @export
 hr_rules_for_config <- function(config) {
   ids <- hr_get_config(config)
-  heraldRules::hr_rules[heraldRules::hr_rules$rule_id %in% ids, , drop = FALSE]
+  herald.rules::hr_rules[herald.rules::hr_rules$rule_id %in% ids, , drop = FALSE]
 }

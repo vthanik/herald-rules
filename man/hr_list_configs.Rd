@@ -11,7 +11,7 @@ A character vector of config names, e.g.
   \code{"fda-sdtm-ig-3.3"}, \code{"pmda-adam-ig-1.1"}.
 }
 \description{
-Returns the names of all submission profiles bundled in \pkg{heraldRules}.
+Returns the names of all submission profiles bundled in \pkg{herald.rules}.
 Pass any of these to \code{\link{hr_get_config}} or
 \code{\link{hr_rules_for_config}}.
 }

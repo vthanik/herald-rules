@@ -1,4 +1,4 @@
-#' heraldRules: Validation Rules Data for the 'herald' Package
+#' herald.rules: Validation Rules Data for the 'herald' Package
 #'
 #' Pre-compiled validation rules, submission profile configurations, and
 #' CDISC controlled terminology for use with the \pkg{herald} package.
