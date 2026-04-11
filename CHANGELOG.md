@@ -8,6 +8,32 @@ for release cadence details.
 
 ---
 
+## v2026.2.3 -- 2026-04-11
+
+### New ADaM Rules (HRL-AD-022/023/024)
+
+Three new fully executable ADaM gap-fill rules sourced from PMDA Validation Rules v6.0:
+
+- **HRL-AD-022** (ex AD0143): PARAMCD must be ≤8 chars, start with uppercase/underscore, contain only uppercase letters, digits, underscores.
+- **HRL-AD-023** (ex AD0168): When ABLFL = "Y", BNRIND must equal ANRIND.
+- **HRL-AD-024** (ex AD0154): Only one record may have ABLFL = "Y" per unique USUBJID + PARAMCD + BASETYPE combination.
+
+Added to configs: `fda-adam-ig-1.1`, `fda-adam-ig-1.2`, `pmda-adam-ig-1.1`.
+
+### New Hardcoded Spec-Check Rule (HRL-VAR-003)
+
+- **HRL-VAR-003**: Variables flagged as Common (common = Yes) in the spec must be present in every submitted dataset. Cataloged as reference YAML (`executability: Hardcoded`). Added to all 10 submission config profiles.
+
+### FDA Validator Structural Rules Added to ADaM Configs
+
+15 FDAV-SD structural rules + PMDA rule AD0225A added to `fda-adam-ig-1.1` and `pmda-adam-ig-1.1` configs for P21 Community parity.
+
+### Embedded `tests:` Blocks
+
+All fully executable HRL-* YAML rules now include embedded `tests:` blocks with positive and negative test cases. Validation infrastructure added to `tests/validate-herald-rules.R`.
+
+---
+
 ## v2026.2.2 -- 2026-04-09
 
 ### Herald-Native Rule ID Scheme (HRL- prefix)

@@ -4,7 +4,7 @@ Regulatory validation rule catalog for the [herald](https://github.com/vthanik/h
 
 ## Overview
 
-**3,592 YAML rules** covering FDA, PMDA, and CDISC conformance requirements for SDTM, ADaM, SEND, and Define-XML submissions.
+**3,596 YAML rules** covering FDA, PMDA, and CDISC conformance requirements for SDTM, ADaM, SEND, and Define-XML submissions.
 
 | Engine | Rules | Source |
 |--------|------:|--------|
@@ -12,7 +12,7 @@ Regulatory validation rule catalog for the [herald](https://github.com/vthanik/h
 | `fda` | 660 | FDA Business Rules v1.5 (86) + Validator Rules v1.6 (574) |
 | `pmda` | 1,041 | PMDA Validation Rules v6.0 (SDTM/ADaM/Define-XML) |
 | `ct` | 1,210 | NCI EVS Controlled Terminology (6 meta-rules + 1,204 per-codelist) |
-| `herald` | 231 | Herald-original: 124 gap-fill (HRL-AD/FM/MD/OD/SD/TS) + 100 Define-XML spec + 7 hardcoded spec checks |
+| `herald` | 235 | Herald-original: 127 gap-fill (HRL-AD/FM/MD/OD/SD/TS) + 100 Define-XML spec + 8 hardcoded spec checks |
 
 ## Repository Structure
 
@@ -22,7 +22,7 @@ herald-rules/
 │   ├── cdisc/              450 YAML -- CDISC Library conformance rules
 │   ├── ct/               1,210 YAML -- Per-codelist CT rules with baked-in terms
 │   ├── fda/                660 YAML -- FDA Business + Validator Rules
-│   ├── herald/             131 YAML -- Herald-original gap-fill + hardcoded spec checks (HRL- prefix)
+│   ├── herald/             135 YAML -- Herald-original gap-fill + hardcoded spec checks (HRL- prefix)
 │   │   └── define/         100 YAML -- Define-XML v2.1 spec validation (DD0001--DD0086, HRL-DD-001--014)
 │   └── pmda/             1,041 YAML -- PMDA Validation Rules v6.0
 ├── configs/                        -- 10 submission profile configs
@@ -140,16 +140,16 @@ validate(data, spec, config = "fda-define-xml-2.1")
 
 | Config | Authority | Standard | Rules |
 |--------|-----------|----------|------:|
-| `fda-sdtm-ig-3.2` | FDA | SDTM-IG 3.2 | 2,275 |
-| `fda-sdtm-ig-3.3` | FDA | SDTM-IG 3.3 | 2,275 |
-| `fda-adam-ig-1.1` | FDA | ADaM-IG 1.1 | 456 |
-| `fda-adam-ig-1.2` | FDA | ADaM-IG 1.2 | 496 |
-| `fda-define-xml-2.1` | FDA | Define-XML 2.1 | 2,019 |
-| `pmda-sdtm-ig-3.2` | PMDA | SDTM-IG 3.2 | 2,742 |
-| `pmda-sdtm-ig-3.3` | PMDA | SDTM-IG 3.3 | 2,742 |
-| `pmda-adam-ig-1.1` | PMDA | ADaM-IG 1.1 | 505 |
-| `pmda-define-xml-2.1` | PMDA | Define-XML 2.1 | 2,320 |
-| `all` | Combined | All | 3,499 |
+| `fda-sdtm-ig-3.2` | FDA | SDTM-IG 3.2 | 2,276 |
+| `fda-sdtm-ig-3.3` | FDA | SDTM-IG 3.3 | 2,276 |
+| `fda-adam-ig-1.1` | FDA | ADaM-IG 1.1 | 475 |
+| `fda-adam-ig-1.2` | FDA | ADaM-IG 1.2 | 497 |
+| `fda-define-xml-2.1` | FDA | Define-XML 2.1 | 2,020 |
+| `pmda-sdtm-ig-3.2` | PMDA | SDTM-IG 3.2 | 2,743 |
+| `pmda-sdtm-ig-3.3` | PMDA | SDTM-IG 3.3 | 2,743 |
+| `pmda-adam-ig-1.1` | PMDA | ADaM-IG 1.1 | 524 |
+| `pmda-define-xml-2.1` | PMDA | Define-XML 2.1 | 2,321 |
+| `all` | Combined | All | 3,500 |
 
 ## Quarterly Refresh
 
