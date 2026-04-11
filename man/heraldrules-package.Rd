@@ -30,8 +30,8 @@ CDISC controlled terminology for use with the \pkg{herald} package.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/vthanik/herald-rules}
-  \item Report bugs at \url{https://github.com/vthanik/herald-rules/issues}
+  \item \url{https://github.com/vthanik/heraldrules}
+  \item Report bugs at \url{https://github.com/vthanik/heraldrules/issues}
 }
 
 }

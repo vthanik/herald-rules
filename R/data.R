@@ -29,7 +29,7 @@
 #'   \item{status}{Published or Draft.}
 #'   \item{notes}{Additional notes.}
 #' }
-#' @source \url{https://github.com/vthanik/herald-rules}
+#' @source \url{https://github.com/vthanik/heraldrules}
 "hr_rules"
 
 #' Herald submission profile configurations
@@ -42,7 +42,7 @@
 #'   \code{"fda-sdtm-ig-3.3"}). Each element is a character vector of rule IDs.
 #'
 #' @seealso \code{\link{hr_get_config}}, \code{\link{hr_rules_for_config}}
-#' @source \url{https://github.com/vthanik/herald-rules}
+#' @source \url{https://github.com/vthanik/heraldrules}
 "hr_configs"
 
 #' CDISC controlled terminology
@@ -72,5 +72,5 @@
 #'
 #' @format A list with elements \code{schema_version}, \code{herald_min_version},
 #'   \code{generated}, \code{sources}, and \code{stats}.
-#' @source \url{https://github.com/vthanik/herald-rules}
+#' @source \url{https://github.com/vthanik/heraldrules}
 "hr_manifest"

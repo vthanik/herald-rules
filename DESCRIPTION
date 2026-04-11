@@ -20,7 +20,7 @@ Depends: R (>= 4.1.0)
 Suggests:
     herald,
     testthat (>= 3.0.0)
-URL: https://github.com/vthanik/herald-rules
-BugReports: https://github.com/vthanik/herald-rules/issues
+URL: https://github.com/vthanik/heraldrules
+BugReports: https://github.com/vthanik/heraldrules/issues
 RoxygenNote: 7.3.3
 Config/testthat/edition: 3
