@@ -517,7 +517,22 @@
     "PMDA-XPT-003",
     "HRL-AD-022",
     "HRL-AD-023",
-    "HRL-AD-024"
+    "HRL-AD-024",
+    "FDAV-SD0001",
+    "FDAV-SD0037",
+    "FDAV-SD0054",
+    "FDAV-SD0059",
+    "FDAV-SD0060",
+    "FDAV-SD0061",
+    "FDAV-SD0062",
+    "FDAV-SD1063",
+    "FDAV-SD1071",
+    "FDAV-SD1228",
+    "FDAV-SD1229",
+    "FDAV-SD1230",
+    "FDAV-SD1231",
+    "FDAV-SD1324",
+    "FDAV-SD1325"
   ],
   "severity_overrides": []
 }
