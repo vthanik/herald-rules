@@ -1,0 +1,68 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  The SAS format for *TM variables must be a valid SAS time format.
+                  Valid formats include: B8601LZ, B8601TM, B8601TZ, E8601LZ, E8601TM,
+                  E8601TZ, HHMM, HOUR, MMSS, TIME, TIMEAMPM, IS8601TM, IS8601TZ, TOD.
+                Document: ADaM IG v1.1
+                Section: '4.4'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-42
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: AESTM
+      operator: non_empty
+    - name: AESTM
+      operator: not_matches_regex
+      value: '^([0-1][0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$'
+Core:
+  Id: ADaM-042
+  Status: Published
+  Version: '1'
+Description: >-
+  Variables with a *TM suffix must use a valid SAS time format. Values should conform
+  to ISO 8601 time format HH:MM or HH:MM:SS. Uses AESTM as representative *TM variable.
+Executability: Partially Executable
+Outcome:
+  Message: '*TM variable has an invalid time format value'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - ALL
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: PMDA Validation Rules v6.0 (March 2025)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "AESTM has valid time format HH:MM:SS"
+    type: positive
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AESTM]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "08:30:00"]
+          - ["CDISCPILOT01", "01-701-1023", ""]
+    expected_findings: 0
+  - name: "AESTM has invalid time value"
+    type: negative
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AESTM]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "25:99:00"]
+    expected_findings: 1

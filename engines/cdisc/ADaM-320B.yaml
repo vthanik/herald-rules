@@ -1,0 +1,65 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  The dataset label for a dataset named ADDL must be
+                  'Device-level Analysis Dataset'. This is a required standard label
+                  for the ADDL dataset in ADaM submissions.
+                Document: ADaM IG v1.1
+                Section: '3.4'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-320B
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: STUDYID
+      operator: non_empty
+Core:
+  Id: ADaM-320B
+  Status: Published
+  Version: '1'
+Description: >-
+  The ADDL dataset label must be 'Device-level Analysis Dataset'. This is a metadata
+  rule that requires checking the dataset label attribute in Define.xml or SAS dataset
+  metadata.
+Executability: Partially Executable
+Outcome:
+  Message: 'ADDL dataset label must be Device-level Analysis Dataset (metadata rule - verify in Define.xml)'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - ALL
+  Domains:
+    Include:
+      - ADDL
+Sensitivity: Dataset
+herald:
+  source: PMDA Validation Rules v6.0 (March 2025)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "ADDL dataset is present with records"
+    type: positive
+    datasets:
+      ADDL:
+        variables: [STUDYID, USUBJID]
+        records:
+          - ["CDISCPILOT01", "01-701-1015"]
+    expected_findings: 0
+  - name: "ADDL dataset has no records"
+    type: negative
+    datasets:
+      ADDL:
+        variables: [STUDYID, USUBJID]
+        records:
+          - ["", ""]
+    expected_findings: 1

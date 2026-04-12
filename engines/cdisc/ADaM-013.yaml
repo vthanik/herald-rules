@@ -1,0 +1,66 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  ADaM variable names must be no more than 8 characters in length,
+                  start with a letter A-Z, and contain only letters, numbers, and
+                  underscores. This is consistent with SAS naming requirements.
+                Document: ADaM IG v1.1
+                Section: '3.1'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-13
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: STUDYID
+      operator: matches_regex
+      value: '^[A-Za-z][A-Za-z0-9_]{0,7}$'
+Core:
+  Id: ADaM-013
+  Status: Published
+  Version: '1'
+Description: >-
+  ADaM variable names must be no more than 8 characters in length, must start with
+  a letter A-Z or a-z, and may only contain letters, numbers, and underscores. Uses
+  STUDYID as a representative; full enforcement requires checking all variable names.
+Executability: Partially Executable
+Outcome:
+  Message: 'Variable name violates ADaM naming convention (max 8 chars, start with letter, A-Z/0-9/_ only)'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - ALL
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "STUDYID conforms to naming convention"
+    type: positive
+    datasets:
+      ADSL:
+        variables: [STUDYID, USUBJID]
+        records:
+          - ["PILOT01", "01-701-1015"]
+    expected_findings: 0
+  - name: "STUDYID too long (>8 chars)"
+    type: negative
+    datasets:
+      ADSL:
+        variables: [STUDYID, USUBJID]
+        records:
+          - ["CDISCPILOT01", "01-701-1015"]
+    expected_findings: 1

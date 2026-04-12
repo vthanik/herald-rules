@@ -1,0 +1,68 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  The SAS variable type for *TM variables (analysis time variables)
+                  must be numeric. In SAS datasets, time values are stored as numeric
+                  SAS time values with an appropriate time format.
+                Document: ADaM IG v1.1
+                Section: '4.4'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-59
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: AESTM
+      operator: non_empty
+    - name: AESTM
+      operator: not_matches_regex
+      value: '^([0-1][0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$'
+Core:
+  Id: ADaM-059
+  Status: Published
+  Version: '1'
+Description: >-
+  *TM analysis time variables must be stored as numeric SAS time values. This rule
+  checks that AESTM (AE Start Time) values conform to HH:MM:SS format as proxy for
+  numeric storage. Full enforcement requires checking SAS variable type metadata.
+Executability: Partially Executable
+Outcome:
+  Message: '*TM variable does not appear to be a valid numeric SAS time (should be stored as numeric)'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - ALL
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: PMDA Validation Rules v6.0 (March 2025)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "AESTM has valid time value"
+    type: positive
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AESTM]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "08:30:00"]
+    expected_findings: 0
+  - name: "AESTM has invalid time format"
+    type: negative
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AESTM]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "830AM"]
+    expected_findings: 1

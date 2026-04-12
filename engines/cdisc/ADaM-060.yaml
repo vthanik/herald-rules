@@ -1,0 +1,68 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  The SAS variable type for *DTM variables (analysis datetime variables)
+                  must be numeric. In SAS datasets, datetime values are stored as numeric
+                  SAS datetime values with an appropriate datetime format.
+                Document: ADaM IG v1.1
+                Section: '4.4'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-60
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: ADTM
+      operator: non_empty
+    - name: ADTM
+      operator: not_matches_regex
+      value: '^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]'
+Core:
+  Id: ADaM-060
+  Status: Published
+  Version: '1'
+Description: >-
+  *DTM analysis datetime variables must be stored as numeric SAS datetime values.
+  Checks ADTM (Analysis Datetime) format as proxy. Full enforcement requires checking
+  SAS variable type metadata.
+Executability: Partially Executable
+Outcome:
+  Message: '*DTM variable does not appear to be a valid numeric SAS datetime'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - ALL
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: PMDA Validation Rules v6.0 (March 2025)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "ADTM has valid ISO datetime"
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ADTM]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "SODIUM", "2014-01-15T08:30:00"]
+    expected_findings: 0
+  - name: "ADTM has invalid datetime format"
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ADTM]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "SODIUM", "2014-01-15 0830"]
+    expected_findings: 1

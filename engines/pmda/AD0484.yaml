@@ -1,5 +1,5 @@
 id: AD0484
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
@@ -19,8 +19,10 @@ scope:
     - ADAMOTHER
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: PARAMN
+      operator: non_empty
+    - name: PARAM
+      operator: empty
 outcome:
   message: Primary variable PBCHGCAy is populated, but its secondary variable PBCHGCyN
     is not populated

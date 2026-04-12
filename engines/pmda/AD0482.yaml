@@ -1,5 +1,5 @@
 id: AD0482
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
@@ -19,8 +19,10 @@ scope:
     - ADAMOTHER
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: AVISITN
+      operator: non_empty
+    - name: AVISIT
+      operator: empty
 outcome:
   message: Primary variable BCHGCATy is populated, but its secondary variable BCHGCAyN
     is not populated

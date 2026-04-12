@@ -1,0 +1,69 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  The SAS variable type for *DT variables (analysis date variables)
+                  must be numeric. In SAS datasets, date values are stored as numeric
+                  SAS date values with an appropriate date format.
+                Document: ADaM IG v1.1
+                Section: '4.4'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-58
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: ADT
+      operator: non_empty
+    - name: ADT
+      operator: not_matches_regex
+      value: '^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$'
+Core:
+  Id: ADaM-058
+  Status: Published
+  Version: '1'
+Description: >-
+  *DT analysis date variables must be stored as numeric SAS date values. This rule
+  checks that ADT (Analysis Date) values conform to expected date format, as a proxy
+  for verifying numeric storage. Full enforcement requires checking SAS variable type
+  metadata.
+Executability: Partially Executable
+Outcome:
+  Message: '*DT variable does not appear to be a valid numeric SAS date (should be stored as numeric)'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - ALL
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: PMDA Validation Rules v6.0 (March 2025)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "ADT has valid ISO date (numeric storage expected)"
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ADT]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "SODIUM", "2014-01-15"]
+    expected_findings: 0
+  - name: "ADT has non-date value (not stored as numeric)"
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ADT]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "SODIUM", "NOTADATE"]
+    expected_findings: 1

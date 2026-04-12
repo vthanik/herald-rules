@@ -1,0 +1,68 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  In a pair of corresponding character and numeric variables defined in
+                  CDISC standards, the primary variable must be present in the dataset
+                  if the secondary (*N or *C) version is present. Applies to standard
+                  variable pairs defined in ADaM IG (not custom pairs).
+                Document: ADaM IG v1.1
+                Section: '3.2'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-1012A
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: RACEN
+      operator: non_empty
+    - name: RACE
+      operator: empty
+Core:
+  Id: ADaM-1012A
+  Status: Published
+  Version: '1'
+Description: >-
+  For standard variable pairs defined in ADaM IG, if the numeric (*N) or character
+  (*C) secondary variable is present, the primary variable must also be present.
+  Uses RACE/RACEN as a representative standard pair defined in ADaM IG ADSL spec.
+Executability: Partially Executable
+Outcome:
+  Message: 'Standard secondary variable RACEN is populated but primary variable RACE is missing'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - ALL
+  Domains:
+    Include:
+      - ADSL
+Sensitivity: Record
+herald:
+  source: PMDA Validation Rules v6.0 (March 2025)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "RACE and RACEN both populated (complete pair)"
+    type: positive
+    datasets:
+      ADSL:
+        variables: [STUDYID, USUBJID, RACE, RACEN]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "WHITE", 1]
+    expected_findings: 0
+  - name: "RACEN populated but RACE is null"
+    type: negative
+    datasets:
+      ADSL:
+        variables: [STUDYID, USUBJID, RACE, RACEN]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "", 1]
+    expected_findings: 1

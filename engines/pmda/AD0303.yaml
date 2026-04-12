@@ -1,5 +1,5 @@
 id: AD0303
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
@@ -17,8 +17,11 @@ scope:
     - MDOCCDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: CQ01NAM
+      operator: non_empty
+    - name: CQ01NAM
+      operator: not_matches_regex
+      value: '^[A-Za-z0-9 /()-]+$'
 outcome:
   message: 'Illegal variable name: zz is not in [01-99] for CQzzNAM'
   severity: Error

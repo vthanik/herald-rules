@@ -1,0 +1,67 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  For Standardized MedDRA Query variables (SMQzzNAM, SMQzzCD, SMQzzSC),
+                  the zz ordinal must be 01 to 99. The ordering should be consistent
+                  within a development program. Uses SMQ01NAM as representative.
+                Document: ADaM IG v1.1
+                Section: '4.6'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-299
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: SMQ01NAM
+      operator: non_empty
+    - name: SMQ01CD
+      operator: empty
+Core:
+  Id: ADaM-299
+  Status: Published
+  Version: '1'
+Description: >-
+  SMQ (Standardized MedDRA Query) variable groups (SMQzzNAM, SMQzzCD, SMQzzSC) must
+  use a two-digit ordinal suffix 01-99. When SMQ01NAM is present, SMQ01CD must also
+  be present. Uses SMQ01NAM/SMQ01CD as representative pair.
+Executability: Partially Executable
+Outcome:
+  Message: 'SMQ variable group is incomplete: SMQ01NAM is present but SMQ01CD is missing'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - OCCDS
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: PMDA Validation Rules v6.0 (March 2025)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "SMQ01NAM and SMQ01CD both populated (complete)"
+    type: positive
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, SMQ01NAM, SMQ01CD]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "HEADACHE", "Headache disorders", 10019874]
+    expected_findings: 0
+  - name: "SMQ01NAM populated but SMQ01CD is missing"
+    type: negative
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, SMQ01NAM, SMQ01CD]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "HEADACHE", "Headache disorders", ""]
+    expected_findings: 1

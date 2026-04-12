@@ -1,0 +1,68 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  Variables with *DTM suffix must have values conforming to the ISO 8601
+                  datetime standard (YYYY-MM-DDTHH:MM:SS). Analysis datetime variables
+                  require complete ISO 8601 datetime format.
+                Document: ADaM IG v1.1
+                Section: '4.4'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-43A
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: ADTM
+      operator: non_empty
+    - name: ADTM
+      operator: not_matches_regex
+      value: '^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$'
+Core:
+  Id: ADaM-043A
+  Status: Published
+  Version: '1'
+Description: >-
+  Variables with *DTM suffix must contain valid ISO 8601 datetime values (YYYY-MM-DDTHH:MM:SS).
+  Uses ADTM (Analysis Datetime) as representative.
+Executability: Partially Executable
+Outcome:
+  Message: '*DTM variable contains an invalid or non-ISO 8601 datetime value'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - ALL
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: PMDA Validation Rules v6.0 (March 2025)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "ADTM has valid ISO 8601 datetime"
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ADTM]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "SODIUM", "2014-01-15T08:30:00"]
+          - ["CDISCPILOT01", "01-701-1023", "SODIUM", ""]
+    expected_findings: 0
+  - name: "ADTM has invalid datetime format"
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ADTM]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "SODIUM", "2014-01-15 08:30:00"]
+    expected_findings: 1

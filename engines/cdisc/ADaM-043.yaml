@@ -1,0 +1,69 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  Variables with *DT suffix must have values conforming to the ISO 8601
+                  date standard (YYYY-MM-DD). Partial dates are not allowed for analysis
+                  date variables.
+                Document: ADaM IG v1.1
+                Section: '4.4'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-43
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: ADT
+      operator: non_empty
+    - name: ADT
+      operator: not_matches_regex
+      value: '^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$'
+Core:
+  Id: ADaM-043
+  Status: Published
+  Version: '1'
+Description: >-
+  Variables with *DT suffix must contain valid complete ISO 8601 dates (YYYY-MM-DD).
+  Uses ADT (Analysis Date) as representative. Partial dates and non-ISO formats are
+  not permitted.
+Executability: Partially Executable
+Outcome:
+  Message: '*DT variable contains an invalid or non-ISO 8601 date value'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - ALL
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: PMDA Validation Rules v6.0 (March 2025)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "ADT has valid ISO 8601 date"
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ADT]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "SODIUM", "2014-01-15"]
+          - ["CDISCPILOT01", "01-701-1023", "SODIUM", ""]
+    expected_findings: 0
+  - name: "ADT has invalid date format MM/DD/YYYY"
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ADT]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "SODIUM", "01/15/2014"]
+    expected_findings: 1

@@ -1,5 +1,5 @@
 id: AD0042A
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: Conformance
@@ -20,8 +20,8 @@ scope:
     - ADAMOTHER
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: AESTM
+      operator: empty
 outcome:
   message: '*TM variable has missing SAS Time Format'
   severity: Error

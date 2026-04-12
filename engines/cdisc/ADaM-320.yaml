@@ -1,0 +1,65 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  The dataset label for a dataset named ADSL must be
+                  'Subject-Level Analysis Dataset'. This is a required standard label
+                  for the ADSL dataset in ADaM submissions.
+                Document: ADaM IG v1.1
+                Section: '3.2'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-320
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: STUDYID
+      operator: non_empty
+Core:
+  Id: ADaM-320
+  Status: Published
+  Version: '1'
+Description: >-
+  The ADSL dataset label must be 'Subject-Level Analysis Dataset'. This is a metadata
+  rule that requires checking the dataset label attribute in Define.xml or SAS dataset
+  metadata. Record-level check verifies dataset is present and populated.
+Executability: Partially Executable
+Outcome:
+  Message: 'ADSL dataset label must be Subject-Level Analysis Dataset (metadata rule - verify in Define.xml)'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - ALL
+  Domains:
+    Include:
+      - ADSL
+Sensitivity: Dataset
+herald:
+  source: PMDA Validation Rules v6.0 (March 2025)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "ADSL dataset is present with records"
+    type: positive
+    datasets:
+      ADSL:
+        variables: [STUDYID, USUBJID]
+        records:
+          - ["CDISCPILOT01", "01-701-1015"]
+    expected_findings: 0
+  - name: "ADSL dataset has no records (empty)"
+    type: negative
+    datasets:
+      ADSL:
+        variables: [STUDYID, USUBJID]
+        records:
+          - ["", ""]
+    expected_findings: 1

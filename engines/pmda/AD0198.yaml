@@ -1,10 +1,10 @@
 id: AD0198
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: At least one Analysis Value (numeric or character) variable must be present
   in BDS datasets.
 scope:
@@ -15,8 +15,10 @@ scope:
     - MDBDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: AVAL
+      operator: empty
+    - name: AVALC
+      operator: empty
 outcome:
   message: Neither AVAL nor AVALC are present in dataset
   severity: Error

@@ -1,18 +1,21 @@
 id: AD0148
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: Numeric Value of Parameter name (PARAMN) must be an integer.
 scope:
   classes: []
   domains: BDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: PARAMN
+      operator: non_empty
+    - name: PARAMN
+      operator: not_matches_regex
+      value: '^-?\d+$'
 outcome:
   message: PARAMN is not an integer
   severity: Error

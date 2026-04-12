@@ -1,0 +1,86 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  If any of SMQ Name (SMQzzNAM), SMQ Code (SMQzzCD), or SMQ Scope
+                  (SMQzzSC) is populated, then all three variables in the group must
+                  be populated together.
+                Document: ADaM IG v1.1
+                Section: '4.6'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-304
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  any:
+    - all:
+        - name: SMQ01NAM
+          operator: non_empty
+        - name: SMQ01CD
+          operator: empty
+    - all:
+        - name: SMQ01NAM
+          operator: non_empty
+        - name: SMQ01SC
+          operator: empty
+    - all:
+        - name: SMQ01CD
+          operator: non_empty
+        - name: SMQ01NAM
+          operator: empty
+Core:
+  Id: ADaM-304
+  Status: Published
+  Version: '1'
+Description: >-
+  If any SMQ variable in a group (SMQzzNAM, SMQzzCD, SMQzzSC) is populated, all
+  variables in that group must be populated. Uses SMQ01NAM/SMQ01CD/SMQ01SC as
+  representative group.
+Executability: Partially Executable
+Outcome:
+  Message: 'Incomplete SMQ variable group: when any of SMQ01NAM/SMQ01CD/SMQ01SC is populated, all must be populated'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - OCCDS
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: PMDA Validation Rules v6.0 (March 2025)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "All three SMQ01 variables populated (complete)"
+    type: positive
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, SMQ01NAM, SMQ01CD, SMQ01SC]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "HEADACHE", "Headache disorders", 10019874, "NARROW"]
+    expected_findings: 0
+  - name: "None of SMQ01 variables populated"
+    type: positive
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, SMQ01NAM, SMQ01CD, SMQ01SC]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "HEADACHE", "", "", ""]
+    expected_findings: 0
+  - name: "SMQ01NAM populated but SMQ01CD missing"
+    type: negative
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, SMQ01NAM, SMQ01CD, SMQ01SC]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "HEADACHE", "Headache disorders", "", "NARROW"]
+    expected_findings: 1

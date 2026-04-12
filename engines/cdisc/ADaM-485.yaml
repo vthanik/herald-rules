@@ -1,0 +1,66 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  In a pair of corresponding character and numeric variables, the secondary
+                  (numeric) variable must be populated if its primary (character) variable
+                  is populated. Uses PARAM/PARAMN as representative pair.
+                Document: ADaM IG v1.1
+                Section: '3.3.1'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-485
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: PARAM
+      operator: non_empty
+    - name: PARAMN
+      operator: empty
+Core:
+  Id: ADaM-485
+  Status: Published
+  Version: '1'
+Description: >-
+  When PARAM (character parameter name) is populated, PARAMN (numeric parameter value)
+  must also be populated. Uses PARAM/PARAMN as representative char/num pair in BDS.
+Executability: Partially Executable
+Outcome:
+  Message: 'PARAM is populated but PARAMN is missing'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BDS
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: PMDA Validation Rules v6.0 (March 2025)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "PARAM and PARAMN both populated"
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAM, PARAMN]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "Sodium (mmol/L)", 1]
+    expected_findings: 0
+  - name: "PARAM populated but PARAMN is null"
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAM, PARAMN]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "Sodium (mmol/L)", ""]
+    expected_findings: 1

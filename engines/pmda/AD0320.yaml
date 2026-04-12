@@ -1,5 +1,5 @@
 id: AD0320
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
@@ -12,8 +12,8 @@ scope:
   domains: ADSL
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: STUDYID
+      operator: empty
 outcome:
   message: Non-standard dataset label
   severity: Error

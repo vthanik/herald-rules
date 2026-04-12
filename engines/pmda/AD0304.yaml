@@ -1,5 +1,5 @@
 id: AD0304
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
@@ -15,9 +15,17 @@ scope:
     - ADAE
     - MDOCCDS
 check:
-  all:
-    - name: __see_description__
-      operator: manual_review
+  any:
+    - all:
+        - name: SMQ01NAM
+          operator: non_empty
+        - name: SMQ01CD
+          operator: empty
+    - all:
+        - name: SMQ01CD
+          operator: non_empty
+        - name: SMQ01NAM
+          operator: empty
 outcome:
   message: 'Only some of these variables are present and populated: SMQzzNAM, SMQzzCD,
     SMQzzSC'

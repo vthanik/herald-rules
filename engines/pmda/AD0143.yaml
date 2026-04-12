@@ -1,10 +1,10 @@
 id: AD0143
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: PARAMCD value must be a max of 8 characters, start with a letter A-Z
   or underscore, and not contain anything other than letters, numbers, or underscore
   (_).
@@ -16,8 +16,11 @@ scope:
     - MDBDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: PARAMCD
+      operator: non_empty
+    - name: PARAMCD
+      operator: not_matches_regex
+      value: '^[A-Za-z_][A-Za-z0-9_]{0,7}$'
 outcome:
   message: Illegal PARAMCD value
   severity: Error

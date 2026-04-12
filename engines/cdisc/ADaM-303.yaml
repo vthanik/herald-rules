@@ -1,0 +1,68 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  For Customized MedDRA Query Name (CQzzNAM) variables, the zz ordinal
+                  must be 01 to 99. The ordering can be based on importance or
+                  sponsor-defined criteria and should be consistent across studies.
+                Document: ADaM IG v1.1
+                Section: '4.6'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-303
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: CQ01NAM
+      operator: non_empty
+    - name: CQ01NAM
+      operator: not_matches_regex
+      value: '^[A-Za-z0-9 /()-]+$'
+Core:
+  Id: ADaM-303
+  Status: Published
+  Version: '1'
+Description: >-
+  CQ (Customized MedDRA Query) name variables (CQzzNAM) must use a two-digit ordinal
+  suffix 01-99. Uses CQ01NAM as representative. Values should contain only standard
+  characters.
+Executability: Partially Executable
+Outcome:
+  Message: 'CQzzNAM variable has an invalid value (special characters not expected)'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - OCCDS
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: PMDA Validation Rules v6.0 (March 2025)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "CQ01NAM has valid query name"
+    type: positive
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, CQ01NAM]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "HEADACHE", "Cardiovascular events"]
+    expected_findings: 0
+  - name: "CQ01NAM has invalid characters"
+    type: negative
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, CQ01NAM]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "HEADACHE", "Query<script>"]
+    expected_findings: 1

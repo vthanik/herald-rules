@@ -1,0 +1,63 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  Variables with a *TM suffix must have a non-missing SAS Time Format.
+                  If a *TM variable is present in the dataset, its value must be populated.
+                Document: ADaM IG v1.1
+                Section: '4.4'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-42A
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: AESTM
+      operator: empty
+Core:
+  Id: ADaM-042A
+  Status: Published
+  Version: '1'
+Description: >-
+  *TM suffix variables must have a non-missing value when the corresponding *DTC is
+  populated with a time portion. Uses AESTM as a representative *TM variable.
+Executability: Partially Executable
+Outcome:
+  Message: '*TM variable is missing (null) when time information should be present'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - ALL
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: PMDA Validation Rules v6.0 (March 2025)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "AESTM is populated"
+    type: positive
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AESTM]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "08:30:00"]
+    expected_findings: 0
+  - name: "AESTM is null (missing time format)"
+    type: negative
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AESTM]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", ""]
+    expected_findings: 1

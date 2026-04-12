@@ -1,0 +1,78 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  PARAMCD value must be a maximum of 8 characters, start with a letter
+                  A-Z or an underscore, and not contain anything other than letters,
+                  numbers, or underscore. This is consistent with SAS variable naming
+                  requirements applied to parameter codes.
+                Document: ADaM IG v1.1
+                Section: '3.3.1'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-143
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: PARAMCD
+      operator: non_empty
+    - name: PARAMCD
+      operator: not_matches_regex
+      value: '^[A-Za-z_][A-Za-z0-9_]{0,7}$'
+Core:
+  Id: ADaM-143
+  Status: Published
+  Version: '1'
+Description: >-
+  PARAMCD must be at most 8 characters, start with a letter (A-Z) or underscore,
+  and contain only letters, numbers, and underscores. Violations indicate non-conformant
+  parameter codes.
+Executability: Fully Executable
+Outcome:
+  Message: 'PARAMCD value does not conform to naming convention (max 8 chars, starts with letter/underscore, A-Z/0-9/_ only)'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BDS
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: PMDA Validation Rules v6.0 (March 2025)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "PARAMCD conforms to naming convention"
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "SODIUM"]
+          - ["CDISCPILOT01", "01-701-1023", "ALT"]
+    expected_findings: 0
+  - name: "PARAMCD too long (>8 chars)"
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "TOOLONGPARAMCODE"]
+    expected_findings: 1
+  - name: "PARAMCD contains spaces (invalid)"
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "NA PARAM"]
+    expected_findings: 1
