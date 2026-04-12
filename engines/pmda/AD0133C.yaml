@@ -1,10 +1,10 @@
 id: AD0133C
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: When Analysis Range Low (AyLO) equals 0, the Ratio to Analysis Range
   Low (R2AyLO) should not be populated since you cannot divide by 0. AD0133 checks
   the calculation is correct when AyLO does not equal 0.
@@ -16,8 +16,11 @@ scope:
     - MDBDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: A1LO
+      operator: equal_to
+      value: 0
+    - name: R2A1LO
+      operator: non_empty
 outcome:
   message: 'Calculation issue: AyLO = 0, but R2AyLO is populated'
   severity: Error

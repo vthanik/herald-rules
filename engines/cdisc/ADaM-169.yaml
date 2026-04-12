@@ -1,0 +1,65 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  Censor variable (CNSR) value must be an integer. Defines whether the event was observed (0) or censored (1 or positive integer).
+                Document: ADaM IG v1.1
+                Section: '3.5'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-169
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: CNSR
+      operator: non_empty
+    - name: CNSR
+      operator: not_matches_regex
+      value: '^[0-9]+$'
+Core:
+  Id: ADaM-169
+  Status: Published
+  Version: '1'
+Description: >-
+  CNSR (Censor) must be a non-negative integer. Typically 0 = event, 1 = censored.
+Executability: Fully Executable
+Outcome:
+  Message: 'CNSR is not a valid non-negative integer'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - ALL
+  Domains:
+    Include:
+      - ADTTE
+Sensitivity: Record
+herald:
+  source: PMDA Validation Rules v6.0 (March 2025)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "CNSR has valid integer value 0 (event)"
+    type: positive
+    datasets:
+      ADTTE:
+        variables: [STUDYID, USUBJID, PARAMCD, CNSR]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "TTDE", 0]
+          - ["CDISCPILOT01", "01-701-1023", "TTDE", 1]
+    expected_findings: 0
+  - name: "CNSR has non-integer value"
+    type: negative
+    datasets:
+      ADTTE:
+        variables: [STUDYID, USUBJID, PARAMCD, CNSR]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "TTDE", "1.5"]
+    expected_findings: 1

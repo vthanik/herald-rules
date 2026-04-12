@@ -1,10 +1,10 @@
 id: AD0134
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: When all 3 variables are populated and AyHI does not equal 0, Ratio to
   AyHI (R2AyHI) must equal Analysis Value (AVAL) / Analysis Range y HI Value (AyHI).
 scope:
@@ -15,8 +15,19 @@ scope:
     - MDBDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: R2A1HI
+      operator: non_empty
+    - name: A1HI
+      operator: non_empty
+    - name: AVAL
+      operator: non_empty
+    - name: A1HI
+      operator: not_equal_to
+      value: 0
+    - name: R2A1HI
+      operator: not_within_tolerance_of_formula
+      value: AVAL / A1HI
+      tolerance: 0.001
 outcome:
   message: 'Calculation issue: R2AyHI != AVAL / AyHI'
   severity: Warning

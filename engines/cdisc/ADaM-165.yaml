@@ -1,0 +1,69 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  If the record is flagged as the baseline (ABLFL = Y), then BASEC (Baseline Value Character) must equal AVALC (Analysis Value Character) for that record.
+                Document: ADaM IG v1.1
+                Section: '3.3.5'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-165
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: ABLFL
+      operator: equal_to
+      value: 'Y'
+    - name: AVALC
+      operator: non_empty
+    - name: BASEC
+      operator: non_empty
+    - name: BASEC
+      operator: not_equal_to_variable
+      value: AVALC
+Core:
+  Id: ADaM-165
+  Status: Published
+  Version: '1'
+Description: >-
+  On baseline record (ABLFL=Y), BASEC must equal AVALC.
+Executability: Fully Executable
+Outcome:
+  Message: 'ABLFL=Y but BASEC does not equal AVALC (baseline character value mismatch)'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BDS
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: PMDA Validation Rules v6.0 (March 2025)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "ABLFL=Y and BASEC=AVALC (correct)"
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ABLFL, AVALC, BASEC]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "SODIUM", "Y", "NORMAL", "NORMAL"]
+    expected_findings: 0
+  - name: "ABLFL=Y but BASEC != AVALC"
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ABLFL, AVALC, BASEC]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "SODIUM", "Y", "NORMAL", "HIGH"]
+    expected_findings: 1

@@ -1,10 +1,10 @@
 id: AD0157
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: If Criterion y (CRITy) variable is present, there must also be a corresponding
   Criterion y Flag (CRITyFL) variable.
 scope:
@@ -16,8 +16,10 @@ scope:
     - ADAMOTHER
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: CRIT1
+      operator: non_empty
+    - name: CRIT1FL
+      operator: empty
 outcome:
   message: CRITy is present, but CRITyFL is not present
   severity: Error

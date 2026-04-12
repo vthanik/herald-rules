@@ -1,10 +1,10 @@
 id: AD0349
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: If Ratio to Analysis Range y Upper Limit (R2AyHI) variable is present,
   there must also be a corresponding Analysis Range y Upper Limit (AyHI) variable.
 scope:
@@ -15,8 +15,10 @@ scope:
     - MDBDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: R2A1HI
+      operator: non_empty
+    - name: A1HI
+      operator: empty
 outcome:
   message: AyHI variable is not present when R2AyHI is present
   severity: Error

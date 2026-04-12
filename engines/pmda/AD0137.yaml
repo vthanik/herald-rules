@@ -1,10 +1,10 @@
 id: AD0137
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: When CRITyFL (Analysis Criterion Flag) is populated, it's corresponding
   parent Analysis Criterion y must be populated.
 scope:
@@ -16,8 +16,10 @@ scope:
     - ADAMOTHER
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: CRIT1FL
+      operator: non_empty
+    - name: CRIT1
+      operator: empty
 outcome:
   message: CRITyFL is populated, but CRITy is not populated
   severity: Error

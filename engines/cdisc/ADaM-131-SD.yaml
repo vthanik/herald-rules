@@ -1,0 +1,69 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  When AVAL, BASE, and CHG are all populated within a single dataset, CHG must equal AVAL minus BASE (single-dataset variant).
+                Document: ADaM IG v1.1
+                Section: '3.3.5'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-131-SD
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: CHG
+      operator: non_empty
+    - name: BASE
+      operator: non_empty
+    - name: AVAL
+      operator: non_empty
+    - name: CHG
+      operator: not_within_tolerance_of_formula
+      value: AVAL - BASE
+      tolerance: 0.001
+Core:
+  Id: ADaM-131-SD
+  Status: Published
+  Version: '1'
+Description: >-
+  Single-dataset variant of ADaM-131. CHG = AVAL - BASE in same dataset.
+Executability: Fully Executable
+Outcome:
+  Message: 'CHG does not equal AVAL - BASE (single-dataset check)'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BDS
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "CHG = AVAL - BASE (single dataset)"
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, AVAL, BASE, CHG]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "SODIUM", 145.0, 140.0, 5.0]
+    expected_findings: 0
+  - name: "CHG != AVAL - BASE (single dataset)"
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, AVAL, BASE, CHG]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "SODIUM", 145.0, 140.0, 8.0]
+    expected_findings: 1

@@ -1,10 +1,10 @@
 id: AD0134A
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: R2AyHI = AVAL / AyHI. Therefore, if R2AyHI is present, both AVAL and
   AyHI must be present for calculation consistency.
 scope:
@@ -15,8 +15,10 @@ scope:
     - MDBDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: R2A1HI
+      operator: non_empty
+    - name: A1HI
+      operator: empty
 outcome:
   message: 'Calculation issue: R2AyHI is present, but AVAL and/or AyHI is not present'
   severity: Error

@@ -1,10 +1,10 @@
 id: AD0225
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: When all 3 variables are populated and base <> 0, Percent Change from
   Baseline (PCHG) must equal the difference of Analysis Value (AVAL) minus Baseline
   Value (BASE) divided by the Baseline Value (BASE), expressed as a percentage. AD0225A
@@ -17,8 +17,19 @@ scope:
     - MDBDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: PCHG
+      operator: non_empty
+    - name: BASE
+      operator: non_empty
+    - name: AVAL
+      operator: non_empty
+    - name: BASE
+      operator: not_equal_to
+      value: 0
+    - name: PCHG
+      operator: not_within_tolerance_of_formula
+      value: 100 * (AVAL - BASE) / BASE
+      tolerance: 0.01
 outcome:
   message: 'Calculation issue: PCHG != (AVAL - BASE)/BASE * 100'
   severity: Warning

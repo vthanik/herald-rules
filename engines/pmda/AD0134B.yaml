@@ -1,10 +1,10 @@
 id: AD0134B
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: If R2AyHI is populated, the values necessary for its calculation must
   both be present and populated. R2AyHI = AVAL / AyHI. Once this issue is resolved,
   there is greater potential for AD0134 to fire.
@@ -16,8 +16,10 @@ scope:
     - MDBDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: R2A1HI
+      operator: non_empty
+    - name: AVAL
+      operator: empty
 outcome:
   message: 'Calculation issue: R2AyHI is populated, but AVAL and/or AyHI are not populated'
   severity: Error

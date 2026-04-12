@@ -1,0 +1,64 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  When Analysis Range Low (AyLO) equals 0, R2AyLO (ratio) should be null as division by zero is not valid.
+                Document: ADaM IG v1.1
+                Section: '3.3.6'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-133C
+              Version: '1'
+            Version: '1.0'
+        Version: '1.1'
+Check:
+  all:
+    - name: A1LO
+      operator: equal_to
+      value: 0
+    - name: R2A1LO
+      operator: non_empty
+Core:
+  Id: ADaM-133C
+  Status: Published
+  Version: '1'
+Description: >-
+  When A1LO = 0, R2A1LO should be null (division by zero).
+Executability: Fully Executable
+Outcome:
+  Message: 'R2A1LO is populated when A1LO = 0 (division by zero not valid)'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BDS
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: PMDA Validation Rules v6.0 (March 2025)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: '2026-04-12'
+
+tests:
+  - name: "A1LO = 0 and R2A1LO is null (correct)"
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, A1LO, R2A1LO]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "SODIUM", 0, ""]
+    expected_findings: 0
+  - name: "A1LO = 0 but R2A1LO populated (invalid)"
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, A1LO, R2A1LO]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "SODIUM", 0, 1.0]
+    expected_findings: 1

@@ -1,10 +1,10 @@
 id: AD0164
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: If Baseline Toxicity Grade (BTOXGR) variable is present, then Analysis
   Toxicity Grade (ATOXGR) and Baseline Record Flag (ABLFL) variables must be present.
 scope:
@@ -15,8 +15,16 @@ scope:
     - MDBDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: ABLFL
+      operator: equal_to
+      value: 'Y'
+    - name: BTOXGR
+      operator: non_empty
+    - name: ATOXGR
+      operator: non_empty
+    - name: BTOXGR
+      operator: not_equal_to_variable
+      value: ATOXGR
 outcome:
   message: BTOXGR is present, but ABLFL is not present
   severity: Error

@@ -1,10 +1,10 @@
 id: AD0159
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: 'If AWTDIFF (Analysis Window Diff from Target) is populated AWTARGET
   (Analysis Window Target) must be populated. AWTDIFF = Absolute value of (ADY or
   ARELTM) - AWTARGET. Note: A future rule should validate that the calculation is
@@ -20,8 +20,10 @@ scope:
     - ADAMOTHER
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: AWTDIFF
+      operator: non_empty
+    - name: AWTARGET
+      operator: empty
 outcome:
   message: 'Calculation issue: AWTDIFF is populated, but AWTARGET and/or one of [ADY,
     ARELTM] are not both present and populated'

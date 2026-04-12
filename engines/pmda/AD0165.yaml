@@ -1,10 +1,10 @@
 id: AD0165
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: If the record is flagged as the baseline (ABLFL = Y), then the baseline
   toxicity grade (BTOXGR) value must equal the analysis toxicity grade (ATOXGR) value.
 scope:
@@ -15,8 +15,16 @@ scope:
     - MDBDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: ABLFL
+      operator: equal_to
+      value: 'Y'
+    - name: AVALC
+      operator: non_empty
+    - name: BASEC
+      operator: non_empty
+    - name: BASEC
+      operator: not_equal_to_variable
+      value: AVALC
 outcome:
   message: ABLFL = Y, but BTOXGR != ATOXGR
   severity: Error

@@ -1,10 +1,10 @@
 id: AD0169
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: Censor (CNSR) value must be an integer. Defines whether the event was
   censored (period of observation truncated prior to event being observed). It is
   strongly recommended to use 0 as an event indicator and positive integers as censoring
@@ -18,8 +18,11 @@ scope:
     - MDBDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: CNSR
+      operator: non_empty
+    - name: CNSR
+      operator: not_matches_regex
+      value: '^[0-9]+$'
 outcome:
   message: CNSR is not an integer >= 0
   severity: Error
