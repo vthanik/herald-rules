@@ -12,7 +12,7 @@ Regulatory validation rule catalog for the [herald](https://github.com/vthanik/h
 | `fda` | 660 | FDA Business Rules v1.5 (86) + Validator Rules v1.6 (574) |
 | `pmda` | 1,041 | PMDA Validation Rules v6.0 (SDTM/ADaM/Define-XML) |
 | `ct` | 1,210 | NCI EVS Controlled Terminology (6 meta-rules + 1,204 per-codelist) |
-| `herald` | 235 | Herald-original: 127 gap-fill (HRL-AD/FM/MD/OD/SD/TS) + 100 Define-XML spec + 8 hardcoded spec checks |
+| `herald` | 251 | Herald-original: 143 gap-fill (HRL-AD/FM/MD/OD/SD/TS) + 100 Define-XML spec + 8 hardcoded spec checks |
 
 ## Repository Structure
 

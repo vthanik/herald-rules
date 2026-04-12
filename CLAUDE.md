@@ -96,9 +96,9 @@ ALL herald-authored rules use `HRL-{CAT}-NNN` prefix:
 | `HRL-FM-NNN` | Form metadata | `engines/herald/` | 40 rules |
 | `HRL-MD-NNN` | Metadata (ADaM v1.2) | `engines/herald/` | 40 rules |
 | `HRL-OD-NNN` | ODM conformance | `engines/herald/` | 9 rules |
-| `HRL-SD-NNN` | SDTM gap-fill | `engines/herald/` | 9 rules |
+| `HRL-SD-NNN` | SDTM gap-fill | `engines/herald/` | 21 rules |
 | `HRL-TS-NNN` | Trial summary | `engines/herald/` | 5 rules |
-| `HRL-DD-NNN` | Define-XML spec | `engines/herald/define/` | 14 rules |
+| `HRL-DD-NNN` | Define-XML spec | `engines/herald/define/` | 18 rules |
 | `HRL-VAR/LBL/TYP/LEN/DS/CL-NNN` | Hardcoded spec checks | `engines/herald/` | 8 rules |
 | `HRL-CT-NNNN` | CT per-codelist | `engines/ct/` | 1,210 rules |
 

@@ -8,6 +8,46 @@ for release cadence details.
 
 ---
 
+## v2026.2.6 -- 2026-04-12
+
+### Real-World Herald Rules from StudySAS Blog (16 rules)
+
+Added 16 new rules sourced from real-world SDTM/ADaM programming experience documented
+at studysas.blogspot.com. These cover gaps not caught by P21 Community checks.
+
+**SDTM Cross-Domain Checks (HRL-SD-010 to HRL-SD-014):**
+- **HRL-SD-010**: AE start date must not precede subject's earliest exposure date (AE × EX)
+- **HRL-SD-011**: DM.RFSTDTC must match earliest EX.EXSTDTC per subject (DM × EX)
+- **HRL-SD-012**: DTHFL=Y requires corresponding DS death record (DM × DS)
+- **HRL-SD-013**: RELREC link integrity — RDOMAIN+IDVAR+IDVARVAL must resolve to existing record
+- **HRL-SD-014**: LB collection date must fall within subject's study window (LB × DM)
+
+**SDTM LB Domain Checks (HRL-SD-015 to HRL-SD-018):**
+- **HRL-SD-015**: LBSTRESU must be consistent within each LBTESTCD (no mixed units per test code)
+- **HRL-SD-016**: Qualitative LBSTRESC (POSITIVE/NEGATIVE/NORMAL/ABNORMAL/TRACE) requires null LBSTRESN
+- **HRL-SD-017**: Inequality operator in LBORRES (`<`, `>`) must be preserved in LBSTRESC
+- **HRL-SD-018**: When LBORRESU ≠ LBSTRESU, LBSTNRLO/LBSTNRHI must also be converted
+
+**SDTM Data Quality Checks (HRL-SD-019 to HRL-SD-021):**
+- **HRL-SD-019**: Non-printable control characters (ASCII 00–1F, 7F) must not appear in any character variable
+- **HRL-SD-020**: SUPPQUAL QNAM must not exceed 8 characters
+- **HRL-SD-021**: Population flags (ITT, SAFFL, PPROTFL, etc.) must not appear as QNAM in SUPPQUAL
+
+**Define-XML Checks (HRL-DD-015 to HRL-DD-018):**
+- **HRL-DD-015**: Every QNAM in SUPP-- dataset must have a corresponding WhereClauseDef VLM entry
+- **HRL-DD-016**: Variables with Origin=Derived must have a MethodRef (derivation must be documented)
+- **HRL-DD-017**: WhereClauseDef in ValueListDef must use SoftHard='Soft' not 'Hard'
+- **HRL-DD-018**: Controlled-terminology QNAM values in VLM must have a CodeListRef
+
+All 16 rules include embedded CDISCPILOT01 test datasets (positive + negative tests each).
+
+### Totals
+
+- `engines/herald/`: 147 rules (was 135); HRL-SD: 21, HRL-DD: 18
+- Total rule catalog: **3,761 rules** (was 3,749)
+
+---
+
 ## v2026.2.5 -- 2026-04-12
 
 ### ADaM-IG v1.2 Support (30 new rules + version tagging)
