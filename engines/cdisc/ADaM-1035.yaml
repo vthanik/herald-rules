@@ -1,0 +1,45 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  ATOXGRL represents the toxicity grade in the low direction for bi-directional toxicity grading. Added in v1.2 Table 3.3.7.1. SHIFTy can only be based on the change in value of approved pairs including ATOXGRL.
+                Document: ADaM IG v1.2
+                Section: '3.3.7'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-1035
+              Version: '1'
+            Version: '1.0'
+        Version: '1.2'
+Check:
+  all:
+    - name: ATOXGRL
+      operator: not_character
+Core:
+  Id: ADaM-1035
+  Status: Published
+  Version: '1'
+Description: >-
+  ATOXGRL (Analysis Toxicity Grade Low) must be a character variable following NCI CTCAE grade conventions for low-direction toxicity.
+Executability: Partially Executable
+Outcome:
+  Message: 'ATOXGRL must be a character toxicity grade variable'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BDS
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  ig_versions: ["1.2"]
+  source: Herald-originated (ADaM-IG v1.2 gap-fill)
+  catalogs:
+    - ADaMIG 1.2
+  fetched: '2026-04-12'
+

@@ -1,0 +1,47 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  ATOXGRN is the numeric secondary variable of ATOXGR (Analysis Toxicity Grade). Added in v1.2 Table 3.3.7.1.
+                Document: ADaM IG v1.2
+                Section: '3.3.7'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-1033
+              Version: '1'
+            Version: '1.0'
+        Version: '1.2'
+Check:
+  all:
+    - name: ATOXGRN
+      operator: non_empty
+    - name: ATOXGR
+      operator: empty
+Core:
+  Id: ADaM-1033
+  Status: Published
+  Version: '1'
+Description: >-
+  ATOXGRN (numeric version of ATOXGR) must be numeric when present and requires ATOXGR to also be present.
+Executability: Partially Executable
+Outcome:
+  Message: 'ATOXGRN is present but primary variable ATOXGR is absent'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BDS
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  ig_versions: ["1.2"]
+  source: Herald-originated (ADaM-IG v1.2 gap-fill)
+  catalogs:
+    - ADaMIG 1.2
+  fetched: '2026-04-12'
+

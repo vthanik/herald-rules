@@ -1,0 +1,50 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  In v1.2, parameter-level population flag variables may use Y/N/null when N and null values need to be analyzed differently. The choice of Y/null vs Y/N/null is dependent on analysis needs.
+                Document: ADaM IG v1.2
+                Section: '3.1.4'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-1021
+              Version: '1'
+            Version: '1.0'
+        Version: '1.2'
+Check:
+  all:
+    - name: ANL01FL
+      operator: non_empty
+    - name: ANL01FL
+      operator: not_in
+      value:
+        - 'Y'
+        - 'N'
+Core:
+  Id: ADaM-1021
+  Status: Published
+  Version: '1'
+Description: >-
+  A variable with a suffix of PFL (parameter-level flag) may have a value of Y, N, or null in ADaM-IG v1.2.
+Executability: Partially Executable
+Outcome:
+  Message: '*PFL variable (e.g. ANL01FL) has a value other than Y, N, or null'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BDS
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  ig_versions: ["1.2"]
+  source: Herald-originated (ADaM-IG v1.2 gap-fill)
+  catalogs:
+    - ADaMIG 1.2
+  fetched: '2026-04-12'
+

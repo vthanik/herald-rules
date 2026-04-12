@@ -7,7 +7,7 @@ All rules sourced from official regulatory authorities -- zero P21 dependency.
 
 ```
 engines/
-  cdisc/   673 YAML  -- CDISC Library API (450 SDTM/SEND CORE rules) + ADaM IG Conformance (223 ADaM-NNN rules)
+  cdisc/   703 YAML  -- CDISC Library API (450 SDTM/SEND CORE rules) + ADaM IG Conformance (253 ADaM-NNN rules, v1.1+v1.2)
   fda/     660 YAML  -- FDA Business Rules v1.5 (86) + Validator Rules v1.6 (574)
   pmda/  1,041 YAML  -- PMDA Validation Rules v6.0 (SDTM/ADaM/Define-XML)
   ct/    1,210 YAML  -- 6 meta-rules + 1,204 per-codelist CT rules
@@ -74,7 +74,7 @@ When deprecating a rule:
 - Never re-introduce P21 dependency (engines/core/ was deleted, rules/ was deleted)
 - Never bump version without explicit user approval
 - SEND rules deferred to post-CRAN release
-- ADaM: 223 ADaM IG conformance rules in engines/cdisc/ (ADaM-NNN prefix) + PMDA (388 rules); ADaM-NNN rules from CDISC ADaM Validation Rules XML (September 2015)
+- ADaM: 253 ADaM IG conformance rules in engines/cdisc/ (ADaM-NNN prefix, v1.1+v1.2) + PMDA (388 rules); ADaM-1020..1049 are herald-authored v1.2-specific rules; all rules carry `herald.ig_versions` for version-filtered config assembly
 - CT rules: each codelist gets its own executable YAML with terms baked in
 
 ## Validation

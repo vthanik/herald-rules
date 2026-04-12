@@ -8,6 +8,47 @@ for release cadence details.
 
 ---
 
+## v2026.2.5 -- 2026-04-12
+
+### ADaM-IG v1.2 Support (30 new rules + version tagging)
+
+Added full ADaM-IG v1.2 support via a new `herald.ig_versions` metadata field and 30 new conformance rules.
+
+**Architecture (ADR-001 through ADR-006):**
+- Rule IDs are permanent identity — version scope is metadata (`herald.ig_versions`), never encoded in the ID
+- `filter_cdisc_by_ig(ig_version)` in `build-configs.R` reads `ig_versions` from each YAML; `null` = applies to all (SDTM/SEND CORE rules pass through unchanged)
+- Later version = superset: `fda-adam-ig-1.2` config includes all rules tagged `["1.1"]`, `["1.1","1.2"]`, or `["1.2"]`
+
+**All 223 existing ADaM-NNN rules tagged:**
+- 218 rules: `ig_versions: ["1.1", "1.2"]` (compatible with both versions)
+- 5 conflict rules (`ADaM-033`, `034`, `035`, `036`, `123`): `ig_versions: ["1.1"]` only (v1.2 widens or removes the constraint)
+
+**30 new v1.2-specific rules (ADaM-1020 through ADaM-1049):**
+- **ADaM-1020..1023** (Category A companions): RFL/PFL/RFN/PFN variables now allow Y/N/null in v1.2 (v1.1 allowed only Y/null)
+- **ADaM-1024** (Category C): APERIOD conditional — required when APHASE or TRTxxP present (Section 3.2.8)
+- **ADaM-1025** (Category C): AWU required when AWTARGET or AWTDIFF present (expanded scope)
+- **ADaM-1026** (Category C): Secondary variable generalisation — DTYPE/BASETYPE/DTYPE present-together rule extended beyond numeric vars
+- **ADaM-1027..1032** (Category D): Change-to-baseline vars — BCHG numeric, BCHGCATy char, BCHGCAyN numeric, PBCHG numeric, PBCHGCAy char, PBCHGCyN numeric naming/type checks
+- **ADaM-1033..1044** (Category D): Bi-directional lab toxicity — ATOXGRN/BTOXGRN numeric, ATOXGRL/H and BTOXGRL/H char, ATOXGRLN/HN and BTOXGRLN/HN numeric, ATOXDSCL/ATOXDSCH char
+- **ADaM-1045** (Category D): Stratification variables STRATyV/STRATyVN in ADSL (Table 3.2.9)
+- **ADaM-1046** (Category D): ADSL variable consistency — same-named variable in any ADaM dataset must match ADSL values, type, and label
+- **ADaM-1047** (Category D): SHIFTy extended valid-pair list includes bi-directional toxicity variables
+- **ADaM-1048** (Category D): BASETYPE scoped per-PARAM (non-null within PARAMCD group, not entire dataset)
+- **ADaM-1049** (Category B companion): Informational notice when PARAMTYP is present in a v1.2 dataset (PARAMTYP was removed in v1.2)
+
+**PMDA config filtering bug fixed:**
+All 1,041 PMDA rules have empty `ig_versions` but populate `provenance.standard` (`ADaM`/`SDTM`/`Define-XML`). The previous `filter_pmda_by_ig()` fallback included all 1,041 rules in every PMDA config. Replaced with `filter_pmda(std_name)` that filters on `provenance.standard`:
+- `pmda-sdtm-ig-3.3`: 2,531 rules (was ~3,700+)
+- `pmda-adam-ig-1.1`: 2,384 rules (was ~3,700+)
+- `pmda-define-xml-2.1`: 1,507 rules (was ~3,700+)
+
+### Totals
+
+- `engines/cdisc/`: 450 CORE rules + 253 ADaM-NNN rules = **703 rules** (was 673)
+- Total rule catalog: **3,749 rules** (was 3,819)
+
+---
+
 ## v2026.2.4 -- 2026-04-12
 
 ### ADaM IG Core Conformance Rules (223 rules)

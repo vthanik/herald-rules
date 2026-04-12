@@ -1,0 +1,47 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  ATOXGRHN is the numeric secondary of ATOXGRH (Analysis Toxicity Grade High). Added in v1.2 Table 3.3.7.1.
+                Document: ADaM IG v1.2
+                Section: '3.3.7'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-1038
+              Version: '1'
+            Version: '1.0'
+        Version: '1.2'
+Check:
+  all:
+    - name: ATOXGRHN
+      operator: non_empty
+    - name: ATOXGRH
+      operator: empty
+Core:
+  Id: ADaM-1038
+  Status: Published
+  Version: '1'
+Description: >-
+  ATOXGRHN (numeric version of ATOXGRH) requires ATOXGRH to also be present.
+Executability: Partially Executable
+Outcome:
+  Message: 'ATOXGRHN is present but primary variable ATOXGRH is absent'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BDS
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  ig_versions: ["1.2"]
+  source: Herald-originated (ADaM-IG v1.2 gap-fill)
+  catalogs:
+    - ADaMIG 1.2
+  fetched: '2026-04-12'
+

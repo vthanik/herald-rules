@@ -1,0 +1,50 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  In v1.2, numeric record-level population flag variables may use 0/1/null when 0 and null values need to be analyzed differently.
+                Document: ADaM IG v1.2
+                Section: '3.1.4'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-1022
+              Version: '1'
+            Version: '1.0'
+        Version: '1.2'
+Check:
+  all:
+    - name: ABLFN
+      operator: non_empty
+    - name: ABLFN
+      operator: not_in
+      value:
+        - '0'
+        - '1'
+Core:
+  Id: ADaM-1022
+  Status: Published
+  Version: '1'
+Description: >-
+  A variable with a suffix of RFN (record-level numeric flag) may have a value of 0, 1, or null in ADaM-IG v1.2.
+Executability: Partially Executable
+Outcome:
+  Message: '*RFN variable (e.g. ABLFN) has a value other than 0, 1, or null'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BDS
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  ig_versions: ["1.2"]
+  source: Herald-originated (ADaM-IG v1.2 gap-fill)
+  catalogs:
+    - ADaMIG 1.2
+  fetched: '2026-04-12'
+

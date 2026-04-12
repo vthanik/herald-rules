@@ -37,6 +37,7 @@ Scope:
       - ADSL
 Sensitivity: Record
 herald:
+  ig_versions: ["1.1", "1.2"]
   source: PMDA Validation Rules v6.0 (March 2025)
   catalogs:
     - ADaMIG 1.1

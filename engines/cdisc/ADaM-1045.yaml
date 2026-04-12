@@ -1,0 +1,47 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  Table 3.2.9 was added in v1.2 to define nomenclature for stratification variables in ADSL. STRATyV holds the character stratification factor value; STRATyVN is its optional numeric code.
+                Document: ADaM IG v1.2
+                Section: '3.2.9'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-1045
+              Version: '1'
+            Version: '1.0'
+        Version: '1.2'
+Check:
+  all:
+    - name: STRAT1VN
+      operator: non_empty
+    - name: STRAT1V
+      operator: empty
+Core:
+  Id: ADaM-1045
+  Status: Published
+  Version: '1'
+Description: >-
+  Stratification variables in ADSL must follow the naming convention STRATyV (character) with optional numeric secondary STRATyVN, where y is a positive integer index.
+Executability: Partially Executable
+Outcome:
+  Message: 'STRATyVN is present but primary variable STRATyV is absent'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - ADSL
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  ig_versions: ["1.2"]
+  source: Herald-originated (ADaM-IG v1.2 gap-fill)
+  catalogs:
+    - ADaMIG 1.2
+  fetched: '2026-04-12'
+

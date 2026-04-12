@@ -1,0 +1,47 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  v1.2 expanded the scope of AWU to include AWTARGET and AWTDIFF in addition to AWLO and AWHI. AWU provides the unit for all analysis window numeric variables.
+                Document: ADaM IG v1.2
+                Section: '3.3.5'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-1025
+              Version: '1'
+            Version: '1.0'
+        Version: '1.2'
+Check:
+  all:
+    - name: AWTARGET
+      operator: non_empty
+    - name: AWU
+      operator: empty
+Core:
+  Id: ADaM-1025
+  Status: Published
+  Version: '1'
+Description: >-
+  In ADaM-IG v1.2, AWU (Analysis Window Unit) is the unit for AWTARGET, AWTDIFF, AWLO, and AWHI. When AWTARGET or AWTDIFF is present, AWU must also be present.
+Executability: Partially Executable
+Outcome:
+  Message: 'AWTARGET is present but AWU (Analysis Window Unit) is missing'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BDS
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  ig_versions: ["1.2"]
+  source: Herald-originated (ADaM-IG v1.2 gap-fill)
+  catalogs:
+    - ADaMIG 1.2
+  fetched: '2026-04-12'
+

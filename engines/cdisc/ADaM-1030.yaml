@@ -1,0 +1,45 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  PBCHG represents percent change to baseline where BASE-AVAL is the desired direction. Added in v1.2 Table 3.3.4.1.
+                Document: ADaM IG v1.2
+                Section: '3.3.4'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-1030
+              Version: '1'
+            Version: '1.0'
+        Version: '1.2'
+Check:
+  all:
+    - name: PBCHG
+      operator: not_numeric
+Core:
+  Id: ADaM-1030
+  Status: Published
+  Version: '1'
+Description: >-
+  PBCHG (Percent Change from Baseline, desired direction) must be a numeric variable when present.
+Executability: Partially Executable
+Outcome:
+  Message: 'PBCHG must be numeric'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BDS
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  ig_versions: ["1.2"]
+  source: Herald-originated (ADaM-IG v1.2 gap-fill)
+  catalogs:
+    - ADaMIG 1.2
+  fetched: '2026-04-12'
+

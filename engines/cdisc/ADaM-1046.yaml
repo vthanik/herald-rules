@@ -1,0 +1,46 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  Added in v1.2 Section 2.3.1: 'A variable in any ADaM dataset that has the same name as an ADSL variable must have the same values, type, and label.' This enforces cross-dataset consistency.
+                Document: ADaM IG v1.2
+                Section: '2.3.1'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-1046
+              Version: '1'
+            Version: '1.0'
+        Version: '1.2'
+Check:
+  all:
+    - name: __adsl_variable_match__
+      operator: adsl_consistency_check
+      value: __cross_dataset__
+Core:
+  Id: ADaM-1046
+  Status: Published
+  Version: '1'
+Description: >-
+  A variable in any ADaM dataset that has the same name as an ADSL variable must have the same values, type, and label.
+Executability: Fully Executable
+Outcome:
+  Message: 'Variable has same name as ADSL variable but different values, type, or label'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BDS
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Dataset
+herald:
+  ig_versions: ["1.2"]
+  source: Herald-originated (ADaM-IG v1.2 gap-fill)
+  catalogs:
+    - ADaMIG 1.2
+  fetched: '2026-04-12'
+

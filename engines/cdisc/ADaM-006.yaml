@@ -46,6 +46,7 @@ Scope:
       - ALL
 Sensitivity: Record
 herald:
+  ig_versions: ["1.1", "1.2"]
   source: CDISC ADaM Validation Rules XML (September 2015)
   catalogs:
     - ADaMIG 1.1

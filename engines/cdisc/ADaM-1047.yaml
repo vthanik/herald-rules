@@ -1,0 +1,45 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  v1.2 clarified Table 3.3.4.1 that SHIFTy can only be based on the change in value of specific approved pairs. The list now explicitly includes bi-directional toxicity variable pairs added in v1.2.
+                Document: ADaM IG v1.2
+                Section: '3.3.4'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-1047
+              Version: '1'
+            Version: '1.0'
+        Version: '1.2'
+Check:
+  all:
+    - name: SHIFT1
+      operator: non_empty
+Core:
+  Id: ADaM-1047
+  Status: Published
+  Version: '1'
+Description: >-
+  SHIFTy variables may only be based on the change in value of approved variable pairs, which in v1.2 include the bi-directional toxicity pairs (ATOXGRL/BTOXGRL, ATOXGRH/BTOXGRH) in addition to the standard ATOXGR/BTOXGR pair.
+Executability: Not Executable
+Outcome:
+  Message: 'SHIFTy variable present; verify it is based on an approved variable pair per ADaM-IG v1.2 Table 3.3.4.1'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BDS
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  ig_versions: ["1.2"]
+  source: Herald-originated (ADaM-IG v1.2 gap-fill)
+  catalogs:
+    - ADaMIG 1.2
+  fetched: '2026-04-12'
+

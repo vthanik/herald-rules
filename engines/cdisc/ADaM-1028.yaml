@@ -1,0 +1,45 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  BCHGCATy is the character categorization of BCHG (change to baseline, desired direction). Added in v1.2 Table 3.3.4.1.
+                Document: ADaM IG v1.2
+                Section: '3.3.4'
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-1028
+              Version: '1'
+            Version: '1.0'
+        Version: '1.2'
+Check:
+  all:
+    - name: BCHGCAT1
+      operator: not_character
+Core:
+  Id: ADaM-1028
+  Status: Published
+  Version: '1'
+Description: >-
+  BCHGCATy (Change from Baseline Category y, desired direction) must be a character variable when present.
+Executability: Partially Executable
+Outcome:
+  Message: 'BCHGCATy must be a character variable'
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BDS
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  ig_versions: ["1.2"]
+  source: Herald-originated (ADaM-IG v1.2 gap-fill)
+  catalogs:
+    - ADaMIG 1.2
+  fetched: '2026-04-12'
+
