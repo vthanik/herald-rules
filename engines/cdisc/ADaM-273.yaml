@@ -1,0 +1,67 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  For additional Flag (AOCCzzFL) variables representing the 1st
+                  Occurrence, values must be Y or null.
+                Document: ADaM IG v1.1
+                Section: "6.2"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-273
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: AOCC01FL
+      operator: non_empty
+    - name: AOCC01FL
+      operator: not_in
+      value:
+        - 'Y'
+Core:
+  Id: ADaM-273
+  Status: Published
+  Version: "1"
+Description: >-
+  For additional Flag (AOCCzzFL) variables representing the 1st Occurrence,
+  values must be Y or null.
+Executability: Partially Executable
+Outcome:
+  Message: "AOCCzzFL value is not Y or null"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - OCCURRENCE DATA STRUCTURE
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: AOCC01FL is Y (valid)
+    type: positive
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, AOCC01FL]
+        records:
+          - [CDISCPILOT01, 01-701-1015, HEADACHE, Y]
+    expected_findings: 0
+  - name: AOCC01FL has invalid value (violation)
+    type: negative
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, AOCC01FL]
+        records:
+          - [CDISCPILOT01, 01-701-1015, HEADACHE, "2"]
+    expected_findings: 1

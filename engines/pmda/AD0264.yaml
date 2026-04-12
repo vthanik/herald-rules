@@ -1,5 +1,5 @@
 id: AD0264
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
@@ -17,8 +17,10 @@ scope:
     - ADAMOTHER
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: ATMF
+      operator: non_empty
+    - name: ATM
+      operator: empty
 outcome:
   message: '*TMF is populated, but *TM is not populated'
   severity: Error

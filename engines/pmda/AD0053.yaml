@@ -1,5 +1,5 @@
 id: AD0053
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
@@ -15,8 +15,10 @@ scope:
     - ADDL
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: USUBJID
+      operator: non_empty
+    - name: STUDYID
+      operator: non_empty
 outcome:
   message: The combination of STUDYID and USUBJID value does not exist in the SDTM
     DM domain

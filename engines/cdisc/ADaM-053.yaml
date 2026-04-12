@@ -1,0 +1,65 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  The combination of Study Identifier (STUDYID) and Unique Subject
+                  Identifier (USUBJID) must be unique across all ADaM datasets.
+                Document: ADaM IG v1.1
+                Section: "3.1"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-053
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: USUBJID
+      operator: non_empty
+    - name: STUDYID
+      operator: non_empty
+Core:
+  Id: ADaM-053
+  Status: Published
+  Version: "1"
+Description: >-
+  The combination of Study Identifier (STUDYID) and Unique Subject Identifier
+  (USUBJID) must be unique across all ADaM datasets within a study.
+Executability: Partially Executable
+Outcome:
+  Message: "Non-unique STUDYID + USUBJID combination"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - ALL
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: STUDYID and USUBJID both populated (valid)
+    type: positive
+    datasets:
+      ADSL:
+        variables: [STUDYID, USUBJID]
+        records:
+          - [CDISCPILOT01, 01-701-1015]
+    expected_findings: 0
+  - name: USUBJID missing (violation)
+    type: negative
+    datasets:
+      ADSL:
+        variables: [STUDYID, USUBJID]
+        records:
+          - [CDISCPILOT01, ""]
+    expected_findings: 1

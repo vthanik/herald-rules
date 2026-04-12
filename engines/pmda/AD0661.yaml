@@ -1,10 +1,10 @@
 id: AD0661
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: When ADOSEDUR is present, NDOSEDUR and/or DOSEDURU must also be included
   in the dataset.
 scope:
@@ -12,8 +12,12 @@ scope:
   domains: ADNCA
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: ADOSEDUR
+      operator: non_empty
+    - name: NDOSEDUR
+      operator: empty
+    - name: DOSEDURU
+      operator: empty
 outcome:
   message: ADOSEDUR is present and NDOSEDUR or DOSEDURU is not present
   severity: Error

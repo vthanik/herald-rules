@@ -1,5 +1,5 @@
 id: AD0313
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
@@ -21,8 +21,13 @@ scope:
     - MDOCCDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: SMQ01SCN
+      operator: non_empty
+    - name: SMQ01SCN
+      operator: not_in
+      value:
+        - 1
+        - 2
 outcome:
   message: SMQzzSCN value != 1, 2 or null
   severity: Error

@@ -1,5 +1,5 @@
 id: AD0337
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
@@ -17,8 +17,12 @@ scope:
     - ADAMOTHER
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: MCRIT1ML
+      operator: non_empty
+    - name: MCRIT1ML
+      operator: not_in
+      value:
+        - 'Y'
 outcome:
   message: MCRITy variable is not present when MCRITyML is present
   severity: Error

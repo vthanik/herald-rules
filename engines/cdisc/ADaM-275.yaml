@@ -1,0 +1,65 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  If Cumulative Study Drug Dose Unit (DOSECUMU) or Cumulative Study
+                  Drug Dose (DOSECUM) is present, both must be present together.
+                Document: ADaM IG v1.1
+                Section: "6.3"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-275
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: DOSECUMU
+      operator: non_empty
+    - name: DOSECUM
+      operator: empty
+Core:
+  Id: ADaM-275
+  Status: Published
+  Version: "1"
+Description: >-
+  If Cumulative Study Drug Dose Unit (DOSECUMU) or Cumulative Study Drug
+  Dose (DOSECUM) is present, both must be present together.
+Executability: Fully Executable
+Outcome:
+  Message: "DOSECUMU is present but DOSECUM is not present"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - OCCURRENCE DATA STRUCTURE
+  Domains:
+    Include:
+      - ADAE
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: DOSECUMU and DOSECUM both present (valid)
+    type: positive
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, DOSECUMU, DOSECUM]
+        records:
+          - [CDISCPILOT01, 01-701-1015, HEADACHE, "mg", 100]
+    expected_findings: 0
+  - name: DOSECUMU present but DOSECUM missing (violation)
+    type: negative
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, DOSECUMU, DOSECUM]
+        records:
+          - [CDISCPILOT01, 01-701-1015, HEADACHE, "mg", ""]
+    expected_findings: 1

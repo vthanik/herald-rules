@@ -1,10 +1,10 @@
 id: AD0499
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: If Subperiod within Period (ASPER) variable is used in a dataset, Period
   (APERIOD) variable must also be present in that dataset.
 scope:
@@ -19,8 +19,10 @@ scope:
     - ADAMOTHER
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: ASPER
+      operator: non_empty
+    - name: APERIOD
+      operator: empty
 outcome:
   message: ASPER is present and APERIOD is not present
   severity: Error

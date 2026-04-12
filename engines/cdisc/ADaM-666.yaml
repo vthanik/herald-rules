@@ -1,0 +1,69 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  If DOSPCTDF (Percent Diff. Nominal vs. Actual Dose) is populated,
+                  both ARRDOS (Actual Recorded Dose) and NRDOS (Nominal Recorded Dose)
+                  must also be populated.
+                Document: ADaM IG v1.1
+                Section: "7.2"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-666
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: DOSPCTDF
+      operator: non_empty
+    - name: ARRDOS
+      operator: empty
+    - name: NRDOS
+      operator: empty
+Core:
+  Id: ADaM-666
+  Status: Published
+  Version: "1"
+Description: >-
+  If DOSPCTDF (Percent Diff. Nominal vs. Actual Dose) is populated, both
+  ARRDOS (Actual Recorded Dose) and NRDOS (Nominal Recorded Dose) must also
+  be populated.
+Executability: Fully Executable
+Outcome:
+  Message: "DOSPCTDF is populated and ARRDOS or NRDOS are not populated"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BASIC DATA STRUCTURE
+  Domains:
+    Include:
+      - ADNCA
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: DOSPCTDF with ARRDOS and NRDOS present (valid)
+    type: positive
+    datasets:
+      ADNCA:
+        variables: [STUDYID, USUBJID, PARAMCD, DOSPCTDF, ARRDOS, NRDOS]
+        records:
+          - [CDISCPILOT01, 01-701-1015, CONC, 5.0, 95, 100]
+    expected_findings: 0
+  - name: DOSPCTDF present but ARRDOS and NRDOS missing (violation)
+    type: negative
+    datasets:
+      ADNCA:
+        variables: [STUDYID, USUBJID, PARAMCD, DOSPCTDF, ARRDOS, NRDOS]
+        records:
+          - [CDISCPILOT01, 01-701-1015, CONC, 5.0, "", ""]
+    expected_findings: 1

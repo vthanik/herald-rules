@@ -1,0 +1,71 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  When all 3 variables are populated, Change to Baseline (BCHG)
+                  must equal Analysis Value (AVAL) minus Baseline Value (BASE).
+                Document: ADaM IG v1.1
+                Section: "4.4"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-582
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: BCHG
+      operator: non_empty
+    - name: AVAL
+      operator: non_empty
+    - name: BASE
+      operator: non_empty
+    - name: BCHG
+      operator: not_within_tolerance_of_formula
+      value: AVAL - BASE
+      tolerance: 0.001
+Core:
+  Id: ADaM-582
+  Status: Published
+  Version: "1"
+Description: >-
+  When all 3 variables are populated, Change to Baseline (BCHG) must equal
+  Analysis Value (AVAL) minus Baseline Value (BASE): BCHG = AVAL - BASE.
+Executability: Fully Executable
+Outcome:
+  Message: "BCHG != AVAL - BASE"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BASIC DATA STRUCTURE
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: BCHG = AVAL - BASE (valid)
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, AVAL, BASE, BCHG]
+        records:
+          - [CDISCPILOT01, 01-701-1015, SODIUM, 145, 140, 5]
+    expected_findings: 0
+  - name: BCHG != AVAL - BASE (violation)
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, AVAL, BASE, BCHG]
+        records:
+          - [CDISCPILOT01, 01-701-1015, SODIUM, 145, 140, -5]
+    expected_findings: 1

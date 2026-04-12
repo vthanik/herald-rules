@@ -1,10 +1,10 @@
 id: AD0274
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: If Study Drug Dose at AE Onset Units (DOSAEONU) or Study Drug Dose at
   AE Onset (DOSEAEON) variable is populated, then both variables must be populated
   together.
@@ -15,8 +15,10 @@ scope:
     - ADAMOTHER
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: DOSAEONU
+      operator: non_empty
+    - name: DOSAEONA
+      operator: empty
 outcome:
   message: Only one of DOSEAEON, DOSAEONU is populated
   severity: Error

@@ -1,5 +1,5 @@
 id: AD0339
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
@@ -17,8 +17,11 @@ scope:
     - ADAMOTHER
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: MCRIT1ML
+      operator: equal_to
+      value: 'Y'
+    - name: MCRIT1
+      operator: empty
 outcome:
   message: MCRITy is not populated when MCRITyML is populated
   severity: Error

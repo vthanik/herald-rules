@@ -1,5 +1,5 @@
 id: AD0273
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
@@ -21,8 +21,12 @@ scope:
     - MDOCCDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: AOCC01FL
+      operator: non_empty
+    - name: AOCC01FL
+      operator: not_in
+      value:
+        - 'Y'
 outcome:
   message: 'Illegal variable name: zz is not in [01-99] for AOCCzzFL'
   severity: Error

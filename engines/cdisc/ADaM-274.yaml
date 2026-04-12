@@ -1,0 +1,66 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  If Study Drug Dose at AE Onset Units (DOSAEONU) or Study Drug
+                  Dose at AE Onset Amount (DOSAEONA) is present, both must be
+                  present together.
+                Document: ADaM IG v1.1
+                Section: "6.3"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-274
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: DOSAEONU
+      operator: non_empty
+    - name: DOSAEONA
+      operator: empty
+Core:
+  Id: ADaM-274
+  Status: Published
+  Version: "1"
+Description: >-
+  If Study Drug Dose at AE Onset Units (DOSAEONU) or Study Drug Dose at AE
+  Onset Amount (DOSAEONA) is present, both must be present together.
+Executability: Fully Executable
+Outcome:
+  Message: "DOSAEONU is present but DOSAEONA is not present"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - OCCURRENCE DATA STRUCTURE
+  Domains:
+    Include:
+      - ADAE
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: DOSAEONU and DOSAEONA both present (valid)
+    type: positive
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, DOSAEONU, DOSAEONA]
+        records:
+          - [CDISCPILOT01, 01-701-1015, HEADACHE, "mg", 10]
+    expected_findings: 0
+  - name: DOSAEONU present but DOSAEONA missing (violation)
+    type: negative
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, DOSAEONU, DOSAEONA]
+        records:
+          - [CDISCPILOT01, 01-701-1015, HEADACHE, "mg", ""]
+    expected_findings: 1

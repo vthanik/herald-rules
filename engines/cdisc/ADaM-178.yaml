@@ -1,0 +1,66 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  A variable of form ANLzzFL (analysis record flag) must be Y or null.
+                Document: ADaM IG v1.1
+                Section: "4.4"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-178
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: ANL01FL
+      operator: non_empty
+    - name: ANL01FL
+      operator: not_in
+      value:
+        - 'Y'
+Core:
+  Id: ADaM-178
+  Status: Published
+  Version: "1"
+Description: >-
+  A variable of form ANLzzFL (analysis record flag) must be Y or null.
+  Uses ANL01FL as a representative variable.
+Executability: Partially Executable
+Outcome:
+  Message: "ANLzzFL value is not Y or null"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BASIC DATA STRUCTURE
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: ANL01FL is Y (valid)
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ANL01FL]
+        records:
+          - [CDISCPILOT01, 01-701-1015, SODIUM, Y]
+    expected_findings: 0
+  - name: ANL01FL is invalid value (violation)
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ANL01FL]
+        records:
+          - [CDISCPILOT01, 01-701-1015, SODIUM, "N"]
+    expected_findings: 1

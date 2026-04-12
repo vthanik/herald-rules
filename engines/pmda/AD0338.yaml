@@ -1,5 +1,5 @@
 id: AD0338
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
@@ -17,8 +17,10 @@ scope:
     - ADAMOTHER
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: MCRIT1
+      operator: non_empty
+    - name: MCRIT1ML
+      operator: empty
 outcome:
   message: MCRITyML is not present when MCRITy is present
   severity: Error

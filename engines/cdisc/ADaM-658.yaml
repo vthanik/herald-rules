@@ -1,0 +1,67 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  NCAXFN (PK NCA Exclusion Flag (N)) must be 1 or null. It is a
+                  numeric flag that must only have value 1.
+                Document: ADaM IG v1.1
+                Section: "7.2"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-658
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: NCAXFN
+      operator: non_empty
+    - name: NCAXFN
+      operator: not_in
+      value:
+        - 1
+Core:
+  Id: ADaM-658
+  Status: Published
+  Version: "1"
+Description: >-
+  NCAXFN (PK NCA Exclusion Flag (N)) must be 1 or null. It is a numeric
+  flag that must only have value 1.
+Executability: Fully Executable
+Outcome:
+  Message: "NCAXFN value is not 1 or null"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BASIC DATA STRUCTURE
+  Domains:
+    Include:
+      - ADNCA
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: NCAXFN is 1 (valid)
+    type: positive
+    datasets:
+      ADNCA:
+        variables: [STUDYID, USUBJID, PARAMCD, NCAXFN]
+        records:
+          - [CDISCPILOT01, 01-701-1015, CONC, 1]
+    expected_findings: 0
+  - name: NCAXFN is 0 (violation)
+    type: negative
+    datasets:
+      ADNCA:
+        variables: [STUDYID, USUBJID, PARAMCD, NCAXFN]
+        records:
+          - [CDISCPILOT01, 01-701-1015, CONC, 0]
+    expected_findings: 1

@@ -1,10 +1,10 @@
 id: AD0659
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: 'PKSUMXFN (PK Summary Exclusion Flag (N)) must be 1 or null.  It is a
   numeric flag for exclusion of a record from a PK summary: 1 = exclusion, null =
   inclusion.'
@@ -13,8 +13,12 @@ scope:
   domains: ADNCA
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: PKSUMXFN
+      operator: non_empty
+    - name: PKSUMXFN
+      operator: not_in
+      value:
+        - 1
 outcome:
   message: PKSUMXFN value is not 1 or null
   severity: Error

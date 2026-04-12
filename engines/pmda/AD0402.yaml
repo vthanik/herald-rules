@@ -1,10 +1,10 @@
 id: AD0402
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: On a given record, if Analysis Toxicity Description High (ATOXDSCH) variable
   value is populated, then both Analysis Value (AVAL) and the Analysis Toxicity Grade
   High (ATOXGRH) variable values must be populated.
@@ -17,8 +17,12 @@ scope:
     - ADAMOTHER
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: ATOXDSCH
+      operator: non_empty
+    - name: ATOXGRHN
+      operator: empty
+    - name: ATOXGRH
+      operator: empty
 outcome:
   message: AVAL is not populated or ATOXGRH is not populated, and ATOXDSCH is populated
   severity: Error

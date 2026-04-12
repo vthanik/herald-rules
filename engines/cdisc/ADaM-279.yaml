@@ -1,0 +1,66 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  Severity/Intensity (N) (AESEVN) and Analysis Severity/Intensity (N)
+                  (ASEVN) must be consistent when both are present.
+                Document: ADaM IG v1.1
+                Section: "6.2"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-279
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: AESEVN
+      operator: non_empty
+    - name: ASEVN
+      operator: empty
+Core:
+  Id: ADaM-279
+  Status: Published
+  Version: "1"
+Description: >-
+  Severity/Intensity (N) (AESEVN) and Analysis Severity/Intensity (N) (ASEVN)
+  must be consistent when both are present. When AESEVN is populated, ASEVN
+  must also be populated.
+Executability: Partially Executable
+Outcome:
+  Message: "AESEVN is populated but ASEVN is not populated"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - OCCURRENCE DATA STRUCTURE
+  Domains:
+    Include:
+      - ADAE
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: AESEVN and ASEVN both populated (valid)
+    type: positive
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, AESEVN, ASEVN]
+        records:
+          - [CDISCPILOT01, 01-701-1015, HEADACHE, 1, 1]
+    expected_findings: 0
+  - name: AESEVN populated but ASEVN missing (violation)
+    type: negative
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, AESEVN, ASEVN]
+        records:
+          - [CDISCPILOT01, 01-701-1015, HEADACHE, 1, ""]
+    expected_findings: 1

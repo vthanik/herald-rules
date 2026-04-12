@@ -1,5 +1,5 @@
 id: AD0253
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
@@ -18,8 +18,8 @@ scope:
   domains: AE
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: AESEQ
+      operator: non_empty
 outcome:
   message: Record key from SDTM AE is not traceable to ADaM ADAE (not enough ADAE
     recs)

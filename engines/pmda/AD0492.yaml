@@ -1,5 +1,5 @@
 id: AD0492
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
@@ -17,8 +17,10 @@ scope:
     - ADAMOTHER
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: SHIFT1
+      operator: non_empty
+    - name: BTOXGR
+      operator: empty
 outcome:
   message: SHIFTy is present and all of the following variable pairs (BASECATy, AVALCATy),
     (BNRIND, ANRIND), (ByIND, AyIND), (BTOXGR, ATOXGR), (BTOXGRL, ATOXGRL), (BTOXGRH,

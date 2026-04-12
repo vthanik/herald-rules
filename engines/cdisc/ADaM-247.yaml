@@ -1,0 +1,66 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  When an event is censored (CNSR=1), the Event or Censoring
+                  Description (EVNTDESC) must be populated.
+                Document: ADaM IG v1.1
+                Section: "5.2"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-247
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: CNSR
+      operator: equal_to
+      value: 1
+    - name: EVNTDESC
+      operator: empty
+Core:
+  Id: ADaM-247
+  Status: Published
+  Version: "1"
+Description: >-
+  When an event is censored (CNSR=1), the Event or Censoring Description
+  (EVNTDESC) must be populated.
+Executability: Fully Executable
+Outcome:
+  Message: "CNSR=1 but EVNTDESC is not populated"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BASIC DATA STRUCTURE
+  Domains:
+    Include:
+      - ADTTE
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: CNSR=1 and EVNTDESC populated (valid)
+    type: positive
+    datasets:
+      ADTTE:
+        variables: [STUDYID, USUBJID, PARAMCD, CNSR, EVNTDESC]
+        records:
+          - [CDISCPILOT01, 01-701-1015, TTDE, 1, "Censored at last visit"]
+    expected_findings: 0
+  - name: CNSR=1 but EVNTDESC missing (violation)
+    type: negative
+    datasets:
+      ADTTE:
+        variables: [STUDYID, USUBJID, PARAMCD, CNSR, EVNTDESC]
+        records:
+          - [CDISCPILOT01, 01-701-1015, TTDE, 1, ""]
+    expected_findings: 1

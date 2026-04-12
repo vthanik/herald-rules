@@ -1,18 +1,21 @@
 id: AD0660
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: METABFL (Metabolite Flag) must be Y or null.
 scope:
   classes: []
   domains: ADNCA
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: METABFL
+      operator: non_empty
+    - name: METABFL
+      operator: not_equal_to
+      value: 'Y'
 outcome:
   message: METABFL value is not Y or null
   severity: Error

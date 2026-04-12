@@ -1,0 +1,67 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  When ADOSEDUR is present, NDOSEDUR and/or DOSEDURU must also
+                  be included in the dataset.
+                Document: ADaM IG v1.1
+                Section: "7.2"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-661
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: ADOSEDUR
+      operator: non_empty
+    - name: NDOSEDUR
+      operator: empty
+    - name: DOSEDURU
+      operator: empty
+Core:
+  Id: ADaM-661
+  Status: Published
+  Version: "1"
+Description: >-
+  When ADOSEDUR is present, NDOSEDUR and/or DOSEDURU must also be included
+  in the dataset.
+Executability: Fully Executable
+Outcome:
+  Message: "ADOSEDUR is present but neither NDOSEDUR nor DOSEDURU is present"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BASIC DATA STRUCTURE
+  Domains:
+    Include:
+      - ADNCA
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: ADOSEDUR with NDOSEDUR present (valid)
+    type: positive
+    datasets:
+      ADNCA:
+        variables: [STUDYID, USUBJID, PARAMCD, ADOSEDUR, NDOSEDUR, DOSEDURU]
+        records:
+          - [CDISCPILOT01, 01-701-1015, CONC, 24, 24, ""]
+    expected_findings: 0
+  - name: ADOSEDUR but NDOSEDUR and DOSEDURU missing (violation)
+    type: negative
+    datasets:
+      ADNCA:
+        variables: [STUDYID, USUBJID, PARAMCD, ADOSEDUR, NDOSEDUR, DOSEDURU]
+        records:
+          - [CDISCPILOT01, 01-701-1015, CONC, 24, "", ""]
+    expected_findings: 1

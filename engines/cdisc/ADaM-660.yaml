@@ -1,0 +1,64 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  METABFL (Metabolite Flag) must be Y or null.
+                Document: ADaM IG v1.1
+                Section: "7.2"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-660
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: METABFL
+      operator: non_empty
+    - name: METABFL
+      operator: not_equal_to
+      value: 'Y'
+Core:
+  Id: ADaM-660
+  Status: Published
+  Version: "1"
+Description: >-
+  METABFL (Metabolite Flag) must be Y or null.
+Executability: Fully Executable
+Outcome:
+  Message: "METABFL value is not Y or null"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BASIC DATA STRUCTURE
+  Domains:
+    Include:
+      - ADNCA
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: METABFL is Y (valid)
+    type: positive
+    datasets:
+      ADNCA:
+        variables: [STUDYID, USUBJID, PARAMCD, METABFL]
+        records:
+          - [CDISCPILOT01, 01-701-1015, CONC, Y]
+    expected_findings: 0
+  - name: METABFL is invalid value (violation)
+    type: negative
+    datasets:
+      ADNCA:
+        variables: [STUDYID, USUBJID, PARAMCD, METABFL]
+        records:
+          - [CDISCPILOT01, 01-701-1015, CONC, "N"]
+    expected_findings: 1

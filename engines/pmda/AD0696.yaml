@@ -1,5 +1,5 @@
 id: AD0696
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
@@ -13,8 +13,10 @@ scope:
   domains: MDBDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: SPDEVID
+      operator: non_empty
+    - name: ADT
+      operator: non_empty
 outcome:
   message: Multiple baseline records exist for a unique SPDEVID,USUBJID,PARAMCD,BASETYPE
   severity: Error

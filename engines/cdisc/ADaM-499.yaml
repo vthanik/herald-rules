@@ -1,0 +1,66 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  If Subperiod within Period (ASPER) variable is used in a dataset,
+                  Period (APERIOD) must also be present.
+                Document: ADaM IG v1.1
+                Section: "4.2"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-499
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: ASPER
+      operator: non_empty
+    - name: APERIOD
+      operator: empty
+Core:
+  Id: ADaM-499
+  Status: Published
+  Version: "1"
+Description: >-
+  If Subperiod within Period (ASPER) variable is used in a dataset, Period
+  (APERIOD) must also be present.
+Executability: Fully Executable
+Outcome:
+  Message: "ASPER is present but APERIOD is not present"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BASIC DATA STRUCTURE
+      - OCCURRENCE DATA STRUCTURE
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: ASPER and APERIOD both present (valid)
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ASPER, APERIOD]
+        records:
+          - [CDISCPILOT01, 01-701-1015, SODIUM, 1, 1]
+    expected_findings: 0
+  - name: ASPER present but APERIOD missing (violation)
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ASPER, APERIOD]
+        records:
+          - [CDISCPILOT01, 01-701-1015, SODIUM, 1, ""]
+    expected_findings: 1

@@ -1,5 +1,5 @@
 id: AD0314
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
@@ -13,8 +13,10 @@ scope:
   domains: ADAE
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: DECOD
+      operator: non_empty
+    - name: DECODORG
+      operator: empty
 outcome:
   message: 'Illegal variable name: y is not in [1-9] for original or prior MedDRA
     coding variables of form *ORGy'

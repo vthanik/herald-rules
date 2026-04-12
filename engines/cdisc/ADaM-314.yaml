@@ -1,0 +1,65 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  Original or prior MedDRA coding variables (DECDORGy, etc.) must
+                  be present when the corresponding current variable is present.
+                Document: ADaM IG v1.1
+                Section: "6.2"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-314
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: DECOD
+      operator: non_empty
+    - name: DECODORG
+      operator: empty
+Core:
+  Id: ADaM-314
+  Status: Published
+  Version: "1"
+Description: >-
+  Original or prior MedDRA coding variables (DECDORGy, etc.) must be present
+  when the corresponding current variable (DECOD, etc.) is present.
+Executability: Partially Executable
+Outcome:
+  Message: "DECOD is present but DECODORG is not present"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - OCCURRENCE DATA STRUCTURE
+  Domains:
+    Include:
+      - ADAE
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: DECOD and DECODORG both present (valid)
+    type: positive
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, DECOD, DECODORG]
+        records:
+          - [CDISCPILOT01, 01-701-1015, HEADACHE, HEADACHE, HEADACHE]
+    expected_findings: 0
+  - name: DECOD present but DECODORG missing (violation)
+    type: negative
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, DECOD, DECODORG]
+        records:
+          - [CDISCPILOT01, 01-701-1015, HEADACHE, HEADACHE, ""]
+    expected_findings: 1

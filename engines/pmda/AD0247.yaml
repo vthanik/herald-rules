@@ -1,10 +1,10 @@
 id: AD0247
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: When an event is censored, 3 other variables must be populated. Censor
   (CNSR) variable qualifies the Analysis Value (AVAL) variable. ADT and ADTM variables
   are the Analysis Date and Time of event or censoring associated with AVAL. Origin
@@ -19,8 +19,11 @@ scope:
     - MDBDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: CNSR
+      operator: equal_to
+      value: 1
+    - name: EVNTDESC
+      operator: empty
 outcome:
   message: CNSR is populated, but AVAL, STARTDT, and one of [ADT, ADTM] are not populated
   severity: Error

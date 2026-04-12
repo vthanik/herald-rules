@@ -1,5 +1,5 @@
 id: AD0279
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
@@ -16,8 +16,10 @@ scope:
     - MDOCCDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: AESEVN
+      operator: non_empty
+    - name: ASEVN
+      operator: empty
 outcome:
   message: Variable value != 1, 2, 3, or null
   severity: Error

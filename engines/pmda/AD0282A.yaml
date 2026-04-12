@@ -1,10 +1,10 @@
 id: AD0282A
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: For Analysis Severity/Intensity (N) (ASEVN) variables, the CDISC ADaM
   Validation Checks v1.3 explicitly require values of 1, 2, 3 while forbidding null
   values for this permissible variable. In contrast, AESEVN can be 1, 2, 3, or null.
@@ -18,8 +18,14 @@ scope:
     - ADAE
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: ASEVN
+      operator: non_empty
+    - name: ASEVN
+      operator: not_in
+      value:
+        - 1
+        - 2
+        - 3
 outcome:
   message: Analysis severity Variable value is null
   severity: Error

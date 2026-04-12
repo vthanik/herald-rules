@@ -1,0 +1,67 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  For Analysis Flag zz (ANLzzFL) and Analysis Flag zz (N) (ANLzzFN)
+                  variables, when ANLzzFL is populated, ANLzzFN must also be populated
+                  with the same analysis flag number.
+                Document: ADaM IG v1.1
+                Section: "4.4"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-1018
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: ANL01FL
+      operator: non_empty
+    - name: ANL01FN
+      operator: empty
+Core:
+  Id: ADaM-1018
+  Status: Published
+  Version: "1"
+Description: >-
+  For Analysis Flag zz (ANLzzFL) and Analysis Flag zz (N) (ANLzzFN) variables,
+  when ANLzzFL is populated, ANLzzFN must also be populated with the same
+  analysis flag number.
+Executability: Partially Executable
+Outcome:
+  Message: "ANLzzFL is populated but ANLzzFN is not populated"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BASIC DATA STRUCTURE
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: ANL01FL and ANL01FN both populated (valid)
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ANL01FL, ANL01FN]
+        records:
+          - [CDISCPILOT01, 01-701-1015, SODIUM, Y, 1]
+    expected_findings: 0
+  - name: ANL01FL populated but ANL01FN missing (violation)
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ANL01FL, ANL01FN]
+        records:
+          - [CDISCPILOT01, 01-701-1015, SODIUM, Y, ""]
+    expected_findings: 1

@@ -1,0 +1,68 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  Standardized MedDRA Query Scope (SMQzzSC) variable value must be
+                  BROAD, NARROW, or null.
+                Document: ADaM IG v1.1
+                Section: "6.2"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-312
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: SMQ01SC
+      operator: non_empty
+    - name: SMQ01SC
+      operator: not_in
+      value:
+        - BROAD
+        - NARROW
+Core:
+  Id: ADaM-312
+  Status: Published
+  Version: "1"
+Description: >-
+  Standardized MedDRA Query Scope (SMQzzSC) variable value must be BROAD,
+  NARROW, or null. Uses SMQ01SC as a representative variable.
+Executability: Partially Executable
+Outcome:
+  Message: "SMQzzSC value is not BROAD, NARROW, or null"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - OCCURRENCE DATA STRUCTURE
+  Domains:
+    Include:
+      - ADAE
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: SMQ01SC is BROAD (valid)
+    type: positive
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, SMQ01SC]
+        records:
+          - [CDISCPILOT01, 01-701-1015, HEADACHE, BROAD]
+    expected_findings: 0
+  - name: SMQ01SC has invalid value (violation)
+    type: negative
+    datasets:
+      ADAE:
+        variables: [STUDYID, USUBJID, AETERM, SMQ01SC]
+        records:
+          - [CDISCPILOT01, 01-701-1015, HEADACHE, "WIDE"]
+    expected_findings: 1
