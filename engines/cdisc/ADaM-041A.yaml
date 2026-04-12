@@ -1,0 +1,62 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  *DT variables must have non-missing SAS Date Format.
+                Document: ADaM IG v1.1
+                Section: "3.2"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-041A
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: ASTDT
+      operator: is_valid_iso8601
+Core:
+  Id: ADaM-041A
+  Status: Published
+  Version: "1"
+Description: >-
+  *DT variables must have non-missing SAS Date Format. The date value must be
+  formatted as a valid ISO 8601 date (YYYY-MM-DD).
+Executability: Partially Executable
+Outcome:
+  Message: "*DT variable has missing or invalid date format"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - ALL
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: ASTDT is a valid ISO 8601 date
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ASTDT]
+        records:
+          - [CDISCPILOT01, 01-701-1015, SODIUM, "2014-02-10"]
+    expected_findings: 0
+  - name: ASTDT is an invalid date format
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ASTDT]
+        records:
+          - [CDISCPILOT01, 01-701-1015, SODIUM, "02/10/2014"]
+    expected_findings: 1

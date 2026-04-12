@@ -1,10 +1,10 @@
 id: AD0250
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: In Time to Event studies, Event or Censoring Description (EVNTDESC) variable
   is the description of the event of interest or an event that warrants censoring.
   Therefore, Censor (CNSR) variable should be present. Censor Date Description (CNSDTDSC)
@@ -23,8 +23,10 @@ scope:
     - MDBDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: EVNTDESC
+      operator: non_empty
+    - name: CNSR
+      operator: empty
 outcome:
   message: EVNTDESC and/or CNSDTDSC is present, but CNSR is not present
   severity: Error

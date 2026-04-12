@@ -1,0 +1,65 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  If Time-to-Event Origin Date for Subject (STARTDT) variable is
+                  present, then Censor (CNSR) must also be present.
+                Document: ADaM IG v1.1
+                Section: "5.2"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-170
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: STARTDT
+      operator: non_empty
+    - name: CNSR
+      operator: empty
+Core:
+  Id: ADaM-170
+  Status: Published
+  Version: "1"
+Description: >-
+  If Time-to-Event Origin Date for Subject (STARTDT) variable is present,
+  then Censor (CNSR) must also be present.
+Executability: Fully Executable
+Outcome:
+  Message: "STARTDT is present, but CNSR is not present"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BASIC DATA STRUCTURE
+  Domains:
+    Include:
+      - ADTTE
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: STARTDT and CNSR both present (valid)
+    type: positive
+    datasets:
+      ADTTE:
+        variables: [STUDYID, USUBJID, PARAMCD, STARTDT, CNSR]
+        records:
+          - [CDISCPILOT01, 01-701-1015, TTDE, "2014-01-02", 0]
+    expected_findings: 0
+  - name: STARTDT present but CNSR missing (violation)
+    type: negative
+    datasets:
+      ADTTE:
+        variables: [STUDYID, USUBJID, PARAMCD, STARTDT, CNSR]
+        records:
+          - [CDISCPILOT01, 01-701-1015, TTDE, "2014-01-02", ""]
+    expected_findings: 1

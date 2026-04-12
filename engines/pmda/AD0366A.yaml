@@ -1,10 +1,10 @@
 id: AD0366A
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: Date of Randomization (RANDDT) variable value should be populated for
   randomized subjects (when Randomized Population Flag (RANDFL) variable value is
   'Y').
@@ -15,8 +15,11 @@ scope:
     - ADDL
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: RANDFL
+      operator: equal_to
+      value: 'Y'
+    - name: RANDDT
+      operator: empty
 outcome:
   message: Missing value for RANDDT when RANDFL is Y
   severity: Error

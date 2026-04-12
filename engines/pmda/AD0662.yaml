@@ -1,10 +1,10 @@
 id: AD0662
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: If TMPCTDF (Percent Diff. Nominal vs. Actual Time) is populated, both
   ARRLT (Actual Rel. Time from Ref. Dose) and NRRLT (Nominal Rel. Time from Ref. Dose)
   must be populated.
@@ -13,8 +13,12 @@ scope:
   domains: ADNCA
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: TMPCTDF
+      operator: non_empty
+    - name: ARRLT
+      operator: empty
+    - name: NRRLT
+      operator: empty
 outcome:
   message: TMPCTDF is populated and ARRLT or NRRLT are not populated
   severity: Error

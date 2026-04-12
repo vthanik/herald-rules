@@ -1,10 +1,10 @@
 id: AD0251
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: In Time to Event studies, Censor Date Description (CNSDTDSC) variable
   describes the circumstance represented by the censoring date if different from the
   event date that warrants censoring. If present, Censor (CNSR) variable must be present.
@@ -21,8 +21,10 @@ scope:
     - MDBDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: CNSDTDSC
+      operator: non_empty
+    - name: CNSR
+      operator: empty
 outcome:
   message: CNSDTDSC is present, but CNSR is not present
   severity: Error

@@ -1,0 +1,67 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  When both time and datetime variables are collected on the same record,
+                  the time portion of the datetime variable must equal the time variable.
+                Document: ADaM IG v1.1
+                Section: "3.2"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-044
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: ASTTM
+      operator: non_empty
+    - name: ASTDTM
+      operator: empty
+Core:
+  Id: ADaM-044
+  Status: Published
+  Version: "1"
+Description: >-
+  When both time and datetime variables are collected on the same record,
+  the time portion of the datetime variable must equal the time variable.
+  For example, ASTTM must match the time portion of ASTDTM.
+Executability: Partially Executable
+Outcome:
+  Message: "*TM and its corresponding *DTM variable have different time values"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BASIC DATA STRUCTURE
+      - OCCURRENCE DATA STRUCTURE
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: ASTDTM present when ASTTM present
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ASTTM, ASTDTM]
+        records:
+          - [CDISCPILOT01, 01-701-1015, SODIUM, "10:30", "2014-02-10T10:30"]
+    expected_findings: 0
+  - name: ASTTM present but ASTDTM missing
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ASTTM, ASTDTM]
+        records:
+          - [CDISCPILOT01, 01-701-1015, SODIUM, "10:30", ""]
+    expected_findings: 1

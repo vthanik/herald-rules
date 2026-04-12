@@ -1,0 +1,66 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  Date of Randomization (RANDDT) variable value should be populated
+                  for subjects with RANDFL = Y.
+                Document: ADaM IG v1.1
+                Section: "3.3"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-366A
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: RANDFL
+      operator: equal_to
+      value: 'Y'
+    - name: RANDDT
+      operator: empty
+Core:
+  Id: ADaM-366A
+  Status: Published
+  Version: "1"
+Description: >-
+  Date of Randomization (RANDDT) variable value should be populated for
+  subjects with RANDFL = Y.
+Executability: Fully Executable
+Outcome:
+  Message: "Missing value for RANDDT when RANDFL is Y"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - SUBJECT LEVEL
+  Domains:
+    Include:
+      - ADSL
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: RANDFL=Y and RANDDT populated (valid)
+    type: positive
+    datasets:
+      ADSL:
+        variables: [STUDYID, USUBJID, RANDFL, RANDDT]
+        records:
+          - [CDISCPILOT01, 01-701-1015, Y, "2014-01-02"]
+    expected_findings: 0
+  - name: RANDFL=Y but RANDDT missing (violation)
+    type: negative
+    datasets:
+      ADSL:
+        variables: [STUDYID, USUBJID, RANDFL, RANDDT]
+        records:
+          - [CDISCPILOT01, 01-701-1015, Y, ""]
+    expected_findings: 1

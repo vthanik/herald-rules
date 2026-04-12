@@ -1,0 +1,65 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  In Time to Event studies, Censor Date Description (CNSDTDSC) variable
+                  must only be present if Censor (CNSR) variable is also present.
+                Document: ADaM IG v1.1
+                Section: "5.2"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-251
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: CNSDTDSC
+      operator: non_empty
+    - name: CNSR
+      operator: empty
+Core:
+  Id: ADaM-251
+  Status: Published
+  Version: "1"
+Description: >-
+  In Time to Event studies, Censor Date Description (CNSDTDSC) variable must
+  only be present if Censor (CNSR) variable is also present.
+Executability: Fully Executable
+Outcome:
+  Message: "CNSDTDSC is present, but CNSR is not present"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BASIC DATA STRUCTURE
+  Domains:
+    Include:
+      - ADTTE
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: CNSDTDSC and CNSR both present (valid)
+    type: positive
+    datasets:
+      ADTTE:
+        variables: [STUDYID, USUBJID, PARAMCD, CNSDTDSC, CNSR]
+        records:
+          - [CDISCPILOT01, 01-701-1015, TTDE, "Last contact date", 1]
+    expected_findings: 0
+  - name: CNSDTDSC present but CNSR missing (violation)
+    type: negative
+    datasets:
+      ADTTE:
+        variables: [STUDYID, USUBJID, PARAMCD, CNSDTDSC, CNSR]
+        records:
+          - [CDISCPILOT01, 01-701-1015, TTDE, "Last contact date", ""]
+    expected_findings: 1

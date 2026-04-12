@@ -1,0 +1,67 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  If any of the subject-level subperiod timing variables (PxxSwSDT,
+                  PxxSwEDT, etc.) are present, then the corresponding Planned
+                  Treatment for Period (TRTxxP) must also be present.
+                Document: ADaM IG v1.1
+                Section: "3.3"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-570
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: P01STDT
+      operator: non_empty
+    - name: TRT01P
+      operator: empty
+Core:
+  Id: ADaM-570
+  Status: Published
+  Version: "1"
+Description: >-
+  If any of the subject-level subperiod timing variables (PxxSwSDT, PxxSwEDT,
+  etc.) are present, then the corresponding Planned Treatment for Period
+  (TRTxxP) must also be present.
+Executability: Partially Executable
+Outcome:
+  Message: "Variable is present, but TRTxxP is not present"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - SUBJECT LEVEL
+  Domains:
+    Include:
+      - ADSL
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: P01STDT and TRT01P both present (valid)
+    type: positive
+    datasets:
+      ADSL:
+        variables: [STUDYID, USUBJID, P01STDT, TRT01P]
+        records:
+          - [CDISCPILOT01, 01-701-1015, "2014-01-02", Placebo]
+    expected_findings: 0
+  - name: P01STDT present but TRT01P missing (violation)
+    type: negative
+    datasets:
+      ADSL:
+        variables: [STUDYID, USUBJID, P01STDT, TRT01P]
+        records:
+          - [CDISCPILOT01, 01-701-1015, "2014-01-02", ""]
+    expected_findings: 1

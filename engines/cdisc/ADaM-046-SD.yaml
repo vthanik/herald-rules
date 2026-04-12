@@ -1,0 +1,70 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  A variable with a suffix of DY (day) must not equal zero.
+                  Day variables skip zero — day 1 is followed by day -1 going
+                  backwards, not day 0.
+                Document: ADaM IG v1.1
+                Section: "3.2"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-046-SD
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: ADY
+      operator: non_empty
+    - name: ADY
+      operator: equal_to
+      value: 0
+Core:
+  Id: ADaM-046-SD
+  Status: Published
+  Version: "1"
+Description: >-
+  A variable with a suffix of DY (day) must not equal zero. Variables whose
+  suffix is DY represent study day values, which by convention skip zero
+  (i.e., the day before Day 1 is Day -1, not Day 0).
+Executability: Partially Executable
+Outcome:
+  Message: "*DY = 0"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BASIC DATA STRUCTURE
+      - OCCURRENCE DATA STRUCTURE
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: ADY is non-zero (valid)
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ADY]
+        records:
+          - [CDISCPILOT01, 01-701-1015, SODIUM, 1]
+          - [CDISCPILOT01, 01-701-1015, SODIUM, -1]
+    expected_findings: 0
+  - name: ADY equals zero (violation)
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, ADY]
+        records:
+          - [CDISCPILOT01, 01-701-1015, SODIUM, 0]
+    expected_findings: 1

@@ -1,10 +1,10 @@
 id: AD0160
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: If Analysis Window Unit (AWU) variable is present, then Analysis Window
   Beginning Timepoint (AWLO) and (Analysis Window Ending Timepoint) AWHI variables
   must be present.
@@ -17,8 +17,12 @@ scope:
     - ADAMOTHER
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: AWU
+      operator: non_empty
+    - name: AWLO
+      operator: empty
+    - name: AWHI
+      operator: empty
 outcome:
   message: AWU is present, but both AWLO and AWHI are not present
   severity: Error

@@ -1,10 +1,10 @@
 id: AD0170
-version: 1
+version: 2
 status: Reference
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Partially Executable
+executability: Fully Executable
 description: If Time-to-Event Origin Date for Subject (STARTDT) variable is present,
   then Censor (CNSR) variable must be present.
 scope:
@@ -12,8 +12,10 @@ scope:
   domains: BDS
 check:
   all:
-    - name: __see_description__
-      operator: manual_review
+    - name: STARTDT
+      operator: non_empty
+    - name: CNSR
+      operator: empty
 outcome:
   message: STARTDT is present, but CNSR is not present
   severity: Error

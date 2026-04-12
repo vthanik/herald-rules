@@ -1,0 +1,65 @@
+Authorities:
+  - Organization: CDISC
+    Standards:
+      - Name: ADaMIG
+        References:
+          - Citations:
+              - Cited_Guidance: >-
+                  When analysis Phase (APHASE) variable is defined, the analysis Phase
+                  Start Time (PHSTM) variable must be present.
+                Document: ADaM IG v1.1
+                Section: "4.5"
+            Origin: ADaM IG Conformance Rules
+            Rule_Identifier:
+              Id: ADaM-607
+              Version: "1"
+            Version: "1.0"
+        Version: "1.1"
+Check:
+  all:
+    - name: APHASE
+      operator: non_empty
+    - name: PHSTM
+      operator: empty
+Core:
+  Id: ADaM-607
+  Status: Published
+  Version: "1"
+Description: >-
+  When analysis Phase (APHASE) variable is defined, the analysis Phase Start
+  Time (PHSTM) variable must be present and consistent with ADSL.PHwSTM.
+Executability: Partially Executable
+Outcome:
+  Message: "APHASEN w has a PHSTM != ADSL.PHwSTM"
+Rule_Type: Record Data
+Scope:
+  Classes:
+    Include:
+      - BASIC DATA STRUCTURE
+  Domains:
+    Include:
+      - ALL
+Sensitivity: Record
+herald:
+  source: CDISC ADaM Validation Rules XML (September 2015)
+  catalogs:
+    - ADaMIG 1.1
+  fetched: "2026-04-12"
+
+tests:
+  - name: APHASE and PHSTM both present (valid)
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, APHASE, PHSTM]
+        records:
+          - [CDISCPILOT01, 01-701-1015, SODIUM, "Phase 1", "08:00"]
+    expected_findings: 0
+  - name: APHASE present but PHSTM missing (violation)
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, APHASE, PHSTM]
+        records:
+          - [CDISCPILOT01, 01-701-1015, SODIUM, "Phase 1", ""]
+    expected_findings: 1
