@@ -1,19 +1,21 @@
 # Define-XML v2.1 Spec Validation Rules -- Traceability
 
-Rules derived from the CDISC Define-XML v2.1 Specification (Final, 2019-05-15)
-and aligned with Pinnacle 21 Enterprise define validation rules.
+Rules follow the CDISC Define-XML v2.1 Specification (Final,
+2019-05-15), with cross-references into the FDA Study Data Technical
+Conformance Guide and PMDA Validation Rules v6.0. Each rule YAML cites
+its exact section in `provenance`.
 
 > **Rename history:** Rules in this directory were originally numbered
 > `DD0001..DD0086`. They were renamed to `HRL-DD-024..HRL-DD-109`
 > (new number = old number + 23) to avoid ID collision with PMDA's
-> DD-series rules in `engines/pmda/`. The "Internal ID" column below shows
-> the current heraldrules ID; the "P21 Alignment" column keeps the external
-> P21 Community identifiers unchanged because those belong to P21's
-> namespace, not ours.
+> DD-series rules in `engines/pmda/`. The "Internal ID" column below
+> shows the current heraldrules ID; the "External reference" column
+> lists public identifiers (e.g. FDAV-SD, PMDA DDnnnn) useful for
+> sponsors cross-referencing their own compliance matrices.
 
 ## Rule → Spec Section Mapping
 
-| Internal ID range | Spec Section | Topic | P21 Alignment |
+| Internal ID range | Spec Section | Topic | External reference |
 |---|---|---|---|
 | HRL-DD-024..028 | 5.3.3, 5.3.4, 5.3.5 | ODM root, Study, GlobalVariables, MetaDataVersion | DD0006, DD0007 |
 | HRL-DD-029..030 | 5.3.11, 5.3.9.1 | ItemGroupDef required attrs, Description | DD0057 |
@@ -52,6 +54,12 @@ When CDISC publishes a new Define-XML specification version:
 ## Source Documents
 
 - CDISC Define-XML v2.1 Specification (Final, 2019-05-15)
-- P21 Enterprise define_rules.xlsx (31 DD rules + 6 OD rules) — P21 rule IDs
-  are preserved verbatim in the YAML `provenance.p21_reference` field
-- Define-XML v2.1 XML Schema (define2-1-0.xsd)
+- CDISC Define-XML v2.1 XML Schema (define2-1-0.xsd)
+- FDA Study Data Technical Conformance Guide (current edition)
+- PMDA Validation Rules v6.0
+
+Each rule YAML's `provenance` block names the specific document and
+section it enforces. Some entries also include an `external_id` field
+that records an equivalent publicly documented rule number so
+sponsors can map herald findings to their existing compliance
+matrices.
