@@ -28,7 +28,8 @@ cat("=== Building Configs ===\n\n")
 
 collect_ids <- function(engine_dir) {
   files <- list.files(file.path(repo_root, "engines", engine_dir),
-                      pattern = "\\.yaml$", full.names = TRUE)
+                      pattern = "\\.yaml$", full.names = TRUE,
+                      recursive = TRUE)
   ids <- vapply(files, function(f) {
     tryCatch({
       r <- yaml::read_yaml(f)

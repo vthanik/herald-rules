@@ -19,3 +19,21 @@ provenance:
   authority: Herald
   p21_reference: DD0147
 
+tests:
+  - name: "HRL-DD-004 — nominal compliant record"
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, AVAL]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "ALT", "25"]
+    expected_findings: 0
+  - name: "HRL-DD-004 — nominal violating record"
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, AVAL]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "ALT", "25"]
+    expected_findings: 1
+

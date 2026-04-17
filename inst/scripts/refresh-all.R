@@ -21,8 +21,8 @@
 #   1. Fetch CDISC conformance rules (SDTMIG 3.2, 3.3)
 #   2. Fetch PMDA Validation Rules v6.0
 #   3. Parse FDA Validator Rules v1.6
-#   4. Fetch controlled terminology (CDISC Library + NCI EVS extensibility)
-#   5. Generate per-codelist CT rules
+#   4. Fetch controlled terminology from CDISC Library (per-term NCI codes)
+#   5. Fetch IG variable→codelist mappings from CDISC Library
 #   6. Rebuild configs
 #   7. Rebuild master CSV
 #   8. Regenerate manifest.json
@@ -83,10 +83,16 @@ if (!skip_fetch) {
   run_script("fetch-fda.R", c("--force", "--skip-send", if (dry_run) "--dry-run"))
 }
 
-# --- Step 4-5: Fetch CT and generate per-codelist rules -----------------------
+# --- Step 4: Fetch CT from CDISC Library --------------------------------------
 if (!skip_fetch) {
-  cat("\n[4/9] Fetching controlled terminology (NCI EVS)...\n")
+  cat("\n[4/9] Fetching controlled terminology from CDISC Library...\n")
   run_script("fetch-ct.R", if (dry_run) "--dry-run" else character(0))
+}
+
+# --- Step 5: Fetch IG variable->codelist mappings -----------------------------
+if (!skip_fetch) {
+  cat("\n[5/9] Fetching IG variable->codelist mappings...\n")
+  run_script("fetch-ig-variables.R", if (dry_run) "--dry-run" else character(0))
 }
 
 # --- Step 6: Rebuild configs --------------------------------------------------

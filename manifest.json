@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "herald_min_version": "0.1.0",
-  "generated": "2026-04-12T13:03:39Z",
+  "generated": "2026-04-17T11:03:35Z",
   "sources": {
     "cdisc": "CDISC Library API (library.cdisc.org)",
     "fda": "FDA Validator Rules v1.6 (December 2022) + Business Rules v1.5",
@@ -10,12 +10,12 @@
     "herald": "Herald-original rules (gap-fill for P21 parity)"
   },
   "stats": {
-    "total_engine_rules": 3761,
+    "total_engine_rules": 3870,
     "by_engine": {
       "cdisc": 703,
       "ct": 1210,
       "fda": 660,
-      "herald": 147,
+      "herald": 256,
       "pmda": 1041
     },
     "configs": 10
@@ -26,70 +26,70 @@
       "authority": "Combined",
       "standard": "All",
       "version": "2026.2",
-      "rule_count": 3756
+      "rule_count": 3865
     },
     {
       "file": "fda-adam-ig-1.1.json",
       "authority": "FDA",
       "standard": "ADaM-IG",
       "version": "1.1",
-      "rule_count": 2604
+      "rule_count": 2713
     },
     {
       "file": "fda-adam-ig-1.2.json",
       "authority": "FDA",
       "standard": "ADaM-IG",
       "version": "1.2",
-      "rule_count": 2629
+      "rule_count": 2738
     },
     {
       "file": "fda-define-xml-2.1.json",
       "authority": "FDA",
       "standard": "Define-XML",
       "version": "2.1",
-      "rule_count": 2017
+      "rule_count": 2126
     },
     {
       "file": "fda-sdtm-ig-3.2.json",
       "authority": "FDA",
       "standard": "SDTM-IG",
       "version": "3.2",
-      "rule_count": 2604
+      "rule_count": 2713
     },
     {
       "file": "fda-sdtm-ig-3.3.json",
       "authority": "FDA",
       "standard": "SDTM-IG",
       "version": "3.3",
-      "rule_count": 2604
+      "rule_count": 2713
     },
     {
       "file": "pmda-adam-ig-1.1.json",
       "authority": "PMDA",
       "standard": "ADaM-IG",
       "version": "1.1",
-      "rule_count": 2396
+      "rule_count": 2505
     },
     {
       "file": "pmda-define-xml-2.1.json",
       "authority": "PMDA",
       "standard": "Define-XML",
       "version": "2.1",
-      "rule_count": 1519
+      "rule_count": 1628
     },
     {
       "file": "pmda-sdtm-ig-3.2.json",
       "authority": "PMDA",
       "standard": "SDTM-IG",
       "version": "3.2",
-      "rule_count": 2543
+      "rule_count": 2652
     },
     {
       "file": "pmda-sdtm-ig-3.3.json",
       "authority": "PMDA",
       "standard": "SDTM-IG",
       "version": "3.3",
-      "rule_count": 2543
+      "rule_count": 2652
     }
   ]
 }

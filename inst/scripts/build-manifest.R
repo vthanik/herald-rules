@@ -16,7 +16,7 @@ by_engine <- list()
 total_engine <- 0L
 for (eng in engines) {
   d <- file.path(repo_root, "engines", eng)
-  n <- length(list.files(d, pattern = "\\.yaml$"))
+  n <- length(list.files(d, pattern = "\\.yaml$", recursive = TRUE))
   by_engine[[eng]] <- n
   total_engine <- total_engine + n
   cat(sprintf("  engines/%s: %d\n", eng, n))

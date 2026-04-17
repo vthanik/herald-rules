@@ -4,6 +4,10 @@ engines/**/.raw/
 # P21-derived rules (Adapted Material — non-redistributable)
 .local/
 
+# Internal-only handoff docs (consumed by the herald R package session;
+# not published in this catalog)
+HERALD_HANDOFF.md
+
 # OS
 .DS_Store
 Thumbs.db

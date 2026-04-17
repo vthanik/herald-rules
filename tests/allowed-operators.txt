@@ -76,6 +76,8 @@ exists_in_dataset
 # Cross-dataset / define references
 exists_in_define
 not_exists_in_define
+in_define_vlm
+not_in_define_vlm
 __exists
 __not_exists
 has_variable

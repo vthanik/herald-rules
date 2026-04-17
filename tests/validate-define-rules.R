@@ -1,18 +1,18 @@
 #!/usr/bin/env Rscript
 # =============================================================================
-# validate-define-rules.R -- Content validation for DD (Define-XML) rules
+# validate-define-rules.R -- Content validation for HRL-DD (Define-XML) rules
 # =============================================================================
 #
 # Checks beyond structural YAML validity:
-#   1. All DD rules parse and have required herald-format fields
-#   2. Rule IDs are sequential DD0001--DD0085 with no gaps
+#   1. All HRL-DD rules parse and have required herald-format fields
+#   2. Rule IDs are sequential HRL-DD-001..HRL-DD-109 with no gaps
 #   3. Each rule has valid category, sensitivity, severity values
 #   4. Check section contains valid operators
 #   5. Provenance section references a spec section
-#   6. Cross-reference rules (DD0040, DD0055, DD0059, DD0062--DD0073) use __exists checks
+#   6. Cross-reference rules use __exists checks
 #   7. No duplicate descriptions
-#   8. Master CSV has matching rows for all DD rules
-#   9. Config files include all DD rule IDs
+#   8. Master CSV has matching rows for all HRL-DD rules
+#   9. Config files include all HRL-DD rule IDs
 #  10. Allowable value lists are complete (standards, data types, origins, etc.)
 #
 # Usage:
@@ -38,10 +38,11 @@ fail <- function(msg) { errors <<- errors + 1L; cat(sprintf("  FAIL: %s\n", msg)
 warn <- function(msg) { warnings <<- warnings + 1L; cat(sprintf("  WARN: %s\n", msg)) }
 pass <- function(msg) { pass_count <<- pass_count + 1L; cat(sprintf("  PASS: %s\n", msg)) }
 
-# --- Load all DD rules -------------------------------------------------------
+# --- Load all HRL-DD rules ---------------------------------------------------
 dd_dir <- file.path(repo_root, "engines", "herald", "define")
-dd_files <- list.files(dd_dir, pattern = "^DD\\d+\\.yaml$", full.names = TRUE)
-cat(sprintf("Found %d DD rule files\n\n", length(dd_files)))
+dd_files <- list.files(dd_dir, pattern = "^HRL-DD-\\d+\\.yaml$",
+                       full.names = TRUE)
+cat(sprintf("Found %d HRL-DD rule files\n\n", length(dd_files)))
 
 rules <- list()
 for (f in dd_files) {
@@ -70,16 +71,19 @@ if (errors == 0L) pass(sprintf("All %d rules have required fields", length(rules
 # --- 2. Sequential IDs -------------------------------------------------------
 cat("\n[2/10] ID sequence...\n")
 actual_ids   <- sort(names(rules))
-max_num      <- max(as.integer(sub("^DD0*", "", actual_ids)), na.rm = TRUE)
-expected_ids <- sprintf("DD%04d", seq_len(max_num))
-missing_ids  <- setdiff(expected_ids, actual_ids)
-
-if (length(missing_ids) > 0L) {
-  fail(sprintf("Missing IDs (gaps in sequence): %s",
-               paste(head(missing_ids, 5), collapse = ", ")))
-}
-if (length(missing_ids) == 0L) {
-  pass(sprintf("DD0001--DD%04d all present, no gaps", max_num))
+nums         <- as.integer(sub("^HRL-DD-0*", "", actual_ids))
+if (length(nums) == 0L || all(is.na(nums))) {
+  warn("No HRL-DD rule IDs found to validate sequence")
+} else {
+  max_num      <- max(nums, na.rm = TRUE)
+  expected_ids <- sprintf("HRL-DD-%03d", seq_len(max_num))
+  missing_ids  <- setdiff(expected_ids, actual_ids)
+  if (length(missing_ids) > 0L) {
+    fail(sprintf("Missing IDs (gaps in sequence): %s",
+                 paste(head(missing_ids, 5), collapse = ", ")))
+  } else {
+    pass(sprintf("HRL-DD-001..HRL-DD-%03d all present, no gaps", max_num))
+  }
 }
 
 # --- 3. Valid enumerated values -----------------------------------------------
@@ -89,9 +93,12 @@ valid_categories <- c(
   "Variable Definition", "Origin Metadata", "Cross-Reference",
   "Value-Level Metadata", "Codelist Definition", "Method Definition",
   "Comment Definition", "Orphan Detection", "ARM Metadata",
-  "Conformance"
+  "Conformance",
+  # Herald-original Define-XML extension categories (HRL-DD-015..023)
+  "VLM Completeness", "Method Completeness", "VLM Specification",
+  "CodeList Reference"
 )
-valid_sensitivity <- c("Study", "Dataset", "Record")
+valid_sensitivity <- c("Study", "Dataset", "Record", "Variable")
 valid_severity <- c("Error", "Warning")
 valid_status <- c("Published", "Reference", "Draft", "Deprecated")
 
@@ -178,8 +185,10 @@ for (rid in names(rules)) {
 if (prov_errors == 0L) pass("All rules have provenance with authority")
 
 # --- 6. Cross-reference rules use __exists checks ----------------------------
+# Post-rename: old DD0040, 0055, 0059, 0062..0073 map to new_number = old + 23,
+# i.e. HRL-DD-063, 078, 082, 085..096.
 cat("\n[6/10] Cross-reference pattern...\n")
-xref_ids <- sprintf("DD%04d", c(40, 55, 59, 62:73))
+xref_ids <- sprintf("HRL-DD-%03d", c(63, 78, 82, 85:96))
 for (rid in xref_ids) {
   r <- rules[[rid]]
   if (is.null(r)) next
@@ -209,15 +218,15 @@ cat("\n[8/10] Master CSV consistency...\n")
 csv_path <- file.path(repo_root, "herald-master-rules.csv")
 if (file.exists(csv_path)) {
   csv <- read.csv(csv_path, stringsAsFactors = FALSE)
-  csv_dd <- csv$rule_id[grepl("^DD0", csv$rule_id)]
+  csv_dd <- csv$rule_id[grepl("^HRL-DD-", csv$rule_id)]
   yaml_dd <- names(rules)
 
   missing_from_csv <- setdiff(yaml_dd, csv_dd)
   if (length(missing_from_csv) > 0L) {
-    fail(sprintf("DD rules in YAML but not CSV: %s",
+    fail(sprintf("HRL-DD rules in YAML but not CSV: %s",
                  paste(head(missing_from_csv, 5), collapse = ", ")))
   } else {
-    pass(sprintf("All %d DD rules present in master CSV", length(yaml_dd)))
+    pass(sprintf("All %d HRL-DD rules present in master CSV", length(yaml_dd)))
   }
 } else {
   warn("herald-master-rules.csv not found")
@@ -228,55 +237,57 @@ cat("\n[9/10] Config file inclusion...\n")
 for (cfg_name in c("fda-define-xml-2.1.json", "pmda-define-xml-2.1.json")) {
   cfg_path <- file.path(repo_root, "configs", cfg_name)
   if (file.exists(cfg_path)) {
-    cfg <- jsonlite::fromJSON(readLines(cfg_path, warn = FALSE), simplifyVector = TRUE)
-    cfg_dd <- cfg$rule_ids[grepl("^DD0", cfg$rule_ids)]
+    cfg <- jsonlite::fromJSON(readLines(cfg_path, warn = FALSE),
+                              simplifyVector = TRUE)
+    cfg_dd <- cfg$rule_ids[grepl("^HRL-DD-", cfg$rule_ids)]
     missing <- setdiff(names(rules), cfg_dd)
     if (length(missing) > 0L) {
-      fail(sprintf("%s: missing DD rules: %s", cfg_name,
+      fail(sprintf("%s: missing HRL-DD rules: %s", cfg_name,
                    paste(head(missing, 5), collapse = ", ")))
     } else {
-      pass(sprintf("%s: all DD rules included", cfg_name))
+      pass(sprintf("%s: all HRL-DD rules included", cfg_name))
     }
   }
 }
 
 # --- 10. Allowable value completeness ----------------------------------------
+# Post-rename: old DD0014/0023/0031 are HRL-DD-037/046/054 (old number + 23).
 cat("\n[10/10] Allowable value completeness...\n")
 
-# DD0014: SDTMIG versions
-r14 <- rules[["DD0014"]]
-if (!is.null(r14)) {
-  versions <- r14$check$all[[2]]$value
+# HRL-DD-037 (was DD0014): SDTMIG versions
+r37 <- rules[["HRL-DD-037"]]
+if (!is.null(r37)) {
+  versions <- r37$check$all[[2]]$value
   expected_v <- c("3.1.2", "3.2", "3.3", "3.4")
   if (!all(expected_v %in% versions)) {
-    fail(sprintf("DD0014: missing SDTMIG versions: %s",
+    fail(sprintf("HRL-DD-037: missing SDTMIG versions: %s",
                  paste(setdiff(expected_v, versions), collapse = ", ")))
   } else {
-    pass("DD0014: SDTMIG versions complete (3.1.2, 3.2, 3.3, 3.4)")
+    pass("HRL-DD-037: SDTMIG versions complete (3.1.2, 3.2, 3.3, 3.4)")
   }
 }
 
-# DD0023: Data types
-r23 <- rules[["DD0023"]]
-if (!is.null(r23)) {
-  types <- r23$check$all[[2]]$value
+# HRL-DD-046 (was DD0023): Data types
+r46 <- rules[["HRL-DD-046"]]
+if (!is.null(r46)) {
+  types <- r46$check$all[[2]]$value
   expected_t <- c("text", "integer", "float", "date", "datetime")
   if (!all(expected_t %in% types)) {
-    fail("DD0023: missing core data types")
+    fail("HRL-DD-046: missing core data types")
   } else {
-    pass(sprintf("DD0023: data types complete (%d types)", length(types)))
+    pass(sprintf("HRL-DD-046: data types complete (%d types)", length(types)))
   }
 }
 
-# DD0031: Origin types
-r31 <- rules[["DD0031"]]
-if (!is.null(r31)) {
-  origins <- r31$check$all[[2]]$value
+# HRL-DD-054 (was DD0031): Origin types
+r54 <- rules[["HRL-DD-054"]]
+if (!is.null(r54)) {
+  origins <- r54$check$all[[2]]$value
   expected_o <- c("Collected", "Derived", "Assigned", "Protocol", "Predecessor")
   if (!all(expected_o %in% origins)) {
-    fail("DD0031: missing origin types")
+    fail("HRL-DD-054: missing origin types")
   } else {
-    pass(sprintf("DD0031: origin types complete (%d types)", length(origins)))
+    pass(sprintf("HRL-DD-054: origin types complete (%d types)", length(origins)))
   }
 }
 

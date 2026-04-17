@@ -135,7 +135,8 @@ Core:
 | herald custom (YAML) | `HRL-{CAT}-NNN` | `HRL-AD-001` | `engines/herald/` |
 | herald custom (hardcoded) | `HRL-{CAT}-NNN` | `HRL-VAR-001` | `engines/herald/` |
 | herald CT per-codelist | `HRL-CT-NNNN` | `HRL-CT-0001` | `engines/ct/` |
-| herald Define-XML spec | `DDNNNN` | `DD0001` | `engines/herald/define/` |
+| herald Define-XML spec | `HRL-DD-NNN` | `HRL-DD-024` | `engines/herald/define/` |
+| PMDA Define-XML (v6.0) | `DDNNNN` | `DD0001` | `engines/pmda/` |
 
 ---
 

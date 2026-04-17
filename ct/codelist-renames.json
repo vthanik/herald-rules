@@ -1,0 +1,14 @@
+{
+  "_schema_version": 1,
+  "_description": "Hand-curated deprecated -> successor codelist mapping. Covers cases where the name-prefix heuristic in fetch-ct.R cannot detect the rename automatically. Values here override (not replace) the heuristic-derived superseded_by field. Leave the value as null if the old codelist was retired without a direct successor.",
+  "_update_policy": "Add a new entry only after verifying against the latest CDISC Library CT package. Prefer null over guessing. When a deprecated codelist has no direct successor, include it here with value=null so reviewers know the deprecation was explicitly reviewed (vs the heuristic simply not finding a match).",
+  "sdtm": {
+    "ETHNIC":    "ETHNICC",
+    "CCRCLSCD":  null,
+    "CCRCLS":    null,
+    "LBSTRESC":  null,
+    "MSRESCAT":  null,
+    "OBSSBSR":   null
+  },
+  "adam": {}
+}

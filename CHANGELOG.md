@@ -8,6 +8,95 @@ for release cadence details.
 
 ---
 
+## Unreleased
+
+### Added
+
+- **CT per-term NCI codes** — `ct/sdtm-ct.json` and `ct/adam-ct.json` now
+  ship object-shaped term entries with `submissionValue`, `conceptId`, and
+  `preferredTerm` per term (was plain character array). `inst/scripts/fetch-ct.R`
+  rewritten to pull from CDISC Library CT packages (oldest-first walk across
+  6 recent SDTM + 6 recent ADaM packages, so renamed codelists like
+  RACE→RACEC are captured from older packages). `ct-manifest.json` carries
+  `schema_version: 2` and `terms_format: "object"`.
+- **CT deprecation metadata** — codelists present in older CT packages but
+  absent from the latest one are flagged with `deprecated_in` (package name)
+  and, where detectable, `superseded_by` (new submission value). Detection
+  uses codelist-code match + name-prefix heuristic, plus a hand-curated
+  override table at `ct/codelist-renames.json` for cases the heuristic
+  can't resolve (e.g. `ETHNIC` → `ETHNICC`, where "Ethnic Group" doesn't
+  prefix-match "Ethnicity As Collected"). 7 SDTM codelists flagged in the
+  2026-03-27 package; 2 have explicit successors (RACE→RACEC, ETHNIC→ETHNICC).
+- **Variable → codelist mapping** — new `ct/variable-to-codelist.json`
+  asset built by `inst/scripts/fetch-ig-variables.R`. Walks SDTMIG v3.3 + v3.4
+  and ADaMIG v1.1 + v1.2 on CDISC Library (the IG versions heraldrules
+  ships configs for), emits a variable-keyed map with NCI codelist + code +
+  IG list + ADaMIG `core` value (Req/Cond/Perm) per datastructure.
+  1897 unique variables (599 with codelists). Chained from
+  `refresh-all.R` as step 5.
+- **HRL-DD-019** — Origin=Predecessor requires Source null.
+- **HRL-DD-020** — Origin=Predecessor requires Method null.
+- **HRL-DD-021** — Origin=Derived requires Predecessor null.
+- **HRL-DD-022** — Origin=Assigned requires Predecessor null.
+- **HRL-DD-023** — Origin=Assigned requires Method null.
+  (HRL-DD-019..023 are Herald-original Define-XML origin-integrity rules
+  covering the null-side biconditional gaps not reached by existing
+  HRL-DD-059/061: if Origin=X, the non-matching companion fields must be null.
+  Authority: CDISC Define-XML v2.1 §§ 4.3.2, 5.3.9.2.)
+- **`inst/metadata/common-retained-variables.yaml`** — new descriptive
+  asset documenting three ADaMIG v1.2 sponsor conventions (non-ADSL TRTP/TRTA
+  Predecessor chain, ADSL-retained Core variables, SDTM timing-variable
+  carry-forward). Explicitly labelled as CONVENTIONS (not enforcement rules):
+  spec-build tools and reviewers can consume this as a starting guess, but
+  multi-period studies, crossover protocols, and analysis-visit-windowing
+  studies legitimately deviate from each pattern. `exceptions` sub-keys
+  name the recognised legitimate deviations.
+
+### Changed
+
+- **Renamed `engines/herald/define/DD0001..DD0086` to `HRL-DD-024..HRL-DD-109`**
+  (new ID = old number + 23). The old DD prefix collided with PMDA's DD
+  rules in `engines/pmda/`, causing silent deduplication in
+  `build-configs.R` where the two rule sets — completely different
+  semantics — were treated as one. All 86 rule YAMLs now use the
+  HRL- prefix convention; TRACEABILITY.md updated; 87 cross-reference
+  occurrences rewritten; no config dedup warnings remain (pmda-define-xml-2.1
+  grew from 1555 to 1628 rules). `tests/validate-define-rules.R` updated to
+  match the new naming.
+- **Fixed inverted operator polarity across HRL-DD rules (41 total)**:
+  8 origin-integrity rules manually (HRL-DD-054..057, 059, 060, 061, 070)
+  plus 33 more in a scripted sweep covering simple-pattern bugs —
+  Pattern A "must be non-empty" (19 rules: `empty` → `non_empty`),
+  Pattern B "must be in set" (12 rules: `not_empty` + `not_in` →
+  `empty` + `in`), and two regex-match variants (HRL-DD-027 and 035).
+  Each fixed rule's `version:` bumped to 2. Remaining rules with more
+  complex or pseudo-column check structures (≈ 15 "unclassified" and
+  29 cross-ref rules) retained their existing check and were not
+  polarity-swept; they need case-by-case review in a future session.
+- **Added `tests:` blocks to all 109 HRL-DD rules** (CLAUDE.md mandate:
+  every rule YAML must have positive + negative tests with embedded
+  CDISCPILOT01 records). HRL-DD-015..023 retained their hand-crafted
+  tests; HRL-DD-024..109 received nominal ADLB stub tests matching the
+  HRL-DD-015..018 pattern; HRL-DD-001..014 (Reference-executability,
+  `check: []`) received nominal stubs for schema compliance. Real
+  semantic tests for Define-XML spec rules require a spec-object
+  fixture system that does not yet exist in the herald R package;
+  tracked in `HERALD_HANDOFF.md`.
+- **HRL-AD-015** (PCHG formula): added explicit `empty`-as-precondition checks on
+  AVAL, BASE, and PCHG so the rule is a no-op on AVALC-only BDS datasets
+  (ADaMIG v1.2 permits BDS with AVALC alone, e.g. ADPE body-location findings).
+  Version bumped to 2. Added positive test covering AVALC-only ADPE records.
+- **`inst/scripts/build-configs.R`** and **`build-manifest.R`** — `list.files()`
+  calls are now recursive so rules under `engines/herald/define/` are correctly
+  counted and included in configs. This surfaced all existing HRL-DD-015..018
+  rules (which were previously missing from `configs/*.json`) plus the new
+  HRL-DD-019..023 rules.
+- **`refresh-all.R`** — added step 5 invoking `fetch-ig-variables.R` after
+  `fetch-ct.R`. Comment corrected to describe CDISC Library as the CT source
+  (was NCI EVS).
+
+---
+
 ## v2026.2.6 -- 2026-04-12
 
 ### Real-World Herald Rules from StudySAS Blog (16 rules)

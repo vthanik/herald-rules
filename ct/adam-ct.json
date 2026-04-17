@@ -1,140 +1,897 @@
 {
-  "APCH1PC": {
-    "codelist_code": "C208382",
-    "codelist_name": "Acute Physiology and Chronic Health Evaluation II Clinical Classification Parameter Code",
-    "extensible": false,
-    "terms": ["APCH1TPS", "APCH1TS"]
-  },
-  "APCH1PN": {
-    "codelist_code": "C208381",
-    "codelist_name": "Acute Physiology and Chronic Health Evaluation II Clinical Classification Parameter Name",
-    "extensible": false,
-    "terms": ["APCH1-A: Total Acute Physiology Score - Analysis", "APCH1-Total APACHE II Score - Analysis"]
-  },
-  "STRATA": {
-    "codelist_code": "C204411",
-    "codelist_name": "Analysis Stratum",
-    "extensible": false,
-    "terms": ["AGE", "RACE", "SEX", "TOBACCO PRODUCT CATEGORY", "TOBACCO PRODUCT USE STATUS POST-TRANSITION", "TOBACCO PRODUCT USE STATUS PRE-TRANSITION", "TOBACCO PRODUCT USE STATUS", "TOBACCO PRODUCT USE TRANSITION TYPE", "YEAR"]
-  },
   "CHSFPC": {
     "codelist_code": "C187458",
     "codelist_name": "Craig Handicap Assessment and Reporting Technique-Short Form Questionnaires Parameter Code",
     "extensible": false,
-    "terms": ["CHSF01A", "CHSF01B", "CHSF02", "CHSF03", "CHSF04", "CHSF05", "CHSF06", "CHSF07A", "CHSF07B", "CHSF08", "CHSF09", "CHSF10", "CHSF11", "CHSF12", "CHSF13", "CHSF14", "CHSF15", "CHSF16", "CHSF17", "CHSF18", "CHSF19", "CHSFCS", "CHSFES", "CHSFMS", "CHSFOS", "CHSFPS", "CHSFSS", "CHSFTS"]
+    "terms": [
+      {
+        "submissionValue": "CHSF01A",
+        "conceptId": "C187467",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Paid Personal Care per Day"
+      },
+      {
+        "submissionValue": "CHSF01B",
+        "conceptId": "C187468",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Unpaid Personal Care per Day"
+      },
+      {
+        "submissionValue": "CHSF02",
+        "conceptId": "C187469",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Home Cognitive Assistance per Day"
+      },
+      {
+        "submissionValue": "CHSF03",
+        "conceptId": "C187470",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Away Cognitive Assistance per Day"
+      },
+      {
+        "submissionValue": "CHSF04",
+        "conceptId": "C187471",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Hours Out of Bed per Day"
+      },
+      {
+        "submissionValue": "CHSF05",
+        "conceptId": "C187472",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Days Out of the House per Week"
+      },
+      {
+        "submissionValue": "CHSF06",
+        "conceptId": "C187473",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Nights Away From Home Last Year"
+      },
+      {
+        "submissionValue": "CHSF07A",
+        "conceptId": "C187474",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Hours of Paid Work per Week"
+      },
+      {
+        "submissionValue": "CHSF07B",
+        "conceptId": "C187475",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Occupation of Paid Work"
+      },
+      {
+        "submissionValue": "CHSF08",
+        "conceptId": "C187476",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Hours of Schoolwork per Week"
+      },
+      {
+        "submissionValue": "CHSF09",
+        "conceptId": "C187477",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Hours of Homemaking per Week"
+      },
+      {
+        "submissionValue": "CHSF10",
+        "conceptId": "C187478",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Hours of Home Maintenance per Week"
+      },
+      {
+        "submissionValue": "CHSF11",
+        "conceptId": "C187479",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Hours of Recreation per Week"
+      },
+      {
+        "submissionValue": "CHSF12",
+        "conceptId": "C187480",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Number of People You Live With"
+      },
+      {
+        "submissionValue": "CHSF13",
+        "conceptId": "C187481",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Live With Spouse or Significant Other"
+      },
+      {
+        "submissionValue": "CHSF14",
+        "conceptId": "C187482",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Number of Relatives You Live With"
+      },
+      {
+        "submissionValue": "CHSF15",
+        "conceptId": "C187483",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Associates Contacted per Month"
+      },
+      {
+        "submissionValue": "CHSF16",
+        "conceptId": "C187484",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Friends Contacted per Month"
+      },
+      {
+        "submissionValue": "CHSF17",
+        "conceptId": "C187485",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Strangers Spoke with Last Month"
+      },
+      {
+        "submissionValue": "CHSF18",
+        "conceptId": "C187486",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Combined Household Income Last Year"
+      },
+      {
+        "submissionValue": "CHSF19",
+        "conceptId": "C187487",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Medical Care Expenses Last Year"
+      },
+      {
+        "submissionValue": "CHSFCS",
+        "conceptId": "C187489",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Cognitive Independence Subscore for Analysis"
+      },
+      {
+        "submissionValue": "CHSFES",
+        "conceptId": "C187493",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Economic Self-Sufficiency Subscore for Analysis"
+      },
+      {
+        "submissionValue": "CHSFMS",
+        "conceptId": "C187490",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Mobility Subscore for Analysis"
+      },
+      {
+        "submissionValue": "CHSFOS",
+        "conceptId": "C187491",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Occupation Subscore for Analysis"
+      },
+      {
+        "submissionValue": "CHSFPS",
+        "conceptId": "C187488",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Physical Independence Subscore for Analysis"
+      },
+      {
+        "submissionValue": "CHSFSS",
+        "conceptId": "C187492",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Social Integration Subscore for Analysis"
+      },
+      {
+        "submissionValue": "CHSFTS",
+        "conceptId": "C187494",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Total Score for Analysis"
+      }
+    ]
   },
   "CHSFPN": {
     "codelist_code": "C187457",
     "codelist_name": "Craig Handicap Assessment and Reporting Technique-Short Form Questionnaires Parameter Name",
     "extensible": false,
-    "terms": ["CHSF-Associates Contacted per Month", "CHSF-Away Cognitive Assistance per Day", "CHSF-Cognitive Independence Subscore-Analysis", "CHSF-Combined Household Income Last Yr", "CHSF-Days Out of the House per Week", "CHSF-Economic Self-Sufficiency Subscore-Analysis", "CHSF-Friends Contacted per Month", "CHSF-Home Cognitive Assistance per Day", "CHSF-Hours of Home Maintenance per Week", "CHSF-Hours of Homemaking per Week", "CHSF-Hours of Paid Work per Week", "CHSF-Hours of Recreation per Week", "CHSF-Hours of Schoolwork per Week", "CHSF-Hours Out of Bed per Day", "CHSF-Live With Spouse or Signif Other", "CHSF-Medical Care Expenses Last Year", "CHSF-Mobility Subscore-Analysis", "CHSF-Nights Away From Home Last Year", "CHSF-Number of People You Live With", "CHSF-Number of Relatives You Live With", "CHSF-Occupation of Paid Work", "CHSF-Occupation Subscore-Analysis", "CHSF-Paid Personal Care per Day", "CHSF-Physical Independence Subscore-Analysis", "CHSF-Social Integration Subscore-Analysis", "CHSF-Strangers Spoke with Last Month", "CHSF-Total Score-Analysis", "CHSF-Unpaid Personal Care per Day"]
+    "terms": [
+      {
+        "submissionValue": "CHSF-Associates Contacted per Month",
+        "conceptId": "C187483",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Associates Contacted per Month"
+      },
+      {
+        "submissionValue": "CHSF-Away Cognitive Assistance per Day",
+        "conceptId": "C187470",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Away Cognitive Assistance per Day"
+      },
+      {
+        "submissionValue": "CHSF-Cognitive Independence Subscore-Analysis",
+        "conceptId": "C187489",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Cognitive Independence Subscore for Analysis"
+      },
+      {
+        "submissionValue": "CHSF-Combined Household Income Last Yr",
+        "conceptId": "C187486",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Combined Household Income Last Year"
+      },
+      {
+        "submissionValue": "CHSF-Days Out of the House per Week",
+        "conceptId": "C187472",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Days Out of the House per Week"
+      },
+      {
+        "submissionValue": "CHSF-Economic Self-Sufficiency Subscore-Analysis",
+        "conceptId": "C187493",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Economic Self-Sufficiency Subscore for Analysis"
+      },
+      {
+        "submissionValue": "CHSF-Friends Contacted per Month",
+        "conceptId": "C187484",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Friends Contacted per Month"
+      },
+      {
+        "submissionValue": "CHSF-Home Cognitive Assistance per Day",
+        "conceptId": "C187469",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Home Cognitive Assistance per Day"
+      },
+      {
+        "submissionValue": "CHSF-Hours of Home Maintenance per Week",
+        "conceptId": "C187478",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Hours of Home Maintenance per Week"
+      },
+      {
+        "submissionValue": "CHSF-Hours of Homemaking per Week",
+        "conceptId": "C187477",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Hours of Homemaking per Week"
+      },
+      {
+        "submissionValue": "CHSF-Hours of Paid Work per Week",
+        "conceptId": "C187474",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Hours of Paid Work per Week"
+      },
+      {
+        "submissionValue": "CHSF-Hours of Recreation per Week",
+        "conceptId": "C187479",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Hours of Recreation per Week"
+      },
+      {
+        "submissionValue": "CHSF-Hours of Schoolwork per Week",
+        "conceptId": "C187476",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Hours of Schoolwork per Week"
+      },
+      {
+        "submissionValue": "CHSF-Hours Out of Bed per Day",
+        "conceptId": "C187471",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Hours Out of Bed per Day"
+      },
+      {
+        "submissionValue": "CHSF-Live With Spouse or Signif Other",
+        "conceptId": "C187481",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Live With Spouse or Significant Other"
+      },
+      {
+        "submissionValue": "CHSF-Medical Care Expenses Last Year",
+        "conceptId": "C187487",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Medical Care Expenses Last Year"
+      },
+      {
+        "submissionValue": "CHSF-Mobility Subscore-Analysis",
+        "conceptId": "C187490",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Mobility Subscore for Analysis"
+      },
+      {
+        "submissionValue": "CHSF-Nights Away From Home Last Year",
+        "conceptId": "C187473",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Nights Away From Home Last Year"
+      },
+      {
+        "submissionValue": "CHSF-Number of People You Live With",
+        "conceptId": "C187480",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Number of People You Live With"
+      },
+      {
+        "submissionValue": "CHSF-Number of Relatives You Live With",
+        "conceptId": "C187482",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Number of Relatives You Live With"
+      },
+      {
+        "submissionValue": "CHSF-Occupation of Paid Work",
+        "conceptId": "C187475",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Occupation of Paid Work"
+      },
+      {
+        "submissionValue": "CHSF-Occupation Subscore-Analysis",
+        "conceptId": "C187491",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Occupation Subscore for Analysis"
+      },
+      {
+        "submissionValue": "CHSF-Paid Personal Care per Day",
+        "conceptId": "C187467",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Paid Personal Care per Day"
+      },
+      {
+        "submissionValue": "CHSF-Physical Independence Subscore-Analysis",
+        "conceptId": "C187488",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Physical Independence Subscore for Analysis"
+      },
+      {
+        "submissionValue": "CHSF-Social Integration Subscore-Analysis",
+        "conceptId": "C187492",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Social Integration Subscore for Analysis"
+      },
+      {
+        "submissionValue": "CHSF-Strangers Spoke with Last Month",
+        "conceptId": "C187485",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Strangers Spoke with Last Month"
+      },
+      {
+        "submissionValue": "CHSF-Total Score-Analysis",
+        "conceptId": "C187494",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Total Score for Analysis"
+      },
+      {
+        "submissionValue": "CHSF-Unpaid Personal Care per Day",
+        "conceptId": "C187468",
+        "preferredTerm": "Craig Handicap Assessment and Reporting Technique-Short Form - Unpaid Personal Care per Day"
+      }
+    ]
   },
   "DATEFL": {
     "codelist_code": "C81223",
     "codelist_name": "Date Imputation Flag",
     "extensible": false,
-    "terms": ["D", "M", "Y"]
+    "terms": [
+      {
+        "submissionValue": "D",
+        "conceptId": "C81212",
+        "preferredTerm": "Day Imputed"
+      },
+      {
+        "submissionValue": "M",
+        "conceptId": "C81211",
+        "preferredTerm": "Month Day Imputed"
+      },
+      {
+        "submissionValue": "Y",
+        "conceptId": "C81210",
+        "preferredTerm": "Year Month Day Imputed"
+      }
+    ]
   },
   "DTYPE": {
     "codelist_code": "C81224",
     "codelist_name": "Derivation Type",
-    "extensible": false,
-    "terms": ["AVERAGE", "BC", "BLOCF", "BOC", "BOCF", "COPY", "EXTRAP", "HALFLLOQ", "INTERP", "LLOD", "LLOQ", "LOCF", "LOV", "LVPD", "MAXIMUM", "MINIMUM", "ML", "MOTH", "MOV", "NOCB", "PHANTOM", "POCF", "SOCF", "ULOD", "ULOQ", "WC", "WOC", "WOCF", "WOV"]
+    "extensible": true,
+    "terms": [
+      {
+        "submissionValue": "AVERAGE",
+        "conceptId": "C81209",
+        "preferredTerm": "Average of Value Derivation Technique"
+      },
+      {
+        "submissionValue": "BC",
+        "conceptId": "C92225",
+        "preferredTerm": "Best Case Imputation Technique"
+      },
+      {
+        "submissionValue": "BLOCF",
+        "conceptId": "C81201",
+        "preferredTerm": "Baseline Observation Carried Forward Imputation Technique"
+      },
+      {
+        "submissionValue": "BOC",
+        "conceptId": "C132340",
+        "preferredTerm": "Best Observed Case Imputation Technique"
+      },
+      {
+        "submissionValue": "BOCF",
+        "conceptId": "C92226",
+        "preferredTerm": "Best Observation Carried Forward Imputation Technique"
+      },
+      {
+        "submissionValue": "COPY",
+        "conceptId": "C184383",
+        "preferredTerm": "Copy Duplication Imputation Technique"
+      },
+      {
+        "submissionValue": "EXTRAP",
+        "conceptId": "C139176",
+        "preferredTerm": "Extrapolation Imputation Technique"
+      },
+      {
+        "submissionValue": "HALFLLOQ",
+        "conceptId": "C170546",
+        "preferredTerm": "One Half of Lower Limit of Quantification Derivation Technique"
+      },
+      {
+        "submissionValue": "INTERP",
+        "conceptId": "C81208",
+        "preferredTerm": "Interpolation Imputation Technique"
+      },
+      {
+        "submissionValue": "LLOD",
+        "conceptId": "C105701",
+        "preferredTerm": "Detection Limit"
+      },
+      {
+        "submissionValue": "LLOQ",
+        "conceptId": "C170543",
+        "preferredTerm": "Lower Limit of Quantification Derivation Technique"
+      },
+      {
+        "submissionValue": "LOCF",
+        "conceptId": "C81198",
+        "preferredTerm": "Last Observation Carried Forward Imputation Technique"
+      },
+      {
+        "submissionValue": "LOV",
+        "conceptId": "C132341",
+        "preferredTerm": "Last Observed Value Imputation Technique"
+      },
+      {
+        "submissionValue": "LVPD",
+        "conceptId": "C132342",
+        "preferredTerm": "Last Value Prior to Dosing Imputation Technique"
+      },
+      {
+        "submissionValue": "MAXIMUM",
+        "conceptId": "C82868",
+        "preferredTerm": "Maximum Value Derivation Technique"
+      },
+      {
+        "submissionValue": "MINIMUM",
+        "conceptId": "C82867",
+        "preferredTerm": "Minimum Value Derivation Technique"
+      },
+      {
+        "submissionValue": "ML",
+        "conceptId": "C53331",
+        "preferredTerm": "Maximum Likelihood Estimation"
+      },
+      {
+        "submissionValue": "MOTH",
+        "conceptId": "C81204",
+        "preferredTerm": "Mean of Other Group Imputation Technique"
+      },
+      {
+        "submissionValue": "MOV",
+        "conceptId": "C81207",
+        "preferredTerm": "Mean Observed Value in a Group Imputation Technique"
+      },
+      {
+        "submissionValue": "NOCB",
+        "conceptId": "C204584",
+        "preferredTerm": "Next Observation Carried Backward Imputation Technique"
+      },
+      {
+        "submissionValue": "PHANTOM",
+        "conceptId": "C170545",
+        "preferredTerm": "Phantom Record Imputation Technique"
+      },
+      {
+        "submissionValue": "POCF",
+        "conceptId": "C81205",
+        "preferredTerm": "Penultimate Observation Carried Forward Imputation Technique"
+      },
+      {
+        "submissionValue": "SOCF",
+        "conceptId": "C81200",
+        "preferredTerm": "Screening Observation Carried Forward Imputation Technique"
+      },
+      {
+        "submissionValue": "ULOD",
+        "conceptId": "C174264",
+        "preferredTerm": "Upper Limit of Detection Imputation Technique"
+      },
+      {
+        "submissionValue": "ULOQ",
+        "conceptId": "C170544",
+        "preferredTerm": "Upper Limit of Quantification Derivation Technique"
+      },
+      {
+        "submissionValue": "WC",
+        "conceptId": "C81203",
+        "preferredTerm": "Worst Case Imputation Technique"
+      },
+      {
+        "submissionValue": "WOC",
+        "conceptId": "C132343",
+        "preferredTerm": "Worst Observed Case Imputation Technique"
+      },
+      {
+        "submissionValue": "WOCF",
+        "conceptId": "C81199",
+        "preferredTerm": "Worst Observation Carried Forward Imputation Technique"
+      },
+      {
+        "submissionValue": "WOV",
+        "conceptId": "C81206",
+        "preferredTerm": "Worst Observed Value in a Group Imputation Technique"
+      }
+    ]
   },
   "GAD02PC": {
     "codelist_code": "C172334",
     "codelist_name": "Generalized Anxiety Disorder - 7 Version 2 Questionnaire Parameter Code",
     "extensible": false,
-    "terms": "GAD02TS"
+    "terms": [
+      {
+        "submissionValue": "GAD02TS",
+        "conceptId": "C172451",
+        "preferredTerm": "Generalized Anxiety Disorder - 7 Version 2 - Total Score for Analysis"
+      }
+    ]
   },
   "GAD02PN": {
     "codelist_code": "C172335",
     "codelist_name": "Generalized Anxiety Disorder - 7 Version 2 Questionnaire Parameter Name",
     "extensible": false,
-    "terms": "GAD02-Total Score - Analysis"
+    "terms": [
+      {
+        "submissionValue": "GAD02-Total Score - Analysis",
+        "conceptId": "C172451",
+        "preferredTerm": "Generalized Anxiety Disorder - 7 Version 2 - Total Score for Analysis"
+      }
+    ]
   },
   "GDS02PC": {
     "codelist_code": "C158114",
     "codelist_name": "Geriatric Depression Scale Short Form Questionnaire Parameter Code",
     "extensible": false,
-    "terms": "GDS02TS"
+    "terms": [
+      {
+        "submissionValue": "GDS02TS",
+        "conceptId": "C158155",
+        "preferredTerm": "Geriatric Depression Scale Short Form - Total Score for Analysis"
+      }
+    ]
   },
   "GDS02PN": {
     "codelist_code": "C158115",
     "codelist_name": "Geriatric Depression Scale Short Form Questionnaire Parameter Name",
     "extensible": false,
-    "terms": "GDS02-Total Score - Analysis"
+    "terms": [
+      {
+        "submissionValue": "GDS02-Total Score - Analysis",
+        "conceptId": "C158155",
+        "preferredTerm": "Geriatric Depression Scale Short Form - Total Score for Analysis"
+      }
+    ]
   },
   "HAMD1PC": {
     "codelist_code": "C187456",
     "codelist_name": "Hamilton Depression Rating Scale - 17 Item Clinical Classification Parameter Code",
     "extensible": false,
-    "terms": "HAMD1TS"
+    "terms": [
+      {
+        "submissionValue": "HAMD1TS",
+        "conceptId": "C187466",
+        "preferredTerm": "Hamilton Depression Rating Scale - 17 Item - Total Score for Analysis"
+      }
+    ]
   },
   "HAMD1PN": {
     "codelist_code": "C187455",
     "codelist_name": "Hamilton Depression Rating Scale - 17 Item Clinical Classification Parameter Name",
     "extensible": false,
-    "terms": "HAMD1-Total Score - Analysis"
-  },
-  "INPRM": {
-    "codelist_code": "C204410",
-    "codelist_name": "Input Parameter",
-    "extensible": false,
-    "terms": ["BIRTH RATE", "MORTALITY PROBABILITY", "NET MIGRATION RATE", "POPULATION COUNT", "PREVALENCE", "TRANSITION PROBABILITY"]
+    "terms": [
+      {
+        "submissionValue": "HAMD1-Total Score - Analysis",
+        "conceptId": "C187466",
+        "preferredTerm": "Hamilton Depression Rating Scale - 17 Item - Total Score for Analysis"
+      }
+    ]
   },
   "NEWS1PC": {
     "codelist_code": "C193278",
     "codelist_name": "National Early Warning Score 2 Clinical Classification Parameter Code",
     "extensible": false,
-    "terms": ["NEWS1TRG", "NEWS1TS"]
+    "terms": [
+      {
+        "submissionValue": "NEWS1TRG",
+        "conceptId": "C193374",
+        "preferredTerm": "National Early Warning Score 2 - Trigger for Analysis"
+      },
+      {
+        "submissionValue": "NEWS1TS",
+        "conceptId": "C193373",
+        "preferredTerm": "National Early Warning Score 2 - Total Score for Analysis"
+      }
+    ]
   },
   "NEWS1PN": {
     "codelist_code": "C193277",
     "codelist_name": "National Early Warning Score 2 Clinical Classification Parameter Name",
     "extensible": false,
-    "terms": ["NEWS1-Total Score - Analysis", "NEWS1-Trigger - Analysis"]
+    "terms": [
+      {
+        "submissionValue": "NEWS1-Total Score - Analysis",
+        "conceptId": "C193373",
+        "preferredTerm": "National Early Warning Score 2 - Total Score for Analysis"
+      },
+      {
+        "submissionValue": "NEWS1-Trigger - Analysis",
+        "conceptId": "C193374",
+        "preferredTerm": "National Early Warning Score 2 - Trigger for Analysis"
+      }
+    ]
   },
   "PARAMTYP": {
     "codelist_code": "C81225",
     "codelist_name": "Parameter Type",
     "extensible": false,
-    "terms": "DERIVED"
+    "terms": [
+      {
+        "submissionValue": "DERIVED",
+        "conceptId": "C81197",
+        "preferredTerm": "Derived Flag"
+      }
+    ]
   },
   "POOLINT": {
     "codelist_code": "C165644",
     "codelist_name": "Pool for Integration",
-    "extensible": false,
-    "terms": "OVERALL"
+    "extensible": true,
+    "terms": [
+      {
+        "submissionValue": "OVERALL",
+        "conceptId": "C165858",
+        "preferredTerm": "Overall Pooled Data"
+      }
+    ]
   },
   "SBJTSTAT": {
     "codelist_code": "C124296",
     "codelist_name": "Subject Trial Status",
-    "extensible": false,
-    "terms": ["COMPLETED", "DISCONTINUED", "ONGOING"]
+    "extensible": true,
+    "terms": [
+      {
+        "submissionValue": "COMPLETED",
+        "conceptId": "C25250",
+        "preferredTerm": "Complete"
+      },
+      {
+        "submissionValue": "DISCONTINUED",
+        "conceptId": "C25484",
+        "preferredTerm": "Discontinue"
+      },
+      {
+        "submissionValue": "ONGOING",
+        "conceptId": "C53279",
+        "preferredTerm": "Continue"
+      }
+    ]
   },
   "TIMEFL": {
     "codelist_code": "C81226",
     "codelist_name": "Time Imputation Flag",
     "extensible": false,
-    "terms": ["H", "M", "S"]
+    "terms": [
+      {
+        "submissionValue": "H",
+        "conceptId": "C81213",
+        "preferredTerm": "Hours Minutes Seconds Imputed"
+      },
+      {
+        "submissionValue": "M",
+        "conceptId": "C81214",
+        "preferredTerm": "Minutes Seconds Imputed"
+      },
+      {
+        "submissionValue": "S",
+        "conceptId": "C81215",
+        "preferredTerm": "Seconds Imputed"
+      }
+    ]
+  },
+  "APCH1PC": {
+    "codelist_code": "C208382",
+    "codelist_name": "Acute Physiology and Chronic Health Evaluation II Clinical Classification Parameter Code",
+    "extensible": false,
+    "terms": [
+      {
+        "submissionValue": "APCH1TPS",
+        "conceptId": "C209274",
+        "preferredTerm": "APACHE II - A: Total Acute Physiology Score - Analysis"
+      },
+      {
+        "submissionValue": "APCH1TS",
+        "conceptId": "C209275",
+        "preferredTerm": "APACHE II - Total APACHE II Score - Analysis"
+      }
+    ]
+  },
+  "APCH1PN": {
+    "codelist_code": "C208381",
+    "codelist_name": "Acute Physiology and Chronic Health Evaluation II Clinical Classification Parameter Name",
+    "extensible": false,
+    "terms": [
+      {
+        "submissionValue": "APCH1-A: Total Acute Physiology Score - Analysis",
+        "conceptId": "C209274",
+        "preferredTerm": "APACHE II - A: Total Acute Physiology Score - Analysis"
+      },
+      {
+        "submissionValue": "APCH1-Total APACHE II Score - Analysis",
+        "conceptId": "C209275",
+        "preferredTerm": "APACHE II - Total APACHE II Score - Analysis"
+      }
+    ]
+  },
+  "STRATA": {
+    "codelist_code": "C204411",
+    "codelist_name": "Analysis Stratum",
+    "extensible": true,
+    "terms": [
+      {
+        "submissionValue": "AGE",
+        "conceptId": "C25150",
+        "preferredTerm": "Age"
+      },
+      {
+        "submissionValue": "RACE",
+        "conceptId": "C17049",
+        "preferredTerm": "Race"
+      },
+      {
+        "submissionValue": "SEX",
+        "conceptId": "C28421",
+        "preferredTerm": "Sex"
+      },
+      {
+        "submissionValue": "TOBACCO PRODUCT CATEGORY",
+        "conceptId": "C210051",
+        "preferredTerm": "Tobacco Product Category"
+      },
+      {
+        "submissionValue": "TOBACCO PRODUCT USE STATUS POST-TRANSITION",
+        "conceptId": "C210052",
+        "preferredTerm": "Post-Transition Tobacco Product Use Status"
+      },
+      {
+        "submissionValue": "TOBACCO PRODUCT USE STATUS PRE-TRANSITION",
+        "conceptId": "C210053",
+        "preferredTerm": "Pre-Transition Tobacco Product Use Status"
+      },
+      {
+        "submissionValue": "TOBACCO PRODUCT USE STATUS",
+        "conceptId": "C210042",
+        "preferredTerm": "Tobacco Product Use Status"
+      },
+      {
+        "submissionValue": "TOBACCO PRODUCT USE TRANSITION TYPE",
+        "conceptId": "C210054",
+        "preferredTerm": "Tobacco Product Use Transition Type"
+      },
+      {
+        "submissionValue": "YEAR",
+        "conceptId": "C210055",
+        "preferredTerm": "Year Projection Period"
+      }
+    ]
+  },
+  "INPRM": {
+    "codelist_code": "C204410",
+    "codelist_name": "Input Parameter",
+    "extensible": true,
+    "terms": [
+      {
+        "submissionValue": "BIRTH RATE",
+        "conceptId": "C53345",
+        "preferredTerm": "Birth Rate"
+      },
+      {
+        "submissionValue": "MORTALITY PROBABILITY",
+        "conceptId": "C210047",
+        "preferredTerm": "Tobacco Use Status Mortality Probability"
+      },
+      {
+        "submissionValue": "NET MIGRATION RATE",
+        "conceptId": "C210048",
+        "preferredTerm": "Net Migration Rate"
+      },
+      {
+        "submissionValue": "POPULATION COUNT",
+        "conceptId": "C210049",
+        "preferredTerm": "Population Count"
+      },
+      {
+        "submissionValue": "PREVALENCE",
+        "conceptId": "C17010",
+        "preferredTerm": "Prevalence"
+      },
+      {
+        "submissionValue": "TRANSITION PROBABILITY",
+        "conceptId": "C210050",
+        "preferredTerm": "Tobacco Use Transition Probability"
+      }
+    ]
   },
   "TPCATRS": {
     "codelist_code": "C204414",
     "codelist_name": "Tobacco Product Category Response",
     "extensible": true,
-    "terms": ["CIGARETTES", "CIGARS", "ELECTRONIC NICOTINE DELIVERY SYSTEMS (ENDS)", "HEATED TOBACCO PRODUCTS", "PIPE TOBACCO PRODUCTS", "ROLL-YOUR-OWN TOBACCO PRODUCTS", "SMOKELESS TOBACCO PRODUCTS", "WATERPIPE TOBACCO PRODUCTS"]
+    "terms": [
+      {
+        "submissionValue": "CIGARETTES",
+        "conceptId": "C1802",
+        "preferredTerm": "Cigarette"
+      },
+      {
+        "submissionValue": "CIGARS",
+        "conceptId": "C1813",
+        "preferredTerm": "Cigar"
+      },
+      {
+        "submissionValue": "ELECTRONIC NICOTINE DELIVERY SYSTEMS (ENDS)",
+        "conceptId": "C128795",
+        "preferredTerm": "Electronic Nicotine Delivery Device"
+      },
+      {
+        "submissionValue": "HEATED TOBACCO PRODUCTS",
+        "conceptId": "C175552",
+        "preferredTerm": "Heated Tobacco Product"
+      },
+      {
+        "submissionValue": "PIPE TOBACCO PRODUCTS",
+        "conceptId": "C214744",
+        "preferredTerm": "Pipe Tobacco Product"
+      },
+      {
+        "submissionValue": "ROLL-YOUR-OWN TOBACCO PRODUCTS",
+        "conceptId": "C214742",
+        "preferredTerm": "Roll-your-own Tobacco Product"
+      },
+      {
+        "submissionValue": "SMOKELESS TOBACCO PRODUCTS",
+        "conceptId": "C214743",
+        "preferredTerm": "Smokeless Tobacco Product"
+      },
+      {
+        "submissionValue": "WATERPIPE TOBACCO PRODUCTS",
+        "conceptId": "C214745",
+        "preferredTerm": "Waterpipe Tobacco Product"
+      }
+    ]
   },
   "TPUSRS": {
     "codelist_code": "C204413",
     "codelist_name": "Tobacco Product Use Status Response",
-    "extensible": false,
-    "terms": ["CURRENT", "FORMER", "NEVER"]
+    "extensible": true,
+    "terms": [
+      {
+        "submissionValue": "CURRENT",
+        "conceptId": "C25471",
+        "preferredTerm": "Current"
+      },
+      {
+        "submissionValue": "FORMER",
+        "conceptId": "C25627",
+        "preferredTerm": "Previous"
+      },
+      {
+        "submissionValue": "NEVER",
+        "conceptId": "C70543",
+        "preferredTerm": "Never"
+      }
+    ]
   },
   "TBUTRS": {
     "codelist_code": "C204412",
     "codelist_name": "Tobacco Use Transition Response",
+    "extensible": true,
+    "terms": [
+      {
+        "submissionValue": "CESSATION",
+        "conceptId": "C96001",
+        "preferredTerm": "Tobacco Product Use Cessation"
+      },
+      {
+        "submissionValue": "INITIATION",
+        "conceptId": "C210056",
+        "preferredTerm": "Tobacco Product Use Initiation"
+      },
+      {
+        "submissionValue": "RELAPSE",
+        "conceptId": "C210057",
+        "preferredTerm": "Tobacco Product Use Relapse"
+      },
+      {
+        "submissionValue": "SWITCHING",
+        "conceptId": "C210058",
+        "preferredTerm": "Tobacco Product Use Switching"
+      }
+    ]
+  },
+  "PCL01PC": {
+    "codelist_code": "C225073",
+    "codelist_name": "The PTSD Checklist for DSM-5 Questionnaire Parameter Code",
     "extensible": false,
-    "terms": ["CESSATION", "INITIATION", "RELAPSE", "SWITCHING"]
+    "terms": [
+      {
+        "submissionValue": "PCL01DIA",
+        "conceptId": "C225250",
+        "preferredTerm": "PCL-5 - Provisional Diagnosis-Analysis"
+      },
+      {
+        "submissionValue": "PCL01TS",
+        "conceptId": "C225319",
+        "preferredTerm": "PCL-5 - Total Score-Analysis"
+      }
+    ]
+  },
+  "PCL01PN": {
+    "codelist_code": "C225072",
+    "codelist_name": "The PTSD Checklist for DSM-5 Questionnaire Parameter Name",
+    "extensible": false,
+    "terms": [
+      {
+        "submissionValue": "PCL01-Provisional Diagnosis - Analysis",
+        "conceptId": "C225250",
+        "preferredTerm": "PCL-5 - Provisional Diagnosis-Analysis"
+      },
+      {
+        "submissionValue": "PCL01-Total Score - Analysis",
+        "conceptId": "C225319",
+        "preferredTerm": "PCL-5 - Total Score-Analysis"
+      }
+    ]
   }
 }

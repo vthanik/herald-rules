@@ -60,13 +60,14 @@ herald-rules/
 │   ├── pmda/           # PMDA Validation Rules v6.0
 │   ├── ct/             # Per-codelist CT rules (HRL-CT-NNNN)
 │   └── herald/         # Herald-original gap-fill rules (HRL-* prefix)
-│       └── define/     # Define-XML spec rules (HRL-DD-NNN, DD0001-DD0086)
+│       └── define/     # Define-XML spec rules (HRL-DD-001..109)
 ├── configs/            # 10 submission profile JSONs (FDA/PMDA × IG version)
-├── ct/                 # Full SDTM + ADaM controlled terminology JSON
-├── tests/              # Rule validation test suite (validate-rules.R etc.)
+├── ct/                 # SDTM + ADaM CT JSON, variable→codelist map, rename overrides
 ├── inst/
+│   ├── metadata/       # Descriptive assets (conventions, not rules)
 │   └── scripts/        # Quarterly refresh scripts (fetch-*, build-*)
-├── herald-master-rules.csv  # All 3,761+ rules, 20 columns (source of truth)
+├── tests/              # Rule validation test suite (validate-rules.R etc.)
+├── herald-master-rules.csv  # All 3,870 rules, 20 columns (source of truth)
 ├── manifest.json            # Engine counts and config summaries
 ├── RULE_SCHEMA.md      # Full YAML schema documentation
 ├── GOVERNANCE.md       # Release cadence and decision-making
@@ -90,7 +91,8 @@ Rule IDs follow a strict naming convention based on the source authority:
 | herald custom (YAML) | `HRL-{CAT}-NNN` | `HRL-AD-001` |
 | herald custom (hardcoded) | `HRL-{CAT}-NNN` | `HRL-VAR-001` |
 | herald CT per-codelist | `HRL-CT-NNNN` | `HRL-CT-0001` |
-| herald Define-XML spec | `DDNNNN` | `DD0001` |
+| herald Define-XML spec | `HRL-DD-NNN` | `HRL-DD-024` |
+| PMDA Define-XML (v6.0) | `DDNNNN` | `DD0001` (authority: PMDA, `engines/pmda/`) |
 
 - For CDISC CORE rules, use the official CORE ID from the
   [cdisc-open-rules](https://github.com/cdisc-org/cdisc-open-rules) repository.

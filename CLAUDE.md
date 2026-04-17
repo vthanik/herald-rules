@@ -217,7 +217,7 @@ Rscript tests/validate-rules.R
 ```bash
 Rscript tests/validate-rules.R          # All engines: YAML, IDs, configs, manifest
 Rscript tests/validate-herald-rules.R   # HRL-* rules: sequences, CSV coverage, operators
-Rscript tests/validate-define-rules.R   # DD rules: spec sections, cross-refs, CSV
+Rscript tests/validate-define-rules.R   # HRL-DD rules: spec sections, cross-refs, CSV
 ```
 
 ## Herald Rule ID Convention
@@ -232,15 +232,15 @@ ALL herald-authored rules use `HRL-{CAT}-NNN` prefix:
 | `HRL-OD-NNN` | ODM conformance | `engines/herald/` | 9 rules |
 | `HRL-SD-NNN` | SDTM gap-fill | `engines/herald/` | 21 rules |
 | `HRL-TS-NNN` | Trial summary | `engines/herald/` | 5 rules |
-| `HRL-DD-NNN` | Define-XML spec | `engines/herald/define/` | 18 rules |
+| `HRL-DD-NNN` | Define-XML spec | `engines/herald/define/` | 109 rules (HRL-DD-001..023 herald-original, HRL-DD-024..109 renamed from old DD0001..DD0086 to avoid collision with PMDA DD rules) |
 | `HRL-VAR/LBL/TYP/LEN/DS/CL-NNN` | Hardcoded spec checks | `engines/herald/` | 8 rules |
 | `HRL-CT-NNNN` | CT per-codelist | `engines/ct/` | 1,210 rules |
 
-P21 IDs preserved in `p21_reference` provenance field. `DD0001-DD0085` keep bare DD prefix (herald-native spec rules).
+P21 IDs preserved in `p21_reference` provenance field. The `DDnnnn` bare prefix is now reserved for PMDA-authored rules in `engines/pmda/` (from PMDA Validation Rules v6.0). Previously DD prefix was shared with herald/define/ rules, which caused silent config deduplication and was resolved by renaming herald/define/DD00nn → HRL-DD-NNN where NNN = nn + 23.
 
 ## Cross-Reference: Herald R Package
 
-The herald R package (`/home/vignesh/projects/herald/`) consumes rules from this catalog.
+The herald R package (sibling repo at `../herald/` relative to this one) consumes rules from this catalog.
 
 ### Key Files in Herald R Package
 - `R/val-checks.R` -- 8 hardcoded HRL-* spec checks (`HRL-VAR-001/002/003`, `HRL-LBL-001`, `HRL-TYP-001`, `HRL-LEN-001`, `HRL-DS-001`, `HRL-CL-001`)

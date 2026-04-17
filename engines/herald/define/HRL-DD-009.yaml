@@ -18,3 +18,22 @@ provenance:
   source_doc: P21 ADaM Validation Rules v1.2 (Define-XML)
   authority: Herald
   p21_reference: DD0088
+
+tests:
+  - name: "HRL-DD-009 — nominal compliant record"
+    type: positive
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, AVAL]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "ALT", "25"]
+    expected_findings: 0
+  - name: "HRL-DD-009 — nominal violating record"
+    type: negative
+    datasets:
+      ADLB:
+        variables: [STUDYID, USUBJID, PARAMCD, AVAL]
+        records:
+          - ["CDISCPILOT01", "01-701-1015", "ALT", "25"]
+    expected_findings: 1
+

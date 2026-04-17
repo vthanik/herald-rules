@@ -1,0 +1,103 @@
+# common-retained-variables.yaml
+#
+# Descriptive asset — NOT an enforcement rule.
+#
+# Documents ADaMIG v1.2 sponsor conventions for how common variables are
+# typically sourced across datasets. Consumers (spec-build tooling, reviewers,
+# authoring templates) may use this as a starting guess when constructing a
+# Variables sheet. These are *conventions*, not conformance requirements:
+# multi-period studies, crossover protocols, and sponsors doing analysis-visit
+# derivation legitimately deviate from each pattern. Do NOT promote any entry
+# here into a Herald rule without reviewing the exceptions listed.
+#
+# Consumers: read `inherit` as "the conventional Origin; override if the study
+# design requires otherwise". `exceptions` lists recognised legitimate
+# deviations that should NOT be flagged as violations.
+
+schema_version: 1
+authority: Herald
+status: Conventions
+applies_to:
+  - ADaMIG 1.1
+  - ADaMIG 1.2
+canonical_source: "ADaMIG v1.2 Core Variables tables — consult CDISC Library for the authoritative list"
+
+conventions:
+  treatment_variables:
+    description: >
+      In non-ADSL ADaM datasets, TRTP/TRTA (+N companions) typically copy
+      from ADSL's TRT01P/TRT01A. Multi-period and crossover studies DERIVE
+      these per record from APERIOD.
+    variables:
+      - TRTP
+      - TRTA
+      - TRTPN
+      - TRTAN
+    inherit:
+      origin: Predecessor
+      predecessor_dataset: ADSL
+      predecessor_variable:
+        TRTP: TRT01P
+        TRTA: TRT01A
+        TRTPN: TRT01PN
+        TRTAN: TRT01AN
+    exceptions:
+      - scenario: "Multi-period or crossover study with APERIOD-driven treatment"
+        origin: Derived
+        note: "Method describes the APERIOD-to-TRT mapping; Predecessor is not used."
+
+  adsl_retained_core:
+    description: >
+      ADaMIG Table 3.3.1 Core Variables typically flow downstream from ADSL
+      rather than being re-derived from SDTM.DM in each dataset. Some
+      sponsors prefer to merge fresh from SDTM.DM.
+    variables:
+      - STUDYID
+      - USUBJID
+      - SUBJID
+      - SITEID
+      - AGE
+      - AGEU
+      - AGEGR1
+      - AGEGR1N
+      - SEX
+      - RACE
+      - ETHNIC
+      - COUNTRY
+      - SAFFL
+      - ITTFL
+      - EFFFL
+      - TRTSDT
+      - TRTSDTM
+      - TRTEDT
+      - TRTEDTM
+      - BMIBL
+    inherit:
+      origin: Predecessor
+      predecessor_dataset: ADSL
+      predecessor_variable: "<same name>"
+    exceptions:
+      - scenario: "Sponsor merges fresh from SDTM.DM in each ADaM dataset"
+        origin: Predecessor
+        predecessor_dataset: DM
+        note: "Legitimate sponsor variation; flag as style difference only."
+
+  sdtm_timing:
+    description: >
+      Common SDTM timing/visit qualifier variables typically carry forward
+      as Predecessor from the SDTM source domain. Sponsors performing
+      analysis-visit derivation (for windowing or rescheduling) may
+      legitimately derive these.
+    variables:
+      - VISITNUM
+      - VISIT
+      - VISITDY
+      - EPOCH
+    inherit:
+      origin: Predecessor
+      predecessor_dataset: "<source SDTM domain>"
+      predecessor_variable: "<same name>"
+    exceptions:
+      - scenario: "Analysis-visit windowing or rescheduling applied"
+        origin: Derived
+        note: "Method describes the windowing logic."

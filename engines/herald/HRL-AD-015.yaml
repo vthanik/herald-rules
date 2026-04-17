@@ -1,5 +1,5 @@
 id: HRL-AD-015
-version: 1
+version: 2
 status: Published
 standard: ADaM
 category: Data Quality
@@ -8,13 +8,23 @@ executability: Fully Executable
 description: >
   When AVAL, BASE, and PCHG are all non-missing and BASE is non-zero,
   PCHG must equal (AVAL - BASE) / BASE * 100 within a tolerance of ±0.005.
-  AD0225A (companion rule) covers the BASE = 0 case.
+  AD0225A (companion rule) covers the BASE = 0 case. The rule is a no-op
+  on AVALC-only BDS datasets (ADaMIG v1.2 permits BDS with AVALC alone,
+  e.g. ADPE body-location findings): the AVAL/BASE/PCHG presence
+  pre-conditions prevent the formula check from firing when those columns
+  are absent.
 scope:
   classes:
     - BASIC DATA STRUCTURE
   domains: []
 check:
   all:
+    - name: AVAL
+      operator: empty
+    - name: BASE
+      operator: empty
+    - name: PCHG
+      operator: empty
     - name: PCHG
       operator: within_tolerance_of_formula
       formula: "(AVAL - BASE) / BASE * 100"
@@ -46,3 +56,13 @@ tests:
         records:
           - ["S1", "S1-001", 12, 10, 25.0]
     expected_findings: 1
+
+  - name: "AVALC-only BDS (no AVAL column) yields no PCHG findings"
+    type: positive
+    datasets:
+      ADPE:
+        variables: [STUDYID, USUBJID, PARAMCD, AVALC]
+        records:
+          - ["S1", "S1-001", "HEAD", "NORMAL"]
+          - ["S1", "S1-001", "CHEST", "ABNORMAL"]
+    expected_findings: 0

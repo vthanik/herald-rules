@@ -4,15 +4,15 @@ Regulatory validation rule catalog for the [herald](https://github.com/vthanik/h
 
 ## Overview
 
-**3,749 YAML rules** covering FDA, PMDA, and CDISC conformance requirements for SDTM, ADaM, SEND, and Define-XML submissions.
+**3,870 YAML rules** covering FDA, PMDA, and CDISC conformance requirements for SDTM, ADaM, SEND, and Define-XML submissions.
 
 | Engine | Rules | Source |
 |--------|------:|--------|
 | `cdisc` | 703 | CDISC Library API (SDTM/SEND, 450 CORE rules) + ADaM IG Conformance (253 ADaM-NNN rules, v1.1 and v1.2) |
 | `fda` | 660 | FDA Business Rules v1.5 (86) + Validator Rules v1.6 (574) |
 | `pmda` | 1,041 | PMDA Validation Rules v6.0 (SDTM/ADaM/Define-XML) |
-| `ct` | 1,210 | NCI EVS Controlled Terminology (6 meta-rules + 1,204 per-codelist) |
-| `herald` | 251 | Herald-original: 143 gap-fill (HRL-AD/FM/MD/OD/SD/TS) + 100 Define-XML spec + 8 hardcoded spec checks |
+| `ct` | 1,210 | CDISC Library Controlled Terminology (6 meta-rules + 1,204 per-codelist) |
+| `herald` | 256 | Herald-original: 147 gap-fill + hardcoded checks (HRL-AD/FM/MD/OD/SD/TS/VAR/LBL/TYP/LEN/DS/CL) + 109 Define-XML spec (HRL-DD-001..109) |
 
 ## Repository Structure
 
@@ -22,8 +22,8 @@ herald-rules/
 │   ├── cdisc/              703 YAML -- CDISC Library conformance rules (450 CORE) + ADaM IG (253 ADaM-NNN, v1.1+v1.2)
 │   ├── ct/               1,210 YAML -- Per-codelist CT rules with baked-in terms
 │   ├── fda/                660 YAML -- FDA Business + Validator Rules
-│   ├── herald/             135 YAML -- Herald-original gap-fill + hardcoded spec checks (HRL- prefix)
-│   │   └── define/         100 YAML -- Define-XML v2.1 spec validation (DD0001--DD0086, HRL-DD-001--014)
+│   ├── herald/             147 YAML -- Herald-original gap-fill + hardcoded spec checks (HRL- prefix)
+│   │   └── define/         109 YAML -- Define-XML v2.1 spec validation (HRL-DD-001..109)
 │   └── pmda/             1,041 YAML -- PMDA Validation Rules v6.0
 ├── configs/                        -- 10 submission profile configs
 │   ├── fda-sdtm-ig-3.2.json
@@ -80,8 +80,8 @@ Authorities:
 **lowercase** (herald format) -- `engines/pmda/`, `engines/ct/`, `engines/herald/`:
 
 ```yaml
-id: DD0014
-version: 1
+id: HRL-DD-037
+version: 2
 status: Published
 standard: Define-XML
 category: Standards Reference
@@ -92,10 +92,10 @@ description: >
 check:
   all:
     - name: standard_name
-      operator: equal_to
+      operator: not_equal_to
       value: SDTMIG
     - name: standard_version
-      operator: not_in
+      operator: in
       value: ["3.1.2", "3.2", "3.3", "3.4"]
 outcome:
   message: "SDTMIG version is not allowable."
@@ -110,20 +110,26 @@ See [RULE_SCHEMA.md](RULE_SCHEMA.md) for the complete schema with all operators.
 
 ## Define-XML v2.1 Spec Validation
 
-100 rules validate P21 Excel specifications against the CDISC Define-XML v2.1 standard before `write_define_xml()` generates output:
+109 rules validate P21 Excel specifications against the CDISC Define-XML v2.1 standard before `write_define_xml()` generates output:
 
 | Group | Rules | What they validate |
 |-------|------:|-------------------|
-| Study Metadata | DD0001--DD0005 | StudyName, StudyDescription, ProtocolName, DefineVersion |
-| Dataset Definitions | DD0006--DD0020 | Class, standard versions, key variables, structure, purpose |
-| Variable Definitions | DD0021--DD0040 | Data types, length, origin/source/traceability |
-| Value-Level Metadata | DD0041--DD0047 | Where clause comparators, parent length constraints |
-| Codelist Definitions | DD0048--DD0055 | NCI codes, data type, decoded values |
-| Methods & Comments | DD0056--DD0063 | Type (Computation/Imputation), descriptions |
-| Cross-Reference | DD0064--DD0073 | All ID linkages between spec sheets |
-| Orphan Detection | DD0074--DD0077 | Unreferenced methods, comments, codelists |
-| P21 Alignment | DD0078--DD0086 | ARM metadata, origin consistency, datatype match |
-| P21-Sourced (HRL-DD) | HRL-DD-001--014 | Assigned value type/length/codelist, DTC data types, ARM metadata |
+| P21-Sourced (Reference) | HRL-DD-001..014 | Assigned value type/length/codelist, DTC data types, ARM metadata |
+| Herald-Original Extensions | HRL-DD-015..023 | SUPPQUAL VLM completeness, method/codelist refs, origin biconditionals |
+| Study Metadata | HRL-DD-024..028 | StudyName, StudyDescription, ProtocolName, DefineVersion |
+| Dataset Definitions | HRL-DD-029..043 | Class, standard versions, key variables, structure, purpose |
+| Variable Definitions | HRL-DD-044..063 | Data types, length, origin/source/traceability |
+| Value-Level Metadata | HRL-DD-064..070 | Where clause comparators, parent length constraints |
+| Codelist Definitions | HRL-DD-071..078 | NCI codes, data type, decoded values |
+| Methods & Comments | HRL-DD-079..086 | Type (Computation/Imputation), descriptions |
+| Cross-Reference | HRL-DD-087..096 | All ID linkages between spec sheets |
+| Orphan Detection | HRL-DD-097..100 | Unreferenced methods, comments, codelists |
+| P21 Alignment | HRL-DD-101..109 | ARM metadata, origin consistency, datatype match |
+
+> **Rename note:** HRL-DD-024..109 were previously numbered DD0001..DD0086
+> (new number = old + 23). Renamed to avoid ID collision with PMDA's
+> DD-series rules in `engines/pmda/`; both sets now live in distinct
+> namespaces.
 
 Traceability to specific spec sections is documented in [engines/herald/define/TRACEABILITY.md](engines/herald/define/TRACEABILITY.md).
 
