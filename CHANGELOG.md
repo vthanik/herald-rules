@@ -10,6 +10,27 @@ for release cadence details.
 
 ## Unreleased
 
+### Clean-slate rewrite — Phase 1b (2026-04-18, p21_id column on master CSV)
+
+#### Added
+
+- `p21_id` column (2nd position) on `herald-master-rules.csv` so the
+  herald R package can translate herald rule IDs to P21 Community
+  display IDs at report-render time.
+- `derive_p21_id()` helper in `inst/scripts/build-master-csv.R`. Rules:
+  - `SD####`, `AD####`, `SE####`, `DD####`, `CV####`, `TS####`,
+    `OD####`, `HM####` (optional single-letter variant) -> copy as-is.
+  - `CT2###` -> copy as-is.
+  - `ADaM-N[-SD]` -> `AD{N zero-padded}` (both flavours map to the same
+    P21 id; the `-SD` rows are the SDTM-side of the ADaM rule).
+  - All other prefixes (`CORE-`, `FDAB`, `HRL-*`, `PMDA-*`) -> empty.
+
+2,029 of 3,980 rows (51 percent) carry a populated `p21_id`; 1,332
+distinct P21 Community rule IDs are represented across the catalog.
+Every P21 SDxxxx / CT2xxx / DD0101 ID observed in the HBPD03
+validation reports (2026-04-18) round-trips cleanly through the new
+column.
+
 ### Clean-slate rewrite — Phase 1a (2026-04-18, drop 16 deprecated FDAB stubs)
 
 #### Removed

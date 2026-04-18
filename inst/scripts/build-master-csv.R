@@ -34,12 +34,31 @@ if (!requireNamespace("jsonlite", quietly = TRUE)) stop("jsonlite required")
 
 cat("=== Building Herald Master Rules CSV ===\n\n")
 
-# -- Column schema (20 columns) -----------------------------------------------
-COLS <- c("rule_id", "source", "source_document", "source_url", "authority",
-          "standard", "ig_versions", "rule_type", "publisher_id",
+# -- Column schema (21 columns) -----------------------------------------------
+COLS <- c("rule_id", "p21_id", "source", "source_document", "source_url",
+          "authority", "standard", "ig_versions", "rule_type", "publisher_id",
           "conformance_rule_origin", "cited_guidance", "message", "description",
           "domains", "classes", "severity", "sensitivity", "executability",
           "status", "notes", "runnable")
+
+# -- Derive P21 Community display ID from a rule_id ---------------------------
+# P21 Community validation reports use bare ID conventions that match a subset
+# of our rule_id namespace directly:
+#   SD####, AD####, SE####, CT2###, DD####, CV####, TS####, OD####, HM####
+# Optional single-letter variant suffix (B, C, ...) is preserved.
+# CDISC ADaM rules are stored as `ADaM-N` / `ADaM-N-SD`; both variants map to
+# `AD####` (zero-padded) -- the -SD flavour is the SDTM-side of the same rule.
+# All other prefixes (CORE-, FDAB, HRL-*, PMDA-*, ...) have no P21 analogue
+# and get an empty string.
+derive_p21_id <- function(rule_id) {
+  rid <- trimws(as.character(rule_id))
+  if (!length(rid) || is.na(rid) || !nzchar(rid)) return("")
+  if (grepl("^(SD|AD|SE|DD|CV|TS|OD|HM)\\d+[A-Z]?$", rid)) return(rid)
+  if (grepl("^CT2\\d+$", rid)) return(rid)
+  m <- regmatches(rid, regexec("^ADaM-(\\d+)(-SD)?$", rid))[[1]]
+  if (length(m) == 3L) return(sprintf("AD%04d", as.integer(m[2])))
+  ""
+}
 
 RUNNABLE_STATES <- c("Fully Executable", "Hardcoded",
                      "Partially Executable",
@@ -357,6 +376,13 @@ master <- rbind(cdisc_df, fda_df, pmda_df, herald_df, ct_df)
 # other states (`Reference`, `Partially Executable`, empty) are documentation
 # only. See HANDOFF_TO_HERALD_2026-04-18.md section 1.
 master$runnable <- ifelse(master$executability %in% RUNNABLE_STATES, "TRUE", "FALSE")
+
+# -- Populate p21_id from rule_id ---------------------------------------------
+# Every row gets a derived p21_id. Empty string when the rule has no P21
+# Community equivalent (CORE-*, FDABxxx, HRL-*, PMDA-* prefixed rules).
+master$p21_id <- vapply(master$rule_id, derive_p21_id, character(1))
+# Reorder to match COLS schema (p21_id second)
+master <- master[, COLS, drop = FALSE]
 
 cat(sprintf("\n=== MASTER CSV ===\n"))
 cat(sprintf("Total: %d rules\n", nrow(master)))
