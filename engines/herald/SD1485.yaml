@@ -27,3 +27,25 @@ provenance:
   source_doc: Pinnacle 21 Community Validator v4.1.0 / FDA Study Data TCG
   authority: Herald-relay (pending FDA Validator v1.7 upstream source)
   p21_reference: SD1485
+
+tests:
+  - name: "LB + LC both present -- passes"
+    type: positive
+    datasets:
+      LB:
+        variables: [STUDYID, USUBJID]
+        records:
+          - ["S1", "S1-001"]
+      LC:
+        variables: [STUDYID, USUBJID]
+        records:
+          - ["S1", "S1-001"]
+    expected_findings: 0
+  - name: "LB present but LC missing -- flagged"
+    type: negative
+    datasets:
+      LB:
+        variables: [STUDYID, USUBJID]
+        records:
+          - ["S1", "S1-001"]
+    expected_findings: 1

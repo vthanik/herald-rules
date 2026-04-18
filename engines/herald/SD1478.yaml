@@ -28,3 +28,25 @@ provenance:
   source_doc: Pinnacle 21 Community Validator v4.1.0
   authority: Herald-relay (pending FDA Validator v1.7 upstream source)
   p21_reference: SD1478
+
+tests:
+  - name: "LB with --LOBXFL='Y' for every subject -- passes"
+    type: positive
+    datasets:
+      LB:
+        variables: [STUDYID, USUBJID, LBLOBXFL]
+        records:
+          - ["S1", "S1-001", "Y"]
+          - ["S1", "S1-001", ""]
+          - ["S1", "S1-002", "Y"]
+    expected_findings: 0
+  - name: "LB with subject lacking --LOBXFL='Y' -- flagged"
+    type: negative
+    datasets:
+      LB:
+        variables: [STUDYID, USUBJID, LBLOBXFL]
+        records:
+          - ["S1", "S1-001", "Y"]
+          - ["S1", "S1-002", ""]
+          - ["S1", "S1-002", ""]
+    expected_findings: 2

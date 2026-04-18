@@ -29,3 +29,32 @@ provenance:
   source_doc: Pinnacle 21 Community Validator v4.1.0
   authority: Herald-relay (pending FDA/CDISC ADaM IG upstream source)
   p21_reference: AD2001
+
+tests:
+  - name: "ADSL USUBJIDs all exist in DM -- passes"
+    type: positive
+    datasets:
+      DM:
+        variables: [STUDYID, USUBJID]
+        records:
+          - ["S1", "S1-001"]
+          - ["S1", "S1-002"]
+      ADSL:
+        variables: [STUDYID, USUBJID]
+        records:
+          - ["S1", "S1-001"]
+          - ["S1", "S1-002"]
+    expected_findings: 0
+  - name: "ADSL USUBJID missing from DM -- flagged"
+    type: negative
+    datasets:
+      DM:
+        variables: [STUDYID, USUBJID]
+        records:
+          - ["S1", "S1-001"]
+      ADSL:
+        variables: [STUDYID, USUBJID]
+        records:
+          - ["S1", "S1-001"]
+          - ["S1", "S1-999"]
+    expected_findings: 1

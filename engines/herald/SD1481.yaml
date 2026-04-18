@@ -24,3 +24,24 @@ provenance:
   source_doc: Pinnacle 21 Community Validator v4.1.0
   authority: Herald-relay (pending FDA Validator v1.7 upstream source)
   p21_reference: SD1481
+
+tests:
+  - name: "APDM with unique APSEQ per record -- passes"
+    type: positive
+    datasets:
+      APDM:
+        variables: [STUDYID, APID, APSEQ]
+        records:
+          - ["S1", "AP-001", 1]
+          - ["S1", "AP-001", 2]
+          - ["S1", "AP-002", 1]
+    expected_findings: 0
+  - name: "APDM with duplicate APSEQ -- flagged"
+    type: negative
+    datasets:
+      APDM:
+        variables: [STUDYID, APID, APSEQ]
+        records:
+          - ["S1", "AP-001", 1]
+          - ["S1", "AP-001", 1]
+    expected_findings: 2

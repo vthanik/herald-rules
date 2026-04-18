@@ -28,3 +28,24 @@ provenance:
   source_doc: Pinnacle 21 Community Validator v4.1.0
   authority: Herald-relay (pending FDA Validator v1.7 upstream source)
   p21_reference: SD1483
+
+tests:
+  - name: "SQAPDM with unique (STUDYID, APID, QNAM) triples -- passes"
+    type: positive
+    datasets:
+      SQAPDM:
+        variables: [STUDYID, APID, QNAM, QVAL]
+        records:
+          - ["S1", "AP-001", "RACE", "WHITE"]
+          - ["S1", "AP-001", "ETHNIC", "NOT HISPANIC"]
+          - ["S1", "AP-002", "RACE", "BLACK"]
+    expected_findings: 0
+  - name: "SQAPDM with duplicate (STUDYID, APID, QNAM) -- flagged"
+    type: negative
+    datasets:
+      SQAPDM:
+        variables: [STUDYID, APID, QNAM, QVAL]
+        records:
+          - ["S1", "AP-001", "RACE", "WHITE"]
+          - ["S1", "AP-001", "RACE", "ASIAN"]
+    expected_findings: 2
