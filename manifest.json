@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "herald_min_version": "0.1.0",
-  "generated": "2026-04-18T18:43:40Z",
+  "generated": "2026-04-18T18:44:48Z",
   "sources": {
     "cdisc": "CDISC Library API (library.cdisc.org)",
     "fda": "FDA Validator Rules v1.6 (December 2022) + Business Rules v1.5",
@@ -10,20 +10,20 @@
     "herald": "Herald-original rules (gap-fill for P21 parity)"
   },
   "stats": {
-    "total_engine_rules": 3811,
-    "executable_engine_rules": 3704,
+    "total_engine_rules": 3812,
+    "executable_engine_rules": 3705,
     "by_engine": {
       "cdisc": 703,
       "ct": 1210,
       "fda": 644,
-      "herald": 209,
+      "herald": 210,
       "pmda": 1045
     },
     "executable_by_engine": {
       "cdisc": 701,
       "ct": 1210,
       "fda": 574,
-      "herald": 180,
+      "herald": 181,
       "pmda": 1039
     },
     "configs": 16
@@ -69,7 +69,7 @@
       "authority": "Combined",
       "standard": "All",
       "version": "2026.2",
-      "rule_count": 3806
+      "rule_count": 3807
     },
     {
       "file": "fda-adam-ig-1.1.json",
@@ -111,7 +111,7 @@
       "authority": "Herald",
       "standard": "All",
       "version": "2026.2",
-      "rule_count": 209
+      "rule_count": 210
     },
     {
       "file": "pmda-adam-ig-1.1.json",
