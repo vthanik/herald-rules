@@ -10,7 +10,6 @@ description: The value provided in Assigned Value must match the Data Type of th
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Data Type/Assigned Value mismatch
   severity: Error
@@ -36,4 +35,7 @@ tests:
         records:
           - ["CDISCPILOT01", "01-701-1015", "ALT", "25"]
     expected_findings: 1
+
+notes: >
+  Blocked on `assigned_value_matches_data_type` operator (VLM Assigned Value must parse as declared Data Type). See HANDOFF section 4g.
 

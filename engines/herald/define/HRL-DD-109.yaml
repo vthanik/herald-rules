@@ -9,7 +9,6 @@ description: The def:DefineVersion should have a value of '2.0.0' for Define-XML
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid def:DefineVersion value
   severity: Error
@@ -35,4 +34,7 @@ tests:
         records:
           - ["CDISCPILOT01", "01-701-1015", "ALT", "25"]
     expected_findings: 1
+
+notes: >
+  Blocked on `define_version_matches_schema` operator (def:DefineVersion must be '2.0.0' for Define-XML v2.0 and '2.1.0' for v2.1; today's `in` operator would need a schema-version pre-condition). See HANDOFF section 4g.
 

@@ -9,7 +9,6 @@ description: Sections must have at least one Question.
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Section is empty
   severity: Error

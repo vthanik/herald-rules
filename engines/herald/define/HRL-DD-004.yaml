@@ -10,7 +10,6 @@ description: When a variable or value level record is subject to controlled term
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Assigned value not found in codelist
   severity: Error
@@ -36,4 +35,7 @@ tests:
         records:
           - ["CDISCPILOT01", "01-701-1015", "ALT", "25"]
     expected_findings: 1
+
+notes: >
+  Blocked on `valid_codelist_term` operator (VLM Assigned Value must be a term in the linked codelist). See HANDOFF section 4g.
 

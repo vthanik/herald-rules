@@ -10,7 +10,6 @@ description: SDTM Target should reference a variable in the domain specified in 
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid SDTM Target value
   severity: Error

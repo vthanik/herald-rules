@@ -9,7 +9,6 @@ description: Codelist value must be a valid Codelist defined on the Codelists ta
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid Codelist value for Term
   severity: Error

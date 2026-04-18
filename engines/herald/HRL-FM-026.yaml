@@ -9,7 +9,6 @@ description: Term (Display Term) should not contain 2 or more spaces in sequence
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid Display Term value
   severity: Error

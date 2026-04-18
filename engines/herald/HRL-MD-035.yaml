@@ -9,7 +9,6 @@ description: Events must have at least one Form.
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Event is empty
   severity: Error

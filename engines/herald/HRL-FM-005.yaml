@@ -10,7 +10,6 @@ description: A Name value is required for each Event.  Name is a required attrib
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Missing Name value for Event
   severity: Error

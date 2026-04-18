@@ -307,6 +307,72 @@ verified end-to-end against real spec sheets. Until then, their tests
 run through the placeholder dataset pattern used by the existing HRL-DD
 executable set.
 
+### 4h. ODM XML validation operators (unlock HRL-OD-001..009)
+
+Herald's ODM v1.2 validation rules operate on the raw ODM XML file,
+not on record data. They need a dedicated XML-reading layer plus a
+small set of operators:
+
+| Operator | Semantics | Unlocks |
+|---|---|---|
+| `xml_namespace_equals` | root element's `xmlns` equals the expected URI | HRL-OD-001 |
+| `xml_attribute_required` | named attribute is present and non-empty at every element matching an XPath | HRL-OD-002 |
+| `xml_element_required` | named child element is present at every element matching an XPath | HRL-OD-003 |
+| `xml_element_unique` | element of a named tag appears at most once under a parent XPath | HRL-OD-004 |
+| `xml_typed_value_pattern` | attribute/element text value matches the regex declared by its ODM `DataType` | HRL-OD-005, -006, -007, -008, -009 |
+
+Engine plumbing needed:
+- New input path on `validate()` for `odm = "path/to/odm.xml"`.
+- XML parsed with `xml2::read_xml()` once, cached on the findings object.
+- Each rule's YAML `check:` block uses `name:` as the XPath expression
+  (e.g. `name: "//StudyEventDef"`).
+- Operators receive the parsed XML node set, not a vector of values.
+
+The 5 `xml_typed_value_pattern` uses share a regex table; the patterns
+for float / date / time / sasName / fileName are specified in the ODM
+1.2 XSD and should be embedded once in `inst/extdata/odm-patterns.rds`.
+
+### 4i. ARM metadata operators for Define-XML (unlock HRL-DD-008..014)
+
+Analysis Results Metadata (ARM) lives inside `define.xml` as
+`<arm:AnalysisResultDisplays>`. These 7 rules enforce uniqueness,
+required-child, and BDS-reference invariants on ARM elements:
+
+| Operator | Semantics | Unlocks |
+|---|---|---|
+| `arm_absent_in_non_adam_define` | SDTM/SEND define.xml must not contain arm:AnalysisResultDisplays | HRL-DD-008 |
+| `arm_oid_unique` | arm:ResultDisplay OID unique within arm:AnalysisResultDisplays | HRL-DD-009 |
+| `arm_name_unique` | arm:ResultDisplay Name unique | HRL-DD-010 |
+| `arm_description_required` | each arm:ResultDisplay has a Description child | HRL-DD-011 |
+| `arm_analysisresult_oid_unique` | arm:AnalysisResult OID unique within a arm:ResultDisplay | HRL-DD-012 |
+| `arm_parameter_oid_required_when_bds` | ParameterOID required when arm:AnalysisResult references BDS datasets | HRL-DD-013 |
+| `arm_parameter_oid_references_paramcd` | when ParameterOID is present, at least one AnalysisDataset must be BDS and ParameterOID must reference a PARAMCD variable in that dataset | HRL-DD-014 |
+
+All 7 operate on the parsed `define.xml` tree. Reuse the XPath/xml2
+infrastructure introduced in section 4h, gated by the `arm:`
+namespace.
+
+### Summary of new operators across section 4
+
+| Section | Count | Rules unlocked |
+|---|---:|---:|
+| 4a Trivial single-row | 4 | 4 |
+| 4b Single-row pattern | 21 | 75 |
+| 4c Group/aggregate | 4 | 19 |
+| 4d Nested group | 1 | 1 |
+| 4e Cross-dataset | 1 | 1 + AD0256 |
+| 4f Metadata/CT | 2 | ~68 |
+| 4g Spec-level (HRL-MD) | 11 | 19 + HRL-DD-001..007, HRL-DD-109 |
+| 4h ODM XML | 5 | 9 (HRL-OD-001..009) |
+| 4i ARM metadata | 7 | 7 (HRL-DD-008..014) |
+| **Total** | **56** | **~230** |
+
+Once every operator in section 4 ships, herald's runnable-rule count
+climbs from 3,700 to ~3,800 of 3,878 YAMLs (~98%). The residual ~80
+rules are deprecated duplicates (40 HRL-FM) and genuinely-guidance FDA
+Business Rules (86) that are Reference by nature and do not admit
+mechanical checks.
+
 ---
 
 ## 5. Regression fixtures

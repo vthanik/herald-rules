@@ -10,7 +10,6 @@ description: >
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: ARM metadata included in non ADaM define.xml
   severity: Error
@@ -36,4 +35,7 @@ tests:
         records:
           - ["CDISCPILOT01", "01-701-1015", "ALT", "25"]
     expected_findings: 1
+
+notes: >
+  Blocked on `arm_absent_in_non_adam_define` operator (SDTM/SEND define.xml must not contain arm:AnalysisResultDisplays). See HANDOFF section 4i.
 

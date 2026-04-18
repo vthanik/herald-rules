@@ -11,7 +11,6 @@ description: The Data Type attribute for Questions must have a value of 'text', 
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid Data Type value for Question
   severity: Error

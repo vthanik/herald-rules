@@ -10,7 +10,6 @@ description: A value is required for Codelist for each Term. Terms must be assoc
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Missing Codelist value for Term
   severity: Error

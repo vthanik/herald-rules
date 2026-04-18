@@ -9,7 +9,6 @@ description: Type must either be Scheduled, Unscheduled, or Common.
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid Type value for Event
   severity: Error

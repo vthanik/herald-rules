@@ -10,7 +10,6 @@ description: >
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Improper use of ParameterOID
   severity: Error
@@ -36,4 +35,7 @@ tests:
         records:
           - ["CDISCPILOT01", "01-701-1015", "ALT", "25"]
     expected_findings: 1
+
+notes: >
+  Blocked on `arm_parameter_oid_references_paramcd` operator (when ParameterOID is present, at least one AnalysisDataset must be BDS and ParameterOID must reference a PARAMCD variable in that dataset). See HANDOFF section 4i.
 

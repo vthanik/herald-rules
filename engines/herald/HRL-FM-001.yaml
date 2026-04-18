@@ -9,7 +9,6 @@ description: Codelist Name should not contain 2 or more spaces in sequence.
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid Codelist Name
   severity: Error

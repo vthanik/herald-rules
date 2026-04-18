@@ -9,7 +9,6 @@ description: The Length attribute is required when DataType is text.
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Missing Length value
   severity: Error

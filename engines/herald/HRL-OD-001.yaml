@@ -9,7 +9,6 @@ description: The ODM file must reference the CDISC ODM namespace 'http://www.cdi
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Missing or invalid Namespace attribute
   severity: Error
@@ -17,4 +16,7 @@ provenance:
   source_doc: P21 ADaM Validation Rules v1.2 (ODM)
   authority: Herald
   p21_reference: OD0002
+
+notes: >
+  Blocked on `xml_namespace_equals` operator (parses raw ODM XML file, checks top-level namespace attribute). See HANDOFF section 4h.
 

@@ -10,7 +10,6 @@ description: >
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Duplicate arm:AnalysisResult OID
   severity: Error
@@ -36,4 +35,7 @@ tests:
         records:
           - ["CDISCPILOT01", "01-701-1015", "ALT", "25"]
     expected_findings: 1
+
+notes: >
+  Blocked on `arm_analysisresult_oid_unique` operator (arm:AnalysisResult OID must be unique within a arm:ResultDisplay). See HANDOFF section 4i.
 

@@ -10,7 +10,6 @@ description: Element occurs in ODM file more than once, but it is limited to onl
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Element occurs more than once
   severity: Error
@@ -18,4 +17,7 @@ provenance:
   source_doc: P21 ADaM Validation Rules v1.2 (ODM)
   authority: Herald
   p21_reference: OD0009
+
+notes: >
+  Blocked on `xml_element_unique` operator (ODM XML cardinality check). See HANDOFF section 4h.
 

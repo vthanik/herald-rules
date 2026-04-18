@@ -9,7 +9,6 @@ description: Question Text is required for each Question.
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Missing Question Text value
   severity: Error

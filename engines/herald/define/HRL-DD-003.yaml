@@ -10,7 +10,6 @@ description: The length of the value provided in Assigned Value must be less tha
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Length/Assigned Value mismatch
   severity: Error
@@ -36,4 +35,7 @@ tests:
         records:
           - ["CDISCPILOT01", "01-701-1015", "ALT", "25"]
     expected_findings: 1
+
+notes: >
+  Blocked on `assigned_value_length_le_var_length` operator (VLM Assigned Value length <= parent variable length). See HANDOFF section 4g.
 

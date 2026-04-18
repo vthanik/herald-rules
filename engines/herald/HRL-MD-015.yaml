@@ -10,7 +10,6 @@ description: Section value must be a valid Section. Valid sections are those whi
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid Section value for Question
   severity: Error

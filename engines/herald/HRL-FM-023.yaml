@@ -10,7 +10,6 @@ description: A Name value is required for each Section.  Name is a required attr
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Missing Name value for Section
   severity: Error

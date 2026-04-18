@@ -9,7 +9,6 @@ description: Order should contain a value (i.e., be non-null).
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Missing Order number
   severity: Error

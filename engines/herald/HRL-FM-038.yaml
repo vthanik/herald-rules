@@ -9,7 +9,6 @@ description: Codelist must have at least one item.
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Codelist is empty
   severity: Error

@@ -10,7 +10,6 @@ description: Paired variables such as TEST/TESTCD must be populated using terms 
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Coded and Decoded values do not have the same C-Code
   severity: Error
@@ -36,4 +35,7 @@ tests:
         records:
           - ["CDISCPILOT01", "01-701-1015", "ALT", "25"]
     expected_findings: 1
+
+notes: >
+  Blocked on `paired_terms_same_c_code` operator (TEST/TESTCD pair codes must share NCI C-Code). See HANDOFF section 4g.
 

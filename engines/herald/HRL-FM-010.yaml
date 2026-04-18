@@ -9,7 +9,6 @@ description: Mandatory must have a value of 'Yes' or 'No'.
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid Mandatory value
   severity: Error

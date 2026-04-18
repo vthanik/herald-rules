@@ -13,7 +13,6 @@ description: SEND/SDTM variables that represent ISO 8601 formatted date/times/da
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid Data Type for --DTC/--DUR variable
   severity: Error
@@ -39,4 +38,7 @@ tests:
         records:
           - ["CDISCPILOT01", "01-701-1015", "ALT", "25"]
     expected_findings: 1
+
+notes: >
+  Blocked on `iso8601_data_type_match` operator (--DTC/--DUR variables must declare a datetime/date/time/partialDate/partialDatetime/incompleteDatetime/durationDatetime Data Type). See HANDOFF section 4g.
 

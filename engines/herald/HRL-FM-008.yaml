@@ -10,7 +10,6 @@ description: Order values should be positive numbers only (integers), no letters
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid Order value
   severity: Error

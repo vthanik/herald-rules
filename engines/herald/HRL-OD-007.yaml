@@ -10,7 +10,6 @@ description: Attribute or element is defined as a time, but text string does not
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid time value
   severity: Error
@@ -18,4 +17,7 @@ provenance:
   source_doc: P21 ADaM Validation Rules v1.2 (ODM)
   authority: Herald
   p21_reference: OD0016
+
+notes: >
+  Blocked on `xml_typed_value_pattern` operator (validates time-typed ODM values against hh:mm:ss(.n+)? regex). See HANDOFF section 4h.
 

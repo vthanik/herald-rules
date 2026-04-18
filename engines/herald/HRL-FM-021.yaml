@@ -9,7 +9,6 @@ description: Referenced Codelist must first be defined on Codelists tab.
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Referenced Codelist is missing
   severity: Error

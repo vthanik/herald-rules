@@ -55,13 +55,18 @@ for (f in dd_files) {
 }
 
 # --- 1. Required herald-format fields ----------------------------------------
+# Reference rules (executability: Reference) are documentation-only and
+# intentionally omit the `check:` key per the "No Stubs" invariant. All
+# other rules must carry the full required-field set.
 cat("[1/10] Required fields...\n")
-required <- c("id", "version", "status", "standard", "category",
-              "sensitivity", "executability", "description", "check", "outcome")
+required_exec <- c("id", "version", "status", "standard", "category",
+                   "sensitivity", "executability", "description", "check", "outcome")
+required_ref  <- setdiff(required_exec, "check")
 
 for (rid in names(rules)) {
   r <- rules[[rid]]
-  missing <- setdiff(required, names(r))
+  req <- if (identical(r$executability, "Reference")) required_ref else required_exec
+  missing <- setdiff(req, names(r))
   if (length(missing) > 0L) {
     fail(sprintf("%s: missing fields: %s", rid, paste(missing, collapse = ", ")))
   }

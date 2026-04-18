@@ -9,7 +9,6 @@ description: Length value must be empty when Data Type is not integer, float, or
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid use of Length
   severity: Error

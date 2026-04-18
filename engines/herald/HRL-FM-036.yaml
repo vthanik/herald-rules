@@ -9,7 +9,6 @@ description: Forms must have at least one Section.
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Form is empty
   severity: Error

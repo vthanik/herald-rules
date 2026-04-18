@@ -9,7 +9,6 @@ description: Codelist Name should not contain any carriage returns.
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid Codelist Name
   severity: Error

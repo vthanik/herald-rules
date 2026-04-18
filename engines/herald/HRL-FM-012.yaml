@@ -10,7 +10,6 @@ description: A value is required for Form for each Question. Questions must be a
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Missing Form value for Question
   severity: Error

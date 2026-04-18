@@ -10,7 +10,6 @@ description: Attribute or element is defined as a date, but text string does not
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid date value
   severity: Error
@@ -18,4 +17,7 @@ provenance:
   source_doc: P21 ADaM Validation Rules v1.2 (ODM)
   authority: Herald
   p21_reference: OD0015
+
+notes: >
+  Blocked on `xml_typed_value_pattern` operator (validates date-typed ODM values against YYYY-MM-DD regex). See HANDOFF section 4h.
 

@@ -9,7 +9,6 @@ description: Name is required for each Codelist.
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Missing Name value
   severity: Error

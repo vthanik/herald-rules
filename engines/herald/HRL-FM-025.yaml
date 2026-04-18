@@ -10,7 +10,6 @@ description: Form value must be a valid Form. Valid forms are those which have a
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid Form value for Section
   severity: Error

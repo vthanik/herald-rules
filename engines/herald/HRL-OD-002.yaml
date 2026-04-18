@@ -9,7 +9,6 @@ description: Required attributes must be included in ODM file and cannot be empt
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Required attribute is missing or empty
   severity: Error
@@ -17,4 +16,7 @@ provenance:
   source_doc: P21 ADaM Validation Rules v1.2 (ODM)
   authority: Herald
   p21_reference: OD0003
+
+notes: >
+  Blocked on `xml_attribute_required` operator (walks ODM XML, asserts attribute presence per ODM v1.2 schema). See HANDOFF section 4h.
 

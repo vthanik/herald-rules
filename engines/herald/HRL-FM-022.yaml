@@ -9,7 +9,6 @@ description: Referenced Measurement Units must first be defined on Units tab.
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Referenced Measurement Unit is missing
   severity: Error

@@ -10,7 +10,6 @@ description: A value is required for Section for each Question. Questions must b
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Missing Section value for Question
   severity: Error

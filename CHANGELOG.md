@@ -10,6 +10,37 @@ for release cadence details.
 
 ## Unreleased
 
+### Beat P21 — Phase 2c (2026-04-18)
+
+#### Changed
+
+- **25 un-annotated herald Reference rules** now carry specific
+  `notes:` fields citing the exact herald operator each blocks on:
+  - HRL-OD-001..009 (9 rules) — `xml_namespace_equals`,
+    `xml_attribute_required`, `xml_element_required`,
+    `xml_element_unique`, `xml_typed_value_pattern` (HANDOFF §4h).
+  - HRL-SD-002 (1 rule) — `dataset_filesize` (HANDOFF §4a).
+  - HRL-DD-001..007 (7 rules) — define.xml attribute-length / Assigned
+    Value / Codelist / Where Clause / paired-terms operators (HANDOFF §4g).
+  - HRL-DD-008..014 (7 rules) — ARM metadata uniqueness /
+    required-child / ParameterOID operators (HANDOFF §4i).
+  - HRL-DD-109 (1 rule) — schema-version-aware `in` pre-condition
+    (HANDOFF §4g).
+- **HANDOFF_TO_HERALD_2026-04-18.md** gains two new subsections:
+  §4h (5 XML operators for ODM validation) and §4i (7 ARM metadata
+  operators). Section 4 summary table now reconciles 56 new operators
+  unlocking ~230 rules — after which herald runs ~98% of the catalog.
+
+#### Fixed
+
+- **84 Reference rules** carried `check: []` stubs (40 deprecated
+  HRL-FM, 19 blocked HRL-MD, 25 newly-annotated HRL-OD/SD/DD).
+  Stripped per the "No Stubs" invariant. Reference rules now uniformly
+  omit the `check:` key.
+- **`tests/validate-define-rules.R`** check-1 required-fields list now
+  distinguishes executable (must have `check:`) from Reference
+  (must NOT have `check:`). Aligns the validator with the invariant.
+
 ### Beat P21 — Phase 2b (2026-04-18)
 
 #### Fixed

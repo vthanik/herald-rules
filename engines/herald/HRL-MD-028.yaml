@@ -10,7 +10,6 @@ description: Codelists associated with a QLABEL should have Terms less than or e
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid Display Term value for Codelist referenced by QLABEL
   severity: Error

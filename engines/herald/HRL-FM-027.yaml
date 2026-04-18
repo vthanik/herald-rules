@@ -10,7 +10,6 @@ description: Codelists associated with a QNAM should have Terms less than or equ
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid Display Term value for Codelist referenced by QNAM
   severity: Error

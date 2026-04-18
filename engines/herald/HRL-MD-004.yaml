@@ -11,7 +11,6 @@ description: If populated, Recommended Codelist must be a valid Codelist ID with
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid Recommended Codelist value
   severity: Error

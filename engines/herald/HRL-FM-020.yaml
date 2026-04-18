@@ -9,7 +9,6 @@ description: If Length is populated, value must follow the positive integer form
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Invalid integer value
   severity: Error

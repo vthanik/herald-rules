@@ -9,7 +9,6 @@ description: Required elements must be included in ODM file and cannot be empty.
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Required element is missing or empty
   severity: Error
@@ -17,4 +16,7 @@ provenance:
   source_doc: P21 ADaM Validation Rules v1.2 (ODM)
   authority: Herald
   p21_reference: OD0006
+
+notes: >
+  Blocked on `xml_element_required` operator (walks ODM XML, asserts element presence per ODM v1.2 schema). See HANDOFF section 4h.
 

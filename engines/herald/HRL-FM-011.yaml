@@ -10,7 +10,6 @@ description: A Name value is required for each Form.  Name is a required attribu
 scope:
   classes: []
   domains: []
-check: []
 outcome:
   message: Missing Name value for Form
   severity: Error
