@@ -4,7 +4,7 @@ status: Published
 standard: ADaM
 category: ADaM Conformance
 sensitivity: Record
-executability: Reference
+executability: Fully Executable
 description: >
   On a given record, a variable with a suffix of SDT has a value greater than
   a value of a variable with the same root and a suffix of EDT, and both
@@ -16,6 +16,13 @@ scope:
     - BDS
     - OCCDS
   domains: []
+check:
+  all:
+    - name: ""
+      operator: paired_suffix_date_order
+      value:
+        start_suffix: SDT
+        end_suffix: EDT
 outcome:
   message: "*SDT is greater than *EDT"
   severity: Error
@@ -24,6 +31,3 @@ provenance:
   authority: Herald
   p21_reference: AD0792
   ig_versions: []
-notes: >
-  Deferred to Reference pending a herald `paired_suffix_date_order` operator
-  (not yet implemented). Activation plan in HANDOFF_TO_HERALD.md section 4.
