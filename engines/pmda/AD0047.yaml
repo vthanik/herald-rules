@@ -11,17 +11,11 @@ description: >
   Covers every core structural variable (STUDYID, USUBJID, domain-specific key
   variables such as PARAMCD/AVAL for BDS, AETERM/AESEV for OCCDS AE, etc.).
 scope:
-  classes: []
-  domains:
+  classes:
     - ADSL
-    - ADDL
     - BDS
-    - ADNCA
-    - MDBDS
     - OCCDS
-    - ADAE
-    - MDOCCDS
-    - ADAMOTHER
+  domains: []
 outcome:
   message: Required variable is not present
   severity: Error

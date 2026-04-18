@@ -11,13 +11,11 @@ description: >
   variables are populated. (Paired *STM / *ETM time variables must obey
   start <= end.)
 scope:
-  classes: []
-  domains:
+  classes:
     - ADSL
     - BDS
     - OCCDS
-    - ADAE
-    - ADAMOTHER
+  domains: []
 outcome:
   message: "*STM is greater than *ETM"
   severity: Error

@@ -13,11 +13,9 @@ description: >
   A category value may recur across different parent values, but a single
   AVALC (or BASEC) must not map to two distinct AVALCATy (or BASECATy) values.
 scope:
-  classes: []
-  domains:
+  classes:
     - BDS
-    - ADNCA
-    - MDBDS
+  domains: []
 outcome:
   message: Inconsistent value for *CATy
   severity: Error

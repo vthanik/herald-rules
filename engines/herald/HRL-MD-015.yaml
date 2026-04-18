@@ -19,3 +19,6 @@ provenance:
   authority: Herald
   p21_reference: MD4015
 
+notes: >
+  Blocked on `valid_section_id` cross-reference operator (spec ItemGroup lookup). See HANDOFF section 4d.
+

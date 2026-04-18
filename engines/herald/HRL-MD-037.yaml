@@ -18,3 +18,6 @@ provenance:
   authority: Herald
   p21_reference: MD4037
 
+notes: >
+  Blocked on child-aggregate operator (Sections must have >=1 Question). See HANDOFF section 4c.
+

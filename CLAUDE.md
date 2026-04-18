@@ -247,8 +247,9 @@ Phased execution (see `/Users/vignesh/.claude/plans/plan-are-we-focusing-wobbly-
 
 | Phase | Scope | Where |
 |---|---|---|
-| 1 | AD0124 executable, AD0047 clean Reference, 6 missing P21 IDs, engine handover | heraldrules (done) |
-| 2 | 864 "Bucket A" rules authored with existing operators | heraldrules, 5-8 sessions |
+| 1 | AD0124 executable, AD0047 clean Reference, 4 missing P21 IDs, engine handover | heraldrules (done) |
+| 2a | 40 HRL-FM duplicates deprecated; 21 HRL-MD promoted to executable; 19 HRL-MD annotated as blocked | heraldrules (done) |
+| 2b-h | Remaining ~800 "Bucket A" rules authored with existing operators | heraldrules, 5-8 sessions |
 | 3 | 28 new operators implemented | herald, 2-3 sessions |
 | 4 | 163 "Bucket B/C/D/E" rules authored | heraldrules, 2 sessions |
 | 5 | Re-examine 259 "F" + 673 "G" rules | heraldrules, 2 sessions |

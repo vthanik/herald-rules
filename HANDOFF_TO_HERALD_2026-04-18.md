@@ -252,6 +252,45 @@ Phase 4 batch authoring can begin. Prioritise by rule-count unlock.
 | `check_value` | evaluate regex or enumeration against a define.xml / CT metadata path |
 | `codelist_code_match` | variable's value must correspond to a term in `value.codelist` (uses `herald-controlled-terminology.csv`) |
 
+### 4g. Spec-level operators for the HRL-MD family (unlock 19 rules)
+
+Phase 2a rewrote 21 HRL-MD rules to Fully Executable with existing
+operators and deprecated 40 HRL-FM duplicates. The remaining 19 HRL-MD
+rules (004, 013, 015, 018-022, 025, 027, 028, 030, 031, 033-038) need
+the following new operators. Each rule's YAML `notes:` field cites the
+exact subsection below.
+
+| Operator | Semantics | Unlocks |
+|---|---|---|
+| `valid_codelist_id` | codelist reference on Variables/Terms sheet exists as an ID on the Codelists sheet | MD-004, MD-021, MD-030 |
+| `valid_codelist_term` | term is a member of the referenced codelist's term list | MD-031 |
+| `valid_form_id` | form reference on Questions/Sections sheet exists as a FormDef element | MD-013, MD-025 |
+| `valid_section_id` | section reference on Questions sheet exists as an ItemGroup element | MD-015 |
+| `valid_measurement_unit` | unit reference on Questions sheet exists on the Units tab | MD-022 |
+| `valid_sdtm_target_variable` | SDTM Target column references a variable that exists in the target SDTM domain | MD-033, MD-034 |
+| `conditional_empty_when` | field is empty when trigger field not in specified set | MD-018 |
+| `conditional_required_when` | field populated when trigger field in specified set | MD-019 |
+| `conditional_regex_when` | field matches regex when populated | MD-020 |
+| `child_count_gte` | parent row has >= N child rows on a named child sheet (Events->Forms, Forms->Sections, Sections->Questions, Codelists->Terms) | MD-035, MD-036, MD-037, MD-038 |
+| `length_le_within_group` | Terms of codelists in a specified parent group have Term length <= N chars | MD-027, MD-028 |
+
+These operators need a broader change too: herald's YAML-rule runner today
+assumes `name:` is a dataset column. For spec-level rules it must route
+the rule to the spec sheet (Codelists / Terms / Forms / Sections / Questions / Units / Variables)
+named by the rule's `category: Specification Metadata` tag. Practical design:
+
+1. Engine reads the category. If `Specification Metadata`, route to the
+   appropriate spec-data-frame (already parsed via `read_spec()`).
+2. `name:` refers to a spec-sheet column (e.g. `codelist_name`, `data_type`,
+   `order`) rather than a dataset column.
+3. Existing spec-handling code lives in `R/val-checks.R` (hardcoded HRL-CL/VAR/TYP
+   checks); the YAML route should converge on the same data structures.
+
+Once that routing exists, the 21 already-promoted HRL-MD rules can be
+verified end-to-end against real spec sheets. Until then, their tests
+run through the placeholder dataset pattern used by the existing HRL-DD
+executable set.
+
 ---
 
 ## 5. Regression fixtures

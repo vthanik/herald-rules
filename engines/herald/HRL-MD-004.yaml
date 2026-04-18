@@ -20,3 +20,6 @@ provenance:
   authority: Herald
   p21_reference: MD4004
 
+notes: >
+  Blocked on `valid_codelist_id` cross-reference operator (CT registry lookup). See HANDOFF section 4e.
+

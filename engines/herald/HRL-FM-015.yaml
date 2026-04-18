@@ -1,6 +1,6 @@
 id: HRL-FM-015
 version: 1
-status: Published
+status: Deprecated
 standard: ADaM
 category: Specification Metadata
 sensitivity: Study
@@ -18,4 +18,9 @@ provenance:
   source_doc: P21 ADaM Validation Rules v1.1 (Form Metadata)
   authority: Herald
   p21_reference: FM0015
+
+deprecated:
+  date: 2026-04-18
+  reason: Superseded by HRL-MD-015 (ADaM IG 1.2 Metadata namespace). HRL-FM rules are ADaM IG 1.1-era duplicates.
+  replaced_by: HRL-MD-015
 

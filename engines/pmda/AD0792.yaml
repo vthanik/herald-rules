@@ -11,13 +11,11 @@ description: >
   variables are populated. (Paired *SDT / *EDT date variables must obey
   start <= end.)
 scope:
-  classes: []
-  domains:
+  classes:
     - ADSL
     - BDS
     - OCCDS
-    - ADAE
-    - ADAMOTHER
+  domains: []
 outcome:
   message: "*SDT is greater than *EDT"
   severity: Error

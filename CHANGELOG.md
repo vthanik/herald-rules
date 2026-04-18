@@ -10,6 +10,44 @@ for release cadence details.
 
 ## Unreleased
 
+### Beat P21 — Phase 2a (2026-04-18)
+
+#### Deprecated
+
+- **HRL-FM-001..040** — all 40 ADaM IG 1.1 "Form Metadata" rules
+  deprecated in favor of their HRL-MD-NNN equivalents (ADaM IG 1.2
+  "Metadata" namespace). Each deprecated YAML gains a `deprecated:`
+  block citing `replaced_by: HRL-MD-NNN`, date 2026-04-18, and the
+  reason. Files retained for audit trail.
+
+#### Added (executable)
+
+- **HRL-MD-001/002/003/005/006/007/008/009/010/011/012/014/016/017/023/024/026/029/032/039/040**
+  (21 rules) promoted from stub `Reference` to `Fully Executable`. Each
+  uses existing operators (`non_empty`, `empty`+`in`, `does_not_match_regex`)
+  and ships with a positive/negative test pair following the HRL-DD
+  placeholder-dataset pattern. Covers Codelist name, Event name/type,
+  Repeating, Order, Mandatory, Form/Section/Question metadata, Term
+  validation, and Unit required-field checks.
+
+#### Changed
+
+- **HRL-MD-004/013/015/018/019/020/021/022/025/027/028/030/031/033/034/035/036/037/038**
+  (19 rules) gain a `notes:` field documenting the specific herald
+  operator each is blocked on (e.g. `valid_codelist_id`, `valid_form_id`,
+  `child_count_gte`, `conditional_empty_when`). Each note cites the
+  subsection of `HANDOFF_TO_HERALD_2026-04-18.md` where the operator
+  is specified.
+- **Scope correction (AD0047, AD0124, AD0792, AD0793, AD0794, AD0895)**
+  -- scope now uses `classes: [BDS]` / `classes: [ADSL, BDS, OCCDS]`
+  rather than enumerating individual ADaM domains. Aligns with the
+  `Scope.Classes` convention used by CDISC CORE rules and `read_spec`.
+- **`HANDOFF_TO_HERALD_2026-04-18.md`** gains a new section 4g
+  documenting the 11 spec-level operators needed to activate the 19
+  still-blocked HRL-MD rules, plus the engine-side routing change
+  required for YAML spec-metadata rules (category-driven dispatch to
+  spec data frames instead of dataset columns).
+
 ### Beat P21 — Phase 1 (2026-04-18)
 
 #### Added

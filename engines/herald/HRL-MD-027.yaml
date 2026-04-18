@@ -19,3 +19,6 @@ provenance:
   authority: Herald
   p21_reference: MD4027
 
+notes: >
+  Blocked on conditional length-within-group operator (Terms of QNAM codelists <= 8 chars). See HANDOFF section 4c.
+

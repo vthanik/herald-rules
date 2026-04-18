@@ -19,3 +19,6 @@ provenance:
   authority: Herald
   p21_reference: MD4028
 
+notes: >
+  Blocked on conditional length-within-group operator (Terms of QLABEL codelists <= 40 chars). See HANDOFF section 4c.
+

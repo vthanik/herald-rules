@@ -19,3 +19,6 @@ provenance:
   authority: Herald
   p21_reference: MD4025
 
+notes: >
+  Blocked on `valid_form_id` cross-reference operator. See HANDOFF section 4d.
+

@@ -18,3 +18,6 @@ provenance:
   authority: Herald
   p21_reference: MD4035
 
+notes: >
+  Blocked on child-aggregate operator (Events must have >=1 Form). See HANDOFF section 4c.
+

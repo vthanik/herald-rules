@@ -20,3 +20,6 @@ provenance:
   authority: Herald
   p21_reference: MD4034
 
+notes: >
+  Blocked on SDTM-target domain cross-reference operator. See HANDOFF section 4d.
+

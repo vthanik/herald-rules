@@ -11,18 +11,9 @@ description: >
   the same category value may be used across multiple parameters, but a single
   parameter must not appear under two different PARCAT1 values.
 scope:
-  classes: []
-  domains:
-    - ADVS
-    - ADLB
-    - ADEG
-    - ADQS
-    - ADLBH
-    - ADPC
-    - ADPP
+  classes:
     - BDS
-    - ADNCA
-    - MDBDS
+  domains: []
 check:
   all:
     - name: PARAMCD

@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "herald_min_version": "0.1.0",
-  "generated": "2026-04-18T10:09:11Z",
+  "generated": "2026-04-18T10:33:37Z",
   "sources": {
     "cdisc": "CDISC Library API (library.cdisc.org)",
     "fda": "FDA Validator Rules v1.6 (December 2022) + Business Rules v1.5",
@@ -11,7 +11,7 @@
   },
   "stats": {
     "total_engine_rules": 3878,
-    "executable_engine_rules": 3025,
+    "executable_engine_rules": 3046,
     "by_engine": {
       "cdisc": 703,
       "ct": 1210,
@@ -23,7 +23,7 @@
       "cdisc": 527,
       "ct": 1210,
       "fda": 426,
-      "herald": 155,
+      "herald": 176,
       "pmda": 707
     },
     "configs": 10
@@ -34,7 +34,7 @@
       "authority": "Combined",
       "standard": "All",
       "version": "2026.2",
-      "rule_count": 3869
+      "rule_count": 3873
     },
     {
       "file": "fda-adam-ig-1.1.json",
@@ -76,7 +76,7 @@
       "authority": "PMDA",
       "standard": "ADaM-IG",
       "version": "1.1",
-      "rule_count": 2509
+      "rule_count": 2513
     },
     {
       "file": "pmda-define-xml-2.1.json",
