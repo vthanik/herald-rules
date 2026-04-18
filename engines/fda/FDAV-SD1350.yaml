@@ -1,13 +1,16 @@
 Core:
   Id: FDAV-SD1350
-  Status: Reference
+  Status: Published
   Version: '1'
 Description: Planned End of Assessment Interval (--ENINT) should not be NULL, when
   Planned Start of Assessment Interval (--STINT) is populated.
 Check:
   all:
-    - name: __domain_variable__
-      operator: check_value
+    - name: ""
+      operator: wildcard_required_when_populated
+      value:
+        target_suffix: ENINT
+        sibling_suffix: STINT
 Outcome:
   Message: Missing value for --ENINT, when --STINT is provided
 Rule Type: Record Data

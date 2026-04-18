@@ -164,6 +164,34 @@ fda_rows <- lapply(seq_len(nrow(fda_raw)), function(i) {
 fda_df <- do.call(rbind, fda_rows)
 cat(sprintf("   %d rules\n", nrow(fda_df)))
 
+# Overlay YAML executability/status for any FDA rule whose
+# engines/fda/FDAV-<id>.yaml exposes a real Executability + Check
+# (YAMLs are the ground truth once an author has attached operators).
+fda_yaml_dir <- file.path(repo_root, "engines", "fda")
+fda_yaml_files <- list.files(fda_yaml_dir, pattern = "\\.yaml$", full.names = TRUE)
+fda_yaml_rows <- lapply(fda_yaml_files, function(f) {
+  tryCatch({
+    r <- yaml::read_yaml(f)
+    cid <- r$Core$Id %||% ""
+    if (!nzchar(cid)) return(NULL)
+    # Strip FDAV- prefix to match the Excel rule_id.
+    rid <- sub("^FDAV-", "", cid)
+    list(
+      rule_id = rid,
+      executability = r$Executability %||% "",
+      status = r$Core$Status %||% ""
+    )
+  }, error = function(e) NULL)
+})
+fda_yaml_rows <- Filter(Negate(is.null), fda_yaml_rows)
+for (yrow in fda_yaml_rows) {
+  m <- which(fda_df$rule_id == yrow$rule_id)
+  if (length(m) > 0L) {
+    if (nzchar(yrow$executability)) fda_df$executability[m] <- yrow$executability
+    if (nzchar(yrow$status)) fda_df$status[m] <- yrow$status
+  }
+}
+
 # =============================================================================
 # 3. PMDA Validation Rules v6.0
 # =============================================================================
