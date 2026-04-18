@@ -10,12 +10,12 @@ specific document and section it enforces.
 
 ## Overview
 
-**3,878 YAML rules** (3,700 runnable, 95%) covering FDA, PMDA, and CDISC conformance requirements for SDTM, ADaM, SEND, and Define-XML submissions.
+**3,864 YAML rules** (3,702 runnable, 96%) covering FDA, PMDA, and CDISC conformance requirements for SDTM, ADaM, SEND, and Define-XML submissions.
 
 | Engine | Total | Runnable | Source |
 |--------|------:|---------:|--------|
 | `cdisc` | 703 | 701 | CDISC Library API (SDTM/SEND, 450 CORE rules) + ADaM IG Conformance (253 ADaM-NNN rules, v1.1 and v1.2) |
-| `fda` | 660 | 574 | FDA Business Rules v1.5 (86) + Validator Rules v1.6 (574) |
+| `fda` | 644 | 574 | FDA Business Rules v1.5 (70) + Validator Rules v1.6 (574) |
 | `pmda` | 1,045 | 1,039 | PMDA Validation Rules v6.0 (SDTM/ADaM/Define-XML) + 4 P21-parity gap-fills (AD0792/793/794/895) |
 | `ct` | 1,210 | 1,210 | CDISC Library Controlled Terminology (6 meta-rules + 1,204 per-codelist) |
 | `herald` | 260 | 176 | Herald-original: 21 executable HRL-MD spec-metadata rules + 40 deprecated HRL-FM duplicates + 90 other HRL-AD/OD/SD/TS/VAR/LBL/TYP/LEN/DS/CL + 109 HRL-DD Define-XML |
@@ -67,7 +67,7 @@ herald-rules/
 ├── engines/
 │   ├── cdisc/              703 YAML -- CDISC Library conformance rules (450 CORE) + ADaM IG (253 ADaM-NNN, v1.1+v1.2)
 │   ├── ct/               1,210 YAML -- Per-codelist CT rules with baked-in terms
-│   ├── fda/                660 YAML -- FDA Business + Validator Rules
+│   ├── fda/                644 YAML -- FDA Business + Validator Rules
 │   ├── herald/             147 YAML -- Herald-original gap-fill + hardcoded spec checks (HRL- prefix)
 │   │   └── define/         109 YAML -- Define-XML v2.1 spec validation (HRL-DD-001..109)
 │   └── pmda/             1,041 YAML -- PMDA Validation Rules v6.0

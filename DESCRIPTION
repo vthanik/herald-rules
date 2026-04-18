@@ -18,7 +18,7 @@ Description:
 
 Engines:
   cdisc/     450 rules  CDISC Library conformance rules
-  fda/       660 rules  FDA Business Rules v1.5 + Validator Rules v1.6
+  fda/       644 rules  FDA Business Rules v1.5 + Validator Rules v1.6
   pmda/    1,041 rules  PMDA Validation Rules v6.0
   ct/      1,210 rules  Per-codelist controlled terminology rules
   herald/    232 rules  Herald gap-fill and hardcoded spec checks

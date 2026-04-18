@@ -10,6 +10,28 @@ for release cadence details.
 
 ## Unreleased
 
+### Clean-slate rewrite — Phase 1a (2026-04-18, drop 16 deprecated FDAB stubs)
+
+#### Removed
+
+Deleted 16 FDAB rules whose sole description is "Deprecated in v1.3" /
+"Deprecated in v1.5" -- no policy content and no mechanical check ever
+possible. These rules had `executability: Reference` and contributed
+nothing but noise to the catalog.
+
+- Deleted files: `engines/fda/FDAB{002,007,010,012,013,020,021,027,028,029,033,035,041,045,052,067}.yaml`
+- `configs/all.json`: 3875 -> 3859 rules
+- `configs/fda-define-xml-2.1.json`: 2132 -> 2116 rules
+- `manifest.json`: total 3880 -> 3864; fda engine 660 -> 644
+- Not in `herald-master-rules.csv` (these rules were YAML-only, no CSV rows)
+
+This is the first step of the P21-parity clean-slate. See
+`/Users/vignesh/.claude/plans/there-are-lot-of-wild-lecun.md` for the
+full plan: all surviving rules become executable, catalog ships as a
+companion CRAN package, P21 IDs surface as primary display IDs.
+
+---
+
 ### Beat P21 — Phase 2i (2026-04-18, HBPD03 P21-parity gap analysis + HRL-KEY YAML-first rewrite)
 
 #### Added

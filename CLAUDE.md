@@ -8,7 +8,7 @@ All rules sourced from official regulatory authorities -- zero P21 dependency.
 ```
 engines/
   cdisc/   703 YAML  -- CDISC Library API (450 SDTM/SEND CORE rules) + ADaM IG Conformance (253 ADaM-NNN rules, v1.1+v1.2)
-  fda/     660 YAML  -- FDA Business Rules v1.5 (86) + Validator Rules v1.6 (574)
+  fda/     644 YAML  -- FDA Business Rules v1.5 (70) + Validator Rules v1.6 (574)
   pmda/  1,041 YAML  -- PMDA Validation Rules v6.0 (SDTM/ADaM/Define-XML)
   ct/    1,210 YAML  -- 6 meta-rules + 1,204 per-codelist CT rules
 ct/                  -- Full SDTM + ADaM controlled terminology JSON
@@ -293,7 +293,7 @@ skip summary for Reference rules.
 Herald's product goal is to be the open-source, R-native replacement for
 P21 Community. The catalog today:
 
-- 3,874 YAML rules total.
+- 3,864 YAML rules total.
 - ~1,300 genuinely runnable (Fully Executable / Hardcoded).
 - ~2,500 `Reference` (documentation only, not executed).
 - Ceiling (with ~28 new herald operators + re-examination): ~85% runnable.
