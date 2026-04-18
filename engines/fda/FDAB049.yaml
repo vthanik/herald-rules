@@ -2,11 +2,11 @@ Core:
   Id: FDAB049
   Status: Reference
 Description: Set code should match trial sets for nonclinical data.
-Check: []
 Outcome:
   Message: Set code should match trial sets for nonclinical data.
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

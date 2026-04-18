@@ -10,6 +10,23 @@ for release cadence details.
 
 ## Unreleased
 
+### Beat P21 — Phase 2b (2026-04-18)
+
+#### Fixed
+
+- **86 FDA Business Rules v1.5** YAMLs under `engines/fda/` lacked an
+  `Executability:` field and carried a `Check: []` stub. Added
+  `Executability: Reference`; removed the stub. These are guidance-grade
+  rules from FDA Study Data Technical Conformance Guide that are not
+  mechanically checkable and stay Reference by nature. Brings them into
+  compliance with the "No Stubs" invariant.
+- **ADaM-1047** (CDISC, ADaM v1.2 SHIFTy gap-fill) had a `SHIFT1 non_empty`
+  stub check that would overreport on every populated SHIFTy row.
+  Converted to `Executability: Reference`, stub purged, and annotated
+  with a `valid_shift_pair` operator requirement pointing to HANDOFF
+  section 4b. This is the one remaining "Not Executable" entry in the
+  catalog; after this fix the `Not Executable` value is no longer used.
+
 ### Beat P21 — Phase 2b-prep (2026-04-18)
 
 #### Changed

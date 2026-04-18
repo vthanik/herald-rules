@@ -6,7 +6,6 @@ Description: When offering more granular/detailed race and/or ethnicity selectio
   options roll up (or collapse) into the existing five primary race and two ethnicity
   categories as described in the FDA guidance document from October 2016 "Collection
   of Race and Ethnicity Data in Clinical Trials."
-Check: []
 Outcome:
   Message: When offering more granular/detailed race and/or ethnicity selection options
     to clinical trial participants, sponsors should ensure that these additional options
@@ -15,6 +14,7 @@ Outcome:
     and Ethnicity Data in Clinical Trials."
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

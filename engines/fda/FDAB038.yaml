@@ -3,12 +3,12 @@ Core:
   Status: Reference
 Description: Timing information of interventions, findings and events should be submitted,
   if collected.
-Check: []
 Outcome:
   Message: Timing information of interventions, findings and events should be submitted,
     if collected.
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

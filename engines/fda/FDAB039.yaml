@@ -3,12 +3,12 @@ Core:
   Status: Reference
 Description: Upper limit of reference range should be greater than lower limit, whenever
   both are submitted.
-Check: []
 Outcome:
   Message: Upper limit of reference range should be greater than lower limit, whenever
     both are submitted.
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

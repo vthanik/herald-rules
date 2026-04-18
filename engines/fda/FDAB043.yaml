@@ -3,12 +3,12 @@ Core:
   Status: Reference
 Description: When end timepoint is provided, then a related start timepoint should
   also be provided.
-Check: []
 Outcome:
   Message: When end timepoint is provided, then a related start timepoint should also
     be provided.
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

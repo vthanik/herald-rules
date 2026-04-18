@@ -4,13 +4,13 @@ Core:
 Description: Required timing variables for identification of the day on which group
   summaries (group means and incidences) are calculated should be populated for nonclinical
   data.
-Check: []
 Outcome:
   Message: Required timing variables for identification of the day on which group
     summaries (group means and incidences) are calculated should be populated for
     nonclinical data.
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

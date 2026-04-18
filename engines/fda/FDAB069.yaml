@@ -3,12 +3,12 @@ Core:
   Status: Reference
 Description: Drugs and metabolite names in pharmacokinetic datasets should be consistent
   with naming in other datasets across a submission.
-Check: []
 Outcome:
   Message: Drugs and metabolite names in pharmacokinetic datasets should be consistent
     with naming in other datasets across a submission.
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

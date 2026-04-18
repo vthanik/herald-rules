@@ -3,12 +3,12 @@ Core:
   Status: Reference
 Description: Collection study day should be populated when date/time of collection
   is available.
-Check: []
 Outcome:
   Message: Collection study day should be populated when date/time of collection is
     available.
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

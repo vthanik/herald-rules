@@ -40,7 +40,8 @@ state and plan:
 | 1 | **done** | AD0124 executable, AD0047 clean Reference, 4 missing P21 IDs, engine handover written |
 | 2a | **done** | 40 HRL-FM duplicates deprecated; 21 HRL-MD promoted Reference→Fully Executable; 19 HRL-MD annotated as operator-blocked |
 | 2b-prep | **done** | Runnable allow-list expanded to include Partially Executable variants (654 rules recovered); 2 true stubs purged (ADaM-047, AD0256) |
-| 2b-h | next | Remaining ~150 "Bucket A" Reference rules across PMDA/CDISC/FDA |
+| 2b | **done** | 86 FDA Business Rules schema-normalized; 1 remaining Not-Executable stub (ADaM-1047) purged to Reference |
+| 2c-h | next | Author the ~150 remaining genuine Reference rules where existing operators suffice; otherwise leave with HANDOFF blocker notes |
 | 3 | blocked on herald | 28 new operators (required_variables, in_range, paired-suffix date/time, cross-dataset population, etc.) |
 | 4 | blocked on Phase 3 | 163 additional rules unlocked by Phase 3 operators |
 | 5 | blocked on Phase 4 | Re-examine 259 "architecturally blocked" + 673 "reference-by-nature" rules |

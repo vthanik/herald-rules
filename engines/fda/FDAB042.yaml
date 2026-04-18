@@ -3,12 +3,12 @@ Core:
   Status: Reference
 Description: When a test is not done, the result variable should not be populated,
   and the reason not done should be provided in the appropriate variable.
-Check: []
 Outcome:
   Message: When a test is not done, the result variable should not be populated, and
     the reason not done should be provided in the appropriate variable.
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

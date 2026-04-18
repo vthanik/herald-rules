@@ -4,13 +4,13 @@ Core:
 Description: The number of animals with a specific tumor finding for each organ/tissue
   should be consistent between the MI.xpt (SEND) and Tumor.xpt for the same dose group
   and sex. Explain any inconsistencies in the nSDRG.
-Check: []
 Outcome:
   Message: The number of animals with a specific tumor finding for each organ/tissue
     should be consistent between the MI.xpt (SEND) and Tumor.xpt for the same dose
     group and sex. Explain any inconsistencies in the nSDRG.
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

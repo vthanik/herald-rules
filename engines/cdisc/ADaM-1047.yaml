@@ -14,19 +14,15 @@ Authorities:
               Version: '1'
             Version: '1.0'
         Version: '1.2'
-Check:
-  all:
-    - name: SHIFT1
-      operator: non_empty
 Core:
   Id: ADaM-1047
   Status: Published
   Version: '1'
 Description: >-
   SHIFTy variables may only be based on the change in value of approved variable pairs, which in v1.2 include the bi-directional toxicity pairs (ATOXGRL/BTOXGRL, ATOXGRH/BTOXGRH) in addition to the standard ATOXGR/BTOXGR pair.
-Executability: Not Executable
+Executability: Reference
 Outcome:
-  Message: 'SHIFTy variable present; verify it is based on an approved variable pair per ADaM-IG v1.2 Table 3.3.4.1'
+  Message: 'SHIFTy variable must be derived from an approved variable pair per ADaM-IG v1.2 Table 3.3.4.1'
 Rule_Type: Record Data
 Scope:
   Classes:
@@ -42,21 +38,11 @@ herald:
   catalogs:
     - ADaMIG 1.2
   fetched: '2026-04-12'
-
-tests:
-  - name: "SHIFT1 absent (no informational finding)"
-    type: positive
-    datasets:
-      ADLB:
-        variables: [STUDYID, USUBJID, PARAMCD, SHIFT1]
-        records:
-          - ["CDISCPILOT01", "01-701-1015", "SODIUM", ""]
-    expected_findings: 0
-  - name: "SHIFT1 present (informational: verify approved pair)"
-    type: negative
-    datasets:
-      ADLB:
-        variables: [STUDYID, USUBJID, PARAMCD, SHIFT1]
-        records:
-          - ["CDISCPILOT01", "01-701-1015", "SODIUM", "HIGH to LOW"]
-    expected_findings: 1
+  notes: >
+    Deferred to Reference pending a `valid_shift_pair` operator in the herald
+    R package. The previous stub (`SHIFT1 non_empty`) would overreport on every
+    populated SHIFTy row because it cannot distinguish valid pairs from
+    invalid. The real check requires verifying that SHIFTy is derived from an
+    approved (ATOXGR/BTOXGR, ATOXGRL/BTOXGRL, or ATOXGRH/BTOXGRH) source pair
+    per ADaM-IG v1.2 Table 3.3.4.1. Activation plan in
+    HANDOFF_TO_HERALD_2026-04-18.md section 4b.

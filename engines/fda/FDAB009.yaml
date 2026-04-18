@@ -4,13 +4,13 @@ Core:
 Description: All paired variables should have a one-to-one relationship. Examples
   include short name and name of test; parameter name and parameter code or number;
   variable name and variable label, etc.
-Check: []
 Outcome:
   Message: All paired variables should have a one-to-one relationship. Examples include
     short name and name of test; parameter name and parameter code or number; variable
     name and variable label, etc.
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

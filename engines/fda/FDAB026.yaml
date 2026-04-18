@@ -3,12 +3,12 @@ Core:
   Status: Reference
 Description: Records with a baseline flag should have a corresponding standard result
   with a standardized unit where available.
-Check: []
 Outcome:
   Message: Records with a baseline flag should have a corresponding standard result
     with a standardized unit where available.
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

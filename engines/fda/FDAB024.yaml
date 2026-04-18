@@ -3,12 +3,12 @@ Core:
   Status: Reference
 Description: Large datasets should be split into smaller datasets no larger than 5
   GB in size.
-Check: []
 Outcome:
   Message: Large datasets should be split into smaller datasets no larger than 5 GB
     in size.
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

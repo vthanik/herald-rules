@@ -3,12 +3,12 @@ Core:
   Status: Reference
 Description: The total number of animals assigned to each dose and sex group should
   be consistent between SEND and Tumor.xpt. Explain any inconsistencies in the nSDRG.
-Check: []
 Outcome:
   Message: The total number of animals assigned to each dose and sex group should
     be consistent between SEND and Tumor.xpt. Explain any inconsistencies in the nSDRG.
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

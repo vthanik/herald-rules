@@ -5,7 +5,6 @@ Description: 'When collecting racial demographic data from clinical trial partic
   the following five minimum choices should be offered: American Indian or Alaska
   Native, Asian, Black or African American, Native Hawaiian or Other Pacific Islander,
   and White'
-Check: []
 Outcome:
   Message: 'When collecting racial demographic data from clinical trial participants,
     the following five minimum choices should be offered: American Indian or Alaska
@@ -13,6 +12,7 @@ Outcome:
     and White'
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

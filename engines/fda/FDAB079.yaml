@@ -4,13 +4,13 @@ Core:
 Description: The interval of time to detection of a tumor for each organ/tissue should
   be consistent between SEND (TFDETECT) and Tumor.xpt (DETECTTM). Explain any inconsistencies
   in the nSDRG.
-Check: []
 Outcome:
   Message: The interval of time to detection of a tumor for each organ/tissue should
     be consistent between SEND (TFDETECT) and Tumor.xpt (DETECTTM). Explain any inconsistencies
     in the nSDRG.
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

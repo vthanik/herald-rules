@@ -3,11 +3,11 @@ Core:
   Status: Reference
 Description: Character values should not have leading spaces or only have a period
   character.
-Check: []
 Outcome:
   Message: Character values should not have leading spaces or only have a period character.
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

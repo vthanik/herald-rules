@@ -263,7 +263,8 @@ Phased execution (see `/Users/vignesh/.claude/plans/plan-are-we-focusing-wobbly-
 | 1 | AD0124 executable, AD0047 clean Reference, 4 missing P21 IDs, engine handover | heraldrules (done) |
 | 2a | 40 HRL-FM duplicates deprecated; 21 HRL-MD promoted to executable; 19 HRL-MD annotated as blocked | heraldrules (done) |
 | 2b-prep | Runnable allow-list expanded to include Partially variants; 2 stub rules purged | heraldrules (done) |
-| 2b-h | Remaining ~150 "Bucket A" Reference rules across PMDA/CDISC/FDA | heraldrules, 2-3 sessions |
+| 2b | 86 FDA Business Rules schema-normalized; last Not Executable stub (ADaM-1047) purged | heraldrules (done) |
+| 2c-h | Remaining ~150 genuine Reference rules where existing operators suffice | heraldrules, 2-3 sessions |
 | 3 | 28 new operators implemented | herald, 2-3 sessions |
 | 4 | 163 "Bucket B/C/D/E" rules authored | heraldrules, 2 sessions |
 | 5 | Re-examine 259 "F" + 673 "G" rules | heraldrules, 2 sessions |

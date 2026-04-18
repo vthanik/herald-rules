@@ -3,12 +3,12 @@ Core:
   Status: Reference
 Description: SUPPQUAL variable length should be no longer than the maximum length
   of the actual data within the dataset.
-Check: []
 Outcome:
   Message: SUPPQUAL variable length should be no longer than the maximum length of
     the actual data within the dataset.
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

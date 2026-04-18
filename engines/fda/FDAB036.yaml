@@ -2,11 +2,11 @@ Core:
   Id: FDAB036
   Status: Reference
 Description: The value for study day should not be negative for exposure treatments.
-Check: []
 Outcome:
   Message: The value for study day should not be negative for exposure treatments.
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5

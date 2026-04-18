@@ -2,11 +2,11 @@ Core:
   Id: FDAB034
   Status: Reference
 Description: Study start and end date/time should include month, day, and year.
-Check: []
 Outcome:
   Message: Study start and end date/time should include month, day, and year.
 Rule Type: Record Data
 Sensitivity: Record
+Executability: Reference
 Authorities:
 - Organization: FDA
 Source: FDA Business Rules v1.5
