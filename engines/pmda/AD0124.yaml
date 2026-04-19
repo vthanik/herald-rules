@@ -16,8 +16,6 @@ scope:
   domains: []
 check:
   all:
-    - name: PARAMCD
-      operator: non_empty
     - name: PARCAT1
       operator: not_consistent_within
       value: PARAMCD
