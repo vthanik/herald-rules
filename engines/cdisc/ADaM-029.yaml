@@ -18,8 +18,6 @@ Authorities:
 Check:
   all:
     - name: PPROTFN
-      operator: empty
-    - name: PPROTFN
       operator: in
       value:
         - 0

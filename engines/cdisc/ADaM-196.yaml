@@ -19,7 +19,7 @@ Authorities:
 Check:
   all:
     - name: PARAMCD
-      operator: empty
+      operator: non_empty
 Core:
   Id: ADaM-196
   Status: Published

@@ -15,7 +15,7 @@ Authorities:
             Version: '1.0'
         Version: '1.2'
 Check:
-  all:
+  any:
     - name: PARAMTYP
       operator: non_empty
 Core:

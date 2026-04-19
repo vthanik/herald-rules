@@ -18,8 +18,6 @@ Authorities:
 Check:
   all:
     - name: ITTFN
-      operator: empty
-    - name: ITTFN
       operator: in
       value:
         - 0

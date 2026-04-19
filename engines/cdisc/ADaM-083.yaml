@@ -17,7 +17,7 @@ Authorities:
 Check:
   all:
     - name: TRTSDT
-      operator: empty
+      operator: non_empty
 Core:
   Id: ADaM-083
   Status: Published

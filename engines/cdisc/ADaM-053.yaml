@@ -16,7 +16,7 @@ Authorities:
             Version: "1.0"
         Version: "1.1"
 Check:
-  all:
+  any:
     - name: USUBJID
       operator: non_empty
     - name: STUDYID

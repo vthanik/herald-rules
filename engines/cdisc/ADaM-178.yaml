@@ -17,8 +17,6 @@ Authorities:
 Check:
   all:
     - name: ANL01FL
-      operator: empty
-    - name: ANL01FL
       operator: in
       value:
         - 'Y'

@@ -18,7 +18,7 @@ Authorities:
 Check:
   all:
     - name: SUBJID
-      operator: empty
+      operator: non_empty
 Core:
   Id: ADaM-208
   Status: Published

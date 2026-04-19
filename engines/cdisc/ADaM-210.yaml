@@ -18,7 +18,7 @@ Authorities:
 Check:
   all:
     - name: ARM
-      operator: empty
+      operator: non_empty
 Core:
   Id: ADaM-210
   Status: Published

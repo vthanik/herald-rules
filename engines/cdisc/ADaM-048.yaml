@@ -19,13 +19,13 @@ Authorities:
 Check:
   all:
     - name: SAFFL
-      operator: empty
+      operator: non_empty
     - name: ITTFL
-      operator: empty
+      operator: non_empty
     - name: COMPLFL
-      operator: empty
+      operator: non_empty
     - name: ENRLFL
-      operator: empty
+      operator: non_empty
 Core:
   Id: ADaM-048
   Status: Published

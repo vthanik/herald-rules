@@ -18,7 +18,7 @@ Authorities:
 Check:
   all:
     - name: AESTM
-      operator: empty
+      operator: non_empty
 Core:
   Id: ADaM-042A
   Status: Published

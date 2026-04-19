@@ -18,8 +18,6 @@ Authorities:
 Check:
   all:
     - name: COMPLFL
-      operator: empty
-    - name: COMPLFL
       operator: in
       value:
         - 'Y'

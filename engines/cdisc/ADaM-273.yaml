@@ -18,8 +18,6 @@ Authorities:
 Check:
   all:
     - name: AOCC01FL
-      operator: empty
-    - name: AOCC01FL
       operator: in
       value:
         - 'Y'

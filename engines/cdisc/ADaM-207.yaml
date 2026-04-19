@@ -18,7 +18,7 @@ Authorities:
 Check:
   all:
     - name: RACE
-      operator: empty
+      operator: non_empty
 Core:
   Id: ADaM-207
   Status: Published
